@@ -1,0 +1,303 @@
+.blog {
+    background: white;
+
+    body {
+        padding-top: lines(2);
+    }
+}
+
+.blog-header {
+    position: relative;
+    padding-bottom: lines(2);
+    margin-bottom: lines(2);
+    border: 0;
+
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        margin-left: -20px;
+        width: 40px;
+        height: 0;
+        border-top: $rule;
+
+    }
+
+    a {
+        display: block;
+        margin: 0 auto;
+        @include retina-image('fritter');
+        @include hide-text;
+    }
+}
+
+// Individual post
+.blog-archive .post:not(:last-of-type) {
+    padding-bottom: lines(2);
+    margin-bottom: lines(3);
+    border-bottom: $rule;
+}
+
+.post__header {
+    margin-bottom: lines();
+    text-align: center;
+
+    h1 {
+        @include font-size-times(2.5, 2);
+        margin: 0;
+        text-transform: none;
+    }
+
+    time {
+        @include font-size-times(1.25);
+        font-style: italic;
+        letter-spacing: 0.05em;
+        color: $color-muted;
+    }
+}
+
+.post__photo {
+    margin-bottom: lines();
+
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}
+
+.post__photo-credit {
+    @include font-size-times(0.5);
+    font-family: $alt-face;
+    text-align: right;
+    @include uppercase;
+    color: $color-medium;
+}
+
+.post__share {
+    float: left;
+    width: lines();
+    margin-right: lines(0.5);
+
+    @include breakpoint($medium-up) {
+        margin-right: lines(2);
+    }
+
+    a {
+        display: block;
+        padding: lines(0.125) 0;
+        margin-bottom: lines(0.5);
+        font-size: 20px;
+        color: $color-medium;
+    }
+}
+
+.post__body {
+    overflow: hidden;
+    line-height: 30px;
+
+    @include breakpoint($medium-up) {
+        margin-right: lines(3);
+    }
+
+    > p:first-of-type {
+        @include font-size-times(1.333);
+        margin-right: lines();
+    }
+}
+
+// Recipes
+.recipe {
+    margin-bottom: lines(2);
+
+    h2 {
+        @include font-size-times(2);
+        margin: 0 0 lines(0.5);
+    }
+    &--secondary h2 {
+        @include font-size-times(1.33, 1.25);
+    }
+
+    h3 {
+        @include font-size-times(0.9);
+        font-family: $alt-face;
+        font-weight: 300;
+        @include uppercase;
+        text-align: center;
+        color: $color-muted;
+    }
+
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+        margin-bottom: lines();
+    }
+}
+
+.recipe__header {
+    margin-bottom: lines();
+    text-align: center;
+
+    dl {
+        margin: 0;
+        @include font-size-times(0.9);
+    }
+    dt {
+        font-family: $alt-face;
+        font-weight: normal;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: $color-muted;
+
+        &:after {
+            content: ":";
+        }
+    }
+    dd {
+        margin: 0;
+        font-style: italic;
+    }
+}
+
+.recipe__ingredients {
+    margin: 0 0 lines(1.5);
+    list-style: none;
+
+    @include breakpoint($medium-up) {
+        @include pad(1);
+    }
+    @include breakpoint($large-up) {
+        @include pad(2);
+    }
+
+    .ingredient {
+        line-height: 26px;
+    }
+
+    .ingredient-blank {
+        height: lines();
+    }
+
+    .ingredient-section {
+        font-weight: bold;
+    }
+}
+
+.recipe__instructions {
+    li {
+        margin-bottom: lines(0.5);
+    }
+}
+
+// Pagination
+.blog-pagination {
+    clear: both;
+    overflow: hidden;
+    margin-top: lines();
+    @include font-size-times(1.5);
+    color: $color-muted;
+    border-style: solid;
+    border-width: 1px 0;
+
+    a {
+        width: 50%;
+        padding: lines(0.75) 0;
+        color: inherit;
+
+        &:after {
+            $image: "arrows-large.png";
+            $image2x: "arrows-large@2x.png";
+            $width: image-width($image);
+            $height: image-height($image);
+
+            content: "";
+            display: block;
+            background-image: image-url($image);
+            background-repeat: no-repeat;
+            background-position: 100% 0;
+            height: $height / 2;
+
+            @include retina {
+                background-image: image-url($image2x);
+                background-size: $width $height;
+            }
+        }
+    }
+
+    .pagination__prev {
+        float: left;
+        &:after {
+            background-position: 0 -10px;
+        }
+    }
+
+    .pagination__next {
+        float: right;
+        text-align: right;
+    }
+}
+
+// Blog subscription form
+.blog__subscribe {
+    clear: both;
+    margin-top: lines();
+    text-align: center;
+
+    @include breakpoint($large-up) {
+        @include pad(1);
+    }
+
+    h2 {
+        font-family: $alt-face;
+        @include font-size-times(0.9);
+        @include uppercase;
+    }
+
+    form {
+        display: inline-block;
+        margin: 0;
+    }
+
+    label,
+    input,
+    button {
+        display: inline-block;
+        vertical-align: bottom;
+        height: 36px;
+        margin: 0 0.5em;
+    }
+
+    label {
+        font-family: $title-face;
+        font-size: 26px;
+        line-height: 42px;
+        font-weight: normal;
+        font-style: normal;
+        text-transform: none;
+        letter-spacing: 0;
+        color: $color-muted;
+    }
+
+    input {
+        width: 14em;
+        font-family: $text-face;
+        font-size: 19px;
+        text-align: center;
+        border: 0;
+        border-bottom: $rule;
+        box-shadow: none;
+    }
+
+    button {
+        font-size: 24px;
+        color: $color-muted;
+        opacity: 0.75;
+
+        &:hover, &:focus {
+            opacity: 1;
+        }
+    }
+}

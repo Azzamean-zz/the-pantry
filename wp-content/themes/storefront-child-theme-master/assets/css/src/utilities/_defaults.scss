@@ -1,0 +1,19 @@
+*,
+input[type="search"],
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+html {
+    font-feature-settings: "kern", "liga", "pnum";
+    text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: $text-face;
+    @include font-size();
+    color: $color-text;
+}

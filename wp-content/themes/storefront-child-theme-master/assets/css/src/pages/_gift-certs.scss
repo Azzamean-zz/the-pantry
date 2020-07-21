@@ -1,0 +1,82 @@
+.form-gift-cert {
+    padding-top: lines();
+    line-height: lines(2.25);
+    border-top: $rule;
+
+    .field {
+        padding-bottom: 0;
+    }
+
+    label {
+        display: inline;
+        font-family: inherit;
+        font-size: 1em;
+        line-height: lines(1.5);
+        font-weight: inherit;
+        font-style: inherit;
+        text-transform: none;
+        letter-spacing: 0;
+        color: inherit;
+    }
+
+    input {
+        display: inline;
+        max-width: 100%;
+        height: lines(1.15);
+        margin: 0;
+        font-family: inherit;
+        font-size: 1em;
+        line-height: lines(1.5);
+        vertical-align: baseline;
+        text-align: center;
+        color: inherit;
+        background: transparent;
+        box-shadow: none;
+        border: 0;
+        border-bottom: 1px solid $color-medium;
+
+        &::placeholder {
+            color: $color-medium;
+        }
+
+        // Hide the spinner control
+        -moz-appearance: textfield;
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        &.input-sm {
+            width: 5em;
+        }
+
+        &.input-med {
+            width: 14em;
+        }
+
+        &.input-lg {
+            width: 20em;
+        }
+    }
+
+    .button-set {
+        padding-top: lines(0.5);
+        text-align: left;
+
+        button {
+            margin: 0;
+        }
+    }
+
+    .parsley-errors-list {
+        display: none;
+    }
+
+    &.parsley-error {
+        // Go back to normal on focus
+        &:focus {
+            background: rgba(mix(white, $color-danger), 0.15);
+        }
+    }
+}

@@ -1,0 +1,14 @@
+// Convert pixels to ems
+@function em($size-in-px, $context: $font-size) {
+  @if not unitless($size-in-px) {
+      $size-in-px: strip-units($size-in-px);
+  }
+  @if not unitless($context) {
+      $context: strip-units($context);
+  }
+  @return ($size-in-px / $context) * 1em;
+}
+
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}

@@ -1,0 +1,36 @@
+// Block (thumbnail) grids
+// Show a different number of columns depending on the screen size
+@mixin block-grid($large-columns: 4, $medium-columns: false, $small-columns: false) {
+    @if $medium-columns {
+        @if $small-columns {
+            @include breakpoint($small-only) {
+                @include gallery($small-columns);
+            }
+            @include breakpoint($medium-only) {
+                @include gallery($medium-columns);
+            }
+            @include breakpoint($large-up) {
+                @include gallery($large-columns);
+            }
+        }
+        @else if $medium-columns {
+            @include breakpoint($medium-down) {
+                @include gallery($medium-columns);
+            }
+            @include breakpoint($large-up) {
+                @include gallery($large-columns);
+            }
+        }
+    }
+    @else if $small-columns {
+        @include breakpoint($small-only) {
+            @include gallery($small-columns);
+        }
+        @include breakpoint($medium-up) {
+            @include gallery($large-columns);
+        }
+    }
+    @else {
+        @include gallery($large-columns);
+    }
+}

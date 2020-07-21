@@ -1,0 +1,115 @@
+// Form Styling
+// ------------
+
+form {
+    margin: 0 0 lines(0.5);
+}
+
+label {
+    display: block;
+    font-family: $alt-face;
+    @include font-size-times(0.75, 1);
+    font-weight: bold;
+    font-style: italic;
+    @include uppercase;
+    color: $color-medium;
+    cursor: pointer;
+}
+
+fieldset {
+    border: $rule;
+    padding: lines(0.5);
+    margin-bottom: lines(0.5);
+
+    legend {
+        @include font-size-times(1.25, 1);
+        font-weight: normal;
+        background: transparent;
+        padding: lines(0.25);
+        margin: 0;
+        margin-right: 0.5em;
+    }
+}
+
+.field {
+    padding-bottom: lines(0.5);
+}
+
+.parsley-errors-list {
+    position: relative;
+    list-style-type: none;
+    top: - lines(0.25);
+    margin: 0;
+    font-family: $alt-face;
+    @include font-size-times(0.75, 0.75);
+    font-weight: bold;
+    color: $color-danger;
+}
+
+// Inline Layout
+// ---------
+
+form.inline {
+    display: inline-block;
+
+    .field,
+    button {
+        display: inline-block;
+        vertical-align: top;
+    }
+}
+
+// Horizontal Layout
+// -------------
+
+form.form-horizontal {
+    .field {
+        position: relative;
+        overflow: hidden;
+        padding-left: 25%;
+
+        .half {
+            float: left;
+            width: 49%;
+            margin-right: 2%;
+            &:nth-of-type(2n) {
+                margin-right: 0;
+            }
+        }
+
+        .third {
+            float: left;
+            width: 32%;
+            margin-right: 2%;
+            &:nth-of-type(3n) {
+                margin-right: 0;
+            }
+        }
+
+        label {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        input {
+            width: 100%;
+        }
+    }
+}
+
+// In-Place Form Labels
+// --------------------
+
+.inplace {
+    position: relative;
+
+    label {
+        position: absolute;
+        left: 1px;
+        top: 0;
+        padding-left: lines(0.33);
+        line-height: lines(1.25);
+        cursor: text;
+    }
+}

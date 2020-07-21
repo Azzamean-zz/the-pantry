@@ -1,0 +1,167 @@
+// Forms
+// =====
+
+// Form controls
+
+// Shared size and type resets
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.input {
+    -webkit-appearance: none !important;
+    display: block;
+    width: 100%;
+    height: lines(1.25);
+    margin: 0 0 lines(0.25) 0;
+    padding: 0 lines(0.33);
+    font-family: $alt-face;
+    @include font-size(15px, 1.25);
+    color: $color-dark;
+    background: rgba(white, 0.5);
+    box-shadow: inset 1px 1px 2px $color-light;
+    border: $rule;
+    border-radius: 0;
+
+    // Basic focus styles
+    &:focus {
+        border-color: $color-medium;
+        outline: none;
+    }
+
+    // Disabled background input background color
+    &[disabled],
+    fieldset[disabled] & {
+        background-color: $color-light;
+    }
+
+    &.parsley-error {
+        border-color: $color-danger;
+        background: rgba(mix(white, $color-danger), 0.3);
+
+        // Go back to normal on focus
+        &:focus {
+            background: rgba(mix(white, $color-danger), 0.15);
+        }
+    }
+}
+
+// Reset height since textareas have rows
+textarea {
+    height: auto;
+}
+
+select {
+    background-image: url('data:image/svg+xml;base64, PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI2cHgiIGhlaWdodD0iM3B4IiB2aWV3Qm94PSIwIDAgNiAzIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA2IDMiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwb2x5Z29uIHBvaW50cz0iNS45OTIsMCAyLjk5MiwzIC0wLjAwOCwwICIvPjwvc3ZnPg==');
+    background-repeat: no-repeat;
+    background-position: 97% center;
+    border: $rule;
+    line-height: normal;
+    cursor: pointer;
+
+    &:hover {
+        border-color: $color-medium;
+    }
+}
+
+input[type="file"],
+input[type="checkbox"],
+input[type="radio"],
+select {
+    margin: 0 0 lines(0.25);
+}
+
+input[type="checkbox"] + label,
+input[type="radio"] + label {
+    display: inline-block;
+    margin-right: lines(0.25);
+    margin-left: lines(0.5);
+    margin-bottom: 0;
+    vertical-align: baseline;
+}
+
+/* Normalize file input width */
+input[type="file"] {
+    width: 100%;
+}
+
+
+// Placeholder
+// -------------------------
+
+// Placeholder text gets special styles because when browsers invalidate entire lines if it doesn't understand a selector
+input,
+textarea {
+    &::placeholder {
+        color: $color-medium;
+    }
+}
+
+
+// CHECKBOXES & RADIOS
+// -------------------
+
+// Indent the labels to position radios/checkboxes as hanging
+.radio,
+.checkbox {
+    min-height: lines(); // clear the floating input if there is no label text
+    padding-left: 20px;
+}
+.radio input[type="radio"],
+.checkbox input[type="checkbox"] {
+    float: left;
+    margin-left: -20px;
+}
+
+// Move the options list down to align with labels
+.controls > .radio:first-child,
+.controls > .checkbox:first-child {
+    padding-top: 5px; // has to be padding because margin collaspes
+}
+
+// Radios and checkboxes on same line
+.radio.inline,
+.checkbox.inline {
+    display: inline-block;
+    padding-top: 5px;
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+.radio.inline + .radio.inline,
+.checkbox.inline + .checkbox.inline {
+    margin-left: 10px; // space out consecutive inline controls
+}
+
+
+// DISABLED STATE
+// --------------
+
+// Disabled and read-only inputs
+input[disabled],
+select[disabled],
+textarea[disabled],
+input[readonly],
+select[readonly],
+textarea[readonly] {
+    cursor: not-allowed;
+    background-color: darken($color-background, 5%);
+}
+// Explicitly reset the colors here
+input[type="radio"][disabled],
+input[type="checkbox"][disabled],
+input[type="radio"][readonly],
+input[type="checkbox"][readonly] {
+    background-color: transparent;
+}

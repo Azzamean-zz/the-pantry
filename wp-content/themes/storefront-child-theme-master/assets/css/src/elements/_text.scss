@@ -1,0 +1,202 @@
+// Basic HTML Element Styles
+// -------------------------
+
+html {
+    color: $color-text;
+    background: $color-background;
+    background: radial-gradient($color-background, #cbd9e1);
+}
+
+p {
+    margin: 0 0 lines();
+}
+
+// Links
+a {
+    @include link-colors($color-link, $color-highlight);
+    text-decoration: none;
+    transition: all 0.2s;
+
+    &:hover, &:active {
+        outline: none;
+    }
+}
+
+p a {
+    @include link-colors(darken($color-bright, 15%), $color-highlight);
+}
+
+
+// Emphasis & misc
+small {
+    font-size: 0.85em;
+}
+
+strong, b  { font-weight: bold; }
+em, i      { font-style: italic; }
+cite       { font-style: normal; }
+
+
+// Headings
+h1, h2, h3, h4, h5, h6 {
+    font-family: $title-face;
+    font-weight: normal;
+    color: $color-title;
+    text-rendering: optimizelegibility;
+
+    small {
+        text-transform: none;
+    }
+}
+
+h1 {
+    margin-bottom: lines(0.5);
+    @include font-size-times(1.25, 1.25);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+
+    em {
+        font-family: $alt-face;
+        font-weight: bold;
+    }
+}
+
+h2 {
+    margin: lines(0.25) 0 lines(0.25);
+    @include font-size-times(1.25, 1.25);
+    text-align: center;
+}
+
+h3 {
+    margin: lines(0.5) 0 lines(0.5);
+    font-family: $alt-face;
+    @include font-size-times(1.1);
+}
+
+h4 {
+    margin-bottom: lines(0.5);
+    @include font-size-times(1);
+}
+
+h5,
+h6 {
+    @include font-size-times(0.9);
+}
+
+
+// Lists
+
+// Unordered and Ordered lists
+ul,
+ol {
+    padding: 0;
+    margin: 0 0 lines(0.75) lines();
+}
+ul {
+    list-style-type: square;
+}
+ol {
+    list-style-type: decimal;
+}
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+    margin-bottom: lines(0.25);
+}
+
+// Description Lists
+dl {
+    margin: 0 0 lines(0.25);
+}
+dt,
+dd {
+    line-height: lines();
+}
+dt {
+    font-weight: bold;
+}
+dd {
+    margin-left: lines(0.5);
+}
+
+
+// MISC
+
+// Horizontal rules
+hr {
+    margin: lines() 0;
+    border: 0;
+    border-top: $rule;
+    border-bottom: 1px solid $color-background;
+}
+
+// Abbreviations and acronyms
+abbr[title],
+abbr[data-original-title] {
+    cursor: help;
+    border-bottom: $rule;
+}
+
+// Blockquotes
+blockquote {
+    margin-bottom: lines(0.5);
+
+    p {
+        margin: 0;
+    }
+
+    footer,
+    cite {
+        font-size: 0.8em;
+        font-weight: bold;
+        font-style: italic;
+        text-transform: uppercase;
+        text-align: right;
+        letter-spacing: 0.1em;
+        color: $color-dark;
+    }
+}
+
+// Quotes
+q:before,
+q:after,
+blockquote:before,
+blockquote:after {
+    content: "";
+}
+
+// Helper classes
+
+.text-warning {
+    color: $color-warning;
+}
+
+.text-error,
+.text-danger {
+    color: $color-danger;
+}
+
+.message {
+    margin: lines() 0 lines();
+    padding: lines(0.25) lines(0.5);
+    font-family: $alt-face;
+    font-weight: bold;
+    color: $color-warning;
+    background: rgba($color-warning, 0.1);
+    border: 1px solid rgba($color-warning, 0.75);
+    box-shadow: 0 1px 4px rgba(black, 0.1);
+}
+
+.hidden {
+    display: none;
+}
+
+.no-results {
+    padding: lines(2) 0 lines(4);
+    font-family: $alt-face;
+    @include font-size(13px);
+    text-align: center;
+    @include uppercase;
+}

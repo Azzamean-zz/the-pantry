@@ -1,0 +1,56 @@
+.popup-form {
+    @include opacity(0);
+    visibility: hidden;
+    position: absolute;
+    z-index: 100;
+    bottom: -0.5em;
+    right: 75%;
+    width: 16em;
+    padding: lines(0.5);
+    background: white;
+    border: $rule;
+    box-shadow: 0 2px 10px rgba(black, 0.2);
+    transition: all 0.2s;
+
+    &.open {
+        @include opacity(1);
+        right: 80%;
+        visibility: visible;
+    }
+
+    // Triangle
+    &:before {
+        position: absolute;
+        left: 100%;
+        bottom: 1em;
+        margin-left: 1px;
+        z-index: 10;
+        @include triangle(right, 0.85em, darken($color-light, 10%));
+    }
+    &:after {
+        position: absolute;
+        left: 100%;
+        bottom: 1em;
+        z-index: 11;
+        @include triangle(right, 0.75em, white);
+    }
+
+    h2 {
+        margin: 0 0 lines(0.5);
+        font-family: $alt-face;
+        @include font-size-times(1, 0.75);
+        font-style: italic;
+        @include uppercase;
+        color: $color-muted;
+    }
+
+    fieldset {
+        padding: 0;
+        border: 0;
+    }
+
+    button {
+        display: block;
+        width: 100%;
+    }
+}

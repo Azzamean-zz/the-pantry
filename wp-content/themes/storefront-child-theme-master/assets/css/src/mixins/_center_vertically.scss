@@ -1,0 +1,17 @@
+// Vertically align an element
+// http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/
+
+@mixin vertical-align {
+    position: relative;
+    transform: translateY(-50%);
+    top: 50%;
+}
+
+@mixin ghost-vertical-align {
+    &:before {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        height: 100%; width: .1px;
+    }
+}

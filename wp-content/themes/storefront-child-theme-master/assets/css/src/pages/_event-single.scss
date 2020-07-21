@@ -1,0 +1,123 @@
+.event-single {
+    padding-top: 0;
+    padding-bottom: lines(3);
+    background: white;
+
+    body {
+        padding-top: 0;
+    }
+
+    #event {
+        max-width: 38em;
+        margin: 0 auto;
+        padding: lines() 0;
+    }
+}
+
+.event-title {
+    margin: 0;
+    @include font-size(14px, 0.75);
+    font-family: $alt-face;
+    font-style: italic;
+    @include uppercase(0.05);
+}
+
+.event-date,
+.credit-address {
+    display: block;
+    font-family: $alt-face;
+    @include font-size(11px, 0.75);
+    color: $color-medium;
+    @include uppercase;
+}
+
+#event {
+    @include font-size-times(0.9, 1);
+
+    header {
+        position: relative;
+        overflow: hidden;
+        margin-bottom: lines(0.75);
+
+        img {
+            display: block;
+            width: 100%;
+
+            @include breakpoint($small-only) {
+                height: auto;
+            }
+        }
+    }
+
+    .titleplate {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        max-width: 67%;
+        padding: lines(0.375) lines(0.65) 0 0;
+        background: white;
+        box-shadow: 1px -1px 10px rgba(black, 0.2);
+
+        h1 {
+            margin: 0;
+            font-family: $alt-face;
+            font-style: italic;
+            text-align: left;
+        }
+    }
+}
+
+.table-sessions {
+    thead th {
+        padding: 0;
+        font-size: 0.75em;
+        font-weight: normal;
+    }
+}
+
+.event-session {
+    @include clearfix;
+    font-family: $alt-face;
+    letter-spacing: 0;
+    border: $rule;
+    border-width: 1px 0;
+
+    td {
+        padding: lines(0.25) 0;
+        @include font-size-plus(-3, 1.25);
+    }
+
+    .date {
+        text-transform: uppercase;
+        color: $color-text;
+
+        .time {
+            color: $color-medium;
+        }
+    }
+
+    .add > div {
+        position: relative;
+    }
+
+    .waitlist {
+        position: relative;
+    }
+
+    form {
+        margin: 0;
+    }
+
+    .btn {
+        margin-right: 0.5em;
+        padding: 0 1em;
+    }
+
+    .text-warning {
+        vertical-align: middle;
+    }
+
+    .waitlist a {
+        @include link-colors(darken($color-bright, 15%), $color-highlight);
+    }
+}

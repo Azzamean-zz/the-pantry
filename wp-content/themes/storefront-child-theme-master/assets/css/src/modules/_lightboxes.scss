@@ -1,0 +1,29 @@
+.lightbox {
+    max-width: 38em;
+    padding: lines(0.75);
+    background: white;
+    box-shadow: 0px 2px 15px rgba(black, 0.5);
+    border-radius: 0.5em;
+
+    .close {
+        position: absolute;
+        display: block;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        width: lines(1.25);
+        line-height: lines(1.2);
+        padding-top: lines(0.05);
+        font-family: $alt-face;
+        font-size: 2em;
+        text-align: center;
+        @include link-colors($color-bright, $color-highlight);
+        background: white;
+        box-shadow: -1px 1px 5px rgba(black, 0.3);
+
+        &:hover,
+        &:focus {
+            box-shadow: -1px 1px 7px rgba(black, 0.5);
+        }
+    }
+}

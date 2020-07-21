@@ -1,0 +1,7 @@
+.checkout {
+    @extend .events;
+
+    main {
+        @include pad(1);
+    }
+}

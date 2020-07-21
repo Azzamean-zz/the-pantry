@@ -1,0 +1,58 @@
+// Dimensions
+
+$font-size: 17px;
+$line-height: 21px;
+
+// Grid
+
+$susy: (
+    columns: 12,
+    container: 1100px, // Max width
+    container-position: center,
+    global-box-sizing: border-box,
+    gutters: 1/2,
+    // debug: (
+    //     image: show,
+    //     output: overlay,
+    //     toggle: top right,
+    // ),
+);
+
+// Breakpoints
+
+$tiny: max-width em(460px);
+$small-only: max-width em(648px);
+$medium-down: max-width em(1025px);
+$medium-only: em(649px) em(1025px);
+$medium-up: em(649px);
+$large-down: max-width em(1440px);
+$large-only: em(1026px) em(1440px);
+$large-up: em(1026px);
+$xlarge-up: em(1441px);
+
+// Fonts & Colors
+
+$text-face: "adobe-caslon-pro", Georgia, Times, serif;
+$title-face: $text-face;
+$alt-face: "brandon-grotesque", "Helvetica Neue", Arial, sans-serif;
+
+// Main colors
+$color-background: #e5e7e7; // Light blue
+$color-text: #000000;       // Black
+$color-title: $color-text;  // Black
+$color-link: $color-text;   // Black
+
+// Supplementary Colors
+$color-highlight: #791919;  // Dark Red
+$color-bright: #7E9BC5;     // Blue
+$color-muted: #a37c22;      // Copper
+$color-light: #bdbdbd;      // Light Grey
+$color-medium: #787073;     // Medium Grey
+$color-dark: #4d484a;       // Dark Grey
+
+$color-warning: #a65819;    // Dark orange
+$color-danger: #a61919;     // Dark red
+
+// Other shortcuts
+
+$rule: 1px solid $color-light;

@@ -1,0 +1,62 @@
+.pageFooter {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: lines(0.25) gutters(16);
+    font-family: $alt-face;
+    font-size: 0.7em;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-align: center;
+    vertical-align: middle;
+    background: white;
+    box-shadow: 0 -1px 10px rgba(black, 0.05);
+
+    nav,
+    ul {
+        display: inline-block;
+    }
+
+    ul {
+        @include no-bullets;
+        margin: 0;
+    }
+
+    li {
+        display: inline-block;
+        margin: 0 1em;
+    }
+
+    small {
+        font-size: 1em;
+    }
+
+    .logo {
+        $width: image-width("logo-tiny.png");
+        $height: image-height("logo-tiny.png");
+
+        position: relative;
+        display: inline-block;
+        top: 1px;
+        width: $width;
+        height: $height;
+        background-image: image-url("logo-tiny.png");
+        @include hide-text;
+
+        @include retina {
+            background-image: image-url("logo@2x.png");
+            background-size: $width $height;
+        }
+    }
+
+    .copyright {
+        float: left;
+        margin-right: 2em;
+    }
+
+    .credit {
+        float: right;
+        margin-left: 2em;
+    }
+}

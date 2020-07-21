@@ -1,0 +1,389 @@
+html.events {
+    background: image-url('events-background.jpg') repeat-y 50% 0;
+    background-size: 100% auto;
+
+    body {
+        padding-top: 22%;
+        background: image-url('events-background-top.jpg') no-repeat 50% 0;
+        background-size: 100% auto;
+    }
+}
+
+body.post-type-archive-tribe_events {
+    padding-top: 22%;
+    background: image-url('events-background-top.jpg') no-repeat 50% 0;
+    background-size: 100% auto;
+}
+
+#eventTypeFilter,
+.month h1,
+.month time {
+    font-family: $alt-face;
+    @include font-size(13px, 1.25);
+    font-weight: bold;
+    text-align: center;
+    @include uppercase;
+}
+
+#eventTypeFilter {
+    padding-bottom: lines(0.5);
+    border-bottom: $rule;
+
+    strong,
+    a {
+        margin: 0 0.5em;
+        white-space: nowrap;
+    }
+
+    a {
+        color: $color-medium;
+
+        &.active {
+            color: $color-link;
+        }
+    }
+}
+
+#events {
+    position: relative;
+    float: left;
+    width: 100%;
+    margin-bottom: lines(2);
+    border-bottom: $rule;
+}
+
+.month {
+    display: none;
+
+    .monthName {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        width: 180px;
+        margin-left: -90px;
+        transition: all 0.4s;
+
+        &:before,
+        &:after {
+            $image: "arrows.png";
+            $image2x: "arrows@2x.png";
+            $width: image-width($image);
+            $height: image-height($image);
+
+            content: "";
+            display: inline-block;
+            background-image: image-url($image);
+            width: $width;
+            height: $height / 2 - 3;
+            @include opacity(0);
+
+            @include retina {
+                background-image: image-url($image2x);
+                background-size: $width $height;
+            }
+        }
+
+        &:before {
+            margin-right: 0.5em;
+            background-position: 0 -15px;
+        }
+
+        &:after {
+            margin-left: 0.5em;
+            background-position: 0 0;
+        }
+    }
+
+    .eventList {
+        position: relative;
+        margin-top: lines(2.5);
+        padding-bottom: 1px;
+        width: 100%;
+        top: 0;
+        @include opacity(0);
+        visibility: hidden;
+        transform: scale(1);
+        transition: all 0.25s;
+
+        @include breakpoint($tiny) {
+            margin-top: lines(3.5);
+        }
+    }
+}
+
+.currentMonth {
+    display: block;
+
+    .eventList {
+        @include opacity(1);
+        visibility: visible;
+        left: 0;
+    }
+}
+
+.nextMonth,
+.prevMonth {
+    display: block;
+
+    .monthName {
+        @include opacity(0.5);
+        cursor: pointer;
+
+        @include breakpoint($tiny) {
+            top: lines();
+        }
+    }
+
+    .eventList {
+        position: absolute;
+        transform: scale(0.95);
+    }
+}
+.nextMonth {
+    .monthName {
+        left: 100%;
+        margin-left: -180px;
+
+        &:after {
+            @include opacity(1);
+        }
+    }
+
+    .eventList {
+        left: 25%;
+    }
+}
+.prevMonth {
+    .monthName {
+        left: 0;
+        margin-left: 0;
+
+        &:before {
+            @include opacity(1);
+        }
+    }
+
+    .eventList {
+        left: -25%;
+    }
+}
+
+.eventList article {
+    position: relative;
+    @include block-grid(3, 4, 6);
+    margin-bottom: lines(2);
+    padding: 0 0.5em;
+    text-align: center;
+
+    @include breakpoint($tiny) {
+        padding: 0;
+    }
+
+    &.sold-out {
+        img {
+            opacity: 0.6;
+            filter: blur(1px);
+        }
+    }
+    .sold-out-msg {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        span {
+            @include ghost-vertical-align;
+            font-family: $alt-face;
+            @include font-size-times(1.25);
+            @include uppercase;
+            color: white;
+            color: rgba(white, 0.8);
+            text-shadow: 0 1px 8px black;
+            text-align: center;
+        }
+    }
+
+    a {
+        display: block;
+    }
+
+    h1 {
+        display: block;
+        margin: 0;
+        @include font-size(12px, 0.75);
+    }
+
+    .photo {
+        position: relative;
+        display: block;
+        overflow: hidden;
+        margin: 0 auto lines(0.25);
+        box-shadow: 0 1px 4px rgba(black, 0.1);
+    }
+
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    h1 {
+        transition: all 0.2s ease;
+    }
+
+    a:hover,
+    a:focus {
+        h1 {
+            color: $color-highlight;
+        }
+
+        .photo {
+            box-shadow: 0 1px 6px rgba(black, 0.2);
+        }
+    }
+
+    .photo:after {
+        content: "";
+        position: absolute;
+        display: block;
+        @include opacity(0);
+        visibility: hidden;
+        top: 50%;
+        left: 50%;
+        margin-top: -24px;
+        margin-left: -24px;
+        @include retina-image("loading");
+        animation: rotation 2s infinite linear;
+        transition: opacity 1s;
+    }
+    &.loading .photo:after {
+        visibility: visible;
+        @include opacity(1);
+        transition: opacity 0.2s;
+    }
+}
+
+.view-mode {
+    clear: both;
+    margin-bottom: lines();
+    font-family: $alt-face;
+    @include font-size(12px);
+    font-weight: bold;
+    text-align: center;
+    @include uppercase;
+    a {
+        color: $color-muted;
+    }
+}
+
+.eventsFooter {
+    clear: both;
+    margin-top: lines();
+
+    @include breakpoint($large-up) {
+        @include pad(1);
+    }
+
+    h2 {
+        @include uppercase;
+    }
+
+    .text {
+        padding: lines() 0 lines(0.5);
+        border-top: $rule;
+
+        @include breakpoint($medium-up) {
+            column-count: 2;
+            column-gap: 2em;
+        }
+    }
+
+    form {
+        margin-bottom: lines(2);
+        text-align: center;
+    }
+
+    .inplace {
+        display: inline-block;
+        vertical-align: top;
+    }
+    input,
+    button {
+        display: inline-block;
+        vertical-align: top;
+        margin: 0;
+    }
+}
+
+// Calendar view
+
+.calendar {
+    table-layout: fixed;
+    width: 99.5%;
+    margin: 0 auto;
+    @include font-size(13px, 0.75);
+    text-transform: uppercase;
+    th {
+        text-align: center;
+    }
+    td,
+    tr:last-child td {
+        border: $rule;
+    }
+    td {
+        min-height: 4em;
+        padding: lines(0.25);
+        vertical-align: top;
+    }
+}
+.calendar-date {
+    text-align: right;
+    color: $color-medium;
+}
+.calendar-events {
+    min-height: 4em;
+    padding: 0 5%;
+    text-align: center;
+    a {
+        display: block;
+        margin-bottom: lines(0.5);
+        line-height: 1.25;
+        @include link-colors($color-muted, $color-link);
+        &.sold-out {
+            opacity: 0.5;
+        }
+    }
+    time {
+        display: block;
+        letter-spacing: 0;
+        color: $color-medium;
+    }
+}
+
+@include breakpoint($small-only) {
+    .calendar {
+        display: block;
+        margin-bottom: 2em;
+        thead {
+            display: none;
+        }
+        tbody {
+            display: block;
+            width: 100%;
+        }
+        tr {
+            display: inline;
+        }
+        td {
+            display: block;
+            width: 100%;
+            border-left: 0;
+            border-right: 0;
+            border-top: 0;
+        }
+    }
+    .calendar-events {
+        min-height: 1em;
+    }
+}

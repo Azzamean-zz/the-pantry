@@ -1,0 +1,62 @@
+//
+// Tables
+//
+table {
+  width: 100%;
+  margin-bottom: lines(0.5);
+  font-family: $alt-face;
+  border: 0;
+
+  thead, tfoot {
+    th,
+    td {
+      padding: lines(0.25) 0;
+      @include font-size-times(0.75, 0.75);
+      @include uppercase;
+      text-align: left;
+      color: $color-medium;
+      vertical-align: bottom;
+    }
+  }
+
+  thead {
+    th,
+    td {
+      border-bottom: $rule;
+    }
+  }
+
+  tbody {
+    th,
+    td {
+      padding: lines(0.5) 0;
+      text-align: left;
+      vertical-align: middle;
+      border-bottom: $rule;
+    }
+
+    tr:last-child {
+      th,
+      td {
+        border-bottom: 0;
+      }
+    }
+  }
+
+  tfoot {
+    th,
+    td {
+      border-top: $rule;
+    }
+  }
+
+  thead tr th,
+  tfoot tr th,
+  tfoot tr td,
+  tbody tr th,
+  tbody tr td,
+  tr td {
+    display: table-cell;
+    line-height: lines();
+  }
+}
