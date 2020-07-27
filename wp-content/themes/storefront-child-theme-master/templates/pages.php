@@ -1,5 +1,6 @@
 <?php
 /**
+ * Template name: Pages Template
  * The template for displaying all pages.
  *
  * This is the template that displays all pages by default.
@@ -14,7 +15,7 @@ get_header(); ?>
 	<?php while ( have_posts() ) : the_post(); ?>
         <div id="home-main">
             <article class="page">
-                <div class="page-body">
+                <div class="page-body columns">
                     <?php the_content();?>
                 </div>
                 <ul class="homeLinks">
