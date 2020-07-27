@@ -1,11 +1,20 @@
 <?php
 /**
 *
- * Template name: Classes
+ * Template name: Classes Template
  *
  * @package storefront
  */
 
+/**
+ * The header for our theme.
+ *
+ * Displays all of the <head> section and everything up till <div id="content">
+ *
+ * @package storefront
+ */
+
+?><!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -52,6 +61,7 @@
 		            <h1><a href="<?php echo site_url();?>" class="logo">The Pantry</a></h1>
 		            <h2>A place to <em>cook</em>. And <em>eat</em>. And <em>learn</em>.</h2>
 		        </header>
+		        
 	            <?php echo do_shortcode('[tribe_events view="month" category="classes"]'); ?>
 		    </main>
 <?php
