@@ -11,6 +11,7 @@
  */
 
 get_header(); ?>
+	<?php while ( have_posts() ) : the_post(); ?>
         <div id="home-main">
             <article class="page">
                 <div class="page-body columns">
@@ -40,6 +41,7 @@ get_header(); ?>
                 </ul>
             </article>
         </div>
+	<?php endwhile; // End of the loop. ?>
     </main>
 <?php
 get_footer();
