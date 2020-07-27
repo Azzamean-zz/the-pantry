@@ -2,3 +2,27 @@ body.home {
 	-webkit-background-size: cover;
 	background-size: cover;
 }
+.storefront-product-pagination {
+	display: none !important;	
+}
+
+body.page {
+	padding-left: inherit;
+	padding-right: inherit;
+}
+
+h3 time {
+	font-size: 12px !important;	
+}
+
+.tribe-events-calendar-month__day {
+    border-color: #bdbdbd !important;
+}
+
+.tribe-events-calendar-month__body {
+    border-top-color: #bdbdbd !important;
+}
+
+.tribe-events-calendar-month__week {
+    border-left: 1px solid #bdbdbd !important;
+}
