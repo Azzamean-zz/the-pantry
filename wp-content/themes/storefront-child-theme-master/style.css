@@ -23,4 +23,5 @@ Images License: GNU General Public License v2 or later
  * Add your own custom css below this text.
  */
 
- @import "assets/css/site.min.css";
+ @import "assets/css/site.min.css"; 
+ @import "assets/css/brett.css";

@@ -12,14 +12,21 @@
 <header class="pageFooter">
 <nav>
     <ul>
-        <li><a href="<?php echo site_url();?>/about">About</a></li>
-        <li><a href="<?php echo site_url();?>/events">Classes</a></li>
-        <li><a href="<?php echo site_url();?>/events/togomeals">To Go</a></li>
-        <li><a href="<?php echo site_url();?>/private-events">Private Events</a></li>
-        <li><a href="<?php echo site_url();?>/meat-collective">Meat Collective</a></li>
-        <li><a href="<?php echo site_url();?>/gift-certificates">Gift Certificates</a></li>
-        <li><a href="<?php echo site_url();?>/contact">Contact</a></li>
-        <li><a href="<?php echo site_url();?>/our-community">Community</a></li>
+	    
+		<?php
+			$defaults = array(
+				'echo'            => true,
+				'menu'			  => 'Main ',
+				'container'		  => false,
+				'items_wrap'      => '%3$s',
+				'fallback_cb'     => 'wp_page_menu',
+				'depth'           => 0,
+				'walker'          => ''
+			);
+			
+			wp_nav_menu( $defaults );
+		?>
+
         <li><a href="<?php echo site_url();?>/cart">Cart 
         <?php
         global $woocommerce;
