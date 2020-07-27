@@ -21,6 +21,13 @@
 </head>
 
 <?php if(get_field('big_image')) { $image = get_field('big_image'); ?>
+	<style>
+		body {
+			padding-top: 63px !important;
+			-webkit-background-size: cover;
+			background-size: cover;
+		}
+	</style>	
     <body <?php body_class(); ?> style="background-image: url('<?php echo $image['url']; ?>');">
 <?php } else { ?>
     <body <?php body_class(); ?> >
