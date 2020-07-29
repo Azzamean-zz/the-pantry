@@ -79,3 +79,18 @@ form#tribe-tickets {
 	margin-left: auto;	
 	margin-right: auto;	
 }
+h1.tribe-events-single-event-title {
+	margin-bottom: 30px !important;	
+	display: block;	
+	width: 100%;	
+	float: left;
+}
+
+.tribe-common.tribe-tickets {
+	background-color: transparent;	
+	border: none;	
+}
+
+.entry .entry-content .tribe-common .tribe-tickets__item, .tribe-common .tribe-tickets__item, .entry .entry-content .tribe-common .tribe-tickets__footer, .tribe-common .tribe-tickets__footer {
+	border-color: #bdbdbd;
+}

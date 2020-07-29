@@ -60,7 +60,12 @@
     <main id="main" class="body wrapper" role="main">
         <header class="page-header">
             <h1><a href="<?php echo site_url();?>" class="logo">The Pantry</a></h1>
-            <h2>A place to <em>cook</em>. And <em>eat</em>. And <em>learn</em>.</h2>
+            
+            <?php if ( get_post_type( get_the_ID() ) == 'team' ) { ?>
+            <h2>About <?php the_title();?></h2>	
+			<?php } else { ?>
+            <h2><?php the_field('sub_head');?></h2>
+			<?php } ?>
         </header>
 
 		<?php
