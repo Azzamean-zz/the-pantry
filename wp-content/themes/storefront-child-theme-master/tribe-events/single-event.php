@@ -22,11 +22,23 @@ $event_id = get_the_ID();
 
 ?>
 
+<div id="content" class="site-content" tabindex="-1">
+	<div class="col-full">
+    <main id="main" class="body wrapper" role="main">
+        <header class="page-header">
+            <h1><a href="<?php echo site_url();?>" class="logo">The Pantry</a></h1>
+            
+            <?php if(get_field('sub_head')) {?><h1><?php the_field('sub_head');?></h1><?php } ?>
+
+        </header>
+
 <div id="tribe-events-content" class="tribe-events-single">
 
+<!--
 	<p class="tribe-events-back">
 		<a href="<?php echo esc_url( tribe_get_events_link() ); ?>"> <?php printf( '&laquo; ' . esc_html_x( 'All %s', '%s Events plural label', 'the-events-calendar' ), $events_label_plural ); ?></a>
 	</p>
+-->
 
 	<!-- Notices -->
 	<?php tribe_the_notices() ?>
@@ -41,7 +53,7 @@ $event_id = get_the_ID();
 	<div class="tribe-events-schedule tribe-clearfix">
 		<?php echo tribe_events_event_schedule_details( $event_id, '<h2>', '</h2>' ); ?>
 		<?php if ( tribe_get_cost() ) : ?>
-			<span class="tribe-events-cost"><?php echo tribe_get_cost( null, true ) ?></span>
+<!-- 			<span class="tribe-events-cost"><?php echo tribe_get_cost( null, true ) ?></span> -->
 		<?php endif; ?>
 	</div>
 

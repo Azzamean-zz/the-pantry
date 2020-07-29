@@ -26,6 +26,7 @@
 			padding-top: 63px !important;
 			-webkit-background-size: cover !important;
 			background-size: cover !important;
+			background-position: center center;
 		}
 	</style>	
     <body <?php body_class(); ?> style="background-image: url('<?php echo $image['url']; ?>');">
@@ -54,18 +55,3 @@
 	 */
 	do_action( 'storefront_before_content' );
 	?>
-
-	<div id="content" class="site-content" tabindex="-1">
-	<div class="col-full">
-    <main id="main" class="body wrapper" role="main">
-        <header class="page-header">
-            <h1><a href="<?php echo site_url();?>" class="logo">The Pantry</a></h1>
-            
-            <?php if ( get_post_type( get_the_ID() ) == 'team' ) { ?>
-            <h2>About <?php the_title();?></h2>	
-			<?php } else { ?>
-            <h2><?php the_field('sub_head');?></h2>
-			<?php } ?>
-        </header>
-
-		<?php

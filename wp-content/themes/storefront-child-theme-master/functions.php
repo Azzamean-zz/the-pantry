@@ -96,6 +96,40 @@ add_action('init', 'create_team_taxonomies');
 add_filter('manage_edit-team_columns', 'create_team_columns' ) ;
 add_action('manage_team_posts_custom_column', 'manage_team_columns', 10, 2 );
 
+/**
+ * Change the Get Tickets on List View and Single Events
+ *
+ * @param string $translation The translated text.
+ * @param string $text        The text to translate.
+ * @param string $domain      The domain slug of the translated text.
+ * @param string $context     The option context string.
+ *
+ * @return string The translated text or the custom text.
+ */
+ 
+add_filter( 'gettext_with_context', 'tribe_change_get_tickets', 20, 4 );
+function tribe_change_get_tickets( $translation, $text, $context = "" , $domain) {
+ 
+  if ( $domain != 'default'
+       && strpos( $domain, 'event-' ) !== 0
+  ) {
+    return $translation;
+  }
+ 
+  $ticket_text = [
+    // Get Tickets on List View
+    'Get %s'      => 'Purchase',
+    // Get Tickets Form - Single View
+    'Get Tickets' => 'Purchase',
+  ];
+ 
+  // If we don't have replacement text, bail.
+  if ( empty( $ticket_text[ $text ] ) ) {
+    return $translation;
+  }
+ 
+  return $ticket_text[ $text ];
+}
 
 /**
  * Note: DO NOT! alter or remove the code above this text and only add your custom PHP functions below this text.

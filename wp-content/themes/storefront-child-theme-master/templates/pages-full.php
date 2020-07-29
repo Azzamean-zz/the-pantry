@@ -13,6 +13,15 @@
 
 get_header(); ?>
 	<?php while ( have_posts() ) : the_post(); ?>
+<div id="content" class="site-content" tabindex="-1">
+	<div class="col-full">
+    <main id="main" class="body wrapper" role="main">
+        <header class="page-header">
+            <h1><a href="<?php echo site_url();?>" class="logo">The Pantry</a></h1>
+            
+            <?php if(get_field('sub_head')) {?><h1><?php the_field('sub_head');?></h1><?php } ?>
+
+        </header>
         <div id="home-main">
             <article class="page">
                 <div class="page-body ">

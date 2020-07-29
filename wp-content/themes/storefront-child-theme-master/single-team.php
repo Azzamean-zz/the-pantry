@@ -14,6 +14,9 @@
 
 get_header(); ?>
 	<?php while ( have_posts() ) : the_post(); ?>
+<div id="content" class="site-content" tabindex="-1">
+	<div class="col-full">
+    <main id="main" class="body wrapper" role="main">
         <div id="home-main">
             <article class="page">
 	            <?php if(get_field('team_image')) { ?>
@@ -22,6 +25,12 @@ get_header(); ?>
 		            <img src="<?php echo $image['url'];?>"
 	            </div>	
 	            <?php } ?>
+	            
+	            <header class="page-header">
+				<a href="https://thepantryseattle.com/" class="logo">The Pantry</a>
+				<h1>About <?php the_title();?></h1>
+				</header>
+	            
                 <div class="page-body columns">
                     <?php the_content();?>
                 </div>
