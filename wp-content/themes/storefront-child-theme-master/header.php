@@ -24,8 +24,8 @@
 	<style>
 		body {
 			padding-top: 63px !important;
-			-webkit-background-size: cover;
-			background-size: cover;
+			-webkit-background-size: cover !important;
+			background-size: cover !important;
 		}
 	</style>	
     <body <?php body_class(); ?> style="background-image: url('<?php echo $image['url']; ?>');">

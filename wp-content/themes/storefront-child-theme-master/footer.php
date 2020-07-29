@@ -42,7 +42,7 @@
 
 <small class="copyright">&copy; <a href="<?php echo site_url();?>" class="logo"><?php echo get_bloginfo('name');?></a> <?php echo date('Y');?></small>
 
-<small class="credit"><a href="http://neversinkcreative.com">Design by Sam</a></small>
+<!-- <small class="credit"><a href="http://neversinkcreative.com">Design by Sam</a></small> -->
 </header>
 <?php do_action( 'storefront_after_footer' ); ?>
 <?php wp_footer(); ?>

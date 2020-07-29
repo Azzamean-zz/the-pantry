@@ -33,11 +33,6 @@ $event_id = get_the_ID();
 
 	<?php the_title( '<h1 class="tribe-events-single-event-title">', '</h1>' ); ?>
 
-	<!-- Event meta -->
-	<?php do_action( 'tribe_events_single_event_before_the_meta' ) ?>
-	<?php tribe_get_template_part( 'modules/meta' ); ?>
-	<?php do_action( 'tribe_events_single_event_after_the_meta' ) ?>
-
 	<div class="tribe-events-schedule tribe-clearfix">
 		<?php echo tribe_events_event_schedule_details( $event_id, '<h2>', '</h2>' ); ?>
 		<?php if ( tribe_get_cost() ) : ?>
@@ -81,6 +76,12 @@ $event_id = get_the_ID();
 		</div> <!-- #post-x -->
 		<?php if ( get_post_type() == Tribe__Events__Main::POSTTYPE && tribe_get_option( 'showComments', false ) ) comments_template() ?>
 	<?php endwhile; ?>
+
+	<!-- Event meta -->
+	<?php do_action( 'tribe_events_single_event_before_the_meta' ) ?>
+	<?php tribe_get_template_part( 'modules/meta' ); ?>
+	<?php do_action( 'tribe_events_single_event_after_the_meta' ) ?>
+
 
 	<!-- Event footer -->
 	<div id="tribe-events-footer">
