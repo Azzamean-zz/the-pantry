@@ -1,24 +1,30 @@
 <?php
 /**
- * The template for displaying all pages.
+*
+ * Template name: Checkout Template
  *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site will use a
- * different template.
+ * @package storefront
+ */
+
+/**
+ * The header for our theme.
+ *
+ * Displays all of the <head> section and everything up till <div id="content">
  *
  * @package storefront
  */
 
 get_header(); ?>
+
 <div id="content" class="site-content" tabindex="-1">
     <main id="main" class="body wrapper" role="main">
 		<header class="page-header" style="border-bottom: none;">
 		    <h1><a href="<?php echo site_url();?>" class="logo">The Pantry</a></h1>    
-		    <h1 class="page-title"><?php the_title();?></h1>
+		    <h1 class="page-title">Checkout</h1>
 		</header>
     </main>
 </div>
+
 	<?php while ( have_posts() ) : the_post(); ?>
         <div id="home-main">
             <article class="page">

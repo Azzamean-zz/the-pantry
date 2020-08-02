@@ -97,6 +97,109 @@ add_filter('manage_edit-team_columns', 'create_team_columns' ) ;
 add_action('manage_team_posts_custom_column', 'manage_team_columns', 10, 2 );
 
 /**
+ * Create Custom Post Type: Test
+ * Create Taxonomies: Test Categories
+ * Create Columns: Test
+ * Manage Columns: Test
+*/
+function create_shopping_lists() {
+	register_post_type(
+		'shopping-lists',
+		array(
+			'labels' => array(
+				'name' => __("Shopping Lists"),
+				'singular_name' => __("Shopping Lists"),
+				'add_new' => __("Add Shopping List"),
+				'add_new_item' => __("Add New Shopping List"),
+				'edit_item' => __("Edit Shopping List"),
+				'new_item' => __("New Shopping List"),
+				'view_item' => __("View Shopping List"),
+				'search_items' => __("Search Shopping Lists"),
+				'not_found' => __("No Shopping Lists found."),
+				'not_found_in_trash' => __("No Shopping Lists found in trash."),
+				'edit' => __("Edit Shopping Lists"),
+				'view' => __("View Shopping Lists")
+			),
+			'exclude_from_search' => true,
+			'menu_icon' => 'dashicons-cart',
+			'public' => true,
+			'rewrite' => array('slug' => 'shopping-lists'),
+			'supports' => array('title','editor','author','excerpt','comments','revisions')
+		)
+	);
+	flush_rewrite_rules();
+}
+
+function create_shopping_lists_taxonomies() {
+	register_taxonomy(
+		'shopping-lists-categories',
+		'shopping-lists',
+		array(
+			'hierarchical' => true,
+			'label' => 'Category',
+			'query_var' => true,
+			'rewrite' => array('slug' => 'shopping-lists-categories')
+		)
+	);
+}
+
+function create_shopping_lists_columns($columns) {
+    $columns = array(
+		'cb' => '<input type="checkbox" />',
+		'title' => __('Name'),
+		'taxonomy' => __('Taxonomy'),
+		'acf-field' => __('Advanced Custom Field'),
+	);
+	return $columns;
+}
+
+function manage_shopping_lists_columns($column, $post_id) {
+	global $post;
+	switch($column) {
+		case 'taxonomy':
+			$test = get_post_meta($post_id, 'shopping-lists', true);
+			if(!empty($test)) echo $test;
+			break;
+		case 'acf-field':
+			$field = get_post_meta($post_id, 'acf-field', true);
+			if(!empty($field)) echo $field;
+			break;
+		default : break;
+	}
+}
+
+add_action('init', 'create_shopping_lists');
+add_action('init', 'create_shopping_lists_taxonomies');
+add_filter('manage_edit-shopping_lists_columns', 'create_shopping_lists_columns' ) ;
+add_action('manage_shopping_lists_posts_custom_column', 'manage_shopping_lists_columns', 10, 2 );
+
+/**
+ * Changes the redirect URL for the Return To Shop button in the cart.
+ *
+ * @return string
+ */
+function wc_empty_cart_redirect_url() {
+	return '/classes';
+}
+add_filter( 'woocommerce_return_to_shop_redirect', 'wc_empty_cart_redirect_url' );
+
+add_filter( 'gettext', 'change_woocommerce_return_to_shop_text', 20, 3 );
+
+function change_woocommerce_return_to_shop_text( $translated_text, $text, $domain ) {
+
+        switch ( $translated_text ) {
+
+            case 'Return to shop' :
+
+                $translated_text = __( 'Return to Classes', 'woocommerce' );
+                break;
+
+        }
+
+    return $translated_text;
+}
+
+/**
  * Change the Get Tickets on List View and Single Events
  *
  * @param string $translation The translated text.
