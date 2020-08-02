@@ -18,6 +18,9 @@ get_header(); ?>
 	<div id="content" class="site-content" tabindex="-1">
 		<div class="col-full">
 	    <main id="main" class="body wrapper" role="main">
+		    <a id="home-pane" href="#home-main">
+				<h1>The Pantry</h1>
+			</a>
 	        <header class="page-header">
 	            <h1><a href="<?php echo site_url();?>" class="logo">The Pantry</a></h1>
 	            
@@ -56,5 +59,15 @@ get_header(); ?>
         </div>
 	<?php endwhile; // End of the loop. ?>
     </main>
+<script>
+	jQuery(function ($) {
+		$(document).ready(function(){
+			$("#home-pane").click(function(e){
+				e.preventDefault();
+				$('body').addClass('hidehome');
+			});
+		});
+	});
+</script>	
 <?php
 get_footer();

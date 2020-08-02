@@ -169,3 +169,80 @@ body.single-team {
 		padding-bottom: 0;	
 	}
 }
+
+.storefront-sticky-add-to-cart {
+	display: none;	
+}
+
+.woocommerce-product-gallery--without-images {
+	display: none;	
+}
+
+.product_meta {
+	display: none;	
+}
+
+.summary {
+	.product_title {
+		display: none;	
+	}
+	.price {
+		display: none;	
+	}
+}
+
+input#credit_called {
+	width: auto;	
+}
+
+.storefront-full-width-content.single-product div.product .summary {
+	margin-top: 20px;	
+	float: left;
+	br {
+		display: none;	
+	}
+	.quantity {
+		display: none;	
+	}
+}
+
+.woocommerce-tabs {
+	display: none;	
+}
+
+.woocommerce-table--order-details {
+	background-color: transparent;	
+}
+
+table:not( .has-background ) tbody td {
+	background-color: transparent;	
+}
+
+.tribe-common a.tribe-common-c-btn-link, .tribe-common button.tribe-common-c-btn-link, .tribe-common input[type=button].tribe-common-c-btn-link, .tribe-common input[type=submit].tribe-common-c-btn-link {
+		color: #4c73aa !important;	
+}
+
+.tribe-common .tribe-tickets__item__attendee__fields .tribe-ticket.tribe-ticket-item__has-focus {
+		border-left-color: #4c73aa !important;
+}
+
+.tribe-common a.tribe-common-c-btn-link, .tribe-common button.tribe-common-c-btn-link, .tribe-common input[type=button].tribe-common-c-btn-link, .tribe-common input[type=submit].tribe-common-c-btn-link {
+	color: #4c73aa;
+	font-weight: 700;	
+	font-family: "brandon-grotesque","Helvetica Neue",Arial,sans-serif;
+}
+
+.entry .entry-content .tribe-common .tribe-tickets__attendee__fields__footer_checkout-button, .entry .entry-content .tribe-common .tribe-tickets__buy, .tribe-common .tribe-tickets__attendee__fields__footer_checkout-button, .tribe-common .tribe-tickets__buy {
+	font-family: "brandon-grotesque","Helvetica Neue",Arial,sans-serif;
+}
+.tribe-common--breakpoint-medium.tribe-common .tribe-common-form-control-text__input, .tribe-common .tribe-common-form-control-text__input {
+	font-family: "brandon-grotesque","Helvetica Neue",Arial,sans-serif;
+}
+
+button, input[type="button"], input[type="reset"], input[type="submit"], .button, .widget a.button {
+	background: #4c73aa;
+	&:hover {
+		background: #791919;
+	}
+;
+}
