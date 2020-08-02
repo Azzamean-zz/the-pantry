@@ -38,6 +38,7 @@ get_header(); ?>
 					            'field'    => 'slug',
 					            'terms'    => 'guest',
 					            'operator' => 'NOT IN',
+					            'posts_per_page' => -1
 					        ),
 					    ),
 					);
@@ -76,6 +77,7 @@ get_header(); ?>
 					            'taxonomy' => 'team-categories',
 					            'field'    => 'slug',
 					            'terms'    => 'guest',
+					            'posts_per_page' => -1
 					        ),
 					    ),
 					);
