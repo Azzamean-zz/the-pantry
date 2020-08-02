@@ -38,9 +38,9 @@ get_header(); ?>
 					            'field'    => 'slug',
 					            'terms'    => 'guest',
 					            'operator' => 'NOT IN',
-					            'posts_per_page' => -1
 					        ),
 					    ),
+					    'posts_per_page' => -1
 					);
 					// The Query
 					$query = new WP_Query( $args );
