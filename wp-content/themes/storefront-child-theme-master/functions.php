@@ -235,6 +235,19 @@ function tribe_change_get_tickets( $translation, $text, $context = "" , $domain)
 }
 
 /**
+ * Auto Complete all WooCommerce orders.
+ */
+add_action( 'woocommerce_thankyou', 'custom_woocommerce_auto_complete_order' );
+function custom_woocommerce_auto_complete_order( $order_id ) { 
+    if ( ! $order_id ) {
+        return;
+    }
+
+    $order = wc_get_order( $order_id );
+    $order->update_status( 'completed' );
+}
+
+/**
  * Note: DO NOT! alter or remove the code above this text and only add your custom PHP functions below this text.
  */
 

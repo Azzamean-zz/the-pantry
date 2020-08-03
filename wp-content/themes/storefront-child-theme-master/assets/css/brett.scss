@@ -29,6 +29,9 @@ h3 time {
 
 .tribe-common .tribe-common-c-btn, .tribe-common a.tribe-common-c-btn {
 	background-color: #4c73aa !important;	
+	&:hover {
+		background: #000 !important;
+	}
 }
 
 .tribe-events .tribe-events-calendar-month__day--current .tribe-events-calendar-month__day-date, .tribe-events .tribe-events-calendar-month__day--current .tribe-events-calendar-month__day-date-link {
@@ -381,7 +384,7 @@ h1.tribe-tickets__registration__page-title {
 
 .tribe-events .tribe-events-c-search__input-control--keyword .tribe-events-c-search__input {    
     background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 18.711l-6.044-6.044a7.782 7.782 0 0 0 1.688-4.845c0-2.089-.822-4.044-2.288-5.533C11.866.822 9.91 0 7.822 0S3.778.822 2.29 2.289A7.801 7.801 0 0 0 0 7.822c0 2.09.822 4.045 2.289 5.534a7.801 7.801 0 0 0 5.533 2.288c1.778 0 3.467-.6 4.845-1.688L18.71 20 20 18.711zM3.578 12.067c-2.334-2.334-2.334-6.156 0-8.49a5.968 5.968 0 0 1 4.244-1.755c1.6 0 3.111.622 4.245 1.756 2.333 2.333 2.333 6.155 0 8.489a5.968 5.968 0 0 1-4.245 1.755c-1.6 0-3.11-.622-4.244-1.755z' fill='%234c73aa'/%3E%3C/svg%3E") !important;
-    
+    background-repeat: no-repeat !important;	
 }
 
 .flexible-checkout-fields-before_customer_details  {
@@ -391,6 +394,50 @@ h1.tribe-tickets__registration__page-title {
 		float: left;
 		padding-right: 30px;	
 	}
+}
+
+.entry .entry-content .tribe-common .tribe-tickets__item__quantity__add, .entry .entry-content .tribe-common .tribe-tickets__item__quantity__remove, .tribe-common .tribe-tickets__item__quantity__add, .tribe-common .tribe-tickets__item__quantity__remove {
+	color: #bdbdbd;
+}
+
+.gift-certificate.sc_info_box {
+	display: none;	
+}
+
+.tribe-common--breakpoint-medium.tribe-events .tribe-events-c-search__button {
+	font-family: "brandon-grotesque","Helvetica Neue",Arial,sans-serif;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;	
+}
+
+.tribe-common a.tribe-common-c-btn--small, .tribe-common button.tribe-common-c-btn--small, .tribe-common input[type=button].tribe-common-c-btn--small, .tribe-common input[type=submit].tribe-common-c-btn--small {
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;	
+}
+
+.entry .entry-content .tribe-common .tribe-tickets__item__quantity__add, .entry .entry-content .tribe-common .tribe-tickets__item__quantity__remove, .tribe-common .tribe-tickets__item__quantity__add, .tribe-common .tribe-tickets__item__quantity__remove {
+	color: #4c73aa;
+}
+
+.tribe-checkout-backlinks {
+	width: 41.1764705882%;	
+	float: right;	
+	a {
+		color: #4c73aa;
+		&:hover {
+			color: #000;
+		}
+	}
+}
+
+.tribe-common .tribe-common-b2.tribe-tickets__item__extra__price {
+	font-size: 1.2em;	
+}
+
+.events-list #tribe-events-footer, .single-tribe_events #tribe-events-footer, .tribe-events-day #tribe-events-footer, .tribe-events-map #tribe-events-footer, .tribe-events-photo #tribe-events-footer {
+	border-top-color: #ebebeb !important;	
 }
 
 @media screen and (max-width: 856px) {
