@@ -46,6 +46,6 @@
 </header>
 <?php do_action( 'storefront_after_footer' ); ?>
 
-<script src="<?php echo get_stylesheet_directory_uri();?>/assets/js/site.min.js"></script>
+<script src="<?php echo get_stylesheet_directory_uri();?>/assets/js/site.js"></script>
 
 <?php wp_footer(); ?>

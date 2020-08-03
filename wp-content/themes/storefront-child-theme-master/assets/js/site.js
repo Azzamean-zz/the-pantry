@@ -4336,4 +4336,26 @@ window.Parsley.addValidator(
 );
 
 // Start things off
-$(document).ready(site.init);
+jQuery(document).ready(function($){
+		site.init;
+		var $pane = $('#home-pane');
+
+        if (
+            $pane.length &&
+            $(window).width() > 800 &&
+            $.cookie('seen_intro') != 1
+        ) {
+            $('body').addClass('show-pane');
+
+            var expiry = new Date();
+            expiry.setTime(expiry.getTime() + 60 * 60 * 1000);
+            $.cookie('seen_intro', 1, { expires: expiry });
+
+            $pane.on('click', function(e) {
+                e.preventDefault();
+                $('body').toggleClass('show-pane hide-pane');
+            });
+        }
+});
+
+
