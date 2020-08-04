@@ -439,6 +439,9 @@ h1.tribe-tickets__registration__page-title {
 .events-list #tribe-events-footer, .single-tribe_events #tribe-events-footer, .tribe-events-day #tribe-events-footer, .tribe-events-map #tribe-events-footer, .tribe-events-photo #tribe-events-footer {
 	border-top-color: #ebebeb !important;	
 }
+.entry .entry-content .tribe-common .tribe-tickets-quantity, .tribe-common .tribe-tickets-quantity {
+	margin-top: 8px;	
+}
 
 @media screen and (max-width: 856px) {
 	.tribe-events-calendar-month__week {
