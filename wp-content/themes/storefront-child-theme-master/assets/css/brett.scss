@@ -443,6 +443,14 @@ h1.tribe-tickets__registration__page-title {
 	margin-top: 8px;	
 }
 
+.tribe-events-nav-pagination {
+	display: none;	
+}
+
+.tribe-link-view-attendee {
+	display: none;	
+}
+
 @media screen and (max-width: 856px) {
 	.tribe-events-calendar-month__week {
 		border: none !important;	

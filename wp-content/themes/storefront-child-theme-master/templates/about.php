@@ -32,7 +32,7 @@ get_header(); ?>
 	                <?php
 					$args = array(
 						'post_type' => 'team',
-						'order' 	=> 'DESC',
+						'order' 	=> 'ASC',
 						'tax_query' => array(
 					        array(
 					            'taxonomy' => 'team-categories',
@@ -73,7 +73,7 @@ get_header(); ?>
 	                <?php
 					$args = array(
 						'post_type' => 'team',
-						'order' 	=> 'DESC',
+						'order' 	=> 'ASC',
 						'tax_query' => array(
 					        array(
 					            'taxonomy' => 'team-categories',
