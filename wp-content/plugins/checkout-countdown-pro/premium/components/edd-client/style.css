@@ -1,0 +1,39 @@
+.ccfwoo_pro-edd-client-license-key {
+	width: 280px;
+}
+
+.ccfwoo_pro-edd-client-button {
+	line-height: 20px !important;
+	margin: 0 10px 0 10px !important;
+}
+
+.ccfwoo_pro-edd-client-spin {
+	animation: ccfwoo_pro-edd-client-dashicons-spin 1s infinite;
+	animation-timing-function: linear;
+}
+
+@keyframes ccfwoo_pro-edd-client-dashicons-spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+input.ccfwoo_pro-edd-client-license-key {
+	font-family: monospace;
+}
+
+.ccfwoo_pro-edd-client-row {
+	padding-left: 35px;
+	padding-top: 10px;
+	padding-bottom: 15px;
+}
+
+.ccfwoo_pro-edd-client-msg {
+	margin-top: 8px;
+	padding-top: 5px;
+	padding-bottom: 10px;
+	font-size: 14px;
+}

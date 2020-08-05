@@ -1,0 +1,300 @@
+# Copyright (C) 2020 checkout-countdown-pro
+# This file is distributed under the same license as the checkout-countdown-pro package.
+msgid ""
+msgstr ""
+"Project-Id-Version: checkout-countdown-pro\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language-Team: Puri.io\n"
+"Last-Translator: Puri.io\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:95
+msgid "Manage License"
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:104
+msgid "Support"
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:118
+msgid "Click here to enter your license key for %s to get security updates."
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:121, dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:188
+msgid "Enter Your License"
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:122, dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:189
+msgid "Activate License"
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:144
+msgid "Change License"
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:152
+msgid "Beta Opt-in"
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:149
+msgid "Beta Opt-out"
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:156
+msgid "Check Expiry Date"
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:157
+msgid "Deactivate License"
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:186
+msgid "Almost done - Activate license to make %s properly work on your site"
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:225, dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:282
+msgid "Something went wrong"
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:237
+msgid "You have disabled beta updates."
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:234
+msgid "You enabled beta updates. Warning beta updates are for testing purposes only. "
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:250
+msgid "License successfully activated"
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:258
+msgid "License deactivated for this site"
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:275
+msgid "You entered the same license, use another one."
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:271
+msgid "License Successfully Changed."
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:329
+msgid "Your license key expired on %s."
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:336
+msgid "Your license key has been disabled."
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:341
+msgid "Invalid license."
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:347
+msgid "Your license is not active for this URL."
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:352
+msgid "This appears to be an invalid license key for %s."
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:315, dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:399, dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:438, dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:507
+msgid "An error occurred, please try again."
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:452
+msgid "Invalid license key"
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:450
+msgid "license has been disabled."
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:448
+msgid "License expired on: "
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:446
+msgid "License expiry: "
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:460
+msgid "Need help?"
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/functions/settings.php:17
+msgid "Advanced"
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/functions/settings.php:23
+msgid "Deprecated"
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/functions/settings.php:44
+msgid "Clear Cart"
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/functions/settings.php:51
+msgid "Enable Clear Cart"
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/functions/settings.php:52
+msgid "Clear customer's cart when the countdown reaches zero in their browser."
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/functions/settings.php:57
+msgid "Reset Time"
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/functions/settings.php:64
+msgid "Reset countdown when a product is added to cart"
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/functions/settings.php:65, dist/checkout-countdown-pro/premium/functions/settings.php:79, dist/checkout-countdown-pro/premium/functions/settings.php:124
+msgid "Enable"
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/functions/settings.php:71
+msgid "Loop/Restart"
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/functions/settings.php:78
+msgid "Enable Looping"
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/functions/settings.php:84
+msgid "Refresh Cart on Loop"
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/functions/settings.php:85
+msgid "Refreshes the cart products details with each loop."
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/functions/settings.php:91
+msgid "Redirection"
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/functions/settings.php:98
+msgid "Redirection Type"
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/functions/settings.php:109
+msgid "Redirection URL"
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/functions/settings.php:116
+msgid "AJAX Support"
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/functions/settings.php:123
+msgid "Enable AJAX Support"
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/functions/settings.php:129
+msgid "Additional Configuration"
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/functions/settings.php:136
+msgid "Expired Message Time"
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/functions/settings.php:137
+msgid "Change the amount of time the expire message displays."
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/functions/settings.php:146
+msgid "Deprecated features"
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/functions/settings.php:153
+msgid "Enable legacy options"
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/functions/settings.php:162
+msgid "BASC Gateway Countdown"
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/functions/settings.php:169
+msgid "Enable BACS Countdown"
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/functions/settings.php:170
+msgid "Enable on the thank you page if you are using manual transfers"
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/functions/settings.php:175
+msgid "Display Style"
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/functions/settings.php:185
+msgid "Days"
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/functions/settings.php:186
+msgid "Amount of days"
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/functions/settings.php:187, dist/checkout-countdown-pro/premium/functions/settings.php:197, dist/checkout-countdown-pro/premium/functions/settings.php:207
+msgid "0"
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/functions/settings.php:195
+msgid "hours"
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/functions/settings.php:196
+msgid "Amount of hours"
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/functions/settings.php:205
+msgid "minutes"
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/functions/settings.php:206
+msgid "Amount of minutes"
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/functions/settings.php:215
+msgid "Counting Down Text"
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/functions/settings.php:216
+msgid "Use tags to insert the time where needed.<br />You can also use basic html."
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/functions/settings.php:217
+msgid "We can only hold your order for {days} days {hours} hours {minutes} minutes and {seconds} seconds!"
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/functions/settings.php:223
+msgid "<b>Available Tags</b><br /><code>{days}</code> <code>{hours}</code> <code>{minutes}</code> <code>{seconds}</code><br />"
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/functions/settings.php:228
+msgid "Expired text"
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/functions/settings.php:234
+msgid "Enable Due Date"
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/functions/settings.php:235
+msgid "Due date will display along side the countdown"
+msgstr ""
+
+#: dist/checkout-countdown-pro/premium/functions/settings.php:240
+msgid "Due Language"
+msgstr ""
+
+#: dist/checkout-countdown-pro/settings/banana-framework/class-settings-api.php:590
+msgid "Save Settings"
+msgstr ""

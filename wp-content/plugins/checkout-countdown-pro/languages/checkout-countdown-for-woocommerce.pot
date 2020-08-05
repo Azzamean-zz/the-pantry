@@ -1,0 +1,252 @@
+# Copyright (C) 2020 Puri.io
+# This file is distributed under the same license as the Checkout Countdown for WooCommerce plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Checkout Countdown for WooCommerce 3.0.3\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/checkout-countdown-for-woocommerce\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2020-01-11T04:07:49+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.2.0\n"
+"X-Domain: checkout-countdown-for-woocommerce\n"
+
+#. Plugin Name of the plugin
+msgid "Checkout Countdown for WooCommerce"
+msgstr ""
+
+#. Description of the plugin
+msgid "A flexible WooCommerce cart/checkout countdown to help improve cart conversion."
+msgstr ""
+
+#. Author of the plugin
+msgid "Puri.io"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://puri.io/"
+msgstr ""
+
+#: checkout-countdown-for-woocommerce.php:117
+msgid "Update required to Checkout Countdown Pro 3.0+ or downgrade to Checkout Countdown Free 2.4.4"
+msgstr ""
+
+#: functions/enqueue.php:37
+msgctxt "Counting text."
+msgid "something"
+msgstr ""
+
+#: settings/settings.php:105
+msgid "General"
+msgstr ""
+
+#: settings/settings.php:127
+msgid "Quick Settings"
+msgstr ""
+
+#: settings/settings.php:134
+msgid "Enable"
+msgstr ""
+
+#: settings/settings.php:135
+msgid "Start"
+msgstr ""
+
+#: settings/settings.php:140
+msgid "Countdown from"
+msgstr ""
+
+#: settings/settings.php:141
+msgid "Minutes (Use decimal for testing)."
+msgstr ""
+
+#: settings/settings.php:142
+msgid "30"
+msgstr ""
+
+#: settings/settings.php:151
+#: settings/settings.php:172
+msgid "Countdown Locations"
+msgstr ""
+
+#: settings/settings.php:152
+#: settings/settings.php:173
+msgid "Choose where you would like to display the countdown."
+msgstr ""
+
+#: settings/settings.php:165
+msgid "Countdown Content"
+msgstr ""
+
+#: settings/settings.php:186
+msgid "Enable Default Message"
+msgstr ""
+
+#: settings/settings.php:187
+msgid "Display a default message before the customer has added a product to their cart."
+msgstr ""
+
+#: settings/settings.php:192
+msgid "Disabling the default message will hide the Countdown Bar until the customer has added product to their cart."
+msgstr ""
+
+#: settings/settings.php:197
+msgid "Default Message Text"
+msgstr ""
+
+#: settings/settings.php:198
+msgid "Show a message in the banner before the countdown has started."
+msgstr ""
+
+#: settings/settings.php:199
+msgid "10% with a coupon for 24 hours only"
+msgstr ""
+
+#: settings/settings.php:204
+msgid "Counting Down Text"
+msgstr ""
+
+#: settings/settings.php:205
+msgid ""
+"<p>
+\n"
+"\t\t\t\t\t<b>Available Tags</b><br /><code>{minutes}</code> <code>{seconds}</code><br />"
+msgstr ""
+
+#: settings/settings.php:210
+msgid "We can only hold your item for {minutes} minutes and {seconds} seconds!</p>"
+msgstr ""
+
+#: settings/settings.php:216
+msgid "Use the above tags to insert the time where needed.<br />You can also use basic html."
+msgstr ""
+
+#: settings/settings.php:221
+msgid "Countdown Expired Text"
+msgstr ""
+
+#: settings/settings.php:222
+msgid "Displayed when the countdown has finished"
+msgstr ""
+
+#: settings/settings.php:223
+msgid "We can only hold on to items for so long. Please try again"
+msgstr ""
+
+#: settings/settings.php:229
+msgid "Countdown Bar"
+msgstr ""
+
+#: settings/settings.php:236
+msgid "Bar Position"
+msgstr ""
+
+#: settings/settings.php:237
+msgid "Select the position of the Countdown Bar on your store."
+msgstr ""
+
+#: settings/settings.php:248
+msgid "Background Color"
+msgstr ""
+
+#: settings/settings.php:249
+msgid "Choose a background color for the banner."
+msgstr ""
+
+#: settings/settings.php:255
+msgid "Font Color"
+msgstr ""
+
+#: settings/settings.php:256
+msgid "Choose a font color for the bannner."
+msgstr ""
+
+#: settings/settings.php:262
+msgid "Miscellaneous"
+msgstr ""
+
+#: settings/settings.php:269
+msgid "Leading Zero"
+msgstr ""
+
+#: settings/settings.php:270
+msgid "Leading zeros for minutes & seconds allow countdowns with this style: <code>03:02</code>"
+msgstr ""
+
+#: settings/settings.php:275
+msgid "Advanced"
+msgstr ""
+
+#: settings/settings.php:282
+msgid "Delete settings on uninstallation "
+msgstr ""
+
+#: settings/settings.php:283
+msgid "Delete all settings from the database when uninstalling the plugin."
+msgstr ""
+
+#: settings/settings.php:304
+msgid "Shortcode"
+msgstr ""
+
+#: settings/settings.php:305
+msgid ""
+"<p>
+\n"
+"\t\t\t\t\t        Use the <strong>[checkout_countdown]</strong> shortcode anywhere in your theme.
+\n"
+"\t\t\t\t\t        </p>
+\n"
+"\t\t\t\t\t        <p>
+\n"
+"\t\t\t\t\t        The shortcode is unstyled by default. You can apply your style via CSS. Use the example CSS to get started.
+\n"
+"\t\t\t\t\t        </p>
+\n"
+"\t\t\t\t\t\t\t<h4>Example CSS</h4>
+\n"
+"\t\t\t\t\t\t\t<div style=\"background-color: #373737;padding: 5px;color: #ffffff;font-size: 11px;\">
+\n"
+"\t\t\t\t\t\t\t
+\n"
+"\t\t\t\t\t\t\t.checkout-countdown-shortcode {<br>
+\n"
+"\t\t\t\t\t        text-align: center;<br>
+\n"
+"\t\t\t\t\t        background: black;<br>
+\n"
+"\t\t\t\t\t        color: white;<br>
+\n"
+"\t\t\t\t\t        padding: 10px;<br>
+\n"
+"\t\t\t\t\t        width: 100%;<br>
+\n"
+"\t\t\t\t\t        display: inline-block;<br>
+\n"
+"\t\t\t\t\t        }
+\n"
+"\t\t\t\t\t\t\t
+\n"
+"\t\t\t\t\t\t\t</div>
+\n"
+"\t\t\t\t\t    "
+msgstr ""
+
+#: settings/settings.php:331
+msgid "Help us with a review"
+msgstr ""
+
+#: settings/settings.php:332
+msgid "<p>We have spent a long time developing Checkout Countdown,  <a href=\"https://wordpress.org/plugins/checkout-countdown-for-woocommerce/#reviews\" target=\"_blank\">leaving a review</a> give us motivation and help support the plugin!</p> "
+msgstr ""
+
+#: settings/settings.php:336
+msgid "Docs & Support"
+msgstr ""
+
+#: settings/settings.php:337
+msgid "See our <a href=\"https://puri.io/docs\" target=\"_blank\">documentation</a> if you need more information, if you can't find what you are looking for just reach out to <a href=\"https://puri.io/support\" target=\"_blank\">support</a>. "
+msgstr ""
