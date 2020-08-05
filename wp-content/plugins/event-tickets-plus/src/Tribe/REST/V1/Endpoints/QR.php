@@ -190,10 +190,17 @@ implements Tribe__REST__Endpoints__READ_Endpoint_Interface, Tribe__Documentation
 			return $response;
 		}
 
-		$ticket_id = (int) $qr_arr['ticket_id'];
+		$ticket_id     = (int) $qr_arr['ticket_id'];
 		$security_code = (string) $qr_arr['security_code'];
-		$service_provider = tribe( 'tickets.data_api' )->get_ticket_provider( $ticket_id );
-		if ( empty( $service_provider->security_code ) || (  $security_code !== get_post_meta( $ticket_id, $service_provider->security_code, true )  )   ) {
+
+		/** @var Tribe__Tickets__Data_API $data_api */
+		$data_api = tribe( 'tickets.data_api' );
+
+		$service_provider = $data_api->get_ticket_provider( $ticket_id );
+		if (
+			empty( $service_provider->security_code )
+			|| get_post_meta( $ticket_id, $service_provider->security_code, true ) !== $security_code
+		) {
 			$response = new WP_REST_Response( [ 'msg' => __( 'Security code is not valid!', 'event-tickets-plus' ) ] );
 			$response->set_status( 403 );
 
@@ -210,15 +217,26 @@ implements Tribe__REST__Endpoints__READ_Endpoint_Interface, Tribe__Documentation
 			return $response;
 		}
 
-		// add check for completed attendee status
-		$complete_statuses = (array) tribe( 'tickets.status' )->get_completed_status_by_provider_name( $service_provider );
-		if ( ! in_array( $attendee['order_status'], $complete_statuses ) ) {
-			$response = new WP_REST_Response( [
-				'msg' => esc_html( sprintf(
-					__( "This attendee's %s is not authorized to be Checked in", 'event-tickets-plus' ),
-					tribe_get_ticket_label_singular_lowercase( 'rest_qr' )
-				) )
-			] );
+		// Add check for completed attendee status.
+
+		/** @var Tribe__Tickets__Status__Manager $status */
+		$status = tribe( 'tickets.status' );
+
+		$complete_statuses = (array) $status->get_completed_status_by_provider_name( $service_provider );
+
+		if ( ! in_array( $attendee['order_status'], $complete_statuses, true ) ) {
+			$response = new WP_REST_Response(
+				[
+					'msg' => esc_html(
+						// Translators: %s: 'ticket' label (singular, lowercase).
+						sprintf(
+							__( "This attendee's %s is not authorized to be Checked in", 'event-tickets-plus' ),
+							tribe_get_ticket_label_singular_lowercase( 'rest_qr' )
+						)
+					),
+				]
+			);
+
 			$response->set_status( 403 );
 
 			return $response;

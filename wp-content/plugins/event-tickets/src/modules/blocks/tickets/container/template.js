@@ -42,7 +42,7 @@ const TicketsContainer = ( {
 		messages.title = __( 'There are no tickets yet', 'event-tickets' );
 		messages.description = __( 'Edit this block to create your first ticket.', 'event-tickets' );
 	} else if ( allTicketsPast ) {
-		messages.title = __( 'Registration Closed.', 'event-tickets' );
+		messages.title = __( 'Tickets are no longer available', 'event-tickets' );
 	} else {
 		messages.title = __( 'Tickets are not yet available', 'event-tickets' );
 	}

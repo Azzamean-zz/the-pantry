@@ -11,6 +11,11 @@
  * @since 4.12.1
  */
 class Tribe__Tickets_Plus__Meta__Field__Birth extends Tribe__Tickets_Plus__Meta__Field__Abstract_Field {
+	/**
+	 * Field type.
+	 *
+	 * @var string
+	 */
 	public $type = 'birth';
 
 	/**

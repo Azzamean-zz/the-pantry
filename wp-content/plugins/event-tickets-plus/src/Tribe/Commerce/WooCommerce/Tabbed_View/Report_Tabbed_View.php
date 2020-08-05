@@ -42,15 +42,19 @@ class Tribe__Tickets_Plus__Commerce__WooCommerce__Tabbed_View__Report_Tabbed_Vie
 	 * Registers the WooCommerce orders tab among those the tabbed view should render.
 	 *
 	 * @since 4.7
+	 * @since 4.12.3 Show WooCommerce Orders tab if has any WooCommerce tickets, even if not the default provider.
 	 *
 	 * @param Tribe__Tabbed_View $tabbed_view
 	 * @param WP_Post            $post
 	 */
 	public function register_orders_tab( Tribe__Tabbed_View $tabbed_view, WP_Post $post ) {
+		/** @var \Tribe__Tickets_Plus__Commerce__WooCommerce__Main $woo */
+		$woo = tribe( 'tickets-plus.commerce.woo' );
 
-		// only show Order Tab if WooCommerce is the Default Provider
-		$default_ticket = get_post_meta( $post->ID, tribe( 'tickets.handler' )->key_provider_field, true );
-		if ( 'Tribe__Tickets_Plus__Commerce__WooCommerce__Main' !== $default_ticket ) {
+		if (
+			! tribe_tickets_is_provider_active( $woo )
+			|| empty( $woo->post_has_tickets( $post ) )
+		) {
 			return;
 		}
 

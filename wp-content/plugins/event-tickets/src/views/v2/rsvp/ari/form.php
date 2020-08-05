@@ -13,10 +13,14 @@
  * @var Tribe__Tickets__Ticket_Object $rsvp The rsvp ticket object.
  * @var WP_Post|int $post_id The post object or ID.
  *
- * @since TBD
+ * @since 4.12.3
  *
- * @version TBD
+ * @version 4.12.3
  */
+
+if ( ! class_exists( 'Tribe__Tickets_Plus__Main' ) ) {
+	return;
+}
 
 $meta   = Tribe__Tickets_Plus__Main::instance()->meta();
 $fields = $meta->get_meta_fields_by_ticket( $rsvp->ID );

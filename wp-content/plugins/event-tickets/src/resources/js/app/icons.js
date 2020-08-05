@@ -98,7 +98,21 @@ module.exports = React;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+// ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, "ClockActive", function() { return /* reexport */ clock; });
+__webpack_require__.d(__webpack_exports__, "ClockInactive", function() { return /* reexport */ inactive_clock; });
+__webpack_require__.d(__webpack_exports__, "Tickets", function() { return /* reexport */ tickets; });
+__webpack_require__.d(__webpack_exports__, "TicketActive", function() { return /* reexport */ ticket; });
+__webpack_require__.d(__webpack_exports__, "TicketInactive", function() { return /* reexport */ inactive_ticket; });
+__webpack_require__.d(__webpack_exports__, "RSVP", function() { return /* reexport */ rsvp; });
+__webpack_require__.d(__webpack_exports__, "RSVPActive", function() { return /* reexport */ active_rsvp; });
+__webpack_require__.d(__webpack_exports__, "RSVPInactive", function() { return /* reexport */ inactive_rsvp; });
+__webpack_require__.d(__webpack_exports__, "AttendeesGravatar", function() { return /* reexport */ gravatar; });
+__webpack_require__.d(__webpack_exports__, "Attendees", function() { return /* reexport */ attendees; });
+__webpack_require__.d(__webpack_exports__, "Orders", function() { return /* reexport */ orders; });
 
 // EXTERNAL MODULE: external "React"
 var external_React_ = __webpack_require__(13);
@@ -380,17 +394,6 @@ function orders_objectWithoutProperties(obj, keys) {
   return external_React_default.a.createElement("svg", orders_extends({ xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 36 47.99" }, props), external_React_default.a.createElement("title", null, "block-orders-icon"), external_React_default.a.createElement("g", { "data-name": "Layer 2" }, external_React_default.a.createElement("path", { d: "M32 0H4a4 4 0 0 0-4 4v40a4 4 0 0 0 4 4h28a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4zM20.78 39.58h-.08l-.3.06-.83.14-.08 3.51h-3.25l-.08-3.52a7.52 7.52 0 0 1-4.28-1.93 7.93 7.93 0 0 1-2.13-5.14h4a3.71 3.71 0 0 0 .92 2.64 4.2 4.2 0 0 0 3.24 1.34 4.07 4.07 0 0 0 .88-.06 5.46 5.46 0 0 0 1.13-.26 3.58 3.58 0 0 0 1.08-.54 3 3 0 0 0 .78-.9 2.55 2.55 0 0 0 .31-1.28 2.19 2.19 0 0 0-.76-1.81 7.3 7.3 0 0 0-2.51-1.07l-3.52-1h-.12c-3-1-4.54-2.47-4.85-4.9a3 3 0 0 1-.07-.63v-.26-.12c0-3.07 2.77-5.56 5.93-5.79l.08-3.51h3.25l.08 3.57a10.4 10.4 0 0 1 1.66.43 6.68 6.68 0 0 1 2 1.17 5.84 5.84 0 0 1 1.43 1.85 6.67 6.67 0 0 1 .63 2.43h-4a3.21 3.21 0 0 0-.76-2 3.34 3.34 0 0 0-1.78-.86 4.91 4.91 0 0 0-1.08-.09 7.1 7.1 0 0 0-.84 0 8.06 8.06 0 0 0-.85.19 2.7 2.7 0 0 0-.89.48 2.32 2.32 0 0 0-.64.81 2.57 2.57 0 0 0-.23 1.13 2 2 0 0 0 .66 1.59 5 5 0 0 0 2.09.88l1.75.41.73.18.39.1c.47.12.92.25 1.36.4l.26.1.42.16a8.83 8.83 0 0 1 1.21.59 5.8 5.8 0 0 1 3.19 5.33c-.03 3.04-2.53 5.51-5.53 6.18zM28.86 10H7.51a2.5 2.5 0 0 1 0-5h21.35a2.5 2.5 0 0 1 0 5z", "data-name": "Layer 1" })));
 });
 // CONCATENATED MODULE: ./src/modules/icons/index.js
-/* concated harmony reexport ClockActive */__webpack_require__.d(__webpack_exports__, "ClockActive", function() { return clock; });
-/* concated harmony reexport ClockInactive */__webpack_require__.d(__webpack_exports__, "ClockInactive", function() { return inactive_clock; });
-/* concated harmony reexport Tickets */__webpack_require__.d(__webpack_exports__, "Tickets", function() { return tickets; });
-/* concated harmony reexport TicketActive */__webpack_require__.d(__webpack_exports__, "TicketActive", function() { return ticket; });
-/* concated harmony reexport TicketInactive */__webpack_require__.d(__webpack_exports__, "TicketInactive", function() { return inactive_ticket; });
-/* concated harmony reexport RSVP */__webpack_require__.d(__webpack_exports__, "RSVP", function() { return rsvp; });
-/* concated harmony reexport RSVPActive */__webpack_require__.d(__webpack_exports__, "RSVPActive", function() { return active_rsvp; });
-/* concated harmony reexport RSVPInactive */__webpack_require__.d(__webpack_exports__, "RSVPInactive", function() { return inactive_rsvp; });
-/* concated harmony reexport AttendeesGravatar */__webpack_require__.d(__webpack_exports__, "AttendeesGravatar", function() { return gravatar; });
-/* concated harmony reexport Attendees */__webpack_require__.d(__webpack_exports__, "Attendees", function() { return attendees; });
-/* concated harmony reexport Orders */__webpack_require__.d(__webpack_exports__, "Orders", function() { return orders; });
 
 
 

@@ -401,8 +401,7 @@
 		right: 0;
 		width: 80%;
 		top: 50%;
-		-webkit-transform: translateY(-50%);
-		        transform: translateY(-50%);
+		transform: translateY(-50%);
 	}
 
 .accordion-header.is-active::before {
@@ -446,13 +445,39 @@
 		display: block;
 	}
 
-/* -------------------------------------------------------------------------
-	 * SVG Icons
-	 * ------------------------------------------------------------------------- */
+.tribe-common-c-loader.tribe-tickets-loader__tickets-block,
+	.tribe-common-c-loader.tribe-tickets-loader__modal {
+		align-items: center;
+		background: rgba(255,255,255, 0.6);
+		display: flex;
+		height: 100%;
+		justify-content: center;
+		left: 0;
+		padding: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		z-index: 100;
+	}
 
-.event-tickets .tribe-tickets-svgicon {
-		background-repeat: no-repeat;
-		background-size: contain;
+.tribe-common-c-loader.tribe-tickets-loader__modal {
+		height: 100vh;
+		position: fixed;
+		width: 100vw;
+	}
+
+.event-tickets .tribe-common-c-loader {
+		align-items: center;
+		background: rgba(255,255,255, 0.6);
+		display: flex;
+		height: 100%;
+		justify-content: center;
+		left: 0;
+		padding: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		z-index: 100;
 	}
 
 .tribe-common .tribe-tickets__notice {
@@ -524,29 +549,51 @@
 		padding: 0 12px 0 0;
 	}
 
-.tribe-common-c-loader.tribe-tickets-loader__tickets-block,
-		.tribe-common-c-loader.tribe-tickets-loader__modal {
-			-webkit-align-items: center;
-			        align-items: center;
-			background: rgba(255,255,255, 0.6);
-			display: -webkit-flex;
-			display: flex;
-			height: 100%;
-			-webkit-justify-content: center;
-			        justify-content: center;
-			left: 0;
+/* -------------------------------------------------------------------------
+	 * SVG Icons
+	 * ------------------------------------------------------------------------- */
+
+.event-tickets .tribe-tickets-svgicon {
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
+
+/* -----------------------------------------------------------------------------
+ *
+ * Tooltip
+ *
+ * ----------------------------------------------------------------------------- */
+
+/* Defining our tooltipster theme. */
+
+.tooltipster-base.tribe-tickets-tooltip-theme {
+	background-color: #FFFFFF;
+	border: 1px solid #D5D5D5;
+	border-radius: 4px;
+	box-shadow: 0 2px 12px 0 rgba(0,0,0, 0.14);
+	height: auto !important;
+	padding: 24px;
+	max-width: 254px;
+}
+
+.tooltipster-base.tribe-tickets-tooltip-theme .tooltipster-box {
+		background-color: transparent;
+		border: 0;
+		border-radius: 0;
+		box-shadow: none;
+		margin: 0;
+	}
+
+.tooltipster-base.tribe-tickets-tooltip-theme .tooltipster-box .tooltipster-content {
+			color: #141827;
+			overflow: inherit;
 			padding: 0;
-			position: absolute;
-			top: 0;
-			width: 100%;
-			z-index: 100;
+			word-break: break-word;
 		}
 
-.tribe-common-c-loader.tribe-tickets-loader__modal {
-			height: 100vh;
-			position: fixed;
-			width: 100vw;
-		}
+.tooltipster-base.tribe-tickets-tooltip-theme .tooltipster-arrow {
+		display: none;
+	}
 
 /* -----------------------------------------------------------------------------
 	 *
@@ -591,11 +638,6 @@
 			text-align: center;
 			text-decoration: underline;
 			transition: color 0.2s ease;
-
-			background-color: transparent;
-			color: #334AFF;
-			padding: 11px 20px;
-			width: 100%;
 		}
 
 .tribe-common button.tribe-common-c-btn-link:hover,
@@ -608,6 +650,14 @@
 	.tribe-common a.tribe-common-c-btn-link:focus {
 		background-color: transparent;
 	}
+
+.tribe-common button.tribe-common-c-btn-link, .tribe-common input[type="button"].tribe-common-c-btn-link, .tribe-common input[type="submit"].tribe-common-c-btn-link, .tribe-common a.tribe-common-c-btn-link {
+
+			background-color: transparent;
+			color: #334AFF;
+			padding: 11px 20px;
+			width: 100%;
+}
 
 .tribe-common button.tribe-common-c-btn-link:focus,
 			.tribe-common button.tribe-common-c-btn-link:hover,
@@ -941,8 +991,7 @@
 		padding: .5em;
 		position: absolute;
 		top: 50%;
-		-webkit-transform: translateY(-50%);
-		        transform: translateY(-50%);
+		transform: translateY(-50%);
 		z-index: 1;
 	}
 
@@ -1106,9 +1155,6 @@ p.description {
 
 #ticket_form .tooltip_container {
 	position: relative;
-
-	display: inline;
-	vertical-align: middle;
 }
 
 #ticket_form .tooltip_container .tooltip {
@@ -1120,14 +1166,19 @@ p.description {
 		padding: .5em;
 		position: absolute;
 		top: 50%;
-		-webkit-transform: translateY(-50%);
-		        transform: translateY(-50%);
+		transform: translateY(-50%);
 		z-index: 1;
 	}
 
 #ticket_form .tooltip_container:hover .tooltip {
 			display: block;
 		}
+
+#ticket_form .tooltip_container {
+
+	display: inline;
+	vertical-align: middle;
+}
 
 #ticket_form .tooltip_container .tooltip {
 		background-color: #efefef;
@@ -1162,15 +1213,19 @@ p.description {
 @media (min-width: 768px) {
 
 .tribe-common-c-loader.tribe-tickets-loader__tickets-block,
-		.tribe-common-c-loader.tribe-tickets-loader__modal {
-				padding: 0
-		}
+	.tribe-common-c-loader.tribe-tickets-loader__modal {
+			padding: 0
+	}
+
+.event-tickets .tribe-common-c-loader {
+			padding: 0
+	}
 
 .tribe-common button.tribe-common-c-btn-link, .tribe-common input[type="button"].tribe-common-c-btn-link, .tribe-common input[type="submit"].tribe-common-c-btn-link, .tribe-common a.tribe-common-c-btn-link {
 				background-color: transparent;
 				width: auto
 		}
-			}
+		}
 
 @media (min-width: 782px) {
 
@@ -1210,8 +1265,7 @@ p.description {
 				margin-top: 5px;
 				position: relative;
 				top: auto;
-				-webkit-transform: none;
-				        transform: none;
+				transform: none;
 				width: 100%
 		}
 
@@ -1235,8 +1289,7 @@ p.description {
 			margin-top: 5px;
 			position: relative;
 			top: auto;
-			-webkit-transform: none;
-			        transform: none;
+			transform: none;
 			width: 100%
 	}
 			}

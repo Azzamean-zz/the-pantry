@@ -353,7 +353,7 @@
  .event-tickets .tribe-tickets__form .tribe-tickets__form-field {
 		display: block;
 		width: 100%;
-		margin-bottom: 16px;
+		margin-bottom: 12px;
 	}
 
  .event-tickets .tribe-tickets__form .tribe-tickets__form-field--required header:first-child::after,
@@ -411,7 +411,7 @@
 			border-color: #DA394D ! important;
 		}
 
- .event-tickets .tribe-tickets__form input[type="text"]::-webkit-input-placeholder, .event-tickets .tribe-tickets__form input[type="search"]::-webkit-input-placeholder, .event-tickets .tribe-tickets__form input[type="url"]::-webkit-input-placeholder, .event-tickets .tribe-tickets__form input[type="tel"]::-webkit-input-placeholder, .event-tickets .tribe-tickets__form input[type="email"]::-webkit-input-placeholder, .event-tickets .tribe-tickets__form input[type="password"]::-webkit-input-placeholder {
+ .event-tickets .tribe-tickets__form input[type="text"]::-moz-placeholder, .event-tickets .tribe-tickets__form input[type="search"]::-moz-placeholder, .event-tickets .tribe-tickets__form input[type="url"]::-moz-placeholder, .event-tickets .tribe-tickets__form input[type="tel"]::-moz-placeholder, .event-tickets .tribe-tickets__form input[type="email"]::-moz-placeholder, .event-tickets .tribe-tickets__form input[type="password"]::-moz-placeholder {
 			color: #727272;
 			font-family: "Helvetica Neue", Helvetica, -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
 		}
@@ -467,15 +467,12 @@
 	}
 
  .event-tickets .tribe-tickets__form .tribe-tickets__button--next {
-		-webkit-align-items: center;
-		        align-items: center;
+		align-items: center;
 		border: 1px solid #E4E4E4;
 		background-color: #334AFF;
 		color: #FFFFFF;
-		display: -webkit-inline-flex;
 		display: inline-flex;
-		-webkit-justify-content: center;
-		        justify-content: center;
+		justify-content: center;
 		min-height: 54px;
 		max-width: 100%;
 	}
@@ -486,8 +483,7 @@
 
  @media(min-width: 768px) {
 			.event-tickets .tribe-tickets__form .tribe-tickets__form-field-input-text label:not([for*="text-area"]), .event-tickets .tribe-tickets__form .tribe-tickets__form-field-input-select label:not([for*="text-area"]) {
-				-webkit-align-self: center;
-				        align-self: center;
+				align-self: center;
 			}
 
  .event-tickets .tribe-tickets__form input[type="text"],

@@ -210,10 +210,8 @@
 	}
 
 .tribe-events-tickets tr {
-		display: -webkit-flex;
 		display: flex;
-		-webkit-flex-flow: row wrap;
-		        flex-flow: row wrap;
+		flex-flow: row wrap;
 	}
 
 .tribe-events-tickets tr:not(:first-child) {
@@ -221,8 +219,7 @@
 		}
 
 .tribe-events-tickets td {
-		-webkit-flex: none;
-		        flex: none;
+		flex: none;
 		padding: 8px 10px;
 		width: 100%;
 		word-break: normal;
@@ -234,8 +231,7 @@
 
 .tribe-events-tickets td.quantity,
 		.tribe-events-tickets td.woocommerce {
-			-webkit-order: 2;
-			        order: 2;
+			order: 2;
 		}
 
 .tribe-events-tickets td.quantity input[type="number"], .tribe-events-tickets td.woocommerce input[type="number"] {
@@ -247,8 +243,7 @@
 			}
 
 .tribe-events-tickets td.tickets_submit {
-			-webkit-order: 3;
-			        order: 3;
+			order: 3;
 		}
 
 .tribe-events-tickets td.tickets_submit .tribe-button {
@@ -273,8 +268,7 @@
 			left: 50%;
 			position: absolute;
 			top: 50%;
-			-webkit-transform: translate(-50%, -50%);
-			        transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
 			width: 90%;
 		}
 
@@ -360,26 +354,20 @@
 
 .tribe-block__rsvp__ticket {
 	border: 1px solid #e1e3e6;
-	display: -webkit-flex;
 	display: flex;
-	-webkit-flex-wrap: wrap;
-	        flex-wrap: wrap;
+	flex-wrap: wrap;
 	position: relative;
 	width: 100%;
 }
 
 .tribe-block__rsvp__icon {
-	-webkit-align-items: center;
-	        align-items: center;
+	align-items: center;
 	background: #ffffff;
 	border-bottom: 1px dashed #b5bcc2;
 	color: #434343;
-	display: -webkit-flex;
 	display: flex;
-	-webkit-flex: none;
-	        flex: none;
-	-webkit-flex-direction: column;
-	        flex-direction: column;
+	flex: none;
+	flex-direction: column;
 	font-size: 14px;
 	font-weight: bold;
 	line-height: 17px;
@@ -393,8 +381,7 @@
 
 .tribe-block__rsvp__content {
 	background-color: #f5f8f9;
-	-webkit-flex: auto;
-	        flex: auto;
+	flex: auto;
 }
 
 .tribe-block__rsvp__details__status {}
@@ -420,10 +407,8 @@
 
 .tribe-block__rsvp__availability {
 	color: #545d66;
-	display: -webkit-flex;
 	display: flex;
-	-webkit-align-items: center;
-	        align-items: center;
+	align-items: center;
 	font-size: 12px;
 	line-height: 18px;
 }
@@ -435,17 +420,14 @@
 }
 
 .tribe-block__rsvp__status {
-	display: -webkit-flex;
 	display: flex;
-	-webkit-flex-wrap: nowrap;
-	        flex-wrap: nowrap;
+	flex-wrap: nowrap;
 	padding: 0 20px 25px;
 	text-align: center;
 }
 
 .tribe-block__rsvp__status > span {
-		-webkit-flex: none;
-		        flex: none;
+		flex: none;
 		margin-right: 15px;
 		width: calc((100% - 15px)/2);
 	}
@@ -455,20 +437,17 @@
 		}
 
 .tribe-block__rsvp__status-button {
-	-webkit-align-items: center;
-	        align-items: center;
+	align-items: center;
 	border: 1px solid #545d66;
 	border-radius: 4px;
 	background: #ffffff;
 	color: #545d66;
-	display: -webkit-flex;
 	display: flex;
 	font-family: Helvetica, sans-serif, arial;
 	font-size: 14px;
 	font-weight: bold;
 	height: 44px;
-	-webkit-justify-content: center;
-	        justify-content: center;
+	justify-content: center;
 	line-height: 1;
 	padding: 0;
 	width: 100%;
@@ -537,14 +516,12 @@
 
 .tribe-block__rsvp__form form {
 		border-top: 1px solid #e1e3e6;
-		display: -webkit-flex;
 		display: flex;
 		padding: 30px 0;
 	}
 
 .tribe-left {
-	-webkit-flex: none;
-	        flex: none;
+	flex: none;
 }
 
 .tribe-block__rsvp__number-input {
@@ -552,9 +529,7 @@
 }
 
 .tribe-block__rsvp__number-input-inner {
-	-webkit-align-items: center;
-	        align-items: center;
-	display: -webkit-flex;
+	align-items: center;
 	display: flex;
 }
 
@@ -637,13 +612,11 @@
 	}
 
 .tribe-block__rsvp__number-input-button--plus:after {
-		-webkit-transform: rotate(90deg);
-		        transform: rotate(90deg);
+		transform: rotate(90deg);
 	}
 
 .tribe-right {
-	-webkit-flex: auto;
-	        flex: auto;
+	flex: auto;
 }
 
 .tribe-right input[type="text"],
@@ -660,7 +633,7 @@
 			width: 100%;
 		}
 
-.tribe-right input[type="text"]::-webkit-input-placeholder, .tribe-right input[type="email"]::-webkit-input-placeholder {
+.tribe-right input[type="text"]::-moz-placeholder, .tribe-right input[type="email"]::-moz-placeholder {
 				color: #a2aab2;
 			}
 
@@ -683,9 +656,7 @@
 	}
 
 .tribe-right label[for^="tribe-tickets-attendees-list-optout"] {
-			-webkit-align-items: flex-start;
-			        align-items: flex-start;
-			display: -webkit-flex;
+			align-items: flex-start;
 			display: flex;
 			margin: 0 0 15px;
 			padding-top: 7px;
@@ -699,8 +670,7 @@
 				border: 1px solid #e1e3e6;
 				border-radius: 0;
 				cursor: pointer;
-				-webkit-flex: none;
-				        flex: none;
+				flex: none;
 				height: 16px;
 				margin: 1px 10px 0 0;
 				width: 16px;
@@ -785,12 +755,10 @@
 	}
 
 .tribe-common-c-loader.tribe-block__rsvp__loading {
-	-webkit-align-items: center;
-	        align-items: center;
+	align-items: center;
 	background: rgba( 255, 255, 255, .7 );
 	height: 100%;
-	-webkit-justify-content: center;
-	        justify-content: center;
+	justify-content: center;
 	left: 0;
 	margin: 0;
 	padding: 0;
@@ -868,10 +836,8 @@
 @media (min-width: 600px) {
 
 .tribe-block__rsvp__ticket {
-		-webkit-align-items: stretch;
-		        align-items: stretch;
-		-webkit-flex-wrap: nowrap;
-		        flex-wrap: nowrap
+		align-items: stretch;
+		flex-wrap: nowrap
 }
 
 .tribe-block__rsvp__icon {

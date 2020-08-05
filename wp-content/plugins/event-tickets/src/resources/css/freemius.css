@@ -17,12 +17,9 @@
 	}
 
 		.events-cal #fs_connect .fs-visual, .toplevel_page_tribe-common #fs_connect .fs-visual, .toplevel_page_tribe-help #fs_connect .fs-visual, .toplevel_page_tribe-app-shop #fs_connect .fs-visual {
-			-webkit-align-content: center;
-			        align-content: center;
-			-webkit-align-items: center;
-			        align-items: center;
+			align-content: center;
+			align-items: center;
 			background-color: transparent;
-			display: -webkit-flex;
 			display: flex;
 			margin: 0 35px;
 			padding: 20px 0 0;
@@ -162,24 +159,20 @@
 
 		.events-cal #fs_connect .fs-actions, .toplevel_page_tribe-common #fs_connect .fs-actions, .toplevel_page_tribe-help #fs_connect .fs-actions, .toplevel_page_tribe-app-shop #fs_connect .fs-actions {
 			background-color: #f3f3f3;
-			display: -webkit-flex;
 			display: flex;
-			-webkit-flex-flow: row wrap;
-			        flex-flow: row wrap;
+			flex-flow: row wrap;
 			padding: 20px 35px;
 		}
 
 		.events-cal #fs_connect .fs-actions form, .toplevel_page_tribe-common #fs_connect .fs-actions form, .toplevel_page_tribe-help #fs_connect .fs-actions form, .toplevel_page_tribe-app-shop #fs_connect .fs-actions form {
 				float: none;
 				margin-right: 15px;
-				-webkit-order: 1;
-				        order: 1;
+				order: 1;
 			}
 
 		.events-cal #fs_connect .fs-actions #skip_activation, .toplevel_page_tribe-common #fs_connect .fs-actions #skip_activation, .toplevel_page_tribe-help #fs_connect .fs-actions #skip_activation, .toplevel_page_tribe-app-shop #fs_connect .fs-actions #skip_activation {
 				float: none;
-				-webkit-order: 2;
-				        order: 2;
+				order: 2;
 			}
 
 		.events-cal #fs_connect .fs-actions .button, .toplevel_page_tribe-common #fs_connect .fs-actions .button, .toplevel_page_tribe-help #fs_connect .fs-actions .button, .toplevel_page_tribe-app-shop #fs_connect .fs-actions .button {
@@ -213,16 +206,13 @@
 			}
 
 		.events-cal #fs_connect .fs-permissions.fs-open ul, .toplevel_page_tribe-common #fs_connect .fs-permissions.fs-open ul, .toplevel_page_tribe-help #fs_connect .fs-permissions.fs-open ul, .toplevel_page_tribe-app-shop #fs_connect .fs-permissions.fs-open ul {
-					display: -webkit-flex;
 					display: flex;
-					-webkit-flex-wrap: wrap;
-					        flex-wrap: wrap;
+					flex-wrap: wrap;
 					margin: 0;
 				}
 
 		.events-cal #fs_connect .fs-permissions.fs-open ul li, .toplevel_page_tribe-common #fs_connect .fs-permissions.fs-open ul li, .toplevel_page_tribe-help #fs_connect .fs-permissions.fs-open ul li, .toplevel_page_tribe-app-shop #fs_connect .fs-permissions.fs-open ul li {
-						-webkit-flex: 0 50%;
-						        flex: 0 50%;
+						flex: 0 50%;
 						padding-bottom: 10px;
 					}
 

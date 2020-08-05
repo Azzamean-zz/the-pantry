@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit9080db885871024141ecf9b0e9e651b8
+class ComposerStaticInitec09efc627d7b27ca9274fcc43fd6d5b
 {
     public static $prefixLengthsPsr4 = array (
         'T' => 
@@ -28,18 +28,30 @@ class ComposerStaticInit9080db885871024141ecf9b0e9e651b8
         'Tribe\\Tickets\\Events\\Views\\V2\\Service_Provider' => __DIR__ . '/../..' . '/src/Tribe/Events/Views/V2/Service_Provider.php',
         'Tribe\\Tickets\\Migration\\Queue' => __DIR__ . '/../..' . '/src/Tribe/Migration/Queue.php',
         'Tribe\\Tickets\\Migration\\Queue_4_12' => __DIR__ . '/../..' . '/src/Tribe/Migration/Queue_4_12.php',
+        'Tribe\\Tickets\\Promoter\\Service_Provider' => __DIR__ . '/../..' . '/src/Tribe/Promoter/Service_Provider.php',
+        'Tribe\\Tickets\\Promoter\\Triggers\\Builders\\Attendee_Trigger' => __DIR__ . '/../..' . '/src/Tribe/Promoter/Triggers/Builders/Attendee_Trigger.php',
+        'Tribe\\Tickets\\Promoter\\Triggers\\Contracts\\Attendee_Model' => __DIR__ . '/../..' . '/src/Tribe/Promoter/Triggers/Contracts/Attendee_Model.php',
+        'Tribe\\Tickets\\Promoter\\Triggers\\Contracts\\Builder' => __DIR__ . '/../..' . '/src/Tribe/Promoter/Triggers/Contracts/Builder.php',
+        'Tribe\\Tickets\\Promoter\\Triggers\\Contracts\\Triggered' => __DIR__ . '/../..' . '/src/Tribe/Promoter/Triggers/Contracts/Triggered.php',
+        'Tribe\\Tickets\\Promoter\\Triggers\\Director' => __DIR__ . '/../..' . '/src/Tribe/Promoter/Triggers/Director.php',
+        'Tribe\\Tickets\\Promoter\\Triggers\\Dispatcher' => __DIR__ . '/../..' . '/src/Tribe/Promoter/Triggers/Dispatcher.php',
+        'Tribe\\Tickets\\Promoter\\Triggers\\Factory' => __DIR__ . '/../..' . '/src/Tribe/Promoter/Triggers/Factory.php',
+        'Tribe\\Tickets\\Promoter\\Triggers\\Models\\Attendee' => __DIR__ . '/../..' . '/src/Tribe/Promoter/Triggers/Models/Attendee.php',
+        'Tribe\\Tickets\\Promoter\\Triggers\\Observers\\Commerce' => __DIR__ . '/../..' . '/src/Tribe/Promoter/Triggers/Observers/Commerce.php',
+        'Tribe\\Tickets\\Promoter\\Triggers\\Observers\\RSVP' => __DIR__ . '/../..' . '/src/Tribe/Promoter/Triggers/Observers/RSVP.php',
         'Tribe\\Tickets\\Repositories\\Post_Repository' => __DIR__ . '/../..' . '/src/Tribe/Repositories/Post_Repository.php',
         'Tribe\\Tickets\\Repositories\\Traits\\Event' => __DIR__ . '/../..' . '/src/Tribe/Repositories/Traits/Event.php',
         'Tribe\\Tickets\\Repositories\\Traits\\Post_Attendees' => __DIR__ . '/../..' . '/src/Tribe/Repositories/Traits/Post_Attendees.php',
         'Tribe\\Tickets\\Repositories\\Traits\\Post_Tickets' => __DIR__ . '/../..' . '/src/Tribe/Repositories/Traits/Post_Tickets.php',
+        'Tribe\\Tickets\\Service_Providers\\Customizer' => __DIR__ . '/../..' . '/src/Tribe/Service_Providers/Customizer.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit9080db885871024141ecf9b0e9e651b8::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit9080db885871024141ecf9b0e9e651b8::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit9080db885871024141ecf9b0e9e651b8::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitec09efc627d7b27ca9274fcc43fd6d5b::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitec09efc627d7b27ca9274fcc43fd6d5b::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitec09efc627d7b27ca9274fcc43fd6d5b::$classMap;
 
         }, null, ClassLoader::class);
     }

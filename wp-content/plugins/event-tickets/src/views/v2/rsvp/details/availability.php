@@ -12,15 +12,15 @@
  *
  * @var Tribe__Tickets__Ticket_Object $rsvp The rsvp ticket object.
  *
- * @since TBD
+ * @since 4.12.3
  *
- * @version TBD
+ * @version 4.12.3
  */
 
 $is_unlimited = -1 === $rsvp->remaining();
 
 ?>
-<div class="tribe-tickets__rsvp-availability tribe-common-b3">
+<div class="tribe-tickets__rsvp-availability tribe-common-h6 tribe-common-h--alt tribe-common-b3--min-medium">
 	<?php if ( ! $rsvp->is_in_stock() ) : ?>
 		<?php $this->template( 'v2/rsvp/details/availability/full', [ 'rsvp' => $rsvp ] ); ?>
 	<?php elseif ( $is_unlimited ) : ?>
