@@ -49,6 +49,8 @@ switch ($_SERVER['HTTP_HOST']) {
           define('DB_CHARSET', 'utf8');
           define('DB_COLLATE', '');
           define('WP_DEBUG', false);     
+			update_option( 'siteurl', 'http://thepantry-v2.herokuapp.com' );
+			update_option( 'home', 'http://thepantry-v2.herokuapp.com' );
      break;
 }  
 
