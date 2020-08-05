@@ -17,11 +17,10 @@
  *
  * @package WordPress
  */
-
 // ** MySQL settings - You can get this info from your web host ** //
-switch ($_SERVER['HTTP_HOST']) {
+switch ($_SERVER['SERVER_NAME']) {
      /** Development Server */    
-     case 'pantrynew:8890':
+     case 'pantrynew':
           define('DB_NAME', 'wp_pantrynew');
           define('DB_USER', 'wp_pantrynew');
           define('DB_PASSWORD', 'wp_pantrynew');
