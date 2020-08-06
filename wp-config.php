@@ -27,7 +27,7 @@ switch ($_SERVER['SERVER_NAME']) {
           define('DB_HOST', 'localhost');
           define('DB_CHARSET', 'utf8');
           define('DB_COLLATE', '');
-          define('WP_DEBUG', true);     
+          define('WP_DEBUG', true);  
      break;
      /** Staging Server */
      case 'pantry.deicreative.com':
@@ -49,7 +49,19 @@ switch ($_SERVER['SERVER_NAME']) {
           define('DB_COLLATE', '');
           define('WP_DEBUG', false);     
      break;
-}  
+} 
+
+if ( $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https' )
+{
+        $_SERVER['HTTPS']       = 'on';
+        $_SERVER['SERVER_PORT'] = '443';
+        define('FORCE_SSL_ADMIN', true);
+}
+
+if ( isset($_SERVER['HTTP_X_FORWARDED_HOST']) ) {
+        $_SERVER['HTTP_HOST'] = $_SERVER['HTTP_X_FORWARDED_HOST'];
+}
+ 
 
 /** Database Charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8mb4' );
