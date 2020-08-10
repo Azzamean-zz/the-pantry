@@ -248,6 +248,69 @@ function custom_woocommerce_auto_complete_order( $order_id ) {
 }
 
 /**
+ * Change "Coupon"
+ */
+add_filter( 'gettext', 'woocommerce_rename_coupon_field_on_cart', 10, 3 );
+add_filter( 'gettext', 'woocommerce_rename_coupon_field_on_cart', 10, 3 );
+add_filter('woocommerce_coupon_error', 'rename_coupon_label', 10, 3);
+add_filter('woocommerce_coupon_message', 'rename_coupon_label', 10, 3);
+add_filter('woocommerce_cart_totals_coupon_label', 'rename_coupon_label',10, 1);
+add_filter( 'woocommerce_checkout_coupon_message', 'woocommerce_rename_coupon_message_on_checkout' );
+
+
+function woocommerce_rename_coupon_field_on_cart( $translated_text, $text, $text_domain ) {
+	// bail if not modifying frontend woocommerce text
+	if ( is_admin() || 'woocommerce' !== $text_domain ) {
+		return $translated_text;
+	}
+	if ( 'Coupon:' === $text ) {
+		$translated_text = 'Gift Certificate:';
+	}
+
+	if ('Coupon has been removed.' === $text){
+		$translated_text = 'Gift certificate has been removed.';
+	}
+
+	if ( 'Apply coupon' === $text ) {
+		$translated_text = 'Apply';
+	}
+
+	if ( 'Coupon code' === $text ) {
+		$translated_text = 'Add Gift Certificate / Credit';
+	
+	} 
+
+	return $translated_text;
+}
+
+
+// rename the "Have a Coupon?" message on the checkout page
+function woocommerce_rename_coupon_message_on_checkout() {
+	return 'Have a code?' . ' ' . __( '<a href="#" class="showcoupon">Click here to enter your code</a>', 'woocommerce' ) . '';
+}
+
+
+function rename_coupon_label($err, $err_code=null, $something=null){
+
+	$err = str_ireplace("Coupon","Gift Certificate ",$err);
+
+	return $err;
+}
+
+/* Tribe, prevent woo tickets email to be sent */
+add_filter( 'tribe_tickets_plus_email_enabled', '__return_false' );
+
+/*
+* The Events Calendar WooCommerce Tickets - Change You'll receive your tickets in another email.
+* @ Version 4.3.1
+*/
+add_filter('wootickets_email_message', 'woo_tickets_filter_completed_order', 10 );
+function woo_tickets_filter_completed_order($text) {
+	$text = "";
+ 	return $text;
+}
+
+/**
  * Note: DO NOT! alter or remove the code above this text and only add your custom PHP functions below this text.
  */
 
