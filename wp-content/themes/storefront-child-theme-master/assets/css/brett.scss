@@ -451,6 +451,18 @@ h1.tribe-tickets__registration__page-title {
 	display: none;	
 }
 
+.tribe-events-c-small-cta__price {
+	display: none !important;	
+}
+
+.stripe-amex-icon {
+	display: none !important;	
+}
+
+table.cart td.actions input {
+	width: 250px !important;	
+}
+
 @media screen and (max-width: 856px) {
 	.tribe-events-calendar-month__week {
 		border: none !important;	

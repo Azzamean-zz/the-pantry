@@ -440,7 +440,7 @@ class Flexible_Checkout_Fields_Disaplay_Options {
 					// if field exists and is defined as select we can use this data. If not then better do not touch as it's probably optional checkbox
 					if ( isset( $wc_field_def['options'] ) ) {
 						$select_options = $wc_meta_key_definitions[ $this->current_address_type ]['fields'][ $field_key ]['options'];
-						$option_val     = $select_options[ $val ];
+						$option_val     = isset( $select_options[ $val ] ) ? $select_options[ $val ] : '';
 
 						return $label . ': ' . $option_val;
 					} elseif ( (int) $val === 1 ) {

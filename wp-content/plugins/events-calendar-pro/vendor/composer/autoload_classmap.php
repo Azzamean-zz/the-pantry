@@ -6,8 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Tribe\\Events\\Pro\\Integrations\\Elementor\\Service_Provider' => $baseDir . '/src/Tribe/Integrations/Elementor/Service_Provider.php',
-    'Tribe\\Events\\Pro\\Integrations\\Elementor\\Shortcodes' => $baseDir . '/src/Tribe/Integrations/Elementor/Shortcodes.php',
     'Tribe\\Events\\Pro\\Models\\Service_Provider' => $baseDir . '/src/Tribe/Models/Service_Provider.php',
     'Tribe\\Events\\Pro\\Rewrite\\Provider' => $baseDir . '/src/Tribe/Rewrite/Provider.php',
     'Tribe\\Events\\Pro\\Rewrite\\Rewrite' => $baseDir . '/src/Tribe/Rewrite/Rewrite.php',

@@ -245,6 +245,7 @@ return array(
     'Flexible_Checkout_Fields_Conditional_Logic_Order' => $baseDir . '/classes/flexible-checkout-fields-conditional-logic-order.php',
     'Flexible_Checkout_Fields_Order_Metabox' => $baseDir . '/classes/flexible-checkout-fields-order-metabox.php',
     'Flexible_Checkout_Fields_Pro' => $baseDir . '/classes/flexible-checkout-fields-pro.php',
+    'Flexible_Checkout_Fields_Pro_Datepicker_Validation' => $baseDir . '/classes/field/datepicker/validation.php',
     'Flexible_Checkout_Fields_Pro_Docs_Metabox' => $baseDir . '/classes/flexible-checkout-fields-pro-docs-metabox.php',
     'Flexible_Checkout_Fields_Pro_Field_Type' => $baseDir . '/classes/field/field-type.php',
     'Flexible_Checkout_Fields_Pro_File_Field_Ajax' => $baseDir . '/classes/field/file/ajax.php',

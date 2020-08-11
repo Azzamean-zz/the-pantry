@@ -7,8 +7,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2020-07-20T17:49:51+00:00\n"
-"PO-Revision-Date: 2020-07-20T17:49:51+00:00\n"
+"POT-Creation-Date: 2020-08-06T14:35:49+00:00\n"
+"PO-Revision-Date: 2020-08-06T14:35:49+00:00\n"
 "Language: pl_PL\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
@@ -19,6 +19,24 @@ msgstr ""
 "X-Poedit-WPHeader: flexible-checkout-fields-pro.php\n"
 "X-Generator: Poedit 2.2.3\n"
 "X-Poedit-SearchPath-1: src\n"
+
+#: /builds/wpdesk/flexible-checkout-fields-pro/classes/field/datepicker/validation.php:38
+#: classes/field/datepicker/validation.php:38
+#, php-format
+msgid "%s is not a valid date."
+msgstr "Pole %s zawiera nieprawidłową datę."
+
+#: /builds/wpdesk/flexible-checkout-fields-pro/classes/field/datepicker/validation.php:47
+#: classes/field/datepicker/validation.php:47
+#, php-format
+msgid "%s is too early."
+msgstr "Pole %s zawiera zbyt wczesną datę."
+
+#: /builds/wpdesk/flexible-checkout-fields-pro/classes/field/datepicker/validation.php:56
+#: classes/field/datepicker/validation.php:56
+#, php-format
+msgid "%s is too late."
+msgstr "Pole %s zawiera zbyt późną datę."
 
 #: /builds/wpdesk/flexible-checkout-fields-pro/classes/field/file/ajax.php:95
 #: classes/field/file/ajax.php:95
@@ -137,9 +155,9 @@ msgstr "Nie wybrano strefy wysyłki"
 
 #: /builds/wpdesk/flexible-checkout-fields-pro/classes/views/shipping-conditional-logic/shipping-conditional-logic.php:69
 #: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-conditional-logic.php:75
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro-plugin.php:326
-#: classes/flexible-checkout-fields-conditional-logic.php:72
-#: classes/flexible-checkout-fields-pro-plugin.php:326
+#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro-plugin.php:328
+#: classes/flexible-checkout-fields-conditional-logic.php:75
+#: classes/flexible-checkout-fields-pro-plugin.php:328
 #: classes/views/shipping-conditional-logic/shipping-conditional-logic.php:69
 msgid "No Shipping Zones or Global Methods"
 msgstr "Brak stref wysyłki lub metod globalnych"
@@ -276,54 +294,54 @@ msgid "New Rule"
 msgstr "Nowa reguła"
 
 #: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-conditional-logic.php:76
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro-plugin.php:327
-#: classes/flexible-checkout-fields-conditional-logic.php:73
-#: classes/flexible-checkout-fields-pro-plugin.php:327
+#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro-plugin.php:329
+#: classes/flexible-checkout-fields-conditional-logic.php:76
+#: classes/flexible-checkout-fields-pro-plugin.php:329
 msgid "Select Shipping Zone"
 msgstr "Wybierz strefę wysyłki"
 
 #: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-conditional-logic.php:77
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro-plugin.php:328
-#: classes/flexible-checkout-fields-conditional-logic.php:74
-#: classes/flexible-checkout-fields-pro-plugin.php:328
+#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro-plugin.php:330
+#: classes/flexible-checkout-fields-conditional-logic.php:77
+#: classes/flexible-checkout-fields-pro-plugin.php:330
 #: classes/views/settings-field-java-script.php:492
 msgid "Select Shipping Method"
 msgstr "Wybierz metodę wysyłki"
 
 #: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-conditional-logic.php:78
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro-plugin.php:329
-#: classes/flexible-checkout-fields-conditional-logic.php:75
-#: classes/flexible-checkout-fields-pro-plugin.php:329
+#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro-plugin.php:331
+#: classes/flexible-checkout-fields-conditional-logic.php:78
+#: classes/flexible-checkout-fields-pro-plugin.php:331
 msgid "Shipping Methods"
 msgstr "Metody wysyłki"
 
 #: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-conditional-logic.php:79
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro-plugin.php:330
-#: classes/flexible-checkout-fields-conditional-logic.php:76
-#: classes/flexible-checkout-fields-pro-plugin.php:330
+#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro-plugin.php:332
+#: classes/flexible-checkout-fields-conditional-logic.php:79
+#: classes/flexible-checkout-fields-pro-plugin.php:332
 msgid "Shipping Zones"
 msgstr "Strefy wysyłki"
 
 #: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-conditional-logic.php:207
-#: classes/flexible-checkout-fields-conditional-logic.php:204
+#: classes/flexible-checkout-fields-conditional-logic.php:207
 msgid "Advanced"
 msgstr "Zaawansowane"
 
 #: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-conditional-logic.php:257
 #: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-conditional-logic.php:268
-#: classes/flexible-checkout-fields-conditional-logic.php:254
-#: classes/flexible-checkout-fields-conditional-logic.php:265
+#: classes/flexible-checkout-fields-conditional-logic.php:257
+#: classes/flexible-checkout-fields-conditional-logic.php:268
 msgid "Disabled section:"
 msgstr "Wyłączona sekcja:"
 
 #: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-conditional-logic.php:294
-#: classes/flexible-checkout-fields-conditional-logic.php:291
+#: classes/flexible-checkout-fields-conditional-logic.php:294
 #: classes/views/settings-field-java-script.php:367
 msgid "checked"
 msgstr "zaznaczone"
 
 #: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-conditional-logic.php:295
-#: classes/flexible-checkout-fields-conditional-logic.php:292
+#: classes/flexible-checkout-fields-conditional-logic.php:295
 #: classes/views/settings-field-java-script.php:367
 msgid "unchecked"
 msgstr "niezaznaczone"
@@ -335,10 +353,10 @@ msgstr "niezaznaczone"
 msgid "Flexible Checkout Fields"
 msgstr "Flexible Checkout Fields"
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro-plugin.php:233
+#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro-plugin.php:235
 #: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-builder/src/Plugin/AbstractPlugin.php:198
 #: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-helper/src/Page/SettingsPage.php:46
-#: classes/flexible-checkout-fields-pro-plugin.php:233
+#: classes/flexible-checkout-fields-pro-plugin.php:235
 #: Page/SettingsPage.php:52
 #: Page/SettingsPage.php:53
 #: src/Page/SettingsPage.php:52
@@ -347,16 +365,16 @@ msgstr "Flexible Checkout Fields"
 msgid "Settings"
 msgstr "Ustawienia"
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro-plugin.php:235
+#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro-plugin.php:237
 #: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-builder/src/Plugin/AbstractPlugin.php:194
-#: classes/flexible-checkout-fields-pro-plugin.php:235
+#: classes/flexible-checkout-fields-pro-plugin.php:237
 #: vendor/wpdesk/wp-builder/src/Plugin/AbstractPlugin.php:207
 msgid "Docs"
 msgstr "Docs"
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro-plugin.php:236
+#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro-plugin.php:238
 #: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-builder/src/Plugin/AbstractPlugin.php:191
-#: classes/flexible-checkout-fields-pro-plugin.php:236
+#: classes/flexible-checkout-fields-pro-plugin.php:238
 #: vendor/wpdesk/wp-builder/src/Plugin/AbstractPlugin.php:201
 msgid "Support"
 msgstr "Wsparcie"
@@ -1096,6 +1114,27 @@ msgstr ""
 
 #: classes/views/settings-settings.php:18
 msgid "Please note that some sections may not be available in your theme or may look garbled. This is not the plugin issue, but the theme issue."
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+#, fuzzy
+msgid "Flexible Checkout Fields PRO"
+msgstr "Flexible Checkout Fields"
+
+#. Plugin URI of the plugin/theme
+msgid "https://www.wpdesk.net/products/flexible-checkout-fields-pro-woocommerce/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Extension to the free version. Adds new field types, custom sections and more."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "WP Desk"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://www.wpdesk.net/"
 msgstr ""
 
 #: Integration/LogsIntegration.php:62

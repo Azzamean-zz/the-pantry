@@ -221,6 +221,7 @@ return array(
     'FcfVendor\\WPDesk_Tracker_Factory' => $baseDir . '/vendor_prefixed/wpdesk/wp-wpdesk-helper-override/src/Helper/TrackerFactory.php',
     'FcfVendor\\WPDesk_Tracker_Factory_Prefixed' => $baseDir . '/vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/class-wpdesk-tracker-factory-prefixed.php',
     'FcfVendor\\WPDesk_Tracker_Interface' => $baseDir . '/vendor_prefixed/wpdesk/wp-wpdesk-helper-override/src/Interop/Tracker/class-wpdesk-tracker-interface.php',
+    'FcfVendor\\WPDesk_Tracker_Persistence_Consent' => $baseDir . '/vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/persistence/class-wpdesk-tracker-persistence-consent.php',
     'FcfVendor\\WPDesk_Tracker_Sender' => $baseDir . '/vendor_prefixed/wpdesk/wp-wpdesk-helper-override/src/Interop/Tracker/class-wpdesk-tracker-sender.php',
     'FcfVendor\\WPDesk_Tracker_Sender_Exception_WpError' => $baseDir . '/vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/sender/Exception/class-wpdesk-tracker-sender-exception-wperror.php',
     'FcfVendor\\WPDesk_Tracker_Sender_Logged' => $baseDir . '/vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/sender/class-wpdesk-tracker-sender-logged.php',

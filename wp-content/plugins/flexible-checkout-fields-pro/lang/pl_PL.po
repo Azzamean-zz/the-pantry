@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WooCommerce Flexible Checkout Fields PRO\n"
-"POT-Creation-Date: 2020-04-22 15:19+0200\n"
-"PO-Revision-Date: 2020-04-22 15:21+0200\n"
+"POT-Creation-Date: 2020-08-05 08:58+0200\n"
+"PO-Revision-Date: 2020-08-05 08:59+0200\n"
 "Last-Translator: Piotr Jabłonowski <piotr.jablonowski@wpdesk.net>\n"
 "Language-Team: Maciej Swoboda <maciej.swoboda@gmail.com>\n"
 "Language: pl_PL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 2.2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: flexible-checkout-fields-pro.php\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
@@ -22,6 +22,21 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 "X-Poedit-SearchPathExcluded-1: vendor\n"
 "X-Poedit-SearchPathExcluded-2: vendor_prefixed\n"
+
+#: classes/field/datepicker/validation.php:38
+#, php-format
+msgid "%s is not a valid date."
+msgstr "Pole %s zawiera nieprawidłową datę."
+
+#: classes/field/datepicker/validation.php:47
+#, php-format
+msgid "%s is too early."
+msgstr "Pole %s zawiera zbyt wczesną datę."
+
+#: classes/field/datepicker/validation.php:56
+#, php-format
+msgid "%s is too late."
+msgstr "Pole %s zawiera zbyt późną datę."
 
 #: classes/field/file/ajax.php:95
 #, php-format
@@ -67,48 +82,48 @@ msgstr "Lista rozwijana (multi-select)"
 msgid "Required Field"
 msgstr "Pole wymagane"
 
-#: classes/flexible-checkout-fields-conditional-logic.php:72
-#: classes/flexible-checkout-fields-pro-plugin.php:326
+#: classes/flexible-checkout-fields-conditional-logic.php:75
+#: classes/flexible-checkout-fields-pro-plugin.php:328
 #: classes/views/shipping-conditional-logic/shipping-conditional-logic.php:69
 msgid "No Shipping Zones or Global Methods"
 msgstr "Brak stref wysyłki lub metod globalnych"
 
-#: classes/flexible-checkout-fields-conditional-logic.php:73
-#: classes/flexible-checkout-fields-pro-plugin.php:327
+#: classes/flexible-checkout-fields-conditional-logic.php:76
+#: classes/flexible-checkout-fields-pro-plugin.php:329
 msgid "Select Shipping Zone"
 msgstr "Wybierz strefę wysyłki"
 
-#: classes/flexible-checkout-fields-conditional-logic.php:74
-#: classes/flexible-checkout-fields-pro-plugin.php:328
+#: classes/flexible-checkout-fields-conditional-logic.php:77
+#: classes/flexible-checkout-fields-pro-plugin.php:330
 #: classes/views/settings-field-java-script.php:492
 msgid "Select Shipping Method"
 msgstr "Wybierz metodę wysyłki"
 
-#: classes/flexible-checkout-fields-conditional-logic.php:75
-#: classes/flexible-checkout-fields-pro-plugin.php:329
+#: classes/flexible-checkout-fields-conditional-logic.php:78
+#: classes/flexible-checkout-fields-pro-plugin.php:331
 msgid "Shipping Methods"
 msgstr "Metody wysyłki"
 
-#: classes/flexible-checkout-fields-conditional-logic.php:76
-#: classes/flexible-checkout-fields-pro-plugin.php:330
+#: classes/flexible-checkout-fields-conditional-logic.php:79
+#: classes/flexible-checkout-fields-pro-plugin.php:332
 msgid "Shipping Zones"
 msgstr "Strefy wysyłki"
 
-#: classes/flexible-checkout-fields-conditional-logic.php:204
+#: classes/flexible-checkout-fields-conditional-logic.php:207
 msgid "Advanced"
 msgstr "Zaawansowane"
 
-#: classes/flexible-checkout-fields-conditional-logic.php:254
-#: classes/flexible-checkout-fields-conditional-logic.php:265
+#: classes/flexible-checkout-fields-conditional-logic.php:257
+#: classes/flexible-checkout-fields-conditional-logic.php:268
 msgid "Disabled section:"
 msgstr "Wyłączona sekcja:"
 
-#: classes/flexible-checkout-fields-conditional-logic.php:291
+#: classes/flexible-checkout-fields-conditional-logic.php:294
 #: classes/views/settings-field-java-script.php:367
 msgid "checked"
 msgstr "zaznaczone"
 
-#: classes/flexible-checkout-fields-conditional-logic.php:292
+#: classes/flexible-checkout-fields-conditional-logic.php:295
 #: classes/views/settings-field-java-script.php:367
 msgid "unchecked"
 msgstr "niezaznaczone"
@@ -118,15 +133,15 @@ msgstr "niezaznaczone"
 msgid "Flexible Checkout Fields"
 msgstr "Flexible Checkout Fields"
 
-#: classes/flexible-checkout-fields-pro-plugin.php:233
+#: classes/flexible-checkout-fields-pro-plugin.php:235
 msgid "Settings"
 msgstr "Ustawienia"
 
-#: classes/flexible-checkout-fields-pro-plugin.php:235
+#: classes/flexible-checkout-fields-pro-plugin.php:237
 msgid "Docs"
 msgstr "Docs"
 
-#: classes/flexible-checkout-fields-pro-plugin.php:236
+#: classes/flexible-checkout-fields-pro-plugin.php:238
 msgid "Support"
 msgstr "Wsparcie"
 
@@ -575,3 +590,28 @@ msgstr "Dodaj plik"
 #: templates/fields/file.php:34
 msgid "Remove File"
 msgstr "Usuń plik"
+
+#. Plugin Name of the plugin/theme
+#, fuzzy
+#| msgid "Flexible Checkout Fields"
+msgid "Flexible Checkout Fields PRO"
+msgstr "Flexible Checkout Fields"
+
+#. Plugin URI of the plugin/theme
+msgid ""
+"https://www.wpdesk.net/products/flexible-checkout-fields-pro-woocommerce/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Extension to the free version. Adds new field types, custom sections and "
+"more."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "WP Desk"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://www.wpdesk.net/"
+msgstr ""

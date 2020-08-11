@@ -214,6 +214,8 @@ class Flexible_Checkout_Fields_Pro_Plugin
 
 		$this->add_hookable( new Flexible_Checkout_Fields_Order_Metabox( $checkout_fields_pro, $this ) );
 
+		$this->add_hookable( new Flexible_Checkout_Fields_Pro_Datepicker_Validation() );
+
 		parent::init();
 	}
 

@@ -234,7 +234,8 @@ class Flexible_Checkout_Fields_Conditional_Logic_Order
 				&& isset( $rule_field_definition['type'] )
 				&& ( 'inspirecheckbox' === $rule_field_definition['type'] || 'checkbox' === $rule_field_definition['type'] )
 		) {
-			if ( '' !== $field_value ) {
+			if ( ( ( 'checked' === $rule['value'] ) && ( '' !== $field_value ) )
+				|| ( ( 'unchecked' === $rule['value'] ) && ( '' === $field_value ) ) ) {
 				$rule_match = 1;
 			}
 		} else {

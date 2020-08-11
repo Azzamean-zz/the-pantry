@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit4054d3017870383286908bf280eba28c
+class ComposerStaticInit3ede7c27b17798ac57843322087d5b1a
 {
     public static $prefixLengthsPsr4 = array (
         'P' => 
@@ -260,6 +260,7 @@ class ComposerStaticInit4054d3017870383286908bf280eba28c
         'Flexible_Checkout_Fields_Conditional_Logic_Order' => __DIR__ . '/../..' . '/classes/flexible-checkout-fields-conditional-logic-order.php',
         'Flexible_Checkout_Fields_Order_Metabox' => __DIR__ . '/../..' . '/classes/flexible-checkout-fields-order-metabox.php',
         'Flexible_Checkout_Fields_Pro' => __DIR__ . '/../..' . '/classes/flexible-checkout-fields-pro.php',
+        'Flexible_Checkout_Fields_Pro_Datepicker_Validation' => __DIR__ . '/../..' . '/classes/field/datepicker/validation.php',
         'Flexible_Checkout_Fields_Pro_Docs_Metabox' => __DIR__ . '/../..' . '/classes/flexible-checkout-fields-pro-docs-metabox.php',
         'Flexible_Checkout_Fields_Pro_Field_Type' => __DIR__ . '/../..' . '/classes/field/field-type.php',
         'Flexible_Checkout_Fields_Pro_File_Field_Ajax' => __DIR__ . '/../..' . '/classes/field/file/ajax.php',
@@ -298,9 +299,9 @@ class ComposerStaticInit4054d3017870383286908bf280eba28c
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit4054d3017870383286908bf280eba28c::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit4054d3017870383286908bf280eba28c::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit4054d3017870383286908bf280eba28c::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit3ede7c27b17798ac57843322087d5b1a::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit3ede7c27b17798ac57843322087d5b1a::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit3ede7c27b17798ac57843322087d5b1a::$classMap;
 
         }, null, ClassLoader::class);
     }

@@ -3,16 +3,16 @@
  * Plugin Name: WooCommerce Waitlist
  * Plugin URI: http://www.woothemes.com/products/woocommerce-waitlist/
  * Description: This plugin enables registered users to request an email notification when an out-of-stock product comes back into stock. It tallies these registrations in the admin panel for review and provides details.
- * Version: 2.1.22
+ * Version: 2.1.24
  * Author: Neil Pie
  * Author URI: https://pie.co.de/
  * Developer: Neil Pie
  * Developer URI: https://pie.co.de/
  * Woo: 122144:55d9643a241ecf5ad501808c0787483f
  * WC requires at least: 3.0.0
- * WC tested up to: 4.2.0
+ * WC tested up to: 4.3.0
  * Requires at least: 4.2.0
- * Tested up to: 5.4.1
+ * Tested up to: 5.4.2
  * Text Domain: woocommerce-waitlist
  * Domain Path: /assets/languages/
  * License: GNU General Public License v3.0
@@ -290,9 +290,15 @@ if ( ! class_exists( 'WooCommerce_Waitlist_Plugin' ) ) {
 		 * @return void
 		 */
 		public function perform_api_mailout_bundles( $product, $updated_props ) {
-			if ( $product->is_type( 'bundle' ) && in_array( 'bundled_items_stock_status', $updated_props, true ) && ! is_null( $product->stock_status ) && $product->is_in_stock() && 'publish' === get_post_status( $product->get_id() ) ) {
-				$this->do_mailout( $product );
+			if ( ! $product->is_type( 'bundle' ) ||
+				empty( $updated_props ) ||
+				'bundled_items_stock_status' !== $updated_props[0] ||
+				is_null( $product->get_stock_status() ) ||
+				! $product->is_in_stock() ||
+				'publish' !== get_post_status( $product->get_id() ) ) {
+					return;
 			}
+			$this->do_mailout( $product );
 		}
 
 		/**

@@ -421,7 +421,7 @@ class Hooks extends \tad_DI52_ServiceProvider {
 	/**
 	 * Filter the plural events label for Featured V2 PRO Views.
 	 *
-	 * @since 5.1.4
+	 * @since TBD
 	 *
 	 * @param string  $label   The plural events label as it's been generated thus far.
 	 * @param Context $context The context used to build the title, it could be the global one, or one externally
@@ -553,20 +553,18 @@ class Hooks extends \tad_DI52_ServiceProvider {
 	 *
 	 * @since 4.7.9
 	 *
-	 * @param array<string,string> $rules         The geocode based rewrite rules.
-	 * @param array<string,string> $bases         The geocode rewrite bases.
-	 * @param array<string,string> $rewrite_slugs The geocode slugs.
+	 * @param array $rules The geocode based rewrite rules.
 	 *
-	 * @return array<string,string> The filtered geocode based rewrite rules.
+	 * @return array The filtered geocode based rewrite rules.
 	 *
 	 * @see \Tribe__Events__Pro__Geo_Loc::add_routes() for where this code is applying.
 	 */
-	public function filter_geocode_rewrite_rules( $rules, $bases, $rewrite_slugs ) {
-		if ( empty( $rules ) || empty( $bases ) || empty( $rewrite_slugs ) ) {
+	public function filter_geocode_rewrite_rules( $rules ) {
+		if ( empty( $rules ) ) {
 			return $rules;
 		}
 
-		return $this->container->make( Rewrite::class )->add_map_pagination_rules( $rules, $bases, $rewrite_slugs );
+		return $this->container->make( Rewrite::class )->add_map_pagination_rules( $rules );
 	}
 
 	/**

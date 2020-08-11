@@ -7,8 +7,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2020-07-20T17:49:51+00:00\n"
-"PO-Revision-Date: 2020-07-20T17:49:51+00:00\n"
+"POT-Creation-Date: 2020-08-06T14:35:49+00:00\n"
+"PO-Revision-Date: 2020-08-06T14:35:49+00:00\n"
 "Language: \n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
@@ -17,6 +17,18 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 "X-Poedit-WPHeader: flexible-checkout-fields-pro.php\n"
+
+#: /builds/wpdesk/flexible-checkout-fields-pro/classes/field/datepicker/validation.php:38
+msgid "%s is not a valid date."
+msgstr ""
+
+#: /builds/wpdesk/flexible-checkout-fields-pro/classes/field/datepicker/validation.php:47
+msgid "%s is too early."
+msgstr ""
+
+#: /builds/wpdesk/flexible-checkout-fields-pro/classes/field/datepicker/validation.php:56
+msgid "%s is too late."
+msgstr ""
 
 #: /builds/wpdesk/flexible-checkout-fields-pro/classes/field/file/ajax.php:95
 msgid "There is no field with name %s"
@@ -99,7 +111,7 @@ msgstr ""
 
 #: /builds/wpdesk/flexible-checkout-fields-pro/classes/views/shipping-conditional-logic/shipping-conditional-logic.php:69
 #: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-conditional-logic.php:75
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro-plugin.php:326
+#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro-plugin.php:328
 msgid "No Shipping Zones or Global Methods"
 msgstr ""
 
@@ -191,22 +203,22 @@ msgid "New Rule"
 msgstr ""
 
 #: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-conditional-logic.php:76
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro-plugin.php:327
+#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro-plugin.php:329
 msgid "Select Shipping Zone"
 msgstr ""
 
 #: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-conditional-logic.php:77
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro-plugin.php:328
+#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro-plugin.php:330
 msgid "Select Shipping Method"
 msgstr ""
 
 #: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-conditional-logic.php:78
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro-plugin.php:329
+#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro-plugin.php:331
 msgid "Shipping Methods"
 msgstr ""
 
 #: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-conditional-logic.php:79
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro-plugin.php:330
+#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro-plugin.php:332
 msgid "Shipping Zones"
 msgstr ""
 
@@ -232,18 +244,18 @@ msgstr ""
 msgid "Flexible Checkout Fields"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro-plugin.php:233
+#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro-plugin.php:235
 #: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-builder/src/Plugin/AbstractPlugin.php:198
 #: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-helper/src/Page/SettingsPage.php:46
 msgid "Settings"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro-plugin.php:235
+#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro-plugin.php:237
 #: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-builder/src/Plugin/AbstractPlugin.php:194
 msgid "Docs"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro-plugin.php:236
+#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro-plugin.php:238
 #: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-builder/src/Plugin/AbstractPlugin.php:191
 msgid "Support"
 msgstr ""

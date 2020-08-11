@@ -43,7 +43,10 @@ class Flexible_Checkout_Fields_Field_Validation {
 		foreach ( $settings as $section => $fields ) {
 			foreach ( $fields as $field_key => $field ) {
 				if ( isset( $_POST[$field_key] ) && !empty( $field['validation'] ) && array_key_exists( $field['validation'], $custom_validations ) ) {
-					call_user_func( $custom_validations[$field['validation']]['callback'], $field['label'], sanitize_textarea_field($_POST[$field_key]) );
+					call_user_func( $custom_validations[$field['validation']]['callback'], $field['label'], sanitize_textarea_field($_POST[$field_key]), $field );
+				}
+				if ( isset( $field['custom_field'] ) && $field['custom_field'] && isset( $_POST[ $field_key ] ) && ! empty( $_POST[ $field_key ] ) ) {
+					do_action( 'flexible_checkout_fields_validate_' . $field['type'], sanitize_textarea_field( $_POST[ $field_key ] ), $field );
 				}
 			}
 		}

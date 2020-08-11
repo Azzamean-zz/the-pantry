@@ -1,5 +1,9 @@
 *** Flexible Checkout Fields PRO for WooCommerce Changelog ***
 
+2.1.0 - 2020-08-06
+* Fixed conditional logic for unchecked checkbox field on the Checkout Page
+* Added default back-end validation for Date field
+
 2.0.11 - 2020-07-20
 * Fixed conditional logic for checkbox field on the Checkout Page
 
