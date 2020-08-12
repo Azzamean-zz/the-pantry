@@ -313,6 +313,29 @@ function woo_tickets_filter_completed_order($text) {
 /**
  * Note: DO NOT! alter or remove the code above this text and only add your custom PHP functions below this text.
  */
+ 
+//on event post save, add categories to all tickets 
+function updated_ticket_product_cat( $post_id ) {
+
+//get categories
+$terms = get_the_terms($post_id, 'tribe_events_cat');
+
+//Get ticket id
+$tickets = Tribe__Tickets__Tickets::get_all_event_tickets($post_id);
+
+//add categories to tickets
+	$count = count($terms);
+	if ( $count > 0 ){
+		foreach ( $terms as $term ) {
+			
+			foreach($tickets as $ticket) {
+				$ticket_id = $ticket->ID;
+				wp_set_object_terms( $ticket_id , $term->slug, 'product_cat', true );
+			}				
+		}
+	}
+}
+add_action( 'save_post', 'updated_ticket_product_cat' );
 
  /**
  * Remove related products output
