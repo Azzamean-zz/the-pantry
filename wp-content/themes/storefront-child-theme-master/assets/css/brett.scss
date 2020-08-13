@@ -463,6 +463,20 @@ table.cart td.actions input {
 	width: 250px !important;	
 }
 
+.woocommerce-cart-form {
+	padding-left: 30px;	
+	padding-right: 30px;	
+}
+
+body.page-tribe-attendee-registration .tribe-common .tribe-tickets__mini-cart {
+	padding: 20px;		
+}
+
+form.checkout {
+	padding-left: 30px;	
+	padding-right: 30px;	
+}
+
 @media screen and (max-width: 856px) {
 	.tribe-events-calendar-month__week {
 		border: none !important;	
@@ -480,5 +494,16 @@ table.cart td.actions input {
 		background: #fff !important;	
 	}
 	.tribe-events .tribe-events-c-top-bar__datepicker {
+	}
+	.single-tribe_events .tribe-events-schedule {
+		padding: 0;	
+		background-color: transparent;	
+		border: none;	
+	}
+	#tribe-events-pg-template {
+		padding: 0;	
+	}
+	#tribe-events-footer:after, #tribe-events-footer:before, #tribe-events-header:after, #tribe-events-header:before {
+		display: none !important;	
 	}
 }
