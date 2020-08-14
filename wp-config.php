@@ -19,7 +19,6 @@
  */
 // ** MySQL settings - You can get this info from your web host ** //
 define('WP_CACHE', true);
-define( 'WPCACHEHOME', '/Users/bretthorner/Documents/projects/pantrynew/wp-content/plugins/wp-super-cache/' );
 switch ($_SERVER['SERVER_NAME']) {
      /** Development Server */    
      case 'pantrynew':
@@ -30,6 +29,7 @@ switch ($_SERVER['SERVER_NAME']) {
           define('DB_CHARSET', 'utf8');
           define('DB_COLLATE', '');
           define('WP_DEBUG', true);  
+		  define( 'WPCACHEHOME', '/Users/bretthorner/Documents/projects/pantrynew/wp-content/plugins/wp-super-cache/' );
      break;
      /** Staging Server */
      case 'pantry.deicreative.com':
@@ -50,6 +50,7 @@ switch ($_SERVER['SERVER_NAME']) {
           define('DB_CHARSET', 'utf8');
           define('DB_COLLATE', '');
           define('WP_DEBUG', false);     
+		  define( 'WPCACHEHOME', '/app/wp-content/plugins/wp-super-cache/' );
      break;
 } 
 
