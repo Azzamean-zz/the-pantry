@@ -4,7 +4,7 @@
  *
  * @author      StoreApps
  * @since       4.4.1
- * @version     1.0.3
+ * @version     1.0.5
  *
  * @package     woocommerce-smart-coupons/includes/emails/
  */
@@ -210,7 +210,7 @@ if ( ! class_exists( 'WC_SC_Email_Coupon' ) ) {
 			$design           = get_option( 'wc_sc_setting_coupon_design', 'round-dashed' );
 			$background_color = get_option( 'wc_sc_setting_coupon_background_color', '#39cccc' );
 			$foreground_color = get_option( 'wc_sc_setting_coupon_foreground_color', '#30050b' );
-			$coupon_styles    = $woocommerce_smart_coupon->get_coupon_styles( $design );
+			$coupon_styles    = $woocommerce_smart_coupon->get_coupon_styles( $design, array( 'is_email' => 'yes' ) );
 
 			$default_path  = $this->template_base;
 			$template_path = $woocommerce_smart_coupon->get_template_base_dir( $this->template_html );
@@ -472,7 +472,7 @@ if ( ! class_exists( 'WC_SC_Email_Coupon' ) ) {
 			$is_email_enabled = $this->get_field_value( 'enabled', $this->form_fields['enabled'] );
 
 			if ( ! empty( $is_email_enabled ) ) {
-				update_site_option( 'smart_coupons_is_send_email', $is_email_enabled );
+				update_option( 'smart_coupons_is_send_email', $is_email_enabled );
 			}
 		}
 

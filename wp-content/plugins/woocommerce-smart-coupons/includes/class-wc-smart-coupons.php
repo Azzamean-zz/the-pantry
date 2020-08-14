@@ -4,7 +4,7 @@
  *
  * @author      StoreApps
  * @since       3.3.0
- * @version     1.2.1
+ * @version     1.2.3
  *
  * @package     woocommerce-smart-coupons/includes/
  */
@@ -156,14 +156,14 @@ if ( ! class_exists( 'WC_Smart_Coupons' ) ) {
 		 */
 		public function __call( $function_name, $arguments = array() ) {
 
-			if ( ! is_callable( 'SA_WC_Compatibility_3_9', $function_name ) ) {
+			if ( ! is_callable( 'SA_WC_Compatibility_4_4', $function_name ) ) {
 				return;
 			}
 
 			if ( ! empty( $arguments ) ) {
-				return call_user_func_array( 'SA_WC_Compatibility_3_9::' . $function_name, $arguments );
+				return call_user_func_array( 'SA_WC_Compatibility_4_4::' . $function_name, $arguments );
 			} else {
-				return call_user_func( 'SA_WC_Compatibility_3_9::' . $function_name );
+				return call_user_func( 'SA_WC_Compatibility_4_4::' . $function_name );
 			}
 
 		}
@@ -185,6 +185,11 @@ if ( ! class_exists( 'WC_Smart_Coupons' ) ) {
 			include_once 'compat/class-sa-wc-compatibility-3-7.php';
 			include_once 'compat/class-sa-wc-compatibility-3-8.php';
 			include_once 'compat/class-sa-wc-compatibility-3-9.php';
+			include_once 'compat/class-sa-wc-compatibility-4-0.php';
+			include_once 'compat/class-sa-wc-compatibility-4-1.php';
+			include_once 'compat/class-sa-wc-compatibility-4-2.php';
+			include_once 'compat/class-sa-wc-compatibility-4-3.php';
+			include_once 'compat/class-sa-wc-compatibility-4-4.php';
 			include_once 'compat/class-wc-sc-wpml-compatibility.php';
 			include_once 'compat/class-wcopc-sc-compatibility.php';
 			include_once 'compat/class-wcs-sc-compatibility.php';
@@ -268,23 +273,23 @@ if ( ! class_exists( 'WC_Smart_Coupons' ) ) {
 			add_option( 'wc_sc_custom_design_css', $custom_design_default_css, '', 'no' );
 
 			// Convert SC admin email settings into WC email settings.
-			$is_send_email = get_site_option( 'smart_coupons_is_send_email' );
+			$is_send_email = get_option( 'smart_coupons_is_send_email' );
 			if ( false !== $is_send_email ) {
-				$coupon_email_settings = get_site_option( 'woocommerce_wc_sc_email_coupon_settings' );
+				$coupon_email_settings = get_option( 'woocommerce_wc_sc_email_coupon_settings' );
 				if ( false === $coupon_email_settings ) {
 					$coupon_email_settings            = array();
 					$coupon_email_settings['enabled'] = $is_send_email;
-					update_site_option( 'woocommerce_wc_sc_email_coupon_settings', $coupon_email_settings );
+					update_option( 'woocommerce_wc_sc_email_coupon_settings', $coupon_email_settings );
 				}
 			}
 
-			$is_combine_email = get_site_option( 'smart_coupons_combine_emails' );
+			$is_combine_email = get_option( 'smart_coupons_combine_emails' );
 			if ( false !== $is_combine_email ) {
-				$combine_email_settings = get_site_option( 'woocommerce_wc_sc_combined_email_coupon_settings' );
+				$combine_email_settings = get_option( 'woocommerce_wc_sc_combined_email_coupon_settings' );
 				if ( false === $combine_email_settings ) {
 					$combine_email_settings            = array();
 					$combine_email_settings['enabled'] = $is_combine_email;
-					update_site_option( 'woocommerce_wc_sc_combined_email_coupon_settings', $combine_email_settings );
+					update_option( 'woocommerce_wc_sc_combined_email_coupon_settings', $combine_email_settings );
 				}
 			}
 		}
@@ -1439,21 +1444,6 @@ if ( ! class_exists( 'WC_Smart_Coupons' ) ) {
 
 			if ( empty( $cart ) || ! ( $cart instanceof WC_Cart ) ) {
 				return;
-			}
-
-			// Check if AvaTax is active by checking for its main function.
-			if ( function_exists( 'wc_avatax' ) ) {
-				$wc_avatax = wc_avatax();
-				if ( is_callable( array( $wc_avatax, 'get_tax_handler' ) ) ) {
-					$ava_tax_handler = $wc_avatax->get_tax_handler();
-					// Check if AvaTax is doing tax calculation.
-					if ( is_callable( array( $ava_tax_handler, 'is_available' ) ) && true === $ava_tax_handler->is_available() ) {
-						// Stop discount calculation till taxes from AvaTax have been calculated.
-						if ( ! did_action( 'wc_avatax_after_checkout_tax_calculated' ) ) {
-							return;
-						}
-					}
-				}
 			}
 
 			$cart_total = ( $this->is_wc_greater_than( '3.1.2' ) ) ? $cart->get_total( 'edit' ) : $cart->total;
@@ -3081,10 +3071,12 @@ if ( ! class_exists( 'WC_Smart_Coupons' ) ) {
 			include_once 'emails/class-wc-sc-email.php';
 			include_once 'emails/class-wc-sc-email-coupon.php';
 			include_once 'emails/class-wc-sc-combined-email-coupon.php';
+			include_once 'emails/class-wc-sc-acknowledgement-email.php';
 
 			// Add the email class to the list of email classes that WooCommerce loads.
 			$email_classes['WC_SC_Email_Coupon']          = new WC_SC_Email_Coupon();
 			$email_classes['WC_SC_Combined_Email_Coupon'] = new WC_SC_Combined_Email_Coupon();
+			$email_classes['WC_SC_Acknowledgement_Email'] = new WC_SC_Acknowledgement_Email();
 
 			return $email_classes;
 		}
@@ -3098,7 +3090,11 @@ if ( ! class_exists( 'WC_Smart_Coupons' ) ) {
 		 * @return boolean
 		 */
 		public function hold_stock_for_checkout( $is_hold = true ) {
-			return false;
+			$is_ignore = get_option( 'wc_sc_ignore_coupon_used_warning' );
+			if ( 'yes' === $is_ignore ) {
+				return false;
+			}
+			return $is_hold;
 		}
 
 		/**
@@ -3410,11 +3406,14 @@ if ( ! class_exists( 'WC_Smart_Coupons' ) ) {
 		 * Get coupon display styles
 		 *
 		 * @param  string $style_name The style name.
+		 * @param  array  $args Additional arguments.
 		 * @return string
 		 */
-		public function get_coupon_styles( $style_name = '' ) {
+		public function get_coupon_styles( $style_name = '', $args = array() ) {
 
 			$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+
+			$is_email = ( ! empty( $args['is_email'] ) ) ? $args['is_email'] : 'no';
 
 			$all_styles = $this->get_wc_sc_coupon_styles();
 
@@ -3452,7 +3451,11 @@ if ( ! class_exists( 'WC_Smart_Coupons' ) ) {
 
 			$styles = ob_get_clean();
 
-			return apply_filters( 'wc_sc_get_coupon_styles', $styles, $style_name );
+			if ( 'yes' === $is_email ) {
+				$styles = str_replace( array( ':before', ':hover', ':focus', ':active' ), array( '-pseudo-before', '-pseudo-hover', '-pseudo-focus', '-pseudo-active' ), $styles );
+			}
+
+			return apply_filters( 'wc_sc_get_coupon_styles', $styles, $style_name, $args );
 
 		}
 
@@ -3633,11 +3636,11 @@ if ( ! class_exists( 'WC_Smart_Coupons' ) ) {
 
 			$is_email_enabled = '';
 
-			$wc_email_settings = get_site_option( $wc_email_settings_key );
+			$wc_email_settings = get_option( $wc_email_settings_key );
 
 			// If setting is not found in WC Email settings fetch it from SC admin settings.
 			if ( false === $wc_email_settings ) {
-				$is_email_enabled = get_site_option( $sc_email_setting_key, $default );
+				$is_email_enabled = get_option( $sc_email_setting_key, $default );
 			} elseif ( is_array( $wc_email_settings ) && ! empty( $wc_email_settings ) ) {
 				$is_email_enabled = ( isset( $wc_email_settings['enabled'] ) && ! empty( $wc_email_settings['enabled'] ) ) ? $wc_email_settings['enabled'] : $default;
 			}
@@ -3660,7 +3663,7 @@ if ( ! class_exists( 'WC_Smart_Coupons' ) ) {
 				$apply_before_tax = get_option( 'woocommerce_smart_coupon_apply_before_tax', 'no' );
 				if ( 'yes' === $apply_before_tax ) {
 					// Get SC setting for include tax.
-					$sc_include_tax = get_site_option( 'woocommerce_smart_coupon_include_tax', 'no' );
+					$sc_include_tax = get_option( 'woocommerce_smart_coupon_include_tax', 'no' );
 				}
 			}
 			return $sc_include_tax;
@@ -3672,7 +3675,7 @@ if ( ! class_exists( 'WC_Smart_Coupons' ) ) {
 		 * @return boolean
 		 */
 		public function is_generated_store_credit_includes_tax() {
-			$is_include_tax = get_site_option( 'wc_sc_generated_store_credit_includes_tax', 'no' );
+			$is_include_tax = get_option( 'wc_sc_generated_store_credit_includes_tax', 'no' );
 			return apply_filters( 'wc_sc_is_generated_store_credit_includes_tax', wc_string_to_bool( $is_include_tax ), array( 'source' => $this ) );
 		}
 
