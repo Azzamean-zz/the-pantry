@@ -18,6 +18,8 @@
  * @package WordPress
  */
 // ** MySQL settings - You can get this info from your web host ** //
+define('WP_CACHE', true);
+define( 'WPCACHEHOME', '/Users/bretthorner/Documents/projects/pantrynew/wp-content/plugins/wp-super-cache/' );
 switch ($_SERVER['SERVER_NAME']) {
      /** Development Server */    
      case 'pantrynew':
