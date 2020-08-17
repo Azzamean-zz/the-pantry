@@ -5,7 +5,7 @@ Tags: events, calendar, event, venue, organizer, dates, date, google maps, confe
 Donate link: http://m.tri.be/29
 Requires at least: 4.9.14
 Tested up to: 5.4.2
-Stable tag: 5.1.3
+Stable tag: 5.1.4
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -204,6 +204,18 @@ Our Premium Plugins:
 * <a href="http://m.tri.be/fa" target="_blank">The Events Calendar: Filter Bar</a>
 
 == Changelog ==
+
+= [5.1.4] 2020-07-27 =
+
+* Fix - Mobile week view from displaying the wrong time in the time separator when on leading UTC timezone. [ECP-426]
+* Fix - Mobile week view from displaying wrong start of the week when on leading UTC timezone. [ECP-440]
+* Fix - Fix category URLs issues in non English sites to avoid 404 errors. [ECP-422]
+* Fix - Fix Week and Photo View URLs issues in non English sites to avoid 404 errors. [ECP-427]
+* Fix - Properly enqueue the customizer styles to allow overriding of theme styles. [TEC-3531]
+* Fix - Fix Week, Photo and Map View URLs issues in non English sites to avoid 404 errors. [ECP-427]
+* Fix - Don't test addresses for mappability if using the default API key. [ECP-424]
+* Tweak - Enhanced the compatibility between the `[tribe_events]` shortcode, particularly the Month View, and Elementor to ensure the shortcode correctly renders in the Editor [ECP-374, ECP-376]
+* Language - 0 new strings added, 7 updated, 0 fuzzied, and 0 obsoleted
 
 = [5.1.3] 2020-06-24 =
 

@@ -1,4 +1,7 @@
 <?php
+/** Enable W3 Total Cache */
+define('WP_CACHE', true); // Added by W3 Total Cache
+
 /**
  * The base configuration for WordPress
  *
@@ -19,11 +22,6 @@
  */
 // ** MySQL settings - You can get this info from your web host ** //
 
-define( 'AS3CF_SETTINGS', serialize( array(
-    'provider' => 'aws',
-    'access-key-id' => 'AKIAIKTNKTAHQAPNPIRA',
-    'secret-access-key' => 'EWbARJD6T9Wyo6ez2F1Fr2mZYIrVXlFGO7dVxw4d',
-) ) );
 
 switch ($_SERVER['SERVER_NAME']) {
      /** Development Server */    
@@ -57,7 +55,7 @@ switch ($_SERVER['SERVER_NAME']) {
           define('DB_COLLATE', '');
           define('WP_DEBUG', false);   
 		  define( 'WP_CACHE_KEY_SALT', 'https://thepantryseattle.com' );
-            
+          
      break;
 } 
 
