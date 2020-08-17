@@ -1,3 +1,8 @@
+# BEGIN Faster 404 Images
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule \.(jpg|jpeg|png|gif|ico|swf|bmp)$ - [nocase,redirect=404,last]
+# END Faster 404 Images
 
 # BEGIN WordPress
 # The directives (lines) between `BEGIN WordPress` and `END WordPress` are

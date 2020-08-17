@@ -18,7 +18,13 @@
  * @package WordPress
  */
 // ** MySQL settings - You can get this info from your web host ** //
-define('WP_CACHE', true);
+
+define( 'AS3CF_SETTINGS', serialize( array(
+    'provider' => 'aws',
+    'access-key-id' => 'AKIAIKTNKTAHQAPNPIRA',
+    'secret-access-key' => 'EWbARJD6T9Wyo6ez2F1Fr2mZYIrVXlFGO7dVxw4d',
+) ) );
+
 switch ($_SERVER['SERVER_NAME']) {
      /** Development Server */    
      case 'pantrynew':
@@ -29,7 +35,7 @@ switch ($_SERVER['SERVER_NAME']) {
           define('DB_CHARSET', 'utf8');
           define('DB_COLLATE', '');
           define('WP_DEBUG', true);  
-		  define( 'WPCACHEHOME', '/Users/bretthorner/Documents/projects/pantrynew/wp-content/plugins/wp-super-cache/' );
+		  define( 'WP_CACHE_KEY_SALT', 'https://pantrynew:8890' );
      break;
      /** Staging Server */
      case 'pantry.deicreative.com':
@@ -49,8 +55,9 @@ switch ($_SERVER['SERVER_NAME']) {
           define('DB_HOST', 'thepantry-jan2020.cxjfm6fxwyci.us-east-1.rds.amazonaws.com:3306');
           define('DB_CHARSET', 'utf8');
           define('DB_COLLATE', '');
-          define('WP_DEBUG', false);     
-		  define( 'WPCACHEHOME', '/app/wp-content/plugins/wp-super-cache/' );
+          define('WP_DEBUG', false);   
+		  define( 'WP_CACHE_KEY_SALT', 'https://thepantryseattle.com' );
+            
      break;
 } 
 
