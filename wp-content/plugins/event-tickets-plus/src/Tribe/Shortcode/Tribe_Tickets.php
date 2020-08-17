@@ -73,9 +73,6 @@ class Tribe_Tickets extends Shortcode_Abstract {
 	/**
 	 * Returns the block template's content.
 	 *
-	 * @since 4.12.1
-	 * @since 4.12.3 Update usage of get_event_ticket_provider().
-	 *
 	 * @param WP_Post|int $post
 	 *
 	 * @return string HTML.
@@ -94,12 +91,15 @@ class Tribe_Tickets extends Shortcode_Abstract {
 			return '';
 		}
 
-		$post_id  = $post->ID;
-		$provider = Tickets::get_event_ticket_provider_object( $post_id );
+		$post_id     = $post->ID;
+		$provider_id = Tickets::get_event_ticket_provider( $post_id );
 
-		if ( empty( $provider ) ) {
+		// Protect against ticket that exists but is of a type that is not enabled
+		if ( ! method_exists( $provider_id, 'get_instance' ) ) {
 			return '';
 		}
+
+		$provider = call_user_func( [ $provider_id, 'get_instance' ] );
 
 		/** @var Tribe__Tickets__Editor__Template $template */
 		$template = tribe( 'tickets.editor.template' );
@@ -115,7 +115,7 @@ class Tribe_Tickets extends Shortcode_Abstract {
 		$args = [
 			'post_id'             => $post_id,
 			'provider'            => $provider,
-			'provider_id'         => $provider->class_name,
+			'provider_id'         => $provider_id,
 			'tickets'             => $tickets,
 			'cart_classes'        => [ 'tribe-block', 'tribe-tickets' ],
 			'tickets_on_sale'     => $blocks_tickets->get_tickets_on_sale( $tickets ),

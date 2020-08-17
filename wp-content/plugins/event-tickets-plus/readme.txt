@@ -4,7 +4,7 @@ Contributors: ModernTribe, brianjessee, camwynsp, paulkim, sc0ttkclark, aguseo, 
 Tags: events, WooCommerce, WooTickets, add-on, ticket sales, tickets, calendar, community, registration, api, dates, date, posts, workshop, conference, meeting, seminar, concert, summit, The Events Calendar, Events Calendar PRO, ticket integration, event ticketing, RSVP, EDD, Easy Digital Downloads
 Requires at least: 4.9.14
 Tested up to: 5.4.2
-Stable tag: 4.12.3
+Stable tag: 4.12.2
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -135,22 +135,9 @@ Our Premium Plugins:
 
 == Changelog ==
 
-= [4.12.3] 2020-07-28 =
-
-* Feature - Add trigger actions (attendee registered, attendee check in) in WooCommerce and Easy Digital Downloads to notify Promoter. [ETP-350]
-* Fix - Do not run our commerce provider integration code if that provider's core plugin is not currently active. For example, no fatal error should occur if an event has sold a WooCommerce ticket but now the core WooCommerce plugin is disabled. [ETP-333]
-* Tweak - Added the `tribe_tickets_is_woocommerce_active()` function (one for Easy Digital Downloads already existed). [ETP-333]
-* Tweak - Display all of a post's order tabs in the Attendees Report admin screen. Example: if a post's ticket provider was Easy Digital Downloads Tickets and such tickets were sold, then the post's provider changed to WooCommerce Tickets, the Attendees Report screen should show both the Easy Digital Downloads order history tab and the WooCommerce order history tab, regardless of which ticket provider is currently the default. [ETP-333]
-* Tweak - Update usage of `Tribe__Tickets__Tickets::get_ticket_provider_instance()`, as it now returns a class instance instead of class name string. [ETP-333]
-* Tweak - Update usage of `Tribe__Tickets__Tickets::get_event_ticket_provider()`, as it now returns false if the ticket provider is no longer active. [ETP-333]
-* Tweak - Use Event Tickets' new `Tribe__Tickets__Tickets::get_attendee_optout_key()` to simplify getting the optout key regardless of ticket provider class and accounting for legacy code. [ETP-333]
-* Tweak - Add labels to each select input for the Attendee Information's Birth Date field. [ETP-338]
-* Tweak - Modify parameters on `register_rest_route` to include `permission_callback` to prevent notices on WordPress 5.5.
-* Language - 3 new strings added, 38 updated, 0 fuzzied, and 0 obsoleted
-
 = [4.12.2] 2020-06-24  =
 
-* Tweak - Resolve a PHP notice when rendering the Birth Date field. [ETP-330]
+* Tweak - Resolve a PHP notice when rendering the Birth date field [ETP-330]
 * Language - 0 new strings added, 4 updated, 0 fuzzied, and 0 obsoleted
 
 = [4.12.1] 2020-05-20 =

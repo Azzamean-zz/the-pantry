@@ -8,20 +8,20 @@
  *
  * @since   4.11.2 Use customizable ticket name functions.
  * @since   4.12.1 Account for empty post type object, such as if post type got disabled.
- * @since   4.12.3 Update detecting ticket provider to account for possibly inactive provider.
  *
- * @version 4.12.3
+ * @version 4.12.1
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	die( '-1' );
 }
 
-$view      = Tribe__Tickets__Tickets_View::instance();
-$post_id   = get_the_ID();
-$post      = get_post( $post_id );
-$post_type = get_post_type_object( $post->post_type );
-$user_id   = get_current_user_id();
+$view           = Tribe__Tickets__Tickets_View::instance();
+$post_id        = get_the_ID();
+$post           = get_post( $post_id );
+$post_type      = get_post_type_object( $post->post_type );
+$user_id        = get_current_user_id();
+$active_modules = Tribe__Tickets__Tickets::modules();
 
 if ( ! $view->has_ticket_attendees( $post_id, $user_id ) ) {
 	return;
@@ -48,16 +48,14 @@ $order              = array_values( $orders );
 			<?php
 			$first_attendee = reset( $attendees );
 
-			$provider = Tribe__Tickets__Tickets::get_ticket_provider_instance( $first_attendee['provider'] );
-
-			if (
-				empty( $provider )
-				|| ! method_exists( $provider, 'get_order_data' )
-			) {
+			// If Provider is not found then Continue
+			if ( ! array_key_exists( $first_attendee['provider'], $active_modules ) ) {
 				continue;
 			}
 
-			$order = $provider->get_order_data( $order_id );
+			// Fetch the actual Provider
+			$provider = call_user_func( [ $first_attendee['provider'], 'get_instance' ] );
+			$order    = call_user_func_array( [ $provider, 'get_order_data' ], [ $order_id ] );
 			?>
 			<li class="tribe-item" id="order-<?php echo esc_html( $order_id ); ?>">
 				<div class="user-details">
@@ -101,9 +99,10 @@ $order              = array_values( $orders );
 								<?php
 								$price = '';
 
-								$provider = Tribe__Tickets__Tickets::get_ticket_provider_instance( $attendee['provider'] );
-								if ( ! empty( $provider ) ) {
-									$price = $provider->get_price_html( $attendee['product_id'], $attendee );
+								if ( class_exists( $attendee['provider'] ) ) {
+									/** @var Tribe__Tickets__Tickets $provider */
+									$provider = new $attendee['provider'];
+									$price    = $provider->get_price_html( $attendee['product_id'], $attendee );
 								}
 								?>
 
@@ -117,7 +116,7 @@ $order              = array_values( $orders );
 							</div>
 							<?php
 							/**
-							 * Inject content into a Ticket's attendee block on the Tickets orders page.
+							 * Inject content into an Tickets attendee block on the Tickets orders page
 							 *
 							 * @param array   $attendee Attendee array.
 							 * @param WP_Post $post     Post object that the tickets are tied to.

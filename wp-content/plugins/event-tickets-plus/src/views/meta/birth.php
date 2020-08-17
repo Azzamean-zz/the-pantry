@@ -1,17 +1,15 @@
 <?php
 /**
- * This template renders the Birth Date field for Attendee Information.
+ * Renders field
  *
  * Override this template in your own theme by creating a file at:
  *
- *     [your-theme]/tribe-events/meta/birth.php
+ * [your-theme]/tribe-events/meta/birth.php
  *
- * @deprecated 4.12.3 Replaced by event-tickets/src/views/registration-js/attendees/fields/birth.php.
- *
- * @version 4.12.3
+ * @version TBD
  *
  * @since 4.12.1 Introduced template.
- * @since 4.12.3 Add a separate label per input for screen readers.
+ * @since TBD Assign the ID to the visible select as to mimic registration-js/fields/birth.php.
  *
  * @var Tribe__Tickets_Plus__Meta__Field__Birth $this
  */
@@ -26,74 +24,48 @@ $classes = [
 ?>
 <div class="tribe_horizontal_datepicker__container">
 	<div <?php tribe_classes( $classes ) ?>>
-		<label>
-			<?php echo wp_kses_post( $field['label'] ); ?>
-		</label>
+		<label for="<?php echo esc_attr( $option_id ); ?>"><?php echo wp_kses_post( $field['label'] ); ?></label>
 
-		<!-- Group of Month, Day, Year fields -->
-		<div class="tribe_horizontal_datepicker__field_group tribe-common">
-			<!-- Month -->
-			<div class="tribe_horizontal_datepicker">
-				<label
-					for="<?php echo esc_attr( $option_id . '-month' ); ?>"
-					class="tribe-common-a11y-hidden"
-				>
-					<?php echo wp_kses_post( $field['label'] ) . esc_html_x( ' Month', 'birthdate field', 'event-tickets-plus' ); ?>
-				</label>
-				<select
-					id="<?php echo esc_attr( $option_id . '-month' ); ?>"
-					<?php disabled( $this->is_restricted( $attendee_id ) ); ?>
-					<?php tribe_required( $required ); ?>
-					class="tribe_horizontal_datepicker__month"
-				>
-					<option value="" disabled selected><?php esc_html_e( 'Month', 'tribe-event-plus' ); ?></option>
-					<?php foreach ( $this->get_months() as $month_number => $month_name ) : ?>
-						<option value="<?php echo esc_attr( $month_number ); ?>"><?php echo esc_html( $month_name ); ?></option>
-					<?php endforeach; ?>
-				</select>
-			</div>
-			<!-- Day -->
-			<div class="tribe_horizontal_datepicker">
-				<label
-					for="<?php echo esc_attr( $option_id . '-day' ); ?>"
-					class="tribe-common-a11y-hidden"
-				>
-					<?php echo wp_kses_post( $field['label'] ) . esc_html_x( ' Day', 'birthdate field', 'event-tickets-plus' ); ?>
-				</label>
-				<select
-					id="<?php echo esc_attr( $option_id . '-day' ); ?>"
-					<?php disabled( $this->is_restricted( $attendee_id ) ); ?>
-					<?php tribe_required( $required ); ?>
-					class="tribe_horizontal_datepicker__day"
-				>
-					<option value="" disabled selected><?php esc_html_e( 'Day', 'tribe-event-plus' ); ?></option>
-					<?php foreach ( $this->get_days() as $birth_day ) : ?>
-						<option value="<?php echo esc_attr( $birth_day ); ?>"><?php echo esc_html( $birth_day ); ?></option>
-					<?php endforeach; ?>
-				</select>
-			</div>
-			<!-- Year -->
-			<div class="tribe_horizontal_datepicker">
-				<label
-					for="<?php echo esc_attr( $option_id . '-year' ); ?>"
-					class="tribe-common-a11y-hidden"
-				>
-					<?php echo wp_kses_post( $field['label'] ) . esc_html_x( ' Year', 'birthdate field', 'event-tickets-plus' ); ?>
-				</label>
-				<select
-					id="<?php echo esc_attr( $option_id . '-year' ); ?>"
-					<?php disabled( $this->is_restricted( $attendee_id ) ); ?>
-					<?php tribe_required( $required ); ?>
-					class="tribe_horizontal_datepicker__year"
-				>
-					<option value="" disabled selected><?php esc_html_e( 'Year', 'tribe-event-plus' ); ?></option>
-					<?php foreach ( $this->get_years() as $birth_year ) : ?>
-						<option value="<?php echo esc_attr( $birth_year ); ?>"><?php echo esc_html( $birth_year ); ?></option>
-					<?php endforeach; ?>
-				</select>
-			</div>
+		<!-- Month -->
+		<div class="tribe_horizontal_datepicker">
+			<select
+				<?php disabled( $this->is_restricted( $attendee_id ) ); ?>
+				<?php tribe_required( $required ); ?>
+				class="tribe_horizontal_datepicker__month"
+				id="<?php echo esc_attr( $option_id ); ?>"
+			>
+				<option value="" disabled selected><?php esc_html_e( 'Month', 'tribe-event-plus' ); ?></option>
+				<?php foreach ( $this->get_months() as $month_number => $month_name ) : ?>
+					<option value="<?php echo esc_attr( $month_number ); ?>"><?php echo esc_html( $month_name ); ?></option>
+				<?php endforeach; ?>
+			</select>
 		</div>
-
+		<!-- Day -->
+		<div class="tribe_horizontal_datepicker">
+			<select
+				<?php disabled( $this->is_restricted( $attendee_id ) ); ?>
+				<?php tribe_required( $required ); ?>
+				class="tribe_horizontal_datepicker__day"
+			>
+				<option value="" disabled selected><?php esc_html_e( 'Day', 'tribe-event-plus' ); ?></option>
+				<?php foreach ( $this->get_days() as $birth_day ) : ?>
+					<option value="<?php echo esc_attr( $birth_day ); ?>"><?php echo esc_html( $birth_day ); ?></option>
+				<?php endforeach; ?>
+			</select>
+		</div>
+		<!-- Year -->
+		<div class="tribe_horizontal_datepicker">
+			<select
+				<?php disabled( $this->is_restricted( $attendee_id ) ); ?>
+				<?php tribe_required( $required ); ?>
+				class="tribe_horizontal_datepicker__year"
+			>
+				<option value="" disabled selected><?php esc_html_e( 'Year', 'tribe-event-plus' ); ?></option>
+				<?php foreach ( $this->get_years() as $birth_year ) : ?>
+					<option value="<?php echo esc_attr( $birth_year ); ?>"><?php echo esc_html( $birth_year ); ?></option>
+				<?php endforeach; ?>
+			</select>
+		</div>
 		<div>
 			<input
 				type="hidden"

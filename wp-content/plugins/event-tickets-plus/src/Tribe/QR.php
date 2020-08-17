@@ -72,10 +72,10 @@ class Tribe__Tickets_Plus__QR {
 	public function authorized_checkin( $event_id, $ticket_id, $security_code ) {
 
 		if ( ! is_user_logged_in() || ! current_user_can( 'edit_posts' ) ) {
-			$checkin_arr = [
+			$checkin_arr = array(
 				'url'             => get_permalink( $event_id ),
 				'user_had_access' => false,
-			];
+			);
 
 			return $checkin_arr;
 		}
@@ -83,10 +83,7 @@ class Tribe__Tickets_Plus__QR {
 		$post = get_post( $event_id );
 
 		if ( empty( $post ) ) {
-			return [
-				'url'             => '',
-				'user_had_access' => true,
-			];
+			return array( 'url' => '', 'user_had_access' => true );
 		}
 
 		/**
@@ -98,58 +95,55 @@ class Tribe__Tickets_Plus__QR {
 		 */
 		$check_security_code = apply_filters( 'tribe_tickets_plus_qr_check_security_code', true );
 
-		/** @var Tribe__Tickets__Data_API $data_api */
-		$data_api = tribe( 'tickets.data_api' );
+		$service_provider = tribe( 'tickets.data_api' )->get_ticket_provider( $ticket_id );
 
-		$service_provider = $data_api->get_ticket_provider( $ticket_id );
-
-		// If check_security_code but security key does not match, do not check in and redirect with message.
-		if (
-			$check_security_code
-			&& (
-				empty( $service_provider->security_code )
-				|| get_post_meta( $ticket_id, $service_provider->security_code, true ) !== $security_code
+		//if check_security_code and security key does not match do not checkin and redirect with message
+		if ( $check_security_code &&
+			(
+				empty( $service_provider->security_code ) ||
+				$security_code !== get_post_meta( $ticket_id, $service_provider->security_code, true )
 			)
 		) {
+
 			$url = add_query_arg(
-				[
+				array(
 					'post_type'              => $post->post_type,
 					'page'                   => tribe( 'tickets.attendees' )->slug(),
 					'event_id'               => $event_id,
 					'qr_checked_in'          => $ticket_id,
 					'no_security_code_match' => true,
-				],
-				admin_url( 'edit.php' )
+				), admin_url( 'edit.php' )
 			);
 
-			$checkin_arr = [
+			$checkin_arr = array(
 				'url'             => $url,
 				'user_had_access' => true,
-			];
+			);
 
 			return $checkin_arr;
+
 		}
 
 		// If the user is the site owner (or similar), Check in the user to the event
 		$this->_check_in( $ticket_id );
 
 		$url = add_query_arg(
-			[
+			array(
 				'post_type'     => $post->post_type,
 				'page'          => tribe( 'tickets.attendees' )->slug(),
 				'event_id'      => $event_id,
 				'qr_checked_in' => $ticket_id,
-			],
-			admin_url( 'edit.php' )
+			), admin_url( 'edit.php' )
 		);
 
-		$checkin_arr = [
+		$checkin_arr = array(
 			'url'             => $url,
 			'user_had_access' => true,
-		];
+		);
 
 		return $checkin_arr;
 	}
+
 
 	/**
 	 * Show a notice so the user knows the ticket was checked in.
@@ -309,22 +303,17 @@ class Tribe__Tickets_Plus__QR {
 	/**
 	 * Checks the user in, for all the *Tickets modules running.
 	 *
-	 * @since 1.0.0
-	 * @since 4.12.3 Use new helper method to more succinctly get provider class.
-	 *
 	 * @param $ticket_id
 	 */
 	private function _check_in( $ticket_id ) {
 		$modules = Tribe__Tickets__Tickets::modules();
 
 		foreach ( $modules as $class => $module ) {
-			$module_instance = Tribe__Tickets__Tickets::get_ticket_provider_instance( $class );
-
-			if ( empty( $module_instance ) ) {
+			if ( ! is_callable( array( $class, 'get_instance' ) ) ) {
 				continue;
 			}
-
-			$module_instance->checkin( $ticket_id, false );
+			$obj = call_user_func( array( $class, 'get_instance' ) );
+			$obj->checkin( $ticket_id, false );
 		}
 	}
 }
