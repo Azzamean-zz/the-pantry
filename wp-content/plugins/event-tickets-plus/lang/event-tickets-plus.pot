@@ -2,28 +2,28 @@
 # This file is distributed under the same license as the Event Tickets Plus package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Event Tickets Plus 4.12.2\n"
+"Project-Id-Version: Event Tickets Plus 4.12.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/event-tickets-"
 "plus\n"
-"POT-Creation-Date: 2020-06-19 04:58:23+00:00\n"
+"POT-Creation-Date: 2020-04-21 02:59:44+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2020-06-19 04:58\n"
+"PO-Revision-Date: 2020-04-21 02:59\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 
-#. #-#-#-#-#  event-tickets-plus.pot (Event Tickets Plus 4.12.2)  #-#-#-#-#
+#. #-#-#-#-#  event-tickets-plus.pot (Event Tickets Plus 4.12.0)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
-#: event-tickets-plus.php:57 src/Tribe/Main.php:402
+#: event-tickets-plus.php:57 src/Tribe/Main.php:368
 msgid "Event Tickets Plus"
 msgstr ""
 
-#: event-tickets-plus.php:215
+#: event-tickets-plus.php:200
 msgid "Event Tickets"
 msgstr ""
 
-#: event-tickets-plus.php:220
+#: event-tickets-plus.php:205
 msgid ""
 "To begin using Event Tickets Plus, please install and activate the latest "
 "version of %1$s%2$s%3$s and ensure its own requirements have been met."
@@ -88,7 +88,7 @@ msgid ""
 "you prefer for your website in the %5$s.%6$s "
 msgstr ""
 
-#: src/Tribe/Attendees_List.php:258 src/Tribe/Attendees_List.php:259
+#: src/Tribe/Attendees_List.php:256 src/Tribe/Attendees_List.php:257
 msgid "Load all attendees"
 msgstr ""
 
@@ -508,7 +508,7 @@ msgstr ""
 msgid "As soon as an order is created"
 msgstr ""
 
-#: src/Tribe/Main.php:509
+#: src/Tribe/Main.php:475
 msgid "Require users to log in before they purchase tickets"
 msgstr ""
 
@@ -516,54 +516,20 @@ msgstr ""
 msgid "Checked"
 msgstr ""
 
-#: src/Tribe/Meta/Field/Birth.php:20
-msgctxt "Attendee Information Field Name"
-msgid "Birth Date"
-msgstr ""
-
-#: src/Tribe/Meta/Field/Checkbox.php:10
-msgctxt "Attendee Information Field Name"
+#: src/Tribe/Meta/Field/Abstract_Field.php:25 src/admin-views/meta.php:14
 msgid "Checkbox"
 msgstr ""
 
-#: src/Tribe/Meta/Field/Datetime.php:17
-msgctxt "Attendee Information Field Name"
-msgid "Date"
-msgstr ""
-
-#: src/Tribe/Meta/Field/Email.php:17
-msgctxt "Attendee Information Field Name"
-msgid "Email"
-msgstr ""
-
-#: src/Tribe/Meta/Field/Number.php:17
-msgctxt "Attendee Information Field Name"
-msgid "Number"
-msgstr ""
-
-#: src/Tribe/Meta/Field/Radio.php:10
-msgctxt "Attendee Information Field Name"
+#: src/Tribe/Meta/Field/Abstract_Field.php:26 src/admin-views/meta.php:11
 msgid "Radio"
 msgstr ""
 
-#: src/Tribe/Meta/Field/Select.php:10
-msgctxt "Attendee Information Field Name"
+#: src/Tribe/Meta/Field/Abstract_Field.php:27 src/admin-views/meta.php:17
 msgid "Dropdown"
 msgstr ""
 
-#: src/Tribe/Meta/Field/Telephone.php:17
-msgctxt "Attendee Information Field Name"
-msgid "Telephone"
-msgstr ""
-
-#: src/Tribe/Meta/Field/Text.php:10
-msgctxt "Attendee Information Field Name"
+#: src/Tribe/Meta/Field/Abstract_Field.php:28 src/admin-views/meta.php:8
 msgid "Text"
-msgstr ""
-
-#: src/Tribe/Meta/Field/Url.php:17
-msgctxt "Attendee Information Field Name"
-msgid "URL"
 msgstr ""
 
 #: src/Tribe/Meta/Fieldset.php:15
@@ -828,10 +794,6 @@ msgstr ""
 msgid "Checked In!"
 msgstr ""
 
-#: src/Tribe/Shortcode/Tribe_Tickets_Attendees.php:108
-msgid "Who's coming?"
-msgstr ""
-
 #: src/admin-views/attendees-list.php:7
 msgid "Display attendees list"
 msgstr ""
@@ -1053,19 +1015,19 @@ msgctxt "Attendee information fields"
 msgid "Delete this field"
 msgstr ""
 
-#: src/admin-views/meta-fields/checkbox.php:15
-#: src/admin-views/meta-fields/radio.php:15
-#: src/admin-views/meta-fields/select.php:15
+#: src/admin-views/meta-fields/checkbox.php:11
+#: src/admin-views/meta-fields/radio.php:11
+#: src/admin-views/meta-fields/select.php:11
 msgctxt "Attendee information fields"
 msgid "Options (one per line)"
 msgstr ""
 
-#: src/admin-views/meta-fields/text.php:17
+#: src/admin-views/meta-fields/text.php:13
 msgctxt "Attendee information fields"
 msgid "Multi-line text field?"
 msgstr ""
 
-#: src/admin-views/meta.php:8
+#: src/admin-views/meta.php:5
 msgid "Add New Field:"
 msgstr ""
 
@@ -1221,18 +1183,6 @@ msgstr[1] ""
 msgid "Log in to purchase"
 msgstr ""
 
-#: src/views/meta/birth.php:37
-msgid "Month"
-msgstr ""
-
-#: src/views/meta/birth.php:50
-msgid "Day"
-msgstr ""
-
-#: src/views/meta/birth.php:63
-msgid "Year"
-msgstr ""
-
 #: src/views/meta.php:18
 msgid "Please fill in all required fields"
 msgstr ""
@@ -1263,24 +1213,15 @@ msgstr ""
 msgid "Toggle attendee info"
 msgstr ""
 
-#: src/views/tickets-plus/orders-tickets.php:30
-msgctxt "fallback post type singular name"
-msgid "Post"
+#: src/views/tickets-plus/orders-tickets.php:36
+msgid "My %1$s for This %2$s"
 msgstr ""
 
-#. Translators: 1: plural Tickets label, 2: post type label.
-#: src/views/tickets-plus/orders-tickets.php:39
-msgid "My %1$s for this %2$s"
-msgstr ""
-
-#. Translators: 1: order number, 2: count of attendees in the order, 3: ticket
-#. label (dynamically singular or plural), 4: purchaser name, 5: linked
-#. purchaser email, 6: date of purchase.
-#: src/views/tickets-plus/orders-tickets.php:66
+#: src/views/tickets-plus/orders-tickets.php:62
 msgid "Order #%1$s: %2$d %3$s reserved by %4$s (%5$s) on %6$s"
 msgstr ""
 
-#: src/views/tickets-plus/orders-tickets.php:96
+#: src/views/tickets-plus/orders-tickets.php:92
 msgid "Attendee %d"
 msgstr ""
 

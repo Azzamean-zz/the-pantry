@@ -1,9 +1,5 @@
 <?php
 
-/**
- * @see \Tribe__Tickets_Plus__Meta__Field__Select
- */
-
 $options = '';
 
 if ( $extra && ! empty( $extra['options'] ) ) {
