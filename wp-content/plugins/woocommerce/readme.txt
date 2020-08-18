@@ -2,9 +2,9 @@
 Contributors: automattic, mikejolley, jameskoster, claudiosanches, kloon, rodrigosprimo, peterfabian1000, vedjain, jamosova, obliviousharmony
 Tags: e-commerce, store, sales, sell, woo, shop, cart, checkout, downloadable, downloads, payments, paypal, storefront, stripe, woo commerce
 Requires at least: 5.2
-Tested up to: 5.5
+Tested up to: 5.4
 Requires PHP: 7.0
-Stable tag: 4.3.3
+Stable tag: 4.2.2
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -179,10 +179,10 @@ INTERESTED IN DEVELOPMENT?
 
 == Changelog ==
 
-= 4.3.3 - 2020-08-14 =
+= 4.2.2 - 2020-06-23 =
 
-**WooCommerce REST API 1.0.10-pl-2**
-* Fix - Fix regression and restore backward compatibility for date-time and mixed datatypes. #239
+**WooCommerce**
+* Fix - Put back the remove element for multiselects on selectWoo. #26849
 
 [See changelog for all versions](https://raw.githubusercontent.com/woocommerce/woocommerce/master/CHANGELOG.txt).
 

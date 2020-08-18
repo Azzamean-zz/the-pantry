@@ -102,7 +102,7 @@ const CheckboxList = ( {
 		return (
 			<Fragment>
 				{ options.map( ( option, index ) => (
-					<Fragment key={ option.value }>
+					<Fragment key={ option.key }>
 						<li
 							{ ...( shouldTruncateOptions &&
 								! showExpanded &&
@@ -110,15 +110,13 @@ const CheckboxList = ( {
 						>
 							<input
 								type="checkbox"
-								id={ option.value }
-								value={ option.value }
-								onChange={ ( event ) => {
-									onChange( event.target.value );
-								} }
-								checked={ checked.includes( option.value ) }
+								id={ option.key }
+								value={ option.key }
+								onChange={ onChange }
+								checked={ checked.includes( option.key ) }
 								disabled={ isDisabled }
 							/>
-							<label htmlFor={ option.value }>
+							<label htmlFor={ option.key }>
 								{ option.label }
 							</label>
 						</li>
@@ -159,8 +157,8 @@ CheckboxList.propTypes = {
 	onChange: PropTypes.func,
 	options: PropTypes.arrayOf(
 		PropTypes.shape( {
+			key: PropTypes.string.isRequired,
 			label: PropTypes.node.isRequired,
-			value: PropTypes.string.isRequired,
 		} )
 	),
 	checked: PropTypes.array,

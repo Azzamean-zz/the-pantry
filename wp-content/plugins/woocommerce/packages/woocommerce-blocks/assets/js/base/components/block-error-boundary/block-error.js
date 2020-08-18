@@ -9,11 +9,10 @@ const BlockError = ( {
 	imageUrl = `${ WC_BLOCKS_ASSET_URL }img/block-error.svg`,
 	header = __( 'Oops!', 'woocommerce' ),
 	text = __(
-		'There was an error loading the content.',
+		'There was an error with loading this content.',
 		'woocommerce'
 	),
 	errorMessage,
-	errorMessagePrefix = __( 'Error:', 'woocommerce' ),
 } ) => {
 	return (
 		<div className="wc-block-error">
@@ -30,10 +29,7 @@ const BlockError = ( {
 				) }
 				{ text && <p className="wc-block-error__text">{ text }</p> }
 				{ errorMessage && (
-					<p className="wc-block-error__message">
-						{ errorMessagePrefix ? errorMessagePrefix + ' ' : '' }
-						{ errorMessage }
-					</p>
+					<p className="wc-block-error__message">{ errorMessage }</p>
 				) }
 			</div>
 		</div>
@@ -44,7 +40,7 @@ BlockError.propTypes = {
 	/**
 	 * Error message to display below the content.
 	 */
-	errorMessage: PropTypes.node,
+	errorMessage: PropTypes.string,
 	/**
 	 * Text to display as the heading of the error block.
 	 * If it's `null` or an empty string, no header will be displayed.
@@ -62,11 +58,7 @@ BlockError.propTypes = {
 	 * If it's `null` or an empty string, nothing will be displayed.
 	 * If it's not defined, the default text will be used.
 	 */
-	text: PropTypes.node,
-	/**
-	 * Text preceeding the error message.
-	 */
-	errorMessagePrefix: PropTypes.string,
+	text: PropTypes.string,
 };
 
 export default BlockError;

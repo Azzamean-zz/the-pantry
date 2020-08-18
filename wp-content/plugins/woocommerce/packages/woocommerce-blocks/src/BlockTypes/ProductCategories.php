@@ -28,7 +28,6 @@ class ProductCategories extends AbstractDynamicBlock {
 	 */
 	protected $defaults = array(
 		'hasCount'       => true,
-		'hasImage'       => false,
 		'hasEmpty'       => false,
 		'isDropdown'     => false,
 		'isHierarchical' => true,
@@ -45,7 +44,6 @@ class ProductCategories extends AbstractDynamicBlock {
 			array(
 				'className'      => $this->get_schema_string(),
 				'hasCount'       => $this->get_schema_boolean( true ),
-				'hasImage'       => $this->get_schema_boolean( false ),
 				'hasEmpty'       => $this->get_schema_boolean( false ),
 				'isDropdown'     => $this->get_schema_boolean( false ),
 				'isHierarchical' => $this->get_schema_boolean( true ),
@@ -246,14 +244,7 @@ class ProductCategories extends AbstractDynamicBlock {
 	 * @return string Rendered output.
 	 */
 	protected function renderList( $categories, $attributes, $uid, $depth = 0 ) {
-		$classes = [
-			'wc-block-product-categories-list',
-			'wc-block-product-categories-list--depth-' . absint( $depth ),
-		];
-		if ( ! empty( $attributes['hasImage'] ) ) {
-			$classes[] = 'wc-block-product-categories-list--has-images';
-		}
-		$output = '<ul class="' . esc_attr( implode( ' ', $classes ) ) . '">' . $this->renderListItems( $categories, $attributes, $uid, $depth ) . '</ul>';
+		$output = '<ul class="wc-block-product-categories-list wc-block-product-categories-list--depth-' . absint( $depth ) . '">' . $this->renderListItems( $categories, $attributes, $uid, $depth ) . '</ul>';
 
 		return $output;
 	}
@@ -274,7 +265,7 @@ class ProductCategories extends AbstractDynamicBlock {
 			$output .= '
 				<li class="wc-block-product-categories-list-item">
 					<a href="' . esc_attr( get_term_link( $category->term_id, 'product_cat' ) ) . '">
-						' . $this->get_image_html( $category, $attributes ) . esc_html( $category->name ) . '
+						' . esc_html( $category->name ) . '
 					</a>
 					' . $this->getCount( $category, $attributes ) . '
 					' . ( ! empty( $category->children ) ? $this->renderList( $category->children, $attributes, $uid, $depth + 1 ) : '' ) . '
@@ -283,28 +274,6 @@ class ProductCategories extends AbstractDynamicBlock {
 		}
 
 		return $output;
-	}
-
-	/**
-	 * Returns the category image html
-	 *
-	 * @param \WP_Term $category Term object.
-	 * @param array    $attributes Block attributes. Default empty array.
-	 * @param string   $size Image size, defaults to 'woocommerce_thumbnail'.
-	 * @return string
-	 */
-	public function get_image_html( $category, $attributes, $size = 'woocommerce_thumbnail' ) {
-		if ( empty( $attributes['hasImage'] ) ) {
-			return '';
-		}
-
-		$image_id = get_term_meta( $category->term_id, 'thumbnail_id', true );
-
-		if ( ! $image_id ) {
-			return '<span class="wc-block-product-categories-list-item__image wc-block-product-categories-list-item__image--placeholder">' . wc_placeholder_img( 'woocommerce_thumbnail' ) . '</span>';
-		}
-
-		return '<span class="wc-block-product-categories-list-item__image">' . wp_get_attachment_image( $image_id, 'woocommerce_thumbnail' ) . '</span>';
 	}
 
 	/**

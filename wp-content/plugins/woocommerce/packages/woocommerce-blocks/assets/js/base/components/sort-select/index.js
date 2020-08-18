@@ -4,7 +4,7 @@
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Label from '@woocommerce/base-components/label';
-import { withInstanceId } from '@woocommerce/base-hocs/with-instance-id';
+import withComponentId from '@woocommerce/base-hocs/with-component-id';
 
 /**
  * Internal dependencies
@@ -17,7 +17,7 @@ import './style.scss';
  */
 const SortSelect = ( {
 	className,
-	instanceId,
+	componentId,
 	defaultValue,
 	label,
 	onChange,
@@ -26,7 +26,7 @@ const SortSelect = ( {
 	readOnly,
 	value,
 } ) => {
-	const selectId = `wc-block-sort-select__select-${ instanceId }`;
+	const selectId = `wc-block-sort-select__select-${ componentId }`;
 
 	return (
 		<div className={ classNames( 'wc-block-sort-select', className ) }>
@@ -70,8 +70,8 @@ SortSelect.propTypes = {
 	readOnly: PropTypes.bool,
 	screenReaderLabel: PropTypes.string,
 	value: PropTypes.string,
-	// from withInstanceId
-	instanceId: PropTypes.number.isRequired,
+	// from withComponentId
+	componentId: PropTypes.number.isRequired,
 };
 
-export default withInstanceId( SortSelect );
+export default withComponentId( SortSelect );

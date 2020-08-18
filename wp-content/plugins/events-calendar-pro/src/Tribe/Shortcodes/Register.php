@@ -28,7 +28,7 @@ class Tribe__Events__Pro__Shortcodes__Register {
 	/**
 	 * Variable that holds the name of the shortcodes being created
 	 *
-	 * @since TBD
+	 * @since 5.1.4
 	 *
 	 * @var array
 	 */
@@ -375,7 +375,7 @@ class Tribe__Events__Pro__Shortcodes__Register {
 	/**
 	 * Hook into filter and add our logic for adding body classes.
 	 *
-	 * @since TBD
+	 * @since 5.1.4
 	 *
 	 * @param boolean $add              Whether to add classes or not.
 	 * @param array   $add_classes      The array of body class names to add.

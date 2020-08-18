@@ -296,10 +296,6 @@ class Tribe__Tickets_Plus__Commerce__WooCommerce__Main extends Tribe__Tickets_Pl
 	 * Registers all actions/filters
 	 */
 	public function hooks() {
-		if ( ! tribe_tickets_is_woocommerce_active() ) {
-			return;
-		}
-
 		add_action( 'init', [ $this, 'register_wootickets_type' ] );
 		add_action( 'init', [ $this, 'register_resources' ] );
 		add_action( 'add_meta_boxes', [ $this, 'woocommerce_meta_box' ] );
@@ -2693,7 +2689,7 @@ class Tribe__Tickets_Plus__Commerce__WooCommerce__Main extends Tribe__Tickets_Pl
 	 * Get's the WC product price html
 	 *
 	 * @param int|object $product
-	 * @param array|boolean $attendee
+	 * @param array      $attendee
 	 *
 	 * @return string
 	 */

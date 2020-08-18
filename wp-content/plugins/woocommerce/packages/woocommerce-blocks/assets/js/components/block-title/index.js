@@ -16,7 +16,7 @@ const BlockTitle = ( { className, headingLevel, onChange, heading } ) => {
 		<TagName>
 			<PlainText
 				className={ classnames(
-					'wc-block-components-title',
+					'wc-block-component-title',
 					className
 				) }
 				value={ heading }

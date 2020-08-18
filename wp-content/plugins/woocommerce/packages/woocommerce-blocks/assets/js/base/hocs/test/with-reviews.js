@@ -144,17 +144,19 @@ describe( 'withReviews Component', () => {
 			renderer = render();
 		} );
 
-		test( 'sets the error prop', async () => {
-			await expect( () => getReviewsPromise() ).toThrow();
-
+		it( 'sets the error prop', ( done ) => {
 			const { formatError } = mockBaseUtils;
-			const props = renderer.root.findByType( 'div' ).props;
+			getReviewsPromise.catch( () => {
+				const props = renderer.root.findByType( 'div' ).props;
 
-			expect( formatError ).toHaveBeenCalledWith( error );
-			expect( formatError ).toHaveBeenCalledTimes( 1 );
-			expect( props.error ).toEqual( formattedError );
-			expect( props.isLoading ).toBe( false );
-			expect( props.reviews ).toEqual( [] );
+				expect( formatError ).toHaveBeenCalledWith( error );
+				expect( formatError ).toHaveBeenCalledTimes( 1 );
+				expect( props.error ).toEqual( formattedError );
+				expect( props.isLoading ).toBe( false );
+				expect( props.reviews ).toEqual( [] );
+
+				done();
+			} );
 		} );
 	} );
 } );

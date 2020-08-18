@@ -9,8 +9,13 @@
     "dbcache.configuration_overloaded": false,
     "dbcache.debug": false,
     "dbcache.debug_purge": false,
+<<<<<<< HEAD
     "dbcache.enabled": false,
     "dbcache.engine": "file",
+=======
+    "dbcache.enabled": true,
+    "dbcache.engine": "memcached",
+>>>>>>> origin/master
     "dbcache.file.gc": 3600,
     "dbcache.file.locking": false,
     "dbcache.lifetime": 180,
@@ -90,12 +95,20 @@
     ],
     "lazyload.embed_method": "async_head",
     "objectcache.configuration_overloaded": false,
+<<<<<<< HEAD
     "objectcache.enabled": false,
+=======
+    "objectcache.enabled": true,
+>>>>>>> origin/master
     "objectcache.debug": false,
     "objectcache.debug_purge": false,
     "objectcache.enabled_for_wp_admin": false,
     "objectcache.fallback_transients": true,
+<<<<<<< HEAD
     "objectcache.engine": "file",
+=======
+    "objectcache.engine": "memcached",
+>>>>>>> origin/master
     "objectcache.file.gc": 3600,
     "objectcache.file.locking": false,
     "objectcache.memcached.servers": [
@@ -181,6 +194,7 @@
         "wp-links-opml.php",
         "wp-locations.php"
     ],
+<<<<<<< HEAD
     "pgcache.accept.qs": [
         ""
     ],
@@ -218,6 +232,26 @@
     "pgcache.reject.ua": [
         ""
     ],
+=======
+    "pgcache.accept.qs": [],
+    "pgcache.late_init": false,
+    "pgcache.late_caching": false,
+    "pgcache.mirrors.enabled": false,
+    "pgcache.mirrors.home_urls": [],
+    "pgcache.reject.front_page": false,
+    "pgcache.reject.logged": true,
+    "pgcache.reject.logged_roles": false,
+    "pgcache.reject.roles": [],
+    "pgcache.reject.uri": [
+        "wp-.*\\.php",
+        "index\\.php"
+    ],
+    "pgcache.reject.categories": [],
+    "pgcache.reject.tags": [],
+    "pgcache.reject.authors": [],
+    "pgcache.reject.custom": [],
+    "pgcache.reject.ua": [],
+>>>>>>> origin/master
     "pgcache.reject.cookie": [
         "wptouch_switch_toggle"
     ],
@@ -239,9 +273,13 @@
         "rss2"
     ],
     "pgcache.purge.postpages_limit": 10,
+<<<<<<< HEAD
     "pgcache.purge.pages": [
         ""
     ],
+=======
+    "pgcache.purge.pages": [],
+>>>>>>> origin/master
     "pgcache.purge.sitemap_regex": "([a-z0-9_\\-]*?)sitemap([a-z0-9_\\-]*)?\\.xml",
     "pgcache.prime.enabled": false,
     "pgcache.prime.interval": 900,
@@ -882,7 +920,11 @@
             ]
         }
     },
+<<<<<<< HEAD
     "common.track_usage": true,
+=======
+    "common.track_usage": false,
+>>>>>>> origin/master
     "common.tweeted": false,
     "config.check": true,
     "config.path": "",
@@ -903,7 +945,11 @@
     "timelimit.cdn_test": 300,
     "timelimit.domain_rename": 120,
     "timelimit.minify_recommendations": 600,
+<<<<<<< HEAD
     "common.instance_id": 992140274,
+=======
+    "common.instance_id": 1641793847,
+>>>>>>> origin/master
     "common.force_master": true,
     "extensions.active": {
         "fragmentcache": "w3-total-cache\/Extension_FragmentCache_Plugin.php"

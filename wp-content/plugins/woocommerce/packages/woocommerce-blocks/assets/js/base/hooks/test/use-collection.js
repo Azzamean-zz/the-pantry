@@ -63,7 +63,6 @@ describe( 'useCollection', () => {
 	const setUpMocks = () => {
 		mocks = {
 			selectors: {
-				getCollectionError: jest.fn().mockReturnValue( false ),
 				getCollection: jest
 					.fn()
 					.mockImplementation( () => ( { foo: 'bar' } ) ),

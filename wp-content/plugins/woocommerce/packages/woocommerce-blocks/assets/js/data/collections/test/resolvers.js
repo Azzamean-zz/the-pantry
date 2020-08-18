@@ -10,7 +10,7 @@ import { getCollection, getCollectionHeader } from '../resolvers';
 import { receiveCollection } from '../actions';
 import { STORE_KEY as SCHEMA_STORE_KEY } from '../../schema/constants';
 import { STORE_KEY } from '../constants';
-import { apiFetchWithHeaders } from '../../shared-controls';
+import { apiFetchWithHeaders } from '../controls';
 
 jest.mock( '@wordpress/data-controls' );
 
@@ -73,9 +73,7 @@ describe( 'getCollection', () => {
 				fulfillment.next();
 				const { value } = fulfillment.next( 'https://example.org' );
 				expect( value ).toEqual(
-					apiFetchWithHeaders( {
-						path: 'https://example.org?foo=bar',
-					} )
+					apiFetchWithHeaders( 'https://example.org?foo=bar' )
 				);
 			}
 		);
@@ -90,7 +88,7 @@ describe( 'getCollection', () => {
 						'products',
 						'?foo=bar',
 						[ 20, 30 ],
-						{ items: [], headers: undefined }
+						{ items: undefined, headers: undefined }
 					)
 				);
 			}
@@ -103,7 +101,7 @@ describe( 'getCollection', () => {
 				fulfillment.next();
 				fulfillment.next( 'https://example.org' );
 				const { value } = fulfillment.next( {
-					response: [ '42', 'cheeseburgers' ],
+					items: [ '42', 'cheeseburgers' ],
 					headers: { foo: 'bar' },
 				} );
 				expect( value ).toEqual(

@@ -3,25 +3,29 @@
  */
 import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
-import { Icon, notes } from '@woocommerce/icons';
+import Gridicon from 'gridicons';
+import { ProductSummary } from '@woocommerce/atomic-components/product';
 
 /**
  * Internal dependencies
  */
 import sharedConfig from '../shared-config';
-import edit from './edit';
 
 const blockConfig = {
 	title: __( 'Product Summary', 'woocommerce' ),
 	description: __(
-		'Display a short description about a product.',
+		'Display the short description of a product.',
 		'woocommerce'
 	),
 	icon: {
-		src: <Icon srcElement={ notes } />,
+		src: <Gridicon icon="aside" />,
 		foreground: '#96588a',
 	},
-	edit,
+	edit( props ) {
+		const { attributes } = props;
+
+		return <ProductSummary product={ attributes.product } />;
+	},
 };
 
 registerBlockType( 'woocommerce/product-summary', {

@@ -2,9 +2,9 @@
 
 Contributors: ModernTribe, brianjessee, camwynsp, paulkim, sc0ttkclark, aguseo, barry.hughes, bordoni, borkweb, cliffpaulick, courane01, faction23, GeoffBel, geoffgraham, ggwicz, jbrinley, jentheo, leahkoerper, lucatume, mastromktg, MZAWeb, neillmcshea, nicosantos, patriciahillebrandt, peterchester, reid.peifer, roblagatta, ryancurban, shane.pearlman, tribecari, vicskf, zbtirrell
 Tags: events, WooCommerce, WooTickets, add-on, ticket sales, tickets, calendar, community, registration, api, dates, date, posts, workshop, conference, meeting, seminar, concert, summit, The Events Calendar, Events Calendar PRO, ticket integration, event ticketing, RSVP, EDD, Easy Digital Downloads
-Requires at least: 4.9.14
-Tested up to: 5.4.2
-Stable tag: 4.12.3
+Requires at least: 4.9
+Tested up to: 5.4
+Stable tag: 4.12.0
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -134,37 +134,6 @@ Our Premium Plugins:
 * <a href="http://m.tri.be/fa" target="_blank">The Events Calendar: Filter Bar</a>
 
 == Changelog ==
-
-= [4.12.3] 2020-07-28 =
-
-* Feature - Add trigger actions (attendee registered, attendee check in) in WooCommerce and Easy Digital Downloads to notify Promoter. [ETP-350]
-* Fix - Do not run our commerce provider integration code if that provider's core plugin is not currently active. For example, no fatal error should occur if an event has sold a WooCommerce ticket but now the core WooCommerce plugin is disabled. [ETP-333]
-* Tweak - Added the `tribe_tickets_is_woocommerce_active()` function (one for Easy Digital Downloads already existed). [ETP-333]
-* Tweak - Display all of a post's order tabs in the Attendees Report admin screen. Example: if a post's ticket provider was Easy Digital Downloads Tickets and such tickets were sold, then the post's provider changed to WooCommerce Tickets, the Attendees Report screen should show both the Easy Digital Downloads order history tab and the WooCommerce order history tab, regardless of which ticket provider is currently the default. [ETP-333]
-* Tweak - Update usage of `Tribe__Tickets__Tickets::get_ticket_provider_instance()`, as it now returns a class instance instead of class name string. [ETP-333]
-* Tweak - Update usage of `Tribe__Tickets__Tickets::get_event_ticket_provider()`, as it now returns false if the ticket provider is no longer active. [ETP-333]
-* Tweak - Use Event Tickets' new `Tribe__Tickets__Tickets::get_attendee_optout_key()` to simplify getting the optout key regardless of ticket provider class and accounting for legacy code. [ETP-333]
-* Tweak - Add labels to each select input for the Attendee Information's Birth Date field. [ETP-338]
-* Tweak - Modify parameters on `register_rest_route` to include `permission_callback` to prevent notices on WordPress 5.5.
-* Language - 3 new strings added, 38 updated, 0 fuzzied, and 0 obsoleted
-
-= [4.12.2] 2020-06-24  =
-
-* Tweak - Resolve a PHP notice when rendering the Birth Date field. [ETP-330]
-* Language - 0 new strings added, 4 updated, 0 fuzzied, and 0 obsoleted
-
-= [4.12.1] 2020-05-20 =
-
-* Feature - Added new field types to choose from when requiring Attendee Information on a Ticket or RSVP: Email, URL, Date of Birth, Date and Telephone. [ETP-89]
-* Feature - Add integration with new Event Tickets post and event filtering so it supports Easy Digital Downloads and WooCommerce. [ETP-318]
-* Feature - Multiple shortcodes added: [ETP-313]
-  * `[tribe_tickets_rsvp]` and `[tribe_tickets]` display the purchasing block(s) for RSVP + Tickets, just RSVP, or just Tickets, as aptly named. Both have the `post_id` argument for the post/page/event for which tickets were created.
-  * `[tribe_tickets_attendees]` displays the public list of attendees. It requires the `post_id` of the event to display the attendees and has an optional `title` argument to set the title of the block in the HTML.
-  * `[tribe_tickets_protected_content]` is an enclosing shortcode where any content within its opening and closing tags will only appear if the currently logged in user does (or doesn't if `ticketed=0`) have a ticket for the specified `post_id` (defaults to the current post if not set). You may optionally specify the Ticket ID(s) in addition to the Post ID, such as `ticket_ids="32,50,90"` which checks if the attendee has a ticket to any of the Ticket ID(s).
-  * `[tribe_tickets_rsvp_protected_content]` is an enclosing shortcode where any content within its opening and closing tags will only appear if the currently logged in user does (or doesn't if `rsvpd=0`) have an RSVP for the specified `post_id` (defaults to the current post if not set). You may optionally specify the RSVP ID(s) in addition to the Post ID, such as `rsvp_ids="32,50,90"` which checks if the attendee has an RSVP to any of the RSVP ID(s).
-  * For anyone using our past extension (no longer available) that introduced these shortcodes, the extension will be deactivated automatically to avoid conflicts.
-* Fix - Update the `orders-tickets` template to account for a passed post to be of an unregistered post type, such as for an Event post when The Events Calendar plugin is disabled. [ETP-320]
-* Language - 15 new strings added, 38 updated, 1 fuzzied, and 4 obsoleted
 
 = [4.12.0] 2020-04-23 =
 

@@ -3,25 +3,34 @@
  */
 import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
-import { Icon, cart } from '@woocommerce/icons';
+import { Disabled } from '@wordpress/components';
+import Gridicon from 'gridicons';
+import { ProductButton } from '@woocommerce/atomic-components/product';
 
 /**
  * Internal dependencies
  */
 import sharedConfig from '../shared-config';
-import edit from './edit';
 
 const blockConfig = {
-	title: __( 'Add to Cart Button', 'woocommerce' ),
+	title: __( 'Product Button', 'woocommerce' ),
 	description: __(
 		'Display a call to action button which either adds the product to the cart, or links to the product page.',
 		'woocommerce'
 	),
 	icon: {
-		src: <Icon srcElement={ cart } />,
+		src: <Gridicon icon="cart" />,
 		foreground: '#96588a',
 	},
-	edit,
+	edit( props ) {
+		const { attributes } = props;
+
+		return (
+			<Disabled>
+				<ProductButton product={ attributes.product } />
+			</Disabled>
+		);
+	},
 };
 
 registerBlockType( 'woocommerce/product-button', {

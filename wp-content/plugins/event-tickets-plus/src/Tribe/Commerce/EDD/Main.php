@@ -214,9 +214,6 @@ class Tribe__Tickets_Plus__Commerce__EDD__Main extends Tribe__Tickets_Plus__Tick
 	 * Registers all actions/filters
 	 */
 	public function hooks() {
-		if ( ! tribe_tickets_is_edd_active() ) {
-			return;
-		}
 
 		add_action( 'init', array( $this, 'register_eddtickets_type' ), 1 );
 		add_action( 'add_meta_boxes', array( $this, 'edd_meta_box' ) );
@@ -2179,7 +2176,7 @@ class Tribe__Tickets_Plus__Commerce__EDD__Main extends Tribe__Tickets_Plus__Tick
 	 *
 	 * @return bool `true` if at least one attendee was generated, `false` otherwise
 	 */
-	public function generate_attendees_for_order_entry( $order_id, array $item = [] ) {
+	public function generate_attendees_for_order_entry( $order_id, array $item = array() ) {
 		$product_id = isset( $item['id'] ) ? $item['id'] : false;
 		$optout     = 0;
 
