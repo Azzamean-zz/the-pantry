@@ -33,7 +33,7 @@ get_header(); ?>
 	            </article>
 	        </div>
 		<?php endwhile; // End of the loop. ?>
-        <?php echo do_shortcode('[tribe_events view="month" category="classes"]'); ?>
+        <?php echo do_shortcode('[tribe_events view="list" category="classes"]'); ?>
     </main>
 <?php
 get_footer();

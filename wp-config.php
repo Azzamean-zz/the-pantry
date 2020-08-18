@@ -1,4 +1,7 @@
 <?php
+/** Enable W3 Total Cache */
+define('WP_CACHE', true); // Added by W3 Total Cache
+
 /**
  * The base configuration for WordPress
  *
@@ -18,7 +21,6 @@
  * @package WordPress
  */
 // ** MySQL settings - You can get this info from your web host ** //
-define('WP_CACHE', true);
 switch ($_SERVER['SERVER_NAME']) {
      /** Development Server */    
      case 'pantrynew':
@@ -29,7 +31,6 @@ switch ($_SERVER['SERVER_NAME']) {
           define('DB_CHARSET', 'utf8');
           define('DB_COLLATE', '');
           define('WP_DEBUG', true);  
-		  define( 'WPCACHEHOME', '/Users/bretthorner/Documents/projects/pantrynew/wp-content/plugins/wp-super-cache/' );
      break;
      /** Staging Server */
      case 'pantry.deicreative.com':
@@ -50,9 +51,15 @@ switch ($_SERVER['SERVER_NAME']) {
           define('DB_CHARSET', 'utf8');
           define('DB_COLLATE', '');
           define('WP_DEBUG', false);     
-		  define( 'WPCACHEHOME', '/app/wp-content/plugins/wp-super-cache/' );
      break;
 } 
+
+define( 'AS3CF_SETTINGS', serialize( array(
+    'provider' => 'aws',
+    'access-key-id' => 'AKIAIKTNKTAHQAPNPIRA',
+    'secret-access-key' => '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',
+) ) );
+	
 
 if ( $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https' )
 {
