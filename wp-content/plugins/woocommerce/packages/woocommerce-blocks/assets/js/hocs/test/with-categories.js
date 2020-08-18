@@ -18,10 +18,7 @@ jest.mock( '../../base/utils/errors', () => ( {
 	formatError: jest.fn(),
 } ) );
 
-const mockCategories = [
-	{ id: 1, name: 'Clothing' },
-	{ id: 2, name: 'Food' },
-];
+const mockCategories = [ { id: 1, name: 'Clothing' }, { id: 2, name: 'Food' } ];
 const TestComponent = withCategories( ( props ) => {
 	return (
 		<div
@@ -51,6 +48,10 @@ describe( 'withCategories Component', () => {
 
 		it( 'getCategories is called on mount', () => {
 			const { getCategories } = mockUtils;
+
+			expect( getCategories ).toHaveBeenCalledWith( {
+				show_review_count: false,
+			} );
 			expect( getCategories ).toHaveBeenCalledTimes( 1 );
 		} );
 	} );
@@ -87,17 +88,19 @@ describe( 'withCategories Component', () => {
 			renderer = render();
 		} );
 
-		test( 'sets the error prop', async () => {
-			await expect( () => getCategoriesPromise() ).toThrow();
-
+		it( 'sets the error prop', ( done ) => {
 			const { formatError } = mockBaseUtils;
-			const props = renderer.root.findByType( 'div' ).props;
+			getCategoriesPromise.catch( () => {
+				const props = renderer.root.findByType( 'div' ).props;
 
-			expect( formatError ).toHaveBeenCalledWith( error );
-			expect( formatError ).toHaveBeenCalledTimes( 1 );
-			expect( props.error ).toEqual( formattedError );
-			expect( props.isLoading ).toBe( false );
-			expect( props.categories ).toBeNull();
+				expect( formatError ).toHaveBeenCalledWith( error );
+				expect( formatError ).toHaveBeenCalledTimes( 1 );
+				expect( props.error ).toEqual( formattedError );
+				expect( props.isLoading ).toBe( false );
+				expect( props.categories ).toBeNull();
+
+				done();
+			} );
 		} );
 	} );
 } );

@@ -121,9 +121,9 @@ class Loader {
 	}
 
 	/**
-	 * Gets a build configured array of enabled WooCommerce Admin features/sections.
+	 * Gets an array of enabled WooCommerce Admin features/sections.
 	 *
-	 * @return array Enabled Woocommerce Admin features/sections.
+	 * @return bool Enabled Woocommerce Admin features/sections.
 	 */
 	public static function get_features() {
 		return apply_filters( 'woocommerce_admin_features', array() );
@@ -162,10 +162,6 @@ class Loader {
 	 * @return bool Returns true if the feature is enabled.
 	 */
 	public static function is_feature_enabled( $feature ) {
-		if ( 'homescreen' === $feature && 'yes' !== get_option( 'woocommerce_homescreen_enabled', 'no' ) ) {
-			return false;
-		}
-
 		$features = self::get_features();
 		return in_array( $feature, $features, true );
 	}
@@ -173,7 +169,7 @@ class Loader {
 	/**
 	 * Returns if the onboarding feature of WooCommerce Admin should be enabled.
 	 *
-	 * While we preform an a/b test of onboarding, the feature will be enabled within the plugin build, but only if the user received the test/opted in.
+	 * While we preform an a/b test of onboarding, the feature will be enabled within the plugin build, but only if the user recieved the test/opted in.
 	 *
 	 * @return bool Returns true if the onboarding is enabled.
 	 */
@@ -193,22 +189,6 @@ class Loader {
 	}
 
 	/**
-	 * Determines if a minified JS file should be served.
-	 *
-	 * @param  boolean $script_debug Only serve unminified files if script debug is on.
-	 * @return boolean If js asset should use minified version.
-	 */
-	public static function should_use_minified_js_file( $script_debug ) {
-		// un-minified files are only shipped in non-core versions of wc-admin, return true if unminified files are not available.
-		if ( ! self::is_feature_enabled( 'unminified-js' ) ) {
-			return true;
-		}
-
-		// Otherwise we will serve un-minified files if SCRIPT_DEBUG is on, or if anything truthy is passed in-lieu of SCRIPT_DEBUG.
-		return ! $script_debug;
-	}
-
-	/**
 	 * Gets the URL to an asset file.
 	 *
 	 * @param  string $file File name (without extension).
@@ -220,8 +200,7 @@ class Loader {
 
 		// Potentially enqueue minified JavaScript.
 		if ( 'js' === $ext ) {
-			$script_debug = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG;
-			$suffix = self::should_use_minified_js_file( $script_debug ) ? '.min' : '';
+			$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 		}
 
 		return plugins_url( self::get_path( $ext ) . $file . $suffix . '.' . $ext, WC_ADMIN_PLUGIN_FILE );
@@ -271,7 +250,8 @@ class Loader {
 	 * @todo The entry point for the embed needs moved to this class as well.
 	 */
 	public static function register_page_handler() {
-		$id = self::is_feature_enabled( 'homescreen' ) ? 'woocommerce-home' : 'woocommerce-dashboard';
+		$features = wc_admin_get_feature_config();
+		$id = $features['homepage'] ? 'woocommerce-home' : 'woocommerce-dashboard';
 
 		wc_admin_register_page(
 			array(
@@ -421,11 +401,7 @@ class Loader {
 		wp_register_script(
 			WC_ADMIN_APP,
 			self::get_url( 'app/index', 'js' ),
-			array(
-				'wp-core-data',
-				'wc-components',
-				'wp-date',
-			),
+			array( 'wc-components', 'wc-navigation', 'wp-date', 'wp-html-entities', 'wp-keycodes', 'wp-i18n', 'moment' ),
 			$js_file_version,
 			true
 		);
@@ -475,13 +451,6 @@ class Loader {
 		if ( ! static::user_can_analytics() ) {
 			return;
 		}
-
-		$features        = self::get_features();
-		$enabled_features = array();
-		foreach ( $features as $key ) {
-			$enabled_features[ $key ] = self::is_feature_enabled( $key );
-		}
-		wp_add_inline_script( WC_ADMIN_APP, 'window.wcAdminFeatures = ' . wp_json_encode( $enabled_features ), 'before' );
 
 		wp_enqueue_script( WC_ADMIN_APP );
 		wp_enqueue_style( WC_ADMIN_APP );
@@ -635,8 +604,10 @@ class Loader {
 	 * The initial contents here are meant as a place loader for when the PHP page initialy loads.
 	 */
 	public static function embed_page_header() {
+
+		$features = wc_admin_get_feature_config();
 		if (
-			self::is_feature_enabled( 'navigation' ) &&
+			$features['navigation'] &&
 			\Automattic\WooCommerce\Admin\Features\Navigation::instance()->is_woocommerce_page()
 		) {
 			self::embed_navigation_menu();
@@ -868,10 +839,10 @@ class Loader {
 			}
 		}
 
-		$user_controller   = new \WP_REST_Users_Controller();
-		$user_response     = $user_controller->get_current_item( new \WP_REST_Request() );
-		$current_user_data = is_wp_error( $user_response ) ? (object) array() : $user_response->get_data();
-
+		$current_user_data = array();
+		foreach ( self::get_user_data_fields() as $user_field ) {
+			$current_user_data[ $user_field ] = json_decode( get_user_meta( get_current_user_id(), 'woocommerce_admin_' . $user_field, true ) );
+		}
 		$settings['currentUserData']      = $current_user_data;
 		$settings['reviewsEnabled']       = get_option( 'woocommerce_enable_reviews' );
 		$settings['manageStock']          = get_option( 'woocommerce_manage_stock' );
@@ -915,7 +886,6 @@ class Loader {
 		}
 
 		$settings['allowMarketplaceSuggestions'] = WC_Marketplace_Suggestions::allow_suggestions();
-		$settings['connectNonce']                = wp_create_nonce( 'connect' );
 
 		return $settings;
 	}

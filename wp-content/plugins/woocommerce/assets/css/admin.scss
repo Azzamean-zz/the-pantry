@@ -541,11 +541,8 @@
 
 .woocommerce-message {
 	position: relative;
+	border-left-color: #cc99c2 !important;
 	overflow: hidden;
-
-	&.updated {
-		border-left-color: #cc99c2 !important;
-	}
 
 	a.skip,
 	a.docs {
@@ -1062,7 +1059,6 @@ ul.wc_coupon_list_block {
 
 #woocommerce-order-data {
 
-	.postbox-header,
 	.hndle,
 	.handlediv {
 		display: none;
@@ -1467,7 +1463,6 @@ ul.wc_coupon_list_block {
 		display: block !important;
 	}
 
-	.postbox-header,
 	.hndle,
 	.handlediv {
 		display: none;
@@ -4349,13 +4344,14 @@ img.help_tip {
 
 		span {
 			display: block;
+			vertical-align: middle;
 			line-height: 24px;
-		}
 
-		.type_box {
-			display: inline;
-			line-height: inherit;
-			vertical-align: baseline;
+			span {
+				display: inline;
+				line-height: inherit;
+				vertical-align: baseline;
+			}
 		}
 
 		select {
@@ -6815,23 +6811,6 @@ table.bar_chart {
 
 		@media only screen and (max-width: 782px) {
 			min-width: 100% !important;
-		}
-	}
-}
-
-.wc-wp-version-gte-55 {
-
-	#woocommerce-product-data {
-
-		.hndle {
-			display: block;
-			line-height: 24px;
-
-			.type_box {
-				display: inline;
-				line-height: inherit;
-				vertical-align: baseline;
-			}
 		}
 	}
 }

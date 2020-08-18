@@ -3,13 +3,13 @@
  */
 import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
-import { Icon, star } from '@woocommerce/icons';
+import Gridicon from 'gridicons';
+import { ProductRating } from '@woocommerce/atomic-components/product';
 
 /**
  * Internal dependencies
  */
 import sharedConfig from '../shared-config';
-import edit from './edit';
 
 const blockConfig = {
 	title: __( 'Product Rating', 'woocommerce' ),
@@ -18,10 +18,14 @@ const blockConfig = {
 		'woocommerce'
 	),
 	icon: {
-		src: <Icon srcElement={ star } />,
+		src: <Gridicon icon="star-outline" />,
 		foreground: '#96588a',
 	},
-	edit,
+	edit( props ) {
+		const { attributes } = props;
+
+		return <ProductRating product={ attributes.product } />;
+	},
 };
 
 registerBlockType( 'woocommerce/product-rating', {

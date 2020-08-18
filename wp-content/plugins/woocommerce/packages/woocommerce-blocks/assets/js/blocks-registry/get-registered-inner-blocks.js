@@ -9,7 +9,7 @@ import { registeredBlocks } from './registered-blocks-init';
  * @export
  * @param {string}   main Name of the parent block to retrieve children of.
  *
- * @return {Object} List of registered inner blocks.
+ * @returns {Object}
  */
 export function getRegisteredInnerBlocks( main ) {
 	return typeof registeredBlocks[ main ] === 'object' &&

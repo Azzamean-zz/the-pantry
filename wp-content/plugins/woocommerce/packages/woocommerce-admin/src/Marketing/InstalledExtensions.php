@@ -68,7 +68,7 @@ class InstalledExtensions {
 			'mailchimp-for-woocommerce',
 			'facebook-for-woocommerce',
 			'kliken-marketing-for-google',
-			'hubspot-for-woocommerce',
+			'hubwoo-integration',
 			'woocommerce-amazon-ebay-integration',
 		];
 	}
@@ -190,7 +190,7 @@ class InstalledExtensions {
 	 * @return array|bool
 	 */
 	protected static function get_hubspot_extension_data() {
-		$slug = 'hubspot-for-woocommerce';
+		$slug = 'hubwoo-integration';
 
 		if ( ! PluginsHelper::is_plugin_installed( $slug ) ) {
 			return false;
@@ -207,7 +207,7 @@ class InstalledExtensions {
 			}
 
 			$data['settingsUrl'] = admin_url( 'admin.php?page=hubwoo' );
-			$data['docsUrl']     = 'https://docs.makewebbetter.com/hubspot-integration-for-woocommerce/';
+			$data['docsUrl']     = 'https://docs.makewebbetter.com/hubspot-woocommerce-integration/';
 		}
 
 		return $data;
