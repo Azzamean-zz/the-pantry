@@ -359,6 +359,36 @@ function change_waitlist_message_text( $text ) {
 	return __( 'Check the box alongside any Sold Out items and enter your email address to be emailed when those items become available!' );
 }
 
+/**
+ * @snippet       Simplify Checkout if Only Virtual Products
+ * @how-to        Get CustomizeWoo.com FREE
+ * @sourcecode    https://businessbloomer.com/?p=78351
+ * @author        Rodolfo Melogli
+ * @compatible    WooCommerce 3.5.4
+ * @donate $9     https://businessbloomer.com/bloomer-armada/
+ */
+ 
+add_filter( 'woocommerce_checkout_fields' , 'bbloomer_simplify_checkout_virtual' );
+ 
+function bbloomer_simplify_checkout_virtual( $fields ) {
+    
+   $cart_total = WC()->cart->get_cart_total();
+     
+    if( $cart_total == 0 ) {
+       unset($fields['billing']['billing_company']);
+       unset($fields['billing']['billing_address_1']);
+       unset($fields['billing']['billing_address_2']);
+       unset($fields['billing']['billing_city']);
+       unset($fields['billing']['billing_postcode']);
+       unset($fields['billing']['billing_country']);
+       unset($fields['billing']['billing_state']);
+       unset($fields['billing']['billing_phone']);
+       add_filter( 'woocommerce_enable_order_notes_field', '__return_false' );
+     }
+     
+     return $fields;
+}
+
 
  /**
  * Remove related products output
