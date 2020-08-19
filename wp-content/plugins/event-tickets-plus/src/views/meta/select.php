@@ -4,9 +4,9 @@
  *
  * Override this template in your own theme by creating a file at:
  *
- *     [your-theme]/tribe-events/meta/select.php
+ * [your-theme]/tribe-events/meta/select.php
  *
- * @version 4.10.7
+ * @version 4.12.1
  *
  * @since 4.3.5
  * @since 4.10.7 Added var documentation for `$this`.

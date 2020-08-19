@@ -52,7 +52,7 @@ class Manager extends \Tribe\Shortcode\Manager {
 		$shortcodes = apply_filters_deprecated(
 			'tribe_events_pro_shortcodes',
 			[ $shortcodes ],
-			'5.1.4',
+			'TBD',
 			'tribe_shortcodes'
 		);
 

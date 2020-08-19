@@ -43,7 +43,6 @@ const RSVPAttendeeRegistration = ( {
 			onClose={ onClose }
 			onIframeLoad={ onIframeLoad }
 			showHelperText={ ! isCreated }
-			shouldCloseOnClickOutside={ false } // @todo: @paulmskim this is a fix until we can figure out modal closing issue in WP 5.5.
 		/>
 	);
 };

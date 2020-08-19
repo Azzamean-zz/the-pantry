@@ -190,11 +190,7 @@ class Tribe__Tickets_Plus__Commerce__PayPal__Meta extends Tribe__Tickets_Plus__M
 	 *
 	 * @since 4.9
 	 *
-	 * @param string $url
-	 * @param string $cart_url
-	 * @param array $post_data
-	 *
-	 * @return string
+	 * @param array $post_data The passed $_POST.
 	 */
 	public function maybe_alter_post_data( $post_data ) {
 		global $post;
@@ -210,14 +206,16 @@ class Tribe__Tickets_Plus__Commerce__PayPal__Meta extends Tribe__Tickets_Plus__M
 			return;
 		}
 
-		$keys                              = array_keys( $data );
-		$product_id                        = current( $keys );
-		$_POST['product_id']               = $keys;
-		$_POST['quantity_' . $product_id ] = count( $data[ $product_id ] );
-		$event_ids                         = tribe_tickets_get_event_ids( $product_id );
-		$post                              = get_post( current( $event_ids ) );
-		if ( $provider = tribe_tickets_get_ticket_provider( $product_id ) ) {
-			$_POST['provider'] = get_class( $provider );
+		$keys                               = array_keys( $data );
+		$product_id                         = current( $keys );
+		$_POST['product_id']                = $keys;
+		$_POST[ 'quantity_' . $product_id ] = count( $data[ $product_id ] );
+		$event_ids                          = tribe_tickets_get_event_ids( $product_id );
+		$post                               = get_post( current( $event_ids ) );
+		$provider                           = tribe_tickets_get_ticket_provider( $product_id );
+
+		if ( ! empty( $provider ) ) {
+			$_POST['provider'] = $provider->class_name;
 		}
 	}
 

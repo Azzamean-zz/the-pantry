@@ -1,6 +1,29 @@
 <?php
 
-abstract class Tribe__Tickets_Plus__Meta__Field__Abstract_Field {
+use Tribe\Tickets\Plus\Meta\Field\Field_Information_Interface;
+use Tribe\Tickets\Plus\Meta\Field_Types_Collection;
+
+/**
+ * Class Tribe__Tickets_Plus__Meta__Field__Abstract_Field
+ *
+ * The base class for Attendee Information Meta Fields.
+ *
+ * @see src/views/meta/{field_identifier}.php
+ *         Used at least in these places:
+ *          - When filling a RSVP on the event single page. [RSVP]
+ *          - When editing an existing RSVP entry on the "My RSVPS" page. [RSVP]
+ *
+ * @see src/admin-views/meta-fields/{field_identifier}.php
+ *         Used at least in these places:
+ *          - When the admin is adding/editing the field in the event page on the admin panel. [RSVP/Ticket]
+ *
+ * @see [EVENT-TICKETS] src/views/registration-js/attendees/fields/{field_identifier}.php
+ *         Used at least in these places:
+ *          - When filling additional information for a Ticket [Ticket]
+ *
+ * @version 4.12.1 Implemented Field_Information_Interface.
+ */
+abstract class Tribe__Tickets_Plus__Meta__Field__Abstract_Field implements Field_Information_Interface {
 	const META_PREFIX = '_tribe_tickets_meta_';
 	public $id;
 	public $label;
@@ -10,23 +33,17 @@ abstract class Tribe__Tickets_Plus__Meta__Field__Abstract_Field {
 	public $post;
 	public $type;
 	public $extra = array();
-	public $field_type_name = array();
 
 	abstract public function save_value( $attendee_id, $field, $value );
 
 	/**
 	 * Constructor
+	 *
+	 * @see \Tribe__Tickets_Plus__Meta::generate_field
 	 */
 	public function __construct( $ticket_id, $data = array() ) {
 		$this->ticket_id = $ticket_id;
 		$this->post      = tribe_events_get_ticket_event( $this->ticket_id );
-
-		$this->field_type_name = array(
-			'checkbox' => __( 'Checkbox', 'event-tickets-plus' ),
-			'radio'    => __( 'Radio', 'event-tickets-plus' ),
-			'select'   => __( 'Dropdown', 'event-tickets-plus' ),
-			'text'     => __( 'Text', 'event-tickets-plus' ),
-		);
 
 		$this->initialize_data( $data );
 	}
@@ -306,22 +323,18 @@ abstract class Tribe__Tickets_Plus__Meta__Field__Abstract_Field {
 
 		$data                     = (array) $this;
 		$ticket_specific_settings = $this->get_field_settings();
-		$ticket_specific_settings = $this->sanitize_field_options_for_render( $ticket_specific_settings  );
+		$ticket_specific_settings = $this->sanitize_field_options_for_render( $ticket_specific_settings );
 		$data                     = array_merge( $data, (array) $ticket_specific_settings );
 
-		$field_id = rand();
-		$type     = $this->type;
-		$label    = ! empty( $data['label'] ) ? $data['label'] : '';
-		$required = ! empty( $data['required'] ) ? $data['required'] : '';
-		$slug     = ! empty( $data['slug'] ) ? $data['slug'] : sanitize_title( $label );
-		$extra    = ! empty( $data['extra'] ) ? $data['extra'] : '';
+		$field_id  = rand();
+		$type      = $this->type;
+		$label     = ! empty( $data['label'] ) ? $data['label'] : '';
+		$required  = ! empty( $data['required'] ) ? $data['required'] : '';
+		$slug      = ! empty( $data['slug'] ) ? $data['slug'] : sanitize_title( $label );
+		$extra     = ! empty( $data['extra'] ) ? $data['extra'] : '';
+		$type_name = tribe( Field_Types_Collection::class )->get_name_by_id( $this->type );
 
 		ob_start();
-		if ( ! empty( $this->field_type_name[ $this->type ] ) ) {
-			$type_name = $this->field_type_name[ $this->type ];
-		} else {
-			$type_name = ucwords( $this->type );
-		}
 		include $wrapper;
 		$field = ob_get_clean();
 

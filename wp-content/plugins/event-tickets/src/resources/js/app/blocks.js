@@ -13834,7 +13834,7 @@ var helpers_extends = __webpack_require__(9);
 var extends_default = /*#__PURE__*/__webpack_require__.n(helpers_extends);
 
 // EXTERNAL MODULE: ./node_modules/babel-runtime/helpers/objectWithoutProperties.js
-var objectWithoutProperties = __webpack_require__(38);
+var objectWithoutProperties = __webpack_require__(39);
 var objectWithoutProperties_default = /*#__PURE__*/__webpack_require__.n(objectWithoutProperties);
 
 // EXTERNAL MODULE: external "React"
@@ -14078,8 +14078,6 @@ var attendees_registration_style = __webpack_require__(480);
 
 
 
-
-
 /**
  * External dependencies
  */
@@ -14125,8 +14123,8 @@ var element_AttendeesRegistration = function (_PureComponent) {
 			    onClick = _props.onClick,
 			    onClose = _props.onClose,
 			    onIframeLoad = _props.onIframeLoad,
-			    showHelperText = _props.showHelperText,
-			    restProps = objectWithoutProperties_default()(_props, ['helperText', 'iframeURL', 'isDisabled', 'isModalOpen', 'label', 'linkText', 'modalTitle', 'onClick', 'onClose', 'onIframeLoad', 'showHelperText']);
+			    showHelperText = _props.showHelperText;
+
 
 			var modalContent = wp.element.createElement(
 				'div',
@@ -14149,7 +14147,7 @@ var element_AttendeesRegistration = function (_PureComponent) {
 			return wp.element.createElement(
 				'div',
 				{ className: 'tribe-editor__attendee-registration' },
-				wp.element.createElement(external_tribe_common_elements_["LabelWithModal"], extends_default()({
+				wp.element.createElement(external_tribe_common_elements_["LabelWithModal"], {
 					className: 'tribe-editor__attendee-registration__label-with-modal',
 					isOpen: isModalOpen,
 					label: label,
@@ -14160,7 +14158,7 @@ var element_AttendeesRegistration = function (_PureComponent) {
 					modalTitle: modalTitle,
 					onClick: onClick,
 					onClose: onClose
-				}, restProps)),
+				}),
 				showHelperText && wp.element.createElement(
 					'span',
 					{ className: 'tribe-editor__attendee-registration__helper-text' },
@@ -15822,27 +15820,6 @@ $exports.store = store;
 
 /***/ }),
 /* 38 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-exports.__esModule = true;
-
-exports.default = function (obj, keys) {
-  var target = {};
-
-  for (var i in obj) {
-    if (keys.indexOf(i) >= 0) continue;
-    if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;
-    target[i] = obj[i];
-  }
-
-  return target;
-};
-
-/***/ }),
-/* 39 */
 /***/ (function(module, exports) {
 
 /**
@@ -15872,6 +15849,27 @@ var isArray = Array.isArray;
 
 module.exports = isArray;
 
+
+/***/ }),
+/* 39 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+
+exports.default = function (obj, keys) {
+  var target = {};
+
+  for (var i in obj) {
+    if (keys.indexOf(i) >= 0) continue;
+    if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;
+    target[i] = obj[i];
+  }
+
+  return target;
+};
 
 /***/ }),
 /* 40 */
@@ -19020,7 +19018,7 @@ module.exports = getMapData;
 /* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isArray = __webpack_require__(39),
+var isArray = __webpack_require__(38),
     isKey = __webpack_require__(256),
     stringToPath = __webpack_require__(396),
     toString = __webpack_require__(298);
@@ -19267,7 +19265,7 @@ module.exports = includes;
 var arraySome = __webpack_require__(314),
     baseIteratee = __webpack_require__(259),
     baseSome = __webpack_require__(450),
-    isArray = __webpack_require__(39),
+    isArray = __webpack_require__(38),
     isIterateeCall = __webpack_require__(456);
 
 /**
@@ -31255,7 +31253,7 @@ module.exports = cloneArrayBuffer;
 /* 256 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isArray = __webpack_require__(39),
+var isArray = __webpack_require__(38),
     isSymbol = __webpack_require__(108);
 
 /** Used to match property names within property paths. */
@@ -31349,7 +31347,7 @@ module.exports = baseIndexOf;
 var baseMatches = __webpack_require__(423),
     baseMatchesProperty = __webpack_require__(435),
     identity = __webpack_require__(301),
-    isArray = __webpack_require__(39),
+    isArray = __webpack_require__(38),
     property = __webpack_require__(440);
 
 /**
@@ -32188,7 +32186,7 @@ module.exports = defineProperty;
 
 var baseTimes = __webpack_require__(366),
     isArguments = __webpack_require__(236),
-    isArray = __webpack_require__(39),
+    isArray = __webpack_require__(38),
     isBuffer = __webpack_require__(237),
     isIndex = __webpack_require__(248),
     isTypedArray = __webpack_require__(266);
@@ -32383,7 +32381,7 @@ module.exports = getAllKeys;
 /***/ (function(module, exports, __webpack_require__) {
 
 var arrayPush = __webpack_require__(253),
-    isArray = __webpack_require__(39);
+    isArray = __webpack_require__(38);
 
 /**
  * The base implementation of `getAllKeys` and `getAllKeysIn` which uses
@@ -32479,7 +32477,7 @@ module.exports = toString;
 
 var Symbol = __webpack_require__(70),
     arrayMap = __webpack_require__(244),
-    isArray = __webpack_require__(39),
+    isArray = __webpack_require__(38),
     isSymbol = __webpack_require__(108);
 
 /** Used as references for various `Number` constants. */
@@ -35001,7 +34999,7 @@ var Stack = __webpack_require__(245),
     initCloneArray = __webpack_require__(383),
     initCloneByTag = __webpack_require__(384),
     initCloneObject = __webpack_require__(389),
-    isArray = __webpack_require__(39),
+    isArray = __webpack_require__(38),
     isBuffer = __webpack_require__(237),
     isMap = __webpack_require__(391),
     isObject = __webpack_require__(53),
@@ -37201,7 +37199,7 @@ module.exports = baseFlatten;
 
 var Symbol = __webpack_require__(70),
     isArguments = __webpack_require__(236),
-    isArray = __webpack_require__(39);
+    isArray = __webpack_require__(38);
 
 /** Built-in value references. */
 var spreadableSymbol = Symbol ? Symbol.isConcatSpreadable : undefined;
@@ -37791,7 +37789,7 @@ var Stack = __webpack_require__(245),
     equalByTag = __webpack_require__(430),
     equalObjects = __webpack_require__(433),
     getTag = __webpack_require__(94),
-    isArray = __webpack_require__(39),
+    isArray = __webpack_require__(38),
     isBuffer = __webpack_require__(237),
     isTypedArray = __webpack_require__(266);
 
@@ -38402,7 +38400,7 @@ module.exports = baseHasIn;
 
 var castPath = __webpack_require__(107),
     isArguments = __webpack_require__(236),
-    isArray = __webpack_require__(39),
+    isArray = __webpack_require__(38),
     isIndex = __webpack_require__(248),
     isLength = __webpack_require__(249),
     toKey = __webpack_require__(84);
@@ -38737,7 +38735,7 @@ module.exports = function(originalModule) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseGetTag = __webpack_require__(66),
-    isArray = __webpack_require__(39),
+    isArray = __webpack_require__(38),
     isObjectLike = __webpack_require__(52);
 
 /** `Object#toString` result references. */
@@ -39928,7 +39926,7 @@ module.exports = hoistNonReactStatics;
 var baseKeys = __webpack_require__(323),
     getTag = __webpack_require__(94),
     isArguments = __webpack_require__(236),
-    isArray = __webpack_require__(39),
+    isArray = __webpack_require__(38),
     isArrayLike = __webpack_require__(68),
     isBuffer = __webpack_require__(237),
     isPrototype = __webpack_require__(238),
@@ -41873,7 +41871,7 @@ var helpers_extends = __webpack_require__(9);
 var extends_default = /*#__PURE__*/__webpack_require__.n(helpers_extends);
 
 // EXTERNAL MODULE: ./node_modules/babel-runtime/helpers/objectWithoutProperties.js
-var objectWithoutProperties = __webpack_require__(38);
+var objectWithoutProperties = __webpack_require__(39);
 var objectWithoutProperties_default = /*#__PURE__*/__webpack_require__.n(objectWithoutProperties);
 
 // EXTERNAL MODULE: ./src/modules/blocks/rsvp/duration-picker/style.pcss
@@ -42395,8 +42393,7 @@ var template_RSVPAttendeeRegistration = function RSVPAttendeeRegistration(_ref) 
 		onClick: onClick,
 		onClose: onClose,
 		onIframeLoad: onIframeLoad,
-		showHelperText: !isCreated,
-		shouldCloseOnClickOutside: false // @todo: @paulmskim this is a fix until we can figure out modal closing issue in WP 5.5.
+		showHelperText: !isCreated
 	});
 };
 
@@ -43779,7 +43776,7 @@ var isObject = __webpack_require__(53);
 var isObject_default = /*#__PURE__*/__webpack_require__.n(isObject);
 
 // EXTERNAL MODULE: ./node_modules/lodash/isArray.js
-var isArray = __webpack_require__(39);
+var isArray = __webpack_require__(38);
 var isArray_default = /*#__PURE__*/__webpack_require__.n(isArray);
 
 // EXTERNAL MODULE: ./node_modules/lodash/isEmpty.js
@@ -47192,8 +47189,7 @@ var template_AttendeesRegistration = function AttendeesRegistration(_ref) {
 		onClick: onClick,
 		onClose: onClose,
 		onIframeLoad: onIframeLoad,
-		showHelperText: !isCreated,
-		shouldCloseOnClickOutside: false // @todo: @paulmskim this is a fix until we can figure out modal closing issue in WP 5.5.
+		showHelperText: !isCreated
 	});
 };
 

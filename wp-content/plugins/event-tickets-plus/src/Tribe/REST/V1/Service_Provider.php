@@ -49,16 +49,18 @@ class  Tribe__Tickets_Plus__REST__V1__Service_Provider extends tad_DI52_ServiceP
 
 		register_rest_route( $this->namespace, '/qr/(?P<id>\\d+)', array(
 			array(
-				'methods'  => WP_REST_Server::READABLE,
-				'args'     => $qr_endpoint->READ_args(),
-				'callback' => array( $qr_endpoint, 'get' ),
+				'methods'             => WP_REST_Server::READABLE,
+				'args'                => $qr_endpoint->READ_args(),
+				'callback'            => array( $qr_endpoint, 'get' ),
+				'permission_callback' => '__return_true',
 			),
 		) );
 
 		register_rest_route( $this->namespace, '/qr', array(
-			'methods'  => WP_REST_Server::READABLE,
-			'args'     => $qr_endpoint->CHECK_IN_args(),
-			'callback' => array( $qr_endpoint, 'check_in' ),
+			'methods'             => WP_REST_Server::READABLE,
+			'args'                => $qr_endpoint->CHECK_IN_args(),
+			'callback'            => array( $qr_endpoint, 'check_in' ),
+			'permission_callback' => '__return_true',
 		) );
 
 		/** @var Tribe__Documentation__Swagger__Builder_Interface $documentation */

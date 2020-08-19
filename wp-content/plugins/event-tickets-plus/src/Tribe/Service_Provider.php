@@ -44,6 +44,8 @@ class Tribe__Tickets_Plus__Service_Provider extends tad_DI52_ServiceProvider {
 		// Repositories, we replace the original bindings to expand the repository with ET+ functions
 		$this->container->bind( 'tickets.ticket-repository', 'Tribe__Tickets_Plus__Ticket_Repository' );
 		$this->container->bind( 'tickets.attendee-repository', 'Tribe__Tickets_Plus__Attendee_Repository' );
+		$this->container->bind( 'tickets.event-repository', 'Tribe__Tickets_Plus__Event_Repository' );
+		$this->container->bind( 'tickets.post-repository', 'Tribe__Tickets_Plus__Repositories__Post_Repository' );
 
 		// Add custom contexts.
 		$this->container->bind( 'tickets-plus.ticket-repository.edd', 'Tribe__Tickets_Plus__Repositories__Ticket__EDD' );

@@ -1,12 +1,9 @@
-<<<<<<< HEAD
-=======
 # BEGIN Faster 404 Images
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule \.(jpg|jpeg|png|gif|ico|swf|bmp)$ - [nocase,redirect=404,last]
 # END Faster 404 Images
 
->>>>>>> origin/master
 # BEGIN W3TC Browser Cache
 <IfModule mod_mime.c>
     AddType text/css .css

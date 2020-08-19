@@ -48,7 +48,6 @@ class AttendeesRegistration extends PureComponent {
 			onClose,
 			onIframeLoad,
 			showHelperText,
-			...restProps
 		} = this.props;
 
 		const modalContent = (
@@ -79,7 +78,6 @@ class AttendeesRegistration extends PureComponent {
 					modalTitle={ modalTitle }
 					onClick={ onClick }
 					onClose={ onClose }
-					{ ...restProps }
 				/>
 				{ showHelperText && (
 					<span className="tribe-editor__attendee-registration__helper-text">

@@ -42,15 +42,19 @@ class Tribe__Tickets_Plus__Commerce__EDD__Tabbed_View__Report_Tabbed_View {
 	 * Registers the EDD orders tab among those the tabbed view should render.
 	 *
 	 * @since 4.10
+	 * @since 4.12.3 Show EDD Orders tab if has any EDD tickets, even if not the default provider.
 	 *
 	 * @param Tribe__Tabbed_View $tabbed_view
 	 * @param WP_Post            $post
 	 */
 	public function register_orders_tab( Tribe__Tabbed_View $tabbed_view, WP_Post $post ) {
+		/** @var \Tribe__Tickets_Plus__Commerce__EDD__Main $edd */
+		$edd = tribe( 'tickets-plus.commerce.edd' );
 
-		// only show Order Tab if EDD is the Default Provider
-		$default_ticket = get_post_meta( $post->ID, tribe( 'tickets.handler' )->key_provider_field, true );
-		if ( 'Tribe__Tickets_Plus__Commerce__EDD__Main' !== $default_ticket ) {
+		if (
+			! tribe_tickets_is_provider_active( $edd )
+			|| empty( $edd->post_has_tickets( $post ) )
+		) {
 			return;
 		}
 

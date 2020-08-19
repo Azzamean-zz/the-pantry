@@ -2,28 +2,28 @@
 # This file is distributed under the same license as the Event Tickets Plus package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Event Tickets Plus 4.12.0\n"
+"Project-Id-Version: Event Tickets Plus 4.12.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/event-tickets-"
 "plus\n"
-"POT-Creation-Date: 2020-04-21 02:59:44+00:00\n"
+"POT-Creation-Date: 2020-07-23 05:41:50+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2020-04-21 02:59\n"
+"PO-Revision-Date: 2020-07-23 05:41\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 
-#. #-#-#-#-#  event-tickets-plus.pot (Event Tickets Plus 4.12.0)  #-#-#-#-#
+#. #-#-#-#-#  event-tickets-plus.pot (Event Tickets Plus 4.12.3)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
-#: event-tickets-plus.php:57 src/Tribe/Main.php:368
+#: event-tickets-plus.php:57 src/Tribe/Main.php:402
 msgid "Event Tickets Plus"
 msgstr ""
 
-#: event-tickets-plus.php:200
+#: event-tickets-plus.php:215
 msgid "Event Tickets"
 msgstr ""
 
-#: event-tickets-plus.php:205
+#: event-tickets-plus.php:220
 msgid ""
 "To begin using Event Tickets Plus, please install and activate the latest "
 "version of %1$s%2$s%3$s and ensure its own requirements have been met."
@@ -88,7 +88,7 @@ msgid ""
 "you prefer for your website in the %5$s.%6$s "
 msgstr ""
 
-#: src/Tribe/Attendees_List.php:256 src/Tribe/Attendees_List.php:257
+#: src/Tribe/Attendees_List.php:258 src/Tribe/Attendees_List.php:259
 msgid "Load all attendees"
 msgstr ""
 
@@ -197,44 +197,44 @@ msgctxt "ticket provider"
 msgid "Easy Digital Downloads"
 msgstr ""
 
-#: src/Tribe/Commerce/EDD/Main.php:623
-#: src/Tribe/Commerce/WooCommerce/Main.php:1106
+#: src/Tribe/Commerce/EDD/Main.php:626
+#: src/Tribe/Commerce/WooCommerce/Main.php:1110
 msgid "You'll receive your %s in another email."
 msgstr ""
 
-#: src/Tribe/Commerce/EDD/Main.php:1349
-#: src/Tribe/Commerce/WooCommerce/Main.php:2199
+#: src/Tribe/Commerce/EDD/Main.php:1352
+#: src/Tribe/Commerce/WooCommerce/Main.php:2203
 msgid "(deleted)"
 msgstr ""
 
-#: src/Tribe/Commerce/EDD/Main.php:1730
-#: src/Tribe/Commerce/WooCommerce/Main.php:2589
+#: src/Tribe/Commerce/EDD/Main.php:1733
+#: src/Tribe/Commerce/WooCommerce/Main.php:2593
 msgid "Event sales report"
 msgstr ""
 
-#: src/Tribe/Commerce/EDD/Main.php:1781
+#: src/Tribe/Commerce/EDD/Main.php:1784
 msgid "Event"
 msgstr ""
 
-#: src/Tribe/Commerce/EDD/Main.php:1800
-#: src/Tribe/Commerce/WooCommerce/Main.php:2641
+#: src/Tribe/Commerce/EDD/Main.php:1803
+#: src/Tribe/Commerce/WooCommerce/Main.php:2645
 msgid "This is a %s for the event:"
 msgstr ""
 
-#: src/Tribe/Commerce/EDD/Main.php:1911
+#: src/Tribe/Commerce/EDD/Main.php:1914
 msgid "%s ticket is sold out"
 msgstr ""
 
-#: src/Tribe/Commerce/EDD/Main.php:1916
+#: src/Tribe/Commerce/EDD/Main.php:1919
 msgid "Sorry! Only %d tickets remaining for %s"
 msgstr ""
 
-#: src/Tribe/Commerce/EDD/Main.php:1985
+#: src/Tribe/Commerce/EDD/Main.php:1988
 msgid "Print Ticket"
 msgstr ""
 
-#: src/Tribe/Commerce/EDD/Main.php:2359
-#: src/Tribe/Commerce/WooCommerce/Main.php:3477
+#: src/Tribe/Commerce/EDD/Main.php:2362
+#: src/Tribe/Commerce/WooCommerce/Main.php:3481
 msgid "Edit attendee info"
 msgstr ""
 
@@ -387,29 +387,29 @@ msgctxt "ticket provider"
 msgid "WooCommerce"
 msgstr ""
 
-#: src/Tribe/Commerce/WooCommerce/Main.php:2300
+#: src/Tribe/Commerce/WooCommerce/Main.php:2304
 msgid "In trash (was %s)"
 msgstr ""
 
-#: src/Tribe/Commerce/WooCommerce/Main.php:2306
+#: src/Tribe/Commerce/WooCommerce/Main.php:2310
 msgid "Deleted"
 msgstr ""
 
-#: src/Tribe/Commerce/WooCommerce/Main.php:2355
+#: src/Tribe/Commerce/WooCommerce/Main.php:2359
 msgid "Unknown"
 msgstr ""
 
-#: src/Tribe/Commerce/WooCommerce/Main.php:2769
+#: src/Tribe/Commerce/WooCommerce/Main.php:2773
 msgid "Resend tickets email"
 msgstr ""
 
-#: src/Tribe/Commerce/WooCommerce/Main.php:3084
+#: src/Tribe/Commerce/WooCommerce/Main.php:3088
 msgid ""
 "The ticket: %1$s, in your cart is no longer available or valid. You need to "
 "remove it from your cart in order to continue."
 msgstr ""
 
-#: src/Tribe/Commerce/WooCommerce/Main.php:3290
+#: src/Tribe/Commerce/WooCommerce/Main.php:3294
 msgctxt "event-tickets-plus"
 msgid ""
 "The number of Complete ticket sales does not match the number of attendees. "
@@ -417,20 +417,20 @@ msgid ""
 "WooCommerce as needed."
 msgstr ""
 
-#: src/Tribe/Commerce/WooCommerce/Main.php:3299
+#: src/Tribe/Commerce/WooCommerce/Main.php:3303
 msgctxt "event-tickets-plus"
 msgid ""
 "\"Unlimited\" will be displayed unless you enable the WooCommerce's \"Manage "
 "stock\" setting. You can do so %1$shere%2$s."
 msgstr ""
 
-#: src/Tribe/Commerce/WooCommerce/Main.php:3396
+#: src/Tribe/Commerce/WooCommerce/Main.php:3400
 msgctxt ""
 "Attendee Registration notice heading text when Woo cart quantity changed"
 msgid "Updated Ticket Quantities"
 msgstr ""
 
-#: src/Tribe/Commerce/WooCommerce/Main.php:3402
+#: src/Tribe/Commerce/WooCommerce/Main.php:3406
 msgctxt ""
 "Attendee Registration notice paragraph text when Woo cart quantity changed"
 msgid ""
@@ -439,7 +439,7 @@ msgid ""
 "in order to proceed to Checkout."
 msgstr ""
 
-#: src/Tribe/Commerce/WooCommerce/Main.php:3469
+#: src/Tribe/Commerce/WooCommerce/Main.php:3473
 msgid "Return to cart"
 msgstr ""
 
@@ -508,7 +508,7 @@ msgstr ""
 msgid "As soon as an order is created"
 msgstr ""
 
-#: src/Tribe/Main.php:475
+#: src/Tribe/Main.php:509
 msgid "Require users to log in before they purchase tickets"
 msgstr ""
 
@@ -516,20 +516,54 @@ msgstr ""
 msgid "Checked"
 msgstr ""
 
-#: src/Tribe/Meta/Field/Abstract_Field.php:25 src/admin-views/meta.php:14
+#: src/Tribe/Meta/Field/Birth.php:25
+msgctxt "Attendee Information Field Name"
+msgid "Birth Date"
+msgstr ""
+
+#: src/Tribe/Meta/Field/Checkbox.php:10
+msgctxt "Attendee Information Field Name"
 msgid "Checkbox"
 msgstr ""
 
-#: src/Tribe/Meta/Field/Abstract_Field.php:26 src/admin-views/meta.php:11
+#: src/Tribe/Meta/Field/Datetime.php:17
+msgctxt "Attendee Information Field Name"
+msgid "Date"
+msgstr ""
+
+#: src/Tribe/Meta/Field/Email.php:17
+msgctxt "Attendee Information Field Name"
+msgid "Email"
+msgstr ""
+
+#: src/Tribe/Meta/Field/Number.php:17
+msgctxt "Attendee Information Field Name"
+msgid "Number"
+msgstr ""
+
+#: src/Tribe/Meta/Field/Radio.php:10
+msgctxt "Attendee Information Field Name"
 msgid "Radio"
 msgstr ""
 
-#: src/Tribe/Meta/Field/Abstract_Field.php:27 src/admin-views/meta.php:17
+#: src/Tribe/Meta/Field/Select.php:10
+msgctxt "Attendee Information Field Name"
 msgid "Dropdown"
 msgstr ""
 
-#: src/Tribe/Meta/Field/Abstract_Field.php:28 src/admin-views/meta.php:8
+#: src/Tribe/Meta/Field/Telephone.php:17
+msgctxt "Attendee Information Field Name"
+msgid "Telephone"
+msgstr ""
+
+#: src/Tribe/Meta/Field/Text.php:10
+msgctxt "Attendee Information Field Name"
 msgid "Text"
+msgstr ""
+
+#: src/Tribe/Meta/Field/Url.php:17
+msgctxt "Attendee Information Field Name"
+msgid "URL"
 msgstr ""
 
 #: src/Tribe/Meta/Fieldset.php:15
@@ -614,7 +648,7 @@ msgstr ""
 msgid "Attendee Information"
 msgstr ""
 
-#: src/Tribe/Meta.php:553
+#: src/Tribe/Meta.php:556
 msgid "This ticket has custom Attendee Information fields"
 msgstr ""
 
@@ -705,23 +739,23 @@ msgstr ""
 msgid "QR API Key Generated"
 msgstr ""
 
-#: src/Tribe/QR.php:169
+#: src/Tribe/QR.php:175
 msgid "The ticket with ID %s was deleted and cannot be checked-in."
 msgstr ""
 
-#: src/Tribe/QR.php:175
+#: src/Tribe/QR.php:181
 msgid "The security code for ticket with ID %s does not match."
 msgstr ""
 
-#: src/Tribe/QR.php:182
+#: src/Tribe/QR.php:188
 msgid "The ticket with ID %s has already been checked in."
 msgstr ""
 
-#: src/Tribe/QR.php:189
+#: src/Tribe/QR.php:195
 msgid "The ticket with ID %s was checked in."
 msgstr ""
 
-#: src/Tribe/QR.php:207
+#: src/Tribe/QR.php:213
 msgid "Could not render QR code because gzuncompress() is not available"
 msgstr ""
 
@@ -770,28 +804,33 @@ msgstr ""
 msgid "The security code of the %s to verify for check in."
 msgstr ""
 
-#: src/Tribe/REST/V1/Endpoints/QR.php:197
+#: src/Tribe/REST/V1/Endpoints/QR.php:204
 msgid "Security code is not valid!"
 msgstr ""
 
-#: src/Tribe/REST/V1/Endpoints/QR.php:207
+#: src/Tribe/REST/V1/Endpoints/QR.php:214
 msgid "An attendee is not found with this ID."
 msgstr ""
 
-#: src/Tribe/REST/V1/Endpoints/QR.php:218
+#. Translators: %s: 'ticket' label (singular, lowercase).
+#: src/Tribe/REST/V1/Endpoints/QR.php:233
 msgid "This attendee's %s is not authorized to be Checked in"
 msgstr ""
 
-#: src/Tribe/REST/V1/Endpoints/QR.php:230
+#: src/Tribe/REST/V1/Endpoints/QR.php:248
 msgid "Already checked in!"
 msgstr ""
 
-#: src/Tribe/REST/V1/Endpoints/QR.php:239
+#: src/Tribe/REST/V1/Endpoints/QR.php:257
 msgid "%s not checked in!"
 msgstr ""
 
-#: src/Tribe/REST/V1/Endpoints/QR.php:250
+#: src/Tribe/REST/V1/Endpoints/QR.php:268
 msgid "Checked In!"
+msgstr ""
+
+#: src/Tribe/Shortcode/Tribe_Tickets_Attendees.php:108
+msgid "Who's coming?"
 msgstr ""
 
 #: src/admin-views/attendees-list.php:7
@@ -1015,19 +1054,19 @@ msgctxt "Attendee information fields"
 msgid "Delete this field"
 msgstr ""
 
-#: src/admin-views/meta-fields/checkbox.php:11
-#: src/admin-views/meta-fields/radio.php:11
-#: src/admin-views/meta-fields/select.php:11
+#: src/admin-views/meta-fields/checkbox.php:15
+#: src/admin-views/meta-fields/radio.php:15
+#: src/admin-views/meta-fields/select.php:15
 msgctxt "Attendee information fields"
 msgid "Options (one per line)"
 msgstr ""
 
-#: src/admin-views/meta-fields/text.php:13
+#: src/admin-views/meta-fields/text.php:17
 msgctxt "Attendee information fields"
 msgid "Multi-line text field?"
 msgstr ""
 
-#: src/admin-views/meta.php:5
+#: src/admin-views/meta.php:8
 msgid "Add New Field:"
 msgstr ""
 
@@ -1183,6 +1222,33 @@ msgstr[1] ""
 msgid "Log in to purchase"
 msgstr ""
 
+#: src/views/meta/birth.php:41
+msgctxt "birthdate field"
+msgid " Month"
+msgstr ""
+
+#: src/views/meta/birth.php:49
+msgid "Month"
+msgstr ""
+
+#: src/views/meta/birth.php:61
+msgctxt "birthdate field"
+msgid " Day"
+msgstr ""
+
+#: src/views/meta/birth.php:69
+msgid "Day"
+msgstr ""
+
+#: src/views/meta/birth.php:81
+msgctxt "birthdate field"
+msgid " Year"
+msgstr ""
+
+#: src/views/meta/birth.php:89
+msgid "Year"
+msgstr ""
+
 #: src/views/meta.php:18
 msgid "Please fill in all required fields"
 msgstr ""
@@ -1213,15 +1279,24 @@ msgstr ""
 msgid "Toggle attendee info"
 msgstr ""
 
-#: src/views/tickets-plus/orders-tickets.php:36
-msgid "My %1$s for This %2$s"
+#: src/views/tickets-plus/orders-tickets.php:30
+msgctxt "fallback post type singular name"
+msgid "Post"
 msgstr ""
 
-#: src/views/tickets-plus/orders-tickets.php:62
+#. Translators: 1: plural Tickets label, 2: post type label.
+#: src/views/tickets-plus/orders-tickets.php:39
+msgid "My %1$s for this %2$s"
+msgstr ""
+
+#. Translators: 1: order number, 2: count of attendees in the order, 3: ticket
+#. label (dynamically singular or plural), 4: purchaser name, 5: linked
+#. purchaser email, 6: date of purchase.
+#: src/views/tickets-plus/orders-tickets.php:68
 msgid "Order #%1$s: %2$d %3$s reserved by %4$s (%5$s) on %6$s"
 msgstr ""
 
-#: src/views/tickets-plus/orders-tickets.php:92
+#: src/views/tickets-plus/orders-tickets.php:98
 msgid "Attendee %d"
 msgstr ""
 

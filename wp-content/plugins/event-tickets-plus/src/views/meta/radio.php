@@ -4,13 +4,13 @@
  *
  * Override this template in your own theme by creating a file at:
  *
- *     [your-theme]/tribe-events/meta/radio.php
+ * [your-theme]/tribe-events/meta/radio.php
  *
  * @since 4.3.5
  * @since 4.10.2 Use md5() for field name slugs.
  * @since 4.10.7 Undo use of md5() within this file to fix editing existing responses.
  *
- * @version 4.10.7
+ * @version 4.12.1
  *
  * @var Tribe__Tickets_Plus__Meta__Field__Radio $this
  */

@@ -138,15 +138,17 @@ class Tribe__Tickets_Plus__Tickets_View {
 						continue;
 					}
 
-					$provider_class = $attendee['provider'];
+					$provider = Tribe__Tickets__Tickets::get_ticket_provider_instance( $attendee['provider'] );
 
-					if ( ! defined( "{$provider_class}::ATTENDEE_OPTOUT_KEY" ) ) {
-						$attendee_optout_key = call_user_func( [ $provider_class, 'get_key' ], 'ATTENDEE_OPTOUT_KEY' );
-					} else {
-						$attendee_optout_key = constant( "{$provider_class}::ATTENDEE_OPTOUT_KEY" );
+					if ( empty( $provider ) ) {
+						continue;
 					}
 
-					update_post_meta( $attendee['attendee_id'], $attendee_optout_key, $optout );
+					$attendee_optout_key = $provider::get_attendee_optout_key( $provider );
+
+					if ( ! empty( $attendee_optout_key ) ) {
+						update_post_meta( $attendee['attendee_id'], $attendee_optout_key, $optout );
+					}
 				}
 			}
 		}

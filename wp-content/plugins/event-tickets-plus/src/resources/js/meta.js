@@ -11,11 +11,22 @@ tribe_event_tickets_plus.meta.event = tribe_event_tickets_plus.meta.event || {};
 			checkbox: '.tribe-tickets-meta-checkbox',
 			select: '.tribe-tickets-meta-select',
 			radio: '.tribe-tickets-meta-radio',
+			number: '.ticket-meta-number-field',
 		},
 		quantity: 'input.tribe-tickets-quantity',
 		name: 'input.tribe-tickets-full-name',
 		email: 'input.tribe-tickets-email',
+		horizontal_datepicker: {
+			container: '.tribe_horizontal_datepicker__container',
+			select: '.tribe_horizontal_datepicker__container select',
+			day: '.tribe_horizontal_datepicker__day',
+			month: '.tribe_horizontal_datepicker__month',
+			year: '.tribe_horizontal_datepicker__year',
+			value: '.tribe_horizontal_datepicker__value',
+		},
 	};
+
+	my.horizontal_datepicker = {};
 
 	/**
 	 * Initializes the meta functionality
@@ -47,6 +58,8 @@ tribe_event_tickets_plus.meta.event = tribe_event_tickets_plus.meta.event || {};
 		this.$rsvp_block
 			.on( 'change', '.tribe-block__rsvp__number-input input', this.event.block_quantity_changed )
 			.on( 'keyup', '.tribe-block__rsvp__number-input input', this.event.block_quantity_changed );
+
+		this.horizontal_datepicker.populateSelects();
 	};
 
 	my.render_fields = function( ticket_id, num ) {
@@ -123,12 +136,18 @@ tribe_event_tickets_plus.meta.event = tribe_event_tickets_plus.meta.event || {};
 			) {
 				val = $field.find( 'input:checked' ).length ? 'checked' : '';
 			} else if ( $field.is( my.selectors.field.select ) ) {
-				val = $field.find( 'select' ).val();
+				val = $field.find('select').val();
+			} else if (
+				$field.is( my.selectors.horizontal_datepicker.day ) ||
+				$field.is( my.selectors.horizontal_datepicker.month ) ||
+				$field.is( my.selectors.horizontal_datepicker.year )
+			) {
+				val = $field.val();
 			} else {
 				val = $field.find( 'input, textarea' ).val().trim();
 			}
 
-			if ( 0 === val.length ) {
+			if ( null === val || 0 === val.length ) {
 				is_valid = false;
 			}
 		} );
@@ -190,7 +209,115 @@ tribe_event_tickets_plus.meta.event = tribe_event_tickets_plus.meta.event || {};
 		}
 	};
 
+	/**
+	 * Parses the yyyy-mm-dd date from the hidden field that holds
+	 * the value, and updates the visible month-day-year select with
+	 * the according values.
+	 *
+	 * @since TBD
+	 */
+	my.horizontal_datepicker.populateSelects = function() {
+		$( my.selectors.horizontal_datepicker.container ).each( function( index, value ) {
+			const wrapper = $( value );
+
+			const day = wrapper.find( my.selectors.horizontal_datepicker.day );
+			const month = wrapper.find( my.selectors.horizontal_datepicker.month );
+			const year = wrapper.find( my.selectors.horizontal_datepicker.year );
+			const realValue = wrapper.find( my.selectors.horizontal_datepicker.value );
+
+			const savedValues = realValue.val().split( '-' );
+
+			if ( savedValues.length === 3 ) {
+				year.val( savedValues[ 0 ] );
+				month.val( savedValues[ 1 ] );
+				day.val( savedValues[ 2 ] );
+			}
+		} );
+	};
+
+	/**
+	 * Parses the visible month-day-year selects and builds a date in the
+	 * yyyy-mm-dd format, which is saved in a hidden field as the actual
+	 * value to be sent.
+	 *
+	 * @since TBD
+	 *
+	 * @param e
+	 */
+	my.horizontal_datepicker.populateHiddenValue = function( e ) {
+		const wrapper = $( e.target ).closest( my.selectors.horizontal_datepicker.container );
+		const day = wrapper.find( my.selectors.horizontal_datepicker.day );
+		const month = wrapper.find( my.selectors.horizontal_datepicker.month );
+		const year = wrapper.find( my.selectors.horizontal_datepicker.year );
+		const realValue = wrapper.find( my.selectors.horizontal_datepicker.value );
+
+		// Data is stored in format: yyyy-mm-dd
+		realValue.val( year.val() + '-' + month.val() + '-' + day.val() );
+		realValue.trigger( 'change' );
+	};
+
+	my.horizontal_datepicker.makeDayMonthYearRequired = function( e ) {
+		const hiddenValue = $( e.target );
+		const wrapper = hiddenValue.closest( my.selectors.horizontal_datepicker.container );
+
+		let isValueEmpty = hiddenValue.val() === '' || hiddenValue.val() === 'null-null-null';
+		let isRequired = ! isValueEmpty;
+		
+		wrapper.find( my.selectors.horizontal_datepicker.day ).prop( 'required', isRequired );
+		wrapper.find( my.selectors.horizontal_datepicker.month ).prop( 'required', isRequired );
+		wrapper.find( my.selectors.horizontal_datepicker.year ).prop( 'required', isRequired );
+
+		if ( isRequired ) {
+			wrapper.find( my.selectors.horizontal_datepicker.day ).addClass( 'tribe-tickets-meta-required' );
+			wrapper.find( my.selectors.horizontal_datepicker.month ).addClass( 'tribe-tickets-meta-required' );
+			wrapper.find( my.selectors.horizontal_datepicker.year ).addClass( 'tribe-tickets-meta-required' );
+		} else {
+			wrapper.find( my.selectors.horizontal_datepicker.day ).removeClass( 'tribe-tickets-meta-required' );
+			wrapper.find( my.selectors.horizontal_datepicker.month ).removeClass( 'tribe-tickets-meta-required' );
+			wrapper.find( my.selectors.horizontal_datepicker.year ).removeClass( 'tribe-tickets-meta-required' );
+		}
+
+
+	};
+
+	/**
+	 * Converts the number to positive if a negative provided.
+	 *
+	 * @since TBD
+	 *
+	 * @param e
+	 */
+	my.horizontal_datepicker.ensurePositiveNumber = function( e ) {
+		const input       = $( e.target );
+		const inputValue  = parseInt( input.val(), 10 );
+		const numberValue = Math.abs( inputValue );
+
+		// Only change the value if it needs to be set.
+		if ( inputValue !== numberValue ) {
+			input.val( numberValue );
+		}
+	};
+
+	/**
+	 * Add Listeners to the Meta functionality.
+	 *
+	 * @since TBD
+	 */
+	my.addListeners = function() {
+		$( document ).on( 'change', my.selectors.horizontal_datepicker.select, this.horizontal_datepicker.populateHiddenValue );
+		$( document ).on( 'change', my.selectors.field.number, this.horizontal_datepicker.ensurePositiveNumber );
+		$( document ).on( 'change', my.selectors.horizontal_datepicker.value, this.horizontal_datepicker.makeDayMonthYearRequired );
+
+		/**
+		 * Fires after the meta fields that were loaded through AJAX have been populated with data.
+		 *
+		 * @see Window.tribe.tickets.registration.initFormPrefills
+		 */
+		$( window ).on( 'tribe_et_after_form_prefills', this.horizontal_datepicker.populateSelects );
+	};
+
 	$( function() {
 		my.init();
+		my.addListeners();
 	} );
 } )( window, document, jQuery, tribe_event_tickets_plus.meta );

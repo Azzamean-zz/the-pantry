@@ -4,12 +4,13 @@
  *
  * Override this template in your own theme by creating a file at:
  *
- *     [your-theme]/tribe-events/meta/text.php
+ * [your-theme]/tribe-events/meta/text.php
  *
- * @version 4.10.7
+ * @version 4.12.1
  *
  * @since 4.3.5
  * @since 4.10.7 Added var documentation for `$this`.
+ * @since 4.12.1    Updated PHP comment.
  *
  * @var Tribe__Tickets_Plus__Meta__Field__Text $this
  */

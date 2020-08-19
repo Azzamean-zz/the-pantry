@@ -21,11 +21,6 @@ define('WP_CACHE', true); // Added by W3 Total Cache
  * @package WordPress
  */
 // ** MySQL settings - You can get this info from your web host ** //
-<<<<<<< HEAD
-=======
-
-
->>>>>>> origin/master
 switch ($_SERVER['SERVER_NAME']) {
      /** Development Server */    
      case 'pantrynew':
@@ -36,10 +31,6 @@ switch ($_SERVER['SERVER_NAME']) {
           define('DB_CHARSET', 'utf8');
           define('DB_COLLATE', '');
           define('WP_DEBUG', true);  
-<<<<<<< HEAD
-=======
-		  define( 'WP_CACHE_KEY_SALT', 'https://pantrynew:8890' );
->>>>>>> origin/master
      break;
      /** Staging Server */
      case 'pantry.deicreative.com':
@@ -59,13 +50,7 @@ switch ($_SERVER['SERVER_NAME']) {
           define('DB_HOST', 'thepantry-jan2020.cxjfm6fxwyci.us-east-1.rds.amazonaws.com:3306');
           define('DB_CHARSET', 'utf8');
           define('DB_COLLATE', '');
-<<<<<<< HEAD
           define('WP_DEBUG', false);     
-=======
-          define('WP_DEBUG', false);   
-		  define( 'WP_CACHE_KEY_SALT', 'https://thepantryseattle.com' );
-          
->>>>>>> origin/master
      break;
 } 
 

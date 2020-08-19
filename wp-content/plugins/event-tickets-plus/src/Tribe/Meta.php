@@ -236,7 +236,10 @@ class Tribe__Tickets_Plus__Meta {
 		$active_meta = $this->get_meta_fields_by_ticket( $ticket_id );
 		$templates   = $this->meta_fieldset()->get_fieldsets();
 
-		tribe( 'tickets-plus.admin.views' )->template( 'attendee-meta', get_defined_vars() );
+		/** @var Tribe__Tickets_Plus__Admin__Views $plus_admin_views */
+		$plus_admin_views = tribe( 'tickets-plus.admin.views' );
+
+		$plus_admin_views->template( 'attendee-meta', get_defined_vars() );
 	}
 
 	/**

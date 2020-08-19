@@ -1,22 +1,35 @@
 <?php
 /**
- * Renders number field
+ * Renders field
  *
  * Override this template in your own theme by creating a file at:
  *
- *     [your-theme]/tribe-events/meta/number.php
+ * [your-theme]/tribe-events/meta/number.php
  *
- * @version 4.10.7
- *
- * @since 4.3.5
- * @since 4.10.7 Added var documentation for `$this`.
+ * @since   4.12.1
  *
  * @var Tribe__Tickets_Plus__Meta__Field__Number $this
  */
 
 $option_id = "tribe-tickets-meta_{$this->slug}" . ( $attendee_id ? '_' . $attendee_id : '' );
+
+$classes = [
+	'tribe-tickets-meta'          => true,
+	'tribe-tickets-meta-number'   => true,
+	'tribe-tickets-meta-required' => $required,
+];
 ?>
-<div class="tribe-tickets-meta tribe-tickets-meta-number <?php echo $required ? 'tribe-tickets-meta-required' : ''; ?>">
+<div <?php tribe_classes( $classes ); ?>>
 	<label for="<?php echo esc_attr( $option_id ); ?>"><?php echo wp_kses_post( $field['label'] ); ?></label>
-	<input <?php disabled( $this->is_restricted( $attendee_id ) ); ?> type="number" id="<?php echo esc_attr( $option_id ); ?>" class="ticket-meta" name="tribe-tickets-meta[<?php echo $attendee_id ?>][<?php echo esc_attr( $this->slug ); ?>]" value="<?php echo esc_attr( $value ); ?>" <?php echo $required ? 'required' : ''; ?>>
+	<input
+		type="number"
+		min="0"
+		step="0.01"
+		id="<?php echo esc_attr( $option_id ); ?>"
+		class="ticket-meta ticket-meta-number-field"
+		name="tribe-tickets-meta[<?php echo esc_attr( $attendee_id ); ?>][<?php echo esc_attr( $this->slug ); ?>]"
+		value="<?php echo esc_attr( $value ); ?>"
+		<?php echo $required ? 'required' : ''; ?>
+		<?php disabled( $this->is_restricted( $attendee_id ) ); ?>
+	>
 </div>

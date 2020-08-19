@@ -12,7 +12,7 @@ if ( ! class_exists( 'Tribe__Tickets_Plus__Main' ) ) {
 		/**
 		 * Current version of this plugin
 		 */
-		const VERSION = '4.12.0';
+		const VERSION = '4.12.3';
 
 		/**
 		 * Used to store the version history.
@@ -108,6 +108,8 @@ if ( ! class_exists( 'Tribe__Tickets_Plus__Main' ) ) {
 			/** @see \Tribe__Events__Pro__Main::init_apm_filters() Is on priority 10. */
 			add_action( 'plugins_loaded', [ $this, 'apm_filters' ], 5 );
 
+			add_action( 'tribe_extension_is_disallowed', [ $this, 'disallowed_extensions' ], 10, 2 );
+
 			add_action( 'init', [ $this, 'init' ], 5 );
 
 			// CSV import needs to happen before P10@init but after P5@init
@@ -130,9 +132,9 @@ if ( ! class_exists( 'Tribe__Tickets_Plus__Main' ) ) {
 		 * Bootstrap of the Plugin on Init
 		 *
 		 * @since 4.10
+		 * @since 4.12.1 Added Shortcodes service provider and deactivation of incompatible extensions.
 		 */
 		public function init() {
-
 			// Setup Main Service Provider
 			tribe_register_provider( 'Tribe__Tickets_Plus__Service_Provider' );
 
@@ -141,6 +143,12 @@ if ( ! class_exists( 'Tribe__Tickets_Plus__Main' ) ) {
 
 			// Promoter
 			tribe_register_provider( Tribe__Tickets_Plus__Service_Providers__Promoter::class );
+
+			// Meta
+			tribe_register_provider( Tribe\Tickets\Plus\Meta\Service_Provider::class );
+
+			// Shortcodes
+			tribe_register_provider( \Tribe\Tickets\Plus\Service_Providers\Shortcode::class );
 
 			$this->commerce_loader();
 			$this->bind_implementations();
@@ -154,7 +162,33 @@ if ( ! class_exists( 'Tribe__Tickets_Plus__Main' ) ) {
 
 			$this->apm_filters();
 			$this->maybe_set_event_tickets_plus_version();
+		}
 
+		/**
+		 * Deactivate incompatible extension plugins.
+		 *
+		 * @since 4.12.1.
+		 *
+		 * @param bool             $is_disallowed        False by default.
+		 * @param string           $extension_class_name This extension's class name string
+		 *                                               (without initial forward slash for namespaced classes).
+		 *
+		 * @return bool
+		 */
+		public function disallowed_extensions( $is_disallowed, $extension_class_name ) {
+			// Without leading forward slash.
+			$disallowed_extensions = [
+				'Tribe\Extensions\Tickets\Shortcodes\Main', // Event Tickets Extension: Shortcodes.
+			];
+
+			if (
+				empty( $is_disallowed )
+				&& in_array( $extension_class_name, $disallowed_extensions, true )
+			) {
+				return true;
+			}
+
+			return $is_disallowed;
 		}
 
 		/**

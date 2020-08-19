@@ -87,6 +87,8 @@ class Tribe__Tickets_Plus__Attendees_List extends Attendees_List {
 	/**
 	 * Wrapper to create the Shortcode with the Attendees List
 	 *
+	 * @todo Move to using Common-extended \Tribe\Tickets\Plus\Service_Providers\Shortcode.
+	 *
 	 * @param  array $atts
 	 * @return string
 	 */

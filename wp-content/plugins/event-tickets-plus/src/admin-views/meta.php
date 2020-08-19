@@ -1,21 +1,21 @@
+<?php
+	use Tribe\Tickets\Plus\Meta\Field_Types_Collection;
+?>
 <div id="tribe-tickets-attendee-info-form" class="eventtable tribe-tickets-attendee-info-form ticket_advanced ticket_advanced_meta">
 	<table class="eventtable">
 		<tr class="tribe-attendee-fields-box">
 			<td class='tribe-attendee-fields-new'>
 				<h5><?php esc_html_e( 'Add New Field:', 'event-tickets-plus' ); ?></h5>
 				<ul class="tribe-tickets-attendee-info-options">
-					<li id="tribe-tickets-add-text" class="tribe-tickets-attendee-info-option">
-						<a href="#" class="add-attendee-field" data-type="text"><?php esc_html_e( 'Text', 'event-tickets-plus' ); ?> <span class="dashicons dashicons-plus-alt"></span></a>
+					<?php
+					$field_types = tribe( Field_Types_Collection::class )->get();
+
+					foreach ( $field_types as $type => $name ) :
+					?>
+					<li id='tribe-tickets-add-<?php echo esc_attr( $type ); ?>' class='tribe-tickets-attendee-info-option'>
+						<a href='#' class='add-attendee-field' data-type='<?php echo esc_attr( $type ); ?>'><?php echo esc_html( $name ); ?> <span class='dashicons dashicons-plus-alt'></span></a>
 					</li>
-					<li id="tribe-tickets-add-radio" class="tribe-tickets-attendee-info-option">
-						<a href="#" class="add-attendee-field" data-type="radio"><?php esc_html_e( 'Radio', 'event-tickets-plus' ); ?> <span class="dashicons dashicons-plus-alt"></span></a>
-					</li>
-					<li id="tribe-tickets-add-checkbox" class="tribe-tickets-attendee-info-option">
-						<a href="#" class="add-attendee-field" data-type="checkbox"><?php esc_html_e( 'Checkbox', 'event-tickets-plus' ); ?> <span class="dashicons dashicons-plus-alt"></span></a>
-					</li>
-					<li id="tribe-tickets-add-select" class="tribe-tickets-attendee-info-option">
-						<a href="#" class="add-attendee-field" data-type="select"><?php esc_html_e( 'Dropdown', 'event-tickets-plus' ); ?> <span class="dashicons dashicons-plus-alt"></span></a>
-					</li>
+					<?php endforeach; ?>
 				</ul>
 			</td>
 			<td class='tribe-attendee-fields-existing'>
