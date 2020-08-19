@@ -338,6 +338,29 @@ $tickets = Tribe__Tickets__Tickets::get_all_event_tickets($post_id);
 add_action( 'save_post', 'updated_ticket_product_cat' );
 
  /**
+ * Remove page header
+ */
+function sf_change_homepage_title( $args ) {
+    remove_action( 'storefront_page', 'storefront_page_header', 10 );
+}
+add_action( 'wp', 'sf_change_homepage_title' );
+
+ /**
+ * Waitlist Button
+ */
+
+add_filter( 'update_waitlist_button_text', 'change_waitlist_join_button_text' );
+function change_waitlist_join_button_text( $text ) {
+	return __( 'Add to Waitlist' );
+}
+
+add_filter( 'wcwl_event_waitlist_message_text', 'change_waitlist_message_text' );
+function change_waitlist_message_text( $text ) {
+	return __( 'Check the box alongside any Sold Out items and enter your email address to be emailed when those items become available!' );
+}
+
+
+ /**
  * Remove related products output
  */
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );

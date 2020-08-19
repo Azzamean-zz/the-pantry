@@ -477,6 +477,28 @@ form.checkout {
 	padding-right: 30px;	
 }
 
+.page-template {
+	.hentry .entry-content {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		h2.has-text-align-center {
+			width: 100%;	
+		}
+		div.wp-block-image:not(.block-editor-media-placeholder) .alignleft {
+			margin: 10px;	
+		}
+		figcaption {
+			a {
+				font-family: "brandon-grotesque","Helvetica Neue",Arial,sans-serif;
+				font-size: 20px;	
+				text-decoration: none;	
+				font-style: normal;
+			}
+		}
+	}
+}
+
 @media screen and (max-width: 856px) {
 	.tribe-events-calendar-month__week {
 		border: none !important;	
