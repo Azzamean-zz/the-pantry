@@ -28,7 +28,7 @@ $event_id = get_the_ID();
         <header class="page-header">
             <h1><a href="<?php echo site_url();?>" class="logo">The Pantry</a></h1>
             
-            <?php if(get_field('sub_head')) {?><h1><?php the_field('sub_head');?></h1><?php } ?>
+            <?php the_title( '<h1 class="">', '</h1>' ); ?>
 
         </header>
 
@@ -44,8 +44,6 @@ $event_id = get_the_ID();
 	<?php tribe_the_notices() ?>
 
 	<?php while ( have_posts() ) :  the_post(); ?>
-
-	<?php the_title( '<h1 class="tribe-events-single-event-title">', '</h1>' ); ?>
 
 	<!-- Event featured image, but exclude link -->
 	<?php echo tribe_event_featured_image( $event_id, 'full', false ); ?>

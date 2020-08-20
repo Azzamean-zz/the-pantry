@@ -359,7 +359,14 @@ function change_waitlist_message_text( $text ) {
 	return __( 'Check the box alongside any Sold Out items and enter your email address to be emailed when those items become available!' );
 }
 
+function tribe_events_set_notice_past_events( $notice, $key ) {
+if ( 'event-past' === $key ) {
+$notice = 'Event registration has closed';
+}
+return $notice;
+}
 
+add_filter( 'tribe_events_set_notice', 'tribe_events_set_notice_past_events', 10, 2 );
 
 
  /**
