@@ -368,7 +368,28 @@ return $notice;
 
 add_filter( 'tribe_events_set_notice', 'tribe_events_set_notice_past_events', 10, 2 );
 
+ /**
+ * Remove customer details from emails
 
+
+add_action( 'woocommerce_email', function ( $email_class ) {
+    remove_action( 'woocommerce_email_customer_details', array( $email_class, 'customer_details' ), 20, 3 );
+});
+ */
+ 
+ // Removes Order Notes Title - Additional Information & Notes Field
+add_filter( 'woocommerce_enable_order_notes_field', '__return_false', 9999 );
+
+
+
+// Remove Order Notes Field
+add_filter( 'woocommerce_checkout_fields' , 'remove_order_notes' );
+
+function remove_order_notes( $fields ) {
+     unset($fields['order']['order_comments']);
+     return $fields;
+}
+ 
  /**
  * Remove related products output
  */

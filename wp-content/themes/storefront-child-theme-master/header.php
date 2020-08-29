@@ -17,6 +17,8 @@
 
 <link rel="stylesheet" href="https://use.typekit.net/ybg6drv.css">
 
+<link rel="icon" type="image/png" href="<?php echo get_stylesheet_directory(); ?>/favicon.png">
+
 <?php wp_head(); ?>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
