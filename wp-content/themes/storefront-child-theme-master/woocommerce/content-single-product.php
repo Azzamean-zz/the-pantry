@@ -52,7 +52,7 @@ if ( post_password_required() ) {
 		        </header>
 				<div id="home-main" class="event-page">
 			        <article class="page">
-			            <div class="page-body columns">
+			            <div class="page-body">
 			                <?php the_content();?>
 			            </div>
 			            

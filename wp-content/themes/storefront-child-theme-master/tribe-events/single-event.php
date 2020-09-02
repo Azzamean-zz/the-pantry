@@ -47,7 +47,7 @@ $event_id = get_the_ID();
 
 	<!-- Event featured image, but exclude link -->
 	<?php echo tribe_event_featured_image( $event_id, 'full', false ); ?>
-
+		
 	<div class="tribe-events-schedule tribe-clearfix">
 		<?php echo tribe_events_event_schedule_details( $event_id, '<h2>', '</h2>' ); ?>
 		<?php if ( tribe_get_cost() ) : ?>
