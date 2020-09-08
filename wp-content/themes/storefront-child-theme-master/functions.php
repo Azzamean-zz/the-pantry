@@ -389,6 +389,23 @@ function remove_order_notes( $fields ) {
      unset($fields['order']['order_comments']);
      return $fields;
 }
+
+add_filter( 'woocommerce_registration_error_email_exists', function( $html ) {
+	$url =  wc_get_page_permalink( 'myaccount' );
+	$url = add_query_arg( 'redirect_checkout', 1, $url );
+	$html = str_replace( 'Please log in', '<a href="/my-account"><strong>Please log in</strong></a>', $html );
+	return $html;
+} );
+
+add_filter( 'woocommerce_login_redirect', function( $redirect, $user ) {
+	if ( $_GET['redirect_checkout'] ) {
+        return wc_get_checkout_url();
+    } elseif ( wp_get_referer() ) {
+		return wp_get_referer();
+	} else {
+		return $redirect;
+	}
+}, 10, 2 );
  
  /**
  * Remove related products output
