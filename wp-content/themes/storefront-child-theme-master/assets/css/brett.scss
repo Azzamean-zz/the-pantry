@@ -34,6 +34,10 @@ h3 time {
 	}
 }
 
+.big-container {
+	padding: 40px;	
+}
+
 .tribe-events .tribe-events-calendar-month__day--current .tribe-events-calendar-month__day-date, .tribe-events .tribe-events-calendar-month__day--current .tribe-events-calendar-month__day-date-link {
 	color: #4c73aa !important;	
 }
@@ -205,8 +209,28 @@ input#credit_called {
 		display: none;	
 	}
 	.quantity {
-// 		display: none;	
+		display: none;	
 	}
+}
+
+.single-product div.product .variations_button {
+	text-align: center;	
+}
+
+#call_for_credit {
+	.wc-sc-input  {
+		text-align: center;	
+		min-width: 280px;	
+	}
+}
+
+.single-product div.product table.variations th, .single-product div.product table.variations td {
+	text-align: center;	
+}
+
+input#credit_called {
+	display: inline-block;	
+	margin-top: 10px;	
 }
 
 .storefront-full-width-content.single-product div.product {
@@ -215,14 +239,33 @@ input#credit_called {
 		margin: 0;	
 		float: left;
 		width: 60%;	
-		padding-right: 40px;	
+		width: 100%;	
+// 		padding-right: 40px;	
 	}
 	.summary {
 		width: 40%;	
+		width: 100%;	
 		float: left;
 		margin: 0;	
-		padding: 0;	
+		padding: 0;
+		text-align: center;	
+		
 	}
+}
+
+.single-product div.product table.variations select {
+	max-width: 100% !important;	
+}
+
+.single-product div.product table.variations .value {
+	margin-bottom: 0 !important;	
+}
+
+.single-product div.product form.cart {
+	max-width: 360px;	
+	display: inline-block;	
+	text-align: right;
+	float: none;	
 }
 
 .woocommerce-tabs {

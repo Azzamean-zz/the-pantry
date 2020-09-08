@@ -35,9 +35,15 @@ get_header( 'shop' ); ?>
 			<?php the_post(); ?>
 
 			<?php wc_get_template_part( 'content', 'single-product' ); ?>
-
+			
 		<?php endwhile; // end of the loop. ?>
-
+		
+		<article class="page">
+			<div class="page-body">
+			<?php the_field('under_product');?>
+			</div>	
+		</article>	
+	
 	<?php
 		/**
 		 * woocommerce_after_main_content hook.
