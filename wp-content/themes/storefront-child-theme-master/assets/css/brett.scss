@@ -585,6 +585,10 @@ form.checkout {
 	}	
 }
 
+.attendee-list-link {
+	width: 100%;		
+}
+
 
 @media screen and (max-width: 856px) {
 	.tribe-events-calendar-month__week {
@@ -630,5 +634,17 @@ form.checkout {
 	}
 	.theme-twentytwenty .wc-block-grid.has-4-columns .wc-block-grid__product, .wc-block-grid.has-4-columns .wc-block-grid__product {
 		max-width: 100%;	
+	}
+}
+
+@media print {
+	body {
+		padding: 0 !important;
+	}
+	table {
+		font-size: 11pt !important;	
+	}
+	header, footer {
+		display: none !important;	
 	}
 }

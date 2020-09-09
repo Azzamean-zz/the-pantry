@@ -45,9 +45,16 @@ $event_id = get_the_ID();
 
 	<?php while ( have_posts() ) :  the_post(); ?>
 
+	<?php if( current_user_can('editor') || current_user_can('administrator') ) {  ?>
+	    <div class="attendee-list-link">
+		    <a href="<?php echo site_url();?>/attendee-list?event=<?php echo $event_id;?>">View Attendees</a>
+	    </div>	
+	    
+	<?php } ?>
+
 	<!-- Event featured image, but exclude link -->
 	<?php echo tribe_event_featured_image( $event_id, 'full', false ); ?>
-		
+	
 	<div class="tribe-events-schedule tribe-clearfix">
 		<?php echo tribe_events_event_schedule_details( $event_id, '<h2>', '</h2>' ); ?>
 		<?php if ( tribe_get_cost() ) : ?>
