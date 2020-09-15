@@ -589,6 +589,10 @@ form.checkout {
 	width: 100%;		
 }
 
+.wp-die-message, .tribe-events-cal-links {
+	display: none !important;	
+}
+
 
 @media screen and (max-width: 856px) {
 	.tribe-events-calendar-month__week {
