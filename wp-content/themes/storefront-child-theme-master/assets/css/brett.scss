@@ -635,6 +635,9 @@ form.checkout {
 	.theme-twentytwenty .wc-block-grid.has-4-columns .wc-block-grid__product, .wc-block-grid.has-4-columns .wc-block-grid__product {
 		max-width: 100%;	
 	}
+	.page {
+		padding-bottom: 60px !important;	
+	}
 }
 
 @media print {
