@@ -679,7 +679,7 @@ img.emoji {
 		document.body.className = c;
 	</script>
 	<script>
-var TribeTicketsPlus = {"ajaxurl":"https:\/\/pantrynew:8890\/wp-admin\/admin-ajax.php","save_attendee_info_nonce":"6e0d45acb5"};
+var TribeTicketsPlus = {"ajaxurl":"https:\/\/pantrynew:8890\/wp-admin\/admin-ajax.php","save_attendee_info_nonce":"364c367471"};
 </script>
 <script src='https://pantrynew:8890/wp-content/plugins/event-tickets-plus/vendor/jquery.cookie/jquery.cookie.js?ver=4.12.3'></script>
 <script src='https://pantrynew:8890/wp-content/plugins/event-tickets-plus/vendor/jquery.deparam/jquery.deparam.js?ver=4.12.3'></script>
@@ -729,5 +729,5 @@ Performance optimized by W3 Total Cache. Learn more: https://www.boldgrid.com/w3
 
 Page Caching using disk: enhanced 
 
-Served from: pantrynew @ 2020-09-10 17:19:50 by W3 Total Cache
+Served from: pantrynew @ 2020-09-16 17:18:43 by W3 Total Cache
 -->
