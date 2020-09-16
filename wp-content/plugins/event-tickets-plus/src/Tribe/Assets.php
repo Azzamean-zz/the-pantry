@@ -9,13 +9,14 @@ class Tribe__Tickets_Plus__Assets {
 	 * @see   \tribe_tickets_is_enabled_post_context()
 	 */
 	public function enqueue_scripts() {
-		// Set up our base list of enqueues
+		// Set up our base list of enqueues.
 		$enqueue_array = [
 			[ 'event-tickets-plus-tickets-css', 'tickets.css', [ 'dashicons' ] ],
 			[ 'jquery-deparam', 'vendor/jquery.deparam/jquery.deparam.js', [ 'jquery' ] ],
 			[ 'jquery-cookie', 'vendor/jquery.cookie/jquery.cookie.js', [ 'jquery' ] ],
 			[ 'event-tickets-plus-attendees-list-js', 'attendees-list.js', [ 'event-tickets-attendees-list-js' ] ],
 			[ 'event-tickets-plus-meta-js', 'meta.js', [ 'jquery-cookie', 'jquery-deparam' ] ],
+			[ 'tribe-tickets-plus-attendee-meta', 'v2/tickets-meta.js', [ 'jquery', 'tribe-common' ] ],
 		];
 
 		// and the engine...
@@ -31,7 +32,7 @@ class Tribe__Tickets_Plus__Assets {
 						'save_attendee_info_nonce' => wp_create_nonce( 'save_attendee_info' ),
 					],
 				],
-				'conditionals' => 'tribe_tickets_is_enabled_post_context',
+				'conditionals' => tribe_callback( 'tickets.assets', 'should_enqueue_frontend' ),
 			]
 		);
 
@@ -43,16 +44,16 @@ class Tribe__Tickets_Plus__Assets {
 	 * @since 4.6
 	 */
 	public function admin_enqueue_scripts() {
-		// Set up our base list of enqueues
-		$enqueue_array = array(
-			array( 'event-tickets-plus-meta-admin-css', 'meta.css', array() ),
-			array( 'event-tickets-plus-meta-report-js', 'meta-report.js', array() ),
-			array( 'event-tickets-plus-attendees-list-js', 'attendees-list.js', array( 'event-tickets-attendees-list-js' ) ),
-			array( 'event-tickets-plus-meta-admin-js', 'meta-admin.js', array( 'jquery-ui-draggable', 'jquery-ui-droppable', 'jquery-ui-sortable' ) ),
-			array( 'event-tickets-plus-admin-css', 'admin.css', array( 'event-tickets-admin-css' ) ),
-			array( 'event-tickets-plus-admin-tables-js', 'tickets-tables.js', array( 'underscore', 'jquery', 'tribe-common' ) ),
-			array( 'event-tickets-plus-admin-qr', 'qr.js', array( 'jquery' ) ),
-		);
+		// Set up our base list of enqueues.
+		$enqueue_array = [
+			[ 'event-tickets-plus-meta-admin-css', 'meta.css', [] ],
+			[ 'event-tickets-plus-meta-report-js', 'meta-report.js', [] ],
+			[ 'event-tickets-plus-attendees-list-js', 'attendees-list.js', [ 'event-tickets-attendees-list-js' ] ],
+			[ 'event-tickets-plus-meta-admin-js', 'meta-admin.js', [ 'jquery-ui-draggable', 'jquery-ui-droppable', 'jquery-ui-sortable' ] ],
+			[ 'event-tickets-plus-admin-css', 'admin.css', [ 'event-tickets-admin-css' ] ],
+			[ 'event-tickets-plus-admin-tables-js', 'tickets-tables.js', [ 'underscore', 'jquery', 'tribe-common' ] ],
+			[ 'event-tickets-plus-admin-qr', 'qr.js', [ 'jquery' ] ],
+		];
 
 		/**
 		 * Filter the array of module names.
@@ -65,7 +66,11 @@ class Tribe__Tickets_Plus__Assets {
 		$modules = array_values( $modules );
 
 		if ( in_array( 'WooCommerce', $modules )  ) {
-			$enqueue_array[] = array( 'event-tickets-plus-wootickets-css', 'wootickets.css', array( 'event-tickets-plus-meta-admin-css' ) );
+			$enqueue_array[] = [
+				'event-tickets-plus-wootickets-css',
+				'wootickets.css',
+				[ 'event-tickets-plus-meta-admin-css' ],
+			];
 		}
 
 		// and the engine...
@@ -73,16 +78,16 @@ class Tribe__Tickets_Plus__Assets {
 			tribe( 'tickets-plus.main' ),
 			$enqueue_array,
 			'admin_enqueue_scripts',
-			array(
+			[
 				'priority' => 0,
 				'groups'       => 'event-tickets-plus-admin',
-				'localize' => (object) array(
+				'localize' => (object) [
 					'name' => 'tribe_qr',
-					'data' => array(
+					'data' => [
 						'generate_qr_nonce'   => wp_create_nonce( 'generate_qr_nonce' ),
-					),
-				),
-			)
+					],
+				],
+			]
 		);
 	}
 }

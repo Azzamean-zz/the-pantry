@@ -1197,7 +1197,7 @@ class Tribe__Tickets_Plus__Commerce__WooCommerce__Main extends Tribe__Tickets_Pl
 			} else {
 				$post_author = get_post_field( 'post_author', $ticket->ID );
 				$str         = $raw_data['ticket_name'];
-				$str         = mb_strtoupper( $str, mb_detect_encoding( $str ) );
+				$str         = tribe_strtoupper( $str );
 				$sku         = "{$ticket->ID}-{$post_author}-" . str_replace( ' ', '-', $str );
 			}
 

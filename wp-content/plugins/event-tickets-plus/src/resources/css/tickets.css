@@ -301,14 +301,10 @@ input[type=checkbox].tribe_show_attendees {
 }
 
 .tribe-checkout-backlinks {
-	-webkit-align-items: flex-start;
-	        align-items: flex-start;
-	display: -webkit-flex;
+	align-items: flex-start;
 	display: flex;
-	-webkit-flex-flow: column wrap;
-	        flex-flow: column wrap;
-	-webkit-justify-content: space-between;
-	        justify-content: space-between;
+	flex-flow: column wrap;
+	justify-content: space-between;
 }
 
 .tribe-checkout-backlinks a.tribe-checkout-backlink {
@@ -339,7 +335,6 @@ input[type=checkbox].tribe_show_attendees {
 }
 
 .tribe-checkout-backlinks {
-		-webkit-flex-flow: row wrap;
-		        flex-flow: row wrap
+		flex-flow: row wrap
 }
 		}

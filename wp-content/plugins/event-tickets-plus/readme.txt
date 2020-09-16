@@ -3,8 +3,8 @@
 Contributors: ModernTribe, brianjessee, camwynsp, paulkim, sc0ttkclark, aguseo, barry.hughes, bordoni, borkweb, cliffpaulick, courane01, faction23, GeoffBel, geoffgraham, ggwicz, jbrinley, jentheo, leahkoerper, lucatume, mastromktg, MZAWeb, neillmcshea, nicosantos, patriciahillebrandt, peterchester, reid.peifer, roblagatta, ryancurban, shane.pearlman, tribecari, vicskf, zbtirrell
 Tags: events, WooCommerce, WooTickets, add-on, ticket sales, tickets, calendar, community, registration, api, dates, date, posts, workshop, conference, meeting, seminar, concert, summit, The Events Calendar, Events Calendar PRO, ticket integration, event ticketing, RSVP, EDD, Easy Digital Downloads
 Requires at least: 4.9.14
-Tested up to: 5.4.2
-Stable tag: 4.12.3
+Tested up to: 5.5
+Stable tag: 5.0.0
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -134,6 +134,16 @@ Our Premium Plugins:
 * <a href="http://m.tri.be/fa" target="_blank">The Events Calendar: Filter Bar</a>
 
 == Changelog ==
+
+= [5.0.0] 2020-08-26 =
+
+* Feature - With our revamped RSVP experience, Attendee Registration fields have been cleaned up for RSPVs and will be served through Event Tickets Plus. Any customizations or style updates to these fields should be revisited and updated to match your current markup in their new template locations. [ET-866]
+* Fix - Updated our HTML markup, accompanying CSS, and JS click event handling for WordPress 5.5 compatibility where we have toggle boxes when editing Attendee Registration Information. [ETP-380]
+* Fix - Replace usage of MultiByte package when it's not available, use `tribe_strtoupper` instead of `mb_strtoupper` and `mb_detect_encoding` [ETP-411] [ETP-412] [VE-150]
+* Tweak - Removed unused HTML files in the plugin root folder that were there for your reference to our plugin's data collection transparency. This information is included within WordPress' Privacy Guide at /wp-admin/privacy-policy-guide.php [ETP-348]
+* Tweak - The shortcode `[tribe_tickets_rsvp]` is now compatible with the new refreshed RSVP frontend views feature in Event Tickets 5.0. [ETP-386]
+* Tweak - Changed views: `meta/birth`, `v2/components/meta/birth`, `v2/components/meta/checkbox`, `v2/components/meta/datetime`, `v2/components/meta/email`, `v2/components/meta/number`, `v2/components/meta/radio`, `v2/components/meta/select`, `v2/components/meta/telephone`, `v2/components/meta/text`, `v2/components/meta/url`
+* Language - 5 new strings added, 11 updated, 0 fuzzied, and 0 obsoleted
 
 = [4.12.3] 2020-07-28 =
 

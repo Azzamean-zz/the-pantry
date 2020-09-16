@@ -49,18 +49,24 @@
 	max-width: 850px;
 
 	.tribe-tickets-attendee-info-active-field {
-		.handlediv {
+		.handlediv.tribe-tickets-attendee-info-compat-toggle {
 			text-align: center;
 
 			&:before {
-				content: '\f142';
-				display: inline-block;
-				font: 400 20px/1 dashicons;
 				margin-top: .5rem;
 			}
 		}
 
-		&.closed .handlediv:before {
+		.handlediv.tribe-tickets-attendee-info-compat-toggle,
+		.handlediv .toggle-indicator:before {
+			content: '\f142';
+			display: inline-block;
+			font: normal 20px/1 dashicons;
+			margin-top: .5rem;
+		}
+
+		&.closed .handlediv.tribe-tickets-attendee-info-compat-toggle:before,
+		&.closed .handlediv .toggle-indicator:before {
 			content: '\f140';
 		}
 	}
@@ -121,12 +127,15 @@
 	}
 }
 
-.tribe-tickets-attendee-info-active-field h3 span {
-	font-family: sans-serif;
-	font-size: 80%;
-	font-weight: 700;
-	opacity: .75;
-	text-transform: uppercase;
+.tribe-tickets-attendee-info-active-field {
+	h3 span,
+	span.tribe-tickets-attendee-info-field-type {
+		font-family: sans-serif;
+		font-size: 80%;
+		font-weight: 700;
+		opacity: .75;
+		text-transform: uppercase;
+	}
 }
 
 .tribe-tickets-attendee-saved-fields {

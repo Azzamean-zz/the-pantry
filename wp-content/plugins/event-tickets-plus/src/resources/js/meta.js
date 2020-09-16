@@ -214,7 +214,7 @@ tribe_event_tickets_plus.meta.event = tribe_event_tickets_plus.meta.event || {};
 	 * the value, and updates the visible month-day-year select with
 	 * the according values.
 	 *
-	 * @since TBD
+	 * @since5.0.0
 	 */
 	my.horizontal_datepicker.populateSelects = function() {
 		$( my.selectors.horizontal_datepicker.container ).each( function( index, value ) {
@@ -240,7 +240,7 @@ tribe_event_tickets_plus.meta.event = tribe_event_tickets_plus.meta.event || {};
 	 * yyyy-mm-dd format, which is saved in a hidden field as the actual
 	 * value to be sent.
 	 *
-	 * @since TBD
+	 * @since5.0.0
 	 *
 	 * @param e
 	 */
@@ -262,7 +262,7 @@ tribe_event_tickets_plus.meta.event = tribe_event_tickets_plus.meta.event || {};
 
 		let isValueEmpty = hiddenValue.val() === '' || hiddenValue.val() === 'null-null-null';
 		let isRequired = ! isValueEmpty;
-		
+
 		wrapper.find( my.selectors.horizontal_datepicker.day ).prop( 'required', isRequired );
 		wrapper.find( my.selectors.horizontal_datepicker.month ).prop( 'required', isRequired );
 		wrapper.find( my.selectors.horizontal_datepicker.year ).prop( 'required', isRequired );
@@ -283,7 +283,7 @@ tribe_event_tickets_plus.meta.event = tribe_event_tickets_plus.meta.event || {};
 	/**
 	 * Converts the number to positive if a negative provided.
 	 *
-	 * @since TBD
+	 * @since5.0.0
 	 *
 	 * @param e
 	 */
@@ -301,7 +301,7 @@ tribe_event_tickets_plus.meta.event = tribe_event_tickets_plus.meta.event || {};
 	/**
 	 * Add Listeners to the Meta functionality.
 	 *
-	 * @since TBD
+	 * @since5.0.0
 	 */
 	my.addListeners = function() {
 		$( document ).on( 'change', my.selectors.horizontal_datepicker.select, this.horizontal_datepicker.populateHiddenValue );

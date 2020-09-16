@@ -40,18 +40,24 @@
 	max-width: 850px;
 }
 
-#tribe-tickets-attendee-sortables .tribe-tickets-attendee-info-active-field .handlediv {
+#tribe-tickets-attendee-sortables .tribe-tickets-attendee-info-active-field .handlediv.tribe-tickets-attendee-info-compat-toggle {
 			text-align: center;
 		}
 
-#tribe-tickets-attendee-sortables .tribe-tickets-attendee-info-active-field .handlediv:before {
-				content: '\f142';
-				display: inline-block;
-				font: 400 20px/1 dashicons;
+#tribe-tickets-attendee-sortables .tribe-tickets-attendee-info-active-field .handlediv.tribe-tickets-attendee-info-compat-toggle:before {
 				margin-top: .5rem;
 			}
 
-#tribe-tickets-attendee-sortables .tribe-tickets-attendee-info-active-field.closed .handlediv:before {
+#tribe-tickets-attendee-sortables .tribe-tickets-attendee-info-active-field .handlediv.tribe-tickets-attendee-info-compat-toggle,
+		#tribe-tickets-attendee-sortables .tribe-tickets-attendee-info-active-field .handlediv .toggle-indicator:before {
+			content: '\f142';
+			display: inline-block;
+			font: normal 20px/1 dashicons;
+			margin-top: .5rem;
+		}
+
+#tribe-tickets-attendee-sortables .tribe-tickets-attendee-info-active-field.closed .handlediv.tribe-tickets-attendee-info-compat-toggle:before,
+		#tribe-tickets-attendee-sortables .tribe-tickets-attendee-info-active-field.closed .handlediv .toggle-indicator:before {
 			content: '\f140';
 		}
 
@@ -106,13 +112,14 @@
 		display: block;
 	}
 
-.tribe-tickets-attendee-info-active-field h3 span {
-	font-family: sans-serif;
-	font-size: 80%;
-	font-weight: 700;
-	opacity: .75;
-	text-transform: uppercase;
-}
+.tribe-tickets-attendee-info-active-field h3 span,
+	.tribe-tickets-attendee-info-active-field span.tribe-tickets-attendee-info-field-type {
+		font-family: sans-serif;
+		font-size: 80%;
+		font-weight: 700;
+		opacity: .75;
+		text-transform: uppercase;
+	}
 
 .tribe-tickets-attendee-saved-fields {
 	border: 4px dashed #b4b9be;

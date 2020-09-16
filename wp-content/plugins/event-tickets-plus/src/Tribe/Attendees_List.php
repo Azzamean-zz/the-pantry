@@ -169,9 +169,13 @@ class Tribe__Tickets_Plus__Attendees_List extends Attendees_List {
 			$event = get_post();
 		}
 
+		// Prevent injecting into content if hidden or using blocks.
 		if (
 			'tribe_tickets_before_front_end_ticket_form' === current_filter()
-			&& self::is_hidden_on( $event )
+			&& (
+				self::is_hidden_on( $event )
+				|| $this->is_showing_attendee_list_with_blocks( $event )
+			)
 		) {
 			return;
 		}

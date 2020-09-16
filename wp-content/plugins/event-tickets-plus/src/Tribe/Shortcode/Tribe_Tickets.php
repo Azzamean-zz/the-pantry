@@ -57,6 +57,8 @@ class Tribe_Tickets extends Shortcode_Abstract {
 
 	/**
 	 * {@inheritDoc}
+	 *
+	 * Do not alter `global $post` anywhere during shortcode rendering or template files.
 	 */
 	public function get_html() {
 		$context = tribe_context();

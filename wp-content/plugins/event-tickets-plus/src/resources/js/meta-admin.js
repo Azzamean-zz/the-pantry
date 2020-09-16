@@ -17,6 +17,9 @@ tribe_event_tickets_plus.meta.admin.event = tribe_event_tickets_plus.meta.admin.
 			.on( 'change', 'input.show_attendee_info', my.event.toggle_linked_form )
 			.on( 'change', '.save_attendee_fieldset', my.event.toggle_linked_form );
 
+		// Force the click event to be removed from the faux postboxes we have (WP 5.5+ compat).
+		$( '.meta-postbox .hndle, .meta-postbox .handlediv' ).off( 'click' );
+
 		my.$tribe_tickets
 			.on( 'change', '.ticket-attendee-info-dropdown', my.event.select_saved_fieldset )
 			.on( 'change', '.save_attendee_fieldset', my.event.toggle_linked_form )

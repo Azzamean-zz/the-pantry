@@ -2,22 +2,21 @@
 /**
  * Shortcode [tribe_tickets_rsvp].
  *
- * @package Tribe\Tickets\Plus\Shortcode
  * @since   4.12.1
+ * @package Tribe\Tickets\Plus\Shortcode
  */
 
 namespace Tribe\Tickets\Plus\Shortcode;
 
 use Tribe\Shortcode\Shortcode_Abstract;
-use Tribe__Tickets__Editor__Template;
-use Tribe__Tickets__RSVP;
+use Tribe__Tickets__Tickets_View as Tickets_View;
 use WP_Post;
 
 /**
  * Class for Shortcode Tribe_Tickets_Rsvp.
  *
- * @package Tribe\Tickets\Plus\Shortcode
  * @since   4.12.1
+ * @package Tribe\Tickets\Plus\Shortcode
  */
 class Tribe_Tickets_Rsvp extends Shortcode_Abstract {
 
@@ -82,125 +81,8 @@ class Tribe_Tickets_Rsvp extends Shortcode_Abstract {
 	 * @return string HTML.
 	 */
 	public function get_rsvp_block( $post ) {
+		$tickets_view = Tickets_View::instance();
 
-		if ( empty( $post ) ) {
-			return '';
-		}
-
-		if ( is_numeric( $post ) ) {
-			$post = get_post( $post );
-		}
-
-		// If password protected, then do not display content.
-		if ( post_password_required( $post ) ) {
-			return '';
-		}
-
-		/** @var Tribe__Tickets__Editor__Template $template */
-		$template = tribe( 'tickets.editor.template' );
-
-		$post_id                  = $post->ID;
-		$args['post_id']          = $post_id;
-		$rsvps                    = $this->get_rsvps( $post_id );
-		$args['active_rsvps']     = $this->get_active_tickets( $rsvps );
-		$args['has_active_rsvps'] = ! empty( $args['active_rsvps'] );
-		$args['has_rsvps']        = ! empty( $rsvps );
-		$args['all_past']         = $this->get_all_tickets_past( $rsvps );
-
-		// Add the rendering attributes into global context.
-		$template->add_template_globals( $args );
-
-		// enqueue assets.
-		tribe_asset_enqueue( 'tribe-tickets-gutenberg-rsvp' );
-		tribe_asset_enqueue( 'tribe-tickets-gutenberg-block-rsvp-style' );
-
-		return $template->template( 'blocks/rsvp', $args, false );
+		return $tickets_view->get_rsvp_block( $post, false );
 	}
-
-	/**
-	 * Method to get all RSVP tickets
-	 *
-	 * @since 4.12.1
-	 *
-	 * @return array
-	 */
-	protected function get_rsvps( $post_id ) {
-		$tickets = [];
-
-		// Bail if there's no event id
-		if ( ! $post_id ) {
-			return $tickets;
-		}
-
-		/** @var Tribe__Tickets__RSVP $rsvp */
-		$rsvp = tribe( 'tickets.rsvp' );
-
-		// Get the tickets IDs for this event
-		$ticket_ids = $rsvp->get_tickets_ids( $post_id );
-
-		// Bail if we don't have tickets.
-		if ( ! $ticket_ids ) {
-			return $tickets;
-		}
-
-		foreach ( $ticket_ids as $post ) {
-			// Get the ticket
-			$ticket = $rsvp->get_ticket( $post_id, $post );
-
-			// Continue if is not RSVP, we only want RSVP tickets
-			if ( $rsvp->class_name !== $ticket->provider_class ) {
-				continue;
-			}
-
-			$tickets[] = $ticket;
-		}
-
-		return $tickets;
-	}
-
-	/**
-	 * Method to get the active RSVP tickets
-	 *
-	 * @since 4.12.1
-	 *
-	 * @return array
-	 */
-	protected function get_active_tickets( $tickets ) {
-		$active_tickets = [];
-
-		foreach ( $tickets as $ticket ) {
-			// continue if it's not in date range
-			if ( ! $ticket->date_in_range() ) {
-				continue;
-			}
-
-			$active_tickets[] = $ticket;
-		}
-
-		return $active_tickets;
-	}
-
-	/**
-	 * Method to get the all RSVPs past flag
-	 * All RSVPs past flag is true if all RSVPs end date is earlier than current date
-	 * If there are no RSVPs, false is returned
-	 *
-	 * @since 4.12.1
-	 *
-	 * @return bool
-	 */
-	protected function get_all_tickets_past( $tickets ) {
-		if ( empty( $tickets ) ) {
-			return false;
-		}
-
-		$all_past = true;
-
-		foreach ( $tickets as $ticket ) {
-			$all_past = $all_past && $ticket->date_is_later();
-		}
-
-		return $all_past;
-	}
-
 }

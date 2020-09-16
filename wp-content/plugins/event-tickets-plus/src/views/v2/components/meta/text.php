@@ -3,34 +3,30 @@
  * This template renders the Text or Textarea field.
  *
  * Override this template in your own theme by creating a file at:
- * [your-theme]/tribe/tickets/v2/components/fields/text.php
+ * [your-theme]/tribe/tickets/v2/components/meta/text.php
  *
- * @since 4.12.3
+ * @since5.0.0
  *
- * @version 4.12.3
+ * @version5.0.0
+ *
+ * @var string $field_name The meta field name.
+ * @var string $field_id The meta field id.
+ * @var bool   $required A bool indicating if the meta field is required or not.
+ * @var string|int $attendee_id The attendee ID, to build the ID/name.
+ * @var array $classes Array containing the CSS classes for the field.
+ * @var Tribe__Tickets__Ticket_Object $ticket The ticket object.
+ * @var Tribe__Tickets_Plus__Meta__Field__Text $field.
  *
  * @see Tribe__Tickets_Plus__Meta__Field__Text
  */
 
-$field_name = tribe_tickets_ar_field_name( $ticket->ID, $field->slug );
-$field_id   = tribe_tickets_ar_field_id( $ticket->ID, $field->slug );
-$required   = tribe_tickets_ar_field_is_required( $field );
-$field      = (array) $field;
-$multiline  = isset( $field['extra'] ) && isset( $field['extra']['multiline'] ) ? $field['extra']['multiline'] : '';
-$disabled   = false;
-
-$classes = [
-	'tribe-common-b1',
-	'tribe-tickets__form-field',
-	'tribe-tickets__form-field--required' => $required,
-];
-
+$multiline = Tribe__Utils__Array::get( $field, [ 'extra', 'multiline' ], null );
 ?>
 <div <?php tribe_classes( $classes ); ?>>
 	<label
-		class="tribe-common-b2--min-medium tribe-tickets__form-field-label"
+		class="tribe-tickets__form-field-label"
 		for="<?php echo esc_attr( $field_id ); ?>"
-	><?php echo wp_kses_post( $field['label'] ); ?><?php tribe_required_label( $required ); ?></label>
+	><?php echo wp_kses_post( $field->label ); ?><?php tribe_required_label( $required ); ?></label>
 	<?php if ( $multiline ) : ?>
 		<textarea
 			id="<?php echo esc_attr( $field_id ); ?>"

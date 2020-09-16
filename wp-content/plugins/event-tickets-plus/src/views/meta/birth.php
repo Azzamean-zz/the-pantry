@@ -8,13 +8,15 @@
  *
  * @deprecated 4.12.3 Replaced by event-tickets/src/views/registration-js/attendees/fields/birth.php.
  *
- * @version 4.12.3
+ * @version5.0.0
  *
  * @since 4.12.1 Introduced template.
  * @since 4.12.3 Add a separate label per input for screen readers.
+ * @since5.0.0 Set proper text domain.
  *
  * @var Tribe__Tickets_Plus__Meta__Field__Birth $this
  */
+
 $option_id = "tribe-tickets-meta_{$this->slug}" . ( $attendee_id ? '_' . $attendee_id : '' );
 
 $classes = [
@@ -46,7 +48,7 @@ $classes = [
 					<?php tribe_required( $required ); ?>
 					class="tribe_horizontal_datepicker__month"
 				>
-					<option value="" disabled selected><?php esc_html_e( 'Month', 'tribe-event-plus' ); ?></option>
+					<option value="" disabled selected><?php esc_html_e( 'Month', 'event-tickets-plus' ); ?></option>
 					<?php foreach ( $this->get_months() as $month_number => $month_name ) : ?>
 						<option value="<?php echo esc_attr( $month_number ); ?>"><?php echo esc_html( $month_name ); ?></option>
 					<?php endforeach; ?>
@@ -66,7 +68,7 @@ $classes = [
 					<?php tribe_required( $required ); ?>
 					class="tribe_horizontal_datepicker__day"
 				>
-					<option value="" disabled selected><?php esc_html_e( 'Day', 'tribe-event-plus' ); ?></option>
+					<option value="" disabled selected><?php esc_html_e( 'Day', 'event-tickets-plus' ); ?></option>
 					<?php foreach ( $this->get_days() as $birth_day ) : ?>
 						<option value="<?php echo esc_attr( $birth_day ); ?>"><?php echo esc_html( $birth_day ); ?></option>
 					<?php endforeach; ?>
@@ -86,7 +88,7 @@ $classes = [
 					<?php tribe_required( $required ); ?>
 					class="tribe_horizontal_datepicker__year"
 				>
-					<option value="" disabled selected><?php esc_html_e( 'Year', 'tribe-event-plus' ); ?></option>
+					<option value="" disabled selected><?php esc_html_e( 'Year', 'event-tickets-plus' ); ?></option>
 					<?php foreach ( $this->get_years() as $birth_year ) : ?>
 						<option value="<?php echo esc_attr( $birth_year ); ?>"><?php echo esc_html( $birth_year ); ?></option>
 					<?php endforeach; ?>
