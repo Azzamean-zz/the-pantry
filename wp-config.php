@@ -43,6 +43,15 @@ switch ($_SERVER['SERVER_NAME']) {
           define('WP_DEBUG', true);  
      break;
      /** Development Server */    
+     case 'pantryv2':
+          define('DB_NAME', 'wp_pantrynew');
+          define('DB_USER', 'wp_pantrynew');
+          define('DB_PASSWORD', 'wp_pantrynew');
+          define('DB_HOST', 'localhost');
+          define('DB_CHARSET', 'utf8');
+          define('DB_COLLATE', '');
+          define('WP_DEBUG', true);  
+     break; /** Development Server */    
      case 'thepantry-test':
           define('DB_NAME', 'wordpress_staging');
           define('DB_USER', 'wordpress-user');
