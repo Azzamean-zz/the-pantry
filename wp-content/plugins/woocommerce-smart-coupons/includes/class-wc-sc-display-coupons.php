@@ -1581,16 +1581,16 @@ if ( ! class_exists( 'WC_SC_Display_Coupons' ) ) {
 
 				if ( $found_coupon ) {
 
-					echo '<div id="generated_coupon_data_container" style="padding: 2em 0 2em;">';
+					// echo '<div id="generated_coupon_data_container" style="padding: 2em 0 2em;">';
 
 					if ( $header ) {
-						echo '<h2>' . esc_html__( 'Coupon Received', 'woocommerce-smart-coupons' ) . '</h2>';
-						echo '<p>' . esc_html__( 'List of coupons & their details which you have received from the store. Click on the coupon to see the details.', 'woocommerce-smart-coupons' ) . '</p>';
+						//echo '<h2>' . esc_html__( 'Coupon Received', 'woocommerce-smart-coupons' ) . '</h2>';
+						// echo '<p>' . esc_html__( 'List of coupons & their details which you have received from the store. Click on the coupon to see the details.', 'woocommerce-smart-coupons' ) . '</p>';
 					}
 
-					echo $coupon_details_html_content; // phpcs:ignore
+					// echo $coupon_details_html_content; // phpcs:ignore
 
-					echo '</div>';
+					// echo '</div>';
 
 				}
 

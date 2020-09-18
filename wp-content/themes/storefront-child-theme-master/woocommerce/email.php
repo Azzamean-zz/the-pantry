@@ -126,7 +126,7 @@ if ( ! empty( $coupon_target ) ) {
 ?>
 
 <div style="margin: 10px 0; text-align: center;" title="<?php echo esc_html__( 'Click to visit store. This coupon will be applied automatically.', 'woocommerce-smart-coupons' ); ?>">
-	<a href="<?php echo esc_url( $coupon_target ); ?>" style="color: #444;">
+	<a href="#<?php // echo esc_url( $coupon_target ); ?>" style="color: #444;">
 
 		<div class="coupon-container <?php echo esc_attr( $woocommerce_smart_coupon->get_coupon_container_classes() ); ?>" style="cursor:pointer; text-align:center; <?php echo $woocommerce_smart_coupon->get_coupon_style_attributes(); // phpcs:ignore ?>">
 			<?php
