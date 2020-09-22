@@ -174,6 +174,239 @@ add_filter('manage_edit-shopping_lists_columns', 'create_shopping_lists_columns'
 add_action('manage_shopping_lists_posts_custom_column', 'manage_shopping_lists_columns', 10, 2 );
 
 /**
+ * Create Custom Post Type: Overview
+*/
+function create_overview() {
+	register_post_type(
+		'overview',
+		array(
+			'labels' => array(
+				'name' => __("Overviews"),
+				'singular_name' => __("Overview"),
+				'add_new' => __("Add Overview"),
+				'add_new_item' => __("Add New Overview"),
+				'edit_item' => __("Edit Overview"),
+				'new_item' => __("New Overview"),
+				'view_item' => __("View Overview"),
+				'search_items' => __("Search Overviews"),
+				'not_found' => __("No Overviews found."),
+				'not_found_in_trash' => __("No Overviews found in trash."),
+				'edit' => __("Edit Overviews"),
+				'view' => __("View Overviews")
+			),
+			'exclude_from_search' => true,
+			'menu_icon' => 'dashicons-images-alt',
+			'public' => true,
+			'rewrite' => array('slug' => 'overview'),
+			'supports' => array('title','editor','author','excerpt','comments','revisions')
+		)
+	);
+	flush_rewrite_rules();
+}
+
+function create_overview_taxonomies() {
+	register_taxonomy(
+		'overview-categories',
+		'overview',
+		array(
+			'hierarchical' => true,
+			'label' => 'Category',
+			'query_var' => true,
+			'rewrite' => array('slug' => 'overview-categories')
+		)
+	);
+	register_taxonomy(
+		'overview-month',
+		'overview',
+		array(
+			'hierarchical' => true,
+			'label' => 'Month',
+			'query_var' => true,
+			'rewrite' => array('slug' => 'overview-month')
+		)
+	);
+}
+
+function create_overview_columns($columns) {
+    $columns = array(
+		'cb' => '<input type="checkbox" />',
+		'title' => __('Name'),
+		'taxonomy' => __('Taxonomy'),
+		'acf-field' => __('Advanced Custom Field'),
+	);
+	return $columns;
+}
+
+function manage_overview_columns($column, $post_id) {
+	global $post;
+	switch($column) {
+		case 'taxonomy':
+			$test = get_post_meta($post_id, 'overview', true);
+			if(!empty($test)) echo $test;
+			break;
+		case 'acf-field':
+			$field = get_post_meta($post_id, 'acf-field', true);
+			if(!empty($field)) echo $field;
+			break;
+		default : break;
+	}
+}
+
+add_action('init', 'create_overview');
+add_action('init', 'create_overview_taxonomies');
+add_filter('manage_edit-overview_columns', 'create_overview_columns' ) ;
+add_action('manage_overview_posts_custom_column', 'manage_overview_columns', 10, 2 );
+
+/**
+ * Create Custom Post Type: Ticket Page
+*/
+function create_ticket_page() {
+	register_post_type(
+		'ticket-page',
+		array(
+			'labels' => array(
+				'name' => __("Ticket Page"),
+				'singular_name' => __("Ticket Page"),
+				'add_new' => __("Add Ticket Page"),
+				'add_new_item' => __("Add New Ticket Page"),
+				'edit_item' => __("Edit Ticket Page"),
+				'new_item' => __("New Ticket Page"),
+				'view_item' => __("View Ticket Page"),
+				'search_items' => __("Search Ticket Pages"),
+				'not_found' => __("No Ticket Pages found."),
+				'not_found_in_trash' => __("No Ticket Pages found in trash."),
+				'edit' => __("Edit Ticket Pages"),
+				'view' => __("View Ticket Pages")
+			),
+			'exclude_from_search' => true,
+			'menu_icon' => 'dashicons-tickets-alt',
+			'public' => true,
+			'rewrite' => array('slug' => 'ticket-page'),
+			'supports' => array('title','editor','author','excerpt','comments','revisions')
+		)
+	);
+	flush_rewrite_rules();
+}
+
+function create_ticket_page_taxonomies() {
+	register_taxonomy(
+		'ticket-page-categories',
+		'ticket-page',
+		array(
+			'hierarchical' => true,
+			'label' => 'Category',
+			'query_var' => true,
+			'rewrite' => array('slug' => 'ticket-page-categories')
+		)
+	);
+}
+
+function create_ticket_page_columns($columns) {
+    $columns = array(
+		'cb' => '<input type="checkbox" />',
+		'title' => __('Name'),
+		'taxonomy' => __('Taxonomy'),
+		'acf-field' => __('Advanced Custom Field'),
+	);
+	return $columns;
+}
+
+function manage_ticket_page_columns($column, $post_id) {
+	global $post;
+	switch($column) {
+		case 'taxonomy':
+			$test = get_post_meta($post_id, 'ticket-page', true);
+			if(!empty($test)) echo $test;
+			break;
+		case 'acf-field':
+			$field = get_post_meta($post_id, 'acf-field', true);
+			if(!empty($field)) echo $field;
+			break;
+		default : break;
+	}
+}
+
+add_action('init', 'create_ticket_page');
+add_action('init', 'create_ticket_page_taxonomies');
+add_filter('manage_edit-ticket_page_columns', 'create_ticket_page_columns' ) ;
+add_action('manage_ticket_page_posts_custom_column', 'manage_ticket_page_columns', 10, 2 );
+
+/**
+ * Create Custom Post Type: Grid Page
+*/
+function create_grid_page() {
+	register_post_type(
+		'grid-page',
+		array(
+			'labels' => array(
+				'name' => __("Grid Page"),
+				'singular_name' => __("Grid Page"),
+				'add_new' => __("Add Grid Page"),
+				'add_new_item' => __("Add New Grid Page"),
+				'edit_item' => __("Edit Grid Page"),
+				'new_item' => __("New Grid Page"),
+				'view_item' => __("View Grid Page"),
+				'search_items' => __("Search Grid Pages"),
+				'not_found' => __("No Grid Pages found."),
+				'not_found_in_trash' => __("No Grid Page found in trash."),
+				'edit' => __("Edit Grid Pages"),
+				'view' => __("View Grid Pages")
+			),
+			'exclude_from_search' => true,
+			'menu_icon' => 'dashicons-grid-view',
+			'public' => true,
+			'rewrite' => array('slug' => 'grid-page'),
+			'supports' => array('title','editor','author','excerpt','comments','revisions')
+		)
+	);
+	flush_rewrite_rules();
+}
+
+function create_grid_page_taxonomies() {
+	register_taxonomy(
+		'grid-page-categories',
+		'grid-page',
+		array(
+			'hierarchical' => true,
+			'label' => 'Category',
+			'query_var' => true,
+			'rewrite' => array('slug' => 'grid-page-categories')
+		)
+	);
+}
+
+function create_grid_page_columns($columns) {
+    $columns = array(
+		'cb' => '<input type="checkbox" />',
+		'title' => __('Name'),
+		'taxonomy' => __('Taxonomy'),
+		'acf-field' => __('Advanced Custom Field'),
+	);
+	return $columns;
+}
+
+function manage_grid_page_columns($column, $post_id) {
+	global $post;
+	switch($column) {
+		case 'taxonomy':
+			$test = get_post_meta($post_id, 'grid-page', true);
+			if(!empty($test)) echo $test;
+			break;
+		case 'acf-field':
+			$field = get_post_meta($post_id, 'acf-field', true);
+			if(!empty($field)) echo $field;
+			break;
+		default : break;
+	}
+}
+
+add_action('init', 'create_grid_page');
+add_action('init', 'create_grid_page_taxonomies');
+add_filter('manage_edit-grid_page_columns', 'create_grid_page_columns' ) ;
+add_action('manage_grid_page_posts_custom_column', 'manage_grid_page_columns', 10, 2 );
+
+
+/**
  * Changes the redirect URL for the Return To Shop button in the cart.
  *
  * @return string
@@ -210,6 +443,7 @@ function change_woocommerce_return_to_shop_text( $translated_text, $text, $domai
  * @return string The translated text or the custom text.
  */
  
+/*
 add_filter( 'gettext_with_context', 'tribe_change_get_tickets', 20, 4 );
 function tribe_change_get_tickets( $translation, $text, $context = "" , $domain) {
  
@@ -233,6 +467,7 @@ function tribe_change_get_tickets( $translation, $text, $context = "" , $domain)
  
   return $ticket_text[ $text ];
 }
+*/
 
 /**
  * Auto Complete all WooCommerce orders.
