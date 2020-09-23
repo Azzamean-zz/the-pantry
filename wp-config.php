@@ -22,26 +22,6 @@ define('WP_CACHE', true); // Added by W3 Total Cache
  */
 // ** MySQL settings - You can get this info from your web host ** //
 switch ($_SERVER['SERVER_NAME']) {
-	/** Production Server */
-     case 'thepantryseattle.com':
-          define('DB_NAME', 'wordpress');
-          define('DB_USER', 'wordpress-user');
-          define('DB_PASSWORD', 'Tm7hTMFsdsvs3zEQauAN');
-          define('DB_HOST', 'thepantry-jan2020.cxjfm6fxwyci.us-east-1.rds.amazonaws.com:3306');
-          define('DB_CHARSET', 'utf8');
-          define('DB_COLLATE', '');
-          define('WP_DEBUG', false);     
-     break;
-     /** Development Server */    
-     case 'pantrynew':
-          define('DB_NAME', 'wp_pantrynew');
-          define('DB_USER', 'wp_pantrynew');
-          define('DB_PASSWORD', 'wp_pantrynew');
-          define('DB_HOST', 'localhost');
-          define('DB_CHARSET', 'utf8');
-          define('DB_COLLATE', '');
-          define('WP_DEBUG', true);  
-     break;
      /** Development Server */    
      case 'thepantry-test.herokuapp.com':
           define('DB_NAME', 'wordpress_staging');
@@ -51,8 +31,6 @@ switch ($_SERVER['SERVER_NAME']) {
           define('DB_CHARSET', 'utf8');
           define('DB_COLLATE', '');
           define('WP_DEBUG', true);
-          update_option( 'siteurl', 'http://thepantry-v2.herokuapp.com/' );
-		  update_option( 'home', 'http://thepantry-v2.herokuapp.com/' );
      break;
      /** Development Server local */    
      case 'pantryv2':
@@ -64,16 +42,6 @@ switch ($_SERVER['SERVER_NAME']) {
           define('DB_COLLATE', '');
           define('WP_DEBUG', true);  
      break; 
-     /** Staging Server */
-     case 'pantry.deicreative.com':
-			define( 'DB_NAME', 'nbb1645_pantry' );
-			define('DB_USER', 'nbb1645_deicreative');
-			define('DB_PASSWORD', 'Y%jkta2BFhai');
-			define( 'DB_HOST', 'localhost' );
-          define('DB_CHARSET', 'utf8');
-          define('DB_COLLATE', '');
-          define('WP_DEBUG', false);
-     break;
 } 
 
 define( 'AS3CF_SETTINGS', serialize( array(

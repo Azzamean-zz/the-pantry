@@ -34,6 +34,10 @@ h3 time {
 	}
 }
 
+#comments {
+	display: none !important;	
+}
+
 .big-container {
 	padding: 40px;	
 }
@@ -269,6 +273,17 @@ input#credit_called {
 		text-align: center;	
 		
 	}
+}
+
+.grid {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+}
+
+.grid-item {
+	width: 300px;	
+	text-align: center;	
 }
 
 .single-product div.product table.variations select {
