@@ -50,7 +50,9 @@ switch ($_SERVER['SERVER_NAME']) {
           define('DB_HOST', 'thepantry-jan2020.cxjfm6fxwyci.us-east-1.rds.amazonaws.com:3306');
           define('DB_CHARSET', 'utf8');
           define('DB_COLLATE', '');
-          define('WP_DEBUG', true);  
+          define('WP_DEBUG', true);
+          update_option( 'siteurl', 'http://thepantry-v2.herokuapp.com/' );
+		  update_option( 'home', 'http://thepantry-v2.herokuapp.com/' );
      break;
      /** Development Server local */    
      case 'pantryv2':
