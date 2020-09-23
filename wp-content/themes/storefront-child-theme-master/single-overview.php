@@ -9,7 +9,8 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-
+		<article class="page">
+		<div class="page-body ">
 		<?php
 		while ( have_posts() ) :
 			the_post();
@@ -22,7 +23,11 @@ get_header(); ?>
 
 		endwhile; // End of the loop.
 		?>
-
+		
+		<hr class="wp-block-separator">
+		<h2>Dates</h2>
+		<p class="text-center"><i>All classes are listed in Pacific Daylight Time.</i></p>		
+		
 		<?php
 		$ticket_pages = get_field('ticket_pages');
 		if( $ticket_pages ): ?>
@@ -44,7 +49,8 @@ get_header(); ?>
 		    // Reset the global post object so that the rest of the page works correctly.
 		    wp_reset_postdata(); ?>
 		<?php endif; ?>
-
+		</div>
+		</article>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
