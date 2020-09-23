@@ -28,14 +28,16 @@ get_header(); ?>
 		if( $ticket_pages ): ?>
         	<ul class="homeLinks">
 		    <?php foreach( $ticket_pages as $post ): ?>
-			<?php
-				if(tribe_events_has_tickets($post->ID)) {
-					echo 'yep';
-				} else {
-					echo 'nope';
-				}
-			?>
-			<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+		    
+		    	<?php
+			    	$tickets = Tribe__Tickets__Tickets::get_all_event_tickets($post->ID);
+			    ?>
+		    	
+				<?php if($tickets[0]->capacity > 0) { ?>
+					<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+				<?php } else { ?>
+					<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?> - Sold Out</a></li>
+				<?php } ?>
 		    <?php endforeach; ?>
 		    </ul>
 		    <?php 

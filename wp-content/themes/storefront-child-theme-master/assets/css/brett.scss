@@ -281,9 +281,37 @@ input#credit_called {
 	align-content: center;
 }
 
+.so-text {
+	display: none;
+	font-family: "brandon-grotesque","Helvetica Neue",Arial,sans-serif;
+	position: absolute;	
+	top: 40%;	
+	left: 50%;	
+	-moz-transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	text-transform: uppercase;	
+	color: #fff;
+	font-size: 20px;	
+}
+
+.so-thumb {
+	position: relative;	
+	img {
+		opacity: .6;	
+	}
+	.so-text {
+		display: block;	
+	}
+}
+
 .grid-item {
+	position: relative;	
 	width: 300px;	
 	text-align: center;	
+	margin: 10px;
 }
 
 .single-product div.product table.variations select {
