@@ -37,14 +37,14 @@ get_header(); ?>
 		    	<?php
 			    	$tickets = Tribe__Tickets__Tickets::get_all_event_tickets($post->ID);
 			    ?>
-		    	
+	    		<?php
+				$date_string = get_field('start_date');
+				$date = DateTime::createFromFormat('m/d/Y g:i a', $date_string);
+				?>
+
 				<?php if($tickets[0]->capacity > 0) { ?>
-					<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+					<li><a href="<?php the_permalink(); ?>"><?php echo $date->format('F d, g:i a'); ?></a></li>
 				<?php } else { ?>
-					<?php
-					$date_string = get_field('start_date');
-					$date = DateTime::createFromFormat('m/d/Y g:i a', $date_string);
-					?>
 					<li><a href="<?php the_permalink(); ?>"><?php echo $date->format('F d, g:i a'); ?> - Sold Out</a></li>
 				<?php } ?>
 		    <?php endforeach; ?>
