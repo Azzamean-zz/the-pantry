@@ -41,7 +41,11 @@ get_header(); ?>
 				<?php if($tickets[0]->capacity > 0) { ?>
 					<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
 				<?php } else { ?>
-					<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?> - Sold Out</a></li>
+					<?php
+					$date_string = get_field('start_date');
+					$date = DateTime::createFromFormat('m/d/Y g:i a', $date_string);
+					?>
+					<li><a href="<?php the_permalink(); ?>"><?php echo $date->format('F d, g:i a'); ?> - Sold Out</a></li>
 				<?php } ?>
 		    <?php endforeach; ?>
 		    </ul>

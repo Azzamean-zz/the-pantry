@@ -1,0 +1,714 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2.0">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://pantryv2:8890/xmlrpc.php">
+
+<link rel="stylesheet" href="https://use.typekit.net/ybg6drv.css">
+
+<link rel="icon" type="image/png" href="/Users/bretthorner/Documents/projects/pantryv2/wp-content/themes/storefront-child-theme-master/favicon.png">
+
+<title>The Pantry Seattle</title>
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="The Pantry Seattle &raquo; Feed" href="https://pantryv2:8890/feed/" />
+<link rel="alternate" type="application/rss+xml" title="The Pantry Seattle &raquo; Comments Feed" href="https://pantryv2:8890/comments/feed/" />
+		<script>
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/pantryv2:8890\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.4.2"}};
+			/*! This file is auto-generated */
+			!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style>
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='https://pantryv2:8890/wp-includes/css/dist/block-library/style.min.css?ver=5.4.2' media='all' />
+<link rel='stylesheet' id='wp-block-library-theme-css'  href='https://pantryv2:8890/wp-includes/css/dist/block-library/theme.min.css?ver=5.4.2' media='all' />
+<link rel='stylesheet' id='wc-block-vendors-style-css'  href='https://pantryv2:8890/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/vendors-style.css?ver=3.1.0' media='all' />
+<link rel='stylesheet' id='wc-block-style-css'  href='https://pantryv2:8890/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/style.css?ver=3.1.0' media='all' />
+<link rel='stylesheet' id='storefront-gutenberg-blocks-css'  href='https://pantryv2:8890/wp-content/themes/storefront/assets/css/base/gutenberg-blocks.css?ver=2.5.7' media='all' />
+<style id='storefront-gutenberg-blocks-inline-css'>
+
+				.wp-block-button__link:not(.has-text-color) {
+					color: #333333;
+				}
+
+				.wp-block-button__link:not(.has-text-color):hover,
+				.wp-block-button__link:not(.has-text-color):focus,
+				.wp-block-button__link:not(.has-text-color):active {
+					color: #333333;
+				}
+
+				.wp-block-button__link:not(.has-background) {
+					background-color: #eeeeee;
+				}
+
+				.wp-block-button__link:not(.has-background):hover,
+				.wp-block-button__link:not(.has-background):focus,
+				.wp-block-button__link:not(.has-background):active {
+					border-color: #d5d5d5;
+					background-color: #d5d5d5;
+				}
+
+				.wp-block-quote footer,
+				.wp-block-quote cite,
+				.wp-block-quote__citation {
+					color: #6d6d6d;
+				}
+
+				.wp-block-pullquote cite,
+				.wp-block-pullquote footer,
+				.wp-block-pullquote__citation {
+					color: #6d6d6d;
+				}
+
+				.wp-block-image figcaption {
+					color: #6d6d6d;
+				}
+
+				.wp-block-separator.is-style-dots::before {
+					color: #333333;
+				}
+
+				.wp-block-file a.wp-block-file__button {
+					color: #333333;
+					background-color: #eeeeee;
+					border-color: #eeeeee;
+				}
+
+				.wp-block-file a.wp-block-file__button:hover,
+				.wp-block-file a.wp-block-file__button:focus,
+				.wp-block-file a.wp-block-file__button:active {
+					color: #333333;
+					background-color: #d5d5d5;
+				}
+
+				.wp-block-code,
+				.wp-block-preformatted pre {
+					color: #6d6d6d;
+				}
+
+				.wp-block-table:not( .has-background ):not( .is-style-stripes ) tbody tr:nth-child(2n) td {
+					background-color: #fdfdfd;
+				}
+
+				.wp-block-cover .wp-block-cover__inner-container h1,
+				.wp-block-cover .wp-block-cover__inner-container h2,
+				.wp-block-cover .wp-block-cover__inner-container h3,
+				.wp-block-cover .wp-block-cover__inner-container h4,
+				.wp-block-cover .wp-block-cover__inner-container h5,
+				.wp-block-cover .wp-block-cover__inner-container h6 {
+					color: #000000;
+				}
+			
+</style>
+<style id='woocommerce-inline-inline-css'>
+.woocommerce form .form-row .required { visibility: visible; }
+</style>
+<link rel='stylesheet' id='storefront-style-css'  href='https://pantryv2:8890/wp-content/themes/storefront/style.css?ver=2.5.7' media='all' />
+<style id='storefront-style-inline-css'>
+
+			.main-navigation ul li a,
+			.site-title a,
+			ul.menu li a,
+			.site-branding h1 a,
+			button.menu-toggle,
+			button.menu-toggle:hover,
+			.handheld-navigation .dropdown-toggle {
+				color: #333333;
+			}
+
+			button.menu-toggle,
+			button.menu-toggle:hover {
+				border-color: #333333;
+			}
+
+			.main-navigation ul li a:hover,
+			.main-navigation ul li:hover > a,
+			.site-title a:hover,
+			.site-header ul.menu li.current-menu-item > a {
+				color: #747474;
+			}
+
+			table:not( .has-background ) th {
+				background-color: #f8f8f8;
+			}
+
+			table:not( .has-background ) tbody td {
+				background-color: #fdfdfd;
+			}
+
+			table:not( .has-background ) tbody tr:nth-child(2n) td,
+			fieldset,
+			fieldset legend {
+				background-color: #fbfbfb;
+			}
+
+			.site-header,
+			.secondary-navigation ul ul,
+			.main-navigation ul.menu > li.menu-item-has-children:after,
+			.secondary-navigation ul.menu ul,
+			.storefront-handheld-footer-bar,
+			.storefront-handheld-footer-bar ul li > a,
+			.storefront-handheld-footer-bar ul li.search .site-search,
+			button.menu-toggle,
+			button.menu-toggle:hover {
+				background-color: #ffffff;
+			}
+
+			p.site-description,
+			.site-header,
+			.storefront-handheld-footer-bar {
+				color: #404040;
+			}
+
+			button.menu-toggle:after,
+			button.menu-toggle:before,
+			button.menu-toggle span:before {
+				background-color: #333333;
+			}
+
+			h1, h2, h3, h4, h5, h6, .wc-block-grid__product-title {
+				color: #333333;
+			}
+
+			.widget h1 {
+				border-bottom-color: #333333;
+			}
+
+			body,
+			.secondary-navigation a {
+				color: #6d6d6d;
+			}
+
+			.widget-area .widget a,
+			.hentry .entry-header .posted-on a,
+			.hentry .entry-header .post-author a,
+			.hentry .entry-header .post-comments a,
+			.hentry .entry-header .byline a {
+				color: #727272;
+			}
+
+			a {
+				color: #96588a;
+			}
+
+			a:focus,
+			button:focus,
+			.button.alt:focus,
+			input:focus,
+			textarea:focus,
+			input[type="button"]:focus,
+			input[type="reset"]:focus,
+			input[type="submit"]:focus,
+			input[type="email"]:focus,
+			input[type="tel"]:focus,
+			input[type="url"]:focus,
+			input[type="password"]:focus,
+			input[type="search"]:focus {
+				outline-color: #96588a;
+			}
+
+			button, input[type="button"], input[type="reset"], input[type="submit"], .button, .widget a.button {
+				background-color: #eeeeee;
+				border-color: #eeeeee;
+				color: #333333;
+			}
+
+			button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover, .button:hover, .widget a.button:hover {
+				background-color: #d5d5d5;
+				border-color: #d5d5d5;
+				color: #333333;
+			}
+
+			button.alt, input[type="button"].alt, input[type="reset"].alt, input[type="submit"].alt, .button.alt, .widget-area .widget a.button.alt {
+				background-color: #333333;
+				border-color: #333333;
+				color: #ffffff;
+			}
+
+			button.alt:hover, input[type="button"].alt:hover, input[type="reset"].alt:hover, input[type="submit"].alt:hover, .button.alt:hover, .widget-area .widget a.button.alt:hover {
+				background-color: #1a1a1a;
+				border-color: #1a1a1a;
+				color: #ffffff;
+			}
+
+			.pagination .page-numbers li .page-numbers.current {
+				background-color: #e6e6e6;
+				color: #636363;
+			}
+
+			#comments .comment-list .comment-content .comment-text {
+				background-color: #f8f8f8;
+			}
+
+			.site-footer {
+				background-color: #f0f0f0;
+				color: #6d6d6d;
+			}
+
+			.site-footer a:not(.button):not(.components-button) {
+				color: #333333;
+			}
+
+			.site-footer .storefront-handheld-footer-bar a:not(.button):not(.components-button) {
+				color: #333333;
+			}
+
+			.site-footer h1, .site-footer h2, .site-footer h3, .site-footer h4, .site-footer h5, .site-footer h6, .site-footer .widget .widget-title, .site-footer .widget .widgettitle {
+				color: #333333;
+			}
+
+			.page-template-template-homepage.has-post-thumbnail .type-page.has-post-thumbnail .entry-title {
+				color: #000000;
+			}
+
+			.page-template-template-homepage.has-post-thumbnail .type-page.has-post-thumbnail .entry-content {
+				color: #000000;
+			}
+
+			@media screen and ( min-width: 768px ) {
+				.secondary-navigation ul.menu a:hover {
+					color: #595959;
+				}
+
+				.secondary-navigation ul.menu a {
+					color: #404040;
+				}
+
+				.main-navigation ul.menu ul.sub-menu,
+				.main-navigation ul.nav-menu ul.children {
+					background-color: #f0f0f0;
+				}
+
+				.site-header {
+					border-bottom-color: #f0f0f0;
+				}
+			}
+</style>
+<link rel='stylesheet' id='storefront-icons-css'  href='https://pantryv2:8890/wp-content/themes/storefront/assets/css/base/icons.css?ver=2.5.7' media='all' />
+<link rel='stylesheet' id='storefront-fonts-css'  href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,300italic,400italic,600,700,900&#038;subset=latin%2Clatin-ext' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='https://pantryv2:8890/wp-includes/css/dashicons.min.css?ver=5.4.2' media='all' />
+<link rel='stylesheet' id='event-tickets-plus-tickets-css-css'  href='https://pantryv2:8890/wp-content/plugins/event-tickets-plus/src/resources/css/tickets.min.css?ver=5.0.0' media='all' />
+<link rel='stylesheet' id='event-tickets-tickets-rsvp-css-css'  href='https://pantryv2:8890/wp-content/plugins/event-tickets/src/resources/css/rsvp-v1.min.css?ver=5.0.0.1' media='all' />
+<link rel='stylesheet' id='tribe-common-skeleton-style-css'  href='https://pantryv2:8890/wp-content/plugins/event-tickets/common/src/resources/css/common-skeleton.min.css?ver=4.12.8' media='all' />
+<link rel='stylesheet' id='tribe-tooltip-css'  href='https://pantryv2:8890/wp-content/plugins/event-tickets/common/src/resources/css/tooltip.min.css?ver=4.12.8' media='all' />
+<link rel='stylesheet' id='tribe-common-full-style-css'  href='https://pantryv2:8890/wp-content/plugins/event-tickets/common/src/resources/css/common-full.min.css?ver=4.12.8' media='all' />
+<link rel='stylesheet' id='event-tickets-tickets-css-css'  href='https://pantryv2:8890/wp-content/plugins/event-tickets/src/resources/css/tickets.min.css?ver=5.0.0.1' media='all' />
+<link rel='stylesheet' id='event-tickets-rsvp-css'  href='https://pantryv2:8890/wp-content/plugins/event-tickets/src/resources/css/rsvp.min.css?ver=5.0.0.1' media='all' />
+<link rel='stylesheet' id='event-tickets-tpp-css-css'  href='https://pantryv2:8890/wp-content/plugins/event-tickets/src/resources/css/tpp.min.css?ver=5.0.0.1' media='all' />
+<link rel='stylesheet' id='TribeEventsWooTickets-css'  href='https://pantryv2:8890/wp-content/plugins/event-tickets-plus/src/resources/css/wootickets.min.css?ver=4.5.0.1' media='all' />
+<link rel='stylesheet' id='storefront-woocommerce-style-css'  href='https://pantryv2:8890/wp-content/themes/storefront/assets/css/woocommerce/woocommerce.css?ver=2.5.7' media='all' />
+<style id='storefront-woocommerce-style-inline-css'>
+
+			a.cart-contents,
+			.site-header-cart .widget_shopping_cart a {
+				color: #333333;
+			}
+
+			a.cart-contents:hover,
+			.site-header-cart .widget_shopping_cart a:hover,
+			.site-header-cart:hover > li > a {
+				color: #747474;
+			}
+
+			table.cart td.product-remove,
+			table.cart td.actions {
+				border-top-color: #ffffff;
+			}
+
+			.storefront-handheld-footer-bar ul li.cart .count {
+				background-color: #333333;
+				color: #ffffff;
+				border-color: #ffffff;
+			}
+
+			.woocommerce-tabs ul.tabs li.active a,
+			ul.products li.product .price,
+			.onsale,
+			.wc-block-grid__product-onsale,
+			.widget_search form:before,
+			.widget_product_search form:before {
+				color: #6d6d6d;
+			}
+
+			.woocommerce-breadcrumb a,
+			a.woocommerce-review-link,
+			.product_meta a {
+				color: #727272;
+			}
+
+			.wc-block-grid__product-onsale,
+			.onsale {
+				border-color: #6d6d6d;
+			}
+
+			.star-rating span:before,
+			.quantity .plus, .quantity .minus,
+			p.stars a:hover:after,
+			p.stars a:after,
+			.star-rating span:before,
+			#payment .payment_methods li input[type=radio]:first-child:checked+label:before {
+				color: #96588a;
+			}
+
+			.widget_price_filter .ui-slider .ui-slider-range,
+			.widget_price_filter .ui-slider .ui-slider-handle {
+				background-color: #96588a;
+			}
+
+			.order_details {
+				background-color: #f8f8f8;
+			}
+
+			.order_details > li {
+				border-bottom: 1px dotted #e3e3e3;
+			}
+
+			.order_details:before,
+			.order_details:after {
+				background: -webkit-linear-gradient(transparent 0,transparent 0),-webkit-linear-gradient(135deg,#f8f8f8 33.33%,transparent 33.33%),-webkit-linear-gradient(45deg,#f8f8f8 33.33%,transparent 33.33%)
+			}
+
+			#order_review {
+				background-color: #ffffff;
+			}
+
+			#payment .payment_methods > li .payment_box,
+			#payment .place-order {
+				background-color: #fafafa;
+			}
+
+			#payment .payment_methods > li:not(.woocommerce-notice) {
+				background-color: #f5f5f5;
+			}
+
+			#payment .payment_methods > li:not(.woocommerce-notice):hover {
+				background-color: #f0f0f0;
+			}
+
+			.woocommerce-pagination .page-numbers li .page-numbers.current {
+				background-color: #e6e6e6;
+				color: #636363;
+			}
+
+			.wc-block-grid__product-onsale,
+			.onsale,
+			.woocommerce-pagination .page-numbers li .page-numbers:not(.current) {
+				color: #6d6d6d;
+			}
+
+			p.stars a:before,
+			p.stars a:hover~a:before,
+			p.stars.selected a.active~a:before {
+				color: #6d6d6d;
+			}
+
+			p.stars.selected a.active:before,
+			p.stars:hover a:before,
+			p.stars.selected a:not(.active):before,
+			p.stars.selected a.active:before {
+				color: #96588a;
+			}
+
+			.single-product div.product .woocommerce-product-gallery .woocommerce-product-gallery__trigger {
+				background-color: #eeeeee;
+				color: #333333;
+			}
+
+			.single-product div.product .woocommerce-product-gallery .woocommerce-product-gallery__trigger:hover {
+				background-color: #d5d5d5;
+				border-color: #d5d5d5;
+				color: #333333;
+			}
+
+			.button.added_to_cart:focus,
+			.button.wc-forward:focus {
+				outline-color: #96588a;
+			}
+
+			.added_to_cart,
+			.site-header-cart .widget_shopping_cart a.button,
+			.wc-block-grid__products .wc-block-grid__product .wp-block-button__link {
+				background-color: #eeeeee;
+				border-color: #eeeeee;
+				color: #333333;
+			}
+
+			.added_to_cart:hover,
+			.site-header-cart .widget_shopping_cart a.button:hover,
+			.wc-block-grid__products .wc-block-grid__product .wp-block-button__link:hover {
+				background-color: #d5d5d5;
+				border-color: #d5d5d5;
+				color: #333333;
+			}
+
+			.added_to_cart.alt, .added_to_cart, .widget a.button.checkout {
+				background-color: #333333;
+				border-color: #333333;
+				color: #ffffff;
+			}
+
+			.added_to_cart.alt:hover, .added_to_cart:hover, .widget a.button.checkout:hover {
+				background-color: #1a1a1a;
+				border-color: #1a1a1a;
+				color: #ffffff;
+			}
+
+			.button.loading {
+				color: #eeeeee;
+			}
+
+			.button.loading:hover {
+				background-color: #eeeeee;
+			}
+
+			.button.loading:after {
+				color: #333333;
+			}
+
+			@media screen and ( min-width: 768px ) {
+				.site-header-cart .widget_shopping_cart,
+				.site-header .product_list_widget li .quantity {
+					color: #404040;
+				}
+
+				.site-header-cart .widget_shopping_cart .buttons,
+				.site-header-cart .widget_shopping_cart .total {
+					background-color: #f5f5f5;
+				}
+
+				.site-header-cart .widget_shopping_cart {
+					background-color: #f0f0f0;
+				}
+			}
+				.storefront-product-pagination a {
+					color: #6d6d6d;
+					background-color: #ffffff;
+				}
+				.storefront-sticky-add-to-cart {
+					color: #6d6d6d;
+					background-color: #ffffff;
+				}
+
+				.storefront-sticky-add-to-cart a:not(.button) {
+					color: #333333;
+				}
+
+				.coupon-container {
+					background-color: #eeeeee !important;
+				}
+
+				.coupon-content {
+					border-color: #333333 !important;
+					color: #333333;
+				}
+
+				.sd-buttons-transparent.woocommerce .coupon-content,
+				.sd-buttons-transparent.woocommerce-page .coupon-content {
+					border-color: #eeeeee !important;
+				}
+</style>
+<link rel='stylesheet' id='storefront-child-style-css'  href='https://pantryv2:8890/wp-content/themes/storefront-child-theme-master/style.css?ver=1.0.0' media='all' />
+<link rel='stylesheet' id='storefront-woocommerce-smart-coupons-style-css'  href='https://pantryv2:8890/wp-content/themes/storefront/assets/css/woocommerce/extensions/smart-coupons.css?ver=2.5.7' media='all' />
+<script src='https://pantryv2:8890/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp'></script>
+<script src='https://pantryv2:8890/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script src='https://pantryv2:8890/wp-content/plugins/event-tickets/common/src/resources/js/underscore-before.js'></script>
+<script src='https://pantryv2:8890/wp-includes/js/underscore.min.js?ver=1.8.3'></script>
+<script src='https://pantryv2:8890/wp-content/plugins/event-tickets/common/src/resources/js/underscore-after.js'></script>
+<script src='https://pantryv2:8890/wp-includes/js/wp-util.js?ver=5.4.2'></script>
+<link rel='https://api.w.org/' href='https://pantryv2:8890/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://pantryv2:8890/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://pantryv2:8890/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.4.2" />
+<meta name="generator" content="WooCommerce 4.5.2" />
+<link rel="canonical" href="https://pantryv2:8890/" />
+<link rel='shortlink' href='https://pantryv2:8890/' />
+<link rel="alternate" type="application/json+oembed" href="https://pantryv2:8890/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fpantryv2%3A8890%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://pantryv2:8890/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fpantryv2%3A8890%2F&#038;format=xml" />
+<meta name="et-api-version" content="v1"><meta name="et-api-origin" content="https://pantryv2:8890"><link rel="https://theeventscalendar.com/" href="https://pantryv2:8890/wp-json/tribe/tickets/v1/" />	<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
+	
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-21079333-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-21079333-1');
+</script>
+
+</head>
+
+	<style>
+		body {
+			padding-top: 63px !important;
+			-webkit-background-size: cover !important;
+			background-size: cover !important;
+			background-position: center center;
+		}
+	</style>	
+    <body class="home page-template page-template-templates page-template-home page-template-templateshome-php page page-id-20 wp-embed-responsive theme-storefront woocommerce-no-js tribe-no-js storefront-full-width-content storefront-align-wide right-sidebar woocommerce-active" style="background-image: url('https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17165000/hands-1.jpg');">
+
+
+
+<div id="page" class="hfeed site">
+	
+	<!-- <header id="masthead" class="site-header" role="banner" style="">
+
+
+	</header> -->
+
+			
+	<div id="content" class="site-content" tabindex="-1">
+		<div class="col-full">
+	    <main id="main" class="body wrapper" role="main">
+		    <a id="home-pane" href="#home-main">
+				<h1>The Pantry</h1>
+			</a>
+	        <header class="page-header">
+	            <h1><a href="https://pantryv2:8890" class="logo">The Pantry</a></h1>
+	            
+            <h1>A place to <em>cook</em>. And <em>eat</em>. And <em>learn</em>.</h1>	
+	        </header>
+	
+        <div id="home-main">
+            <article class="page">
+                <div class="page-body columns">
+                    
+<p>Here at the Pantry, we call ourselves a community kitchen. For us, that means we do many things: cooking classes focusing on traditional food crafts and technique, five-course family-style dinners, culinary camp for the kids, power lunches for makers, food swaps, and cookbook club potluck suppers. Basically anything we can think of to get our neighbors around the table, breaking bread and building community.</p>
+
+
+
+<p>We love welcoming you into our kitchen — but with the safety and welfare of our community and our staff at the forefront of our minds,<strong>&nbsp;we have suspended our in-person classes until we can be assured that it’s once again safe to gather together around our tables.</strong>&nbsp;Since that won&#8217;t stop us from hanging out with you, we&#8217;ve taken our&nbsp;<a href="http://pantryv2:8890/classes-new/">CLASSES</a>&nbsp;online! Join us for our new&nbsp;interactive cooking classes held in your own home, through Zoom.</p>
+
+
+
+<p>And while we will miss breaking bread with you in person, we see no reason to stop feeding you!&nbsp;<strong>We’ve turned our favorite dishes into pop-ups, serving take-away versions of that menu.</strong> Each&nbsp;<a href="http://pantryv2:8890/to-go-new">TO GO MEAL</a>&nbsp;is made family style with care and love (and lots of hand-washing) by the Pantry’s chefs and instructors.&nbsp;</p>
+
+
+
+<p>As we’ve been busy preparing meals, we’ve also recognized the gap in services that are out there for some of our most vulnerable populations. We are now donating (and delivering) meals to Gifts of Hope and Edible Hope. To learn more about our mission, please visit our&nbsp;<a href="http://pantryv2:8890/community/">COMMUNITY</a>&nbsp;page.</p>
+
+
+
+<figure class="wp-block-image size-large is-resized"><img src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/21202146/signature.png" alt="" class="wp-image-17156" width="158" height="20" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/21202146/signature.png 315w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/21202146/signature-300x38.png 300w" sizes="(max-width: 158px) 100vw, 158px" /></figure>
+
+
+
+<p></p>
+                </div>
+                <ul class="homeLinks">
+	                
+	                					    <li><a href="/classes-new">See Our Class Schedule</a></li>
+										    <li><a href="/to-go-new">See Our To-Go Meals Schedule</a></li>
+										    <li><a href="/about">About Our Team</a></li>
+						                
+                </ul>
+            </article>
+        </div>
+	    </main>
+<script>
+	jQuery(function ($) {
+		$(document).ready(function(){
+			$("#home-pane").click(function(e){
+				e.preventDefault();
+				$('body').addClass('hidehome');
+			});
+		});
+	});
+</script>	
+</main>
+<header class="pageFooter">
+<nav>
+    <ul>
+	    
+		<li id="menu-item-5152" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5152"><a href="https://pantryv2:8890/about/">About</a></li>
+<li id="menu-item-20892" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20892"><a href="https://pantryv2:8890/classes-new/">Classes</a></li>
+<li id="menu-item-15600" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15600"><a href="https://pantryv2:8890/to-go-new/">To Go</a></li>
+<li id="menu-item-19745" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19745"><a href="https://pantryv2:8890/wine-club/">Wine Club</a></li>
+<li id="menu-item-5151" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5151"><a href="https://pantryv2:8890/private-events/">Private Events</a></li>
+<li id="menu-item-5150" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5150"><a href="https://pantryv2:8890/seattle-meat-collective/">Meat Collective</a></li>
+<li id="menu-item-5164" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5164"><a href="http://pantryv2:8890/product/credit/">Gift Certificates</a></li>
+<li id="menu-item-5148" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5148"><a href="https://pantryv2:8890/community/">Community</a></li>
+<li id="menu-item-5149" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5149"><a href="https://pantryv2:8890/contact/">Contact</a></li>
+
+        <li><a href="https://pantryv2:8890/cart">Cart 
+        (<span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">&#36;</span>0.00</bdi></span>) 
+        </a></li>
+    </ul>
+</nav>
+
+<small class="copyright">&copy; <a href="https://pantryv2:8890" class="logo">The Pantry Seattle</a> 2020</small>
+
+<!-- <small class="credit"><a href="http://neversinkcreative.com">Design by Sam</a></small> -->
+</header>
+
+<script src="https://pantryv2:8890/wp-content/themes/storefront-child-theme-master/assets/js/site.js"></script>
+
+		<script>
+		( function ( body ) {
+			'use strict';
+			body.className = body.className.replace( /\btribe-no-js\b/, 'tribe-js' );
+		} )( document.body );
+		</script>
+		<script type="application/ld+json">{"@context":"https:\/\/schema.org\/","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"name":"Home","@id":"https:\/\/pantryv2:8890"}}]}</script><script> /* <![CDATA[ */var tribe_l10n_datatables = {"aria":{"sort_ascending":": activate to sort column ascending","sort_descending":": activate to sort column descending"},"length_menu":"Show _MENU_ entries","empty_table":"No data available in table","info":"Showing _START_ to _END_ of _TOTAL_ entries","info_empty":"Showing 0 to 0 of 0 entries","info_filtered":"(filtered from _MAX_ total entries)","zero_records":"No matching records found","search":"Search:","all_selected_text":"All items on this page were selected. ","select_all_link":"Select all pages","clear_selection":"Clear Selection.","pagination":{"all":"All","next":"Next","previous":"Previous"},"select":{"rows":{"0":"","_":": Selected %d rows","1":": Selected 1 row"}},"datepicker":{"dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesMin":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Prev","currentText":"Today","closeText":"Done","today":"Today","clear":"Clear"},"registration_prompt":"There is unsaved attendee information. Are you sure you want to continue?"};/* ]]> */ </script>	<script type="text/javascript">
+		var c = document.body.className;
+		c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+		document.body.className = c;
+	</script>
+	<script src='https://pantryv2:8890/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.70'></script>
+<script>
+var wc_add_to_cart_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%","i18n_view_cart":"View cart","cart_url":"https:\/\/pantryv2:8890\/cart\/","is_cart":"","cart_redirect_after_add":"no"};
+</script>
+<script src='https://pantryv2:8890/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=4.5.2'></script>
+<script src='https://pantryv2:8890/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4'></script>
+<script>
+var woocommerce_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%"};
+</script>
+<script src='https://pantryv2:8890/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=4.5.2'></script>
+<script>
+var wc_cart_fragments_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%","cart_hash_key":"wc_cart_hash_c86216f0e80ae4f10105a0cd5bf18945","fragment_name":"wc_fragments_c86216f0e80ae4f10105a0cd5bf18945","request_timeout":"5000"};
+</script>
+<script src='https://pantryv2:8890/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js?ver=4.5.2'></script>
+<script src='https://pantryv2:8890/wp-content/themes/storefront/assets/js/navigation.min.js?ver=2.5.7'></script>
+<script src='https://pantryv2:8890/wp-content/themes/storefront/assets/js/skip-link-focus-fix.min.js?ver=20130115'></script>
+<script src='https://pantryv2:8890/wp-content/themes/storefront/assets/js/vendor/pep.min.js?ver=0.4.3'></script>
+<script>
+var TribeTicketsPlus = {"ajaxurl":"https:\/\/pantryv2:8890\/wp-admin\/admin-ajax.php","save_attendee_info_nonce":"19901eebe6"};
+</script>
+<script src='https://pantryv2:8890/wp-content/plugins/event-tickets-plus/vendor/jquery.deparam/jquery.deparam.js?ver=5.0.0'></script>
+<script src='https://pantryv2:8890/wp-content/plugins/woocommerce/assets/js/jquery-cookie/jquery.cookie.min.js?ver=1.4.1'></script>
+<script src='https://pantryv2:8890/wp-content/plugins/event-tickets-plus/src/resources/js/meta.min.js?ver=5.0.0'></script>
+<script src='https://pantryv2:8890/wp-content/plugins/event-tickets/common/src/resources/js/tribe-common.min.js?ver=4.12.8'></script>
+<script src='https://pantryv2:8890/wp-content/plugins/event-tickets-plus/src/resources/js/v2/tickets-meta.js?ver=5.0.0'></script>
+<script src='https://pantryv2:8890/wp-content/plugins/event-tickets-plus/src/resources/js/attendees-list.min.js?ver=5.0.0'></script>
+<script src='https://pantryv2:8890/wp-content/plugins/event-tickets/src/resources/js/ticket-details.min.js?ver=5.0.0.1'></script>
+<script src='https://pantryv2:8890/wp-content/plugins/event-tickets/src/resources/js/rsvp.min.js?ver=5.0.0.1'></script>
+<script>
+var tribe_tickets_rsvp_strings = {"attendee":"Attendee %1$s"};
+</script>
+<script src='https://pantryv2:8890/wp-content/plugins/event-tickets/src/resources/js/rsvp.min.js?ver=5.0.0.1'></script>
+<script src='https://pantryv2:8890/wp-content/themes/storefront/assets/js/woocommerce/header-cart.min.js?ver=2.5.7'></script>
+<script src='https://pantryv2:8890/wp-content/themes/storefront/assets/js/footer.min.js?ver=2.5.7'></script>
+<script src='https://pantryv2:8890/wp-includes/js/wp-embed.min.js?ver=5.4.2'></script>
+
+<!--
+Performance optimized by W3 Total Cache. Learn more: https://www.boldgrid.com/w3-total-cache/
+
+Page Caching using disk: enhanced 
+
+Served from: pantryv2 @ 2020-09-24 09:36:09 by W3 Total Cache
+-->

@@ -52,7 +52,7 @@ get_header(); ?>
 				?>
 			
 				<a class="grid-item <?php { echo $class; } ?>" href="<?php the_permalink(); ?>">
-					<img src="<?php echo $image['url'];?>">
+					<?php the_post_thumbnail( 'large','style=max-width:100%;height:auto;');?>
 					<div class="so-text">Sold Out</div>	
 					<h3><?php the_title(); ?></h3>	
 				</a>
@@ -82,7 +82,7 @@ get_header(); ?>
 					?>
 			
 				<a class="grid-item <?php $class;?>" href="<?php the_permalink(); ?>">
-					<img src="<?php echo $image['url'];?>">
+					<?php the_post_thumbnail( 'large','style=max-width:100%;height:auto;');?>
 					<h3><?php the_title(); ?></h3>	
 				</a>
 		    <?php endforeach; ?>

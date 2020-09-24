@@ -198,7 +198,7 @@ function create_overview() {
 			'menu_icon' => 'dashicons-images-alt',
 			'public' => true,
 			'rewrite' => array('slug' => 'overview'),
-			'supports' => array('title','editor','author','excerpt','comments','revisions')
+			'supports' => array('title','editor','author','excerpt','comments','revisions', 'thumbnail')
 		)
 	);
 	flush_rewrite_rules();

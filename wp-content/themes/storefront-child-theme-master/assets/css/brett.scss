@@ -418,6 +418,7 @@ table.cart td.product-remove, table.cart td.actions {
 
 .tribe-common .tribe-common-b2 {
 	font-family: "brandon-grotesque","Helvetica Neue",Arial,sans-serif;
+	font-size: 15px;	
 }
 
 body.page-tribe-attendee-registration .tribe-common .tribe-tickets__mini-cart {
@@ -603,6 +604,10 @@ body.page-tribe-attendee-registration .tribe-common .tribe-tickets__mini-cart {
 form.checkout {
 	padding-left: 30px;	
 	padding-right: 30px;	
+}
+
+.entry-taxonomy {
+	display: none;	
 }
 
 .page-template {
