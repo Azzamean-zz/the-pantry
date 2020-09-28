@@ -102,7 +102,7 @@ class Flexible_Checkout_Fields_Plugin extends \FcfVendor\WPDesk\PluginBuilder\Pl
 		add_action( 'plugins_loaded', array( $this, 'plugins_loaded' ), 100 );
 
 		add_action( 'woocommerce_checkout_fields', array( $this, 'changeCheckoutFields' ), 9999 );
-		add_action( 'woocommerce_checkout_update_order_meta', array( $this, 'updateCheckoutFields' ), 9 );
+		add_action( 'woocommerce_checkout_update_order_meta', array( $this, 'updateCheckoutFields' ), 9, 2 );
 
 		add_action( 'woocommerce_admin_order_data_after_billing_address', array(
 			$this,
@@ -230,6 +230,9 @@ class Flexible_Checkout_Fields_Plugin extends \FcfVendor\WPDesk\PluginBuilder\Pl
 		foreach ( $base as $key => $field ) {
 			unset( $base[ $key ]['placeholder'] );
 			unset( $base[ $key ]['label'] );
+			if ( version_compare( WC()->version, '4.4.1', '>=' ) ) {
+				unset( $base[ $key ]['class'] );
+			}
 
 			// field is force-required for given locale when FCF have shipping or billing field required
 			$shipping_key = 'shipping_' . $key;
@@ -581,7 +584,7 @@ class Flexible_Checkout_Fields_Plugin extends \FcfVendor\WPDesk\PluginBuilder\Pl
 									$new[ $key ][ $field['name'] ]['type'] = $field['type'];
 
 									if ( isset( $checkout_field_type[ $field['type'] ]['has_options'] ) ) {
-										$field_options                            = new Flexible_Checkout_Fields_Field_Options( $field['option'] );
+										$field_options                            = new Flexible_Checkout_Fields_Field_Options( $field['option'], $new[ $key ][ $field['name'] ]['placeholder'], $field['type'] );
 										$new[ $key ][ $field['name'] ]['options'] = $field_options->get_options_as_array();
 									}
 								}
@@ -723,7 +726,7 @@ class Flexible_Checkout_Fields_Plugin extends \FcfVendor\WPDesk\PluginBuilder\Pl
 					}
 
 					if ( isset( $field['type'] ) && ( ! empty( $checkout_field_type[ $field['type'] ]['has_options'] ) ) ) {
-						$field_options          = new Flexible_Checkout_Fields_Field_Options( $field['option'] );
+						$field_options          = new Flexible_Checkout_Fields_Field_Options( $field['option'], $new[ $key ]['placeholder'], $field['type'] );
 						$new[ $key ]['options'] = $field_options->get_options_as_array();
 					}
 				}
@@ -909,9 +912,10 @@ class Flexible_Checkout_Fields_Plugin extends \FcfVendor\WPDesk\PluginBuilder\Pl
 	/**
 	 * Update fields on checkout.
 	 *
-	 * @param $order_id
+	 * @param int   $order_id Order id.
+	 * @param array $data Posted data.
 	 */
-	function updateCheckoutFields( $order_id ) {
+	function updateCheckoutFields( $order_id, $data ) {
 		$settings = $this->get_settings();
 		if ( ! empty( $settings ) ) {
 			$fields = array_merge(
@@ -920,7 +924,7 @@ class Flexible_Checkout_Fields_Plugin extends \FcfVendor\WPDesk\PluginBuilder\Pl
 				isset( $settings['order'] ) ? $settings['order'] : array()
 			);
 
-			foreach ( $_POST as $key => $value ) {
+			foreach ( $data as $key => $value ) {
 				if ( isset( $fields[ $key ] ) ) {
 					$fcf_field = new Flexible_Checkout_Fields_Field( $fields[ $key ], $this );
 					if ( $fcf_field->is_custom_field() ) {
@@ -930,7 +934,7 @@ class Flexible_Checkout_Fields_Plugin extends \FcfVendor\WPDesk\PluginBuilder\Pl
 			}
 		}
 
-		do_action( 'flexible_checkout_fields_checkout_update_order_meta', $order_id );
+		do_action( 'flexible_checkout_fields_checkout_update_order_meta', $order_id, $data );
 	}
 
 	public static function flexible_checkout_fields_section_settings( $key, $settings ) {

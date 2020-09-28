@@ -576,7 +576,7 @@ if ( ! class_exists( 'Smart_Manager_Product' ) ) {
 			$custom_numeric_columns = array('_regular_price', '_sale_price', '_price');
 			$integer_columns = array('_stock');
 			$numeric_columns = array('_length', '_width', '_height');
-			$datetime_columns = array('_sale_price_dates_from', '_sale_price_dates_to');
+			$date_columns = array('_sale_price_dates_from', '_sale_price_dates_to');
 
 			$column_model = &$dashboard_model['columns'];
 
@@ -587,7 +587,7 @@ if ( ! class_exists( 'Smart_Manager_Product' ) ) {
 				$dashboard_model['treegrid'] = $column_model_transient[ 'treegrid' ];
 			}
 
-			$dashboard_model['tables']['posts']['where']['post_type'] = ( $dashboard_model[ 'treegrid' ] == 'true' ) ? array('product', 'product_variation') : array('product');
+			$dashboard_model['tables']['posts']['where']['post_type'] = ( $dashboard_model[ 'treegrid' ] == 'true' || true === $dashboard_model[ 'treegrid' ] ) ? array('product', 'product_variation') : array('product');
 			
 			$product_visibility_index = sm_multidimesional_array_search('terms/product_visibility', 'src', $column_model);
 			$product_shop_url_index = sm_multidimesional_array_search('custom/product_shop_url', 'src', $column_model);
@@ -723,9 +723,11 @@ if ( ! class_exists( 'Smart_Manager_Product' ) ) {
 							$column['type'] = 'text';
 							$column['editor'] = $column['type'];
 							$column['validator'] = 'customNumericTextEditor';
-						} else if ( in_array($src, $datetime_columns) ) {
-							$column['type'] = 'sm.datetime';
+						} else if ( in_array($src, $date_columns) ) {
+							$column['type'] = 'sm.date';
 							$column['editor'] = $column['type'];
+							$column['date_type'] = 'timestamp';
+							$column['is_utc'] = false;
 						} else if ($src == '_visibility') {
 							$column['type'] = 'dropdown';
 

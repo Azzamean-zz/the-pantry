@@ -108,6 +108,8 @@ Smart_Manager.prototype.init = function() {
 
 	this.backgroundProcessRunningMessage = sm_beta_params.background_process_running_message
 
+	this.deletePermanently = sm_beta_params.delete_permanently
+
 	this.window_width = jQuery(window).width();
 	this.window_height = jQuery(window).height();
 
@@ -452,6 +454,9 @@ Smart_Manager.prototype.send_request = function(params, callback, callbackParams
 				}
 			}
 			return ( ( typeof(callbackParams) != 'undefined' ) ? callback(callbackParams, resp) : callback(resp) );
+		},
+		error: function(error) {
+			console.log('Smart Manager AJAX failed::', error);
 		}
 	});
 
@@ -595,7 +600,7 @@ Smart_Manager.prototype.setDashboardModel = function (response) {
 			window.smart_manager.firstLoad = false
 		}
 
-		// window.smart_manager.getData();
+		jQuery('#sm_editor_grid').trigger( 'smart_manager_post_load_grid' ); //custom trigger
 	}
 }
 
@@ -663,6 +668,8 @@ Smart_Manager.prototype.set_data = function(response) {
 				window.smart_manager.hot.scrollViewportTo(0, 0);
 			} else {
 
+				jQuery('#sm_dashboard_kpi').remove();
+
 				if( res.hasOwnProperty('kpi_data') ) {
 					window.smart_manager.kpiData = res.kpi_data;
 					if( Object.entries(window.smart_manager.kpiData).length > 0 ) {
@@ -671,7 +678,7 @@ Smart_Manager.prototype.set_data = function(response) {
 						Object.entries(window.smart_manager.kpiData).forEach(([kpiTitle, kpiObj]) => {
 							kpi_html.push('<span class="sm_beta_select_'+ ( ( kpiObj.hasOwnProperty('color') !== false && kpiObj['color'] != '' ) ? kpiObj['color'] : 'grey' ) +'"> '+ kpiTitle +'('+ ( ( kpiObj.hasOwnProperty('count') !== false ) ? kpiObj['count'] : 0 ) +') </span>');
 						});
-				
+
 						if( kpi_html.length > 0 ) {
 							jQuery('<div id="sm_dashboard_kpi" class="sm_beta_left">'+ kpi_html.join("<span class='sm_separator'> | </span>") +'</div>' ).insertAfter('#sm_beta_display_records');
 						}
@@ -680,7 +687,7 @@ Smart_Manager.prototype.set_data = function(response) {
 					window.smart_manager.kpiData = {};
 				}
 
-				if(window.smart_manager.currentVisibleColumns.length > 0 && window.smart_manager.currentDashboardData.length > 0){
+				if(window.smart_manager.currentVisibleColumns.length > 0){
 					if(window.smart_manager.isColumnModelUpdated){
 						window.smart_manager.formatGridColumns();
 						
@@ -1279,7 +1286,7 @@ Smart_Manager.prototype.loadGrid = function() {
 
 			changes.forEach(([row, prop, oldValue, newValue]) => {
 
-				if( ( row < 0 && prop == 0 ) || oldValue == newValue ) {
+				if( ( row < 0 && prop == 0 ) || (oldValue == newValue && String(oldValue).length == String(newValue).length) ) {
 					return;
 				}
 
@@ -1294,7 +1301,7 @@ Smart_Manager.prototype.loadGrid = function() {
 
 				let id = window.smart_manager.hot.getDataAtRowProp(row, idKey);
 
-				if( oldValue != newValue && prop != idKey && colTypesDisabledHiglight.indexOf(col.type) == -1 ) { //for inline edit
+				if( (oldValue != newValue || String(oldValue).length != String(newValue).length) && prop != idKey && colTypesDisabledHiglight.indexOf(col.type) == -1 ) { //for inline edit
 					cellProp = window.smart_manager.hot.getCellMeta(row, prop);
 					prevClassName = ( typeof(cellProp.className) != 'undefined' ) ? cellProp.className : '';
 
@@ -1745,8 +1752,6 @@ Smart_Manager.prototype.loadGrid = function() {
 			}
 		}
 	});
-
-	jQuery('#sm_editor_grid').trigger( 'smart_manager_post_load_grid' ); //custom trigger
 }
 
 Smart_Manager.prototype.reset = function( fullReset = false ){
@@ -1756,10 +1761,9 @@ Smart_Manager.prototype.reset = function( fullReset = false ){
 		window.smart_manager.currentVisibleColumns = [];
 		window.smart_manager.column_names = [];
 		window.smart_manager.simpleSearchText = '';
+		window.smart_manager.advancedSearchQuery = new Array();
 	}
 
-
-	window.smart_manager.advancedSearchQuery = new Array();
 	window.smart_manager.currentDashboardData = [];
 	
 	window.smart_manager.selectedRows = [];
@@ -1943,6 +1947,11 @@ Smart_Manager.prototype.event_handler = function() {
 
 		if( 0 == window.smart_manager.sm_beta_pro && deletePermanently ) {
 			window.smart_manager.showNotification('', 'To permanently delete records, <a href="' + window.smart_manager.pricingPageURL + '" target="_blank">upgrade to Pro</a>');			
+			return false;
+		}
+
+		if( deletePermanently && window.smart_manager.deletePermanently.disable ) {
+			window.smart_manager.showNotification('', window.smart_manager.deletePermanently.error_message, {autoHide: false});
 			return false;
 		}
 			
@@ -2473,7 +2482,7 @@ Smart_Manager.prototype.processColumnVisibility = function() {
 		});
 
 		if ( typeof (window.smart_manager.updateState) !== "undefined" && typeof (window.smart_manager.updateState) === "function" ) {
-			let params = { refreshDataModel : true };
+			let params = { refreshDataModel : true, async: false };
 			window.smart_manager.isColumnModelUpdated = true
 			window.smart_manager.updateState(params); //refreshing the dashboard states
 		}

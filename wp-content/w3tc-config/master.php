@@ -1,5 +1,5 @@
 <?php exit; ?>{
-    "version": "0.14.4",
+    "version": "0.15.0",
     "cluster.messagebus.debug": false,
     "cluster.messagebus.enabled": false,
     "cluster.messagebus.sns.region": "",
@@ -549,6 +549,9 @@
     "cdnfsd.stackpath2.site_root_domain": 0,
     "cdnfsd.stackpath2.domain": [],
     "cdnfsd.stackpath2.ssl": "auto",
+    "cdnfsd.transparentcdn.client_id": "",
+    "cdnfsd.transparentcdn.client_secret": "",
+    "cdnfsd.transparentcdn.company_id": "",
     "varnish.configuration_overloaded": false,
     "varnish.enabled": false,
     "varnish.debug": false,
@@ -915,5 +918,9 @@
     "jquerymigrate.disabled": false,
     "fragmentcache": {
         "engine": ""
+    },
+    "pgcache.bad_behavior_path": "",
+    "newrelic": {
+        "monitoring_type": "apm"
     }
 }

@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitd6182208f8ba2c610fdb0fbd044cf64f
+class ComposerStaticInit11f35d127879ae0edc2b68739cf4167a
 {
     public static $prefixLengthsPsr4 = array (
         'P' => 
@@ -140,6 +140,7 @@ class ComposerStaticInitd6182208f8ba2c610fdb0fbd044cf64f
         'FcfVendor\\WPDesk\\Helper\\Page\\LibraryDebugPage' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-wpdesk-helper/src/Page/LibraryDebugPage.php',
         'FcfVendor\\WPDesk\\Helper\\Page\\SettingsPage' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-wpdesk-helper/src/Page/SettingsPage.php',
         'FcfVendor\\WPDesk\\Helper\\PrefixedHelperAsLibrary' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-wpdesk-helper/src/PrefixedHelperAsLibrary.php',
+        'FcfVendor\\WPDesk\\Helper\\UpgradeSoonNotice' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-wpdesk-helper/src/UpgradeSoonNotice.php',
         'FcfVendor\\WPDesk\\License\\InstalledPlugins' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-wpdesk-license/src/InstalledPlugins.php',
         'FcfVendor\\WPDesk\\License\\Page\\Action' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-wpdesk-license/src/Page/Action.php',
         'FcfVendor\\WPDesk\\License\\Page\\LicensePage' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-wpdesk-license/src/Page/LicensePage.php',
@@ -279,9 +280,9 @@ class ComposerStaticInitd6182208f8ba2c610fdb0fbd044cf64f
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitd6182208f8ba2c610fdb0fbd044cf64f::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitd6182208f8ba2c610fdb0fbd044cf64f::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitd6182208f8ba2c610fdb0fbd044cf64f::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit11f35d127879ae0edc2b68739cf4167a::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit11f35d127879ae0edc2b68739cf4167a::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit11f35d127879ae0edc2b68739cf4167a::$classMap;
 
         }, null, ClassLoader::class);
     }

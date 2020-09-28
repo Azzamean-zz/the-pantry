@@ -1309,7 +1309,7 @@ class Amazon_S3_And_CloudFront_Pro extends Amazon_S3_And_CloudFront {
 			return false;
 		}
 
-		$file_paths = AS3CF_Utils::get_attachment_file_paths( $post_id, false );
+		$file_paths = array_unique( AS3CF_Utils::get_attachment_file_paths( $post_id, false ) );
 		$downloads  = array();
 
 		foreach ( $file_paths as $file_path ) {
@@ -1459,16 +1459,6 @@ class Amazon_S3_And_CloudFront_Pro extends Amazon_S3_And_CloudFront {
 		}
 
 		return $allowed;
-	}
-
-	/**
-	 * Render the license issue notice
-	 *
-	 * @param bool $dashboard
-	 * @param bool $skip_transient
-	 */
-	public function render_licence_issue_notice( $dashboard = false, $skip_transient = false ) {
-		$this->licence->licence_issue_notice( $dashboard, $skip_transient );
 	}
 
 	/**

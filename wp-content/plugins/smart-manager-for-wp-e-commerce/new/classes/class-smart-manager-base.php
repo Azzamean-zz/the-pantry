@@ -165,6 +165,8 @@ if ( ! class_exists( 'Smart_Manager_Base' ) ) {
 			if ( !empty( $this->req_params['sort_params'] ) &&  !empty( $this->req_params['sort_params']['sort_by_meta_key'] ) ) {
 				$sort_order = ( !empty( $this->req_params['sort_params']['sortOrder'] ) ) ? $this->req_params['sort_params']['sortOrder'] : 'ASC';
 
+				$post_type = ( ! empty( $this->post_type ) ) ? $this->post_type : $this->req_params['active_module'];
+				$post_type = ( ! is_array( $post_type ) ) ? array( $post_type ) : $post_type;
 
 				$meta_value = ( !empty( $this->req_params['sort_params']['column_nm'] ) && $this->req_params['sort_params']['column_nm'] == 'meta_value_num' ) ? 'pm.meta_value+0' : 'pm.meta_value';
 
@@ -172,7 +174,7 @@ if ( ! class_exists( 'Smart_Manager_Base' ) ) {
 											FROM {$wpdb->prefix}postmeta AS pm
 												JOIN {$wpdb->prefix}posts AS p
 													ON (p.ID = pm.post_id
-														AND p.post_type = '". $this->req_params['active_module'] ."')
+														AND p.post_type IN ('". implode("','", $post_type) ."'))
 											WHERE pm.meta_key = '". $this->req_params['sort_params']['sort_by_meta_key'] ."' ORDER BY ". $meta_value ." ". $sort_order );
 
 				$option_name = 'sm_data_model_sorted_ids';
@@ -827,6 +829,10 @@ if ( ! class_exists( 'Smart_Manager_Base' ) ) {
 
 			$column_model_transient['sort_params'] = ( !empty( $store_model['sort_params'] ) ) ? $store_model['sort_params'] : array();
 
+			if( isset( $store_model['treegrid'] ) ) {
+				$column_model_transient['treegrid'] = $store_model['treegrid'];
+			}
+
 			$column_model_transient = apply_filters( 'sm_generate_column_state', $column_model_transient, $store_model );
 
 			return $column_model_transient;
@@ -1073,7 +1079,12 @@ if ( ! class_exists( 'Smart_Manager_Base' ) ) {
 
 				if( false === get_option( '_sm_update_442_users' ) ) {
 					delete_transient( 'sm_beta_users' );
-					update_option( '_sm_update_44_users', 1, 'no' );
+					update_option( '_sm_update_442_users', 1, 'no' );
+				}
+
+				if( false === get_option( '_sm_update_443_product' ) ) {
+					delete_transient( 'sm_beta_product' );
+					update_option( '_sm_update_443_product', 1, 'no' );
 				}
 					
 			}
@@ -1313,7 +1324,7 @@ if ( ! class_exists( 'Smart_Manager_Base' ) ) {
 
                                 $postmeta_cond = apply_filters('sm_search_postmeta_cond', $postmeta_cond, $search_params);
 
-                                if( empty($search_string['value']) || $search_string['value'] == "''" ) {
+                                if( ( empty( $search_string['value'] ) && 0 != $search_string['value'] ) || $search_string['value'] == "''" ) {
                                 	$empty_search_value = ( $search_operator == 'is' || $search_operator == '=' ) ? 'IS NULL' : 'IS NOT NULL';
                                 	$postmeta_cond = "( ". $postmeta_cond ." OR ( ". $search_string['table_name'] .".meta_key LIKE '". $search_col . "' AND ". $search_string['table_name'] .".meta_value " . $empty_search_value ." ) )";
                                 }
@@ -1380,7 +1391,7 @@ if ( ! class_exists( 'Smart_Manager_Base' ) ) {
                     }
 
                     $i++;
-                }
+				}
 
                 //Code for handling advanced search conditions
 		        if (!empty($advanced_search_query)) {
@@ -1840,6 +1851,8 @@ if ( ! class_exists( 'Smart_Manager_Base' ) ) {
 				$current_page = (!empty($this->req_params['sm_page'])) ? $this->req_params['sm_page'] : '1';
 
 				$start_offset = ($current_page > 1) ? (($current_page - 1) * $limit) : $start;
+
+				$this->req_params['table_model'] = ( empty( $this->req_params['table_model'] ) && ! empty( $store_model_transient['tables'] ) ) ? $store_model_transient['tables'] : $this->req_params['table_model'];
 
 				$post_cond = (!empty($this->req_params['table_model']['posts']['where'])) ? $this->req_params['table_model']['posts']['where'] : array('post_type' => $this->dashboard_key, 'post_status' => 'any');
 				$meta_query = (!empty($this->req_params['table_model']['postmeta']['where'])) ? $this->req_params['table_model']['postmeta']['where'] : '';
@@ -2326,6 +2339,7 @@ if ( ! class_exists( 'Smart_Manager_Base' ) ) {
 				}		
 			}
 
+			echo json_encode ( array( 'ACK'=> 'Success' ) );
 			exit;
 		}
 
@@ -2355,6 +2369,7 @@ if ( ! class_exists( 'Smart_Manager_Base' ) ) {
 			$data_cols_timestamp = array();
 			$data_date_cols_timestamp = array();
 			$data_time_cols_timestamp = array();
+			$date_cols_site_timezone = array();
 
 			//Code for storing the serialized cols
 			foreach ($col_model as $col) {
@@ -2394,6 +2409,10 @@ if ( ! class_exists( 'Smart_Manager_Base' ) ) {
 						$data_date_cols_timestamp[] = $col_nm;
 					} else if( $col['type'] == 'sm.time' && !empty( $col['date_type'] ) && $col['date_type'] == 'timestamp' ) {
 						$data_time_cols_timestamp[] = $col_nm;
+					}
+
+					if( ($col['type'] == 'sm.datetime' || $col['type'] == 'sm.date') && ( isset($col['is_utc']) && false === $col['is_utc'] ) ) {
+						$date_cols_site_timezone[] = $col_nm;
 					}
 				}
 			}
@@ -2532,8 +2551,15 @@ if ( ! class_exists( 'Smart_Manager_Base' ) ) {
 
 	    						if( in_array($meta_key, $data_time_cols_timestamp) ) {
 	    							$value = '1970-01-01'.$value;
-	    						}
-	    						$updated_val = strtotime($value);
+								}
+
+								//Code for converting date & datetime values to localize timezone
+								if( in_array( $meta_key, $date_cols_site_timezone ) ){
+									$offset = get_option( 'gmt_offset' ) * HOUR_IN_SECONDS;
+									$updated_val = strtotime($value) + $offset;
+								} else {
+									$updated_val = strtotime($value);
+								}
 	    					}
 
 							// update_post_meta($id, $meta_key, $value );
@@ -2659,6 +2685,10 @@ if ( ! class_exists( 'Smart_Manager_Base' ) ) {
 								$check = apply_filters( "update_{$meta_type}_metadata", null, $id, $key, $value, '' );
 								if ( null !== $check ) {
 									continue;
+								}
+
+								if( is_numeric( $value ) ) {
+									$value = strval( $value );
 								}
 
 								// Code for handling if the meta key does not exist

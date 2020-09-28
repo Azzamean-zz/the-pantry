@@ -5,7 +5,7 @@ Donate link: https://www.wpdesk.net/flexible-checkout-fields-woocommerce/
 Tags: woocommerce checkout fields, woocommerce custom fields, woocommerce checkout manager, woocommerce checkout editor, woocommerce fields manager, woocommerce fields editor, woocommerce custom checkout fields, woocommerce checkout options, woocommerce checkout pro, woocommerce custom sections, woocommerce file upload
 Requires at least: 4.5
 Tested up to: 5.5
-Stable tag: 2.5.1
+Stable tag: 2.5.6
 Requires PHP: 5.6
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -186,6 +186,22 @@ Yes, but you will have to purchase [Flexible Checkout Fields PRO](https://www.wp
 If you are upgrading from the old WooCommerce Checkout Fields version (1.1, woocommerce-checkout-fields) make sure to completely delete the old version first. Your settings will be kept. If you install the new version without deleting the old one you may break your WordPress installation.
 
 == Changelog ==
+
+= 2.5.6 - 2020-09-23 =
+* Added notice of planned change of required PHP version to 7.0
+
+= 2.5.5 - 2020-09-17 =
+* Fixed placeholder option for Radio and Multi-select field
+
+= 2.5.4 - 2020-09-16 =
+* Added placeholder option for Select field (with empty value)
+
+= 2.5.3 - 2020-09-01 =
+* Fixed copying shipping details from billing details for same fields
+* Added support for WooCommerce 4.5
+
+= 2.5.2 - 2020-08-25 =
+* Fixed overwriting of field classes by WooCommerce locale
 
 = 2.5.1 - 2020-08-10 =
 * Added support for WordPress 5.5

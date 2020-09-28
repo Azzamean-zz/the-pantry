@@ -4,10 +4,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Smart Manager For WooCommerce – Stock Management, Bulk "
-"Edit & more... 4.4.2\n"
+"Edit & more... 4.4.5\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/smart-manager-for-"
 "wp-e-commerce\n"
-"POT-Creation-Date: 2020-08-21 12:41+0000\n"
+"POT-Creation-Date: 2020-09-25 14:40+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -61,79 +61,85 @@ msgstr ""
 msgid "StoreApps Plugins"
 msgstr ""
 
-#: new/smart-manager.php:360
+#: new/smart-manager.php:341
+msgid ""
+"Delete Permanently is disabled. Please contact store administrator for "
+"enabling the same."
+msgstr ""
+
+#: new/smart-manager.php:364
 msgid ""
 "In the meanwhile, you can use Smart Manager. But before using actions like "
 msgstr ""
 
-#: new/smart-manager.php:360 
+#: new/smart-manager.php:364 
 #: new/classes/class-smart-manager-admin-welcome.php:321
 msgid "Batch Update"
 msgstr ""
 
-#: new/smart-manager.php:360
+#: new/smart-manager.php:364
 msgid "Duplicate Records"
 msgstr ""
 
-#: new/smart-manager.php:360 
+#: new/smart-manager.php:364 
 #: new/classes/class-smart-manager-admin-welcome.php:309
 msgid "Delete Records"
 msgstr ""
 
-#: new/smart-manager.php:360
+#: new/smart-manager.php:364
 msgid "you will have to wait for the current background process to finish."
 msgstr ""
 
-#: new/smart-manager.php:523
+#: new/smart-manager.php:528
 msgid "Submit your feedback"
 msgstr ""
 
-#: new/smart-manager.php:523
+#: new/smart-manager.php:528
 msgid "We would love to hear your feedback"
 msgstr ""
 
-#: new/smart-manager.php:526
+#: new/smart-manager.php:531
 msgid "Smart Manager Pro Demo"
 msgstr ""
 
-#: new/smart-manager.php:526
+#: new/smart-manager.php:531
 msgid "Pro Demo"
 msgstr ""
 
-#: new/smart-manager.php:552
+#: new/smart-manager.php:557
 #, php-format
 msgid "%1s%2s"
 msgstr ""
 
-#: new/smart-manager.php:561
+#: new/smart-manager.php:566
 msgid "An upgrade for Smart Manager Pro"
 msgstr ""
 
-#: new/smart-manager.php:561
+#: new/smart-manager.php:566
 msgid "is available."
 msgstr ""
 
-#: new/smart-manager.php:561
+#: new/smart-manager.php:566
 msgid "Click to upgrade."
 msgstr ""
 
-#: new/smart-manager.php:619
+#: new/smart-manager.php:624
 msgid ""
 "<span style=\"color:#555d66;\">Thank you for using <span style=\"color: "
 "#5850EC;\">Smart Manager</span>. A huge thank you from <span style=\"color: "
 "#5850EC;\">StoreApps</span></span>!"
 msgstr ""
 
-#: new/smart-manager.php:631
+#: new/smart-manager.php:636
 #, php-format
 msgid "Smart Manager version: <span style=\"color: #5850EC;\">%s</span>"
 msgstr ""
 
-#: new/smart-manager.php:643
+#: new/smart-manager.php:648
 msgid "A required Smart Manager file is missing. Can't continue. "
 msgstr ""
 
-#: new/smart-manager.php:658
+#: new/smart-manager.php:663
 msgid "Error:"
 msgstr ""
 
@@ -158,117 +164,117 @@ msgstr ""
 msgid "Hidden"
 msgstr ""
 
-#: new/classes/class-smart-manager-product.php:748 
-#: new/classes/class-smart-manager-product.php:754
+#: new/classes/class-smart-manager-product.php:750 
+#: new/classes/class-smart-manager-product.php:756
 msgid "Taxable"
 msgstr ""
 
-#: new/classes/class-smart-manager-product.php:749 
-#: new/classes/class-smart-manager-product.php:755
+#: new/classes/class-smart-manager-product.php:751 
+#: new/classes/class-smart-manager-product.php:757
 msgid "Shipping only"
 msgstr ""
 
-#: new/classes/class-smart-manager-product.php:750 
-#: new/classes/class-smart-manager-product.php:756 
+#: new/classes/class-smart-manager-product.php:752 
+#: new/classes/class-smart-manager-product.php:758 
 #: new/pro/classes/class-smart-manager-pro-base.php:27
 msgid "None"
 msgstr ""
 
-#: new/classes/class-smart-manager-product.php:766
+#: new/classes/class-smart-manager-product.php:768
 msgid "In stock"
 msgstr ""
 
-#: new/classes/class-smart-manager-product.php:767
+#: new/classes/class-smart-manager-product.php:769
 msgid "Out of stock"
 msgstr ""
 
-#: new/classes/class-smart-manager-product.php:768
+#: new/classes/class-smart-manager-product.php:770
 msgid "On backorder"
 msgstr ""
 
-#: new/classes/class-smart-manager-product.php:793
+#: new/classes/class-smart-manager-product.php:795
 msgid "Standard"
 msgstr ""
 
-#: new/classes/class-smart-manager-product.php:794
+#: new/classes/class-smart-manager-product.php:796
 msgid "Reduced Rate"
 msgstr ""
 
-#: new/classes/class-smart-manager-product.php:795
+#: new/classes/class-smart-manager-product.php:797
 msgid "Zero Rate"
 msgstr ""
 
-#: new/classes/class-smart-manager-product.php:814
+#: new/classes/class-smart-manager-product.php:816
 msgid "Do Not Allow"
 msgstr ""
 
-#: new/classes/class-smart-manager-product.php:815
+#: new/classes/class-smart-manager-product.php:817
 msgid "Allow, but notify customer"
 msgstr ""
 
-#: new/classes/class-smart-manager-product.php:816
+#: new/classes/class-smart-manager-product.php:818
 msgid "Allow"
 msgstr ""
 
-#: new/classes/class-smart-manager-product.php:843 
-#: new/classes/class-smart-manager-product.php:845
+#: new/classes/class-smart-manager-product.php:845 
+#: new/classes/class-smart-manager-product.php:847
 msgid "No shipping class"
 msgstr ""
 
-#: new/classes/class-smart-manager-product.php:847 
+#: new/classes/class-smart-manager-product.php:849 
 #: new/pro/templates/order-invoice.php:162
 msgid "SKU"
 msgstr ""
 
-#: new/classes/class-smart-manager-product.php:850
+#: new/classes/class-smart-manager-product.php:852
 msgid "Name"
 msgstr ""
 
-#: new/classes/class-smart-manager-product.php:852 
+#: new/classes/class-smart-manager-product.php:854 
 #: new/pro/classes/class-smart-manager-pro-wc-membership-plan.php:97 
 #: new/pro/classes/class-smart-manager-pro-wc-membership-plan.php:98
 msgid "Slug"
 msgstr ""
 
-#: new/classes/class-smart-manager-product.php:854 
+#: new/classes/class-smart-manager-product.php:856 
 #: new/classes/class-smart-manager-shop-coupon.php:117
 msgid "Description"
 msgstr ""
 
-#: new/classes/class-smart-manager-product.php:856
+#: new/classes/class-smart-manager-product.php:858
 msgid "Additional Description"
 msgstr ""
 
-#: new/classes/class-smart-manager-product.php:870
+#: new/classes/class-smart-manager-product.php:872
 msgid "External Url"
 msgstr ""
 
-#: new/classes/class-smart-manager-product.php:874
+#: new/classes/class-smart-manager-product.php:876
 msgid "Image"
 msgstr ""
 
-#: new/classes/class-smart-manager-product.php:883
+#: new/classes/class-smart-manager-product.php:885
 msgid "Featured Image"
 msgstr ""
 
-#: new/classes/class-smart-manager-product.php:954
+#: new/classes/class-smart-manager-product.php:956
 msgid "Attributes"
 msgstr ""
 
-#: new/classes/class-smart-manager-product.php:987
+#: new/classes/class-smart-manager-product.php:989
 msgid "Attributes: custom"
 msgstr ""
 
-#: new/classes/class-smart-manager-product.php:1033
+#: new/classes/class-smart-manager-product.php:1035
 msgid "Catalog Visibility"
 msgstr ""
 
-#: new/classes/class-smart-manager-product.php:1080
+#: new/classes/class-smart-manager-product.php:1082
 msgid "Featured"
 msgstr ""
 
-#: new/classes/class-smart-manager-product.php:1838 
-#: new/classes/class-smart-manager-product.php:1841
+#: new/classes/class-smart-manager-product.php:1840 
+#: new/classes/class-smart-manager-product.php:1843
 msgid "Featured Image updated successfully"
 msgstr ""
 

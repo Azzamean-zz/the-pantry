@@ -5,9 +5,9 @@ Author URI: https://www.storeapps.org/shop/
 Plugin URI: https://www.storeapps.org/product/smart-manager/?utm_source=wprepo&utm_medium=web&utm_campaign=smwp_readme
 Tags: bulk edit, woocommerce bulk edit, stock management, products editor, woocommerce, woocommerce advanced bulk edit, woocommerce stock manager, woocommerce inventory management, woocommerce bulk price change, woocommerce manage stock, woocommerce bulk edit products, woocommerce, store manager, bulk update, inline edit, manage variations, bulk edit, coupons, shop manager, batch update, wp ecommerce, productivity, products, variations, orders, customers, manager, pro, manager pro, pro manager, extension, premium, free, woocommerce customer management, inventory management
 Requires at least: 4.8.0
-Tested up to: 5.5
+Tested up to: 5.5.1
 Requires PHP: 5.6+
-Stable tag: 4.4.2
+Stable tag: 4.4.5
 License: GPLv3
 
 The #1 and a powerful tool to manage stock, inventory from a single place. Super quick and super easy.
@@ -200,6 +200,33 @@ It also gives the warm feeling of supporting further development of the plugin.
 4. Batch Update (only in Pro version)
 
 == Changelog ==
+
+= 4.4.5 (25.09.2020) =
+* Fix: Show/Hide Columns not refreshing the grid
+* Fix: Sorting using meta columns not rendering proper results
+* Fix: Search for numeric columns and search value as 0 not working properly
+* Fix: Unable to save '0' value for numeric columns using inline edit
+* Update: POT file
+* Fix: Some minor fixes
+
+= 4.4.4 (19.09.2020) =
+* Update: Compatibility with latest version of WooCommerce
+* Fix: 'show variations' state not getting maintained
+* Fix: Product variations getting displayed even when 'show variations is unchecked'
+* Fix: Dashboard showing data even in case of no search results found
+* Fix: Search results not maintained when clicking on 'show variations'
+* Fix: Order & Subscription status KPI's getting duplicated in some cases
+* Fix: Order & Subscription KPI's not getting refreshed in case of no search results
+* Update: Filter to disable 'delete permanently' functionality for all dashboards
+* Update: POT file
+* Fix: Some minor fixes
+
+= 4.4.3 (11.09.2020) =
+* Update: Compatibility with latest versions of WordPress & WooCommerce
+* Fix: 'sale price start date' & 'sale price end date' WooCommerce Product fields not saving values as per site timezone
+* Fix: 'Add Attribute' & 'Remove Attribute' functionality not available in batch update (Pro)
+* Update: POT file
+* Fix: Some minor fixes
 
 = 4.4.2 (21.08.2020) =
 * Fix: Delete Records Button not working
@@ -1533,6 +1560,15 @@ It also gives the warm feeling of supporting further development of the plugin.
 * Product administration features
 
 == Upgrade Notice ==
+
+= 4.4.5 =
+Fixed issues related to Show/Hide Columns not refreshing the grid, Sorting using meta columns not rendering proper results, Search for numeric columns and search value as 0 not working properly, Unable to save '0' value for numeric columns using inline edit along with other important fixes and updates. Recommended upgrade.
+
+= 4.4.4 =
+Compatibility with latest version of WooCommerce, Added filter to disable 'delete permanently' functionality for all dashboards and fixes related to 'show variations' state not getting maintained, Product variations getting displayed even when 'show variations is unchecked', Dashboard showing data even in case of no search results found, Order & Subscription KPI's not getting refreshed in case of no search results along with other important fixes and updates. Recommended upgrade.
+
+= 4.4.3 =
+Compatibility with latest versions of WordPress & WooCommerce and fixes related to 'sale price start date' & 'sale price end date' WooCommerce Product fields not saving values as per site timezone, 'Add Attribute' & 'Remove Attribute' functionality not available in batch update along with other important fixes and updates. Recommended upgrade.
 
 = 4.4.2 =
 Fixed issues related to Delete Records & Duplicate Records Button not working, 'Load More' button not getting displayed in post search in the dashboards, Dashboard not loading due to 'select2' library conflict with other plugins, Name for the 'Nicename' in the Users dashboard changed to 'Nickname' along with other important fixes and updates. Recommended upgrade.

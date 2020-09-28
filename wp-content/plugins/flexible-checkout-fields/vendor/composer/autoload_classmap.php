@@ -125,6 +125,7 @@ return array(
     'FcfVendor\\WPDesk\\Helper\\Page\\LibraryDebugPage' => $baseDir . '/vendor_prefixed/wpdesk/wp-wpdesk-helper/src/Page/LibraryDebugPage.php',
     'FcfVendor\\WPDesk\\Helper\\Page\\SettingsPage' => $baseDir . '/vendor_prefixed/wpdesk/wp-wpdesk-helper/src/Page/SettingsPage.php',
     'FcfVendor\\WPDesk\\Helper\\PrefixedHelperAsLibrary' => $baseDir . '/vendor_prefixed/wpdesk/wp-wpdesk-helper/src/PrefixedHelperAsLibrary.php',
+    'FcfVendor\\WPDesk\\Helper\\UpgradeSoonNotice' => $baseDir . '/vendor_prefixed/wpdesk/wp-wpdesk-helper/src/UpgradeSoonNotice.php',
     'FcfVendor\\WPDesk\\License\\InstalledPlugins' => $baseDir . '/vendor_prefixed/wpdesk/wp-wpdesk-license/src/InstalledPlugins.php',
     'FcfVendor\\WPDesk\\License\\Page\\Action' => $baseDir . '/vendor_prefixed/wpdesk/wp-wpdesk-license/src/Page/Action.php',
     'FcfVendor\\WPDesk\\License\\Page\\LicensePage' => $baseDir . '/vendor_prefixed/wpdesk/wp-wpdesk-license/src/Page/LicensePage.php',

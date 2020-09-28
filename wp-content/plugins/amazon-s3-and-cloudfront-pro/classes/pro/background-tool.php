@@ -325,6 +325,7 @@ abstract class Background_Tool extends Tool {
 		$session = $this->create_session();
 
 		$this->background_process->push_to_queue( $session )->save()->dispatch();
+		do_action( $this->prefix . '_' . $this->tool_key . '_started' );
 	}
 
 	/**

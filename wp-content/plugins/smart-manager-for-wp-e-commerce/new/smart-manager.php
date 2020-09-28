@@ -336,6 +336,10 @@ if ( ! class_exists( 'Smart_Manager' ) ) {
 				}
 			}
 
+			//Filter for disabling the 'Delete Permanently' functionality
+			$disable_delete_permanently = apply_filters('sm_beta_disable_delete_permanently', false);
+			$delete_permanently_disable_message = apply_filters('sm_beta_delete_permanently_disable_message', __( 'Delete Permanently is disabled. Please contact store administrator for enabling the same.', 'smart-manager-for-wp-e-commerce'));
+
 			$sm_beta_params = array( 
 								'sm_dashboards' => json_encode($this->sm_dashboards_final),
 								'sm_dashboards_public' => json_encode($this->sm_public_dashboards),
@@ -357,7 +361,8 @@ if ( ! class_exists( 'Smart_Manager' ) ) {
 								'search_type' => ( ( !empty( $search_type ) ) ? $search_type : 'simple' ),
 								'wpdb_prefix' => $wpdb->prefix,
 								'trashEnabled' => $trash_enabled,
-								'background_process_running_message' => __( 'In the meanwhile, you can use Smart Manager. But before using actions like ', 'smart-manager-for-wp-e-commerce') .' <strong>'. __( 'Batch Update', 'smart-manager-for-wp-e-commerce') .'</strong>/ <strong>'. __('Duplicate Records', 'smart-manager-for-wp-e-commerce') .'</strong>/ <strong>'. __( 'Delete Records', 'smart-manager-for-wp-e-commerce') .'</strong>, '. __('you will have to wait for the current background process to finish.', 'smart-manager-for-wp-e-commerce' )
+								'background_process_running_message' => __( 'In the meanwhile, you can use Smart Manager. But before using actions like ', 'smart-manager-for-wp-e-commerce') .' <strong>'. __( 'Batch Update', 'smart-manager-for-wp-e-commerce') .'</strong>/ <strong>'. __('Duplicate Records', 'smart-manager-for-wp-e-commerce') .'</strong>/ <strong>'. __( 'Delete Records', 'smart-manager-for-wp-e-commerce') .'</strong>, '. __('you will have to wait for the current background process to finish.', 'smart-manager-for-wp-e-commerce' ),
+								'delete_permanently' => array( 'disable' => $disable_delete_permanently, 'error_message' => $delete_permanently_disable_message )
 							);
 
 			$active_plugins = (array) get_option( 'active_plugins', array() );

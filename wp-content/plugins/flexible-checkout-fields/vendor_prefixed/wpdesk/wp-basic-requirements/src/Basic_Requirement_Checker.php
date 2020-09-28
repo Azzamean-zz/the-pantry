@@ -248,7 +248,7 @@ if (!\class_exists('FcfVendor\\WPDesk_Basic_Requirement_Checker')) {
          */
         public static function is_wc_at_least($min_version)
         {
-            return \defined('FcfVendor\\WC_VERSION') && \version_compare(\FcfVendor\WC_VERSION, $min_version, '>=');
+            return \defined('WC_VERSION') && \version_compare(\WC_VERSION, $min_version, '>=');
         }
         /**
          * Checks if ssl version is valid
