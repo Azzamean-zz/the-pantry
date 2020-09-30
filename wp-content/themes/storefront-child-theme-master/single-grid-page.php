@@ -30,7 +30,6 @@ get_header(); ?>
 		?>
         	<div class="grid">
 		    <?php foreach( $overview_pages as $post ): setup_postdata($post); ?>
-			<?php $image = get_field('overview_image'); ?>
 			
 				<?php 
 				
@@ -51,7 +50,17 @@ get_header(); ?>
 				endif;
 				?>
 			
-				<a class="grid-item <?php { echo $class; } ?>" href="<?php the_permalink(); ?>">
+				<a class="grid-item <?php { echo $class; } ?> 
+					<?php
+					$today = date('Ymd');
+					$expiration = get_field('expiration_date');
+					$expiration = strtotime($expiration);
+					$now = strtotime('now');
+					
+					if( $expiration < $now ) {
+						echo 'hide';
+					}
+					?>" href="<?php the_permalink(); ?>">
 					<?php the_post_thumbnail( 'large','style=max-width:100%;height:auto;');?>
 					<div class="so-text">Sold Out</div>	
 					<h3><?php the_title(); ?></h3>	
@@ -67,6 +76,35 @@ get_header(); ?>
 		
 		<?php
 		$overview_pages = get_field('next_month_overviews');
+		if( $overview_pages ): 
+		?>
+        	<div class="grid">
+		    <?php foreach( $overview_pages as $post ): setup_postdata($post); ?>
+			<?php $image = get_field('overview_image'); ?>
+			
+					<?php 
+					if(tribe_events_has_tickets($post->ID)) {
+						$class = ' sold-out-thumb ';
+					} else {
+						$class = ' ';
+					} 
+					?>
+			
+				<a class="grid-item <?php $class;?>" href="<?php the_permalink(); ?>">
+					<?php the_post_thumbnail( 'large','style=max-width:100%;height:auto;');?>
+					<h3><?php the_title(); ?></h3>	
+				</a>
+		    <?php endforeach; ?>
+		    </div>
+		    <?php 
+		    // Reset the global post object so that the rest of the page works correctly.
+		    wp_reset_postdata(); ?>
+		<?php endif; ?>
+
+		<h2 class="has-text-align-center"><?php the_field('third_month_title');?></h2>	
+		
+		<?php
+		$overview_pages = get_field('third_month_overviews');
 		if( $overview_pages ): 
 		?>
         	<div class="grid">

@@ -279,6 +279,7 @@ input#credit_called {
 	display: flex;
 	justify-content: center;
 	align-content: center;
+	flex-wrap: wrap;
 }
 
 .so-text {
@@ -320,6 +321,9 @@ input#credit_called {
 	width: 300px;	
 	text-align: center;	
 	margin: 10px;
+	&.hide {
+		display: none !important;	
+	}
 }
 
 .single-product div.product table.variations select {
