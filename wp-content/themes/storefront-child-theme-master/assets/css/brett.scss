@@ -34,12 +34,25 @@ h3 time {
 	}
 }
 
+.tribe-tickets__sale_price {
+	font-size: 16px;	
+}
+
 #comments {
 	display: none !important;	
 }
 
 .big-container {
 	padding: 40px;	
+}
+
+.single-ticket-page {
+	header.entry-header {
+		display: none;	
+		&.show-this {
+			display: block;	
+		}
+	}
 }
 
 .tribe-events .tribe-events-calendar-month__day--current .tribe-events-calendar-month__day-date, .tribe-events .tribe-events-calendar-month__day--current .tribe-events-calendar-month__day-date-link {

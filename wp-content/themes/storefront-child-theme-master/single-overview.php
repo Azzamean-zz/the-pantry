@@ -9,6 +9,11 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
+		
+		<header class="page-header" style="border: none;">
+            <h1><a href="<?php echo site_url();?>" class="logo">The Pantry</a></h1>
+        </header>
+
 		<article class="page">
 		<div class="page-body ">
 		<?php
@@ -43,9 +48,9 @@ get_header(); ?>
 				?>
 
 				<?php if($tickets[0]->capacity > 0) { ?>
-					<li><a href="<?php the_permalink(); ?>"><?php echo $date->format('F d, g:i a'); ?></a></li>
+					<li><a href="<?php the_permalink(); ?>"><?php echo $date->format('D, F d, g:i a'); ?></a></li>
 				<?php } else { ?>
-					<li><a href="<?php the_permalink(); ?>"><?php echo $date->format('F d, g:i a'); ?> - Sold Out</a></li>
+					<li><a href="<?php the_permalink(); ?>"><?php echo $date->format('D, F d, g:i a'); ?> - Sold Out</a></li>
 				<?php } ?>
 		    <?php endforeach; ?>
 		    </ul>

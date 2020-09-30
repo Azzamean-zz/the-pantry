@@ -9,15 +9,35 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
+			
+		<header class="page-header" style="border: none;">
+            <h1><a href="<?php echo site_url();?>" class="logo">The Pantry</a></h1>
+        </header>
+			
 		<article class="page">
 		<div class="page-body ">
 		<?php
 		while ( have_posts() ) :
 			the_post();
-
+			
+			$date_string = get_field('start_date');
+			$end_date_string = get_field('end_date');
+			
+			$start_date = DateTime::createFromFormat('m/d/Y g:i a', $date_string);
+			$start_date = $start_date->format('D, F d, g:i a');
+			
+			$end_date = DateTime::createFromFormat('m/d/Y g:i a', $end_date_string);
+			$end_date = $end_date->format('g:i a');
+			?>
+						<?php
 			do_action( 'storefront_single_post_before' );
 			?>
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+				<header class="entry-header show-this">
+					<h1 class="entry-title"><?php the_title();?></h1>
+				</header>
+				
+				<h3><?php echo $start_date; ?> - <?php echo $end_date;?></h3>	
 
 				<?php
 				do_action( 'storefront_single_post_top' );

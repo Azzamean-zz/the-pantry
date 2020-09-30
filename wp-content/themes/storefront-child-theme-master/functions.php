@@ -642,6 +642,41 @@ add_filter( 'woocommerce_login_redirect', function( $redirect, $user ) {
 		return $redirect;
 	}
 }, 10, 2 );
+
+/**
+ * Change the Get Tickets on List View and Single Events
+ *
+ * @param string $translation The translated text.
+ * @param string $text        The text to translate.
+ * @param string $domain      The domain slug of the translated text.
+ * @param string $context     The option context string.
+ *
+ * @return string The translated text or the custom text.
+ */
+ 
+add_filter( 'gettext_with_context', 'tribe_change_get_tickets', 20, 4 );
+function tribe_change_get_tickets( $translation, $text, $context = "" , $domain) {
+ 
+  if ( $domain != 'default'
+       && strpos( $domain, 'event-' ) !== 0
+  ) {
+    return $translation;
+  }
+ 
+  $ticket_text = [
+    // Get Tickets on List View
+    'Get %s'      => 'Purchase',
+    // Get Tickets Form - Single View
+    'Get Tickets' => 'Purchase',
+  ];
+ 
+  // If we don't have replacement text, bail.
+  if ( empty( $ticket_text[ $text ] ) ) {
+    return $translation;
+  }
+ 
+  return $ticket_text[ $text ];
+}
  
  /**
  * Remove related products output

@@ -90,7 +90,17 @@ get_header(); ?>
 					} 
 					?>
 			
-				<a class="grid-item <?php $class;?>" href="<?php the_permalink(); ?>">
+				<a class="grid-item <?php { echo $class; } ?> 
+					<?php
+					$today = date('Ymd');
+					$expiration = get_field('expiration_date');
+					$expiration = strtotime($expiration);
+					$now = strtotime('now');
+					
+					if( $expiration < $now ) {
+						echo 'hide';
+					}
+					?>" href="<?php the_permalink(); ?>">
 					<?php the_post_thumbnail( 'large','style=max-width:100%;height:auto;');?>
 					<h3><?php the_title(); ?></h3>	
 				</a>
@@ -100,7 +110,8 @@ get_header(); ?>
 		    // Reset the global post object so that the rest of the page works correctly.
 		    wp_reset_postdata(); ?>
 		<?php endif; ?>
-
+		
+		<?php if(get_field('third_month_title')) { ?>
 		<h2 class="has-text-align-center"><?php the_field('third_month_title');?></h2>	
 		
 		<?php
@@ -119,7 +130,17 @@ get_header(); ?>
 					} 
 					?>
 			
-				<a class="grid-item <?php $class;?>" href="<?php the_permalink(); ?>">
+				<a class="grid-item <?php { echo $class; } ?> 
+					<?php
+					$today = date('Ymd');
+					$expiration = get_field('expiration_date');
+					$expiration = strtotime($expiration);
+					$now = strtotime('now');
+					
+					if( $expiration < $now ) {
+						echo 'hide';
+					}
+					?>" href="<?php the_permalink(); ?>">
 					<?php the_post_thumbnail( 'large','style=max-width:100%;height:auto;');?>
 					<h3><?php the_title(); ?></h3>	
 				</a>
@@ -129,6 +150,7 @@ get_header(); ?>
 		    // Reset the global post object so that the rest of the page works correctly.
 		    wp_reset_postdata(); ?>
 		<?php endif; ?>
+		<?php } ?>
 		
 		<?php
 		endwhile; // End of the loop.
