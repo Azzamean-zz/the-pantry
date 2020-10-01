@@ -68,30 +68,22 @@ function create_ticket_page_columns($columns) {
     $columns = array(
 		'cb' => '<input type="checkbox" />',
 		'title' => __('Name'),
-		'taxonomy' => __('Taxonomy'),
-		'acf-field' => __('Advanced Custom Field'),
+		'start_date' => __('Start Date'),
 	);
 	return $columns;
 }
 
 function manage_ticket_page_columns($column, $post_id) {
 	global $post;
-	switch($column) {
-		case 'taxonomy':
-			$test = get_post_meta($post_id, 'ticket-page', true);
-			if(!empty($test)) echo $test;
-			break;
-		case 'acf-field':
-			$field = get_post_meta($post_id, 'acf-field', true);
-			if(!empty($field)) echo $field;
-			break;
-		default : break;
+	if($column == 'start_date') {
+		$field = get_post_meta($post_id, 'start_date', true);
+		if(!empty($field)) echo $field;
 	}
 }
 
 add_action('init', 'create_ticket_page');
 add_action('init', 'create_ticket_page_taxonomies');
-add_filter('manage_edit-ticket_page_columns', 'create_ticket_page_columns' ) ;
+add_filter('manage_edit_ticket-page_columns', 'create_ticket_page_columns' ) ;
 add_action('manage_ticket_page_posts_custom_column', 'manage_ticket_page_columns', 10, 2 );
 
 /**
