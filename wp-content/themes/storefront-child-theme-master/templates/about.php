@@ -74,12 +74,12 @@ get_header(); ?>
 					$args = array(
 						'post_type' => 'team',
 						'order' 	=> 'ASC',
+					    'posts_per_page' => -1,
 						'tax_query' => array(
 					        array(
 					            'taxonomy' => 'team-categories',
 					            'field'    => 'slug',
 					            'terms'    => 'guest',
-					            'posts_per_page' => -1
 					        ),
 					    ),
 					);

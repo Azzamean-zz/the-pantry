@@ -499,6 +499,22 @@ h1.tribe-tickets__registration__page-title {
 	}
 }
 
+.count-col {
+	width: 33.333%;	
+	float: left;
+	padding: 15px 20px;
+	text-align: center;	
+	margin-bottom: 30px;
+	display: block;		
+	h1 {
+		font-family: "brandon-grotesque","Helvetica Neue",Arial,sans-serif;
+		font-size: 2.4em;	
+		margin-bottom: 20px;	
+	}
+}
+
+@import 'theme';
+
 .button.added_to_cart:focus, .button.wc-forward:focus, a:focus, input:focus, textarea:focus, button:focus, a:focus, button:focus, .button.alt:focus, input:focus, textarea:focus, input[type="button"]:focus, input[type="reset"]:focus, input[type="submit"]:focus, input[type="email"]:focus, input[type="tel"]:focus, input[type="url"]:focus, input[type="password"]:focus, input[type="search"]:focus {
 	outline: none !important;
 }

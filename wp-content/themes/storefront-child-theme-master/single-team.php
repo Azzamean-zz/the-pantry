@@ -22,7 +22,7 @@ get_header(); ?>
 	            <?php if(get_field('team_image')) { ?>
 	            <div class="header-photo">
 		            <?php $image = get_field('team_image');?>
-		            <img src="<?php echo $image['url'];?>"
+		            <img src="<?php echo $image['url'];?>">
 	            </div>	
 	            <?php } ?>
 	            

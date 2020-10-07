@@ -29,9 +29,16 @@ get_header(); ?>
 			$end_date = DateTime::createFromFormat('m/d/Y g:i a', $end_date_string);
 			$end_date = $end_date->format('g:i a');
 			?>
-						<?php
+			<?php
 			do_action( 'storefront_single_post_before' );
 			?>
+			
+			<?php $event_id = get_the_ID(); ?>
+			<?php if( current_user_can('editor') || current_user_can('administrator') ) {  ?>
+			    <div class="attendee-list-link">
+				    <a href="<?php echo site_url();?>/attendee-list?event=<?php echo $event_id;?>">View Attendees</a>
+			    </div>	
+			<?php } ?>
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<header class="entry-header show-this">
 					<h1 class="entry-title"><?php the_title();?></h1>
