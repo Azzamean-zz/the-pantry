@@ -31,6 +31,8 @@ switch ($_SERVER['SERVER_NAME']) {
           define('DB_CHARSET', 'utf8');
           define('DB_COLLATE', '');
           define('WP_DEBUG', true);  
+          define( 'WP_HOME', 'https://thepantryseattle.com' );
+		  define( 'WP_SITEURL', 'https://thepantryseattle.com' );
      break;
      case 'tester':
           define('DB_NAME', 'wordpress_staging');
