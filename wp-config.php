@@ -23,7 +23,7 @@ define('WP_CACHE', true); // Added by W3 Total Cache
 // ** MySQL settings - You can get this info from your web host ** //
 switch ($_SERVER['SERVER_NAME']) {
      /** Development Server */    
-     case 'thepantry-test.herokuapp.com':
+     case 'thepantryseattle.com':
           define('DB_NAME', 'wordpress_staging');
           define('DB_USER', 'wordpress-user');
           define('DB_PASSWORD', 'Tm7hTMFsdsvs3zEQauAN');
