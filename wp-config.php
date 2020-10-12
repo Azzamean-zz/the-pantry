@@ -27,21 +27,23 @@ switch ($_SERVER['SERVER_NAME']) {
           define('DB_NAME', 'wordpress_staging');
           define('DB_USER', 'wordpress-user');
           define('DB_PASSWORD', 'Tm7hTMFsdsvs3zEQauAN');
-          define('DB_HOST', 'thepantry-test.cxjfm6fxwyci.us-east-1.rds.amazonaws.com:3306');
+          define('DB_HOST', 'thepantry-jan2020.cxjfm6fxwyci.us-east-1.rds.amazonaws.com:3306');
           define('DB_CHARSET', 'utf8');
           define('DB_COLLATE', '');
           define('WP_DEBUG', true);  
           define( 'WP_HOME', 'https://thepantryseattle.com' );
 		  define( 'WP_SITEURL', 'https://thepantryseattle.com' );
      break;
-     case 'tester':
+     case 'thepantry-test':
           define('DB_NAME', 'wordpress_staging');
           define('DB_USER', 'wordpress-user');
           define('DB_PASSWORD', 'Tm7hTMFsdsvs3zEQauAN');
-          define('DB_HOST', 'thepantry-test.cxjfm6fxwyci.us-east-1.rds.amazonaws.com:3306');
+          define('DB_HOST', 'thepantry-jan2020.cxjfm6fxwyci.us-east-1.rds.amazonaws.com:3306');
           define('DB_CHARSET', 'utf8');
           define('DB_COLLATE', '');
-          define('WP_DEBUG', true);
+          define('WP_DEBUG', true);  
+          define( 'WP_HOME', 'https://thepantryseattle.com' );
+		  define( 'WP_SITEURL', 'https://thepantryseattle.com' );
      break;
      /** Development Server local */    
      case 'pantryv2':
