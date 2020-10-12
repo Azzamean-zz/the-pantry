@@ -61,7 +61,6 @@ get_header(); ?>
 						echo 'hide';
 					}
 					?>" href="<?php the_permalink(); ?>">
-					<?php echo $expiration;?>
 					<?php the_post_thumbnail( 'large','style=max-width:100%;height:auto;');?>
 					<div class="so-text">Sold Out</div>	
 					<h3><?php 
