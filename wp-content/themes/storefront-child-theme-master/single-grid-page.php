@@ -63,7 +63,13 @@ get_header(); ?>
 					?>" href="<?php the_permalink(); ?>">
 					<?php the_post_thumbnail( 'large','style=max-width:100%;height:auto;');?>
 					<div class="so-text">Sold Out</div>	
-					<h3><?php the_title(); ?></h3>	
+					<h3><?php 
+					if(get_field('title')) { 
+						echo get_field('title'); 
+					} else {
+						the_title();
+					}
+					?></h3>	
 				</a>
 		    <?php endforeach; ?>
 		    </div>
@@ -102,7 +108,13 @@ get_header(); ?>
 					}
 					?>" href="<?php the_permalink(); ?>">
 					<?php the_post_thumbnail( 'large','style=max-width:100%;height:auto;');?>
-					<h3><?php the_title(); ?></h3>	
+					<h3><?php 
+					if(get_field('title')) { 
+						echo get_field('title'); 
+					} else {
+						the_title();
+					}
+					?></h3>	
 				</a>
 		    <?php endforeach; ?>
 		    </div>
@@ -142,7 +154,13 @@ get_header(); ?>
 					}
 					?>" href="<?php the_permalink(); ?>">
 					<?php the_post_thumbnail( 'large','style=max-width:100%;height:auto;');?>
-					<h3><?php the_title(); ?></h3>	
+					<h3><?php 
+					if(get_field('title')) { 
+						echo get_field('title'); 
+					} else {
+						the_title();
+					}
+					?></h3>	
 				</a>
 		    <?php endforeach; ?>
 		    </div>

@@ -583,6 +583,20 @@ h1.tribe-tickets__registration__page-title {
 	color: #4c73aa;
 }
 
+.hentry .entry-content {
+	a {
+		text-decoration: none;	
+	}
+}
+
+.single-ticket-page  .hentry {
+	margin-bottom: 30px;	
+}
+
+.single-ticket-page button.xoo-wl-action-btn {
+	float: right;	
+}
+
 .tribe-checkout-backlinks {
 	width: 41.1764705882%;	
 	float: right;	
