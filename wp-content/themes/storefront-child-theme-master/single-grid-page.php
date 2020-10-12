@@ -54,13 +54,14 @@ get_header(); ?>
 					<?php
 					$today = date('Ymd');
 					$expiration = get_field('expiration_date');
-					$expiration = strtotime($expiration);
+					$expiration = strtotime($expiration . "+12hours");
 					$now = strtotime('now');
 					
 					if( $expiration < $now ) {
 						echo 'hide';
 					}
 					?>" href="<?php the_permalink(); ?>">
+					<?php echo $expiration;?>
 					<?php the_post_thumbnail( 'large','style=max-width:100%;height:auto;');?>
 					<div class="so-text">Sold Out</div>	
 					<h3><?php 
