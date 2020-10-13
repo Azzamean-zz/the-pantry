@@ -41,16 +41,23 @@ get_header(); ?>
 		    
 		    	<?php
 			    	$tickets = Tribe__Tickets__Tickets::get_all_event_tickets($post->ID);
+			    	$capacity = $tickets[0]->capacity;
+			    	$sold = $tickets[0]->qty_sold;
+			    	$stock = $tickets[0]->stock;
+			    	
+			    	//echo '<pre>stock: ';
+			    	//print_r($tickets[0]->stock);
+			    	//echo '</pre>';
 			    ?>
 	    		<?php
 				$date_string = get_field('start_date');
 				$date = DateTime::createFromFormat('m/d/Y g:i a', $date_string);
 				?>
 
-				<?php if($tickets[0]->capacity > 0) { ?>
-					<li><a href="<?php the_permalink(); ?>"><?php echo $date->format('D, F d, g:i a'); ?></a></li>
-				<?php } else { ?>
+				<?php if($stock <= 0) { ?>
 					<li><a href="<?php the_permalink(); ?>"><?php echo $date->format('D, F d, g:i a'); ?> - Sold Out</a></li>
+				<?php } else { ?>
+					<li><a href="<?php the_permalink(); ?>"><?php echo $date->format('D, F d, g:i a'); ?></a></li>
 				<?php } ?>
 		    <?php endforeach; ?>
 		    </ul>

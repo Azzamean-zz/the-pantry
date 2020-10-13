@@ -24,11 +24,13 @@ get_header(); ?>
 	$attendee_list = Tribe__Tickets__Tickets::get_event_attendees($event_id); ?>
 	
 	<?php
+
 /*
 	echo '<pre>';
 	print_r($attendee_list);
 	echo '</pre>';
 */
+
 	
 		foreach($attendee_list as $attendee) {
 			$class[] = $attendee['ticket'];
@@ -41,15 +43,7 @@ get_header(); ?>
 				<h1><?php echo $classcount;?></h1>	
 				<h3><?php echo $classkey;?></h3>	
 			</div>	
-		<?php
-		}
-		
-/*
-		echo '<pre>';
-		print_r($classcounts);
-		echo '</pre>';
-*/
-	?>
+		<?php } ?>
 	
 	<?php // echo count($attendee_list); ?>
 	<table id="attendee-table" class="tablesorter">
@@ -68,33 +62,33 @@ get_header(); ?>
 			<tr>
 			
 			<?php
+			$veg = '';
+			$phone = '';
+			$emails[] = '';
+
 			foreach($attendee_list as $attendee) {
-						
-				$name = $attendee['attendee_meta']['name']['value'];
-				$purchaser = $attendee['purchaser_name'];
-				
-				$veg = '';
-				
-				if(isset($attendee['attendee_meta']['do-you-need-a-vegetarian-option']['value'])){
-					$veg = $attendee['attendee_meta']['do-you-need-a-vegetarian-option']['value'];
-				}
-				
-				if(isset($attendee['attendee_meta']['do-you-need-a-vegetarian-option']['value'])){
-					$veg = "Yes";
-				} else {
-					$veg = " ";
-				}
-				
-				$emails[] = '';
-				
-				if(isset($attendee['attendee_meta']['email']['value'])){
+								
+				if(isset($attendee['attendee_meta']['name'])) {
+					$name = $attendee['attendee_meta']['name']['value'];
+					
+					if(isset($attendee['attendee_meta']['do-you-need-a-vegetarian-option']['value'])){
+						$veg = "Yes";
+					} else {
+						$veg = " ";
+					}
+					if(isset($attendee['attendee_meta']['email']['value'])){
 				    $email = $attendee['attendee_meta']['email']['value'];
-					$emails[] = $attendee['attendee_meta']['email']['value'];
+						$emails[] = $attendee['attendee_meta']['email']['value'];
+					}
+					if(isset($attendee['attendee_meta']['phone']['value'])){
+					    $phone = $attendee['attendee_meta']['phone']['value'];
+					}
+				} else {
+					$email = $attendee['purchaser_email'];
+					$emails[] = $attendee['purchaser_email'];
 				}
 				
-				if(isset($attendee['attendee_meta']['phone']['value'])){
-				    $phone = $attendee['attendee_meta']['phone']['value'];
-				}
+				$purchaser = $attendee['purchaser_name'];
 								
 				echo '<tr>';
 				echo '<td>' . $name . '</td>';
