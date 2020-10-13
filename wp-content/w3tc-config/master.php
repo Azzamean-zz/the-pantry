@@ -99,12 +99,12 @@
     "objectcache.file.gc": 3600,
     "objectcache.file.locking": false,
     "objectcache.memcached.servers": [
-        "127.0.0.1:11211"
+        "mc1.dev.ec2.memcachier.com"
     ],
     "objectcache.memcached.persistent": true,
     "objectcache.memcached.aws_autodiscovery": false,
-    "objectcache.memcached.username": "",
-    "objectcache.memcached.password": "",
+    "objectcache.memcached.username": "9E62A0",
+    "objectcache.memcached.password": "E90BD0587AF3186F14D4050E7CB522CD",
     "objectcache.memcached.binary_protocol": true,
     "objectcache.redis.persistent": true,
     "objectcache.redis.servers": [
