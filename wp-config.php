@@ -33,6 +33,17 @@ switch ($_SERVER['SERVER_NAME']) {
           define('WP_DEBUG', true);  
           define( 'WP_HOME', 'https://thepantryseattle.com' );
 		  define( 'WP_SITEURL', 'http://thepantryseattle.com' );
+		  
+			/** Memcached credentials */
+			global $memcached_servers;
+			$memcached_servers = array( array( 'mc1.dev.ec2.memcachier.com', 11211 ) );
+			
+			global $memcached_username;
+			$memcached_username = '9E62A0';
+			
+			global $memcached_password;
+			$memcached_password = 'E90BD0587AF3186F14D4050E7CB522CD';
+		  
      break;
      case 'thepantry-test.herokuapp.com':
           define('DB_NAME', 'wordpress_staging');
