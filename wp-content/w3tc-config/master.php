@@ -17,10 +17,10 @@
     "dbcache.memcached.persistent": true,
     "dbcache.memcached.aws_autodiscovery": false,
     "dbcache.memcached.servers": [
-        "127.0.0.1:11211"
+        "mc1.dev.ec2.memcachier.com"
     ],
-    "dbcache.memcached.username": "",
-    "dbcache.memcached.password": "",
+    "dbcache.memcached.username": "9E62A0",
+    "dbcache.memcached.password": "E90BD0587AF3186F14D4050E7CB522CD",
     "dbcache.memcached.binary_protocol": true,
     "dbcache.redis.persistent": true,
     "dbcache.redis.servers": [
