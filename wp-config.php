@@ -125,6 +125,10 @@ $table_prefix = 'wp_';
 /* That's all, stop editing! Happy publishing. */
 
 define('WP_MEMORY_LIMIT', '512M');
+define('WP_MAX_MEMORY_LIMIT', '512M');
+
+define('AUTOSAVE_INTERVAL', 300 ); // seconds
+define('WP_POST_REVISIONS', false );
 
 
 /** Absolute path to the WordPress directory. */
