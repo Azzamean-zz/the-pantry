@@ -106,7 +106,7 @@ class ET_Meta_Hawk {
 	}
 
 	static function setup_meta_editing() {
-		if ( get_current_screen()->id !== 'tribe_events_page_tickets-attendees' ) return;
+		if ( get_current_screen()->id !== 'ticket-page_page_tickets-attendees' ) return;
 		$nonce = wp_create_nonce( 'attendee_meta_live_edit' );
 
 		echo '
