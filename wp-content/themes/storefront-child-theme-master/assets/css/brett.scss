@@ -11,6 +11,12 @@ body.page {
 	padding-right: inherit;
 }
 
+.homeLinks {
+	li.hide {
+		display: none !important;	
+	}
+}
+
 h3 time {
 	font-size: 12px !important;	
 }

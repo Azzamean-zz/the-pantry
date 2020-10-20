@@ -31,14 +31,27 @@ get_header(); ?>
 		
 		<hr class="wp-block-separator">
 		<h2>Dates</h2>
-		<p class="text-center"><i>All classes are listed in Pacific Daylight Time.</i></p>		
+		<p class="text-center"><i>All classes are listed in Pacific dDaylight Time.</i></p>		
 		
 		<?php
 		$ticket_pages = get_field('ticket_pages');
 		if( $ticket_pages ): ?>
         	<ul class="homeLinks">
 		    <?php foreach( $ticket_pages as $post ): ?>
-		    
+		    	
+		    	<?php
+					$today = date('Ymd');
+					$expiration = get_field('start_date');
+					
+					$expiration = strtotime($expiration);
+					$now = strtotime('now');
+					$class = '';
+					
+					if( $expiration < $now ) {
+						$class = 'hide';
+					}
+				?>
+		    	
 		    	<?php
 			    	$tickets = Tribe__Tickets__Tickets::get_all_event_tickets($post->ID);
 			    	$capacity = $tickets[0]->capacity;
@@ -55,9 +68,9 @@ get_header(); ?>
 				?>
 
 				<?php if($stock <= 0) { ?>
-					<li><a href="<?php the_permalink(); ?>"><?php echo $date->format('D, F d, g:i a'); ?> - Sold Out</a></li>
+					<li class="<?php echo $class;?>"><a href="<?php the_permalink(); ?>"><?php echo $date->format('D, F d, g:i a'); ?> - Sold Out</a></li>
 				<?php } else { ?>
-					<li><a href="<?php the_permalink(); ?>"><?php echo $date->format('D, F d, g:i a'); ?></a></li>
+					<li class="<?php echo $class;?>"><a href="<?php the_permalink(); ?>"><?php echo $date->format('D, F d, g:i a'); ?></a></li>
 				<?php } ?>
 		    <?php endforeach; ?>
 		    </ul>
