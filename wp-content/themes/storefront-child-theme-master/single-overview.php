@@ -31,20 +31,28 @@ get_header(); ?>
 		
 		<hr class="wp-block-separator">
 		<h2>Dates</h2>
-		<p class="text-center"><i>All classes are listed in Pacific dDaylight Time.</i></p>		
+		<p class="text-center"><i>All classes are listed in Pacific Daylight Time.</i></p>		
 		
 		<?php
 		$ticket_pages = get_field('ticket_pages');
 		if( $ticket_pages ): ?>
         	<ul class="homeLinks">
-		    <?php foreach( $ticket_pages as $post ): ?>
+		    <?php foreach( $ticket_pages as $post ): setup_postdata($post);?>
 		    	
 		    	<?php
 					$today = date('Ymd');
-					$expiration = get_field('start_date');
+					$expiration = get_field('end_date');
 					
 					$expiration = strtotime($expiration);
 					$now = strtotime('now');
+					
+/*
+					echo 'now: ' . date('F j, Y, g:i a', strtotime('now'));
+					echo '<br>';
+					echo 'end: ' . date('F j, Y, g:i a', strtotime(get_field('end_date')));
+*/
+					
+					
 					$class = '';
 					
 					if( $expiration < $now ) {
@@ -82,7 +90,9 @@ get_header(); ?>
 		</article>
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
+	<script>
+		console.log("<?php echo 'now: ' . date('F j, Y, g:i a', strtotime('now'));?>");
+	</script>	
 <?php
 do_action( 'storefront_sidebar' );
 get_footer();
