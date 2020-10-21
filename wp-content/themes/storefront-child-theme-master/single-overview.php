@@ -44,14 +44,17 @@ get_header(); ?>
 					$expiration = get_field('end_date');
 					
 					$expiration = strtotime($expiration);
-					$now = strtotime('now');
+					$now = time();
+					
+					$hoursToSubtract = '7';
+					$timeToSubtract = ($hoursToSubtract * 60 * 60);
+					$now = $now - $timeToSubtract;
 					
 /*
-					echo 'now: ' . date('F j, Y, g:i a', strtotime('now'));
+					echo 'now: ' . date('F j, Y, g:i a', $now);
 					echo '<br>';
 					echo 'end: ' . date('F j, Y, g:i a', strtotime(get_field('end_date')));
-*/
-					
+*/					
 					
 					$class = '';
 					
