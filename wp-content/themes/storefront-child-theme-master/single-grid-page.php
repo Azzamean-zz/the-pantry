@@ -41,8 +41,8 @@ get_header(); ?>
 						$tickets = Tribe__Tickets__Tickets::get_all_event_tickets($ticket_page->ID);
 						
 						$class = '';
-						
-						if($tickets[0]->stock <= 0) { 
+						$tickets_handler = tribe( 'tickets.handler' );
+						if(0 === $tickets_handler->get_ticket_max_purchase( $tickets[0]->ID)) { 
 							$i++;
 						}
 						
@@ -106,7 +106,8 @@ get_header(); ?>
 						
 						$class = '';
 						
-						if($tickets[0]->stock <= 0) { 
+						$tickets_handler = tribe( 'tickets.handler' );
+						if(0 === $tickets_handler->get_ticket_max_purchase( $tickets[0]->ID)) { 
 							$i++;
 						}
 						
@@ -169,10 +170,11 @@ get_header(); ?>
 						
 						$class = '';
 						
-						if($tickets[0]->stock <= 0) { 
+						$tickets_handler = tribe( 'tickets.handler' );
+						if(0 === $tickets_handler->get_ticket_max_purchase( $tickets[0]->ID)) { 
 							$i++;
 						}
-						
+												
 						if($i >= $ticketcount) {
 							$class = ' so-thumb ';
 						}
