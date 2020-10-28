@@ -39,10 +39,10 @@ get_header(); ?>
 					foreach( $ticket_pages as $ticket_page ):
 					
 						$tickets = Tribe__Tickets__Tickets::get_all_event_tickets($ticket_page->ID);
-						
+												
 						$class = '';
-						$tickets_handler = tribe( 'tickets.handler' );
-						if(0 === $tickets_handler->get_ticket_max_purchase( $tickets[0]->ID)) { 
+
+						if(0 === (new Tribe__Tickets__Tickets_Handler)->get_ticket_max_purchase($tickets[0]->ID)) { 
 							$i++;
 						}
 						
@@ -66,7 +66,7 @@ get_header(); ?>
 						echo 'hide';
 					}
 					?>" href="<?php the_permalink(); ?>">
-					<?php the_post_thumbnail( 'large','style=max-width:100%;height:auto;');?>
+					<?php the_post_thumbnail( 'medium','style=max-width:100%;height:auto;');?>
 					<div class="so-text">Sold Out</div>	
 					<h3><?php 
 					if(get_field('title')) { 
@@ -103,11 +103,10 @@ get_header(); ?>
 					foreach( $ticket_pages as $ticket_page ):
 					
 						$tickets = Tribe__Tickets__Tickets::get_all_event_tickets($ticket_page->ID);
-						
+												
 						$class = '';
-						
-						$tickets_handler = tribe( 'tickets.handler' );
-						if(0 === $tickets_handler->get_ticket_max_purchase( $tickets[0]->ID)) { 
+
+						if(0 === (new Tribe__Tickets__Tickets_Handler)->get_ticket_max_purchase($tickets[0]->ID)) { 
 							$i++;
 						}
 						
@@ -131,7 +130,7 @@ get_header(); ?>
 						echo 'hide';
 					}
 					?>" href="<?php the_permalink(); ?>">
-					<?php the_post_thumbnail( 'large','style=max-width:100%;height:auto;');?>
+					<?php the_post_thumbnail( 'medium','style=max-width:100%;height:auto;');?>
 					<div class="so-text">Sold Out</div>	
 					<h3><?php 
 					if(get_field('title')) { 
@@ -167,11 +166,10 @@ get_header(); ?>
 					foreach( $ticket_pages as $ticket_page ):
 					
 						$tickets = Tribe__Tickets__Tickets::get_all_event_tickets($ticket_page->ID);
-						
+												
 						$class = '';
-						
-						$tickets_handler = tribe( 'tickets.handler' );
-						if(0 === $tickets_handler->get_ticket_max_purchase( $tickets[0]->ID)) { 
+
+						if(0 === (new Tribe__Tickets__Tickets_Handler)->get_ticket_max_purchase($tickets[0]->ID)) { 
 							$i++;
 						}
 												
@@ -195,7 +193,7 @@ get_header(); ?>
 						echo 'hide';
 					}
 					?>" href="<?php the_permalink(); ?>">
-					<?php the_post_thumbnail( 'large','style=max-width:100%;height:auto;');?>
+					<?php the_post_thumbnail( 'medium','style=max-width:100%;height:auto;');?>
 					<div class="so-text">Sold Out</div>	
 					<h3><?php 
 					if(get_field('title')) { 

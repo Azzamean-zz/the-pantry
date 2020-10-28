@@ -67,7 +67,7 @@ get_header(); ?>
 			$emails[] = '';
 
 			foreach($attendee_list as $attendee) {
-								
+				$name = '';
 				if(isset($attendee['attendee_meta']['name'])) {
 					$name = $attendee['attendee_meta']['name']['value'];
 					
