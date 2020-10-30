@@ -49,13 +49,7 @@ get_header(); ?>
 					$hoursToSubtract = '7';
 					$timeToSubtract = ($hoursToSubtract * 60 * 60);
 					$now = $now - $timeToSubtract;
-					
-/*
-					echo 'now: ' . date('F j, Y, g:i a', $now);
-					echo '<br>';
-					echo 'end: ' . date('F j, Y, g:i a', strtotime(get_field('end_date')));
-*/					
-					
+										
 					$class = '';
 					
 					if( $expiration < $now ) {
@@ -64,37 +58,15 @@ get_header(); ?>
 				?>
 		    	
 		    	<?php
-			    	
-			    	$tickets = Tribe__Tickets__Tickets::get_all_event_tickets($post->ID);
-			    	$capacity = $tickets[0]->capacity;
-			    	$sold = $tickets[0]->qty_sold;
-			    	$stock = $tickets[0]->stock;
-			    	
 
-/*
-			    	echo '<pre style="text-align: left;">';
-			    	print_r($tickets[0]);    	
-			    	echo '</pre>';
-*/
-			    	
-/*
-					$tickets_handler = tribe( 'tickets.handler' );
-			    	if ( 0 === $tickets_handler->get_ticket_max_purchase( $tickets[0]->ID ) ) {
-				    	echo 'no stock!';
-			    	} else {
-				    	echo 'stock!';
-			    	}
-*/
-			    	
-			    ?>
-	    		<?php
+			    $ticket_ids = tribe_get_woo_tickets_ids($post->ID);
 				$tickets_handler = tribe( 'tickets.handler' );
-
+							
 				$date_string = get_field('start_date');
 				$date = DateTime::createFromFormat('m/d/Y g:i a', $date_string);
 				?>
 				
-				<?php if ( 0 === $tickets_handler->get_ticket_max_purchase( $tickets[0]->ID ) ) { ?>
+				<?php if ( 0 === $tickets_handler->get_ticket_max_purchase( $ticket_ids[0] ) ) { ?>
 					<li class="<?php echo $class;?>"><a href="<?php the_permalink(); ?>"><?php echo $date->format('D, F d, g:i a'); ?> - Sold Out</a></li>
 				<?php } else { ?>
 					<li class="<?php echo $class;?>"><a href="<?php the_permalink(); ?>"><?php echo $date->format('D, F d, g:i a'); ?></a></li>

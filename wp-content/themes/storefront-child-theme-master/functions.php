@@ -669,6 +669,29 @@ function tribe_change_get_tickets( $translation, $text, $context = "" , $domain)
  
   return $ticket_text[ $text ];
 }
+
+function find_tickets($id) {
+	return Tribe__Tickets__Tickets::get_all_event_tickets($id);
+}
+
+/* Tribe, retrive Woo tickets ids for a give post_id - returns array or false if event tickets plus is not active */
+function tribe_get_woo_tickets_ids( $post_id ) {
+
+	// bail if event tickets plus is not active
+	if ( !class_exists('Tribe__Tickets_Plus__Commerce__WooCommerce__Main') ) return false;
+	
+	$tickets_provider = Tribe__Tickets_Plus__Commerce__WooCommerce__Main::get_instance();
+	
+	return $tickets_provider->get_tickets_ids ( $post_id );
+
+}
+
+function get_qty_available($id) {
+	if (class_exists('Tribe__Tickets__Tickets_Handler')) {
+		$qty = (new Tribe__Tickets__Tickets_Handler)->get_ticket_max_purchase($id);
+		return $qty;
+	}
+}
  
  /**
  * Remove related products output

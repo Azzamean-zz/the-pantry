@@ -17,11 +17,7 @@ get_header(); ?>
         </header>
         
         <div class="entry-content">	
-		<?php
-		while ( have_posts() ) :
-			the_post();
-		?>
-		
+	        		
 		<h2 class="has-text-align-center"><?php the_field('current_month_title');?></h2>	
 		
 		<?php
@@ -38,12 +34,22 @@ get_header(); ?>
 					$i = 0;
 					foreach( $ticket_pages as $ticket_page ):
 					
-						$tickets = Tribe__Tickets__Tickets::get_all_event_tickets($ticket_page->ID);
+/*
+						$ticket_ids = tribe_get_woo_tickets_ids($ticket_page->ID);
 												
 						$class = '';
-
-						if(0 === (new Tribe__Tickets__Tickets_Handler)->get_ticket_max_purchase($tickets[0]->ID)) { 
+						
+						if(0 === (get_qty_available($ticket_ids[0]))) { 
 							$i++;
+						}
+*/
+
+						$tickets = Tribe__Tickets__Tickets::get_all_event_tickets($ticket_page->ID);
+						
+						$class = '';
+				
+						if($tickets[0]->stock <= 0) { 
+							$class = ' so-thumb ';
 						}
 						
 						if($i >= $ticketcount) {
@@ -66,6 +72,7 @@ get_header(); ?>
 						echo 'hide';
 					}
 					?>" href="<?php the_permalink(); ?>">
+						
 					<?php the_post_thumbnail( 'medium','style=max-width:100%;height:auto;');?>
 					<div class="so-text">Sold Out</div>	
 					<h3><?php 
@@ -82,7 +89,7 @@ get_header(); ?>
 		    // Reset the global post object so that the rest of the page works correctly.
 		    wp_reset_postdata(); ?>
 		<?php endif; ?>
-		
+
 		<h2 class="has-text-align-center"><?php the_field('next_month_title');?></h2>	
 		
 		<?php
@@ -91,23 +98,20 @@ get_header(); ?>
 		?>
         	<div class="grid">
 		    <?php foreach( $overview_pages as $post ): setup_postdata($post); ?>
-			<?php $image = get_field('overview_image'); ?>
 			
 				<?php 
 				$ticket_pages = get_field('ticket_pages');
 				if( $ticket_pages ):
-					$ticketcount = 0;
 					$ticketcount = count($ticket_pages);
 					$i = 0;
-
 					foreach( $ticket_pages as $ticket_page ):
 					
 						$tickets = Tribe__Tickets__Tickets::get_all_event_tickets($ticket_page->ID);
-												
+						
 						$class = '';
-
-						if(0 === (new Tribe__Tickets__Tickets_Handler)->get_ticket_max_purchase($tickets[0]->ID)) { 
-							$i++;
+				
+						if($tickets[0]->stock <= 0) {
+							$class = ' so-thumb ';
 						}
 						
 						if($i >= $ticketcount) {
@@ -115,7 +119,7 @@ get_header(); ?>
 						}
 						
 					endforeach;
-
+					
 				endif;
 				?>
 			
@@ -123,13 +127,14 @@ get_header(); ?>
 					<?php
 					$today = date('Ymd');
 					$expiration = get_field('expiration_date');
-					$expiration = strtotime($expiration);
+					$expiration = strtotime($expiration . "+12hours");
 					$now = strtotime('now');
 					
 					if( $expiration < $now ) {
 						echo 'hide';
 					}
 					?>" href="<?php the_permalink(); ?>">
+						
 					<?php the_post_thumbnail( 'medium','style=max-width:100%;height:auto;');?>
 					<div class="so-text">Sold Out</div>	
 					<h3><?php 
@@ -146,77 +151,6 @@ get_header(); ?>
 		    // Reset the global post object so that the rest of the page works correctly.
 		    wp_reset_postdata(); ?>
 		<?php endif; ?>
-		
-		<?php if(get_field('third_month_title')) { ?>
-		<h2 class="has-text-align-center"><?php the_field('third_month_title');?></h2>	
-		
-		<?php
-		$overview_pages = get_field('third_month_overviews');
-		if( $overview_pages ): 
-		?>
-        	<div class="grid">
-		    <?php foreach( $overview_pages as $post ): setup_postdata($post); ?>
-			<?php $image = get_field('overview_image'); ?>
-			
-				<?php 
-				$ticket_pages = get_field('ticket_pages');
-				if( $ticket_pages ):
-					$ticketcount = count($ticket_pages);
-					$i = 0;
-					foreach( $ticket_pages as $ticket_page ):
-					
-						$tickets = Tribe__Tickets__Tickets::get_all_event_tickets($ticket_page->ID);
-												
-						$class = '';
-
-						if(0 === (new Tribe__Tickets__Tickets_Handler)->get_ticket_max_purchase($tickets[0]->ID)) { 
-							$i++;
-						}
-												
-						if($i >= $ticketcount) {
-							$class = ' so-thumb ';
-						}
-						
-					endforeach;
-					
-				endif;
-				?>
-			
-				<a class="grid-item <?php { echo $class; } ?> 
-					<?php
-					$today = date('Ymd');
-					$expiration = get_field('expiration_date');
-					$expiration = strtotime($expiration);
-					$now = strtotime('now');
-					
-					if( $expiration < $now ) {
-						echo 'hide';
-					}
-					?>" href="<?php the_permalink(); ?>">
-					<?php the_post_thumbnail( 'medium','style=max-width:100%;height:auto;');?>
-					<div class="so-text">Sold Out</div>	
-					<h3><?php 
-					if(get_field('title')) { 
-						echo get_field('title'); 
-					} else {
-						the_title();
-					}
-					?></h3>	
-				</a>
-		    <?php endforeach; ?>
-		    </div>
-		    <?php 
-		    // Reset the global post object so that the rest of the page works correctly.
-		    wp_reset_postdata(); ?>
-		<?php endif; ?>
-		<?php } ?>
-		
-		<?php
-		endwhile; // End of the loop.
-		?>
-		</div>
-		</main><!-- #main -->
-	</div><!-- #primary -->
 
 <?php
 do_action( 'storefront_sidebar' );

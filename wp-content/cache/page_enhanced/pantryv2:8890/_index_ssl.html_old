@@ -10,14 +10,13 @@
 
 <link rel="icon" type="image/png" href="/Users/bretthorner/web/pantryv2/wp-content/themes/storefront-child-theme-master/favicon.png">
 
-<title>Classes &#8211; The Pantry Seattle</title>
+<title>The Pantry Seattle</title>
 <link rel='dns-prefetch' href='//cdn.jsdelivr.net' />
 <link rel='dns-prefetch' href='//use.fontawesome.com' />
 <link rel='dns-prefetch' href='//fonts.googleapis.com' />
 <link rel='dns-prefetch' href='//s.w.org' />
 <link rel="alternate" type="application/rss+xml" title="The Pantry Seattle &raquo; Feed" href="https://pantryv2:8890/feed/" />
 <link rel="alternate" type="application/rss+xml" title="The Pantry Seattle &raquo; Comments Feed" href="https://pantryv2:8890/comments/feed/" />
-<link rel="alternate" type="application/rss+xml" title="The Pantry Seattle &raquo; Classes Comments Feed" href="https://pantryv2:8890/grid-page/classes/feed/" />
 		<script>
 			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/pantryv2:8890\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.4.2"}};
 			/*! This file is auto-generated */
@@ -377,8 +376,16 @@ img.emoji {
 </style>
 <link rel='stylesheet' id='storefront-icons-css'  href='https://pantryv2:8890/wp-content/themes/storefront/assets/css/base/icons.css?ver=2.5.7' media='all' />
 <link rel='stylesheet' id='storefront-fonts-css'  href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,300italic,400italic,600,700,900&#038;subset=latin%2Clatin-ext' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='https://pantryv2:8890/wp-includes/css/dashicons.min.css?ver=5.4.2' media='all' />
+<link rel='stylesheet' id='event-tickets-plus-tickets-css-css'  href='https://pantryv2:8890/wp-content/plugins/event-tickets-plus/src/resources/css/tickets.min.css?ver=5.0.1' media='all' />
+<link rel='stylesheet' id='event-tickets-tickets-rsvp-css-css'  href='https://pantryv2:8890/wp-content/plugins/event-tickets/src/resources/css/rsvp-v1.min.css?ver=5.0.1' media='all' />
 <link rel='stylesheet' id='tribe-common-skeleton-style-css'  href='https://pantryv2:8890/wp-content/plugins/event-tickets/common/src/resources/css/common-skeleton.min.css?ver=4.12.9' media='all' />
 <link rel='stylesheet' id='tribe-tooltip-css'  href='https://pantryv2:8890/wp-content/plugins/event-tickets/common/src/resources/css/tooltip.min.css?ver=4.12.9' media='all' />
+<link rel='stylesheet' id='tribe-common-full-style-css'  href='https://pantryv2:8890/wp-content/plugins/event-tickets/common/src/resources/css/common-full.min.css?ver=4.12.9' media='all' />
+<link rel='stylesheet' id='event-tickets-tickets-css-css'  href='https://pantryv2:8890/wp-content/plugins/event-tickets/src/resources/css/tickets.min.css?ver=5.0.1' media='all' />
+<link rel='stylesheet' id='event-tickets-rsvp-css'  href='https://pantryv2:8890/wp-content/plugins/event-tickets/src/resources/css/rsvp.min.css?ver=5.0.1' media='all' />
+<link rel='stylesheet' id='event-tickets-tpp-css-css'  href='https://pantryv2:8890/wp-content/plugins/event-tickets/src/resources/css/tpp.min.css?ver=5.0.1' media='all' />
+<link rel='stylesheet' id='TribeEventsWooTickets-css'  href='https://pantryv2:8890/wp-content/plugins/event-tickets-plus/src/resources/css/wootickets.min.css?ver=4.5.0.1' media='all' />
 <link rel='stylesheet' id='ccfwoo-style-css'  href='https://pantryv2:8890/wp-content/plugins/checkout-countdown-pro/functions/../assets/checkout-countdown.min.css?ver=3.1.1' media='all' />
 <style id='ccfwoo-style-inline-css'>
 .checkout-countdown-wrapper.checkout-countdown-bar {
@@ -609,13 +616,12 @@ img.emoji {
 <link rel='https://api.w.org/' href='https://pantryv2:8890/wp-json/' />
 <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://pantryv2:8890/xmlrpc.php?rsd" />
 <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://pantryv2:8890/wp-includes/wlwmanifest.xml" /> 
-<link rel='next' title='To Go' href='https://pantryv2:8890/grid-page/to-go/' />
 <meta name="generator" content="WordPress 5.4.2" />
 <meta name="generator" content="WooCommerce 4.5.2" />
-<link rel="canonical" href="https://pantryv2:8890/grid-page/classes/" />
-<link rel='shortlink' href='https://pantryv2:8890/?p=22650' />
-<link rel="alternate" type="application/json+oembed" href="https://pantryv2:8890/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fpantryv2%3A8890%2Fgrid-page%2Fclasses%2F" />
-<link rel="alternate" type="text/xml+oembed" href="https://pantryv2:8890/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fpantryv2%3A8890%2Fgrid-page%2Fclasses%2F&#038;format=xml" />
+<link rel="canonical" href="https://pantryv2:8890/" />
+<link rel='shortlink' href='https://pantryv2:8890/' />
+<link rel="alternate" type="application/json+oembed" href="https://pantryv2:8890/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fpantryv2%3A8890%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://pantryv2:8890/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fpantryv2%3A8890%2F&#038;format=xml" />
 <meta name="et-api-version" content="v1"><meta name="et-api-origin" content="https://pantryv2:8890"><link rel="https://theeventscalendar.com/" href="https://pantryv2:8890/wp-json/tribe/tickets/v1/" />	<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
 	
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -630,7 +636,15 @@ img.emoji {
 
 </head>
 
-    <body class="grid-page-template-default single single-grid-page postid-22650 wp-embed-responsive theme-storefront woocommerce-no-js tribe-no-js storefront-full-width-content storefront-align-wide right-sidebar woocommerce-active" >
+	<style>
+		body {
+			padding-top: 63px !important;
+			-webkit-background-size: cover !important;
+			background-size: cover !important;
+			background-position: center center;
+		}
+	</style>	
+    <body class="home page-template page-template-templates page-template-home page-template-templateshome-php page page-id-20 wp-embed-responsive theme-storefront woocommerce-no-js tribe-no-js storefront-full-width-content storefront-align-wide right-sidebar woocommerce-active" style="background-image: url('https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17165000/hands-1.jpg');">
 
 
 
@@ -641,446 +655,72 @@ img.emoji {
 
 	</header> -->
 
-	<div class="storefront-breadcrumb"><div class="col-full"><nav class="woocommerce-breadcrumb"><a href="https://pantryv2:8890">Home</a><span class="breadcrumb-separator"> / </span>Classes</nav></div></div>
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-        <header class="page-header" style="border: none;">
-            <h1><a href="https://pantryv2:8890" class="logo">The Pantry</a></h1>
-            
-            <h1 class="page-title">Classes</h1>
+			
+	<div id="content" class="site-content" tabindex="-1">
+		<div class="col-full">
+	    <main id="main" class="body wrapper" role="main">
+		    <a id="home-pane" href="#home-main">
+				<h1>The Pantry</h1>
+			</a>
+	        <header class="page-header">
+	            <h1><a href="https://pantryv2:8890" class="logo">The Pantry</a></h1>
+	            
+            <h1>A place to <em>cook</em>. And <em>eat</em>. And <em>learn</em>.</h1>	
+	        </header>
+	
+        <div id="home-main">
+            <article class="page">
+                <div class="page-body columns">
+                    
+<p>Here at the Pantry, we call ourselves a community kitchen. For us, that means we do many things: cooking classes focusing on traditional food crafts and technique, five-course family-style dinners, culinary camp for the kids, power lunches for makers, food swaps, and cookbook club potluck suppers. Basically anything we can think of to get our neighbors around the table, breaking bread and building community.</p>
 
-        </header>
-        
-        <div class="entry-content">	
-				
-		<h2 class="has-text-align-center">October</h2>	
-		
-		        	<div class="grid">
-		    			
-							
-				<a class="grid-item  so-thumb  
-					hide" href="https://pantryv2:8890/overview/23225/">
-					<img width="300" height="188" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/13200616/rosemary-web-video-300x188.jpg" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/13200616/rosemary-web-video-300x188.jpg 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/13200616/rosemary-web-video-1024x640.jpg 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/13200616/rosemary-web-video-768x480.jpg 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/13200616/rosemary-web-video-416x260.jpg 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/13200616/rosemary-web-video.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>Fall Risotto</h3>	
-				</a>
-		    			
-							
-				<a class="grid-item  
-					hide" href="https://pantryv2:8890/overview/the-german-table/">
-					<img width="300" height="188" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/15161847/cabbage-web-video-300x188.jpg" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/15161847/cabbage-web-video-300x188.jpg 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/15161847/cabbage-web-video-1024x640.jpg 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/15161847/cabbage-web-video-768x480.jpg 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/15161847/cabbage-web-video-416x260.jpg 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/15161847/cabbage-web-video.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>The German Table</h3>	
-				</a>
-		    			
-							
-				<a class="grid-item  
-					hide" href="https://pantryv2:8890/overview/japanese-curry/">
-					<img width="300" height="188" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/19170111/carrots-video-1024x640-1-300x188.jpg" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/19170111/carrots-video-1024x640-1-300x188.jpg 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/19170111/carrots-video-1024x640-1-768x480.jpg 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/19170111/carrots-video-1024x640-1-416x260.jpg 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/19170111/carrots-video-1024x640-1.jpg 1024w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>Japanese Curry</h3>	
-				</a>
-		    			
-							
-				<a class="grid-item  
-					hide" href="https://pantryv2:8890/overview/street-food-pakistan-october/">
-					<img width="300" height="188" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17165956/peas-video-2-300x188.jpg" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17165956/peas-video-2-300x188.jpg 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17165956/peas-video-2-1024x640.jpg 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17165956/peas-video-2-768x480.jpg 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17165956/peas-video-2-416x260.jpg 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17165956/peas-video-2.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>Street Food: Pakistan</h3>	
-				</a>
-		    			
-							
-				<a class="grid-item  
-					" href="https://pantryv2:8890/overview/hainanese-chicken-rice/">
-					<img width="300" height="188" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/03161529/ginger-video-300x188.jpg" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/03161529/ginger-video-300x188.jpg 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/03161529/ginger-video-1024x640.jpg 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/03161529/ginger-video-768x480.jpg 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/03161529/ginger-video-416x260.jpg 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/03161529/ginger-video.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>Hainanese Chicken & Rice</h3>	
-				</a>
-		    			
-							
-				<a class="grid-item  so-thumb  
-					hide" href="https://pantryv2:8890/overview/indian-kathi-rolls/">
-					<img width="300" height="188" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17165859/rolling-pin-video-2-300x188.jpg" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17165859/rolling-pin-video-2-300x188.jpg 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17165859/rolling-pin-video-2-1024x640.jpg 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17165859/rolling-pin-video-2-768x480.jpg 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17165859/rolling-pin-video-2-416x260.jpg 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17165859/rolling-pin-video-2.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>Indian Kathi Rolls</h3>	
-				</a>
-		    			
-							
-				<a class="grid-item  
-					" href="https://pantryv2:8890/overview/tex-mex-classics-fajitas/">
-					<img width="300" height="188" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/03161523/onions-video-300x188.jpg" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/03161523/onions-video-300x188.jpg 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/03161523/onions-video-1024x640.jpg 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/03161523/onions-video-768x480.jpg 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/03161523/onions-video-416x260.jpg 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/03161523/onions-video.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>Tex Mex Classics: Fajitas</h3>	
-				</a>
-		    			
-							
-				<a class="grid-item  
-					" href="https://pantryv2:8890/overview/chinese-takeout-mushu-pork/">
-					<img width="300" height="188" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/03161529/ginger-video-300x188.jpg" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/03161529/ginger-video-300x188.jpg 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/03161529/ginger-video-1024x640.jpg 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/03161529/ginger-video-768x480.jpg 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/03161529/ginger-video-416x260.jpg 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/03161529/ginger-video.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>Chinese Takeout: Mushu Pork</h3>	
-				</a>
-		    			
-							
-				<a class="grid-item  
-					hide" href="https://pantryv2:8890/overview/cooking-with-kids-ravioli/">
-					<img width="300" height="188" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17165947/parsley-web-video-2-300x188.jpg" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17165947/parsley-web-video-2-300x188.jpg 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17165947/parsley-web-video-2-1024x640.jpg 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17165947/parsley-web-video-2-768x480.jpg 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17165947/parsley-web-video-2-416x260.jpg 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17165947/parsley-web-video-2.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>Cooking With Kids: Ravioli</h3>	
-				</a>
-		    			
-							
-				<a class="grid-item  
-					hide" href="https://pantryv2:8890/overview/southern-layer-cakes/">
-					<img width="300" height="188" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170357/cinnamon-video-2-300x188.jpg" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170357/cinnamon-video-2-300x188.jpg 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170357/cinnamon-video-2-1024x640.jpg 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170357/cinnamon-video-2-768x480.jpg 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170357/cinnamon-video-2-416x260.jpg 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170357/cinnamon-video-2.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>Southern Layer Cakes</h3>	
-				</a>
-		    			
-							
-				<a class="grid-item  
-					hide" href="https://pantryv2:8890/overview/the-unhumble-soup/">
-					<img width="300" height="188" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170217/garlic-web-video-1-300x188.jpg" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170217/garlic-web-video-1-300x188.jpg 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170217/garlic-web-video-1-1024x640.jpg 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170217/garlic-web-video-1-768x480.jpg 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170217/garlic-web-video-1-416x260.jpg 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170217/garlic-web-video-1.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>The Unhumble Soup</h3>	
-				</a>
-		    			
-							
-				<a class="grid-item  
-					hide" href="https://pantryv2:8890/overview/steakhouse-classics/">
-					<img width="300" height="188" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170003/potatoes-video-1-300x188.jpg" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170003/potatoes-video-1-300x188.jpg 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170003/potatoes-video-1-1024x640.jpg 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170003/potatoes-video-1-768x480.jpg 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170003/potatoes-video-1-416x260.jpg 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170003/potatoes-video-1.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>Steakhouse Classics</h3>	
-				</a>
-		    			
-							
-				<a class="grid-item  
-					hide" href="https://pantryv2:8890/overview/badass-bartending-calvados-rye/">
-					<img width="300" height="188" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/01132645/jermaine-video-300x188.png" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/01132645/jermaine-video-300x188.png 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/01132645/jermaine-video-1024x640.png 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/01132645/jermaine-video-768x480.png 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/01132645/jermaine-video-416x260.png 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/01132645/jermaine-video.png 1200w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>Badass Bartending: Calvados & Rye</h3>	
-				</a>
-		    			
-							
-				<a class="grid-item  
-					hide" href="https://pantryv2:8890/overview/cooking-with-kids-cream-puffs/">
-					<img width="300" height="188" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/03161517/vanilla-beans-video-300x188.jpg" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/03161517/vanilla-beans-video-300x188.jpg 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/03161517/vanilla-beans-video-1024x640.jpg 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/03161517/vanilla-beans-video-768x480.jpg 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/03161517/vanilla-beans-video-416x260.jpg 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/03161517/vanilla-beans-video.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>Cooking With Kids: Cream Puffs</h3>	
-				</a>
-		    			
-							
-				<a class="grid-item  so-thumb  
-					hide" href="https://pantryv2:8890/overview/baking-202-hand-pulled-strudel/">
-					<img width="300" height="188" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170446/Users/bretthorner/web/apples-video-2-300x188.jpg" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170446/Users/bretthorner/web/apples-video-2-300x188.jpg 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170446/Users/bretthorner/web/apples-video-2-1024x640.jpg 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170446/Users/bretthorner/web/apples-video-2-768x480.jpg 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170446/Users/bretthorner/web/apples-video-2-416x260.jpg 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170446/Users/bretthorner/web/pantryv2les-video-2.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>Baking 202: Hand-Pulled Strudel</h3>	
-				</a>
-		    			
-							
-				<a class="grid-item  
-					hide" href="https://pantryv2:8890/overview/happy-hour-italian-white-wines/">
-					<img width="300" height="188" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170246/janet-video-1-300x188.jpg" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170246/janet-video-1-300x188.jpg 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170246/janet-video-1-1024x640.jpg 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170246/janet-video-1-768x480.jpg 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170246/janet-video-1-416x260.jpg 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170246/janet-video-1.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>Happy Hour: Italian White Wines</h3>	
-				</a>
-		    			
-							
-				<a class="grid-item  
-					hide" href="https://pantryv2:8890/overview/sunday-suppers-swedish-meatballs/">
-					<img width="300" height="188" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/15161844/garlic2-video-300x188.jpg" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/15161844/garlic2-video-300x188.jpg 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/15161844/garlic2-video-1024x640.jpg 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/15161844/garlic2-video-768x480.jpg 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/15161844/garlic2-video-416x260.jpg 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/15161844/garlic2-video.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>Sunday Suppers: Swedish Meatballs</h3>	
-				</a>
-		    			
-							
-				<a class="grid-item  so-thumb  
-					hide" href="https://pantryv2:8890/overview/spanish-tapas/">
-					<img width="300" height="188" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/15161630/bread-web-video-300x188.jpg" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/15161630/bread-web-video-300x188.jpg 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/15161630/bread-web-video-1024x640.jpg 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/15161630/bread-web-video-768x480.jpg 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/15161630/bread-web-video-416x260.jpg 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/15161630/bread-web-video.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>Spanish Tapas</h3>	
-				</a>
-		    			
-							
-				<a class="grid-item  
-					hide" href="https://pantryv2:8890/overview/jewish-comfort-food/">
-					<img width="300" height="188" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/19184150/tomatoes-video-3-300x188.jpg" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/19184150/tomatoes-video-3-300x188.jpg 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/19184150/tomatoes-video-3-1024x640.jpg 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/19184150/tomatoes-video-3-768x480.jpg 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/19184150/tomatoes-video-3-416x260.jpg 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/19184150/tomatoes-video-3.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>Jewish Comfort Food</h3>	
-				</a>
-		    			
-							
-				<a class="grid-item  so-thumb  
-					hide" href="https://pantryv2:8890/overview/a-persian-fall-feast/">
-					<img width="300" height="186" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/30161727/leeks-video-resized-300x186.jpg" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/30161727/leeks-video-resized-300x186.jpg 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/30161727/leeks-video-resized-1024x634.jpg 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/30161727/leeks-video-resized-768x476.jpg 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/30161727/leeks-video-resized-1536x951.jpg 1536w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/30161727/leeks-video-resized-416x258.jpg 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/30161727/leeks-video-resized.jpg 1800w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>A Persian Fall Feast</h3>	
-				</a>
-		    			
-							
-				<a class="grid-item  
-					hide" href="https://pantryv2:8890/overview/palestinian-feast/">
-					<img width="300" height="188" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/15215459/mint-video-300x188.jpg" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/15215459/mint-video-300x188.jpg 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/15215459/mint-video-1024x640.jpg 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/15215459/mint-video-768x480.jpg 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/15215459/mint-video-416x260.jpg 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/15215459/mint-video.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>Palestinian Feast</h3>	
-				</a>
-		    			
-							
-				<a class="grid-item  
-					hide" href="https://pantryv2:8890/overview/preservation-kitchen-fermentation/">
-					<img width="300" height="188" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/01132854/preserves-video-300x188.jpg" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/01132854/preserves-video-300x188.jpg 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/01132854/preserves-video-1024x640.jpg 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/01132854/preserves-video-768x480.jpg 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/01132854/preserves-video-416x260.jpg 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/01132854/preserves-video.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>Preservation Kitchen: Fermentation</h3>	
-				</a>
-		    			
-							
-				<a class="grid-item  
-					hide" href="https://pantryv2:8890/overview/happy-hour-thanksgiving-day-wines/">
-					<img width="300" height="188" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170246/janet-video-1-300x188.jpg" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170246/janet-video-1-300x188.jpg 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170246/janet-video-1-1024x640.jpg 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170246/janet-video-1-768x480.jpg 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170246/janet-video-1-416x260.jpg 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170246/janet-video-1.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>Happy Hour: Thanksgiving Day Wines</h3>	
-				</a>
-		    			
-							
-				<a class="grid-item  so-thumb  
-					" href="https://pantryv2:8890/overview/gnocchi-workshop-ricotta-gnocchi/">
-					<img width="300" height="188" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17165852/ricotta-video-3-300x188.jpg" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17165852/ricotta-video-3-300x188.jpg 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17165852/ricotta-video-3-1024x640.jpg 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17165852/ricotta-video-3-768x480.jpg 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17165852/ricotta-video-3-416x260.jpg 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17165852/ricotta-video-3.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>Gnocchi Workshop: Ricotta Gnocchi</h3>	
-				</a>
-		    			
-							
-				<a class="grid-item  
-					hide" href="https://pantryv2:8890/overview/pasta-workshop-pici-and-strozzapreti/">
-					<img width="300" height="187" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/19191218/pasta-web-video-4-300x187.jpg" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/19191218/pasta-web-video-4-300x187.jpg 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/19191218/pasta-web-video-4-1024x640.jpg 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/19191218/pasta-web-video-4-768x480.jpg 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/19191218/pasta-web-video-4-1536x960.jpg 1536w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/19191218/pasta-web-video-4-2048x1280.jpg 2048w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/19191218/pasta-web-video-4-416x260.jpg 416w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>Pasta Workshop: Pici and Strozzapreti</h3>	
-				</a>
-		    		    </div>
-		    				
-		<h2 class="has-text-align-center">November</h2>	
-		
-		        	<div class="grid">
-		    						
-							
-				<a class="grid-item  
-					" href="https://pantryv2:8890/overview/cooking-with-kids-bagels-november/">
-					<img width="300" height="188" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170357/cinnamon-video-2-300x188.jpg" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170357/cinnamon-video-2-300x188.jpg 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170357/cinnamon-video-2-1024x640.jpg 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170357/cinnamon-video-2-768x480.jpg 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170357/cinnamon-video-2-416x260.jpg 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170357/cinnamon-video-2.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>Cooking with Kids: Bagels</h3>	
-				</a>
-		    						
-							
-				<a class="grid-item  
-					" href="https://pantryv2:8890/overview/happy-hour-thanksgiving-wines-november/">
-					<img width="300" height="188" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170246/janet-video-1-300x188.jpg" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170246/janet-video-1-300x188.jpg 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170246/janet-video-1-1024x640.jpg 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170246/janet-video-1-768x480.jpg 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170246/janet-video-1-416x260.jpg 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170246/janet-video-1.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>Happy Hour: Thanksgiving Wines</h3>	
-				</a>
-		    						
-							
-				<a class="grid-item  
-					" href="https://pantryv2:8890/overview/pasta-workshop-filled-pasta-november/">
-					<img width="300" height="188" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170430/abby-pasta-video-2-300x188.jpg" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170430/abby-pasta-video-2-300x188.jpg 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170430/abby-pasta-video-2-1024x640.jpg 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170430/abby-pasta-video-2-768x480.jpg 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170430/abby-pasta-video-2-416x260.jpg 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170430/abby-pasta-video-2.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>Pasta Workshop: Filled Pasta</h3>	
-				</a>
-		    						
-							
-				<a class="grid-item  
-					" href="https://pantryv2:8890/overview/spanish-tapas-november/">
-					<img width="300" height="188" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/15161630/bread-web-video-300x188.jpg" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/15161630/bread-web-video-300x188.jpg 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/15161630/bread-web-video-1024x640.jpg 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/15161630/bread-web-video-768x480.jpg 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/15161630/bread-web-video-416x260.jpg 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/15161630/bread-web-video.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>Spanish Tapas</h3>	
-				</a>
-		    						
-							
-				<a class="grid-item  
-					" href="https://pantryv2:8890/overview/fall-risotto-november/">
-					<img width="300" height="188" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/13200616/rosemary-web-video-300x188.jpg" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/13200616/rosemary-web-video-300x188.jpg 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/13200616/rosemary-web-video-1024x640.jpg 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/13200616/rosemary-web-video-768x480.jpg 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/13200616/rosemary-web-video-416x260.jpg 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/13200616/rosemary-web-video.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>Fall Risotto</h3>	
-				</a>
-		    						
-							
-				<a class="grid-item  
-					" href="https://pantryv2:8890/overview/the-grandma-slice-november/">
-					<img width="300" height="188" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/19184150/tomatoes-video-3-300x188.jpg" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/19184150/tomatoes-video-3-300x188.jpg 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/19184150/tomatoes-video-3-1024x640.jpg 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/19184150/tomatoes-video-3-768x480.jpg 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/19184150/tomatoes-video-3-416x260.jpg 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/19184150/tomatoes-video-3.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>The Grandma Slice</h3>	
-				</a>
-		    						
-							
-				<a class="grid-item  
-					" href="https://pantryv2:8890/overview/stuffed-parathas-november/">
-					<img width="300" height="188" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170003/potatoes-video-1-300x188.jpg" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170003/potatoes-video-1-300x188.jpg 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170003/potatoes-video-1-1024x640.jpg 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170003/potatoes-video-1-768x480.jpg 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170003/potatoes-video-1-416x260.jpg 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170003/potatoes-video-1.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>Stuffed Parathas</h3>	
-				</a>
-		    						
-							
-				<a class="grid-item  
-					" href="https://pantryv2:8890/overview/asian-bao-november/">
-					<img width="300" height="188" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17165940/mushrooms-video-1-300x188.jpg" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17165940/mushrooms-video-1-300x188.jpg 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17165940/mushrooms-video-1-1024x640.jpg 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17165940/mushrooms-video-1-768x480.jpg 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17165940/mushrooms-video-1-416x260.jpg 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17165940/mushrooms-video-1.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>Asian Bao</h3>	
-				</a>
-		    						
-							
-				<a class="grid-item  
-					" href="https://pantryv2:8890/overview/good-fish-shellfish-101-november/">
-					<img width="300" height="188" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/08120004/oysters-video-300x188.jpg" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/08120004/oysters-video-300x188.jpg 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/08120004/oysters-video-1024x640.jpg 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/08120004/oysters-video-768x480.jpg 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/08120004/oysters-video-416x260.jpg 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/08120004/oysters-video.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>Good Fish: Shellfish 101</h3>	
-				</a>
-		    						
-							
-				<a class="grid-item  
-					" href="https://pantryv2:8890/overview/dumpling-camp-contemporary-dumplings-november/">
-					<img width="300" height="188" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/19183906/scallion-video-2-300x188.jpg" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/19183906/scallion-video-2-300x188.jpg 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/19183906/scallion-video-2-1024x640.jpg 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/19183906/scallion-video-2-768x480.jpg 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/19183906/scallion-video-2-416x260.jpg 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/19183906/scallion-video-2.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>Dumpling Camp: Contemporary Dumplings</h3>	
-				</a>
-		    						
-							
-				<a class="grid-item  
-					" href="https://pantryv2:8890/overview/japanese-bar-food-november/">
-					<img width="300" height="188" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/08115958/kale-video-300x188.jpg" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/08115958/kale-video-300x188.jpg 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/08115958/kale-video-1024x640.jpg 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/08115958/kale-video-768x480.jpg 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/08115958/kale-video-416x260.jpg 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/08115958/kale-video.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>Japanese Bar Food </h3>	
-				</a>
-		    						
-							
-				<a class="grid-item  
-					" href="https://pantryv2:8890/overview/a-persian-fall-feast-november/">
-					<img width="300" height="188" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/12110623/spring-onlion-video-300x188.png" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/12110623/spring-onlion-video-300x188.png 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/12110623/spring-onlion-video-1024x640.png 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/12110623/spring-onlion-video-768x480.png 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/12110623/spring-onlion-video-416x260.png 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/12110623/spring-onlion-video.png 1200w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>A Persian Fall Feast</h3>	
-				</a>
-		    						
-							
-				<a class="grid-item  
-					" href="https://pantryv2:8890/overview/cooking-with-kids-asian-dumplings-november/">
-					<img width="300" height="188" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/03161529/ginger-video-300x188.jpg" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/03161529/ginger-video-300x188.jpg 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/03161529/ginger-video-1024x640.jpg 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/03161529/ginger-video-768x480.jpg 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/03161529/ginger-video-416x260.jpg 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/03161529/ginger-video.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>Cooking with Kids: Asian Dumplings</h3>	
-				</a>
-		    						
-							
-				<a class="grid-item  
-					" href="https://pantryv2:8890/overview/baking-202-hand-pulled-strudel-november/">
-					<img width="300" height="188" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17165526/Users/bretthorner/web/apples-video-1-300x188.jpg" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17165526/Users/bretthorner/web/apples-video-1-300x188.jpg 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17165526/Users/bretthorner/web/apples-video-1-1024x640.jpg 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17165526/Users/bretthorner/web/apples-video-1-768x480.jpg 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17165526/Users/bretthorner/web/apples-video-1-416x260.jpg 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17165526/Users/bretthorner/web/pantryv2les-video-1.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>Baking 202: Hand-Pulled Strudel</h3>	
-				</a>
-		    						
-							
-				<a class="grid-item  
-					" href="https://pantryv2:8890/overview/homemade-holiday-candy-november/">
-					<img width="300" height="188" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/13093317/spoons-video-300x188.jpg" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/13093317/spoons-video-300x188.jpg 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/13093317/spoons-video-1024x640.jpg 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/13093317/spoons-video-768x480.jpg 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/13093317/spoons-video-416x260.jpg 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/13093317/spoons-video.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>Homemade Holiday Candy</h3>	
-				</a>
-		    						
-							
-				<a class="grid-item  
-					" href="https://pantryv2:8890/overview/contemporary-filipino-november/">
-					<img width="300" height="188" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/15161844/garlic2-video-300x188.jpg" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/15161844/garlic2-video-300x188.jpg 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/15161844/garlic2-video-1024x640.jpg 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/15161844/garlic2-video-768x480.jpg 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/15161844/garlic2-video-416x260.jpg 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/15161844/garlic2-video.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>Contemporary Filipino</h3>	
-				</a>
-		    						
-							
-				<a class="grid-item  
-					" href="https://pantryv2:8890/overview/badass-bartending-cozy-fall-cocktails-november/">
-					<img width="300" height="188" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/01132645/jermaine-video-300x188.png" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/01132645/jermaine-video-300x188.png 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/01132645/jermaine-video-1024x640.png 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/01132645/jermaine-video-768x480.png 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/01132645/jermaine-video-416x260.png 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/01132645/jermaine-video.png 1200w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>Badass Bartending: Cozy Fall Cocktails</h3>	
-				</a>
-		    						
-							
-				<a class="grid-item  
-					" href="https://pantryv2:8890/overview/cooking-with-kids-fruit-galettes-november/">
-					<img width="300" height="188" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/10141050/pear-video-300x188.jpg" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/10141050/pear-video-300x188.jpg 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/10141050/pear-video-1024x640.jpg 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/10141050/pear-video-768x480.jpg 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/10141050/pear-video-416x260.jpg 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/10141050/pear-video.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>Cooking with Kids: Fruit Galettes</h3>	
-				</a>
-		    						
-							
-				<a class="grid-item  
-					" href="https://pantryv2:8890/overview/sunday-suppers-cheese-souffle-november/">
-					<img width="300" height="188" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/19171114/eggs-web-video-1-1-300x188.jpg" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/19171114/eggs-web-video-1-1-300x188.jpg 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/19171114/eggs-web-video-1-1-1024x640.jpg 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/19171114/eggs-web-video-1-1-768x480.jpg 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/19171114/eggs-web-video-1-1-416x260.jpg 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/19171114/eggs-web-video-1-1.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>Sunday Suppers: Cheese Souffle</h3>	
-				</a>
-		    						
-							
-				<a class="grid-item  
-					" href="https://pantryv2:8890/overview/thanksgiving-its-all-about-the-sides-november/">
-					<img width="300" height="188" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/08120009/delicata-video-300x188.jpg" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/08120009/delicata-video-300x188.jpg 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/08120009/delicata-video-1024x640.jpg 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/08120009/delicata-video-768x480.jpg 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/08120009/delicata-video-416x260.jpg 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/08120009/delicata-video.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>Thanksgiving: It’s All About The Sides</h3>	
-				</a>
-		    						
-							
-				<a class="grid-item  
-					" href="https://pantryv2:8890/overview/the-thanksgiving-centerpiece-november/">
-					<img width="300" height="188" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/13113738/renee-video-300x188.jpg" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/13113738/renee-video-300x188.jpg 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/13113738/renee-video-1024x640.jpg 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/13113738/renee-video-768x480.jpg 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/13113738/renee-video-416x260.jpg 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/13113738/renee-video.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>The Thanksgiving Centerpiece</h3>	
-				</a>
-		    						
-							
-				<a class="grid-item  
-					" href="https://pantryv2:8890/overview/pasta-workshop-pici-and-strozzapreti-november/">
-					<img width="300" height="187" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/19190627/pasta-web-video-3-300x187.jpg" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/19190627/pasta-web-video-3-300x187.jpg 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/19190627/pasta-web-video-3-1024x640.jpg 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/19190627/pasta-web-video-3-768x480.jpg 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/19190627/pasta-web-video-3-1536x960.jpg 1536w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/19190627/pasta-web-video-3-2048x1280.jpg 2048w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/19190627/pasta-web-video-3-416x260.jpg 416w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>Pasta Workshop: Pici and Strozzapreti</h3>	
-				</a>
-		    						
-							
-				<a class="grid-item  
-					" href="https://pantryv2:8890/overview/the-west-african-table-november/">
-					<img width="300" height="188" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/08164028/collards-video-300x188.jpg" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/08164028/collards-video-300x188.jpg 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/08164028/collards-video-1024x640.jpg 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/08164028/collards-video-768x480.jpg 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/08164028/collards-video-416x260.jpg 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/08164028/collards-video.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>The West African Kitchen</h3>	
-				</a>
-		    						
-							
-				<a class="grid-item  
-					" href="https://pantryv2:8890/overview/chinese-hand-pulled-noodles-november/">
-					<img width="300" height="188" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170340/chiles3-video-2-300x188.jpg" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170340/chiles3-video-2-300x188.jpg 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170340/chiles3-video-2-1024x640.jpg 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170340/chiles3-video-2-768x480.jpg 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170340/chiles3-video-2-416x260.jpg 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170340/chiles3-video-2.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>Chinese Hand-Pulled Noodles</h3>	
-				</a>
-		    						
-							
-				<a class="grid-item  
-					" href="https://pantryv2:8890/overview/cooking-with-kids-pop-tarts-november/">
-					<img width="300" height="188" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/10141054/hazelnuts-video-300x188.jpg" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/10141054/hazelnuts-video-300x188.jpg 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/10141054/hazelnuts-video-1024x640.jpg 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/10141054/hazelnuts-video-768x480.jpg 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/10141054/hazelnuts-video-416x260.jpg 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/10141054/hazelnuts-video.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>Cooking with Kids: Pop Tarts</h3>	
-				</a>
-		    						
-							
-				<a class="grid-item  
-					" href="https://pantryv2:8890/overview/cooking-with-kids-enchiladas-november/">
-					<img width="300" height="188" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/19191040/butter-lettuce-video-4-300x188.jpg" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/19191040/butter-lettuce-video-4-300x188.jpg 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/19191040/butter-lettuce-video-4-1024x640.jpg 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/19191040/butter-lettuce-video-4-768x480.jpg 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/19191040/butter-lettuce-video-4-416x260.jpg 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/19191040/butter-lettuce-video-4.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>Cooking with Kids: Enchiladas</h3>	
-				</a>
-		    						
-							
-				<a class="grid-item  
-					" href="https://pantryv2:8890/overview/indian-kathi-rolls-november/">
-					<img width="300" height="188" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17165859/rolling-pin-video-2-300x188.jpg" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17165859/rolling-pin-video-2-300x188.jpg 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17165859/rolling-pin-video-2-1024x640.jpg 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17165859/rolling-pin-video-2-768x480.jpg 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17165859/rolling-pin-video-2-416x260.jpg 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17165859/rolling-pin-video-2.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>Indian Kathi Rolls</h3>	
-				</a>
-		    						
-							
-				<a class="grid-item  
-					" href="https://pantryv2:8890/overview/palestinian-feast-november/">
-					<img width="300" height="188" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/15215459/mint-video-300x188.jpg" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/15215459/mint-video-300x188.jpg 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/15215459/mint-video-1024x640.jpg 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/15215459/mint-video-768x480.jpg 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/15215459/mint-video-416x260.jpg 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/15215459/mint-video.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>Palestinian Feast</h3>	
-				</a>
-		    						
-							
-				<a class="grid-item  
-					" href="https://pantryv2:8890/overview/pie-therapy-fall-pies-november/">
-					<img width="300" height="188" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/08120021/brian-video-300x188.jpg" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/08120021/brian-video-300x188.jpg 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/08120021/brian-video-1024x640.jpg 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/08120021/brian-video-768x480.jpg 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/08120021/brian-video-416x260.jpg 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/10/08120021/brian-video.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>Pie Therapy: Fall Pies</h3>	
-				</a>
-		    						
-							
-				<a class="grid-item  so-thumb  
-					" href="https://pantryv2:8890/overview/the-new-york-bagel-shop-november/">
-					<img width="300" height="188" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170304/lemons-video-2-300x188.jpg" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170304/lemons-video-2-300x188.jpg 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170304/lemons-video-2-1024x640.jpg 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170304/lemons-video-2-768x480.jpg 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170304/lemons-video-2-416x260.jpg 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170304/lemons-video-2.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>The New York Bagel Shop</h3>	
-				</a>
-		    						
-							
-				<a class="grid-item  
-					" href="https://pantryv2:8890/overview/homemade-pretzel-workshop-november/">
-					<img width="300" height="188" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170224/grana-video-2-300x188.jpg" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170224/grana-video-2-300x188.jpg 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170224/grana-video-2-1024x640.jpg 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170224/grana-video-2-768x480.jpg 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170224/grana-video-2-416x260.jpg 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/17170224/grana-video-2.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>Homemade Pretzel Workshop</h3>	
-				</a>
-		    						
-							
-				<a class="grid-item  so-thumb  
-					" href="https://pantryv2:8890/overview/cooking-with-kids-holiday-cookies-november/">
-					<img width="300" height="188" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/03161517/vanilla-beans-video-300x188.jpg" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/03161517/vanilla-beans-video-300x188.jpg 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/03161517/vanilla-beans-video-1024x640.jpg 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/03161517/vanilla-beans-video-768x480.jpg 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/03161517/vanilla-beans-video-416x260.jpg 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/09/03161517/vanilla-beans-video.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>Cooking with Kids: Holiday Cookies </h3>	
-				</a>
-		    						
-							
-				<a class="grid-item  
-					" href="https://pantryv2:8890/overview/buche-de-noel-november/">
-					<img width="300" height="188" src="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/19190319/chocolate-video-4-300x188.jpg" class="attachment-medium size-medium wp-post-image" alt="" style="max-width:100%;height:auto;" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/19190319/chocolate-video-4-300x188.jpg 300w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/19190319/chocolate-video-4-1024x640.jpg 1024w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/19190319/chocolate-video-4-768x480.jpg 768w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/19190319/chocolate-video-4-416x260.jpg 416w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/19190319/chocolate-video-4.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px" />					<div class="so-text">Sold Out</div>	
-					<h3>Buche de Noel</h3>	
-				</a>
-		    		    </div>
-		    				
-				
-				</div>
-		</main><!-- #main -->
-	</div><!-- #primary -->
 
+
+<p>We love welcoming you into our kitchen — but with the safety and welfare of our community and our staff at the forefront of our minds,<strong>&nbsp;we have suspended our in-person classes until we can be assured that it’s once again safe to gather together around our tables.</strong>&nbsp;Since that won&#8217;t stop us from hanging out with you, we&#8217;ve taken our&nbsp;<a href="http://thepantry-test.herokuapp.com/classes-new/">CLASSES</a>&nbsp;online! Join us for our new&nbsp;interactive cooking classes held in your own home, through Zoom.</p>
+
+
+
+<p>And while we will miss breaking bread with you in person, we see no reason to stop feeding you!&nbsp;<strong>We’ve turned our favorite dishes into pop-ups, serving take-away versions of that menu.</strong> Each&nbsp;<a href="http://thepantry-test.herokuapp.com/to-go-new">TO GO MEAL</a>&nbsp;is made family style with care and love (and lots of hand-washing) by the Pantry’s chefs and instructors.&nbsp;</p>
+
+
+
+<p>As we’ve been busy preparing meals, we’ve also recognized the gap in services that are out there for some of our most vulnerable populations. We are now donating (and delivering) meals to Gifts of Hope and Edible Hope. To learn more about our mission, please visit our&nbsp;<a href="http://thepantry-test.herokuapp.com/community/">COMMUNITY</a>&nbsp;page.</p>
+
+
+
+<figure class="wp-block-image size-large is-resized"><img src="https://thepantry-test.herokuapp.com/wp-content/uploads/2020/08/signature.png" alt="" class="wp-image-17156" width="158" height="20" srcset="https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/21202146/signature.png 315w, https://thepantry-photos.s3.amazonaws.com/wp-content/uploads/2020/08/21202146/signature-300x38.png 300w" sizes="(max-width: 158px) 100vw, 158px" /></figure>
+
+
+
+<p></p>
+                </div>
+                <ul class="homeLinks">
+	                
+	                					    <li><a href="/grid-page/classes/">See Our Class Schedule</a></li>
+										    <li><a href="/grid-page/to-go">See Our To-Go Meals Schedule</a></li>
+										    <li><a href="/about">About Our Team</a></li>
+						                
+                </ul>
+            </article>
+        </div>
+	    </main>
+<script>
+	jQuery(function ($) {
+		$(document).ready(function(){
+			$("#home-pane").click(function(e){
+				e.preventDefault();
+				$('body').addClass('hidehome');
+			});
+		});
+	});
+</script>	
 </main>
 <header class="pageFooter">
 <nav>
     <ul>
 	    
 		<li id="menu-item-5152" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5152"><a href="https://pantryv2:8890/about/">About</a></li>
-<li id="menu-item-23083" class="menu-item menu-item-type-post_type menu-item-object-grid-page current-menu-item menu-item-23083"><a href="https://pantryv2:8890/grid-page/classes/" aria-current="page">Classes</a></li>
+<li id="menu-item-23083" class="menu-item menu-item-type-post_type menu-item-object-grid-page menu-item-23083"><a href="https://pantryv2:8890/grid-page/classes/">Classes</a></li>
 <li id="menu-item-23082" class="menu-item menu-item-type-post_type menu-item-object-grid-page menu-item-23082"><a href="https://pantryv2:8890/grid-page/to-go/">To Go</a></li>
 <li id="menu-item-19745" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19745"><a href="https://pantryv2:8890/wine-club/">Wine Club</a></li>
 <li id="menu-item-5151" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5151"><a href="https://pantryv2:8890/private-events/">Private Events</a></li>
@@ -1148,7 +788,7 @@ img.emoji {
             </div>
         </div>
     </div>
-</div><script type="application/ld+json">{"@context":"https:\/\/schema.org\/","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"name":"Home","@id":"https:\/\/pantryv2:8890"}},{"@type":"ListItem","position":2,"item":{"name":"Classes","@id":"https:\/\/pantryv2:8890\/grid-page\/classes\/"}}]}</script><script> /* <![CDATA[ */var tribe_l10n_datatables = {"aria":{"sort_ascending":": activate to sort column ascending","sort_descending":": activate to sort column descending"},"length_menu":"Show _MENU_ entries","empty_table":"No data available in table","info":"Showing _START_ to _END_ of _TOTAL_ entries","info_empty":"Showing 0 to 0 of 0 entries","info_filtered":"(filtered from _MAX_ total entries)","zero_records":"No matching records found","search":"Search:","all_selected_text":"All items on this page were selected. ","select_all_link":"Select all pages","clear_selection":"Clear Selection.","pagination":{"all":"All","next":"Next","previous":"Previous"},"select":{"rows":{"0":"","_":": Selected %d rows","1":": Selected 1 row"}},"datepicker":{"dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesMin":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Prev","currentText":"Today","closeText":"Done","today":"Today","clear":"Clear"},"registration_prompt":"There is unsaved attendee information. Are you sure you want to continue?"};/* ]]> */ </script>	<script type="text/javascript">
+</div><script type="application/ld+json">{"@context":"https:\/\/schema.org\/","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"name":"Home","@id":"https:\/\/pantryv2:8890"}}]}</script><script> /* <![CDATA[ */var tribe_l10n_datatables = {"aria":{"sort_ascending":": activate to sort column ascending","sort_descending":": activate to sort column descending"},"length_menu":"Show _MENU_ entries","empty_table":"No data available in table","info":"Showing _START_ to _END_ of _TOTAL_ entries","info_empty":"Showing 0 to 0 of 0 entries","info_filtered":"(filtered from _MAX_ total entries)","zero_records":"No matching records found","search":"Search:","all_selected_text":"All items on this page were selected. ","select_all_link":"Select all pages","clear_selection":"Clear Selection.","pagination":{"all":"All","next":"Next","previous":"Previous"},"select":{"rows":{"0":"","_":": Selected %d rows","1":": Selected 1 row"}},"datepicker":{"dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesMin":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Prev","currentText":"Today","closeText":"Done","today":"Today","clear":"Clear"},"registration_prompt":"There is unsaved attendee information. Are you sure you want to continue?"};/* ]]> */ </script>	<script type="text/javascript">
 		var c = document.body.className;
 		c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
 		document.body.className = c;
@@ -1180,6 +820,21 @@ var wc_cart_fragments_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax
 <script src='https://pantryv2:8890/wp-content/themes/storefront/assets/js/skip-link-focus-fix.min.js?ver=20130115'></script>
 <script src='https://pantryv2:8890/wp-content/themes/storefront/assets/js/vendor/pep.min.js?ver=0.4.3'></script>
 <script>
+var TribeTicketsPlus = {"ajaxurl":"https:\/\/pantryv2:8890\/wp-admin\/admin-ajax.php","save_attendee_info_nonce":"2ae0446202"};
+</script>
+<script src='https://pantryv2:8890/wp-content/plugins/event-tickets-plus/vendor/jquery.deparam/jquery.deparam.js?ver=5.0.1'></script>
+<script src='https://pantryv2:8890/wp-content/plugins/woocommerce/assets/js/jquery-cookie/jquery.cookie.min.js?ver=1.4.1'></script>
+<script src='https://pantryv2:8890/wp-content/plugins/event-tickets-plus/src/resources/js/meta.min.js?ver=5.0.1'></script>
+<script src='https://pantryv2:8890/wp-content/plugins/event-tickets/common/src/resources/js/tribe-common.min.js?ver=4.12.9'></script>
+<script src='https://pantryv2:8890/wp-content/plugins/event-tickets-plus/src/resources/js/v2/tickets-meta.js?ver=5.0.1'></script>
+<script src='https://pantryv2:8890/wp-content/plugins/event-tickets-plus/src/resources/js/attendees-list.min.js?ver=5.0.1'></script>
+<script src='https://pantryv2:8890/wp-content/plugins/event-tickets/src/resources/js/ticket-details.min.js?ver=5.0.1'></script>
+<script src='https://pantryv2:8890/wp-content/plugins/event-tickets/src/resources/js/rsvp.min.js?ver=5.0.1'></script>
+<script>
+var tribe_tickets_rsvp_strings = {"attendee":"Attendee %1$s"};
+</script>
+<script src='https://pantryv2:8890/wp-content/plugins/event-tickets/src/resources/js/rsvp.min.js?ver=5.0.1'></script>
+<script>
 var ccfwooLocal = {"ccfwoo_minutes":"7","top_banner_font_color":"#ffffff","top_banner_background_color":"#4c73aa","countdown_text":"We can only hold your item for {minutes} minutes and {seconds} seconds!","expired_text":"We can only hold on to items for so long. Please try again","banner_message_text":"","enable_banner_message":"off","leading_zero":"off","cart_count":"0","countdown_locations":{"cart-notice":"cart-notice"},"loading_html":"<div class=\"ccfwoo-loading-dots\">\n    <div class=\"ccfwoo-loading-dots--dot\"><\/div>\n    <div class=\"ccfwoo-loading-dots--dot\"><\/div>\n    <div class=\"ccfwoo-loading-dots--dot\"><\/div>\n<\/div>","expired_message_seconds":"6"};
 </script>
 <script src='https://pantryv2:8890/wp-content/plugins/checkout-countdown-pro/functions/../assets/checkout-countdown.min.js?ver=3.1.1'></script>
@@ -1196,5 +851,5 @@ Performance optimized by W3 Total Cache. Learn more: https://www.boldgrid.com/w3
 
 Page Caching using disk: enhanced 
 
-Served from: pantryv2 @ 2020-10-28 13:03:21 by W3 Total Cache
+Served from: pantryv2 @ 2020-10-30 09:54:14 by W3 Total Cache
 -->
