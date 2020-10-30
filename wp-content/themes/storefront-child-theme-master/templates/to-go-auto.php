@@ -32,7 +32,7 @@ get_header(); ?>
 		    'meta_query' => array(
 		        array(
 		            'key'     => 'expiration_date',
-		            'compare' => '>=',
+		            'compare' => '>',
 		            'value'   => $today,
 		        ),
 		         array(
