@@ -80,6 +80,10 @@ get_header(); ?>
 					$class = '';
 			
 					if($tickets[0]->stock <= 0) { 
+						$i++;
+					}
+					
+					if($i >= $ticketcount) {
 						$class = ' so-thumb ';
 					}
 						
@@ -152,17 +156,27 @@ get_header(); ?>
 						$tickets = Tribe__Tickets__Tickets::get_all_event_tickets($ticket_page->ID);
 						
 						$class = '';
-				
+						
+/*
+						echo '<pre>';
+						print_r($tickets[0]);
+						echo '</pre>';
+*/
+						
 						if($tickets[0]->stock <= 0) { 
-							$class = ' so-thumb ';
+							$i++;
 						}
 						
+						if($i >= $ticketcount) {
+							$class = ' so-thumb ';
+						}
+
 					endforeach;
 					
 				endif;
 			?>
 				<a class="grid-item <?php { echo $class; } ?>" href="<?php the_permalink(); ?>">
-						
+					
 					<?php the_post_thumbnail( 'medium','style=max-width:100%;height:auto;');?>
 					<div class="so-text">Sold Out</div>	
 					<h3><?php echo get_field('title'); ?></h3>	

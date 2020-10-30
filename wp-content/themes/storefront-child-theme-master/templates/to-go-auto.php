@@ -80,6 +80,10 @@ get_header(); ?>
 					$class = '';
 			
 					if($tickets[0]->stock <= 0) { 
+						$i++;
+					}
+					
+					if($i >= $ticketcount) {
 						$class = ' so-thumb ';
 					}
 						
@@ -154,6 +158,10 @@ get_header(); ?>
 						$class = '';
 				
 						if($tickets[0]->stock <= 0) { 
+							$i++;
+						}
+						
+						if($i >= $ticketcount) {
 							$class = ' so-thumb ';
 						}
 						
