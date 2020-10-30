@@ -13,7 +13,9 @@ get_header(); ?>
             <h1><a href="<?php echo site_url();?>" class="logo">The Pantry</a></h1>
             
             <h1 class="page-title"><?php the_title();?></h1>
-
+            <pre>
+			<?php print_r(tribe_events_has_soldout('32839'));?>
+			</pre>	
         </header>
         
         <div class="entry-content">	
@@ -60,6 +62,7 @@ get_header(); ?>
 					$i = 0;
 					foreach( $ticket_pages as $ticket_page ):
 					
+/*
 						$ticket_ids = tribe_get_woo_tickets_ids($ticket_page->ID);
 												
 						$class = '';
@@ -71,6 +74,15 @@ get_header(); ?>
 						if($i >= $ticketcount) {
 							$class = ' so-thumb ';
 						}
+*/
+
+					$tickets = Tribe__Tickets__Tickets::get_all_event_tickets($ticket_page->ID);
+						
+					$class = '';
+			
+					if($tickets[0]->stock <= 0) { 
+						$class = ' so-thumb ';
+					}
 						
 					endforeach;
 					
@@ -131,16 +143,12 @@ get_header(); ?>
 					$ticketcount = count($ticket_pages);
 					$i = 0;
 					foreach( $ticket_pages as $ticket_page ):
-					
-						$ticket_ids = tribe_get_woo_tickets_ids($ticket_page->ID);
-												
+																	
+						$tickets = Tribe__Tickets__Tickets::get_all_event_tickets($ticket_page->ID);
+						
 						$class = '';
-						
-						if(0 === (get_qty_available($ticket_ids[0]))) { 
-							$i++;
-						}
-						
-						if($i >= $ticketcount) {
+				
+						if($tickets[0]->stock <= 0) { 
 							$class = ' so-thumb ';
 						}
 						
