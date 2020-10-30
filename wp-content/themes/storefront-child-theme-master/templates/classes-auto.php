@@ -17,8 +17,6 @@ get_header(); ?>
         
         <div class="entry-content">	
 	        		
-		<h2 class="has-text-align-center"><?php echo date('F'); ?></h2>	
-		<div class="grid">
 		<?php
 		$today = date('Ymd'); 
 		$first_day = new DateTime('first day of this month');
@@ -52,6 +50,10 @@ get_header(); ?>
 		
 		$query = new WP_Query($args);
 	    if ( $query->have_posts() ) {
+		?>
+		<h2 class="has-text-align-center"><?php echo date('F'); ?></h2>	
+		<div class="grid">
+		<?php
 		    while ( $query->have_posts() ) { $query->the_post();
 		    	$ticket_pages = get_field('ticket_pages');
 				if( $ticket_pages ):
@@ -94,12 +96,14 @@ get_header(); ?>
 			<?php
 
 	    	}
+	    	?>
+	    </div>
+	    <?php
 	    }
 		wp_reset_postdata();
 		?>
-        </div>
-		<h2 class="has-text-align-center"><?php echo date('F',strtotime('first day of +1 month')); ?></h2>	
-		<div class="grid">
+        
+		
 		<?php
 		
 		$first_day = date("Ymd", strtotime(date('m', strtotime('+1 month')).'/01/'.date('Y').' 00:00:00'));
@@ -134,6 +138,10 @@ get_header(); ?>
 		
 		$query = new WP_Query($args);
 	    if ( $query->have_posts() ) {
+		?>
+		<h2 class="has-text-align-center"><?php echo date('F',strtotime('first day of +1 month')); ?></h2>	
+		<div class="grid">
+		<?php
 		    while ( $query->have_posts() ) { $query->the_post();		        
 		        $ticket_pages = get_field('ticket_pages');
 				if( $ticket_pages ):
@@ -161,11 +169,13 @@ get_header(); ?>
 				</a>
 			<?php
 	    	}
+	    	?>
+	    </div>
+	    <?php
 	    }
 		wp_reset_postdata();
 		?>
 		
-        </div>
 		
 		</div>
 		</main><!-- #main -->
