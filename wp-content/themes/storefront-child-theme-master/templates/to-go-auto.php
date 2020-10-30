@@ -1,6 +1,6 @@
 <?php
 /**
- * Template name: Auto Class Page Template
+ * Template name: Auto To-Go Page Template
  *
  * @package storefront
  */
@@ -12,7 +12,7 @@ get_header(); ?>
         <header class="page-header" style="border: none;">
             <h1><a href="<?php echo site_url();?>" class="logo">The Pantry</a></h1>
             
-            <h1 class="page-title">Classes</h1>
+            <h1 class="page-title">To-Go</h1>
         </header>
         
         <div class="entry-content">	
