@@ -45,7 +45,7 @@ get_header(); ?>
 	            array(
 	                'taxonomy' => 'overview-categories',
 	                'field' => 'slug',
-	                'terms' => 'class'
+	                'terms' => 'to-go'
 	            ),
 	        ),
 		);
@@ -127,7 +127,7 @@ get_header(); ?>
 	            array(
 	                'taxonomy' => 'overview-categories',
 	                'field' => 'slug',
-	                'terms' => 'class'
+	                'terms' => 'to-go'
 	            ),
 	        ),
 		);
