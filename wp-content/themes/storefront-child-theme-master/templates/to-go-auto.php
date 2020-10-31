@@ -110,8 +110,8 @@ get_header(); ?>
 		
 		<?php
 		
-		$first_day = date("Ymd", strtotime(date('m', strtotime('+1 month')).'/01/'.date('Y').' 00:00:00'));
-		$last_day = date('Ymt',strtotime('next month'));
+		$first_day = date("Ymd", strtotime(date('m', strtotime('last day of next month')).'/01/'.date('Y').' 00:00:00'));
+		$last_day = date('Ymt',strtotime('last day of next month'));
 
 		$args = array(
 		    'post_type' => 'overview',
