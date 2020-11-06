@@ -52,6 +52,16 @@ get_header(); ?>
 										
 					$class = '';
 					
+					// echo get_field('end_date');
+					
+					$myDateTime = DateTime::createFromFormat('m/d/Y g:i a', (get_field('end_date')));
+					$newDateString = $myDateTime->format('d-m-Y');
+					
+/*
+					echo '<br>';
+					echo date('m/d/Y g:i a');
+*/
+					
 					if( $expiration < $now ) {
 						$class = 'hide';
 					}

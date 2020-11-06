@@ -44,6 +44,9 @@ jQuery.noConflict();
 			$(input).ColorPicker({
 				onChange: function (hsb, hex, rgb) {
 					$(input).val('#' + hex);
+				},
+				onHide: function () {
+					$(input).trigger('change');
 				}
 			}).bind('keyup', function(){
 				$(this).ColorPickerSetColor(this.value);

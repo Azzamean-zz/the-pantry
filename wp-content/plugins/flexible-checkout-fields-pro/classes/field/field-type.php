@@ -70,7 +70,7 @@ class Flexible_Checkout_Fields_Pro_Field_Type
 		$options = array();
 		if ( class_exists( 'Flexible_Checkout_Fields_Field_Options' ) ) {
 			$field_options = new Flexible_Checkout_Fields_Field_Options( $field['option'] );
-			$options       = $field_options->get_options_as_array();
+			$options       = $field_options->get_options_as_array( false );
 		} else {
 			// Only for compability with older FCF Free plugin.
 			$options_row = explode( "\n", $field['option'] );

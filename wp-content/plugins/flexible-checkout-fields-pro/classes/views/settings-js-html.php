@@ -1,7 +1,7 @@
 <?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 html += '<div class="field_file_types" style="display:none;">';
 html += '<label for="file_types_' + field_slug + '"><?php _e( 'Allowed file types', 'flexible-checkout-fields-pro' ) ?></label>';
-html += '<input type="text" id="option_' + field_slug + '" name="inspire_checkout_fields[settings]['+ field_section +'][' + field_slug + '][file_types]" value="" class=""field_file_types" data-qa-id="field-file-types" />';
+html += '<input type="text" id="option_' + field_slug + '" name="inspire_checkout_fields[settings]['+ field_section +'][' + field_slug + '][file_types]" value="" class="field_file_types" data-qa-id="field-file-types" />';
 html += '<p class="description"><?php _e( 'Format: comma separated list WITHOUT space. Example: <code>pdf,doc,jpg</code>', 'flexible-checkout-fields-pro' ) ?></p>';
 html += '</div>';
 html += '<div class="field_file_size" style="display:none;">';

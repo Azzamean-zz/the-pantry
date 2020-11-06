@@ -26,12 +26,12 @@ if(typeof window.smart_manager_product === 'undefined'){
 }
 
 
-jQuery(document).on('sm_top_bar_loaded', '#sm_top_bar', function() {
+jQuery(document).on('sm_dashboard_change', '#sm_editor_grid', function() {
 	
 	//Code to hide the 'show variations' checkbox
 	if( window.smart_manager.current_selected_dashboard != 'product' ) {
-		if( jQuery("#sm_top_bar_action_btns_misc").find('#sm_products_show_variations_span').length > 0 ) {
-			jQuery("#sm_top_bar_action_btns_misc #sm_products_show_variations_span").remove();
+		if( jQuery("#sm_nav_bar > .sm_beta_left").find('#sm_products_show_variations_span').length > 0 ) {
+			jQuery("#sm_nav_bar > .sm_beta_left #sm_products_show_variations_span").remove();
 		}
 		return;
 	}
@@ -427,11 +427,11 @@ Smart_Manager.prototype.showVariationsHtml = function() {
 		show_variations_checked = 'checked';
 	}
 
-	if( jQuery("#sm_top_bar_action_btns_misc").find('#sm_products_show_variations_span').length == 0 ) {
-		jQuery("#sm_top_bar_action_btns_misc").append("<label id='sm_products_show_variations_span' style='font-weight:400 !important;vertical-align: -webkit-baseline-middle;padding: 0.5em;'> <input type='checkbox' name='sm_products_show_variations' id='sm_products_show_variations' value='sm_products_show_variations' style='margin-left:5px;margin-right: 0.2em;' "+ show_variations_checked +"> Show Variations </label>");
+	if( jQuery("#sm_nav_bar > .sm_beta_left").find('#sm_products_show_variations_span').length == 0 ) {
+		jQuery("#sm_nav_bar > .sm_beta_left").append("<label id='sm_products_show_variations_span' style='font-weight:400 !important;vertical-align: -webkit-baseline-middle;padding: 0.5em;'> <input type='checkbox' name='sm_products_show_variations' id='sm_products_show_variations' value='sm_products_show_variations' style='margin-left:5px;margin-right: 0.2em;height: 1.5em;width: 1.5em;' "+ show_variations_checked +"> Show Variations </label>");
 	}
 
-	jQuery('#sm_top_bar_action_btns_misc #sm_products_show_variations').off('change').on('change',function() {
+	jQuery('#sm_nav_bar > .sm_beta_left #sm_products_show_variations').off('change').on('change',function() {
 
 		if( jQuery('#sm_products_show_variations').is(":checked") ) {
 			window.smart_manager.currentDashboardModel.tables.posts.where.post_type = ['product', 'product_variation'];

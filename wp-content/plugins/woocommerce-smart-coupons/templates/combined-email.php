@@ -3,7 +3,7 @@
  * Coupon Email Content
  *
  * @author      StoreApps
- * @version     1.2.0
+ * @version     1.3.0
  * @package     woocommerce-smart-coupons/templates/plain/
  */
 
@@ -183,7 +183,7 @@ if ( ! empty( $receiver_details ) ) {
 			?>
 			<div>
 			<?php
-				echo $sender_message; // phpcs:ignore
+				echo wp_unslash( $sender_message ); // phpcs:ignore
 			?>
 			</div>
 			<?php

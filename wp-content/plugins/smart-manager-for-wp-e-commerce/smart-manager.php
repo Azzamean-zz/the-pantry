@@ -3,7 +3,7 @@
 * Plugin Name: Smart Manager For WooCommerce – Stock Management, Bulk Edit & more...
 * Plugin URI: https://www.storeapps.org/product/smart-manager/
 * Description: <strong>Lite Version Installed</strong>. The #1 and a powerful tool to manage stock, inventory from a single place. Super quick and super easy.
-* Version: 4.4.5
+* Version: 4.6.1
 * Author: StoreApps
 * Author URI: https://www.storeapps.org/
 * Text Domain: smart-manager-for-wp-e-commerce
@@ -12,7 +12,7 @@
 * Requires at least: 4.8.0
 * Tested up to: 5.5.1
 * WC requires at least: 2.0.0
-* WC tested up to: 4.5.2
+* WC tested up to: 4.6.1
 
 * Copyright (c) 2010 - 2020 StoreApps. All rights reserved.
 * License: GNU General Public License v3.0
@@ -325,6 +325,23 @@ function sm_plugins_loaded() {
 		include_once 'new/smart-manager.php';
 	}
 	
+	//Code for handling the in app offer
+	if ( ! class_exists( 'SA_In_App_Offer' ) && file_exists( (dirname( __FILE__ )) . '/new/classes/sa-includes/class-sa-in-app-offer.php' ) ) {
+		include_once 'new/classes/sa-includes/class-sa-in-app-offer.php';
+		$args = array(
+			'file'           => (dirname( __FILE__ )) . '/new/classes/sa-includes/',
+			'prefix'         => 'sm',				// prefix/slug of your plugin
+			'option_name'    => 'sa_offer_halloween_2020',
+			'campaign'       => 'sa_halloween_2020',
+			'start'          => '2020-10-30',
+			'end'            => '2020-11-03',
+			'is_plugin_page' => ( !empty($_GET['page']) && ( 'smart-manager-woo' === $_GET['page'] || 'smart-manager-wpsc' === $_GET['page'] || 'smart-manager' === $_GET['page'] || 'sm-storeapps-plugins' === $_GET['page'] ) ) ? true : false,	// page where you want to show offer, do not send this if no plugin page is there and want to show offer on Products page
+		);
+		$sa_offer = SA_In_App_Offer::get_instance( $args );
+		if ( ! defined( 'SA_OFFER_VISIBLE' ) ) {
+			define( 'SA_OFFER_VISIBLE', $sa_offer->is_show() );
+		}
+	}
 
 	if ( defined('SMPRO') && SMPRO === true ) {
 
@@ -352,23 +369,6 @@ function sm_plugins_loaded() {
 		//filters for handling quick_help_widget
 		add_filter( 'sa_active_plugins_for_quick_help', 'sm_quick_help_widget', 10, 2 );
 		add_filter( 'sa_is_page_for_notifications', 'sm_sa_is_page_for_notifications', 10, 2 );
-
-
-		//Code for handling the in app offer
-		if ( ! class_exists( 'SA_In_App_Offer' ) ) {
-			include_once 'pro/sa-includes/class-sa-in-app-offer.php';
-			$args = array(
-				'file'           => __FILE__,
-				'prefix'         => 'sm',				// prefix/slug of your plugin
-				'option_name'    => 'sa_offer_halloween_2019',
-				'campaign'       => 'sa_halloween_2019',
-				'start'          => '2019-10-29',
-				'end'            => '2019-11-01',
-				'is_plugin_page' => ( !empty($_GET['page']) && ( 'smart-manager-woo' === $_GET['page'] || 'smart-manager-wpsc' === $_GET['page'] || 'smart-manager' === $_GET['page'] || 'sm-storeapps-plugins' === $_GET['page'] ) ) ? true : false,	// page where you want to show offer, do not send this if no plugin page is there and want to show offer on Products page
-			);
-
-			SA_In_App_Offer::get_instance( $args );
-		}
 	}
 }
 
@@ -911,7 +911,7 @@ function sm_add_promo_notices() {
 
 		$is_pro_available = is_sa_smart_manager_pro_available();
 
-		if ( 'smart-manager' === $_GET['page'] && empty( $_GET['sm_old'] ) && $is_pro_available === false ) {
+		if ( 'smart-manager' === $_GET['page'] && empty( $_GET['sm_old'] ) && $is_pro_available === false && ( ! defined('SA_OFFER_VISIBLE') || ( defined('SA_OFFER_VISIBLE') && SA_OFFER_VISIBLE === false ) ) ) {
 
 			$sm_inline_update_count = get_option( 'sm_inline_update_count', 0 );
 
@@ -930,9 +930,11 @@ function sm_add_promo_notices() {
 
 			echo '<style type="text/css">
 					.sm_design_notice {
+						display: none;
 						width: 60%;
 						background-color: #FFF !important;
 						margin-top: 1em !important;
+						margin-bottom: 1em !important;
 						padding: 1em;
 						box-shadow: 0 0 7px 0 rgba(0, 0, 0, .2);
 						font-size: 1.1em;
@@ -1108,7 +1110,7 @@ function smart_woo_add_modules_admin_pages() {
 	if( ( defined( 'SMBETAPRO' ) && SMBETAPRO === true ) || ( ( !empty( $current_user->roles[0] ) && $current_user->roles[0] == 'administrator' ) || ( !empty( $current_user_caps ) && $current_user_caps == 'administrator') ) ) {
 		$page = add_menu_page( 'Smart Manager', 'Smart Manager','read', 'smart-manager', 'sm_admin_page', 'dashicons-performance', $position );
 
-		if( defined( 'SMBETAPRO' ) && SMBETAPRO !== true ) {
+		if( defined( 'SMBETAPRO' ) && SMBETAPRO !== true && ( ! defined('SA_OFFER_VISIBLE') || ( defined('SA_OFFER_VISIBLE') && SA_OFFER_VISIBLE === false ) ) ) {
 			add_submenu_page( 'smart-manager', __( '<span class="sm_pricing_icon"> 🔥 </span> Go Pro', 'smart-manager-for-wp-e-commerce' ), __( '<span class="sm_pricing_icon"> 🔥 </span> Go Pro', 'smart-manager-for-wp-e-commerce' ), 'manage_options', 'smart-manager-pricing', 'sm_admin_page' );
 		}
 

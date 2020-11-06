@@ -1,7 +1,7 @@
 <?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 case 'select':
 	jQuery(this).closest('.field-item').find('.element-option').addClass('show');
-	jQuery(this).closest('.field-item').find('.field_placeholder').hide();
+	jQuery(this).closest('.field-item').find('.field_placeholder').show();
 	jQuery(this).closest('.field-item').find('.field_placeholder label').html('<?php _e( 'Placeholder', 'flexible-checkout-fields-pro' ); ?>');
 break;
 

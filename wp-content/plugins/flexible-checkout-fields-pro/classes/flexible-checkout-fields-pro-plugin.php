@@ -1,5 +1,7 @@
 <?php
 
+use WPDesk\FCF\Pro\Plugin as PluginPro;
+
 /**
  * Class Flexible_Checkout_Fields_Pro_Plugin
  */
@@ -73,6 +75,13 @@ class Flexible_Checkout_Fields_Pro_Plugin
 	 */
 	private $html_field_type;
 
+	/**
+	 * Instance of new version main class of plugin.
+	 *
+	 * @var PluginPro
+	 */
+	private $plugin_pro;
+
 
 	/**
 	 * Flexible_Checkout_Fields_Pro_Plugin constructor.
@@ -81,6 +90,7 @@ class Flexible_Checkout_Fields_Pro_Plugin
 	 */
 	public function __construct( FCFProVendor\WPDesk_Plugin_Info $plugin_info ) {
 		parent::__construct( $plugin_info );
+		$this->plugin_pro = new PluginPro( $plugin_info );
 	}
 
 	/**
@@ -146,6 +156,7 @@ class Flexible_Checkout_Fields_Pro_Plugin
 	 * Hooks.
 	 */
 	public function hooks() {
+		$this->plugin_pro->hooks();
 		parent::hooks();
 		$this->hooks_on_hookable_objects();
 	}
@@ -216,6 +227,7 @@ class Flexible_Checkout_Fields_Pro_Plugin
 
 		$this->add_hookable( new Flexible_Checkout_Fields_Pro_Datepicker_Validation() );
 
+		$this->plugin_pro->init();
 		parent::init();
 	}
 
@@ -269,6 +281,7 @@ class Flexible_Checkout_Fields_Pro_Plugin
 		if ( isset( $current_screen )
 			&& ( in_array( $current_screen->id, array(
 				'shop_order',
+				'shop_subscription',
 				'woocommerce_page_inspire_checkout_fields_settings',
 			), true ) )
 		) {

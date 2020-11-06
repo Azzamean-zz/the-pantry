@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit11f35d127879ae0edc2b68739cf4167a
+class ComposerStaticInitfb18ccf73003af31889669cae5a9ba8d
 {
     public static $prefixLengthsPsr4 = array (
         'P' => 
@@ -141,6 +141,10 @@ class ComposerStaticInit11f35d127879ae0edc2b68739cf4167a
         'FcfVendor\\WPDesk\\Helper\\Page\\SettingsPage' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-wpdesk-helper/src/Page/SettingsPage.php',
         'FcfVendor\\WPDesk\\Helper\\PrefixedHelperAsLibrary' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-wpdesk-helper/src/PrefixedHelperAsLibrary.php',
         'FcfVendor\\WPDesk\\Helper\\UpgradeSoonNotice' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-wpdesk-helper/src/UpgradeSoonNotice.php',
+        'FcfVendor\\WPDesk\\License\\Changelog\\Filter\\ByVersion' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-wpdesk-license/src/Changelog/Filter/ByVersion.php',
+        'FcfVendor\\WPDesk\\License\\Changelog\\Formatter' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-wpdesk-license/src/Changelog/Formatter.php',
+        'FcfVendor\\WPDesk\\License\\Changelog\\Parser' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-wpdesk-license/src/Changelog/Parser.php',
+        'FcfVendor\\WPDesk\\License\\Changelog\\Parser\\Line' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-wpdesk-license/src/Changelog/Parser/Line.php',
         'FcfVendor\\WPDesk\\License\\InstalledPlugins' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-wpdesk-license/src/InstalledPlugins.php',
         'FcfVendor\\WPDesk\\License\\Page\\Action' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-wpdesk-license/src/Page/Action.php',
         'FcfVendor\\WPDesk\\License\\Page\\LicensePage' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-wpdesk-license/src/Page/LicensePage.php',
@@ -280,9 +284,9 @@ class ComposerStaticInit11f35d127879ae0edc2b68739cf4167a
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit11f35d127879ae0edc2b68739cf4167a::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit11f35d127879ae0edc2b68739cf4167a::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit11f35d127879ae0edc2b68739cf4167a::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitfb18ccf73003af31889669cae5a9ba8d::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitfb18ccf73003af31889669cae5a9ba8d::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitfb18ccf73003af31889669cae5a9ba8d::$classMap;
 
         }, null, ClassLoader::class);
     }

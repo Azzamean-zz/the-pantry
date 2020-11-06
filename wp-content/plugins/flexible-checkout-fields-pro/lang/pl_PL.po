@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WooCommerce Flexible Checkout Fields PRO\n"
-"POT-Creation-Date: 2020-08-05 08:58+0200\n"
-"PO-Revision-Date: 2020-08-05 08:59+0200\n"
+"POT-Creation-Date: 2020-11-02 12:24+0100\n"
+"PO-Revision-Date: 2020-11-02 12:27+0100\n"
 "Last-Translator: Piotr Jabłonowski <piotr.jablonowski@wpdesk.net>\n"
 "Language-Team: Maciej Swoboda <maciej.swoboda@gmail.com>\n"
 "Language: pl_PL\n"
@@ -57,11 +57,11 @@ msgstr "Niedopuszczalny typ pliku %s dla %s"
 msgid "File uploaded"
 msgstr "Plik przesłany"
 
-#: classes/field/file/field-type.php:66
+#: classes/field/file/field-type.php:67
 msgid "File Upload"
 msgstr "Przesyłanie pliku"
 
-#: classes/field/file/field-type.php:68
+#: classes/field/file/field-type.php:69
 #, php-format
 msgid "Files will be saved to: %s"
 msgstr "Pliki będą zapisane do: %s"
@@ -83,29 +83,29 @@ msgid "Required Field"
 msgstr "Pole wymagane"
 
 #: classes/flexible-checkout-fields-conditional-logic.php:75
-#: classes/flexible-checkout-fields-pro-plugin.php:328
+#: classes/flexible-checkout-fields-pro-plugin.php:341
 #: classes/views/shipping-conditional-logic/shipping-conditional-logic.php:69
 msgid "No Shipping Zones or Global Methods"
 msgstr "Brak stref wysyłki lub metod globalnych"
 
 #: classes/flexible-checkout-fields-conditional-logic.php:76
-#: classes/flexible-checkout-fields-pro-plugin.php:329
+#: classes/flexible-checkout-fields-pro-plugin.php:342
 msgid "Select Shipping Zone"
 msgstr "Wybierz strefę wysyłki"
 
 #: classes/flexible-checkout-fields-conditional-logic.php:77
-#: classes/flexible-checkout-fields-pro-plugin.php:330
+#: classes/flexible-checkout-fields-pro-plugin.php:343
 #: classes/views/settings-field-java-script.php:492
 msgid "Select Shipping Method"
 msgstr "Wybierz metodę wysyłki"
 
 #: classes/flexible-checkout-fields-conditional-logic.php:78
-#: classes/flexible-checkout-fields-pro-plugin.php:331
+#: classes/flexible-checkout-fields-pro-plugin.php:344
 msgid "Shipping Methods"
 msgstr "Metody wysyłki"
 
 #: classes/flexible-checkout-fields-conditional-logic.php:79
-#: classes/flexible-checkout-fields-pro-plugin.php:332
+#: classes/flexible-checkout-fields-pro-plugin.php:345
 msgid "Shipping Zones"
 msgstr "Strefy wysyłki"
 
@@ -129,172 +129,172 @@ msgid "unchecked"
 msgstr "niezaznaczone"
 
 #: classes/flexible-checkout-fields-order-metabox.php:71
-#: tests/unit/test-order-metabox.php:651
+#: tests/unit/test-order-metabox.php:650
 msgid "Flexible Checkout Fields"
 msgstr "Flexible Checkout Fields"
 
-#: classes/flexible-checkout-fields-pro-plugin.php:235
+#: classes/flexible-checkout-fields-pro-plugin.php:247
 msgid "Settings"
 msgstr "Ustawienia"
 
-#: classes/flexible-checkout-fields-pro-plugin.php:237
+#: classes/flexible-checkout-fields-pro-plugin.php:249
 msgid "Docs"
 msgstr "Docs"
 
-#: classes/flexible-checkout-fields-pro-plugin.php:238
+#: classes/flexible-checkout-fields-pro-plugin.php:250
 msgid "Support"
 msgstr "Wsparcie"
 
-#: classes/flexible-checkout-fields-pro.php:115
+#: classes/flexible-checkout-fields-pro.php:124
 #: classes/views/settings-js-options.php:23
 msgid "Yes"
 msgstr "Tak"
 
-#: classes/flexible-checkout-fields-pro.php:244
+#: classes/flexible-checkout-fields-pro.php:253
 msgid "Before Customer Details"
 msgstr "Dane klienta (przed)"
 
-#: classes/flexible-checkout-fields-pro.php:245
+#: classes/flexible-checkout-fields-pro.php:254
 msgid "Before Customer Details Fields"
 msgstr "Przed polami sekcji Dane klienta"
 
-#: classes/flexible-checkout-fields-pro.php:252
+#: classes/flexible-checkout-fields-pro.php:262
 msgid "After Customer Details"
 msgstr "Dane klienta (po)"
 
-#: classes/flexible-checkout-fields-pro.php:253
+#: classes/flexible-checkout-fields-pro.php:263
 msgid "After Customer Details Fields"
 msgstr "Po polach sekcji Dane klienta"
 
-#: classes/flexible-checkout-fields-pro.php:260
+#: classes/flexible-checkout-fields-pro.php:271
 msgid "Before Billing Form"
 msgstr "Płatność (przed)"
 
-#: classes/flexible-checkout-fields-pro.php:261
+#: classes/flexible-checkout-fields-pro.php:272
 msgid "Before Billing Form Fields"
 msgstr "Przed polami sekcji Szczegóły płatności"
 
-#: classes/flexible-checkout-fields-pro.php:268
+#: classes/flexible-checkout-fields-pro.php:280
 msgid "After Billing Form"
 msgstr "Płatność (po)"
 
-#: classes/flexible-checkout-fields-pro.php:269
+#: classes/flexible-checkout-fields-pro.php:281
 msgid "After Billing Form Fields"
 msgstr "Po polach sekcji Szczegóły płatności"
 
-#: classes/flexible-checkout-fields-pro.php:276
+#: classes/flexible-checkout-fields-pro.php:289
 msgid "Before Shipping Form"
 msgstr "Wysyłka (przed)"
 
-#: classes/flexible-checkout-fields-pro.php:277
+#: classes/flexible-checkout-fields-pro.php:290
 msgid "Before Shipping Form Fields"
 msgstr "Przed polami sekcji Adres wysyłki"
 
-#: classes/flexible-checkout-fields-pro.php:284
+#: classes/flexible-checkout-fields-pro.php:298
 msgid "After Shipping Form"
 msgstr "Wysyłka (po)"
 
-#: classes/flexible-checkout-fields-pro.php:285
+#: classes/flexible-checkout-fields-pro.php:299
 msgid "After Shipping Form Fields"
 msgstr "Po polach sekcji Adres wysyłki"
 
-#: classes/flexible-checkout-fields-pro.php:292
+#: classes/flexible-checkout-fields-pro.php:307
 msgid "Before Registration Form"
 msgstr "Rejestracja (przed)"
 
-#: classes/flexible-checkout-fields-pro.php:293
+#: classes/flexible-checkout-fields-pro.php:308
 msgid "Before Registration Form Fields"
 msgstr "Przed polami sekcji Formularz rejestracji"
 
-#: classes/flexible-checkout-fields-pro.php:300
+#: classes/flexible-checkout-fields-pro.php:316
 msgid "After Registration Form"
 msgstr "Rejestracja (po)"
 
-#: classes/flexible-checkout-fields-pro.php:301
+#: classes/flexible-checkout-fields-pro.php:317
 msgid "After Registration Form Fields"
 msgstr "Po polach Formularz rejestracji"
 
-#: classes/flexible-checkout-fields-pro.php:308
+#: classes/flexible-checkout-fields-pro.php:325
 msgid "Before Order Notes"
 msgstr "Notatki (przed)"
 
-#: classes/flexible-checkout-fields-pro.php:309
+#: classes/flexible-checkout-fields-pro.php:326
 msgid "Before Order Notes Fields"
 msgstr "Przed polami sekcji Notatki do zamówienia"
 
-#: classes/flexible-checkout-fields-pro.php:316
+#: classes/flexible-checkout-fields-pro.php:334
 msgid "After Order Notes"
 msgstr "Notatki (po)"
 
-#: classes/flexible-checkout-fields-pro.php:317
+#: classes/flexible-checkout-fields-pro.php:335
 msgid "After Order Notes Fields"
 msgstr "Po polach Notatki do zamówienia"
 
-#: classes/flexible-checkout-fields-pro.php:324
+#: classes/flexible-checkout-fields-pro.php:343
 msgid "Before Submit"
 msgstr "Zatwierdź (przed)"
 
-#: classes/flexible-checkout-fields-pro.php:325
+#: classes/flexible-checkout-fields-pro.php:344
 msgid "Before Submit Fields"
 msgstr "Przed polami sekcji Kupuję"
 
-#: classes/flexible-checkout-fields-pro.php:332
+#: classes/flexible-checkout-fields-pro.php:352
 msgid "After Submit"
 msgstr "Zatwierdź (po)"
 
-#: classes/flexible-checkout-fields-pro.php:333
+#: classes/flexible-checkout-fields-pro.php:353
 msgid "After Submit Fields"
 msgstr "Po polach sekcji Kupuję"
 
-#: classes/flexible-checkout-fields-pro.php:492
+#: classes/flexible-checkout-fields-pro.php:516
 msgid "Missing Value"
 msgstr "Brak wartości"
 
-#: classes/flexible-checkout-fields-pro.php:547
+#: classes/flexible-checkout-fields-pro.php:571
 msgid "Checkbox"
 msgstr "Wybór (checkbox)"
 
-#: classes/flexible-checkout-fields-pro.php:548
+#: classes/flexible-checkout-fields-pro.php:572
 #: classes/views/settings-js-change.php:17
-#: classes/views/settings-js-options.php:21
+#: classes/views/settings-js-options.php:21 src/Pricing/views/settings.php:54
 msgid "Value"
 msgstr "Wartość"
 
-#: classes/flexible-checkout-fields-pro.php:554
+#: classes/flexible-checkout-fields-pro.php:578
 msgid "Radio button"
 msgstr "Wybór (radio)"
 
-#: classes/flexible-checkout-fields-pro.php:561
+#: classes/flexible-checkout-fields-pro.php:585
 msgid "Select (Drop Down)"
 msgstr "Lista rozwijana (select)"
 
-#: classes/flexible-checkout-fields-pro.php:568
+#: classes/flexible-checkout-fields-pro.php:592
 msgid "Date"
 msgstr "Data"
 
-#: classes/flexible-checkout-fields-pro.php:572
+#: classes/flexible-checkout-fields-pro.php:596
 msgid "Time"
 msgstr "Czas"
 
-#: classes/flexible-checkout-fields-pro.php:576
+#: classes/flexible-checkout-fields-pro.php:600
 msgid "Color Picker"
 msgstr "Wybór koloru"
 
-#: classes/flexible-checkout-fields-pro.php:581
+#: classes/flexible-checkout-fields-pro.php:605
 msgid "Headline"
 msgstr "Nagłówek"
 
-#: classes/flexible-checkout-fields-pro.php:589
+#: classes/flexible-checkout-fields-pro.php:613
 msgid "HTML"
 msgstr "HTML"
 
 #: classes/views/docs-metabox.php:4
 msgid "Knowledge Base"
-msgstr ""
+msgstr "Baza wiedzy"
 
 #: classes/views/docs-metabox.php:6
 msgid "Documentation"
-msgstr ""
+msgstr "Dokumentacja"
 
 #: classes/views/docs-metabox.php:17
 msgid "Adding Custom Fields"
@@ -302,23 +302,27 @@ msgstr "Dodawanie własnych pól"
 
 #: classes/views/docs-metabox.php:28
 msgid "Field Types"
-msgstr ""
+msgstr "Typy pól"
 
 #: classes/views/docs-metabox.php:39
 msgid "Conditional Logic"
 msgstr "Logika warunkowa"
 
-#: classes/views/docs-metabox.php:50 classes/views/settings-settings.php:3
-msgid "Custom Sections"
-msgstr ""
+#: classes/views/docs-metabox.php:50
+msgid "Assigning price to Custom Fields"
+msgstr "Przypisanie ceny do własnego pola"
 
-#: classes/views/docs-metabox.php:54
-msgid "Usage Examples"
-msgstr ""
+#: classes/views/docs-metabox.php:61 classes/views/settings-settings.php:3
+msgid "Custom Sections"
+msgstr "Dodatkowe sekcje"
 
 #: classes/views/docs-metabox.php:65
+msgid "Usage Examples"
+msgstr "Przykłady zastosowania"
+
+#: classes/views/docs-metabox.php:76
 msgid "Additional Agreements at the Checkout"
-msgstr ""
+msgstr "Dodatkowe checkboxy jako zgody"
 
 #: classes/views/order-additional-fields.php:7
 msgid "Additional checkout fields"
@@ -583,6 +587,86 @@ msgstr "Metoda wysyłki została wyłączona lub usunięta"
 msgid "No methods found for this zone"
 msgstr "Nie znaleziono metod dla tej strefy"
 
+#: src/Pricing/Field/FieldAbstract.php:95
+#, php-format
+msgid "Pricing options for %s"
+msgstr "Opcje ceny dla %s"
+
+#: src/Pricing/Field/FieldIntegration.php:116
+msgid "Fixed"
+msgstr "Stała kwota"
+
+#: src/Pricing/Field/FieldIntegration.php:117
+msgid "Percentage of Subtotal (ex. VAT)"
+msgstr "Procent sumy koszyka (bez VAT)"
+
+#: src/Pricing/Field/FieldIntegration.php:118
+msgid "Percentage of Subtotal (incl. VAT)"
+msgstr "Procent sumy koszyka (z VAT)"
+
+#: src/Pricing/Field/FieldIntegration.php:119
+msgid "Percentage of Total"
+msgstr "Procent sumy całkowitej"
+
+#: src/Pricing/Field/FieldIntegration.php:130
+msgid "None"
+msgstr "Brak"
+
+#: src/Pricing/Field/FieldIntegration.php:139
+msgid "Standard rates"
+msgstr "Standardowe stawki"
+
+#: src/Pricing/Settings.php:67
+msgid "Pricing"
+msgstr "Cena"
+
+#: src/Pricing/Type/TypeFixed.php:32
+#, php-format
+msgid "(%1$s %2$s ex. VAT)"
+msgstr "(%1$s %2$s bez VAT)"
+
+#: src/Pricing/Type/TypePercentSubtotalTaxed.php:42
+#, php-format
+msgid "%s%% of Subtotal incl. VAT"
+msgstr "%s%% sumy koszyka z VAT"
+
+#: src/Pricing/Type/TypePercentSubtotalTaxed.php:44
+#: src/Pricing/Type/TypePercentSubtotalUntaxed.php:42
+#, php-format
+msgid "%s%% of Subtotal"
+msgstr "%s%% sumy koszyka"
+
+#: src/Pricing/Type/TypePercentSubtotalUntaxed.php:44
+#, php-format
+msgid "%s%% of Subtotal ex. VAT"
+msgstr "%s%% sumy koszyka bez VAT"
+
+#: src/Pricing/Type/TypePercentTotal.php:40
+#, php-format
+msgid "%s%% of Total"
+msgstr "%s%% sumy całkowitej"
+
+#: src/Pricing/views/settings-disabled.php:11
+msgid "Price settings are not available for this type of field."
+msgstr "Opcje ceny nie są dostępne dla tego typu pola."
+
+#: src/Pricing/views/settings-js.php:11
+msgid ""
+"The price settings for the new field are available after saving the settings."
+msgstr "Opcje ceny dla nowego pola będą dostępne gdy zapiszesz ustawienia."
+
+#: src/Pricing/views/settings.php:25
+msgid "Enable Pricing"
+msgstr "Włącz cenę"
+
+#: src/Pricing/views/settings.php:39
+msgid "Price type"
+msgstr "Rodzaj ceny"
+
+#: src/Pricing/views/settings.php:67
+msgid "Tax class"
+msgstr "Klasa podatkowa"
+
 #: templates/fields/file.php:33
 msgid "Upload File"
 msgstr "Dodaj plik"
@@ -592,10 +676,8 @@ msgid "Remove File"
 msgstr "Usuń plik"
 
 #. Plugin Name of the plugin/theme
-#, fuzzy
-#| msgid "Flexible Checkout Fields"
 msgid "Flexible Checkout Fields PRO"
-msgstr "Flexible Checkout Fields"
+msgstr "Flexible Checkout Fields PRO"
 
 #. Plugin URI of the plugin/theme
 msgid ""

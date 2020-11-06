@@ -4,7 +4,7 @@
  *
  * @author      StoreApps
  * @since       3.3.0
- * @version     1.1.1
+ * @version     1.4.0
  *
  * @package     woocommerce-smart-coupons/includes/
  */
@@ -65,6 +65,10 @@ if ( ! class_exists( 'WC_SC_Display_Coupons' ) ) {
 			add_action( 'init', array( $this, 'endpoint_hooks' ) );
 
 			add_filter( 'woocommerce_available_variation', array( $this, 'modify_available_variation' ), 10, 3 );
+
+			add_action( 'wp_loaded', array( $this, 'maybe_enable_store_notice_for_coupon' ) );
+
+			add_action( 'wc_ajax_wc_sc_get_attached_coupons', array( $this, 'ajax_get_attached_coupons' ) );
 
 		}
 
@@ -262,6 +266,7 @@ if ( ! class_exists( 'WC_SC_Display_Coupons' ) ) {
 						$coupon_type .= __( 'Free Shipping', 'woocommerce-smart-coupons' );
 					}
 
+					$coupon_description = '';
 					if ( ! empty( $coupon_post->post_excerpt ) && 'yes' === $show_coupon_description ) {
 						$coupon_description = $coupon_post->post_excerpt;
 					}
@@ -385,7 +390,7 @@ if ( ! class_exists( 'WC_SC_Display_Coupons' ) ) {
 		 * Function to show gift certificates that are attached with the product
 		 */
 		public function show_attached_gift_certificates() {
-			global $post, $wp_rewrite, $store_credit_label;
+			global $post;
 
 			if ( empty( $post->ID ) ) {
 				return;
@@ -397,256 +402,250 @@ if ( ! class_exists( 'WC_SC_Display_Coupons' ) ) {
 				return;
 			}
 
-			$coupon_titles = get_post_meta( $post->ID, '_coupon_title', true );
+			add_action( 'wp_footer', array( $this, 'attached_coupons_styles_and_scripts' ) );
 
-			$_product = wc_get_product( $post->ID );
+			?>
+			<div class="clear"></div>
+			<div class="gift-certificates" style="display: none;"></div>
+			<?php
 
-			if ( $this->is_wc_gte_30() ) {
-				$product_type = ( is_object( $_product ) && is_callable( array( $_product, 'get_type' ) ) ) ? $_product->get_type() : '';
-			} else {
-				$product_type = ( ! empty( $_product->product_type ) ) ? $_product->product_type : '';
+		}
+
+		/**
+		 * Attached coupons styles and scripts
+		 */
+		public function attached_coupons_styles_and_scripts() {
+			global $post;
+			if ( ! wp_script_is( 'jquery' ) ) {
+				wp_enqueue_script( 'jquery' );
 			}
+			$product_type = WC_Product_Factory::get_product_type( $post->ID );
+			?>
+			<script type="text/javascript">
+				jQuery(function(){
+					let product_type = '<?php echo esc_js( $product_type ); ?>';
 
-			$sell_sc_at_less_price         = get_option( 'smart_coupons_sell_store_credit_at_less_price', 'no' );
-			$generated_credit_includes_tax = $this->is_generated_store_credit_includes_tax();
-
-			if ( 'yes' === $sell_sc_at_less_price ) {
-				if ( is_a( $_product, 'WC_Product_Variable' ) ) {
-					$price = ( is_object( $_product ) && is_callable( array( $_product, 'get_variation_regular_price' ) ) ) ? $_product->get_variation_regular_price( 'max' ) : 0;
-				} else {
-					$price = ( is_object( $_product ) && is_callable( array( $_product, 'get_regular_price' ) ) ) ? $_product->get_regular_price() : 0;
-				}
-			} else {
-				if ( is_a( $_product, 'WC_Product_Variable' ) ) {
-					$price = ( is_object( $_product ) && is_callable( array( $_product, 'get_variation_price' ) ) ) ? $_product->get_variation_price( 'max' ) : 0;
-				} else {
-					$price = ( is_object( $_product ) && is_callable( array( $_product, 'get_price' ) ) ) ? $_product->get_price() : 0;
-				}
-			}
-
-			if ( $coupon_titles && count( $coupon_titles ) > 0 && ! empty( $price ) ) {
-
-				$all_discount_types              = wc_get_coupon_types();
-				$smart_coupons_product_page_text = get_option( 'smart_coupon_product_page_text' );
-				$smart_coupons_product_page_text = ( ! empty( $smart_coupons_product_page_text ) ) ? $smart_coupons_product_page_text : __( 'You will get following coupon(s) when you buy this item:', 'woocommerce-smart-coupons' );
-
-				$list_started = true;
-				$js           = '';
-
-				foreach ( $coupon_titles as $coupon_title ) {
-
-					$coupon = new WC_Coupon( $coupon_title );
-
-					if ( $this->is_wc_gte_30() ) {
-						if ( ! is_object( $coupon ) || ! is_callable( array( $coupon, 'get_id' ) ) ) {
-							continue;
-						}
-						$coupon_id = $coupon->get_id();
-						if ( empty( $coupon_id ) ) {
-							continue;
-						}
-						$discount_type               = $coupon->get_discount_type();
-						$coupon_amount               = $coupon->get_amount();
-						$is_free_shipping            = ( $coupon->get_free_shipping() ) ? 'yes' : 'no';
-						$product_ids                 = $coupon->get_product_ids();
-						$excluded_product_ids        = $coupon->get_excluded_product_ids();
-						$product_categories          = $coupon->get_product_categories();
-						$excluded_product_categories = $coupon->get_excluded_product_categories();
-					} else {
-						$coupon_id                   = ( ! empty( $coupon->id ) ) ? $coupon->id : 0;
-						$discount_type               = ( ! empty( $coupon->discount_type ) ) ? $coupon->discount_type : '';
-						$coupon_amount               = ( ! empty( $coupon->amount ) ) ? $coupon->amount : 0;
-						$is_free_shipping            = ( ! empty( $coupon->free_shipping ) ) ? $coupon->free_shipping : '';
-						$product_ids                 = ( ! empty( $coupon->product_ids ) ) ? $coupon->product_ids : array();
-						$excluded_product_ids        = ( ! empty( $coupon->exclude_product_ids ) ) ? $coupon->exclude_product_ids : array();
-						$product_categories          = ( ! empty( $coupon->product_categories ) ) ? $coupon->product_categories : array();
-						$excluded_product_categories = ( ! empty( $coupon->exclude_product_categories ) ) ? $coupon->exclude_product_categories : array();
-					}
-
-					$is_pick_price_of_product = get_post_meta( $coupon_id, 'is_pick_price_of_product', true );
-
-					if ( $list_started && ! empty( $discount_type ) ) {
-						echo '<div class="clear"></div>';
-						echo '<div class="gift-certificates">';
-						echo '<br /><p>' . esc_html( wp_unslash( $smart_coupons_product_page_text ) ) . '';
-						echo '<ul>';
-						$list_started = false;
-					}
-
-					switch ( $discount_type ) {
-
-						case 'smart_coupon':
-							/* translators: %s: singular name for store credit */
-							$credit_label = ! empty( $store_credit_label['singular'] ) ? sprintf( __( '%s of ', 'woocommerce-smart-coupons' ), esc_html( ucwords( $store_credit_label['singular'] ) ) ) : __( 'Store Credit of ', 'woocommerce-smart-coupons' );
-							if ( 'yes' === $is_pick_price_of_product ) {
-
-								if ( 'variable' === $product_type ) {
-
-									$js = " jQuery('div.gift-certificates').hide();
-
-											var reload_gift_certificate_div = function( variation ) {
-												let sell_at_less_price            = '" . $sell_sc_at_less_price . "';
-												let generated_credit_includes_tax = '" . wc_bool_to_string( $generated_credit_includes_tax ) . "';
-												let sc_price                      = 0;
-												let sc_regular_price              = 0;
-												if ( 'yes' === generated_credit_includes_tax ) {
-													sc_price         = (variation.price_including_tax) ? variation.price_including_tax : variation.display_price;
-													sc_regular_price = (variation.regular_price_including_tax) ? variation.regular_price_including_tax : variation.display_regular_price;
-												} else if ( 'no' === generated_credit_includes_tax ) {
-													sc_price         = (variation.price_excluding_tax) ? variation.price_excluding_tax : variation.display_price;
-													sc_regular_price = (variation.regular_price_excluding_tax) ? variation.regular_price_excluding_tax : variation.display_regular_price;
-												} else {
-													sc_price         = variation.display_price;
-													sc_regular_price = variation.display_regular_price;
-												}
-												jQuery('div.gift-certificates').show().fadeTo( 100, 0.4 );
-												let amount = '';
-												if ( 'yes' === sell_at_less_price ) {
-													// If variation is discounted then voucher worth is equal to display_regular_price when sell at less price enabled.
-													if ( ( 'undefined' !== typeof sc_price && 'undefined' !== typeof sc_regular_price ) && ( sc_price < sc_regular_price ) ) {
-														if ( 'no' === generated_credit_includes_tax ) {
-															amount = variation.regular_price_excluding_tax_html;
-														} else {
-															amount = jQuery(variation.price_html).find('del').text();
-														}
-													} else {
-														// If variation price is not discounted then voucher worth is equal to display_price.
-														if ( 'no' === generated_credit_includes_tax ) {
-															amount = variation.price_excluding_tax_html;
-														} else {
-															amount = jQuery(variation.price_html).text();
-														}
-													}
-												} else {
-													if ( 'no' === generated_credit_includes_tax ) {
-														amount = variation.price_excluding_tax_html;
-													} else {
-														amount = jQuery(variation.price_html).html().replace( jQuery(variation.price_html).find('del').html(), '' );
-													}
-													amount = jQuery(amount).text();
-												}
-												jQuery('div.gift-certificates').find('li.pick_price_from_product').remove();
-												jQuery('div.gift-certificates').find('ul').append( '<li class=\"pick_price_from_product\" >' + '" . $credit_label . "' + amount + '</li>');
-												jQuery('div.gift-certificates').fadeTo( 100, 1 );
-											};
-
-											jQuery('input[name=variation_id]').on('change', function(){
-												var variation;
-                            					var variation_id = jQuery('input[name=variation_id]').val();
-                            					if ( variation_id != '' && variation_id != undefined ) {
-                            						if ( variation != '' && variation != undefined ) {
-	                            						jQuery('form.variations_form.cart').one( 'found_variation', function( event, variation ) {
-															if ( variation_id = variation.variation_id ) {
-																reload_gift_certificate_div( variation );
-															}
-														});
-                            						} else {
-                            							var variations = jQuery('form.variations_form.cart').data('product_variations');
-                            							jQuery.each( variations, function( index, value ){
-                            								if ( variation_id == value.variation_id ) {
-																reload_gift_certificate_div( value );
-																return false;
-                            								}
-                            							});
-                            						}
-
-												}
-											});
-
-											setTimeout(function(){
-												var default_variation_id = jQuery('input[name=variation_id]').val();
-												if ( default_variation_id != '' && default_variation_id != undefined ) {
-													jQuery('input[name=variation_id]').val( default_variation_id ).trigger( 'change' );
-												}
-											}, 10);
-
-											jQuery('a.reset_variations').on('click', function(){
-												jQuery('div.gift-certificates').find('li.pick_price_from_product').remove();
-												jQuery('div.gift-certificates').hide();
-											});";
-
-									$amount = '';
-
-								} else {
-
-									$amount = ( $price > 0 ) ? $credit_label . wc_price( $price ) : '';
-
+					function reload_attached_coupons( product_id ) {
+						if ( product_id != '' && product_id != undefined ) {
+							jQuery.ajax({
+								url: '?wc-ajax=wc_sc_get_attached_coupons',
+								type: 'POST',
+								dataType: 'html',
+								data: {
+									product_id: product_id,
+									security: '<?php echo esc_js( wp_create_nonce( 'wc-sc-get-attached-coupons' ) ); ?>'
+								},
+								success: function( response ) {
+									if ( null !== response && typeof 'undefined' !== response && '' !== response ) {
+										jQuery('div.gift-certificates').replaceWith( response );
+									}
 								}
-							} else {
-								$amount = ( ! empty( $coupon_amount ) ) ? $credit_label . wc_price( $coupon_amount ) : '';
-							}
-
-							break;
-
-						case 'fixed_cart':
-							$amount = wc_price( $coupon_amount ) . esc_html__( ' discount on your entire purchase', 'woocommerce-smart-coupons' );
-							break;
-
-						case 'fixed_product':
-							if ( ! empty( $product_ids ) || ! empty( $excluded_product_ids ) || ! empty( $product_categories ) || ! empty( $excluded_product_categories ) ) {
-								$discount_on_text = esc_html__( 'some products', 'woocommerce-smart-coupons' );
-							} else {
-								$discount_on_text = esc_html__( 'all products', 'woocommerce-smart-coupons' );
-							}
-							$amount = wc_price( $coupon_amount ) . esc_html__( ' discount on ', 'woocommerce-smart-coupons' ) . $discount_on_text;
-							break;
-
-						case 'percent_product':
-							if ( ! empty( $product_ids ) || ! empty( $excluded_product_ids ) || ! empty( $product_categories ) || ! empty( $excluded_product_categories ) ) {
-								$discount_on_text = esc_html__( 'some products', 'woocommerce-smart-coupons' );
-							} else {
-								$discount_on_text = esc_html__( 'all products', 'woocommerce-smart-coupons' );
-							}
-							$amount = $coupon_amount . '%' . esc_html__( ' discount on ', 'woocommerce-smart-coupons' ) . $discount_on_text;
-							break;
-
-						case 'percent':
-							if ( ! empty( $product_ids ) || ! empty( $excluded_product_ids ) || ! empty( $product_categories ) || ! empty( $excluded_product_categories ) ) {
-								$discount_on_text = esc_html__( 'some products', 'woocommerce-smart-coupons' );
-							} else {
-								$discount_on_text = esc_html__( 'your entire purchase', 'woocommerce-smart-coupons' );
-							}
-							$max_discount_text = '';
-							$max_discount      = get_post_meta( $coupon_id, 'wc_sc_max_discount', true );
-							if ( ! empty( $max_discount ) && is_numeric( $max_discount ) ) {
-								/* translators: %s: Maximum coupon discount amount */
-								$max_discount_text = sprintf( __( ' upto %s', 'woocommerce-smart-coupons' ), wc_price( $max_discount ) );
-							}
-							$amount = $coupon_amount . '%' . esc_html__( ' discount', 'woocommerce-smart-coupons' ) . $max_discount_text . esc_html__( ' on ', 'woocommerce-smart-coupons' ) . $discount_on_text;
-							break;
-
-						default:
-							$default_coupon_type = ( ! empty( $all_discount_types[ $discount_type ] ) ) ? $all_discount_types[ $discount_type ] : ucwords( str_replace( array( '_', '-' ), ' ', $discount_type ) );
-							$coupon_amount       = apply_filters( 'wc_sc_coupon_amount', $coupon_amount, $coupon );
-							/* translators: 1. Discount type 2. Discount amount */
-							$amount = sprintf( esc_html__( '%1$s coupon of %2$s', 'woocommerce-smart-coupons' ), $default_coupon_type, $coupon_amount );
-							$amount = apply_filters( 'wc_sc_coupon_description', $amount, $coupon );
-							break;
-
+							});
+						}
 					}
 
-					if ( 'yes' === $is_free_shipping && in_array( $discount_type, array( 'fixed_cart', 'fixed_product', 'percent_product', 'percent' ), true ) ) {
-						/* translators: Add more detail to coupon description */
-						$amount = sprintf( esc_html__( '%s Free Shipping', 'woocommerce-smart-coupons' ), ( ( ! empty( $coupon_amount ) ) ? $amount . esc_html__( ' &', 'woocommerce-smart-coupons' ) : '' ) );
+					setTimeout(function(){
+						let product_types = [ 'variable', 'variable-subscription', 'subscription_variation' ];
+						if ( product_types.includes( product_type ) ) {
+							var default_variation_id = jQuery('input[name=variation_id]').val();
+							if ( default_variation_id != '' && default_variation_id != undefined ) {
+								jQuery('input[name=variation_id]').val( default_variation_id ).trigger( 'change' );
+							}
+						} else {
+							reload_attached_coupons( '<?php echo esc_js( $post->ID ); ?>' );
+						}
+					}, 10);
+
+					jQuery('input[name=variation_id]').on('change', function(){
+						let variation_id = jQuery('input[name=variation_id]').val();
+						reload_attached_coupons( variation_id );
+					});
+
+					jQuery('a.reset_variations').on('click', function(){
+						jQuery('div.gift-certificates').hide();
+					});
+				});
+			</script>
+			<?php
+		}
+
+		/**
+		 * Get attached coupon's details via AJAX
+		 */
+		public function ajax_get_attached_coupons() {
+
+			check_ajax_referer( 'wc-sc-get-attached-coupons', 'security' );
+
+			global $store_credit_label;
+
+			$response = '';
+
+			$post_product_id = ( ! empty( $_POST['product_id'] ) ) ? sanitize_text_field( wp_unslash( $_POST['product_id'] ) ) : 0; // phpcs:ignore
+
+			if ( ! empty( $post_product_id ) ) {
+
+				$_product = wc_get_product( $post_product_id );
+
+				$coupon_titles = $this->get_coupon_titles( array( 'product_object' => $_product ) );
+
+				if ( $this->is_wc_gte_30() ) {
+					$product_type = ( is_object( $_product ) && is_callable( array( $_product, 'get_type' ) ) ) ? $_product->get_type() : '';
+				} else {
+					$product_type = ( ! empty( $_product->product_type ) ) ? $_product->product_type : '';
+				}
+
+				$sell_sc_at_less_price         = get_option( 'smart_coupons_sell_store_credit_at_less_price', 'no' );
+				$generated_credit_includes_tax = $this->is_generated_store_credit_includes_tax();
+
+				if ( 'yes' === $sell_sc_at_less_price ) {
+					if ( is_a( $_product, 'WC_Product_Variable' ) ) {
+						$price = ( is_object( $_product ) && is_callable( array( $_product, 'get_variation_regular_price' ) ) ) ? $_product->get_variation_regular_price( 'max' ) : 0;
+					} else {
+						$price = ( is_object( $_product ) && is_callable( array( $_product, 'get_regular_price' ) ) ) ? $_product->get_regular_price() : 0;
 					}
-
-					if ( ! empty( $amount ) ) {
-						// Allow third party developers to modify the text being shown for the linked coupons.
-						$amount = apply_filters( 'wc_sc_linked_coupon_text', $amount, array( 'coupon' => $coupon ) );
-
-						// Mostly escaped earlier hence not escaping because it might have some HTML code.
-						echo '<li>' . $amount . '</li>'; // phpcs:ignore
+				} else {
+					if ( is_a( $_product, 'WC_Product_Variable' ) ) {
+						$price = ( is_object( $_product ) && is_callable( array( $_product, 'get_variation_price' ) ) ) ? $_product->get_variation_price( 'max' ) : 0;
+					} else {
+						$price = ( is_object( $_product ) && is_callable( array( $_product, 'get_price' ) ) ) ? $_product->get_price() : 0;
 					}
 				}
 
-				if ( ! $list_started ) {
-					echo '</ul></p></div>';
-				}
+				if ( $coupon_titles && count( $coupon_titles ) > 0 && ! empty( $price ) ) {
 
-				if ( ! empty( $js ) ) {
-					wc_enqueue_js( $js );
+					$all_discount_types              = wc_get_coupon_types();
+					$smart_coupons_product_page_text = get_option( 'smart_coupon_product_page_text' );
+					$smart_coupons_product_page_text = ( ! empty( $smart_coupons_product_page_text ) ) ? $smart_coupons_product_page_text : __( 'You will get following coupon(s) when you buy this item:', 'woocommerce-smart-coupons' );
+
+					$list_started = true;
+
+					ob_start();
+
+					foreach ( $coupon_titles as $coupon_title ) {
+
+						$coupon = new WC_Coupon( $coupon_title );
+
+						if ( $this->is_wc_gte_30() ) {
+							if ( ! is_object( $coupon ) || ! is_callable( array( $coupon, 'get_id' ) ) ) {
+								continue;
+							}
+							$coupon_id = $coupon->get_id();
+							if ( empty( $coupon_id ) ) {
+								continue;
+							}
+							$discount_type               = $coupon->get_discount_type();
+							$coupon_amount               = $coupon->get_amount();
+							$is_free_shipping            = ( $coupon->get_free_shipping() ) ? 'yes' : 'no';
+							$product_ids                 = $coupon->get_product_ids();
+							$excluded_product_ids        = $coupon->get_excluded_product_ids();
+							$product_categories          = $coupon->get_product_categories();
+							$excluded_product_categories = $coupon->get_excluded_product_categories();
+						} else {
+							$coupon_id                   = ( ! empty( $coupon->id ) ) ? $coupon->id : 0;
+							$discount_type               = ( ! empty( $coupon->discount_type ) ) ? $coupon->discount_type : '';
+							$coupon_amount               = ( ! empty( $coupon->amount ) ) ? $coupon->amount : 0;
+							$is_free_shipping            = ( ! empty( $coupon->free_shipping ) ) ? $coupon->free_shipping : '';
+							$product_ids                 = ( ! empty( $coupon->product_ids ) ) ? $coupon->product_ids : array();
+							$excluded_product_ids        = ( ! empty( $coupon->exclude_product_ids ) ) ? $coupon->exclude_product_ids : array();
+							$product_categories          = ( ! empty( $coupon->product_categories ) ) ? $coupon->product_categories : array();
+							$excluded_product_categories = ( ! empty( $coupon->exclude_product_categories ) ) ? $coupon->exclude_product_categories : array();
+						}
+
+						$is_pick_price_of_product = get_post_meta( $coupon_id, 'is_pick_price_of_product', true );
+
+						if ( $list_started && ! empty( $discount_type ) ) {
+							echo '<div class="gift-certificates">';
+							echo '<br /><p>' . esc_html( wp_unslash( $smart_coupons_product_page_text ) ) . '';
+							echo '<ul>';
+							$list_started = false;
+						}
+
+						switch ( $discount_type ) {
+
+							case 'smart_coupon':
+								/* translators: %s: singular name for store credit */
+								$credit_label = ! empty( $store_credit_label['singular'] ) ? sprintf( __( '%s of ', 'woocommerce-smart-coupons' ), esc_html( ucwords( $store_credit_label['singular'] ) ) ) : __( 'Store Credit of ', 'woocommerce-smart-coupons' );
+								if ( 'yes' === $is_pick_price_of_product ) {
+									$amount = ( $price > 0 ) ? $credit_label . wc_price( $price ) : '';
+								} else {
+									$amount = ( ! empty( $coupon_amount ) ) ? $credit_label . wc_price( $coupon_amount ) : '';
+								}
+
+								break;
+
+							case 'fixed_cart':
+								$amount = wc_price( $coupon_amount ) . esc_html__( ' discount on your entire purchase', 'woocommerce-smart-coupons' );
+								break;
+
+							case 'fixed_product':
+								if ( ! empty( $product_ids ) || ! empty( $excluded_product_ids ) || ! empty( $product_categories ) || ! empty( $excluded_product_categories ) ) {
+									$discount_on_text = esc_html__( 'some products', 'woocommerce-smart-coupons' );
+								} else {
+									$discount_on_text = esc_html__( 'all products', 'woocommerce-smart-coupons' );
+								}
+								$amount = wc_price( $coupon_amount ) . esc_html__( ' discount on ', 'woocommerce-smart-coupons' ) . $discount_on_text;
+								break;
+
+							case 'percent_product':
+								if ( ! empty( $product_ids ) || ! empty( $excluded_product_ids ) || ! empty( $product_categories ) || ! empty( $excluded_product_categories ) ) {
+									$discount_on_text = esc_html__( 'some products', 'woocommerce-smart-coupons' );
+								} else {
+									$discount_on_text = esc_html__( 'all products', 'woocommerce-smart-coupons' );
+								}
+								$amount = $coupon_amount . '%' . esc_html__( ' discount on ', 'woocommerce-smart-coupons' ) . $discount_on_text;
+								break;
+
+							case 'percent':
+								if ( ! empty( $product_ids ) || ! empty( $excluded_product_ids ) || ! empty( $product_categories ) || ! empty( $excluded_product_categories ) ) {
+									$discount_on_text = esc_html__( 'some products', 'woocommerce-smart-coupons' );
+								} else {
+									$discount_on_text = esc_html__( 'your entire purchase', 'woocommerce-smart-coupons' );
+								}
+								$max_discount_text = '';
+								$max_discount      = get_post_meta( $coupon_id, 'wc_sc_max_discount', true );
+								if ( ! empty( $max_discount ) && is_numeric( $max_discount ) ) {
+									/* translators: %s: Maximum coupon discount amount */
+									$max_discount_text = sprintf( __( ' upto %s', 'woocommerce-smart-coupons' ), wc_price( $max_discount ) );
+								}
+								$amount = $coupon_amount . '%' . esc_html__( ' discount', 'woocommerce-smart-coupons' ) . $max_discount_text . esc_html__( ' on ', 'woocommerce-smart-coupons' ) . $discount_on_text;
+								break;
+
+							default:
+								$default_coupon_type = ( ! empty( $all_discount_types[ $discount_type ] ) ) ? $all_discount_types[ $discount_type ] : ucwords( str_replace( array( '_', '-' ), ' ', $discount_type ) );
+								$coupon_amount       = apply_filters( 'wc_sc_coupon_amount', $coupon_amount, $coupon );
+								/* translators: 1. Discount type 2. Discount amount */
+								$amount = sprintf( esc_html__( '%1$s coupon of %2$s', 'woocommerce-smart-coupons' ), $default_coupon_type, $coupon_amount );
+								$amount = apply_filters( 'wc_sc_coupon_description', $amount, $coupon );
+								break;
+
+						}
+
+						if ( 'yes' === $is_free_shipping && in_array( $discount_type, array( 'fixed_cart', 'fixed_product', 'percent_product', 'percent' ), true ) ) {
+							/* translators: Add more detail to coupon description */
+							$amount = sprintf( esc_html__( '%s Free Shipping', 'woocommerce-smart-coupons' ), ( ( ! empty( $coupon_amount ) ) ? $amount . esc_html__( ' &', 'woocommerce-smart-coupons' ) : '' ) );
+						}
+
+						if ( ! empty( $amount ) ) {
+							// Allow third party developers to modify the text being shown for the linked coupons.
+							$amount = apply_filters( 'wc_sc_linked_coupon_text', $amount, array( 'coupon' => $coupon ) );
+
+							// Mostly escaped earlier hence not escaping because it might have some HTML code.
+							echo '<li>' . $amount . '</li>'; // phpcs:ignore
+						}
+					}
+
+					if ( ! $list_started ) {
+						echo '</ul></p></div>';
+					}
+
+					$response = ob_get_clean();
+
 				}
 			}
+
+			echo wp_kses_post( $response );
+
+			die();
 		}
 
 		/**
@@ -665,7 +664,7 @@ if ( ! class_exists( 'WC_SC_Display_Coupons' ) ) {
 				$product_id = ( ! empty( $product->id ) ) ? $product->id : 0;
 			}
 
-			$coupons = get_post_meta( $product_id, '_coupon_title', true );
+			$coupons = $this->get_coupon_titles( array( 'product_object' => $product ) );
 
 			if ( ! empty( $coupons ) && $this->is_coupon_amount_pick_from_product_price( $coupons ) && ! ( $product->get_price() > 0 ) ) {
 
@@ -1406,24 +1405,28 @@ if ( ! class_exists( 'WC_SC_Display_Coupons' ) ) {
 
 			if ( $this->is_wc_gte_26() ) {
 				$js .= "
+						let sc_available_coupons_ajax = null;
 						jQuery(document.body).on('updated_cart_totals update_checkout', function(){
-							jQuery('div#coupons_list').css('opacity', '0.5');
-							jQuery.ajax({
-								url: '" . admin_url( 'admin-ajax.php' ) . "',
-								type: 'post',
-								dataType: 'html',
-								data: {
-									action: 'sc_get_available_coupons',
-									security: '" . wp_create_nonce( 'sc-get-available-coupons' ) . "'
-								},
-								success: function( response ) {
-									if ( response != undefined && response != '' ) {
-										jQuery('div#coupons_list').replaceWith( response );
+							clearTimeout( sc_available_coupons_ajax );
+							sc_available_coupons_ajax = setTimeout(function(){
+								jQuery('div#coupons_list').css('opacity', '0.5');
+								jQuery.ajax({
+									url: '" . admin_url( 'admin-ajax.php' ) . "',
+									type: 'post',
+									dataType: 'html',
+									data: {
+										action: 'sc_get_available_coupons',
+										security: '" . wp_create_nonce( 'sc-get-available-coupons' ) . "'
+									},
+									success: function( response ) {
+										if ( response != undefined && response != '' ) {
+											jQuery('div#coupons_list').replaceWith( response );
+										}
+										show_hide_coupon_list();
+										jQuery('div#coupons_list').css('opacity', '1');
 									}
-									show_hide_coupon_list();
-									jQuery('div#coupons_list').css('opacity', '1');
-								}
-							});
+								});
+							}, 200);
 						});";
 			} else {
 				$js .= "
@@ -1867,6 +1870,7 @@ if ( ! class_exists( 'WC_SC_Display_Coupons' ) ) {
 								}
 							}
 
+							$coupon_description = '';
 							if ( ! empty( $coupon_post->post_excerpt ) && 'yes' === $show_coupon_description ) {
 								$coupon_description = $coupon_post->post_excerpt;
 							}
@@ -2041,9 +2045,9 @@ if ( ! class_exists( 'WC_SC_Display_Coupons' ) ) {
 		/**
 		 * Modify available variation
 		 *
-		 * @param array $found_variation The found variation.
-		 * @param mixed $product The variable product.
-		 * @param mixed $variation The variation.
+		 * @param array                $found_variation The found variation.
+		 * @param WC_Product_Variable  $product The variable product object.
+		 * @param WC_Product_Variation $variation The variation object.
 		 * @return array
 		 */
 		public function modify_available_variation( $found_variation = array(), $product = null, $variation = null ) {
@@ -2054,7 +2058,7 @@ if ( ! class_exists( 'WC_SC_Display_Coupons' ) ) {
 					$product_id = ( ! empty( $product->id ) ) ? $product->id : 0;
 				}
 
-				$coupons = get_post_meta( $product_id, '_coupon_title', true );
+				$coupons = $this->get_coupon_titles( array( 'product_object' => $variation ) );
 
 				if ( ! empty( $coupons ) && $this->is_coupon_amount_pick_from_product_price( $coupons ) ) {
 					if ( is_a( $variation, 'WC_Product_Variation' ) ) {
@@ -2073,6 +2077,22 @@ if ( ! class_exists( 'WC_SC_Display_Coupons' ) ) {
 				}
 			}
 			return $found_variation;
+		}
+
+		/**
+		 * Function to check & enable store notice for coupon
+		 */
+		public function maybe_enable_store_notice_for_coupon() {
+			$coupon_code = get_option( 'smart_coupons_storewide_offer_coupon_code' );
+			if ( ! empty( $coupon_code ) ) {
+				$coupon_id     = wc_get_coupon_id_by_code( $coupon_code );
+				$coupon_status = get_post_status( $coupon_id );
+				if ( 'publish' === $coupon_status && ! is_store_notice_showing() ) {
+					update_option( 'woocommerce_demo_store', 'yes' );
+				} elseif ( 'publish' !== $coupon_status && is_store_notice_showing() ) {
+					update_option( 'woocommerce_demo_store', 'no' );
+				}
+			}
 		}
 
 	}

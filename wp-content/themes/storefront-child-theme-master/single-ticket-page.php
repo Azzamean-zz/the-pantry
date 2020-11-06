@@ -68,8 +68,18 @@ get_header(); ?>
 			</article><!-- #post-## -->
 			
 			<?php
-			$shortcode = get_post_meta($post->ID,'waitlist_shortcode',true);
-			echo do_shortcode($shortcode);
+			// $shortcode = get_post_meta($post->ID,'waitlist_shortcode',true);
+			// echo do_shortcode($shortcode);
+			
+			$ticket_ids = tribe_get_woo_tickets_ids($post->ID);
+		
+			echo do_shortcode('[xoo_wl_form id="' . $ticket_ids[0] . '" type="inline_toggle" text="Join Waitlist"]');
+		
+/*
+			echo '<pre>';
+			print_r($ticket_ids[0]);
+			echo '</pre>';
+*/
 
 			do_action( 'storefront_single_post_after' );
 			

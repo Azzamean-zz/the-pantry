@@ -361,7 +361,7 @@ if ( ! class_exists( 'Smart_Manager' ) ) {
 								'search_type' => ( ( !empty( $search_type ) ) ? $search_type : 'simple' ),
 								'wpdb_prefix' => $wpdb->prefix,
 								'trashEnabled' => $trash_enabled,
-								'background_process_running_message' => __( 'In the meanwhile, you can use Smart Manager. But before using actions like ', 'smart-manager-for-wp-e-commerce') .' <strong>'. __( 'Batch Update', 'smart-manager-for-wp-e-commerce') .'</strong>/ <strong>'. __('Duplicate Records', 'smart-manager-for-wp-e-commerce') .'</strong>/ <strong>'. __( 'Delete Records', 'smart-manager-for-wp-e-commerce') .'</strong>, '. __('you will have to wait for the current background process to finish.', 'smart-manager-for-wp-e-commerce' ),
+								'background_process_running_message' => __( 'In the meanwhile, you can use Smart Manager. But before using actions like ', 'smart-manager-for-wp-e-commerce') .' <strong>'. __( 'Bulk Edit', 'smart-manager-for-wp-e-commerce') .'</strong>/ <strong>'. __('Duplicate Records', 'smart-manager-for-wp-e-commerce') .'</strong>/ <strong>'. __( 'Delete Records', 'smart-manager-for-wp-e-commerce') .'</strong>, '. __('you will have to wait for the current background process to finish.', 'smart-manager-for-wp-e-commerce' ),
 								'delete_permanently' => array( 'disable' => $disable_delete_permanently, 'error_message' => $delete_permanently_disable_message )
 							);
 
@@ -486,7 +486,7 @@ if ( ! class_exists( 'Smart_Manager' ) ) {
 			$is_pro_updated = $this->is_pro_updated();
 
 			?>
-			<div class="wrap">
+			<div class="wrap" style="margin: 0!important;">
 				<style>
 					div#TB_window {
 						background: lightgrey;
@@ -494,16 +494,18 @@ if ( ! class_exists( 'Smart_Manager' ) ) {
 				</style>    
 				<?php if ( SMBETAPRO === true && function_exists( 'smart_support_ticket_content' ) ) smart_support_ticket_content();  ?>    
 					
-				<div style="margin-bottom:1em;">
-					<span class="sm-h2">
-					<?php
-							echo 'Smart Manager ';
-							echo '<sup style="vertical-align: super;background-color: #EC8F1C;font-size: 0.6em !important;color: white;padding: 2px 3px;border-radius: 2px;font-weight: 600;"><span>'.((SMBETAPRO === true) ? 'PRO' : 'LITE').'</span></sup>';
-							$plug_page = '';
-							
-					?>
-					</span>
-					<span id="sm_header_right" style="float: right; line-height: 2.5em;"> <?php
+				<div id="sm_nav_bar" style="margin-bottom:1em;">
+					<div class='sm_beta_left'>	
+						<span class="sm-h2">
+						<?php
+								echo 'Smart Manager ';
+								echo '<sup style="vertical-align: super;background-color: #EC8F1C;font-size: 0.6em !important;color: white;padding: 2px 3px;border-radius: 2px;font-weight: 600;"><span>'.((SMBETAPRO === true) ? 'PRO' : 'LITE').'</span></sup>';
+								$plug_page = '';
+								
+						?>
+						</span>
+					</div>
+					<span id="sm_nav_bar_right" style="float: right; line-height: 3.5em;"> <?php
 						if ( SMBETAPRO === true && ! is_multisite() ) {
 							$plug_page .= '<a href="admin.php?page=smart-manager&sm-settings">Settings</a> | ';
 						} else {
@@ -512,31 +514,31 @@ if ( ! class_exists( 'Smart_Manager' ) ) {
 						
 						$sm_old_link = '';
 
-						if ( !empty( $_GET['page'] ) && $_GET['page'] == "smart-manager" && !( !empty( $_GET['sm_old'] ) && ( 'woo' === $_GET['sm_old'] || 'wpsc' === $_GET['sm_old'] ) ) ) {
+						// if ( !empty( $_GET['page'] ) && $_GET['page'] == "smart-manager" && !( !empty( $_GET['sm_old'] ) && ( 'woo' === $_GET['sm_old'] || 'wpsc' === $_GET['sm_old'] ) ) ) {
 
-							$sm_old = '';
+						// 	$sm_old = '';
 
-							if( ( is_plugin_active ( 'woocommerce/woocommerce.php' ) && is_plugin_active ( 'wp-e-commerce/wp-shopping-cart.php' ) ) || ( is_plugin_active ( 'woocommerce/woocommerce.php' ) ) ) {
-								$sm_old = 'woo';							
-							} elseif( is_plugin_active ( 'wp-e-commerce/wp-shopping-cart.php' ) ) {
-								$sm_old = 'wpsc';
-							}
+						// 	if( ( is_plugin_active ( 'woocommerce/woocommerce.php' ) && is_plugin_active ( 'wp-e-commerce/wp-shopping-cart.php' ) ) || ( is_plugin_active ( 'woocommerce/woocommerce.php' ) ) ) {
+						// 		$sm_old = 'woo';							
+						// 	} elseif( is_plugin_active ( 'wp-e-commerce/wp-shopping-cart.php' ) ) {
+						// 		$sm_old = 'wpsc';
+						// 	}
 
-							if ( SMBETAPRO === true ) {
-								$sm_old_link = '<span class="sa_sm_beta_feedback_form" style="background-color: #ecddef;padding: 0.5em 0.5em 0.5em 0.5em;margin: 1.2em;border: 1px solid #4e4e8a;margin-top: 2em;">
-										<span class="dashicons dashicons-megaphone" style="font-size: 1.8em;color:#43438e;margin-left: -0.1em;margin-right: 0.2rem;margin-bottom: 0.45em;line-height: inherit;"></span> 
-									<a id="sm_beta_pro_feedback" class="thickbox" href="' . admin_url('#TB_inline?inlineId=sa_smart_manager_beta_post_query_form&height=450') .'" style="color:#43438e !important;" title="'. __( 'Submit your feedback', 'smart-manager-for-wp-e-commerce' ) .'">' .__( 'We would love to hear your feedback', 'smart-manager-for-wp-e-commerce' ) . '</a>
-									</span>';
-							} else {
-								$sm_old_link = '<a href="https://demo.storeapps.org/?demo=sm-woo&utm_source=in_app&utm_medium=sm_links&utm_campaign=lite_demo_link" target="_livedemo" title="'. __( 'Smart Manager Pro Demo', 'smart-manager-for-wp-e-commerce' ) .'"> ' . __( 'Pro Demo', 'smart-manager-for-wp-e-commerce' ) .'</a> ';	
-								' <a href="> ';
-							}
+						// 	if ( SMBETAPRO === true ) {
+						// 		$sm_old_link = '<span class="sa_sm_beta_feedback_form" style="background-color: #ecddef;padding: 0.5em 0.5em 0.5em 0.5em;margin: 1.2em;border: 1px solid #4e4e8a;margin-top: 2em;">
+						// 				<span class="dashicons dashicons-megaphone" style="font-size: 1.8em;color:#43438e;margin-left: -0.1em;margin-right: 0.2rem;margin-bottom: 0.45em;line-height: inherit;"></span> 
+						// 			<a id="sm_beta_pro_feedback" class="thickbox" href="' . admin_url('#TB_inline?inlineId=sa_smart_manager_beta_post_query_form&height=450') .'" style="color:#43438e !important;" title="'. __( 'Submit your feedback', 'smart-manager-for-wp-e-commerce' ) .'">' .__( 'We would love to hear your feedback', 'smart-manager-for-wp-e-commerce' ) . '</a>
+						// 			</span>';
+						// 	} else {
+						// 		$sm_old_link = '<a href="https://demo.storeapps.org/?demo=sm-woo&utm_source=in_app&utm_medium=sm_links&utm_campaign=lite_demo_link" target="_livedemo" title="'. __( 'Smart Manager Pro Demo', 'smart-manager-for-wp-e-commerce' ) .'"> ' . __( 'Pro Demo', 'smart-manager-for-wp-e-commerce' ) .'</a> ';	
+						// 		' <a href="> ';
+						// 	}
 
-							// if( !empty( $sm_old ) ) {
-							// 	$sm_old_link .= '<a href="'. admin_url('admin.php?page='. $_GET['page'] .'&sm_old='. $sm_old) .'" title="'. __( 'Switch back to Smart Manager Old', 'smart-manager-for-wp-e-commerce' ) .'"> ' . __( 'Switch back to Old', 'smart-manager-for-wp-e-commerce' ) .'</a>';	
-							// }
+						// 	// if( !empty( $sm_old ) ) {
+						// 	// 	$sm_old_link .= '<a href="'. admin_url('admin.php?page='. $_GET['page'] .'&sm_old='. $sm_old) .'" title="'. __( 'Switch back to Smart Manager Old', 'smart-manager-for-wp-e-commerce' ) .'"> ' . __( 'Switch back to Old', 'smart-manager-for-wp-e-commerce' ) .'</a>';	
+						// 	// }
 	
-						}
+						// }
 
 						$before_plug_page = '';
 
@@ -561,11 +563,11 @@ if ( ! class_exists( 'Smart_Manager' ) ) {
 			</div>
 			<?php
 				if (! $is_pro_updated) {
-					?> <h6 align="right"> <?php
+					?> <?php
 					$admin_url = SM_ADMIN_URL . "plugins.php";
 					$update_link = __( 'An upgrade for Smart Manager Pro', 'smart-manager-for-wp-e-commerce' ) . " " . $latest_version . " " . __( 'is available.', 'smart-manager-for-wp-e-commerce' ) . " " . "<a align='right' href=$admin_url>" . __( 'Click to upgrade.', 'smart-manager-for-wp-e-commerce' ) . "</a>";
 					$this->display_notice( $update_link );
-					?> </h6> <?php
+					?> <?php
 				}
 
 				if( function_exists('smart_manager_upgrade_notifications') ) {
@@ -574,6 +576,7 @@ if ( ! class_exists( 'Smart_Manager' ) ) {
 			?>
 
 				<div id="sm_editor_grid" ></div>
+				
 				<div id="sm_pagging_bar"></div>
 					
 				<div id="sm_inline_dialog"></div>
@@ -621,7 +624,8 @@ if ( ! class_exists( 'Smart_Manager' ) ) {
 
 		function footer_text( $sm_footer_text ) {
 			if ( is_admin() && !empty( $_GET['page'] ) && ( 'smart-manager-woo' === $_GET['page'] || 'smart-manager-wpsc' === $_GET['page'] || ( !empty( $_GET['sm_old'] ) && ( 'woo' === $_GET['sm_old'] || 'wpsc' === $_GET['sm_old'] ) && 'smart-manager' === $_GET['page'] ) || 'smart-manager' === $_GET['page'] || 'smart-manager-settings' === $_GET['page'] || 'smart-manager-pricing' === $_GET['page'] || 'sm-storeapps-plugins' === $_GET['page'] ) ) {
-				$sm_footer_text = __( '<span style="color:#555d66;">Thank you for using <span style="color: #5850EC;">Smart Manager</span>. A huge thank you from <span style="color: #5850EC;">StoreApps</span></span>!', 'smart-manager-for-wp-e-commerce' );
+				// $sm_footer_text = __( '<span style="color:#555d66;">Thank you for using <span style="color: #5850EC;">Smart Manager</span>. A huge thank you from <span style="color: #5850EC;">StoreApps</span></span>!', 'smart-manager-for-wp-e-commerce' );
+				$sm_footer_text = '';
 			}
 
 			return $sm_footer_text;
@@ -633,7 +637,8 @@ if ( ! class_exists( 'Smart_Manager' ) ) {
 			$sm_current_version = $sm_plugin_data['Version'];
 
 			if ( is_admin() && ! empty( $_GET['page'] ) && ( 'smart-manager-woo' === $_GET['page'] || 'smart-manager-wpsc' === $_GET['page'] || ( !empty( $_GET['sm_old'] ) && ( 'woo' === $_GET['sm_old'] || 'wpsc' === $_GET['sm_old'] ) && 'smart-manager' === $_GET['page'] ) || 'smart-manager' === $_GET['page'] || 'smart-manager-settings' === $_GET['page'] || 'smart-manager-pricing' === $_GET['page'] || 'sm-storeapps-plugins' === $_GET['page'] ) ) {
-				$sm_version_text = sprintf( __( 'Smart Manager version: <span style="color: #5850EC;">%s</span>', 'smart-manager-for-wp-e-commerce' ), $sm_current_version );
+				// $sm_version_text = sprintf( __( 'Smart Manager version: <span style="color: #5850EC;">%s</span>', 'smart-manager-for-wp-e-commerce' ), $sm_current_version );
+				$sm_version_text = '';
 			}
 
 			return $sm_version_text;
@@ -651,7 +656,7 @@ if ( ! class_exists( 'Smart_Manager' ) ) {
 
 		//function to display notices
 		function display_notice($notice) {
-			echo "<div id='message' class='updated fade'>
+			echo "<div class='sm-upgrade-notice'>
 					 <p>";
 			echo _e( $notice, 'smart-manager-for-wp-e-commerce' );
 			echo "</p></div>";

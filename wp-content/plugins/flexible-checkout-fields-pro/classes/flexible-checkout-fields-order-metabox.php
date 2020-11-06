@@ -70,7 +70,7 @@ class Flexible_Checkout_Fields_Order_Metabox implements \FCFProVendor\WPDesk\Plu
 			'checkout_fields_fields_editor',
 			__( 'Flexible Checkout Fields', 'flexible-checkout-fields-pro' ),
 			array( $this, 'metabox_content' ),
-			'shop_order',
+			array( 'shop_order', 'shop_subscription' ),
 			'advanced'
 		);
 	}

@@ -45,6 +45,31 @@ If you’re using the Advanced Notifications extension make sure you disable the
 
 == Changelog ==
 
+2020.10.20 - version 2.2.2
+* Fix: priority for supported products array adjustment as some products not showing waitlist tab in admin
+
+2020.10.19 - version 2.2.1
+* Fix: adjusted product types filter to a later hook to ensure you could use it within theme filters
+* Fix: adjusted stock requirement check for variables to always return all variations
+* Fix: updated checks for global sitepress to ensure functions are not carried out when function does not exist
+
+2020.10.12 - version 2.2.0
+* Fix: Admin user getting logged out when user created in back end
+* Fix: opt-in option not hidden when processing waitlist request
+* Fix: array check warning for multisite when switching versions with WC beta plugin
+* Fix: adjusted javascript to re-use existing styles to display elements on show()
+* Fix: error when trying to use functions from WPML extensions that are not active
+* Fix: export not organising emails correctly
+* Fix: some events showing duplicate waitlists
+* Fix: console error when events data not defined
+* Added: filter to adjust/add more admin email recipients
+* Added: guest sign up for Waitlists
+* Added: customer signup email (with unsubscribe link) when not creating users
+* Added: option to force login when user is created
+* Added: waitlist panel to events edit page
+* Added: javascript for frontend AJAX actions
+* Added: "You have been removed from waitlist" emails
+
 2020.07.14 - version 2.1.24
 * Fix: waitlist elements not showing with events tickets (4.12)
 

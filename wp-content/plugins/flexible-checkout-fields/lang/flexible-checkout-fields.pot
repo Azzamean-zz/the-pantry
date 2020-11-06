@@ -7,8 +7,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2020-09-23T20:17:24+00:00\n"
-"PO-Revision-Date: 2020-09-23T20:17:24+00:00\n"
+"POT-Creation-Date: 2020-11-02T15:51:47+00:00\n"
+"PO-Revision-Date: 2020-11-02T15:51:47+00:00\n"
 "Language: \n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
@@ -125,109 +125,113 @@ msgstr ""
 msgid "Post code"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields/classes/plugin.php:295
+#: /builds/wpdesk/flexible-checkout-fields/classes/plugin.php:296
 msgid "Billing"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields/classes/plugin.php:301
+#: /builds/wpdesk/flexible-checkout-fields/classes/plugin.php:303
 msgid "Shipping"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields/classes/plugin.php:307
+#: /builds/wpdesk/flexible-checkout-fields/classes/plugin.php:310
 msgid "Order"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields/classes/plugin.php:321
+#: /builds/wpdesk/flexible-checkout-fields/classes/plugin.php:325
 msgid "Single Line Text"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields/classes/plugin.php:325
+#: /builds/wpdesk/flexible-checkout-fields/classes/plugin.php:329
 msgid "Paragraph Text"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields/classes/plugin.php:333
-#: /builds/wpdesk/flexible-checkout-fields/classes/plugin.php:338
+#: /builds/wpdesk/flexible-checkout-fields/classes/plugin.php:337
+#: /builds/wpdesk/flexible-checkout-fields/classes/plugin.php:342
 msgid "Checkbox"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields/classes/plugin.php:343
+#: /builds/wpdesk/flexible-checkout-fields/classes/plugin.php:347
 msgid "Radio button"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields/classes/plugin.php:348
+#: /builds/wpdesk/flexible-checkout-fields/classes/plugin.php:352
 msgid "Select (Drop Down)"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields/classes/plugin.php:353
+#: /builds/wpdesk/flexible-checkout-fields/classes/plugin.php:357
 msgid "Multi-select"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields/classes/plugin.php:358
+#: /builds/wpdesk/flexible-checkout-fields/classes/plugin.php:362
 msgid "Date"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields/classes/plugin.php:363
+#: /builds/wpdesk/flexible-checkout-fields/classes/plugin.php:367
 msgid "Time"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields/classes/plugin.php:368
+#: /builds/wpdesk/flexible-checkout-fields/classes/plugin.php:372
 msgid "Color Picker"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields/classes/plugin.php:373
+#: /builds/wpdesk/flexible-checkout-fields/classes/plugin.php:377
 msgid "Headline"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields/classes/plugin.php:378
+#: /builds/wpdesk/flexible-checkout-fields/classes/plugin.php:382
 msgid "HTML"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields/classes/plugin.php:383
+#: /builds/wpdesk/flexible-checkout-fields/classes/plugin.php:387
 msgid "File Upload"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields/classes/plugin.php:947
+#: /builds/wpdesk/flexible-checkout-fields/classes/plugin.php:956
 msgid "Advanced"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields/classes/plugin.php:1023
+#: /builds/wpdesk/flexible-checkout-fields/classes/plugin.php:960
+msgid "Pricing"
+msgstr ""
+
+#: /builds/wpdesk/flexible-checkout-fields/classes/plugin.php:1038
 msgid "Uploading file..."
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields/classes/plugin.php:1070
+#: /builds/wpdesk/flexible-checkout-fields/classes/plugin.php:1085
 msgid "Close"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields/classes/plugin.php:1071
+#: /builds/wpdesk/flexible-checkout-fields/classes/plugin.php:1086
 msgid "Today"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields/classes/plugin.php:1074
+#: /builds/wpdesk/flexible-checkout-fields/classes/plugin.php:1089
 msgid "Next"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields/classes/plugin.php:1075
+#: /builds/wpdesk/flexible-checkout-fields/classes/plugin.php:1090
 msgid "Previous"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields/classes/plugin.php:1103
+#: /builds/wpdesk/flexible-checkout-fields/classes/plugin.php:1118
 #: /builds/wpdesk/flexible-checkout-fields/classes/settings.php:165
 #: /builds/wpdesk/flexible-checkout-fields/vendor_prefixed/wpdesk/wp-builder/src/Plugin/AbstractPlugin.php:198
 #: /builds/wpdesk/flexible-checkout-fields/vendor_prefixed/wpdesk/wp-wpdesk-helper/src/Page/SettingsPage.php:46
 msgid "Settings"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields/classes/plugin.php:1105
+#: /builds/wpdesk/flexible-checkout-fields/classes/plugin.php:1120
 #: /builds/wpdesk/flexible-checkout-fields/vendor_prefixed/wpdesk/wp-builder/src/Plugin/AbstractPlugin.php:194
 msgid "Docs"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields/classes/plugin.php:1106
+#: /builds/wpdesk/flexible-checkout-fields/classes/plugin.php:1121
 #: /builds/wpdesk/flexible-checkout-fields/vendor_prefixed/wpdesk/wp-builder/src/Plugin/AbstractPlugin.php:191
 msgid "Support"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields/classes/plugin.php:1112
+#: /builds/wpdesk/flexible-checkout-fields/classes/plugin.php:1127
 msgid "Upgrade"
 msgstr ""
 
@@ -262,11 +266,11 @@ msgstr ""
 msgid "You cannot use this field name: %s, for field: %s."
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields/classes/tracker.php:166
+#: /builds/wpdesk/flexible-checkout-fields/classes/tracker.php:332
 msgid "Opt-in"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields/classes/tracker.php:170
+#: /builds/wpdesk/flexible-checkout-fields/classes/tracker.php:336
 msgid "Opt-out"
 msgstr ""
 
@@ -298,23 +302,23 @@ msgstr ""
 msgid "The &#8220;%s&#8221; plugin requires at least %s version of %s to work correctly. Please update it"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields/vendor_prefixed/wpdesk/wp-basic-requirements/src/Basic_Requirement_Checker.php:338
+#: /builds/wpdesk/flexible-checkout-fields/vendor_prefixed/wpdesk/wp-basic-requirements/src/Basic_Requirement_Checker.php:349
 msgid "The &#8220;%s&#8221; plugin cannot run without %s active. Please install and activate %s plugin."
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields/vendor_prefixed/wpdesk/wp-basic-requirements/src/Basic_Requirement_Checker.php:388
+#: /builds/wpdesk/flexible-checkout-fields/vendor_prefixed/wpdesk/wp-basic-requirements/src/Basic_Requirement_Checker.php:399
 msgid "The &#8220;%s&#8221; plugin requires free %s plugin. <a href=\"%s\">Install %s →</a>"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields/vendor_prefixed/wpdesk/wp-basic-requirements/src/Basic_Requirement_Checker.php:394
+#: /builds/wpdesk/flexible-checkout-fields/vendor_prefixed/wpdesk/wp-basic-requirements/src/Basic_Requirement_Checker.php:405
 msgid "The &#8220;%s&#8221; plugin requires activating %s plugin. <a href=\"%s\">Activate %s →</a>"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields/vendor_prefixed/wpdesk/wp-basic-requirements/src/Basic_Requirement_Checker.php:435
+#: /builds/wpdesk/flexible-checkout-fields/vendor_prefixed/wpdesk/wp-basic-requirements/src/Basic_Requirement_Checker.php:446
 msgid "The &#8220;%s&#8221; plugin cannot run without %s php module installed. Please contact your host and ask them to install %s."
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields/vendor_prefixed/wpdesk/wp-basic-requirements/src/Basic_Requirement_Checker.php:460
+#: /builds/wpdesk/flexible-checkout-fields/vendor_prefixed/wpdesk/wp-basic-requirements/src/Basic_Requirement_Checker.php:471
 msgid "The &#8220;%s&#8221; plugin cannot run without %s php setting set to %s. Please contact your host and ask them to set %s."
 msgstr ""
 
@@ -474,11 +478,11 @@ msgstr ""
 msgid " <a target='_blank' href='%s'>Enter a valid subscription key for automatic updates.</a>"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields/vendor_prefixed/wpdesk/wp-wpdesk-license/src/ApiManager/class-wc-api-manager.php:330
+#: /builds/wpdesk/flexible-checkout-fields/vendor_prefixed/wpdesk/wp-wpdesk-license/src/ApiManager/class-wc-api-manager.php:333
 msgid "The %s%s%s API Key has not been activated, so you won't be supported and your plugin won't be updated! %sClick here%s to activate the API key and the plugin."
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields/vendor_prefixed/wpdesk/wp-wpdesk-license/src/ApiManager/class-wc-api-manager.php:347
+#: /builds/wpdesk/flexible-checkout-fields/vendor_prefixed/wpdesk/wp-wpdesk-license/src/ApiManager/class-wc-api-manager.php:350
 msgid "<b>Warning!</b> You're blocking external requests which means you won't be able to get %s updates. Please add %s to %s."
 msgstr ""
 
@@ -577,4 +581,8 @@ msgstr ""
 
 #: /builds/wpdesk/flexible-checkout-fields/views/settings-field-advanced.php:5
 msgid "%sGo PRO &rarr;%s to add conditional logic based on products/categories, fields and shipping method."
+msgstr ""
+
+#: /builds/wpdesk/flexible-checkout-fields/views/settings-field-pricing.php:5
+msgid "%sGo PRO &rarr;%s In this tab it is possible to add a fixed or percentage price to the field and set the tax on this price."
 msgstr ""

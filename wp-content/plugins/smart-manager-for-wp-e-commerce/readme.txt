@@ -7,7 +7,7 @@ Tags: bulk edit, woocommerce bulk edit, stock management, products editor, wooco
 Requires at least: 4.8.0
 Tested up to: 5.5.1
 Requires PHP: 5.6+
-Stable tag: 4.4.5
+Stable tag: 4.6.1
 License: GPLv3
 
 The #1 and a powerful tool to manage stock, inventory from a single place. Super quick and super easy.
@@ -200,6 +200,32 @@ It also gives the warm feeling of supporting further development of the plugin.
 4. Batch Update (only in Pro version)
 
 == Changelog ==
+
+= 4.6.1 (28.10.2020) =
+* Update: WooCommerce v4.6.1 compatible
+* Fix: Created and Modified date & date GMT columns not appearing in advanced search
+* Fix: Advanced search columns not refreshing on dashboard change
+* Update: POT file
+* Fix: Some minor fixes
+
+= 4.6.0 (17.10.2020) =
+* Update: Improved UI for Smart Manager dashboard 
+* Update: Compatibility with the latest version of WooCommerce
+* Fix: 'Sale Price' not getting reflected on-site when saving using Smart Manager
+* Fix: UI fixes for Smart Manager Settings page (Pro)
+* Update: POT file
+* Fix: Some minor fixes
+
+= 4.5.0 (09.10.2020) =
+* Update: Improved UI for Smart Manager dashboard
+* Update: POT file
+* Fix: Some minor fixes
+
+= 4.4.6 (03.10.2020) =
+* Fix: Search not working on network sites
+* Fix: Unable to search or change image attributes in WP media dialog when updating product gallery images 
+* Update: POT file
+* Fix: Some minor fixes
 
 = 4.4.5 (25.09.2020) =
 * Fix: Show/Hide Columns not refreshing the grid
@@ -1553,13 +1579,25 @@ It also gives the warm feeling of supporting further development of the plugin.
 = 0.5.4 =
 * Added Product Variations Price and Weight change support
 * Saving changed items on search / navigation
-* Improved notification messages for better clarity    
+* Improved notification messages for better clarity
     
 = 0.5.3 =
 * First public release
 * Product administration features
 
 == Upgrade Notice ==
+
+= 4.6.1 =
+WooCommerce v4.6.1 compatible along with fixes related to Created and Modified date & date GMT columns not appearing in advanced search, Advanced search columns not refreshing on dashboard change and other important fixes and updates. Recommended upgrade.
+
+= 4.6.0 =
+Updated Improved UI for Smart Manager dashboard along with fixes related to 'Sale Price' not getting reflected on site when saving using Smart Manager and other important fixes and updates. Recommended upgrade.
+
+= 4.5.0 =
+New Improved UI for Smart Manager dashboard along with other important fixes and updates. Recommended upgrade.
+
+= 4.4.6 =
+Fixed issues related to Search not working on network sites, Unable to search or change image attributes in WP media dialog when updating product gallery images along with other important fixes and updates. Recommended upgrade.
 
 = 4.4.5 =
 Fixed issues related to Show/Hide Columns not refreshing the grid, Sorting using meta columns not rendering proper results, Search for numeric columns and search value as 0 not working properly, Unable to save '0' value for numeric columns using inline edit along with other important fixes and updates. Recommended upgrade.

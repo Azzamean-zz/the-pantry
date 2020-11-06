@@ -63,7 +63,7 @@ if ( isset( $field['required'] ) && true === $field['required'] ) {
 }
 ?>
 <p <?php echo wc_implode_html_attributes( $wrapper_attributes ); // WPCS: XSS ok. ?>>
-	<label <?php echo wc_implode_html_attributes( $label_attributes ); // WPCS: XSS ok. ?>><?php echo wp_kses_post( $field['label'] ); ?><?php echo $required; ?></label>
+	<label <?php echo wc_implode_html_attributes( $label_attributes ); // WPCS: XSS ok. ?>><?php echo wp_kses( $field['label'], '' ); ?><?php echo $required; ?></label>
 	<?php if ( $tooltip ) : ?>
 		<?php echo wc_help_tip( $tooltip ); // WPCS: XSS ok. ?>
 	<?php endif; ?>

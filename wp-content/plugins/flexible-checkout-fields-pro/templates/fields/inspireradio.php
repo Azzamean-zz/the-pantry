@@ -23,7 +23,7 @@ if ( ! empty( $args['custom_attributes'] ) && is_array( $args['custom_attributes
 ?>
 
 <div class="form-row form-row-wide form-inspireradio <?php echo implode( ' ', $args['class'] ); ?>" id="<?php echo $key; ?>_field">
-    <fieldset><legend><?php echo $args['label']; ?> <?php echo $required; ?></legend><?php foreach ( $args['options'] as $okey => $option ) :
+    <fieldset><legend><?php echo wp_kses( $args['label'], '' ); ?> <?php echo $required; ?></legend><?php foreach ( $args['options'] as $okey => $option ) :
 	    $checked = "";
 	    if ( $okey == $value ) {
 		    $checked = " checked";

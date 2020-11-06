@@ -43,7 +43,7 @@ class Flexible_Checkout_Fields_Pro_File_Field_Order_Metabox
 			'inspire_checkout_fields_field_file',
 			__( 'Attachments', 'flexible-checkout-fields-pro' ),
 			array( $this, 'metabox_field_file' ),
-			'shop_order',
+			array( 'shop_order', 'shop_subscription' ),
 			'side'
 		);
 	}

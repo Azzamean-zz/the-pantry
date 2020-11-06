@@ -3,7 +3,7 @@
  * Coupon Email Content
  *
  * @author      StoreApps
- * @version     1.2.0
+ * @version     1.3.0
  * @package     woocommerce-smart-coupons/templates/
  */
 
@@ -77,7 +77,7 @@ if ( 'custom-design' !== $design ) {
 }
 ?>
 
-<?php echo $message_from_sender; // phpcs:ignore ?>
+<?php echo wp_unslash( $message_from_sender ); // phpcs:ignore ?>
 
 <p>
 <?php

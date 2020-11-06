@@ -80,6 +80,7 @@
 
 	function refresh_methods_select(data,data_count,data_name){
 		var shipping_methds = $('select.' + data_name + '_' + data_count);
+		$(shipping_methds).blur();
 		$(shipping_methds).each(function (index) {
 			var name = $(this).attr('name');
 			if ($(this).hasClass(data_name + '_' + data_count)) {

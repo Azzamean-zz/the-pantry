@@ -4,10 +4,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Smart Manager For WooCommerce – Stock Management, Bulk "
-"Edit & more... 4.4.5\n"
+"Edit & more... 4.6.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/smart-manager-for-"
 "wp-e-commerce\n"
-"POT-Creation-Date: 2020-09-25 14:40+0000\n"
+"POT-Creation-Date: 2020-10-28 07:46+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,42 +22,42 @@ msgstr ""
 msgid "Get latest hacks & tips to better manage your store using Smart Manager"
 msgstr ""
 
-#: smart-manager.php:965
+#: smart-manager.php:967
 #, php-format
 msgid "Hey %1s, you just unlocked %2s Off on Smart Manager Pro!"
 msgstr ""
 
-#: smart-manager.php:965 new/classes/class-smart-manager-pricing.php:309 
+#: smart-manager.php:967 new/classes/class-smart-manager-pricing.php:309 
 #: new/classes/class-smart-manager-pricing.php:320 
 #: new/classes/class-smart-manager-pricing.php:332 
 #: new/classes/class-smart-manager-pricing.php:343
 msgid "25%"
 msgstr ""
 
-#: smart-manager.php:966
+#: smart-manager.php:968
 #, php-format
 msgid "%s to check Smart Manager Pro features and claim your discount."
 msgstr ""
 
-#: smart-manager.php:966 new/classes/class-smart-manager-pricing.php:537
+#: smart-manager.php:968 new/classes/class-smart-manager-pricing.php:537
 msgid "Click here"
 msgstr ""
 
-#: smart-manager.php:1112
+#: smart-manager.php:1114
 msgid "<span class=\"sm_pricing_icon\"> 🔥 </span> Go Pro"
 msgstr ""
 
-#: smart-manager.php:1116 
+#: smart-manager.php:1118 
 #: new/classes/class-smart-manager-admin-welcome.php:242 
 #: new/pro/classes/class-smart-manager-pro-access-privilege.php:180
 msgid "Settings"
 msgstr ""
 
-#: smart-manager.php:1119
+#: smart-manager.php:1121
 msgid "Docs & Support"
 msgstr ""
 
-#: smart-manager.php:1125
+#: smart-manager.php:1127
 msgid "StoreApps Plugins"
 msgstr ""
 
@@ -74,7 +74,7 @@ msgstr ""
 
 #: new/smart-manager.php:364 
 #: new/classes/class-smart-manager-admin-welcome.php:321
-msgid "Batch Update"
+msgid "Bulk Edit"
 msgstr ""
 
 #: new/smart-manager.php:364
@@ -90,56 +90,28 @@ msgstr ""
 msgid "you will have to wait for the current background process to finish."
 msgstr ""
 
-#: new/smart-manager.php:528
-msgid "Submit your feedback"
-msgstr ""
-
-#: new/smart-manager.php:528
-msgid "We would love to hear your feedback"
-msgstr ""
-
-#: new/smart-manager.php:531
-msgid "Smart Manager Pro Demo"
-msgstr ""
-
-#: new/smart-manager.php:531
-msgid "Pro Demo"
-msgstr ""
-
-#: new/smart-manager.php:557
+#: new/smart-manager.php:559
 #, php-format
 msgid "%1s%2s"
 msgstr ""
 
-#: new/smart-manager.php:566
+#: new/smart-manager.php:568
 msgid "An upgrade for Smart Manager Pro"
 msgstr ""
 
-#: new/smart-manager.php:566
+#: new/smart-manager.php:568
 msgid "is available."
 msgstr ""
 
-#: new/smart-manager.php:566
+#: new/smart-manager.php:568
 msgid "Click to upgrade."
 msgstr ""
 
-#: new/smart-manager.php:624
-msgid ""
-"<span style=\"color:#555d66;\">Thank you for using <span style=\"color: "
-"#5850EC;\">Smart Manager</span>. A huge thank you from <span style=\"color: "
-"#5850EC;\">StoreApps</span></span>!"
-msgstr ""
-
-#: new/smart-manager.php:636
-#, php-format
-msgid "Smart Manager version: <span style=\"color: #5850EC;\">%s</span>"
-msgstr ""
-
-#: new/smart-manager.php:648
+#: new/smart-manager.php:652
 msgid "A required Smart Manager file is missing. Can't continue. "
 msgstr ""
 
-#: new/smart-manager.php:663
+#: new/smart-manager.php:667
 msgid "Error:"
 msgstr ""
 
@@ -353,7 +325,7 @@ msgstr ""
 
 #: new/classes/class-smart-manager-pricing.php:354
 msgid ""
-"What really sold me on Smart Manager Pro was Batch Update. My assistant does "
+"What really sold me on Smart Manager Pro was Bulk Edit. My assistant does "
 "not have to do any complex math now (earlier, I always feared she would make "
 "mistakes)! With Smart Manager, she has more free time at hand, so I asked "
 "her to set up auto responder emails. The response was phenomenal. Repeat "
@@ -636,7 +608,7 @@ msgstr ""
 
 #: new/classes/class-smart-manager-admin-welcome.php:323
 #, php-format
-msgid "Batch Update - %1s (only in %2s)"
+msgid "Bulk Edit - %1s (only in %2s)"
 msgstr ""
 
 #: new/classes/class-smart-manager-admin-welcome.php:323
@@ -647,7 +619,7 @@ msgstr ""
 #, php-format
 msgid ""
 "You can change / update multiple fields of the entire store OR for selected "
-"items by selecting multiple records and then click on Batch Update. %s."
+"items by selecting multiple records and then click on Bulk Edit. %s."
 msgstr ""
 
 #: new/classes/class-smart-manager-admin-welcome.php:337

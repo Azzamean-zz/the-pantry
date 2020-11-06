@@ -149,8 +149,8 @@ Smart_Manager.prototype.init = function() {
 		jQuery(document.body).addClass('folded');
 	}
 
-	let contentwidth = jQuery('#wpbody-content').width(),
-		contentheight = 500;
+	let contentwidth = jQuery('#wpbody-content').width() - 20,
+		contentheight = 910;
 
 	let grid_height = contentheight - ( contentheight * 0.20 ); 
 
@@ -161,6 +161,7 @@ Smart_Manager.prototype.init = function() {
 
 	window.smart_manager.load_dashboard();
 	window.smart_manager.event_handler();
+	window.smart_manager.loadNavBar();
 }
 
 
@@ -198,7 +199,6 @@ Smart_Manager.prototype.load_dashboard = function() {
 			sm_dashboard_valid = 1;
 		}
 
-		window.smart_manager.loadTopBar();
 		if(typeof window.smart_manager.hot == 'undefined'){
 			window.smart_manager.loadGrid();
 		}
@@ -219,117 +219,158 @@ Smart_Manager.prototype.load_dashboard = function() {
 }
 
 // Function to load top right bar on the page
-Smart_Manager.prototype.loadTopBar = function() {
-	let sm_top_bar_exists = jQuery('#sm_top_bar');
+Smart_Manager.prototype.loadNavBar = function() {
 
-	if( sm_top_bar_exists.length == 0 ) {
+	//Code for simple & advanced search
+	let selected = '',
+	switchSearchType = ( window.smart_manager.searchType == 'simple' ) ? 'Advanced' : 'Simple';
 
-		let selected = '',
-			switchSearchType = ( window.smart_manager.searchType == 'simple' ) ? 'Advanced' : 'Simple';
+	window.smart_manager.simpleSearchContent = "<input type='text' id='sm_simple_search_box' placeholder='Type to search...'>";
+	window.smart_manager.advancedSearchContent = '<div style="width: 100%; display: flex;">'+
+													'<div id="sm_advanced_search_box" style="width:74.85%">'+
+														'<div id="sm_advanced_search_box_0" style="width: 100%;"></div>'+
+														'<input type="text" id="sm_advanced_search_box_value_0" name="sm_advanced_search_box_value_0" hidden>'+
+													'</div>'+ 
+													'<input type="text" id="sm_advanced_search_query" hidden>'+
+													'<div id="sm_advanced_search_or" style="cursor: pointer;color: #3892D3;" title="Add Another Condition">'+
+														'<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="float: inherit;height: 3em;">'+
+															'<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>'+
+														'</svg>'+
+													'</div>'+
+													'<div style="margin-left: 1em;cursor: pointer;line-height:0em;">'+
+														'<button id="sm_advanced_search_submit" title="Search" style="height: 2.5em;border: 1px solid #3892D3;background-color: white;border-radius: 3px;cursor: pointer;line-height: 1.5em;color: #515151;display: flex;padding-top: 0.5em;">'+
+															'<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="height: 1.5em;">'+
+																'<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>'+
+															'</svg>'+
+															'<span>Search</span>'+
+														'</button>'+
+													'</div>'+
+												'</div> ';
 
-		window.smart_manager.dashboard_select_options = '';
+	//Code for dashboards select2
+	window.smart_manager.dashboard_select_options = '';
+	for (let key in window.smart_manager.sm_dashboards) {
 
-		window.smart_manager.simpleSearchContent = "<input type='text' id='sm_simple_search_box' placeholder='Type to search...'>";
-		window.smart_manager.advancedSearchContent = "<div style='width: 100%;'> <div id='sm_advanced_search_box' style='float:left;width:74.85%' > <div id='sm_advanced_search_box_0' style='width:100%;margin-bottom:0.5em;'> </div>"+
-													"<input type='text' id='sm_advanced_search_box_value_0' name='sm_advanced_search_box_value_0' hidden> </div>"+ 
-													"<input type='text' id='sm_advanced_search_query' hidden>"+
-													"<div id='sm_advanced_search_or' style='float: left;margin-top: 0.2em;margin-left: 0.25em;/* opacity: 0.85; */cursor: pointer;color: #3892D3;font-size: 2em;' class='dashicons dashicons-plus' title='Add Another Condition'> </div>"+
-													"<div style='float: left;margin-left: 1em;cursor: pointer;line-height:0em;'><button id='sm_advanced_search_submit' title='Search' style='height: 2.5em;border: 1px solid #3892D3;background-color: white;border-radius: 3px;cursor: pointer;line-height: 1.5em;color: #515151;'><span class='dashicons dashicons-search' style='color:#3892D3;font-size: 18px;margin-left: -5px;'></span> Search </button> </div>"+
-												"</div> ";
-
-		for (let key in window.smart_manager.sm_dashboards) {
-
-			if( key == 'default' || key == 'default_dashboard_title' ) {
-				continue;
-			    }
-
-			selected = '';
-
-			if (key == window.smart_manager.dashboard_key) {
-				selected = "selected";
+		if( key == 'default' || key == 'default_dashboard_title' ) {
+			continue;
 			}
-			window.smart_manager.dashboard_select_options += '<option value="'+key+'" '+selected+'>'+window.smart_manager.sm_dashboards[key]+'</option>'
+
+		selected = '';
+
+		if (key == window.smart_manager.dashboard_key) {
+			selected = "selected";
 		}
+		window.smart_manager.dashboard_select_options += '<option value="'+key+'" '+selected+'>'+window.smart_manager.sm_dashboards[key]+'</option>'
+	}
 
-		if( window.smart_manager.sm_beta_pro == 0 ) { 
-			window.smart_manager.sm_beta_smart_date_filter = '<div class="sm_date_range_container">'+
-																'<div class="sm_beta_left">'+
-																	'<div>'+
-																		'<input placeholder="Created Start Date" class="sm_date_selector start-date" id="sm_date_selector_start_date" title="Click to edit created start date" readonly>'+
-																	'</div>'+
-																	'<div class="date-separator">-</div>'+
-																	'<div>'+
-																		'<input placeholder="Created End Date" class="sm_date_selector end-date" id="sm_date_selector_end_date" title="Click to edit created end date" readonly>'+
-																	'</div>'+
-																'</div>'+
-																'<div class="sm_beta_right dropdown">'+
-																	'<span class="dashicons dashicons-arrow-down-alt2 smart-date-icon dropdown-toggle" id="smartDatesDropdown" title="Click to select a pre-defined created date range"></span>'+
-																'</div>'+
-															'</div>';
+	let navBar = "<select id='sm_dashboard_select'> </select>"+
+				"<div id='sm_nav_bar_search'>"+
+					"<div id='search_content_parent'>"+
+						"<div id='search_content' style='width:98%;'>"+
+							( ( window.smart_manager.searchType == 'simple' ) ? window.smart_manager.simpleSearchContent : window.smart_manager.advancedSearchContent )+
+						"</div>"+
+					"</div>"+
+					"<div id='sm_top_bar_advanced_search'>"+
+						"<div class='sm_beta_left'> <input type='checkbox' id='search_switch' switchSearchType='"+ switchSearchType +"' /><label title='Switch to "+ switchSearchType +"' for='search_switch'> "+ switchSearchType +" Search </label></div>"+
+						"<div class='sm_beta_left' id='search_switch_lbl'> "+ String(switchSearchType).capitalize() +" Search </div>"+
+					"</div>"+
+				"</div>";
 
-			jQuery(document).off('click', '#sm_beta_smart_date_filter .sm_date_range_container').on('click', '#sm_beta_smart_date_filter .sm_date_range_container', function() {
-				window.smart_manager.showNotification();
-			})
-		}
+	jQuery('#sm_nav_bar .sm_beta_left').append(navBar);
+	jQuery('#sm_dashboard_select').empty().append(window.smart_manager.dashboard_select_options);
+	jQuery('#sm_dashboard_select').select2({ width: '15em', dropdownCssClass: 'sm_beta_dashboard_select', dropdownParent: jQuery('#sm_nav_bar') });
 
-		let sm_top_bar = "<div id='sm_top_bar' style='font-weight:400 !important;width:100%;'>"+
-							"<div id='sm_top_bar_actions' class='sm_beta_left' style='width:"+ window.smart_manager.grid_width +"px;'>"+
-								"<div id='sm_top_bar_action_btns' class='sm_beta_left' style='width: calc(40% - 2em);'>"+
-									"<div id='sm_top_bar_action_btns_basic' class='sm_beta_left sm_top_bar_action_btns'>"+
-										"<div id='add_sm_editor_grid' title='Add Row' ><span id='add_sm_editor_grid' title='Add Row' class='dashicons dashicons-plus sm_top_bar_action_btns_dashicons'></span> Add Row </div>"+
-										"<div id='save_sm_editor_grid_btn' title='Save' ><img class='ui-icon sm-ui-state-disabled sm_beta_left save_sm_editor_grid sm_top_bar_action_btns_dashicons' /> Save </div>"+
-										// "<div id='del_sm_editor_grid' title='Delete Selected Row' ><span class='sm-ui-state-disabled dashicons dashicons-trash sm_error_icon sm_top_bar_action_btns_dashicons'></span> Delete </div>"+
-										"<div class='sm_beta_dropdown' style='float:left;cursor:pointer;'> <span class='dashicons dashicons-trash sm_error_icon sm_top_bar_action_btns_dashicons' title='Delete'></span>Delete <div class='sm_beta_dropdown_content'><a id='sm_beta_move_to_trash' href='#'>Move to Trash</a><a id='sm_beta_delete_permanently' href='#' style='color: #FF5B5E;'>Delete Permanently</a></div></div>"+
-									"</div>"+
-									"<div id='sm_top_bar_action_btns_update' class='sm_beta_left sm_top_bar_action_btns'>"+
-										"<div id='batch_update_sm_editor_grid' title='Batch Update' ><span class='dashicons dashicons-images-alt2 sm_top_bar_action_btns_dashicons'></span> Batch Update </div>"+
-										"<div id='export_csv_sm_editor_grid' title='Export CSV' ><span class='dashicons dashicons-download sm_top_bar_action_btns_dashicons'></span> Export CSV </div>"+
-										"<div class='sm_beta_dropdown' style='float:left;cursor:pointer;'> <span class='dashicons dashicons-admin-page sm_beta_dup_btn sm_top_bar_action_btns_dashicons' title='Duplicate'></span>Duplicate <div class='sm_beta_dropdown_content'><a id='sm_beta_dup_selected' href='#'>Selected Records</a><a id='sm_beta_dup_entire_store' href='#'>Entire Store</a></div></div>"+
-									"</div>"+
-									"<div id='sm_top_bar_action_btns_misc' class='sm_beta_left sm_top_bar_action_btns'>"+
-										"<div id='refresh_sm_editor_grid' title='Refresh' ><span class='dashicons dashicons-update sm_top_bar_action_btns_dashicons'></span> Refresh </div>"+
-										"<div id='show_hide_cols_sm_editor_grid' title='Show / Hide Columns' ><span class='dashicons dashicons-admin-generic sm_top_bar_action_btns_dashicons'></span> Columns </div>"+
-										"<div id='print_invoice_sm_editor_grid_btn' title='Print Invoice' ><img class='ui-icon sm-ui-state-disabled sm_beta_left print_invoice_sm_editor_grid sm_top_bar_action_btns_dashicons' /> Print Invoice </div>"+
-									"</div>"+
-								"</div>"+	
-								"<div id='sm_top_bar_search' class='sm_beta_left' style='width: calc(60% - 2em);'>"+
-									"<div id='sm_top_bar_simple_search' class='sm_beta_left'>"+
-										"<div id='sm_top_bar_advanced_search' class='sm_beta_right'>"+
-											"<div class='sm_beta_left'> <input type='checkbox' id='search_switch' switchSearchType='"+ switchSearchType +"' /><label title='Switch to "+ switchSearchType +"' for='search_switch'> "+ switchSearchType +" Search </label></div>"+
-											"<div class='sm_beta_left' id='search_switch_lbl'> "+ String(switchSearchType).capitalize() +" Search </div>"+
-										"</div>"+
-										"<div id='search_content_parent' style='width: 69%;height: 7em;overflow-y:auto;'>"+
-											"<div id='search_content' style='width:98%;'>"+
-												( ( window.smart_manager.searchType == 'simple' ) ? window.smart_manager.simpleSearchContent : window.smart_manager.advancedSearchContent )+
-											"</div>"+
-										"</div>"+
-									"</div>"+
-									"<div id='sm_beta_smart_date_filter' class='sm_beta_left'>"+
-										window.smart_manager.sm_beta_smart_date_filter+
-									"</div>"+
 
-								"</div>"+	
-							"</div>"+
-							"<div id='sm_top_bar_left' class='sm_beta_left' style='width:calc("+ window.smart_manager.grid_width +"px - 2em);background-color: white;padding: 0.5em 1em 1em 1em;'>"+
-								"<div class='sm_beta_left'> <select id='sm_dashboard_select'> </select> </div>"+
-								"<div id='sm_beta_display_records' class='sm_beta_left sm_beta_select_blue'></div>"+
-								"<div class='sm_beta_right' style='cursor: pointer;line-height:0em;margin-top: 0;padding-top:0.5em;' title='Enter Distraction Free Mode'><button id='sm_editor_grid_distraction_free_mode' style='height:2em;border: 1px solid #3892D3;background-color: white;border-radius: 3px;cursor: pointer;line-height: 17px;color:#3892D3;'> <span class='dashicons dashicons-editor-expand' style='font-weight:bold;'></span> </button> </div>"+
+	let sm_top_bar = '<div id="sm_top_bar" style="font-weight:400 !important;width:100%;">'+
+						'<div id="sm_top_bar_left" class="sm_beta_left" style="width:calc('+ window.smart_manager.grid_width +'px - 2em);background-color: white;padding: 0.5em 1em 1em 1em;">'+
+							'<div class="sm_top_bar_action_btns">'+
+								'<div id="batch_update_sm_editor_grid" title="Bulk Edit">'+
+									'<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">'+
+										'<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>'+
+									'</svg>'+
+									'<span>Bulk Edit</span>'+
+								'</div>'+
+							'</div>'+
+							'<div class="sm_top_bar_action_btns">'+
+								'<div id="save_sm_editor_grid_btn" title="Save">'+
+									'<svg class="sm-ui-state-disabled" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">'+
+										'<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"></path>'+
+									'</svg>'+
+									'<span>Save</span>'+
+								'</div>'+
+								'<div id="add_sm_editor_grid" title="Add Row">'+
+									'<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">'+
+										'<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>'+
+									'</svg>'+
+									'<span>Add Row</span>'+
+								'</div>'+
+								'<div id="dup_sm_editor_grid" class="sm_beta_dropdown">'+
+									'<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">'+
+										'<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>'+
+									'</svg>'+
+									'<span title="Duplicate">Duplicate</span>'+
+									'<div class="sm_beta_dropdown_content">'+
+										'<a id="sm_beta_dup_selected" href="#">Selected Records</a>'+
+										'<a id="sm_beta_dup_entire_store" href="#">Entire Store</a>'+
+									'</div>'+
+								'</div>'+
+								'<div id="del_sm_editor_grid" class="sm_beta_dropdown">'+
+									'<svg class="sm-error-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">'+
+										'<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>'+
+									'</svg>'+
+									'<span title="Delete">Delete</span>'+
+									'<div class="sm_beta_dropdown_content">'+
+										'<a id="sm_beta_move_to_trash" href="#">Move to Trash</a>'+
+										'<a id="sm_beta_delete_permanently" href="#" class="sm-error-icon">Delete Permanently</a>'+
+									'</div>'+
+								'</div>'+
+							'</div>'+
+							'<div class="sm_top_bar_action_btns">'+
+								'<div id="export_csv_sm_editor_grid" title="Export CSV">'+
+									'<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">'+
+										'<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>'+
+									'</svg>'+
+									'<span>Export CSV</span>'+
+								'</div>'+
+								'<div id="print_invoice_sm_editor_grid_btn" title="Print Invoice">'+
+									'<svg class="sm-ui-state-disabled" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">'+
+										'<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>'+
+									'</svg>'+
+									'<span>Print Invoice</span>'+
+								'</div>'+
+							'</div>'+
+							'<div class="sm_top_bar_action_btns">'+
+								'<div id="show_hide_cols_sm_editor_grid" title="Show / Hide Columns">'+
+									'<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">'+
+										'<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>;'+
+									'</svg>'+
+									'<span>Columns</span>'+
+								'</div>'+
+							'</div>'+
+						'</div>'+
+					'</div>';
+
+	let sm_bottom_bar = "<div id='sm_bottom_bar' style='font-weight:500 !important;color:#3892D3;width:"+window.smart_manager.grid_width+"px;'>"+
+							"<div id='sm_bottom_bar_left' class='sm_beta_left'></div>"+
+							"<div id='sm_bottom_bar_right' class='sm_beta_right'>"+
+								"<div id='sm_beta_load_more_records' class='sm_beta_right' style='cursor: pointer;' title='Load more records'>"+window.smart_manager.loadMoreBtnHtml+"</div>"+
+								"<div id='sm_beta_display_records' class='sm_beta_select_blue sm_beta_right'></div>"+
 							"</div>"+
 						"</div>";
 
-		let sm_bottom_bar = "<div id='sm_bottom_bar' style='font-weight:500 !important;color:#3892D3;width:"+window.smart_manager.grid_width+"px;'>"+
-								"<div id='sm_bottom_bar_right' class='sm_beta_right' style='display: none;'>"+
-									"<div class='sm_beta_right' style='cursor: pointer;line-height:0em;margin-top: 0;margin-bottom: 1em;' title='Load more records'>"+window.smart_manager.loadMoreBtnHtml+"</div>"+
-								"</div>"+
-							"</div>";
+	let sm_msg = jQuery('.sm_design_notice').prop('outerHTML');
+	if(sm_msg){
+		jQuery(sm_msg).insertAfter("#sm_nav_bar");
+		jQuery('.wrap > .sm_design_notice').show()
+	}
 
-		jQuery(sm_top_bar).insertBefore("#sm_editor_grid");
-		jQuery(sm_bottom_bar).insertAfter("#sm_editor_grid");
-		jQuery('#sm_dashboard_select').empty().append(window.smart_manager.dashboard_select_options);
-		jQuery('#sm_dashboard_select').select2({ width: '15em', dropdownCssClass: 'sm_beta_batch_update_field', dropdownParent: jQuery('#sm_top_bar_left') });
+	jQuery(sm_top_bar).insertBefore("#sm_editor_grid");
+	jQuery(sm_bottom_bar).insertAfter("#sm_editor_grid");
+
+	if ( window.smart_manager.dashboard_key == 'shop_order' ) {
+		jQuery('#print_invoice_sm_editor_grid_btn').show();
 	} else {
-		jQuery('#sm_bottom_bar_right .sm_beta_right').html(window.smart_manager.loadMoreBtnHtml);
-		jQuery('#sm_bottom_bar_right #sm_editor_grid_load_items span').html(window.smart_manager.dashboard_display_title);
+		jQuery('#print_invoice_sm_editor_grid_btn').hide();
 	}
 
 	//Code for Dashboard KPI
@@ -337,12 +378,6 @@ Smart_Manager.prototype.loadTopBar = function() {
 
 	if( window.smart_manager.searchType != 'simple' ) {
 		window.smart_manager.initialize_advanced_search(); //initialize advanced search control
-	}
-
-	if ( window.smart_manager.dashboard_key == 'shop_order' ) {
-		jQuery('#print_invoice_sm_editor_grid_btn').show();
-	} else {
-		jQuery('#print_invoice_sm_editor_grid_btn').hide();
 	}
 
 	jQuery('#sm_top_bar').trigger('sm_top_bar_loaded');
@@ -600,6 +635,10 @@ Smart_Manager.prototype.setDashboardModel = function (response) {
 			window.smart_manager.firstLoad = false
 		}
 
+		if( window.smart_manager.searchType != 'simple' ) {
+			window.smart_manager.initialize_advanced_search(); //initialize advanced search control
+		}
+
 		jQuery('#sm_editor_grid').trigger( 'smart_manager_post_load_grid' ); //custom trigger
 	}
 }
@@ -680,7 +719,7 @@ Smart_Manager.prototype.set_data = function(response) {
 						});
 
 						if( kpi_html.length > 0 ) {
-							jQuery('<div id="sm_dashboard_kpi" class="sm_beta_left">'+ kpi_html.join("<span class='sm_separator'> | </span>") +'</div>' ).insertAfter('#sm_beta_display_records');
+							jQuery('#sm_bottom_bar_left').append('<div id="sm_dashboard_kpi">'+ kpi_html.join("<span class='sm_separator'> | </span>") +'</div>' );
 						}
 					}
 				} else {
@@ -714,18 +753,24 @@ Smart_Manager.prototype.set_data = function(response) {
 		window.smart_manager.refreshBottomBar();
 
 		if(window.smart_manager.totalRecords == 0){
-			jQuery('#sm_bottom_bar_right').hide();
+			jQuery('#sm_editor_grid_load_items').attr('disabled','disabled');
+				jQuery('#sm_editor_grid_load_items').addClass('sm-ui-state-disabled');
+	
+				jQuery('#sm_bottom_bar_right #sm_beta_display_records').hide();
+				jQuery('#sm_bottom_bar_right #sm_beta_load_more_records').text('No '+ window.smart_manager.dashboard_display_title +' Found');
 		} else {
 			if( window.smart_manager.currentDashboardData.length >= window.smart_manager.totalRecords ) {
 				jQuery('#sm_editor_grid_load_items').attr('disabled','disabled');
 				jQuery('#sm_editor_grid_load_items').addClass('sm-ui-state-disabled');
 	
-				jQuery('#sm_bottom_bar_right .sm_beta_right').text('All '+ window.smart_manager.dashboard_display_title +' loaded');
+				jQuery('#sm_bottom_bar_right #sm_beta_display_records').hide();
+				jQuery('#sm_bottom_bar_right #sm_beta_load_more_records').text(window.smart_manager.displayTotalRecords +' '+ window.smart_manager.dashboard_display_title +' loaded');
 	
 			} else {
+				jQuery('#sm_bottom_bar_right #sm_beta_display_records').show();
 				jQuery('#sm_editor_grid_load_items').removeAttr('disabled');
 				jQuery('#sm_editor_grid_load_items').removeClass('sm-ui-state-disabled');
-				jQuery('#sm_bottom_bar_right .sm_beta_right').html(window.smart_manager.loadMoreBtnHtml);
+				jQuery('#sm_bottom_bar_right #sm_beta_load_more_records').html(window.smart_manager.loadMoreBtnHtml);
 				jQuery('#sm_bottom_bar_right #sm_editor_grid_load_items span').html(window.smart_manager.dashboard_display_title);
 			}
 			jQuery('#sm_bottom_bar_right').show();
@@ -740,7 +785,7 @@ Smart_Manager.prototype.refreshBottomBar = function() {
 	// let msg = ( window.smart_manager.currentDashboardData.length > 0 ) ? "Displaying 1 - "+ window.smart_manager.currentDashboardData.length +" of "+ window.smart_manager.totalRecords +" "+ window.smart_manager.dashboard_display_title : 'No '+ window.smart_manager.dashboard_display_title +' Found';
 	// let msg = ( window.smart_manager.currentDashboardData.length > 0 ) ? window.smart_manager.totalRecords +" "+ window.smart_manager.dashboard_display_title : 'No '+ window.smart_manager.dashboard_display_title +' Found';
 	let msg = ( window.smart_manager.currentDashboardData.length > 0 ) ? window.smart_manager.displayTotalRecords +" "+ window.smart_manager.dashboard_display_title : 'No '+ window.smart_manager.dashboard_display_title +' Found';
-	jQuery('#sm_top_bar_left #sm_beta_display_records').html(msg);
+	jQuery('#sm_bottom_bar_right #sm_beta_display_records').html(msg);
 }
 
 
@@ -817,7 +862,7 @@ Smart_Manager.prototype.inline_edit_dlg = function(params) {
 
 		jQuery( "#sm_inline_dialog" ).html(params.content);
 
-		let dialog_prams = {
+		let dialog_params = {
 								closeOnEscape: true,
 								draggable: false,
 								dialogClass: 'sm_ui_dialog_class',
@@ -863,14 +908,15 @@ Smart_Manager.prototype.inline_edit_dlg = function(params) {
 							}
 
 		if( params.hasOwnProperty('title') ) {
-			dialog_prams.title = params.title;
+			dialog_params.title = params.title;
 		}
 
 		if( params.hasOwnProperty('titleIsHtml') ) {
-			dialog_prams.titleIsHtml = params.titleIsHtml;
+			dialog_params.titleIsHtml = params.titleIsHtml;
 		}
-
-		jQuery( "#sm_inline_dialog" ).dialog(dialog_prams);
+		
+		jQuery( "#sm_inline_dialog" ).dialog(dialog_params);
+		jQuery('.sm_ui_dialog_class, .ui-widget-overlay').show();
 }
 
 Smart_Manager.prototype.getTextWidth = function (text, font) {
@@ -903,21 +949,21 @@ Smart_Manager.prototype.formatGridColumns = function () {
 Smart_Manager.prototype.enableDisableButtons = function() {
 	//enabling the action buttons
 	if( window.smart_manager.selectedRows.length > 0 || window.smart_manager.selectAll ) {
-		if( jQuery('#sm_top_bar_action_btns_basic #del_sm_editor_grid span').hasClass('sm-ui-state-disabled') ) {
-			jQuery('#sm_top_bar_action_btns_basic #del_sm_editor_grid span').removeClass('sm-ui-state-disabled');
+		if( jQuery('.sm_top_bar_action_btns #del_sm_editor_grid svg').hasClass('sm-ui-state-disabled') ) {
+			jQuery('.sm_top_bar_action_btns #del_sm_editor_grid svg').removeClass('sm-ui-state-disabled');
 		}
 
-		if( jQuery('#sm_top_bar_action_btns_misc .print_invoice_sm_editor_grid').hasClass('sm-ui-state-disabled') ) {
-			jQuery('#sm_top_bar_action_btns_misc .print_invoice_sm_editor_grid').removeClass('sm-ui-state-disabled');
+		if( jQuery('.sm_top_bar_action_btns #print_invoice_sm_editor_grid_btn svg').hasClass('sm-ui-state-disabled') ) {
+			jQuery('.sm_top_bar_action_btns #print_invoice_sm_editor_grid_btn svg').removeClass('sm-ui-state-disabled');
 		}
 
 	} else {
-		if( !jQuery('#sm_top_bar_action_btns_basic #del_sm_editor_grid span').hasClass('sm-ui-state-disabled') ) {
-			jQuery('#sm_top_bar_action_btns_basic #del_sm_editor_grid span').addClass('sm-ui-state-disabled');
+		if( !jQuery('.sm_top_bar_action_btns #del_sm_editor_grid svg').hasClass('sm-ui-state-disabled') ) {
+			jQuery('.sm_top_bar_action_btns #del_sm_editor_grid svg').addClass('sm-ui-state-disabled');
 		}
 
-		if( !jQuery('#sm_top_bar_action_btns_misc .print_invoice_sm_editor_grid').hasClass('sm-ui-state-disabled') ) {
-			jQuery('#sm_top_bar_action_btns_misc .print_invoice_sm_editor_grid').addClass('sm-ui-state-disabled');
+		if( !jQuery('.sm_top_bar_action_btns #print_invoice_sm_editor_grid_btn svg').hasClass('sm-ui-state-disabled') ) {
+			jQuery('.sm_top_bar_action_btns #print_invoice_sm_editor_grid_btn svg').addClass('sm-ui-state-disabled');
 		}
 	}
 }
@@ -1314,8 +1360,8 @@ Smart_Manager.prototype.loadGrid = function() {
 						window.smart_manager.dirtyRowColIds[row].push(colIndex);
 					}
 
-					if( jQuery('#sm_top_bar_action_btns_basic #save_sm_editor_grid_btn img').hasClass('sm-ui-state-disabled') ) {
-						jQuery('#sm_top_bar_action_btns_basic #save_sm_editor_grid_btn img').removeClass('sm-ui-state-disabled');
+					if( jQuery('.sm_top_bar_action_btns #save_sm_editor_grid_btn svg').hasClass('sm-ui-state-disabled') ) {
+						jQuery('.sm_top_bar_action_btns #save_sm_editor_grid_btn svg').removeClass('sm-ui-state-disabled');
 					}
 
 					if( prevClassName == '' || ( typeof(prevClassName) != 'undefined' && prevClassName.indexOf('sm-grid-dirty-cell') == -1 ) ) {
@@ -1443,6 +1489,8 @@ Smart_Manager.prototype.loadGrid = function() {
 												click: function() {
 													if ( typeof (window.smart_manager.handleMediaUpdate) !== "undefined" && typeof (window.smart_manager.handleMediaUpdate) === "function" ) {
 
+														jQuery('.sm_ui_dialog_class, .ui-widget-overlay').hide();
+
 														let params = {	
 																		UploaderText: 'Add images to product gallery',
 																		UploaderButtonText: 'Add to gallery',
@@ -1450,7 +1498,9 @@ Smart_Manager.prototype.loadGrid = function() {
 																	};
 
 														
-															params.callback = function( attachments ) { 
+															params.callback = function( attachments ) {
+
+																jQuery('.sm_ui_dialog_class , .ui-widget-overlay').show();
 
 																if( typeof( attachments ) == 'undefined' ) {
 																	return;
@@ -1854,10 +1904,16 @@ Smart_Manager.prototype.event_handler = function() {
 		
 
 			content = ( window.smart_manager.searchType == 'simple' ) ? window.smart_manager.simpleSearchContent : window.smart_manager.advancedSearchContent;
-			jQuery('#sm_top_bar_search #search_content').html(content);
+			jQuery('#sm_nav_bar_search #search_content').html(content);
 
 			if ( typeof (window.smart_manager.initialize_advanced_search) !== "undefined" && typeof (window.smart_manager.initialize_advanced_search) === "function" && window.smart_manager.searchType != 'simple' ) {
 				window.smart_manager.initialize_advanced_search();
+			}
+
+			if ( window.smart_manager.dashboard_key == 'shop_order' ) {
+				jQuery('#print_invoice_sm_editor_grid_btn').show();
+			} else {
+				jQuery('#print_invoice_sm_editor_grid_btn').hide();
 			}
 
 			jQuery('#sm_editor_grid').trigger( 'sm_dashboard_change' ); //custom trigger
@@ -1886,7 +1942,8 @@ Smart_Manager.prototype.event_handler = function() {
 
 		window.smart_manager.searchType = switchSearchType;
 		content = ( window.smart_manager.searchType == 'simple' ) ? window.smart_manager.simpleSearchContent : window.smart_manager.advancedSearchContent;
-		jQuery('#sm_top_bar_search #search_content').html(content);
+		
+		jQuery('#sm_nav_bar_search #search_content').html(content);
 
 		if ( typeof (window.smart_manager.initialize_advanced_search) !== "undefined" && typeof (window.smart_manager.initialize_advanced_search) === "function" && window.smart_manager.searchType != 'simple' ) {
 			window.smart_manager.initialize_advanced_search();
@@ -1923,7 +1980,7 @@ Smart_Manager.prototype.event_handler = function() {
 	})
 
 	//Code to handle the inline save functionality
-	.off( 'click', '#sm_top_bar_action_btns_basic #save_sm_editor_grid_btn').on( 'click', '#sm_top_bar_action_btns_basic #save_sm_editor_grid_btn' ,function(){
+	.off( 'click', '.sm_top_bar_action_btns #save_sm_editor_grid_btn').on( 'click', '.sm_top_bar_action_btns #save_sm_editor_grid_btn' ,function(){
 
 		if( Object.getOwnPropertyNames(window.smart_manager.editedData).length > 0 ) {
 
@@ -1939,7 +1996,7 @@ Smart_Manager.prototype.event_handler = function() {
 	})
 
 	//Code to handle the delete records functionality
-	.off( 'click', '#sm_top_bar_action_btns_basic #sm_beta_move_to_trash, #sm_top_bar_action_btns_basic #sm_beta_delete_permanently').on( 'click', '#sm_top_bar_action_btns_basic #sm_beta_move_to_trash, #sm_top_bar_action_btns_basic #sm_beta_delete_permanently' ,function(){
+	.off( 'click', '.sm_top_bar_action_btns #sm_beta_move_to_trash, .sm_top_bar_action_btns #sm_beta_delete_permanently').on( 'click', '.sm_top_bar_action_btns #sm_beta_move_to_trash, .sm_top_bar_action_btns #sm_beta_delete_permanently' ,function(){
 
 		let id = jQuery(this).attr('id');
 
@@ -2166,7 +2223,7 @@ Smart_Manager.prototype.event_handler = function() {
 
 				if( id != 'sm_beta_dup_entire_store' && id != 'sm_beta_dup_selected' ) {
 					
-					let description = 'You can change / update multiple fields of the entire store OR for selected items by selecting multiple records and then click on Batch Update.';
+					let description = 'You can change / update multiple fields of the entire store OR for selected items by selecting multiple records and then click on Bulk Edit.';
 
 					if( id == 'export_csv_sm_editor_grid' ) {
 						description = 'You can export all the records OR filtered records (using Simple Search or Advanced Search) by simply clicking on the Export CSV button at the bottom right of the grid.';
@@ -2559,8 +2616,8 @@ Smart_Manager.prototype.deleteRecords = function() {
 
 	window.smart_manager.send_request(params, function(response) {
 		if ( 'failed' !== response ) {
-			if( jQuery('#sm_top_bar_action_btns_basic #del_sm_editor_grid span').hasClass('sm-ui-state-disabled') === false ) {
-				jQuery('#sm_top_bar_action_btns_basic #del_sm_editor_grid span').addClass('sm-ui-state-disabled');
+			if( jQuery('.sm_top_bar_action_btns #del_sm_editor_grid svg').hasClass('sm-ui-state-disabled') === false ) {
+				jQuery('.sm_top_bar_action_btns #del_sm_editor_grid svg').addClass('sm-ui-state-disabled');
 			}
 			window.smart_manager.refresh();
 			window.smart_manager.showNotification('Success', response);

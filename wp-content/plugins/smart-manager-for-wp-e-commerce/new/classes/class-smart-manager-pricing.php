@@ -351,7 +351,7 @@ class Smart_Manager_Pricing {
 					<img src="<?php echo SM_BETA_IMG_URL ?>jeff-smith.png" alt="Jeff" />
 					<h3 class="sm_testimonial_headline"><?php echo __( 'I would happily pay five times for this product!', 'smart-manager-for-wp-e-commerce' ); ?></h3>
 					<div class="sm_testimonial_text">
-						<?php echo __( 'What really sold me on Smart Manager Pro was Batch Update. My assistant does not have to do any complex math now (earlier, I always feared she would make mistakes)! With Smart Manager, she has more free time at hand, so I asked her to set up auto responder emails. The response was phenomenal. Repeat sales were up by 19.5%.', 'smart-manager-for-wp-e-commerce' ); ?>
+						<?php echo __( 'What really sold me on Smart Manager Pro was Bulk Edit. My assistant does not have to do any complex math now (earlier, I always feared she would make mistakes)! With Smart Manager, she has more free time at hand, so I asked her to set up auto responder emails. The response was phenomenal. Repeat sales were up by 19.5%.', 'smart-manager-for-wp-e-commerce' ); ?>
 					</div>
 				</div>
 			</div>

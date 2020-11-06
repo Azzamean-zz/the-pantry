@@ -2,7 +2,7 @@
 /**
  * Before Order Notes
  *
- * This template can be overridden by copying it to yourtheme/flexible-checkout-fields-pro/checkout/before_order_notes.php
+ * This template can be overridden by copying it to yourtheme/flexible-checkout-fields-pro/checkout/flexible-checkout-fields/before_order_notes.php
  *
  */
 

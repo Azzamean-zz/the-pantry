@@ -4,9 +4,13 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit3ede7c27b17798ac57843322087d5b1a
+class ComposerStaticInit56f8f24669f6674e6b8282d2b439aad5
 {
     public static $prefixLengthsPsr4 = array (
+        'W' => 
+        array (
+            'WPDesk\\FCF\\Pro\\' => 15,
+        ),
         'P' => 
         array (
             'Psr\\Log\\' => 8,
@@ -14,6 +18,10 @@ class ComposerStaticInit3ede7c27b17798ac57843322087d5b1a
     );
 
     public static $prefixDirsPsr4 = array (
+        'WPDesk\\FCF\\Pro\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
+        ),
         'Psr\\Log\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
@@ -142,6 +150,11 @@ class ComposerStaticInit3ede7c27b17798ac57843322087d5b1a
         'FCFProVendor\\WPDesk\\Helper\\Page\\LibraryDebugPage' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-wpdesk-helper/src/Page/LibraryDebugPage.php',
         'FCFProVendor\\WPDesk\\Helper\\Page\\SettingsPage' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-wpdesk-helper/src/Page/SettingsPage.php',
         'FCFProVendor\\WPDesk\\Helper\\PrefixedHelperAsLibrary' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-wpdesk-helper/src/PrefixedHelperAsLibrary.php',
+        'FCFProVendor\\WPDesk\\Helper\\UpgradeSoonNotice' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-wpdesk-helper/src/UpgradeSoonNotice.php',
+        'FCFProVendor\\WPDesk\\License\\Changelog\\Filter\\ByVersion' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-wpdesk-license/src/Changelog/Filter/ByVersion.php',
+        'FCFProVendor\\WPDesk\\License\\Changelog\\Formatter' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-wpdesk-license/src/Changelog/Formatter.php',
+        'FCFProVendor\\WPDesk\\License\\Changelog\\Parser' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-wpdesk-license/src/Changelog/Parser.php',
+        'FCFProVendor\\WPDesk\\License\\Changelog\\Parser\\Line' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-wpdesk-license/src/Changelog/Parser/Line.php',
         'FCFProVendor\\WPDesk\\License\\InstalledPlugins' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-wpdesk-license/src/InstalledPlugins.php',
         'FCFProVendor\\WPDesk\\License\\Page\\Action' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-wpdesk-license/src/Page/Action.php',
         'FCFProVendor\\WPDesk\\License\\Page\\LicensePage' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-wpdesk-license/src/Page/LicensePage.php',
@@ -247,6 +260,7 @@ class ComposerStaticInit3ede7c27b17798ac57843322087d5b1a
         'FCFProVendor\\WPDesk_Tracker_Data_Provider_Wordpress' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/data_provider/class-wpdesk-tracker-data-provider-wordpress.php',
         'FCFProVendor\\WPDesk_Tracker_Factory_Prefixed' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/class-wpdesk-tracker-factory-prefixed.php',
         'FCFProVendor\\WPDesk_Tracker_Interface' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/class-wpdesk-tracker-interface.php',
+        'FCFProVendor\\WPDesk_Tracker_Persistence_Consent' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/persistence/class-wpdesk-tracker-persistence-consent.php',
         'FCFProVendor\\WPDesk_Tracker_Sender' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/sender/class-wpdesk-tracker-sender.php',
         'FCFProVendor\\WPDesk_Tracker_Sender_Exception_WpError' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/sender/Exception/class-wpdesk-tracker-sender-exception-wperror.php',
         'FCFProVendor\\WPDesk_Tracker_Sender_Logged' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/sender/class-wpdesk-tracker-sender-logged.php',
@@ -289,6 +303,26 @@ class ComposerStaticInit3ede7c27b17798ac57843322087d5b1a
         'Psr\\Log\\Test\\LoggerInterfaceTest' => __DIR__ . '/..' . '/psr/log/Psr/Log/Test/LoggerInterfaceTest.php',
         'Psr\\Log\\Test\\TestLogger' => __DIR__ . '/..' . '/psr/log/Psr/Log/Test/TestLogger.php',
         'Shipping_Zones_Repository' => __DIR__ . '/../..' . '/classes/Shipping_Zones_Repository.php',
+        'WPDesk\\FCF\\Pro\\Admin\\Assets' => __DIR__ . '/../..' . '/src/Admin/Assets.php',
+        'WPDesk\\FCF\\Pro\\Plugin' => __DIR__ . '/../..' . '/src/Plugin.php',
+        'WPDesk\\FCF\\Pro\\Plugin\\Settings' => __DIR__ . '/../..' . '/src/Plugin/Settings.php',
+        'WPDesk\\FCF\\Pro\\Pricing\\Field\\FieldAbstract' => __DIR__ . '/../..' . '/src/Pricing/Field/FieldAbstract.php',
+        'WPDesk\\FCF\\Pro\\Pricing\\Field\\FieldIntegration' => __DIR__ . '/../..' . '/src/Pricing/Field/FieldIntegration.php',
+        'WPDesk\\FCF\\Pro\\Pricing\\Field\\FieldInterface' => __DIR__ . '/../..' . '/src/Pricing/Field/FieldInterface.php',
+        'WPDesk\\FCF\\Pro\\Pricing\\Field\\FieldMultiselect' => __DIR__ . '/../..' . '/src/Pricing/Field/FieldMultiselect.php',
+        'WPDesk\\FCF\\Pro\\Pricing\\Field\\FieldRadio' => __DIR__ . '/../..' . '/src/Pricing/Field/FieldRadio.php',
+        'WPDesk\\FCF\\Pro\\Pricing\\Field\\FieldText' => __DIR__ . '/../..' . '/src/Pricing/Field/FieldText.php',
+        'WPDesk\\FCF\\Pro\\Pricing\\Fields' => __DIR__ . '/../..' . '/src/Pricing/Fields.php',
+        'WPDesk\\FCF\\Pro\\Pricing\\Session' => __DIR__ . '/../..' . '/src/Pricing/Session.php',
+        'WPDesk\\FCF\\Pro\\Pricing\\Settings' => __DIR__ . '/../..' . '/src/Pricing/Settings.php',
+        'WPDesk\\FCF\\Pro\\Pricing\\Type\\TypeAbstract' => __DIR__ . '/../..' . '/src/Pricing/Type/TypeAbstract.php',
+        'WPDesk\\FCF\\Pro\\Pricing\\Type\\TypeFixed' => __DIR__ . '/../..' . '/src/Pricing/Type/TypeFixed.php',
+        'WPDesk\\FCF\\Pro\\Pricing\\Type\\TypeIntegration' => __DIR__ . '/../..' . '/src/Pricing/Type/TypeIntegration.php',
+        'WPDesk\\FCF\\Pro\\Pricing\\Type\\TypeInterface' => __DIR__ . '/../..' . '/src/Pricing/Type/TypeInterface.php',
+        'WPDesk\\FCF\\Pro\\Pricing\\Type\\TypePercentSubtotalTaxed' => __DIR__ . '/../..' . '/src/Pricing/Type/TypePercentSubtotalTaxed.php',
+        'WPDesk\\FCF\\Pro\\Pricing\\Type\\TypePercentSubtotalUntaxed' => __DIR__ . '/../..' . '/src/Pricing/Type/TypePercentSubtotalUntaxed.php',
+        'WPDesk\\FCF\\Pro\\Pricing\\Type\\TypePercentTotal' => __DIR__ . '/../..' . '/src/Pricing/Type/TypePercentTotal.php',
+        'WPDesk\\FCF\\Pro\\Pricing\\Types' => __DIR__ . '/../..' . '/src/Pricing/Types.php',
         'WPDesk\\Helper\\HelperAsLibrary' => __DIR__ . '/..' . '/wpdesk/wp-wpdesk-helper-override/src/Helper/HelperAsLibrary.php',
         'WPDesk_Tracker_Data_Provider' => __DIR__ . '/..' . '/wpdesk/wp-wpdesk-helper-override/src/Interop/Tracker/class-wpdesk-tracker-data-provider.php',
         'WPDesk_Tracker_Factory' => __DIR__ . '/..' . '/wpdesk/wp-wpdesk-helper-override/src/Helper/TrackerFactory.php',
@@ -299,9 +333,9 @@ class ComposerStaticInit3ede7c27b17798ac57843322087d5b1a
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit3ede7c27b17798ac57843322087d5b1a::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit3ede7c27b17798ac57843322087d5b1a::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit3ede7c27b17798ac57843322087d5b1a::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit56f8f24669f6674e6b8282d2b439aad5::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit56f8f24669f6674e6b8282d2b439aad5::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit56f8f24669f6674e6b8282d2b439aad5::$classMap;
 
         }, null, ClassLoader::class);
     }

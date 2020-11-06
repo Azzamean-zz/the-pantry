@@ -41,6 +41,17 @@
 			<li>
 				<?php
 				if ( $pl ) {
+					$link = 'https://www.wpdesk.pl/docs/woocommerce-checkout-fields-docs/?utm_source=flexible-checkout-fields-settings&utm_medium=link&utm_campaign=settings-docs-link&utm_content=asigning-fields-pricing#Przypisanie_ceny_do_wlasnego_pola';
+				}
+				else {
+					$link = 'https://www.wpdesk.net/docs/flexible-checkout-fields-pro-woocommerce-docs/?utm_source=flexible-checkout-fields-settings&utm_medium=link&utm_campaign=settings-docs-link&utm_content=assigning-fields-pricing#Assigning_a_price_to_the_custom_fields';
+				}
+				?>
+				<a target="_blank" href="<?php echo $link; ?>"><?php _e( 'Assigning price to Custom Fields', 'flexible-checkout-fields-pro' ); ?></a>
+			</li>
+			<li>
+				<?php
+				if ( $pl ) {
 					$link = 'https://www.wpdesk.pl/docs/woocommerce-checkout-fields-docs/?utm_source=flexible-checkout-fields-settings&utm_medium=link&utm_campaign=settings-docs-link&utm_content=custom-sections#Edycja_dodatkowych_sekcji';
 				}
 				else {

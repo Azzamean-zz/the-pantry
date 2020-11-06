@@ -22,7 +22,7 @@ if ( ! empty( $args['custom_attributes'] ) && is_array( $args['custom_attributes
 }
 ?>
 <p class="form-row form-timepicker <?php echo implode( ' ', $args['class'] ); ?>" id="<?php echo $key; ?>_field" data-priotiry="<?php echo $args['priority']; ?>">
-    <label for="<?php echo $key; ?>"><?php echo $args['label']; ?> <?php echo $required; ?></label>
+    <label for="<?php echo $key; ?>"><?php echo wp_kses( $args['label'], '' ); ?> <?php echo $required; ?></label>
     <input
         type="text"
         class="input-text load-timepicker"

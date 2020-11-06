@@ -73,6 +73,7 @@ class PrefixedHelperAsLibrary implements \FCFProVendor\WPDesk\PluginBuilder\Plug
         $settings_integration->hooks();
         self::$tracker = $tracker_integration->get_tracker();
         self::$logger = $logger_integration->get_logger();
+        (new \FCFProVendor\WPDesk\Helper\UpgradeSoonNotice())->show_info_about_upgrade_if_old_env();
         $this->clean_wpdesk_menu();
         $library_debug_info = new \FCFProVendor\WPDesk\Helper\Debug\LibraryDebug();
         (new \FCFProVendor\WPDesk\Helper\Page\LibraryDebugPage($library_debug_info))->hooks();

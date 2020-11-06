@@ -69,8 +69,8 @@ if ( ! class_exists( 'Smart_Manager_Base' ) ) {
 
 			//Code for handling simple search
 			if( !empty( $this->req_params['search_text'] ) && strpos( $join, 'postmeta' ) === false ) {
-				$join .= " JOIN {$wpdb->base_prefix}postmeta
-                            	ON ({$wpdb->base_prefix}postmeta.post_id = {$wpdb->prefix}posts.id)";
+				$join .= " JOIN {$wpdb->prefix}postmeta
+                            	ON ({$wpdb->prefix}postmeta.post_id = {$wpdb->prefix}posts.id)";
 			}
 
 			return $join;
@@ -296,12 +296,14 @@ if ( ! class_exists( 'Smart_Manager_Base' ) ) {
 						$temp ['position'] = 4;
 					} else if ($field_nm == 'post_date') {
 						$temp ['position'] = 5;
-						$temp ['searchable'] = false;
+						// $temp ['searchable'] = false;
 						$temp ['name'] = $this->dashboard_title . ' Created Date';
+						$temp ['key'] = $temp ['name'];
 					} else if ($field_nm == 'post_name') {
 						$last_position = $temp ['position'] = 6;
 					} else if ($field_nm == 'post_date_gmt') {
 						$temp ['name'] = $this->dashboard_title . ' Created Date Gmt';
+						$temp ['key'] = $temp ['name'];
 					}  else if ($field_nm == 'post_excerpt') {
 						$type = 'sm.longstring';
 					}
@@ -1086,7 +1088,21 @@ if ( ! class_exists( 'Smart_Manager_Base' ) ) {
 					delete_transient( 'sm_beta_product' );
 					update_option( '_sm_update_443_product', 1, 'no' );
 				}
-					
+
+				if( false === get_option( '_sm_update_461'.'_'.$this->dashboard_key ) ) { //Code for handling date cols mapping changes in v4.6.1
+					$date_cols = array( 'posts_post_date', 'posts_post_date_gmt', 'posts_post_modified', 'posts_post_modified_gmt' );
+					foreach( $store_model_transient['columns'] as $key => $col ) {
+						$data = ( !empty( $col['data'] ) ) ? $col['data'] : '';
+						if( !empty( $data ) && in_array( $data , $date_cols ) ) {
+							$display_name = $this->dashboard_title . ' '. ( ( strpos( $data, 'modified' ) !== false ) ? 'Modified' : 'Created' ) . ' Date' . ( ( strpos( $data, 'gmt' ) !== false ) ? ' GMT' : '' );
+							$store_model_transient['columns'][$key]['searchable'] = true;
+							$store_model_transient['columns'][$key]['name'] = $display_name;
+							$store_model_transient['columns'][$key]['key'] = $store_model_transient['columns'][$key]['name'];
+						}
+					}
+					delete_transient( 'sm_beta_'.$this->dashboard_key );
+					update_option( '_sm_update_461'.'_'.$this->dashboard_key, 1 );
+				}
 			}
 
 			$store_model = $store_model_transient;
@@ -1965,8 +1981,8 @@ if ( ! class_exists( 'Smart_Manager_Base' ) ) {
 					set_transient( 'sm_beta_search_post_ids', $post_ids , WEEK_IN_SECONDS );
 				}
 
-	        	$result_posts = new WP_Query( $args );
-
+				$result_posts = new WP_Query( $args );
+				
 	        	$items = array();
 	        	$post_ids = array();
 	        	$index_ids = array();

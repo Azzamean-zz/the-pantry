@@ -318,9 +318,9 @@ class Smart_Manager_Admin_Welcome {
 						<h3>
 							<?php 
 								if ( SMBETAPRO === true ) {
-									echo __( 'Batch Update', 'smart-manager-for-wp-e-commerce' );											
+									echo __( 'Bulk Edit', 'smart-manager-for-wp-e-commerce' );											
 								} else {
-									echo sprintf(__( 'Batch Update - %1s (only in %2s)', 'smart-manager-for-wp-e-commerce' ), '<span style="color: red;">' . __( 'Biggest Time Saver', 'smart-manager-for-wp-e-commerce' ) . '</span>' , '<a href="https://www.storeapps.org/product/smart-manager/?utm_source=sm&utm_medium=welcome_page&utm_campaign=sm_know" target="_blank">' . __( 'Pro', 'smart-manager-for-wp-e-commerce' ) . '</a>' );
+									echo sprintf(__( 'Bulk Edit - %1s (only in %2s)', 'smart-manager-for-wp-e-commerce' ), '<span style="color: red;">' . __( 'Biggest Time Saver', 'smart-manager-for-wp-e-commerce' ) . '</span>' , '<a href="https://www.storeapps.org/product/smart-manager/?utm_source=sm&utm_medium=welcome_page&utm_campaign=sm_know" target="_blank">' . __( 'Pro', 'smart-manager-for-wp-e-commerce' ) . '</a>' );
 								}
 							?>
 						</h3>
@@ -328,7 +328,7 @@ class Smart_Manager_Admin_Welcome {
 						<iframe class="sm-video-iframe" src="https://www.youtube.com/embed/COXCuX2rFrk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 					</div>
 						<p>
-							<?php echo sprintf(__( 'You can change / update multiple fields of the entire store OR for selected items by selecting multiple records and then click on Batch Update. %s.', 'smart-manager-for-wp-e-commerce' ), '<a href="https://www.storeapps.org/docs/sm-how-to-use-batch-update/?utm_source=sm&utm_medium=welcome_page&utm_campaign=sm_know" target="_blank">' . __( 'See how', 'smart-manager-for-wp-e-commerce' ) . '</a>' ); ?>
+							<?php echo sprintf(__( 'You can change / update multiple fields of the entire store OR for selected items by selecting multiple records and then click on Bulk Edit. %s.', 'smart-manager-for-wp-e-commerce' ), '<a href="https://www.storeapps.org/docs/sm-how-to-use-batch-update/?utm_source=sm&utm_medium=welcome_page&utm_campaign=sm_know" target="_blank">' . __( 'See how', 'smart-manager-for-wp-e-commerce' ) . '</a>' ); ?>
 						</p>
 					</div>
 				<div class="column last-feature col">

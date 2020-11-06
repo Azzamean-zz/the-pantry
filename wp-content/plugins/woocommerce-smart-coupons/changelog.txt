@@ -1,5 +1,41 @@
 *** WooCommerce Smart Coupons Changelog ***
 
+2020.11.02 - version 4.12.0
+* New: Tested upto WooCommerce 4.6.1 & WordPress 5.5.3
+* New: Usage restriction to exclude user roles
+* New: Feature to select quantity of the products which will be added to cart on applying a coupon (under Coupon data > Actions tab)
+* Fix: Incorrectly showing description of one coupon as description of other coupons
+* Fix: Remove unnecessary CSS from styles of coupons which are going in the email
+* Update: sample.csv file
+* Update: POT file
+
+2020.10.26 - version 4.11.0
+* New: Allow linking of coupon to variations as well
+* Developer: Hook 'wc_sc_is_filter_content_coupon_message'
+* Update: Highlight Smart Coupons' field under product
+* Update: Coupon design templates for handling empty coupon amount
+* Update: API namespace
+* Update: POT file
+
+2020.10.19 - version 4.10.0
+* New: Tested upto WooCommerce 4.6.0
+* New: API support for generating coupons
+* Fix: Incorrectly overriding 'custom-design' for coupon on saving the settings
+* Fix: Incorrectly adding 'is_email' attribute when adding shortcode using WP editor button
+* Fix: Reduce multiple AJAX request on the cart & the checkout page to one (happens only in some cases) (Thanks to: BuildWooFunnels)
+* Fix: Links added in the message, which will be sent along with the coupon, those links are broken in the received email
+* Update: Display store notice for coupon based on the coupon's status
+* Update: Provide support for selecting order statuses to consider during the validation of new user coupons
+* Developer: Hook 'wc_sc_should_coupon_auto_generate'
+* Update: POT file
+
+2020.10.09 - version 4.9.5
+* New: Set a coupon to display as storewide offer coupon. It will be displayed everywhere on the website.
+* Fix: Initialization of Action Scheduler package
+* Update: Action Scheduler package to version 3.1.6
+* Update: Delayed execution of function 'handle_coupon_process_on_3rd_party_order_statuses' to support necessary changes to take place
+* Update: POT file
+
 2020.09.28 - version 4.9.1
 * Fix: Selected coupon design for email is not getting sent in the order received email
 * Fix: Width of checkbox in 'Bulk generate form'

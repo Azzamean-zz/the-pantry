@@ -20,4 +20,4 @@ if ( ! empty( $args['custom_attributes'] ) && is_array( $args['custom_attributes
 <h4 class="form-heading <?php echo implode( ' ', $args['class'] ); ?>"
     id="<?php echo $key; ?>_field"
 	<?php echo empty( $custom_attributes ) ? '' : implode( ' ', $custom_attributes ); ?>
-><?php echo $args['label']; ?></h4>
+><?php echo wp_kses( $args['label'], '' ); ?></h4>

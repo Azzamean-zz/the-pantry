@@ -2,7 +2,7 @@
 /**
  * After checkout shiiping form
  *
- * This template can be overridden by copying it to yourtheme/flexible-checkout-fields-pro/checkout/after_checkout_shipping_form.php
+ * This template can be overridden by copying it to yourtheme/flexible-checkout-fields-pro/checkout/flexible-checkout-fields/after_checkout_shipping_form.php
  *
  */
 

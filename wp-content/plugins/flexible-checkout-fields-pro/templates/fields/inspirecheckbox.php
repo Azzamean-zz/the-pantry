@@ -36,5 +36,5 @@ if ( ! empty( $args['custom_attributes'] ) && is_array( $args['custom_attributes
                 name="<?php echo $key; ?>"
                 id="<?php echo $key; ?>" value="<?php echo $args['placeholder']; ?>" <?php echo $checked; ?>
 			    <?php echo empty( $custom_attributes ) ? '' : implode( ' ', $custom_attributes ); ?>
-        /> <?php echo $args['label']; ?> <?php echo $required; ?></label>
+        /> <?php echo wp_kses( $args['label'], '' ); ?> <?php echo $required; ?></label>
 </p>

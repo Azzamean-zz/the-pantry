@@ -2,7 +2,7 @@
 /**
  * Before checkout registration form
  *
- * This template can be overridden by copying it to yourtheme/flexible-checkout-fields-pro/checkout/before_checkout_registration_form.php
+ * This template can be overridden by copying it to yourtheme/flexible-checkout-fields-pro/checkout/flexible-checkout-fields/before_checkout_registration_form.php
  *
  */
 

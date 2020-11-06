@@ -87,6 +87,7 @@ class Flexible_Checkout_Fields_Plugin extends \FcfVendor\WPDesk\PluginBuilder\Pl
 	 * Load dependencies.
 	 */
 	private function load_dependencies() {
+		new WPDesk_Flexible_Checkout_Fields_Tracker();
 		require_once __DIR__ . '/settings.php';
 		require_once __DIR__ . '/field-options.php';
 	}
@@ -293,20 +294,23 @@ class Flexible_Checkout_Fields_Plugin extends \FcfVendor\WPDesk\PluginBuilder\Pl
 				'section'        => 'billing',
 				'tab'            => 'fields_billing',
 				'tab_title'      => __( 'Billing', 'flexible-checkout-fields' ),
-				'custom_section' => false
+				'custom_section' => false,
+				'user_meta'      => true,
 			),
 			'shipping' => array(
 				'section'        => 'shipping',
 				'tab'            => 'fields_shipping',
 				'tab_title'      => __( 'Shipping', 'flexible-checkout-fields' ),
-				'custom_section' => false
+				'custom_section' => false,
+				'user_meta'      => true,
 			),
 			'order'    => array(
 				'section'        => 'order',
 				'tab'            => 'fields_order',
 				'tab_title'      => __( 'Order', 'flexible-checkout-fields' ),
-				'custom_section' => false
-			)
+				'custom_section' => false,
+				'user_meta'      => false,
+			),
 		);
 
 		$all_sections = unserialize( serialize( $sections ) );
@@ -550,6 +554,11 @@ class Flexible_Checkout_Fields_Plugin extends \FcfVendor\WPDesk\PluginBuilder\Pl
 								}
 								if ( isset( $field['label'] ) ) {
 									$new[ $key ][ $field['name'] ]['label'] = stripcslashes( wpdesk__( $field['label'], 'flexible-checkout-fields' ) );
+
+									// Support for fields rendered by WooCommerce
+									if ( isset( $field['type'] ) && in_array( $field['type'], array( 'text', 'textarea', 'select' ), true ) ) {
+										$new[ $key ][ $field['name'] ]['label'] = wp_kses_post( $new[ $key ][ $field['name'] ]['label'] );
+									}
 								}
 								if ( isset( $field['placeholder'] ) ) {
 									$new[ $key ][ $field['name'] ]['placeholder'] = wpdesk__( $field['placeholder'], 'flexible-checkout-fields' );
@@ -946,16 +955,22 @@ class Flexible_Checkout_Fields_Plugin extends \FcfVendor\WPDesk\PluginBuilder\Pl
 			'hash'  => 'advanced',
 			'title' => __( 'Advanced', 'flexible-checkout-fields' )
 		);
+		$tabs[] = [
+			'hash'  => 'pricing',
+			'title' => __( 'Pricing', 'flexible-checkout-fields' ),
+		];
 
 		return $tabs;
 	}
 
 	public function flexible_checkout_fields_field_tabs_content( $key, $name, $field, $settings ) {
 		include $this->plugin_path . '/views/settings-field-advanced.php';
+		include $this->plugin_path . '/views/settings-field-pricing.php';
 	}
 
 	public function flexible_checkout_fields_field_tabs_content_js() {
 		include $this->plugin_path . '/views/settings-field-advanced-js.php';
+		include $this->plugin_path . '/views/settings-field-pricing-js.php';
 	}
 
 	public function woocommerce_get_country_locale_default( $address_fields ) {

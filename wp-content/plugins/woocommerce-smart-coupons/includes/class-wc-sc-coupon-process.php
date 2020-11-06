@@ -4,7 +4,7 @@
  *
  * @author      StoreApps
  * @since       3.3.0
- * @version     1.1.7
+ * @version     1.3.0
  *
  * @package     woocommerce-smart-coupons/includes/
  */
@@ -64,7 +64,7 @@ if ( ! class_exists( 'WC_SC_Coupon_Process' ) ) {
 			add_action( 'woocommerce_order_status_failed_to_completed', array( $this, 'update_smart_coupon_balance' ) );
 			add_action( 'sc_after_order_calculate_discount_amount', array( $this, 'update_smart_coupon_balance' ), 10 );
 
-			add_action( 'woocommerce_order_status_changed', array( $this, 'handle_coupon_process_on_3rd_party_order_statuses' ), 10, 3 );
+			add_action( 'woocommerce_order_status_changed', array( $this, 'handle_coupon_process_on_3rd_party_order_statuses' ), 20, 3 );
 
 			add_filter( 'woocommerce_paypal_args', array( $this, 'modify_paypal_args' ), 11, 2 );
 
@@ -921,7 +921,7 @@ if ( ! class_exists( 'WC_SC_Coupon_Process' ) ) {
 						$product_id = ( ! empty( $product->id ) ) ? $product->id : 0;
 					}
 
-					$coupon_titles = get_post_meta( $product_id, '_coupon_title', true );
+					$coupon_titles = $this->get_coupon_titles( array( 'product_object' => $product ) );
 
 					if ( $coupon_titles ) {
 
@@ -1047,7 +1047,7 @@ if ( ! class_exists( 'WC_SC_Coupon_Process' ) ) {
 						$product_id = ( ! empty( $product->id ) ) ? $product->id : 0;
 					}
 
-					$coupon_titles = get_post_meta( $product_id, '_coupon_title', true );
+					$coupon_titles = $this->get_coupon_titles( array( 'product_object' => $product ) );
 
 					if ( $coupon_titles ) {
 
@@ -1128,6 +1128,7 @@ if ( ! class_exists( 'WC_SC_Coupon_Process' ) ) {
 		 * @return boolean
 		 */
 		public function should_coupon_auto_generate( $order_id = 0 ) {
+			$should_auto_generate = true;
 			$valid_order_statuses = get_option( 'wc_sc_valid_order_statuses_for_coupon_auto_generation', wc_get_is_paid_statuses() );
 			if ( ! empty( $valid_order_statuses ) ) {
 				$valid_order_statuses = apply_filters( 'wc_sc_valid_order_statuses_for_coupon_auto_generation', $valid_order_statuses, $order_id );
@@ -1135,11 +1136,18 @@ if ( ! class_exists( 'WC_SC_Coupon_Process' ) ) {
 					$order        = wc_get_order( $order_id );
 					$order_status = $order->get_status();
 					if ( ! in_array( $order_status, $valid_order_statuses, true ) ) {
-						return false;
+						$should_auto_generate = false;
 					}
 				}
 			}
-			return true;
+			return apply_filters(
+				'wc_sc_should_coupon_auto_generate',
+				$should_auto_generate,
+				array(
+					'source'   => $this,
+					'order_id' => $order_id,
+				)
+			);
 		}
 
 		/**

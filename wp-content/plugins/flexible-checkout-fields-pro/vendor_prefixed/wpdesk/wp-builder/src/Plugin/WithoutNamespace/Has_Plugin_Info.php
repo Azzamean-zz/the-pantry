@@ -5,11 +5,6 @@ namespace FCFProVendor;
 if (!\interface_exists('FCFProVendor\\WPDesk_Translatable')) {
     require_once __DIR__ . '/Translatable.php';
 }
-/**
- * Have MUST HAVE info for plugin instantion
- *
- * have to be compatible with PHP 5.2.x
- */
 interface WPDesk_Has_Plugin_Info extends \FCFProVendor\WPDesk_Translatable
 {
     /**

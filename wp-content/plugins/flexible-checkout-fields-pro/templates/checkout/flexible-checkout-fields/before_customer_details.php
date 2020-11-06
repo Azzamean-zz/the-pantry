@@ -2,7 +2,7 @@
 /**
  * Before customer details
  *
- * This template can be overridden by copying it to yourtheme/flexible-checkout-fields-pro/checkout/before_customer_details.php
+ * This template can be overridden by copying it to yourtheme/flexible-checkout-fields-pro/checkout/flexible-checkout-fields/before_customer_details.php
  *
  */
 

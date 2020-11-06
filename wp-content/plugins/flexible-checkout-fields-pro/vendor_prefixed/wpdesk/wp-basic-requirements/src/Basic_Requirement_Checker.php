@@ -248,7 +248,7 @@ if (!\class_exists('FCFProVendor\\WPDesk_Basic_Requirement_Checker')) {
          */
         public static function is_wc_at_least($min_version)
         {
-            return \defined('FCFProVendor\\WC_VERSION') && \version_compare(\FCFProVendor\WC_VERSION, $min_version, '>=');
+            return \defined('WC_VERSION') && \version_compare(\WC_VERSION, $min_version, '>=');
         }
         /**
          * Checks if ssl version is valid
@@ -287,6 +287,17 @@ if (!\class_exists('FCFProVendor\\WPDesk_Basic_Requirement_Checker')) {
          */
         private static function retrieve_plugins_data_in_transient()
         {
+            static $never_executed = \true;
+            if ($never_executed) {
+                $never_executed = \false;
+                /** Required when WC starts later and these data should be in cache */
+                \add_filter('extra_plugin_headers', function ($headers = array()) {
+                    $headers[] = 'WC tested up to';
+                    $headers[] = 'WC requires at least';
+                    $headers[] = 'Woo';
+                    return \array_unique($headers);
+                });
+            }
             $plugins = \get_transient(self::PLUGIN_INFO_TRANSIENT_NAME);
             if ($plugins === \false) {
                 if (!\function_exists('get_plugins')) {
@@ -515,7 +526,7 @@ if (!\class_exists('FCFProVendor\\WPDesk_Basic_Requirement_Checker')) {
         /**
          * Triggers the transient delete after plugin deactivated
          *
-         *@return void
+         * @return void
          */
         public function transient_delete_on_plugin_version_changed()
         {

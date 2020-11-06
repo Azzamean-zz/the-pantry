@@ -26,6 +26,13 @@ class Flexible_Checkout_Fields_Pro {
 	private $plugin;
 
 	/**
+	 * List of keys for unavailable field sections, used in actions woocommerce_{$section_name}.
+	 *
+	 * @var string[]
+	 */
+	private $unavailable_sections = [];
+
+	/**
 	 * Flexible_Checkout_Fields_Pro constructor.
 	 *
 	 * @param Flexible_Checkout_Fields_Pro_Plugin $plugin Plugin.
@@ -73,6 +80,8 @@ class Flexible_Checkout_Fields_Pro {
 		add_action( 'wp_footer', array( $this, 'wp_footer' ) );
 
 		add_action( 'wp_footer', array( $this, 'fcf_shipping_fields_wp_footer' ) );
+
+		add_action( 'woocommerce_checkout_process', array( $this, 'set_unavailable_sections_for_checkout_process' ) );
 
 	}
 
@@ -239,106 +248,121 @@ class Flexible_Checkout_Fields_Pro {
 		$sections_add = array();
 
 		$sections_add['woocommerce_checkout_before_customer_details'] = array(
-			'section'			=> 'before_customer_details',
-			'tab'				=> 'fields_before_customer_details',
-			'tab_title'			=> __( 'Before Customer Details', 'flexible-checkout-fields-pro' ),
-			'title' 			=> __( 'Before Customer Details Fields', 'flexible-checkout-fields-pro' ),
-			'custom_section' 	=> true
+			'section'        => 'before_customer_details',
+			'tab'            => 'fields_before_customer_details',
+			'tab_title'      => __( 'Before Customer Details', 'flexible-checkout-fields-pro' ),
+			'title'             => __( 'Before Customer Details Fields', 'flexible-checkout-fields-pro' ),
+			'custom_section' => true,
+			'user_meta'      => true,
 		);
 
 		$sections_add['woocommerce_checkout_after_customer_details'] = array(
-			'section'			=> 'after_customer_details',
-			'tab'				=> 'fields_after_customer_details',
-			'tab_title'			=> __( 'After Customer Details', 'flexible-checkout-fields-pro' ),
-			'title'				=> __( 'After Customer Details Fields', 'flexible-checkout-fields-pro' ),
-			'custom_section' 	=> true
+			'section'        => 'after_customer_details',
+			'tab'            => 'fields_after_customer_details',
+			'tab_title'      => __( 'After Customer Details', 'flexible-checkout-fields-pro' ),
+			'title'          => __( 'After Customer Details Fields', 'flexible-checkout-fields-pro' ),
+			'custom_section' => true,
+			'user_meta'      => true,
 		);
 
 		$sections_add['woocommerce_before_checkout_billing_form'] = array(
-			'section'			=> 'before_checkout_billing_form',
-			'tab'				=> 'fields_before_checkout_billing_form',
-			'tab_title'			=> __( 'Before Billing Form', 'flexible-checkout-fields-pro' ),
-			'title'				=> __( 'Before Billing Form Fields', 'flexible-checkout-fields-pro' ),
-			'custom_section' 	=> true
+			'section'        => 'before_checkout_billing_form',
+			'tab'            => 'fields_before_checkout_billing_form',
+			'tab_title'      => __( 'Before Billing Form', 'flexible-checkout-fields-pro' ),
+			'title'          => __( 'Before Billing Form Fields', 'flexible-checkout-fields-pro' ),
+			'custom_section' => true,
+			'user_meta'      => true,
 		);
 
 		$sections_add['woocommerce_after_checkout_billing_form'] = array(
-			'section'			=> 'after_checkout_billing_form',
-			'tab'				=> 'fields_after_checkout_billing_form',
-			'tab_title'			=> __( 'After Billing Form', 'flexible-checkout-fields-pro' ),
-			'title'				=> __( 'After Billing Form Fields', 'flexible-checkout-fields-pro' ),
-			'custom_section' 	=> true
+			'section'        => 'after_checkout_billing_form',
+			'tab'            => 'fields_after_checkout_billing_form',
+			'tab_title'      => __( 'After Billing Form', 'flexible-checkout-fields-pro' ),
+			'title'          => __( 'After Billing Form Fields', 'flexible-checkout-fields-pro' ),
+			'custom_section' => true,
+			'user_meta'      => true,
 		);
 
 		$sections_add['woocommerce_before_checkout_shipping_form'] = array(
-			'section'			=> 'before_checkout_shipping_form',
-			'tab'				=> 'fields_before_checkout_shipping_form',
-			'tab_title'			=> __( 'Before Shipping Form', 'flexible-checkout-fields-pro' ),
-			'title'				=> __( 'Before Shipping Form Fields', 'flexible-checkout-fields-pro' ),
-			'custom_section' 	=> true
+			'section'        => 'before_checkout_shipping_form',
+			'tab'            => 'fields_before_checkout_shipping_form',
+			'tab_title'      => __( 'Before Shipping Form', 'flexible-checkout-fields-pro' ),
+			'title'          => __( 'Before Shipping Form Fields', 'flexible-checkout-fields-pro' ),
+			'custom_section' => true,
+			'user_meta'      => true,
 		);
 
 		$sections_add['woocommerce_after_checkout_shipping_form'] = array(
-			'section'			=> 'after_checkout_shipping_form',
-			'tab'				=> 'fields_after_checkout_shipping_form',
-			'tab_title'			=> __( 'After Shipping Form', 'flexible-checkout-fields-pro' ),
-			'title'				=> __( 'After Shipping Form Fields', 'flexible-checkout-fields-pro' ),
-			'custom_section' 	=> true
+			'section'        => 'after_checkout_shipping_form',
+			'tab'            => 'fields_after_checkout_shipping_form',
+			'tab_title'      => __( 'After Shipping Form', 'flexible-checkout-fields-pro' ),
+			'title'          => __( 'After Shipping Form Fields', 'flexible-checkout-fields-pro' ),
+			'custom_section' => true,
+			'user_meta'      => true,
 		);
 
 		$sections_add['woocommerce_before_checkout_registration_form'] = array(
-			'section'			=> 'before_checkout_registration_form',
-			'tab'				=> 'fields_before_checkout_registration_form',
-			'tab_title'			=> __( 'Before Registration Form', 'flexible-checkout-fields-pro' ),
-			'title'				=> __( 'Before Registration Form Fields', 'flexible-checkout-fields-pro' ),
-			'custom_section' 	=> true
+			'section'        => 'before_checkout_registration_form',
+			'tab'            => 'fields_before_checkout_registration_form',
+			'tab_title'      => __( 'Before Registration Form', 'flexible-checkout-fields-pro' ),
+			'title'          => __( 'Before Registration Form Fields', 'flexible-checkout-fields-pro' ),
+			'custom_section' => true,
+			'user_meta'      => true,
 		);
 
 		$sections_add['woocommerce_after_checkout_registration_form'] = array(
-			'section'			=> 'after_checkout_registration_form',
-			'tab'				=> 'fields_after_checkout_registration_form',
-			'tab_title'			=> __( 'After Registration Form', 'flexible-checkout-fields-pro' ),
-			'title'				=> __( 'After Registration Form Fields', 'flexible-checkout-fields-pro' ),
-			'custom_section' 	=> true
+			'section'        => 'after_checkout_registration_form',
+			'tab'            => 'fields_after_checkout_registration_form',
+			'tab_title'      => __( 'After Registration Form', 'flexible-checkout-fields-pro' ),
+			'title'          => __( 'After Registration Form Fields', 'flexible-checkout-fields-pro' ),
+			'custom_section' => true,
+			'user_meta'      => true,
 		);
 
 		$sections_add['woocommerce_before_order_notes'] = array(
-			'section'			=> 'before_order_notes',
-			'tab'				=> 'fields_before_order_notes',
-			'tab_title'			=> __( 'Before Order Notes', 'flexible-checkout-fields-pro' ),
-			'title'				=> __( 'Before Order Notes Fields', 'flexible-checkout-fields-pro' ),
-			'custom_section' 	=> true
+			'section'        => 'before_order_notes',
+			'tab'            => 'fields_before_order_notes',
+			'tab_title'      => __( 'Before Order Notes', 'flexible-checkout-fields-pro' ),
+			'title'          => __( 'Before Order Notes Fields', 'flexible-checkout-fields-pro' ),
+			'custom_section' => true,
+			'user_meta'      => false,
 		);
 
 		$sections_add['woocommerce_after_order_notes'] = array(
-			'section'			=> 'after_order_notes',
-			'tab'				=> 'fields_after_order_notes',
-			'tab_title'			=> __( 'After Order Notes', 'flexible-checkout-fields-pro' ),
-			'title'				=> __( 'After Order Notes Fields', 'flexible-checkout-fields-pro' ),
-			'custom_section' 	=> true
+			'section'        => 'after_order_notes',
+			'tab'            => 'fields_after_order_notes',
+			'tab_title'      => __( 'After Order Notes', 'flexible-checkout-fields-pro' ),
+			'title'          => __( 'After Order Notes Fields', 'flexible-checkout-fields-pro' ),
+			'custom_section' => true,
+			'user_meta'      => false,
 		);
 
 		$sections_add['woocommerce_review_order_before_submit'] = array(
-			'section'			=> 'review_order_before_submit',
-			'tab'				=> 'fields_review_order_before_submit',
-			'tab_title'			=> __( 'Before Submit', 'flexible-checkout-fields-pro' ),
-			'title'				=> __( 'Before Submit Fields', 'flexible-checkout-fields-pro' ),
-			'custom_section' 	=> true
+			'section'        => 'review_order_before_submit',
+			'tab'            => 'fields_review_order_before_submit',
+			'tab_title'      => __( 'Before Submit', 'flexible-checkout-fields-pro' ),
+			'title'          => __( 'Before Submit Fields', 'flexible-checkout-fields-pro' ),
+			'custom_section' => true,
+			'user_meta'      => false,
 		);
 
 		$sections_add['woocommerce_review_order_after_submit'] = array(
-			'section'			=> 'review_order_after_submit',
-			'tab'				=> 'fields_review_order_after_submit',
-			'tab_title'			=> __( 'After Submit', 'flexible-checkout-fields-pro' ),
-			'title'				=> __( 'After Submit Fields', 'flexible-checkout-fields-pro' ),
-			'custom_section' 	=> true
+			'section'        => 'review_order_after_submit',
+			'tab'            => 'fields_review_order_after_submit',
+			'tab_title'      => __( 'After Submit', 'flexible-checkout-fields-pro' ),
+			'title'          => __( 'After Submit Fields', 'flexible-checkout-fields-pro' ),
+			'custom_section' => true,
+			'user_meta'      => false,
 		);
 
 		foreach ( $sections_add as $section => $section_data ) {
+			if ( in_array( $section_data['section'], $this->unavailable_sections, true ) ) {
+				continue;
+			}
+
 			if ( $get_disabled || get_option( 'inspire_checkout_fields_' . $section_data['section'] , '0' ) == '1' ) {
 				$sections[$section] = $section_data;
 			}
-
 		}
 
 		return $sections;
@@ -559,7 +583,7 @@ class Flexible_Checkout_Fields_Pro {
 
 		$add_fields['select'] = array(
 			self::FIELD_TYPE_NAME                => __( 'Select (Drop Down)', 'flexible-checkout-fields-pro' ),
-			self::FIELD_TYPE_DISABLE_PLACEHOLDER => true,
+			self::FIELD_TYPE_DISABLE_PLACEHOLDER => false,
 			self::FIELD_TYPE_HAS_OPTIONS         => true,
             self::FIELD_TYPE_HAS_DEFAULT_VALUE   => true,
 		);
@@ -728,5 +752,17 @@ class Flexible_Checkout_Fields_Pro {
 			$options[ $row_option[0] ] = isset( $row_option[1] ) ? $row_option[1] : $row_option[0];
 		}
 		return $options;
+	}
+
+	/**
+	 * Sets keys of unavailable sections for checkout process.
+	 *
+	 * @internal
+	 */
+	public function set_unavailable_sections_for_checkout_process() {
+		if ( is_user_logged_in() || ! WC()->checkout()->is_registration_enabled() ) {
+			$this->unavailable_sections[] = 'before_checkout_registration_form';
+			$this->unavailable_sections[] = 'after_checkout_registration_form';
+		}
 	}
 }

@@ -17,6 +17,7 @@ class Flexible_Checkout_Fields_Pro_File_Field_Type extends Flexible_Checkout_Fie
 	public function hooks() {
 		add_filter( 'woocommerce_form_field_file', array( $this, 'form_field' ), 10, 4 );
 		add_filter( 'flexible_checkout_fields_print_value', array( $this, 'field_print_value' ), 10, 2 );
+		add_action( 'woocommerce_checkout_update_order_meta', array( $this, 'copy_session_from_billing_to_shipping_on_checkout' ), 10, 2 );
 		add_action( 'woocommerce_checkout_update_order_meta', array( $this, 'update_order_meta_on_checkout' ), 10, 2 );
 		add_action( 'woocommerce_checkout_update_user_meta', array( $this, 'update_user_meta_on_checkout' ), 10, 2 );
 	}
@@ -115,6 +116,32 @@ class Flexible_Checkout_Fields_Pro_File_Field_Type extends Flexible_Checkout_Fie
 			}
 		}
 		return $session_data;
+	}
+
+	/**
+	 * Copies session data from billing details to shipping details on checkout.
+	 * Only when shipping address is same as billing address.
+	 *
+	 * @param int   $order_id Order id.
+	 * @param array $data Posted data.
+	 */
+	public function copy_session_from_billing_to_shipping_on_checkout( $order_id, $data ) {
+		if ( ! isset( $data['ship_to_different_address'] ) || $data['ship_to_different_address'] ) {
+			return;
+		}
+
+		$settings = $this->checkout_fields_pro->get_settings();
+		if ( ! isset( $settings['shipping'] ) ) {
+			return;
+		}
+
+		$session_data = WC()->session->get( 'checkout-fields', array() );
+		foreach ( $settings['shipping'] as $field ) {
+			if ( ( $field['type'] === 'file' ) && isset( $session_data[ 'billing_' . $field['short_name'] ] ) ) {
+				$session_data[ 'shipping_' . $field['short_name'] ] = $session_data[ 'billing_' . $field['short_name'] ];
+			}
+		}
+		WC()->session->set( 'checkout-fields', $session_data );
 	}
 
 	/**

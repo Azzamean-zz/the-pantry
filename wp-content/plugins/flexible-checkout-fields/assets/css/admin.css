@@ -16,15 +16,15 @@ span.inspire-file-error {
 }
 
 .woocommerce_page_inspire_checkout_fields_settings .hide {
-    display: none;
+	display: none;
 }
 
 .woocommerce_page_inspire_checkout_fields_settings .rate {
-    text-align: center;
+	text-align: center;
 }
 
 .woocommerce_page_inspire_checkout_fields_settings .rate a {
-    text-decoration: none;
+	text-decoration: none;
 }
 
 /* Add New Field Box */
@@ -47,7 +47,7 @@ span.inspire-file-error {
 }
 
 .woocommerce_page_inspire_checkout_fields_settings .add-new-field-box .stuffbox {
-    margin-top: 25px;
+	margin-top: 25px;
 }
 
 /* Fields */
@@ -62,18 +62,24 @@ span.inspire-file-error {
 .woocommerce_page_inspire_checkout_fields_settings .fields-container {
 	border-right: 1px solid #ddd;
 	float: left;
-	width: 413px;
+	width: 513px;
 }
 
 .woocommerce_page_inspire_checkout_fields_settings ul.fields {
 	padding-top: 0;
 }
 
+.woocommerce_page_inspire_checkout_fields_settings .menu-item-bar .menu-item-handle,
+.woocommerce_page_inspire_checkout_fields_settings .menu-item-settings {
+	width: 100%;
+	box-sizing: border-box;
+}
+
 .woocommerce_page_inspire_checkout_fields_settings .field-item .menu-item-bar .menu-item-handle .item-title {
-    margin-right: 1.5em;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+	margin-right: 1.5em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 /*
 .woocommerce_page_inspire_checkout_fields_settings .field-item .menu-item-bar .menu-item-handle .item-title:before {
@@ -90,7 +96,7 @@ span.inspire-file-error {
 }
 */
 .woocommerce_page_inspire_checkout_fields_settings .field-item.just-added .menu-item-bar .menu-item-handle {
-    border-color: #999;
+	border-color: #999;
 }
 
 .woocommerce_page_inspire_checkout_fields_settings .field-item.field-hidden .item-title {
@@ -109,26 +115,31 @@ span.inspire-file-error {
 	display: none;
 }
 
+.woocommerce_page_inspire_checkout_fields_settings .field-settings select {
+	max-width: 100%;
+}
+
 .woocommerce_page_inspire_checkout_fields_settings .field-settings-tab-container > div {
 	margin: 5px 0 10px;
 }
 
 .woocommerce_page_inspire_checkout_fields_settings .field-settings label {
+	display: block;
 	margin-bottom: 5px;
 }
 
 .woocommerce_page_inspire_checkout_fields_settings .field-settings .element-option {
-    display: none;
+	display: none;
 }
 
 .woocommerce_page_inspire_checkout_fields_settings .field-settings .element-option.show {
-    display: block;
+	display: block;
 }
 
 .woocommerce_page_inspire_checkout_fields_settings .field-settings a.remove-field {
 	color: #a00;
 	display: inline-block;
-	margin: 10px 0 5px 320px;
+	margin: 10px 0 5px 420px;
 	text-decoration: none;
 }
 
@@ -146,42 +157,42 @@ span.inspire-file-error {
 }
 
 .woocommerce_page_inspire_checkout_fields_settings #nav-menu-footer .reset_settings {
-    border: none;
-    box-shadow: none;
-    color: #a00;
-    float: right;
-    padding: 0;
+	border: none;
+	box-shadow: none;
+	color: #a00;
+	float: right;
+	padding: 0;
 }
 
 .woocommerce_page_inspire_checkout_fields_settings #nav-menu-footer .reset_settings:hover {
-    color: red;
+	color: red;
 }
 
 /* Tabs */
 .woocommerce_page_inspire_checkout_fields_settings .fields-container .nav-tab {
-    font-size: 12px;
-    margin-left: 0;
-    margin-right: .5em;
+	font-size: 12px;
+	margin-left: 0;
+	margin-right: .5em;
 }
 
 .woocommerce_page_inspire_checkout_fields_settings .fields-container .nav-tab-active,
 .woocommerce_page_inspire_checkout_fields_settings .fields-container .nav-tab-active:focus,
 .woocommerce_page_inspire_checkout_fields_settings .fields-container .nav-tab-active:focus:active,
 .woocommerce_page_inspire_checkout_fields_settings .fields-container .nav-tab-active:hover {
-    background-color: #fff;
-    border-bottom: 0;
+	background-color: #fff;
+	border-bottom: 0;
 }
 
 .woocommerce_page_inspire_checkout_fields_settings .nav-tab-wrapper {
-    border-bottom: 0;
-    margin-right: 10px;
+	border-bottom: 0;
+	margin-right: 10px;
 }
 
 .woocommerce_page_inspire_checkout_fields_settings .field-settings-tab-container {
-    border: 1px solid #ccc;
-    margin-top: -1px;
-    margin-right: 10px;
-    padding: 4px 10px 0;
+	border: 1px solid #ccc;
+	margin-top: -1px;
+	margin-right: 10px;
+	padding: 4px 10px 0;
 }
 
 .display-options-info, .display-options-heading {
@@ -190,12 +201,12 @@ span.inspire-file-error {
 
 /* Edit Order */
 .post-type-shop_order .edit_address .form-left {
-    float: left !important;
-    clear: left;
+	float: left !important;
+	clear: left;
 }
 
 .post-type-shop_order .edit_address .form-right {
-    float: right !important;
+	float: right !important;
 }
 
 /* field validation */

@@ -22,4 +22,4 @@ if ( ! empty( $args['custom_attributes'] ) && is_array( $args['custom_attributes
     id="<?php echo $key; ?>_field"
     data-priotiry="<?php echo $args['priority']; ?>"
 	<?php echo empty( $custom_attributes ) ? '' : implode( ' ', $custom_attributes ); ?>
-><?php echo $args['label']; ?></p>
+><?php echo wp_kses_post( $args['label'] ); ?></p>

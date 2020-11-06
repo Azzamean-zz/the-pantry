@@ -25,4 +25,6 @@
        	<label for="section_css"><?php _e( 'CSS Class', 'flexible-checkout-fields-pro' ); ?></label>
 		<input type="text" id="section_css" name="inspire_checkout_fields[section_settings][<?php echo $section; ?>][section_css]" value="<?php if( !empty($section_settings[$section]['section_css'])): echo $section_settings[$section]['section_css']; else: echo '' ; endif;  ?>">
     </div>
+
+	<br>
 </div>

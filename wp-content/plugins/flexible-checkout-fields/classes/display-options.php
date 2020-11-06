@@ -91,7 +91,7 @@ class Flexible_Checkout_Fields_Disaplay_Options {
 								}
 								$value = apply_filters( 'flexible_checkout_fields_print_value', $value, $field );
 								if ( '' !== $value ) {
-									$return[] = esc_html( wpdesk__( $field['label'], 'flexible-checkout-fields' ) ) . ': ' . esc_html( $value );
+									$return[] = strip_tags( wpdesk__( $field['label'], 'flexible-checkout-fields' ) ) . ': ' . esc_html( $value );
 								}
 							}
 						}
@@ -361,6 +361,10 @@ class Flexible_Checkout_Fields_Disaplay_Options {
 
 		foreach ( $cf_fields as $field_key => $field ) {
 			$val = wpdesk_get_order_meta( $order, '_' . $field_key, true );
+			if ( empty( $val ) && isset( $fields[ $field_key ] ) ) {
+				$val = $fields[ $field_key ];
+			}
+
 			$fcf_field = new Flexible_Checkout_Fields_Field( $field, $this->plugin );
 			if ( (isset( $field['custom_field'] ) && $field['custom_field'] == '1')) {
 				$val = '';
@@ -379,8 +383,9 @@ class Flexible_Checkout_Fields_Disaplay_Options {
 			}
 
 			$val = $this->flexible_invoices_ask_field_integration($val, $field, $field_key, $fields);
+			$val = esc_html( $val );
 
-			$fields[$field['name']] = esc_html($val);
+			$fields[$field['name']] = $val;
 			$fields[$this->replace_only_first(  $address_type . '_', '', $field['name'] )] = $val;
 		}
 

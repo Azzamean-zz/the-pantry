@@ -136,7 +136,7 @@ function sm_position_compare( $a, $b ){
 
 function sm_woo_get_price($regular_price, $sale_price, $sale_price_dates_from, $sale_price_dates_to) {
 	// Get price if on sale
-	if ($sale_price && $sale_price_dates_to == '' && $sale_price_dates_from == '') {
+	if ($sale_price && empty( $sale_price_dates_to ) && empty( $sale_price_dates_from ) ) {
 		$price = $sale_price;
 	} else { 
 		$price = $regular_price;
@@ -145,14 +145,14 @@ function sm_woo_get_price($regular_price, $sale_price, $sale_price_dates_from, $
 	$from_date = ( is_numeric( $sale_price_dates_from ) && ( int )$sale_price_dates_from == $sale_price_dates_from ) ? ( int )$sale_price_dates_from : strtotime( $sale_price_dates_from );
 	$to_date = ( is_numeric( $sale_price_dates_to ) && ( int )$sale_price_dates_to == $sale_price_dates_to ) ? ( int )$sale_price_dates_to : strtotime( $sale_price_dates_to );
 	
-	if ( $from_date < strtotime('NOW') ) {
+	if ( ! empty( $from_date ) && $from_date < strtotime('NOW') ) {
 		$price = $sale_price;
 	}
 	
-	if ( $to_date < strtotime('NOW') ) {
+	if ( ! empty( $to_date ) && $to_date < strtotime('NOW') ) {
 		$price = $regular_price;
 	}
-	
+
 	return $price;
 }
 
