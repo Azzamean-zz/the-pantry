@@ -2,7 +2,7 @@
 /*
 * Plugin Name: Smart Manager For WooCommerce – Stock Management, Bulk Edit & more...
 * Plugin URI: https://www.storeapps.org/product/smart-manager/
-* Description: <strong>Lite Version Installed</strong>. The #1 and a powerful tool to manage stock, inventory from a single place. Super quick and super easy.
+* Description: <strong>Pro Version Installed</strong>. The #1 and a powerful tool to manage stock, inventory from a single place. Super quick and super easy.
 * Version: 4.6.1
 * Author: StoreApps
 * Author URI: https://www.storeapps.org/
