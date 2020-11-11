@@ -715,6 +715,25 @@ a.wc-block-grid__product-link {
 	pointer-events: none !important;
 }
 
+.woocommerce-account-fields .create-account {
+	display: none;	
+}
+
+.woocommerce-message, .woocommerce-info, .woocommerce-error, .woocommerce-noreviews, p.no-comments {
+	background: rgba(255,255,255, .2) !important;
+	border: 1px solid #a37c22;
+	color: #000;	
+	padding-bottom: .7em;	
+	p {
+		color: #000;	
+	}
+	a {
+		color: #a37c22;
+		&:hover {
+			color: #791919;
+		}
+	}
+}
 
 @media screen and (max-width: 856px) {
 	.tribe-events-calendar-month__week {
