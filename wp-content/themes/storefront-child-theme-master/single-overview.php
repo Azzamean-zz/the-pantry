@@ -31,7 +31,7 @@ get_header(); ?>
 		
 		<hr class="wp-block-separator">
 		<h2>Dates</h2>
-		<p class="text-center"><i>All classes are listed in Pacific Daylight Time.</i></p>		
+		<p class="text-center"><i>All classes are listed in Pacific Time.</i></p>		
 		
 		<?php
 		$ticket_pages = get_field('ticket_pages');
@@ -40,29 +40,43 @@ get_header(); ?>
 		    <?php foreach( $ticket_pages as $post ): setup_postdata($post);?>
 		    	
 		    	<?php
-					$today = date('Ymd');
+					$end = strtotime('tomorrow midnight');
+					
+					// $end = date("m/d/Y h:i:s A T",$end);
+					
 					$expiration = get_field('end_date');
 					
 					$expiration = strtotime($expiration);
+					$date = date("Y-m-d", $expiration);
+					
+					$date = strtotime('+1 day', strtotime($date));
+	
+					
 					$now = time();
 					
 					$hoursToSubtract = '7';
 					$timeToSubtract = ($hoursToSubtract * 60 * 60);
+					
+					$end = $end - $timeToSubtract;
+					
 					$now = $now - $timeToSubtract;
 										
 					$class = '';
-					
-					// echo get_field('end_date');
-					
-					$myDateTime = DateTime::createFromFormat('m/d/Y g:i a', (get_field('end_date')));
-					$newDateString = $myDateTime->format('d-m-Y');
-					
+
 /*
 					echo '<br>';
 					echo date('m/d/Y g:i a');
 */
-					
-					if( $expiration < $now ) {
+/*
+					echo date("Y-m-d 00:00:00", $date);
+					echo '<br>';
+					//echo gmdate("Y-m-d H:i:s", $expiration);
+					echo '<br>';
+					echo gmdate("Y-m-d H:i:s", $now);
+					echo '<br>';
+*/
+
+					if( $date < $now ) {
 						$class = 'hide';
 					}
 				?>
