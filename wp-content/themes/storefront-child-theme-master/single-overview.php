@@ -105,6 +105,8 @@ get_header(); ?>
 			if((get_field('stock')) != 'sold-out') {
 				update_field('stock', 'sold-out', $post_id);
 			}
+		} else {
+			update_field('stock', '', $post_id);
 		}
 		?>
 		
