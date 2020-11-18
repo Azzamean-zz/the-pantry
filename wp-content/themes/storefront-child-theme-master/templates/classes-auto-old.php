@@ -1,6 +1,6 @@
 <?php
 /**
- * Template name: Auto Class Page Template
+ * Template name: OLD Auto Class Page Template
  *
  * @package storefront
  */
@@ -53,13 +53,51 @@ get_header(); ?>
 		?>
 		<h2 class="has-text-align-center"><?php echo date('F'); ?></h2>	
 		<div class="grid">
-		<?php  while ( $query->have_posts() ) { $query->the_post(); ?>
-			<a class="grid-item <?php { echo get_field('stock'); } ?>" href="<?php the_permalink(); ?>">
-				<?php the_post_thumbnail( 'medium','style=max-width:100%;height:auto;');?>
-				<div class="so-text">Sold Out</div>	
-				<h3><?php echo get_field('title'); ?></h3>	
-			</a>
-		<?php } ?>
+		<?php
+		    while ( $query->have_posts() ) { $query->the_post();
+		    	$ticket_pages = get_field('ticket_pages');
+				$now = strtotime(date('m/d/Y g:i a')); 
+
+				$hoursToSubtract = '8';
+				$timeToSubtract = ($hoursToSubtract * 60 * 60);				
+				$now = $now - $timeToSubtract;
+
+				$ticketcount = 0;
+				$i = 0;
+				foreach( $ticket_pages as $ticket_page ):
+								
+					$class = '';
+					$end_date = strtotime(get_field('end_date', $ticket_page->ID));
+					if($end_date > $now) {
+						$ticketcount++;
+						$tids = tribe_get_woo_tickets_ids($ticket_page->ID);
+
+						$tickets_handler = tribe( 'tickets.handler' );
+						if ( 0 === $tickets_handler->get_ticket_max_purchase( $tids[0] ) ) {				
+							$i++;
+						}
+					}
+					
+					if($i >= $ticketcount) {
+						$class = ' so-thumb ';
+						$class .= ' count-' . $ticketcount . '-i-' . $i;
+					} else {
+						$class = ' count-' . $ticketcount . '-i-' . $i;
+					}
+				
+				endforeach;
+				
+			?>
+				<a class="grid-item <?php { echo $class; } ?>" href="<?php the_permalink(); ?>">
+						
+					<?php the_post_thumbnail( 'medium','style=max-width:100%;height:auto;');?>
+					<div class="so-text">Sold Out</div>	
+					<h3><?php echo get_field('title'); ?></h3>	
+				</a>
+			<?php
+
+	    	}
+	    	?>
 	    </div>
 	    <?php
 	    }
@@ -104,13 +142,44 @@ get_header(); ?>
 		?>
 		<h2 class="has-text-align-center"><?php echo date('F',strtotime('first day of +1 month')); ?></h2>	
 		<div class="grid">
-		<?php  while ( $query->have_posts() ) { $query->the_post(); ?>
-				<a class="grid-item <?php { echo get_field('stock'); } ?>" href="<?php the_permalink(); ?>">
+		<?php
+		    while ( $query->have_posts() ) { $query->the_post();		        
+		    	$ticket_pages = get_field('ticket_pages');
+				$now = strtotime(date('m/d/Y g:i a')); 
+
+				$ticketcount = 0;
+				$i = 0;
+				foreach( $ticket_pages as $ticket_page ):
+								
+					$class = '';
+					$end_date = strtotime(get_field('end_date', $ticket_page->ID));
+									
+					$ticketcount++;
+					$tids = tribe_get_woo_tickets_ids($ticket_page->ID);
+
+					$tickets_handler = tribe( 'tickets.handler' );
+					if ( 0 === $tickets_handler->get_ticket_max_purchase( $tids[0] ) ) {				
+						$i++;
+					}
+					
+					if($i >= $ticketcount) {
+						$class = ' so-thumb ';
+						$class .= ' count-' . $ticketcount . '-i-' . $i;
+					} else {
+						$class = ' count-' . $ticketcount . '-i-' . $i;
+					}
+				
+				endforeach;
+			?>
+				<a class="grid-item <?php { echo $class; } ?>" href="<?php the_permalink(); ?>">
+					
 					<?php the_post_thumbnail( 'medium','style=max-width:100%;height:auto;');?>
 					<div class="so-text">Sold Out</div>	
 					<h3><?php echo get_field('title'); ?></h3>	
 				</a>
-		<?php } ?>
+			<?php
+	    	}
+	    	?>
 	    </div>
 	    <?php
 	    }
