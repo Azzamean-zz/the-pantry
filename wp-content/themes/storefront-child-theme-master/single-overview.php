@@ -100,8 +100,8 @@ get_header(); ?>
 		<?php endif; ?>
 		
 		<?php
+		$post_id = get_the_ID();
 		if($i >= $ticketcount) {
-			$post_id = get_the_ID();
 			if((get_field('stock')) != 'sold-out') {
 				update_field('stock', 'sold-out', $post_id);
 			}
