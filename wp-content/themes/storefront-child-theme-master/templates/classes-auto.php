@@ -56,39 +56,37 @@ get_header(); ?>
 		<?php
 		    while ( $query->have_posts() ) { $query->the_post();
 		    	$ticket_pages = get_field('ticket_pages');
-				if( $ticket_pages ):
-					$ticketcount = count($ticket_pages);
-					$i = 0;
-					foreach( $ticket_pages as $ticket_page ):
-					
-/*
-						$ticket_ids = tribe_get_woo_tickets_ids($ticket_page->ID);
-												
-						$class = '';
-						
-						if(0 === (get_qty_available($ticket_ids[0]))) { 
+				$now = strtotime(date('m/d/Y g:i a')); 
+
+				$hoursToSubtract = '8';
+				$timeToSubtract = ($hoursToSubtract * 60 * 60);				
+				$now = $now - $timeToSubtract;
+
+				$ticketcount = 0;
+				$i = 0;
+				foreach( $ticket_pages as $ticket_page ):
+								
+					$class = '';
+					$end_date = strtotime(get_field('end_date', $ticket_page->ID));
+					if($end_date > $now) {
+						$ticketcount++;
+						$tids = tribe_get_woo_tickets_ids($ticket_page->ID);
+
+						$tickets_handler = tribe( 'tickets.handler' );
+						if ( 0 === $tickets_handler->get_ticket_max_purchase( $tids[0] ) ) {				
 							$i++;
 						}
-						
-						if($i >= $ticketcount) {
-							$class = ' so-thumb ';
-						}
-*/					
-					$tickets = Tribe__Tickets__Tickets::get_all_event_tickets($ticket_page->ID);
-						
-					$class = '';
-			
-					if($tickets[0]->stock <= 0) { 
-						$i++;
 					}
 					
 					if($i >= $ticketcount) {
 						$class = ' so-thumb ';
+						$class .= ' count-' . $ticketcount . '-i-' . $i;
+					} else {
+						$class = ' count-' . $ticketcount . '-i-' . $i;
 					}
-						
-					endforeach;
-					
-				endif;
+				
+				endforeach;
+				
 			?>
 				<a class="grid-item <?php { echo $class; } ?>" href="<?php the_permalink(); ?>">
 						
@@ -146,33 +144,32 @@ get_header(); ?>
 		<div class="grid">
 		<?php
 		    while ( $query->have_posts() ) { $query->the_post();		        
-		        $ticket_pages = get_field('ticket_pages');
-				if( $ticket_pages ):
-					$ticketcount = count($ticket_pages);
-					$i = 0;
-					foreach( $ticket_pages as $ticket_page ):
-																	
-						$tickets = Tribe__Tickets__Tickets::get_all_event_tickets($ticket_page->ID);
-						
-						$class = '';
-						
-/*
-						echo '<pre>';
-						print_r($tickets[0]);
-						echo '</pre>';
-*/
-						
-						if($tickets[0]->stock <= 0) { 
-							$i++;
-						}
-						
-						if($i >= $ticketcount) {
-							$class = ' so-thumb ';
-						}
+		    	$ticket_pages = get_field('ticket_pages');
+				$now = strtotime(date('m/d/Y g:i a')); 
 
-					endforeach;
+				$ticketcount = 0;
+				$i = 0;
+				foreach( $ticket_pages as $ticket_page ):
+								
+					$class = '';
+					$end_date = strtotime(get_field('end_date', $ticket_page->ID));
+									
+					$ticketcount++;
+					$tids = tribe_get_woo_tickets_ids($ticket_page->ID);
+
+					$tickets_handler = tribe( 'tickets.handler' );
+					if ( 0 === $tickets_handler->get_ticket_max_purchase( $tids[0] ) ) {				
+						$i++;
+					}
 					
-				endif;
+					if($i >= $ticketcount) {
+						$class = ' so-thumb ';
+						$class .= ' count-' . $ticketcount . '-i-' . $i;
+					} else {
+						$class = ' count-' . $ticketcount . '-i-' . $i;
+					}
+				
+				endforeach;
 			?>
 				<a class="grid-item <?php { echo $class; } ?>" href="<?php the_permalink(); ?>">
 					

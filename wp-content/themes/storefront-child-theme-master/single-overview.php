@@ -37,9 +37,16 @@ get_header(); ?>
 		$ticket_pages = get_field('ticket_pages');
 		if( $ticket_pages ): ?>
         	<ul class="homeLinks">
+	        <?php
+		    $ticketcount = 0;
+			$i = 0;	
+			?>
 		    <?php foreach( $ticket_pages as $post ): setup_postdata($post);?>
 		    	
 		    	<?php
+			    	$ticket_ids = tribe_get_woo_tickets_ids($post->ID);
+					$tickets_handler = tribe( 'tickets.handler' );
+				
 					$end = strtotime('tomorrow midnight');
 					
 					// $end = date("m/d/Y h:i:s A T",$end);
@@ -50,11 +57,10 @@ get_header(); ?>
 					$date = date("Y-m-d", $expiration);
 					
 					$date = strtotime('+1 day', strtotime($date));
-	
 					
 					$now = time();
 					
-					$hoursToSubtract = '7';
+					$hoursToSubtract = '8';
 					$timeToSubtract = ($hoursToSubtract * 60 * 60);
 					
 					$end = $end - $timeToSubtract;
@@ -62,32 +68,23 @@ get_header(); ?>
 					$now = $now - $timeToSubtract;
 										
 					$class = '';
-
-/*
-					echo '<br>';
-					echo date('m/d/Y g:i a');
-*/
-/*
-					echo date("Y-m-d 00:00:00", $date);
-					echo '<br>';
-					//echo gmdate("Y-m-d H:i:s", $expiration);
-					echo '<br>';
-					echo gmdate("Y-m-d H:i:s", $now);
-					echo '<br>';
-*/
-
+					
+					
 					if( $date < $now ) {
 						$class = 'hide';
+					} else {
+						$ticketcount++;
+						if ( 0 === $tickets_handler->get_ticket_max_purchase( $ticket_ids[0] ) ) {
+							$i++;
+						}
 					}
 				?>
 		    	
 		    	<?php
-
-			    $ticket_ids = tribe_get_woo_tickets_ids($post->ID);
-				$tickets_handler = tribe( 'tickets.handler' );
 							
 				$date_string = get_field('start_date');
 				$date = DateTime::createFromFormat('m/d/Y g:i a', $date_string);
+								
 				?>
 				
 				<?php if ( 0 === $tickets_handler->get_ticket_max_purchase( $ticket_ids[0] ) ) { ?>
@@ -101,6 +98,17 @@ get_header(); ?>
 		    // Reset the global post object so that the rest of the page works correctly.
 		    wp_reset_postdata(); ?>
 		<?php endif; ?>
+		
+		<?php
+		if($i >= $ticketcount) {
+			echo 'everything is sold out';
+			$post_id = get_the_ID();
+			if((get_field('stock')) != 'sold-out') {
+				update_field('stock', 'sold-out', $post_id);
+			}
+		}
+		?>
+		
 		</div>
 		</article>
 		</main><!-- #main -->

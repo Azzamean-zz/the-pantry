@@ -24,18 +24,28 @@ get_header(); ?>
 	$attendee_list = Tribe__Tickets__Tickets::get_event_attendees($event_id); ?>
 	
 	<?php
-
-/*
-	echo '<pre>';
-	print_r($attendee_list);
-	echo '</pre>';
-*/
-
 	
 		foreach($attendee_list as $attendee) {
-			$class[] = $attendee['ticket'];
+			$split = explode(" ", $attendee['ticket']);
+						
+			if((count($split)-1) == "class") {
+				$class[] = $attendee['ticket'];
+			} elseif((count($split)-1) == "kit") {
+				$class[] = $attendee['ticket'];
+			} else {
+				$class[] = $attendee['ticket'];
+			}
+			
+			//$class[] = $attendee['ticket'];
 		}
 		$classcounts = array_count_values($class);
+// 		$classcounts = array_reverse($classcounts, true);
+		
+/*
+		echo '<pre>';
+		print_r($classcounts);
+		echo '</pre>';
+*/
 		
 		foreach($classcounts as $classkey => $classcount) {
 		?>
