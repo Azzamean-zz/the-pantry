@@ -68,23 +68,46 @@ function create_ticket_page_columns($columns) {
     $columns = array(
 		'cb' => '<input type="checkbox" />',
 		'title' => __('Name'),
-		'start_date' => __('Start Date'),
+		'class_attendee_count' => __('Class Count'),
 	);
 	return $columns;
 }
 
 function manage_ticket_page_columns($column, $post_id) {
 	global $post;
-	if($column == 'start_date') {
-		$field = get_post_meta($post_id, 'start_date', true);
+	if($column == 'class_attendee_count') {
+		$field = getAttendee($post_id);
 		if(!empty($field)) echo $field;
 	}
 }
 
 add_action('init', 'create_ticket_page');
 add_action('init', 'create_ticket_page_taxonomies');
-add_filter('manage_edit_ticket-page_columns', 'create_ticket_page_columns' ) ;
-add_action('manage_ticket_page_posts_custom_column', 'manage_ticket_page_columns', 10, 2 );
+/*
+add_filter('manage_edit-ticket-page_columns', 'create_ticket_page_columns' ) ;
+add_action('manage_ticket-page_posts_custom_column', 'manage_ticket_page_columns', 10, 2 );
+*/
+
+
+function getAttendee($post_id) {
+	$attendee_list = Tribe__Tickets__Tickets::get_event_attendees($post_id); 
+
+	foreach($attendee_list as $attendee) {
+		$class[] = $attendee['ticket'];
+	}
+
+	$classcounts = array_count_values($class);
+	
+	foreach($classcounts as $classkey => $classcount) {
+		$string = explode(' ', $classkey);
+		$last_word = array_pop($string);
+		if($last_word == 'class') {
+			$newClass[] = $classcount;
+		}
+	}
+	
+	return $classcount;
+}
 
 /**
  * Create Custom Post Type: Overview

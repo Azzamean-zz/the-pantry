@@ -24,28 +24,12 @@ get_header(); ?>
 	$attendee_list = Tribe__Tickets__Tickets::get_event_attendees($event_id); ?>
 	
 	<?php
+		getAttendee($event_id);
 	
 		foreach($attendee_list as $attendee) {
-			$split = explode(" ", $attendee['ticket']);
-						
-			if((count($split)-1) == "class") {
-				$class[] = $attendee['ticket'];
-			} elseif((count($split)-1) == "kit") {
-				$class[] = $attendee['ticket'];
-			} else {
-				$class[] = $attendee['ticket'];
-			}
-			
-			//$class[] = $attendee['ticket'];
+			$class[] = $attendee['ticket'];
 		}
 		$classcounts = array_count_values($class);
-// 		$classcounts = array_reverse($classcounts, true);
-		
-/*
-		echo '<pre>';
-		print_r($classcounts);
-		echo '</pre>';
-*/
 		
 		foreach($classcounts as $classkey => $classcount) {
 		?>
@@ -80,6 +64,7 @@ get_header(); ?>
 				$name = '';
 				if(isset($attendee['attendee_meta']['name'])) {
 					$name = $attendee['attendee_meta']['name']['value'];
+					$names[] = $attendee['attendee_meta']['name']['value'];
 					
 					if(isset($attendee['attendee_meta']['do-you-need-a-vegetarian-option']['value'])){
 						$veg = "Yes";
@@ -117,7 +102,7 @@ get_header(); ?>
 		</tbody>	
 	</table>
 	
-	<h2>Email List</h2>	
+	<h2>Attendee Email List</h2>	
 	
 	<?php
 	$result = '';
@@ -126,6 +111,21 @@ get_header(); ?>
 	
 	foreach($emails as $email) {
 		$result .= $email . ', ';
+	}
+
+	$result = rtrim($result,', ');
+	echo $result;
+	?>
+	
+	<h2>Attendee Name List</h2>	
+	
+	<?php
+	$result = '';
+	
+	$names = array_unique($names);
+	
+	foreach($names as $name) {
+		$result .= $name . ', ';
 	}
 
 	$result = rtrim($result,', ');

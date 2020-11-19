@@ -55,44 +55,8 @@ get_header(); ?>
 		<div class="grid">
 		<?php
 		    while ( $query->have_posts() ) { $query->the_post();
-		    	$ticket_pages = get_field('ticket_pages');
-				if( $ticket_pages ):
-					$ticketcount = count($ticket_pages);
-					$i = 0;
-					foreach( $ticket_pages as $ticket_page ):
-					
-/*
-						$ticket_ids = tribe_get_woo_tickets_ids($ticket_page->ID);
-												
-						$class = '';
-						
-						if(0 === (get_qty_available($ticket_ids[0]))) { 
-							$i++;
-						}
-						
-						if($i >= $ticketcount) {
-							$class = ' so-thumb ';
-						}
-*/
-
-					$tickets = Tribe__Tickets__Tickets::get_all_event_tickets($ticket_page->ID);
-						
-					$class = '';
-			
-					if($tickets[0]->stock <= 0) { 
-						$i++;
-					}
-					
-					if($i >= $ticketcount) {
-						$class = ' so-thumb ';
-					}
-						
-					endforeach;
-					
-				endif;
-			?>
-				<a class="grid-item <?php { echo $class; } ?>" href="<?php the_permalink(); ?>">
-						
+		?>
+				<a class="grid-item <?php { echo get_field('stock'); } ?>" href="<?php the_permalink(); ?>">
 					<?php the_post_thumbnail( 'medium','style=max-width:100%;height:auto;');?>
 					<div class="so-text">Sold Out</div>	
 					<h3><?php echo get_field('title'); ?></h3>	
@@ -145,32 +109,8 @@ get_header(); ?>
 		?>
 		<h2 class="has-text-align-center"><?php echo date('F',strtotime('first day of +1 month')); ?></h2>	
 		<div class="grid">
-		<?php
-		    while ( $query->have_posts() ) { $query->the_post();		        
-		        $ticket_pages = get_field('ticket_pages');
-				if( $ticket_pages ):
-					$ticketcount = count($ticket_pages);
-					$i = 0;
-					foreach( $ticket_pages as $ticket_page ):
-																	
-						$tickets = Tribe__Tickets__Tickets::get_all_event_tickets($ticket_page->ID);
-						
-						$class = '';
-				
-						if($tickets[0]->stock <= 0) { 
-							$i++;
-						}
-						
-						if($i >= $ticketcount) {
-							$class = ' so-thumb ';
-						}
-						
-					endforeach;
-					
-				endif;
-			?>
-				<a class="grid-item <?php { echo $class; } ?>" href="<?php the_permalink(); ?>">
-						
+		<?php  while ( $query->have_posts() ) { $query->the_post(); ?>
+				<a class="grid-item <?php { echo get_field('stock'); } ?>" href="<?php the_permalink(); ?>">
 					<?php the_post_thumbnail( 'medium','style=max-width:100%;height:auto;');?>
 					<div class="so-text">Sold Out</div>	
 					<h3><?php echo get_field('title'); ?></h3>	
