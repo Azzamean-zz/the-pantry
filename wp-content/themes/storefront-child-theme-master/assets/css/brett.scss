@@ -17,6 +17,18 @@ body.page {
 	}
 }
 
+.filter-boxes {
+	width: 100%;	
+	float: left;
+	clear: both;
+	display: block;	
+	text-align: center;	
+	label {
+		display: inline-block;	
+		margin: 0 10px;	
+	}
+}
+
 h3 time {
 	font-size: 12px !important;	
 }

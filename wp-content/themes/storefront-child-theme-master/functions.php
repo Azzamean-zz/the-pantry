@@ -715,6 +715,8 @@ function get_qty_available($id) {
 		return $qty;
 	}
 }
+
+add_filter('woocommerce_checkout_get_value','__return_empty_string',10);
  
  /**
  * Remove related products output

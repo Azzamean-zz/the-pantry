@@ -63,14 +63,20 @@ get_header(); ?>
 					$hoursToSubtract = '8';
 					$timeToSubtract = ($hoursToSubtract * 60 * 60);
 					
-					$end = $end - $timeToSubtract;
+// 					$end = $end - $timeToSubtract;
 					
 					$now = $now - $timeToSubtract;
 										
 					$class = '';
-					
-					
-					if( $date < $now ) {
+/*
+					echo gmdate("Y-m-d H:i:s", $now);
+					echo '<br>';
+					echo gmdate("Y-m-d H:i:s", $end);
+					echo '<br>';
+					echo '<br>';
+*/
+
+					if( $date < $end ) {
 						$class = 'hide';
 					} else {
 						$ticketcount++;

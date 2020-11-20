@@ -15,6 +15,7 @@ get_header(); ?>
 	}
 </style>	
 <div class="big-container">
+		
 	<?php 
 	if(isset($_GET['event'])) {
 		$event_id = $_GET['event'];
@@ -22,7 +23,11 @@ get_header(); ?>
 		$event_id = '18520';
 	}
 	$attendee_list = Tribe__Tickets__Tickets::get_event_attendees($event_id); ?>
-	
+<!--
+	<pre>
+		<?php print_r($attendee_list); ?> 
+	</pre>	
+-->
 	<?php
 		getAttendee($event_id);
 	
@@ -40,16 +45,30 @@ get_header(); ?>
 		<?php } ?>
 	
 	<?php // echo count($attendee_list); ?>
+	<div class="clearfix"></div>	
+	
+	<div class="filter-boxes">
+		<label><input type="checkbox" name="attendee" checked="checked"> Attendee</label>	
+		<label><input type="checkbox" name="purchaser" checked="checked"> Purchaser</label>	
+		<label><input type="checkbox" name="email" checked="checked"> Email</label>	
+		<label><input type="checkbox" name="phone" checked="checked"> Phone</label>	
+		<label><input type="checkbox" name="ticket" checked="checked"> Ticket</label>	
+		<label><input type="checkbox" name="order_no" checked="checked"> Order #</label>	
+		<label><input type="checkbox" name="veg" checked="checked"> Vegetarian Option</label>	
+		<label><input type="checkbox" name="wine" checked="checked"> Wine</label>	
+	</div>	
+	
 	<table id="attendee-table" class="tablesorter">
 		<thead>
 			<tr>
-				<th>Attendee</th>
-				<th>Purchaser</th>
-				<th>Email</th>
-				<th>Phone</th>
-				<th>Ticket</th>	
-				<th>Order #</th>	
-				<th>Vegetarian Option</th>	
+				<th class="attendee">Attendee</th>
+				<th class="purchaser">Purchaser</th>
+				<th class="email">Email</th>
+				<th class="phone">Phone</th>
+				<th class="ticket">Ticket</th>	
+				<th class="order_no">Order #</th>	
+				<th class="veg">Vegetarian Option</th>	
+				<th class="wine">Wine</th>	
 			</tr>
 		</thead>	
 		<tbody>
@@ -62,6 +81,7 @@ get_header(); ?>
 
 			foreach($attendee_list as $attendee) {
 				$name = '';
+				$wine = '';
 				if(isset($attendee['attendee_meta']['name'])) {
 					$name = $attendee['attendee_meta']['name']['value'];
 					$names[] = $attendee['attendee_meta']['name']['value'];
@@ -78,21 +98,25 @@ get_header(); ?>
 					if(isset($attendee['attendee_meta']['phone']['value'])){
 					    $phone = $attendee['attendee_meta']['phone']['value'];
 					}
+					
 				} else {
 					$email = $attendee['purchaser_email'];
 					$emails[] = $attendee['purchaser_email'];
 				}
-				
+				if(isset($attendee['attendee_meta']['please-select-your-wine']['value'])) {
+						$wine = $attendee['attendee_meta']['please-select-your-wine']['value'];
+					}
 				$purchaser = $attendee['purchaser_name'];
 								
 				echo '<tr>';
-				echo '<td>' . $name . '</td>';
-				echo '<td style="font-size:12px;">' . $purchaser . '</td>';
-				echo '<td>' . $email . '</td>';
-				echo '<td>' . $phone . '</td>';
-				echo '<td>' . $attendee['ticket'] . '</td>';
-				echo '<td><a href="' . $attendee['order_id_link_src'] . '">' . $attendee['order_id'] . '</a></td>';
-				echo '<td>' . $veg . '</td>';
+				echo '<td class="attendee">' . $name . '</td>';
+				echo '<td style="font-size:12px;" class="purchaser">' . $purchaser . '</td>';
+				echo '<td class="email">' . $email . '</td>';
+				echo '<td class="phone">' . $phone . '</td>';
+				echo '<td class="ticket">' . $attendee['ticket'] . '</td>';
+				echo '<td class="order_no"><a href="' . $attendee['order_id_link_src'] . '">' . $attendee['order_id'] . '</a></td>';
+				echo '<td class="veg">' . $veg . '</td>';
+				echo '<td class="wine">' . $wine . '</td>';
 				echo '</tr>';
 			}
 			
@@ -146,6 +170,16 @@ get_header(); ?>
 <script>
 	$(document).ready(function() {
 	  $("#attendee-table").tablesorter();
+	});
+	
+	$("input:checkbox:not(:checked)").each(function() {
+	    var column = "table ." + $(this).attr("name");
+	    $(column).hide();
+	});
+	
+	$("input:checkbox").click(function(){
+	    var column = "table ." + $(this).attr("name");
+	    $(column).toggle();
 	});
 </script>	
 	
