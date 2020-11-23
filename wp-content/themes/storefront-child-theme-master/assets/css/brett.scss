@@ -29,6 +29,35 @@ body.page {
 	}
 }
 
+#calendar {
+	table {
+		margin-bottom: 0 !important;	
+	}
+}
+
+body .fc .fc-button {
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;	
+	font-family: "brandon-grotesque","Helvetica Neue",Arial,sans-serif;
+	text-transform: uppercase;
+	letter-spacing: .1em;	
+	border: 1px solid #fff;
+	color: #000 !important;
+	background:transparent !important;
+	font-size: 13px !important;		
+	padding-left: 20px !important;	
+	padding-right: 20px !important;	
+	&:hover {
+		background: rgba(255,255,255, .7) !important;
+		border-color: #fff !important;	
+	}
+}
+
+.fc-event-time {
+	display: none !important;	
+}
+
 h3 time {
 	font-size: 12px !important;	
 }
@@ -71,6 +100,10 @@ h3 time {
 			display: block;	
 		}
 	}
+}
+
+#calendar {
+	padding-bottom: 100px;	
 }
 
 .tribe-events .tribe-events-calendar-month__day--current .tribe-events-calendar-month__day-date, .tribe-events .tribe-events-calendar-month__day--current .tribe-events-calendar-month__day-date-link {
@@ -151,6 +184,10 @@ html {
 	-moz-border-radius: 0;
 	border-radius: 0;	
 	margin-bottom: 30px;	
+}
+
+.pageFooter {
+	z-index: 99;	
 }
 
 body.single-team, body.single-shopping-lists {

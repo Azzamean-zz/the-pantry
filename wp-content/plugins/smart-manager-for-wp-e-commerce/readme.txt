@@ -5,9 +5,9 @@ Author URI: https://www.storeapps.org/shop/
 Plugin URI: https://www.storeapps.org/product/smart-manager/?utm_source=wprepo&utm_medium=web&utm_campaign=smwp_readme
 Tags: bulk edit, woocommerce bulk edit, stock management, products editor, woocommerce, woocommerce advanced bulk edit, woocommerce stock manager, woocommerce inventory management, woocommerce bulk price change, woocommerce manage stock, woocommerce bulk edit products, woocommerce, store manager, bulk update, inline edit, manage variations, bulk edit, coupons, shop manager, batch update, wp ecommerce, productivity, products, variations, orders, customers, manager, pro, manager pro, pro manager, extension, premium, free, woocommerce customer management, inventory management
 Requires at least: 4.8.0
-Tested up to: 5.5.1
+Tested up to: 5.5.3
 Requires PHP: 5.6+
-Stable tag: 4.6.1
+Stable tag: 5.1.0
 License: GPLv3
 
 The #1 and a powerful tool to manage stock, inventory from a single place. Super quick and super easy.
@@ -200,6 +200,28 @@ It also gives the warm feeling of supporting further development of the plugin.
 4. Batch Update (only in Pro version)
 
 == Changelog ==
+
+= 5.1.0 (21.11.2020) =
+* New: WooCommerce 4.7.0 compatible
+* Update: StoreApps Connector
+* Update: POT file
+* Fix: Some minor fixes
+
+= 5.0.1 (07.11.2020) =
+* Fix: DB Upgrade not running in some cases
+
+= 5.0.0 (07.11.2020) =
+* New: Create/Update/Delete 'Custom Views' just like 'Custom Views in Excel' (Pro)
+* New: Ability to give access to only specific custom views to non-admin users in addition to specific dashboards (Pro)
+* New: Predefined Custom Views - Product Stock & Product Price List (Pro)
+* New: Quickly jump to last 3 accessed dashboards or views (Pro)
+* Improved: Managing dashboard states in 'usermeta' instead of 'options'
+* Improved: Removed some unused code and reduced the plugin zip file from 2.7 MB to 1.7 MB
+* Update: Compatibility with the latest version of WooCommerce
+* Fix: Unable to set or remove product as 'Featured Product' using bulk edit (Pro)
+* Fix: Unable to set or remove product as 'Featured Product' using in-line edit
+* Update: POT file
+* Fix: Some minor fixes
 
 = 4.6.1 (28.10.2020) =
 * Update: WooCommerce v4.6.1 compatible
@@ -1586,6 +1608,15 @@ It also gives the warm feeling of supporting further development of the plugin.
 * Product administration features
 
 == Upgrade Notice ==
+
+= 5.1.0 =
+WooCommerce 4.7.0 compatible, Important updates in StoreApps Connector and other important fixes and updates. Recommended upgrade.
+
+= 5.0.1 =
+Fix related to DB Upgrade not running in some cases. Recommended upgrade.
+
+= 5.0.0 =
+Introducing 'Custom Views' just like 'Custom Views in Excel' (Pro), Ability to give access to only specific custom views to non-admin users in addition to specific dashboards (Pro), Predefined Custom Views - Product Stock & Product Price List (Pro), Improved: Removed some unused code and reduced the plugin zip file from 2.7 MB to 1.7 MB along with fixes like Unable to set or remove product as 'Featured Product' using in-line edit and other important fixes and updates. Recommended upgrade.
 
 = 4.6.1 =
 WooCommerce v4.6.1 compatible along with fixes related to Created and Modified date & date GMT columns not appearing in advanced search, Advanced search columns not refreshing on dashboard change and other important fixes and updates. Recommended upgrade.
