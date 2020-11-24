@@ -17,7 +17,7 @@ get_header(); ?>
 <script src='<?php echo site_url(); ?>/wp-content/themes/storefront-child-theme-master/lib/main.js'></script>
 
 <?php 
-$first_day = new DateTime('first day of this month');
+$first_day = new DateTime('today');
 $first_day = $first_day->format('Y-m-d');
 ?>
 
@@ -60,13 +60,14 @@ $first_day = $first_day->format('Y-m-d');
 		    while ( $query->have_posts() ) { $query->the_post();
 			    
 				$link = get_permalink();
+				$sold = get_field('stock');
 				$ticket_pages = get_field('ticket_pages');
 				foreach( $ticket_pages as $post ): setup_postdata($post);
-				
+					
 					$start = DateTime::createFromFormat('m/d/Y g:i a', get_field('start_date', $post->ID));
 					$end = DateTime::createFromFormat('m/d/Y g:i a', get_field('end_date', $post->ID));
 					$title = str_replace("&#8211;", "-", get_the_title($post->ID));
-					$title = substr($title, strpos($title, "-") + 1);  
+					$title = substr($title, strpos($title, "-") + 1);
 				?>
 				{
 		          title: '<?php echo $title;?>',
