@@ -35,6 +35,27 @@ body.page {
 	}
 }
 
+.fc-daygrid-dot-event {
+	align-items: inherit !important;
+}
+
+.fc-daygrid-event-dot {
+	margin-top: 4px !important;	
+}
+
+.fc-daygrid-dot-event .fc-event-title {
+	line-height: 1.3em !important;	
+	margin-bottom: 5px !important;	
+}
+
+.fc-theme-standard td, .fc-theme-standard th, .fc-theme-standard .fc-scrollgrid {
+	border-color: #fff !important;	
+}
+
+.fc-daygrid-event {
+	white-space: normal !important;
+}
+
 body .fc .fc-button {
 	-webkit-border-radius: 0;
 	-moz-border-radius: 0;
