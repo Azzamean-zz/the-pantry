@@ -17,7 +17,7 @@ get_header(); ?>
 <script src='<?php echo site_url(); ?>/wp-content/themes/storefront-child-theme-master/lib/main.js'></script>
 
 <?php 
-$first_day = new DateTime('today');
+$first_day = new DateTime('first day of this month');
 $first_day = $first_day->format('Y-m-d');
 ?>
 
@@ -68,6 +68,11 @@ $first_day = $first_day->format('Y-m-d');
 					$end = DateTime::createFromFormat('m/d/Y g:i a', get_field('end_date', $post->ID));
 					$title = str_replace("&#8211;", "-", get_the_title($post->ID));
 					$title = substr($title, strpos($title, "-") + 1);
+					
+					$unixstart = strtotime(get_field('start_date', $post->ID));
+					$unixtoday = strtotime('today UTC+8');
+					
+					if($unixstart >= $unixtoday) {
 				?>
 				{
 		          title: '<?php echo $title;?>',
@@ -76,6 +81,7 @@ $first_day = $first_day->format('Y-m-d');
 		          end: '<?php echo $end->format("Y-m-d" );?>T<?php echo $end->format("H:i:s")?>',
 		        },
 			    <?php
+				}
 				endforeach;
 				wp_reset_postdata();
 	   		}

@@ -709,6 +709,12 @@ function tribe_get_woo_tickets_ids( $post_id ) {
 
 }
 
+function removing_customer_details_in_emails( $order, $sent_to_admin, $plain_text, $email ){
+    $wmail = WC()->mailer();
+    remove_action( 'woocommerce_email_customer_details', array( $wmail, 'email_addresses' ), 20, 3 );
+}
+add_action( 'woocommerce_email_customer_details', 'removing_customer_details_in_emails', 5, 4 );
+
 function get_qty_available($id) {
 	if (class_exists('Tribe__Tickets__Tickets_Handler')) {
 		$qty = (new Tribe__Tickets__Tickets_Handler)->get_ticket_max_purchase($id);
