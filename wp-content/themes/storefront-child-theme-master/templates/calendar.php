@@ -36,7 +36,7 @@ $first_day = $first_day->format('Y-m-d');
 	    <?php
 		$today = date('m/d/Y g:i a');
 	    $args = array(
-		    'post_type' => 'ticket-page',
+		    'post_type' => 'overview',
 		    'posts_per_page' => -1,
 			'meta_query' => array(
 			     array(
@@ -46,24 +46,39 @@ $first_day = $first_day->format('Y-m-d');
 			        'type'      => 'DATETIME',
 			    )
 		    ),
+		    'tax_query' => array(
+	            array(
+	                'taxonomy' => 'overview-categories',
+	                'field' => 'slug',
+	                'terms' => 'class'
+	            ),
+	        ),
 		);
 		
 		$query = new WP_Query($args);
 	    if ( $query->have_posts() ) {
 		    while ( $query->have_posts() ) { $query->the_post();
-			$start = DateTime::createFromFormat('m/d/Y g:i a', get_field('start_date'));
-			$end = DateTime::createFromFormat('m/d/Y g:i a', get_field('end_date'));
-			$title = str_replace("&#8211;", "-", get_the_title());
-		?>
-		{
-          title: '<?php echo $title;?>',
-          url: '<?php the_permalink();?>',
-          start: '<?php echo $start->format("Y-m-d");?>T<?php echo $start->format("H:i:s")?>',
-          end: '<?php echo $end->format("Y-m-d" );?>T<?php echo $end->format("H:i:s")?>',
-        },
-	    <?php
-		   		}
-		    }
+			    
+				$link = get_permalink();
+				$ticket_pages = get_field('ticket_pages');
+				foreach( $ticket_pages as $post ): setup_postdata($post);
+				
+					$start = DateTime::createFromFormat('m/d/Y g:i a', get_field('start_date', $post->ID));
+					$end = DateTime::createFromFormat('m/d/Y g:i a', get_field('end_date', $post->ID));
+					$title = str_replace("&#8211;", "-", get_the_title($post->ID));
+					$title = substr($title, strpos($title, "-") + 1);  
+				?>
+				{
+		          title: '<?php echo $title;?>',
+		          url: '<?php echo $link;?>',
+		          start: '<?php echo $start->format("Y-m-d");?>T<?php echo $start->format("H:i:s")?>',
+		          end: '<?php echo $end->format("Y-m-d" );?>T<?php echo $end->format("H:i:s")?>',
+		        },
+			    <?php
+				endforeach;
+				wp_reset_postdata();
+	   		}
+	    }
 		wp_reset_postdata();
 		?>
       ]
