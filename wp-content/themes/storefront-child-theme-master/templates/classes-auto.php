@@ -18,10 +18,16 @@ get_header(); ?>
         <div class="entry-content">	
 	        		
 		<?php
-		$today = date('Ymd'); 
-		$first_day = new DateTime('first day of this month');
+		$tz = 'America/Los_Angeles';
+		$today = new DateTime('now', new DateTimeZone($tz));
+		
+		$thisMonth = new DateTime('now', new DateTimeZone($tz));
+		$nextMonth = new DateTime('first day of +1 month', new DateTimeZone($tz));
+		
+		$first_day = new DateTime('first day of this month', new DateTimeZone($tz));
 		$first_day = $first_day->format('Ymd');
-		$last_day = new DateTime('last day of this month');
+		
+		$last_day = new DateTime('last day of this month', new DateTimeZone($tz));
 		$last_day = $last_day->format('Ymd');
 		
 		$args = array(
@@ -31,7 +37,7 @@ get_header(); ?>
 		        array(
 		            'key'     => 'expiration_date',
 		            'compare' => '>=',
-		            'value'   => $today,
+		            'value'   => $today->format('Ymd'),
 		        ),
 		         array(
 		            'key'     => 'expiration_date',
@@ -51,7 +57,7 @@ get_header(); ?>
 		$query = new WP_Query($args);
 	    if ( $query->have_posts() ) {
 		?>
-		<h2 class="has-text-align-center"><?php echo date('F'); ?></h2>	
+		<h2 class="has-text-align-center"><?php echo $thisMonth->format('F'); ?></h2>	
 		<div class="grid">
 		<?php  while ( $query->have_posts() ) { $query->the_post(); ?>
 			<a class="grid-item <?php { echo get_field('stock'); } ?>" href="<?php the_permalink(); ?>">
@@ -102,7 +108,7 @@ get_header(); ?>
 		$query = new WP_Query($args);
 	    if ( $query->have_posts() ) {
 		?>
-		<h2 class="has-text-align-center"><?php echo date('F',strtotime('first day of +1 month')); ?></h2>	
+		<h2 class="has-text-align-center"><?php echo $nextMonth->format('F'); ?></h2>	
 		<div class="grid">
 		<?php  while ( $query->have_posts() ) { $query->the_post(); ?>
 				<a class="grid-item <?php { echo get_field('stock'); } ?>" href="<?php the_permalink(); ?>">

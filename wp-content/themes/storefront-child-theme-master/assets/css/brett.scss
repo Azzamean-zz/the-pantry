@@ -38,6 +38,9 @@ body.page {
 .fc-daygrid-dot-event {
 	align-items: inherit !important;
 	padding: 2px 3px !important;	
+	&:hover {
+		color: #000 !important;	
+	}
 }
 
 .fc-daygrid-event-dot {
