@@ -26,6 +26,16 @@ $first_day = $first_day->format('Y-m-d');
     var calendarEl = document.getElementById('calendar');
 
     var calendar = new FullCalendar.Calendar(calendarEl, {
+	  headerToolbar: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'listMonth,dayGridMonth'
+      },
+	  views: {
+		dayGridMonth : { buttonText: 'Month View' },
+        listMonth: { buttonText: 'List View' }
+      },
+      initialView: 'dayGridMonth',
       initialDate: '<?php echo $first_day;?>',
       editable: true,
       selectable: true,
@@ -94,6 +104,20 @@ $first_day = $first_day->format('Y-m-d');
     });
 
     calendar.render();
+    
+    windowSize();
+    
+    function windowSize() {
+		widthOutput = window.innerWidth;
+		if(widthOutput < 990) {
+			calendar.changeView('listMonth');
+		} else {
+			calendar.changeView('dayGridMonth');
+		}
+	}
+	
+	window.onresize = windowSize;
+    
   });
 
 </script>	
@@ -113,5 +137,21 @@ $first_day = $first_day->format('Y-m-d');
         </div>
 	<?php endwhile; // End of the loop. ?>
     </main>
+    
+<script>
+/*
+	$(function(){
+		$(window).resize(function() {
+			$windowWidth = $window.width();
+			if($windowWidth < 990) {
+				calendar.changeView('listMonth');
+			} else {
+				calendar.changeView('dayGridMonth');
+			}
+		}).triggerHandler('resize');
+	});
+*/
+	
+</script>	
 <?php
 get_footer();

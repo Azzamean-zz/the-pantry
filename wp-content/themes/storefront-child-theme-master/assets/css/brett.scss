@@ -35,6 +35,10 @@ body.page {
 	}
 }
 
+.fc-list-event-dot {
+	display: none !important;	
+}
+
 .fc-daygrid-dot-event {
 	align-items: inherit !important;
 	padding: 2px 3px !important;	
@@ -820,6 +824,19 @@ a.wc-block-grid__product-link {
 		color: #a37c22;
 		&:hover {
 			color: #791919;
+		}
+	}
+}
+@media screen and (max-width: 990px) {
+	.fc .fc-toolbar {
+		flex-wrap: wrap;
+	}
+	.fc-toolbar-chunk {
+		width: 100% !important;	
+		text-align: center;	
+		h2 {
+			margin-top: 10px !important;	
+			line-height: 60px;	
 		}
 	}
 }
