@@ -31,7 +31,7 @@ get_header(); ?>
 		
 		<hr class="wp-block-separator">
 		<h2>Dates</h2>
-		<p class="text-center"><i>All classes are listed in Pacific Time.</i></p>		
+		<p class="text-center"><i>All events are listed in Pacific Time.</i></p>		
 		
 		<?php
 		$ticket_pages = get_field('ticket_pages');

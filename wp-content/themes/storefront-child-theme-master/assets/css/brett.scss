@@ -129,6 +129,18 @@ h3 time {
 	}
 }
 
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 #calendar {
 	margin-bottom: 100px;	
 	border-bottom: 1px solid #fff;	

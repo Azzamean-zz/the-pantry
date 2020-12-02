@@ -77,6 +77,7 @@ get_header(); ?>
 			<?php
 			$veg = '';
 			$phone = '';
+			$email = '';
 			$emails[] = '';
 
 			foreach($attendee_list as $attendee) {

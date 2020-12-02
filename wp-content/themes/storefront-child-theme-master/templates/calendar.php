@@ -62,6 +62,7 @@ $first_day = $first_day->format('Y-m-d');
 				$link = get_permalink();
 				$sold = get_field('stock');
 				$ticket_pages = get_field('ticket_pages');
+				if($ticket_pages) {
 				foreach( $ticket_pages as $post ): setup_postdata($post);
 					
 					$start = DateTime::createFromFormat('m/d/Y g:i a', get_field('start_date', $post->ID));
@@ -75,7 +76,7 @@ $first_day = $first_day->format('Y-m-d');
 					if($unixstart >= $unixtoday) {
 				?>
 				{
-		          title: '<?php echo $title;?>',
+		          title: '<?php echo html_entity_decode($title);?>',
 		          url: '<?php echo $link;?>',
 		          start: '<?php echo $start->format("Y-m-d");?>T<?php echo $start->format("H:i:s")?>',
 		          end: '<?php echo $end->format("Y-m-d" );?>T<?php echo $end->format("H:i:s")?>',
@@ -83,6 +84,7 @@ $first_day = $first_day->format('Y-m-d');
 			    <?php
 				}
 				endforeach;
+				}
 				wp_reset_postdata();
 	   		}
 	    }
