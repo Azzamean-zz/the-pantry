@@ -68,13 +68,16 @@ get_header(); ?>
 					$now = $now - $timeToSubtract;
 										
 					$class = '';
-/*
-					echo gmdate("Y-m-d H:i:s", $now);
-					echo '<br>';
-					echo gmdate("Y-m-d H:i:s", $end);
-					echo '<br>';
-					echo '<br>';
-*/
+
+					if ( is_user_logged_in() ) {
+
+						echo gmdate("Y-m-d H:i:s", $now);
+						echo '<br>';
+						echo gmdate("Y-m-d H:i:s", $end);
+						echo '<br>';
+						echo '<br>';
+					
+					}
 
 					if( $date < $end ) {
 						$class = 'hide';
