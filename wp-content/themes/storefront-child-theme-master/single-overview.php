@@ -69,17 +69,19 @@ get_header(); ?>
 										
 					$class = '';
 
-					if ( is_user_logged_in() ) {
+/*
 
+					if ( is_user_logged_in() ) {
+						echo '<br>';
 						echo gmdate("Y-m-d H:i:s", $now);
 						echo '<br>';
-						echo gmdate("Y-m-d H:i:s", $end);
+						echo gmdate("Y-m-d H:i:s", $date);
 						echo '<br>';
 						echo '<br>';
-					
 					}
+*/
 
-					if( $date < $end ) {
+					if( $now > $date ) {
 						$class = 'hide';
 					} else {
 						$ticketcount++;
