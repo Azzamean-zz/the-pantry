@@ -4,9 +4,14 @@
  *
  * Override this template in your own theme by creating a file at:
  *
- *     [your-theme]/tribe-events/attendees-list.php
+ *     [your-theme]/tribe/tickets-plus/attendees-list.php
  *
- * @version 4.11.2
+ * @link    http://m.tri.be/1amp See more documentation about our views templating system.
+ *
+ * @since 4.11.2
+ * @since 5.1.0 Updated template link.
+ *
+ * @version 5.1.0
  */
 ?>
 <div class='tribe-attendees-list-container'>

@@ -30,8 +30,19 @@ class Tribe__Tickets_Plus__Meta__Contents {
 			return true;
 		}
 
+		/**
+		 * Allow hooking in before the check to see if stored meta is up to date.
+		 *
+		 * @since 5.1.0
+		 *
+		 * @param array $quantity_by_ticket_id List of tickets and their quantities with the format [ $ticket_id => $quantity ].
+		 */
+		do_action( 'tribe_tickets_plus_meta_contents_up_to_date', $quantity_by_ticket_id );
+
 		$stored_data = $this->get_ticket_stored_meta( $quantity_by_ticket_id );
-		$meta        = Tribe__Tickets_Plus__Main::instance()->meta();
+
+		/** @var Tribe__Tickets_Plus__Meta $meta */
+		$meta = tribe( 'tickets-plus.meta' );
 
 		foreach ( $quantity_by_ticket_id as $ticket_id => $quantity ) {
 			$data        = empty( $stored_data[ $ticket_id ] ) ? [] : $stored_data[ $ticket_id ];

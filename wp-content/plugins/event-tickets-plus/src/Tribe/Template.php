@@ -2,13 +2,13 @@
 /**
  * Allow including of Event Tickets Plus Template.
  *
- * @since5.0.0
+ * @since 5.0.0
  */
 class Tribe__Tickets_Plus__Template extends Tribe__Template {
 	/**
 	 * Building of the Class template configuration.
 	 *
-	 * @since5.0.0
+	 * @since 5.0.0
 	 */
 	public function __construct() {
 		$this->set_template_origin( Tribe__Tickets_Plus__Main::instance() );
@@ -25,7 +25,7 @@ class Tribe__Tickets_Plus__Template extends Tribe__Template {
 	/**
 	 * Return the attributes of the template.
 	 *
-	 * @since5.0.0
+	 * @since 5.0.0
 	 *
 	 * @param array $default_attributes The default attributes.
 	 *
@@ -41,7 +41,7 @@ class Tribe__Tickets_Plus__Template extends Tribe__Template {
 	/**
 	 * Return a specific attribute.
 	 *
-	 * @since5.0.0
+	 * @since 5.0.0
 	 *
 	 * @param  mixed $index The index.
 	 * @param  mixed $default The default.

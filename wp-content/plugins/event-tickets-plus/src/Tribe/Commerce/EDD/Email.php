@@ -51,43 +51,30 @@ class Tribe__Tickets_Plus__Commerce__EDD__Email {
 	 * @param int $payment_id
 	 */
 	public function trigger( $payment_id = 0 ) {
+		/**
+		 * Whether to allow ticket email receipt for Easy Digital Download orders.
+		 *
+		 * @param bool $edd_email_receipt_enabled Whether the ticket email receipt is enabled.
+		 */
+		$edd_email_receipt_enabled = apply_filters( 'edd_email_ticket_receipt', true );
 
-		global $edd_options;
-
-		$payment_data = edd_get_payment_meta( $payment_id );
-		$user_id      = edd_get_payment_user_id( $payment_id );
-		$user_info    = maybe_unserialize( $payment_data['user_info'] );
-		$email        = edd_get_payment_user_email( $payment_id );
-
-		if ( isset( $user_id ) && $user_id > 0 ) {
-			$user_data = get_userdata( $user_id );
-			$name = $user_data->display_name;
-		} elseif ( isset( $user_info['first_name'] ) && isset( $user_info['last_name'] ) ) {
-			$name = $user_info['first_name'] . ' ' . $user_info['last_name'];
-		} else {
-			$name = $email;
+		if ( ! $edd_email_receipt_enabled ) {
+			return;
 		}
 
-		$message = $this->get_content_html( $payment_id );
+		/** @var Tribe__Tickets_Plus__Commerce__EDD__Main $commerce_edd */
+		$commerce_edd = tribe( 'tickets-plus.commerce.edd' );
 
-		$from_name  = isset( $edd_options['from_name'] ) ? $edd_options['from_name'] : get_bloginfo( 'name' );
-		$from_email = isset( $edd_options['from_email'] ) ? $edd_options['from_email'] : get_option( 'admin_email' );
+		// Get the attendees for the order.
+		$attendees = $commerce_edd->get_attendees_by_id( $payment_id );
 
-		$subject = ! empty( $edd_options['ticket_subject'] ) ? wp_strip_all_tags( $edd_options['ticket_subject'], true ) : $this->default_subject;
-		$subject = apply_filters( 'edd_ticket_receipt_subject', $subject, $payment_id );
-		$subject = edd_email_template_tags( $subject, $payment_data, $payment_id );
+		$send_args = [
+			'order_id'           => $payment_id,
+			'send_purchaser_all' => true,
+		];
 
-		$headers = 'From: ' . stripslashes_deep( html_entity_decode( $from_name, ENT_COMPAT, 'UTF-8' ) ) . " <$from_email>\r\n";
-		$headers .= 'Reply-To: ' . $from_email . "\r\n";
-		$headers .= "Content-Type: text/html; charset=utf-8\r\n";
-		$headers = apply_filters( 'edd_ticket_receipt_headers', $headers, $payment_id, $payment_data );
-
-		// Allow add-ons to add file attachments
-		$attachments = apply_filters( 'edd_ticket_receipt_attachments', [], $payment_id, $payment_data );
-
-		if ( apply_filters( 'edd_email_ticket_receipt', true ) ) {
-			wp_mail( $email, $subject, $message, $headers, $attachments );
-		}
+		// Send the emails.
+		$commerce_edd->send_tickets_email_for_attendees( $attendees, $send_args );
 	}
 
 	/**

@@ -105,9 +105,9 @@ defined( 'ABSPATH' ) || exit;
 
 		<?php endif; ?>
 
-		<?php do_action( 'woocommerce_thankyou_' . $order->get_payment_method(), $order->get_id() ); ?>
+		<?php do_action( 'woocommerce_thankyou_' . $order->get_payment_method(), $order->get_id()); ?>
 		
-		<?php do_action( 'woocommerce_thankyou', $order->get_id() ); ?>
+		<?php do_action( 'woocommerce_thankyou', $order->get_id()); ?>
 		
 		<?php // gum_woo_checkout_fields_email_customer($order->get_id()); ?>
 		

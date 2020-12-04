@@ -745,6 +745,7 @@ button.xoo-wl-open-form-btn {
 	float: right;	
 }
 
+/*
 .grid .vid {
 	background: url(../images/vid.png);
 	background-repeat: no-repeat;	
@@ -769,6 +770,7 @@ button.xoo-wl-open-form-btn {
     position: absolute;
     top: 23px;
 }
+*/
 
 .tribe-checkout-backlinks {
 	width: 41.1764705882%;	
@@ -900,6 +902,10 @@ a.wc-block-grid__product-link {
 
 .fc .fc-daygrid-day.fc-day-today {
 	background-color: rgba(255,255,255, .6) !important;
+}
+
+.fc .fc-toolbar-title {
+	font-size: 21.25px;
 }
 
 @media screen and (max-width: 990px) {

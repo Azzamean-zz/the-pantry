@@ -4,9 +4,14 @@
  *
  * Override this template in your own theme by creating a file at:
  *
- * [your-theme]/tribe-events/meta/url.php
+ * [your-theme]/tribe/tickets-plus/meta/url.php
+ *
+ * @link    http://m.tri.be/1amp See more documentation about our views templating system.
  *
  * @since   4.12.1
+ * @since 5.1.0 Updated template link.
+ *
+ * @version 5.1.0
  *
  * @var Tribe__Tickets_Plus__Meta__Field__URL $this
  */

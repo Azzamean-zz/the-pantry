@@ -17,6 +17,10 @@ class Service_Provider extends \tad_DI52_ServiceProvider {
 	 * @since 4.12.1
 	 */
 	public function register() {
+		$this->container->singleton( 'tickets-plus.meta', \Tribe__Tickets_Plus__Meta::class );
+		$this->container->singleton( 'tickets-plus.meta.contents', \Tribe__Tickets_Plus__Meta__Contents::class );
+		$this->container->singleton( 'tickets-plus.meta.storage', \Tribe__Tickets_Plus__Meta__Storage::class );
+
 		$this->container->singleton( Field_Types_Collection::class, function () {
 			return $this->get_field_types_collection();
 		} );
@@ -52,7 +56,17 @@ class Service_Provider extends \tad_DI52_ServiceProvider {
 		$collection->add( \Tribe__Tickets_Plus__Meta__Field__Birth::class );
 		$collection->add( \Tribe__Tickets_Plus__Meta__Field__Datetime::class );
 
-		return $collection;
+		/**
+		 * Allow adding additional supported field types.
+		 *
+		 * Use `$collection->add( Class_Name )` to add a new field type.
+		 * The class must use the `Tribe__Tickets_Plus__Meta__Field__Abstract_Field` abstract class.
+		 *
+		 * @since 5.1.0
+		 *
+		 * @param Field_Types_Collection $collection The field type collection object.
+		 */
+		return apply_filters( 'tribe_tickets_plus_meta_field_types_collection', $collection );
 	}
 
 }

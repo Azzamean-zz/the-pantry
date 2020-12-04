@@ -656,7 +656,7 @@ function gum_woo_checkout_fields( $order_id ) {
 function gum_woo_checkout_fields_email_customer( $order ) {
 	  
 	//* NEW	
-	$fieldset_meta = get_post_meta( $order->id, Tribe__Tickets_Plus__Meta::META_KEY, true );
+	$fieldset_meta = get_post_meta( $order->get_id(), Tribe__Tickets_Plus__Meta::META_KEY, true );
 	$cnt = 1;
 	
 	if (! $fieldset_meta ) return;
@@ -669,11 +669,27 @@ function gum_woo_checkout_fields_email_customer( $order ) {
 				
 				$att_name 		= (isset( $value['name'] )) ? $value['name'] : '';
 				$att_email 		= (isset( $value['email'] )) ? $value['email'] : '';
+				$att_phone 		= (isset( $value['phone'] )) ? $value['phone'] : '';
+				$att_wine 		= (isset( $value['please-select-your-wine'] )) ? $value['please-select-your-wine'] : '';
+				if(isset($value['do-you-need-a-vegetarian-option'])){
+					$veg = "Yes";
+				} else {
+					$veg = "";
+				}
 				
 				echo '<p>';
 				echo '<strong>Attendee - '. $cnt .'</strong><br />';
 				echo 'Name: '. $att_name .'<br />';
 				echo 'Email: '. $att_email .'<br />';
+				if($att_phone) {
+					echo 'Phone: '. $att_phone .'<br />';
+				}
+				if($veg) {
+					echo 'Vegetarian Option: '. $veg .'<br />';
+				}
+				if($att_wine) {
+					echo 'Wine: '. $att_wine .'<br />';
+				}
 				echo '</p>';
 			
 			$cnt++;

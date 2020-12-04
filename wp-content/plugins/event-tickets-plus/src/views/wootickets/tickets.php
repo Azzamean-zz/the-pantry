@@ -4,13 +4,16 @@
  *
  * Override this template in your own theme by creating a file at:
  *
- *     [your-theme]/tribe-events/wootickets/tickets.php
+ *     [your-theme]/tribe/tickets-plus/wootickets/tickets.php
+ *
+ * @link    http://m.tri.be/1amp See more documentation about our views templating system.
  *
  * @deprecated 4.11.0
  *
  * @since 4.10.7 Restrict quantity selectors to allowed purchase limit and removed unused variables.
+ * @since 5.1.0 Updated template link.
  *
- * @version 4.11.0
+ * @version 5.1.0
  *
  * @var bool $global_stock_enabled
  * @var bool $must_login

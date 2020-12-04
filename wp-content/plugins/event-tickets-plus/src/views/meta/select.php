@@ -4,12 +4,15 @@
  *
  * Override this template in your own theme by creating a file at:
  *
- * [your-theme]/tribe-events/meta/select.php
+ * [your-theme]/tribe/tickets-plus/meta/select.php
  *
- * @version 4.12.1
+ * @link    http://m.tri.be/1amp See more documentation about our views templating system.
  *
  * @since 4.3.5
  * @since 4.10.7 Added var documentation for `$this`.
+ * @since 5.1.0 Updated template link.
+ *
+ * @version 5.1.0
  *
  * @var Tribe__Tickets_Plus__Meta__Field__Select $this
  */

@@ -51,6 +51,11 @@ do_action( 'woocommerce_email_customer_details', $order, $sent_to_admin, $plain_
 
 gum_woo_checkout_fields_email_customer($order);
 
+echo '<hr style="margin-bottom: 20px;
+    margin-top: 20px;
+    border: none;
+    border-bottom: 1px solid #ccc;">';
+
 /**
  * Show user-defined additional content - this is set in each email's settings.
  */

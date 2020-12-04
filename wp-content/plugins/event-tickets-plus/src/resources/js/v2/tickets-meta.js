@@ -1,7 +1,7 @@
 /**
  * Makes sure we have all the required levels on the Tribe Object
  *
- * @since5.0.0
+ * @since 5.0.0
  *
  * @type {PlainObject}
  */
@@ -19,7 +19,7 @@ tribe.tickets.meta = {};
 /**
  * Initializes in a Strict env the code that manages the RSVP block.
  *
- * @since5.0.0
+ * @since 5.0.0
  *
  * @param  {PlainObject} $   jQuery
  * @param  {PlainObject} obj tribe.tickets.meta
@@ -33,15 +33,25 @@ tribe.tickets.meta = {};
 	/**
 	 * Selectors used for configuration and setup
 	 *
-	 * @since5.0.0
+	 * @since 5.0.0
 	 *
 	 * @type {PlainObject}
 	 */
 	obj.selectors = {
+		formAttendeeTicketsWrapper: '.tribe-tickets__attendee-tickets',
+		formAttendeeTickets: '.tribe-tickets__attendee-tickets-container',
+		formAttendeeTicketsItem: '.tribe-tickets__attendee-tickets-item',
+		formAttendeeTicketsItemError: '.tribe-tickets__attendee-tickets-item--has-error',
+		formAttendeeTicketsItemFocus: '.tribe-tickets__attendee-tickets-item--has-focus',
 		formField: '.tribe-tickets__form-field',
 		formFieldRequired: '.tribe-tickets__form-field--required',
+		formFieldUnique: '.tribe-tickets__form-field--unique',
+		formFieldText: '.tribe-tickets__form-field--text',
+		formFieldEmail: '.tribe-tickets__form-field--email',
 		formFieldInput: '.tribe-tickets__form-field-input',
 		formFieldInputError: '.tribe-tickets__form-field-input--error',
+		formFieldInputHelper: '.tribe-tickets__form-field-input-helper',
+		formFieldInputHelperError: '.tribe-tickets__form-field-input-helper--error',
 		formFieldInputCheckboxRadioGroup: '.tribe-common-form-control-checkbox-radio-group',
 		formFieldInputCheckbox: {
 			container: '.tribe-tickets__form-field--checkbox',
@@ -59,19 +69,90 @@ tribe.tickets.meta = {};
 	};
 
 	/**
+	 * Validates the entire meta form.
+	 * Adds errors to the top of the modal.
+	 *
+	 * @since 5.1.0
+	 *
+	 * @param {jQuery} $form jQuery object that is the form we are validating.
+	 *
+	 * @returns {boolean} If the form validates.
+	 */
+	obj.validateForm = function( $form ) {
+		const $attendeeTickets = $form.find( obj.selectors.formAttendeeTicketsItem );
+		let formValid = true;
+		let invalidTickets = 0;
+
+		$document.trigger( 'beforeValidateForm.tribeTicketsMeta', [ $form ] );
+
+		$attendeeTickets.each(
+			function() {
+				const $attendeeTicket = $( this );
+				const validAttendeeTicket = obj.validateAttendeeTicket( $attendeeTicket );
+
+				if ( ! validAttendeeTicket ) {
+					invalidTickets++;
+					formValid = false;
+				}
+			}
+		);
+
+		$document.trigger( 'afterValidateForm.tribeTicketsMeta', [ $form, formValid, invalidTickets ] );
+
+		return [ formValid, invalidTickets ];
+	};
+
+	/**
+	 * Validates and adds/removes error classes from a ticket meta block.
+	 *
+	 * @since 5.1.0
+	 *
+	 * @param {jQuery} $container jQuery object that is the block we are validating.
+	 *
+	 * @returns {boolean} True if all fields validate, false otherwise.
+	 */
+	obj.validateAttendeeTicket = function( $container ) {
+		const $fields = $container.find( obj.selectors.formFieldInput );
+		let isValid = true;
+
+		$document.trigger( 'beforeValidateAttendeeTicket.tribeTicketsMeta', [ $container ] );
+
+		$fields.each(
+			function() {
+				const $field = $( this );
+				const isValidField = obj.validateField( $field[ 0 ] );
+
+				if ( ! isValidField ) {
+					isValid = false;
+				}
+			}
+		);
+
+		if ( isValid ) {
+			$container.removeClass( obj.selectors.formAttendeeTicketsItemError.className() );
+		} else {
+			$container.addClass( obj.selectors.formAttendeeTicketsItemError.className() );
+		}
+
+		$document.trigger( 'afterValidateAttendeeTicket.tribeTicketsMeta', [ $container, isValid ] );
+
+		return isValid;
+	};
+
+	/**
 	 * Validate Checkbox/Radio group.
 	 * We operate under the assumption that you must check _at least_ one,
 	 * but not necessarily all.
 	 *
-	 * @since5.0.0
+	 * @since 5.0.0
 	 *
 	 * @param {jQuery} $group The jQuery object for the checkbox group.
 	 *
 	 * @return {boolean} If the input group is valid.
 	 */
 	obj.validateCheckboxRadioGroup = function( $group ) {
-		const checked     = $group.find( 'input:checked' ).length;
-		const required    = $group.find( 'input:required' ).length;
+		const checked  = $group.find( 'input:checked' ).length;
+		const required = $group.find( 'input:required' ).length;
 
 		// the group is valid if there are no required.
 		// or if it is required and there's at least one checked.
@@ -83,7 +164,7 @@ tribe.tickets.meta = {};
 	/**
 	 * Check if it's the birthday meta field.
 	 *
-	 * @since5.0.0
+	 * @since 5.0.0
 	 *
 	 * @param {jQuery} $input jQuery object of the input.
 	 *
@@ -96,7 +177,7 @@ tribe.tickets.meta = {};
 	/**
 	 * Validates the birthday field.
 	 *
-	 * @since5.0.0
+	 * @since 5.0.0
 	 *
 	 * @param {jQuery} $input jQuery object of the input.
 	 *
@@ -131,7 +212,7 @@ tribe.tickets.meta = {};
 	/**
 	 * Validates a single field.
 	 *
-	 * @since5.0.0
+	 * @since 5.0.0
 	 *
 	 * @param {HTMLElement} input DOM Object that is the field we are validating.
 	 *
@@ -140,6 +221,8 @@ tribe.tickets.meta = {};
 	obj.validateField = function( input ) {
 		const $input     = $( input );
 		let isValidField = input.checkValidity();
+
+		$document.trigger( 'beforeValidateField.tribeTicketsMeta', [ $input, isValidField ] );
 
 		if ( ! isValidField ) {
 			// Got to be careful of required checkbox/radio groups.
@@ -162,14 +245,37 @@ tribe.tickets.meta = {};
 			$input.removeClass( obj.selectors.formFieldInputError.className() );
 		}
 
+		$document.trigger( 'afterValidateField.tribeTicketsMeta', [ $input, isValidField ] );
+
+		isValidField = obj.validateFieldOverride( $input, isValidField );
+
 		return isValidField;
+	};
+
+	/**
+	 * Overrides the single field validation, to work out custom validations.
+	 * We can override the validation by setting `data-valid` in the input.
+	 *
+	 * @since 5.1.0
+	 *
+	 * @param {jQuery} $input jQuery object of the input.
+	 * @param {boolean} isValidField If the Attendee ticket field is valid.
+	 *
+	 * @return {boolean} If the field is valid.
+	 */
+	obj.validateFieldOverride = function( $input, isValidField ) {
+		if ( typeof $input.data( 'valid' ) === 'undefined' ) {
+			return isValidField;
+		}
+
+		return $input.data( 'valid' );
 	};
 
 	/**
 	 * Populate the different birthday field <select>
 	 * depending on the value from the hidden input.
 	 *
-	 * @since5.0.0
+	 * @since 5.0.0
 	 */
 	obj.populateFieldBirthday = function() {
 		$( obj.selectors.formFieldInputBirthday.container ).each( function( index, value ) {
@@ -194,7 +300,7 @@ tribe.tickets.meta = {};
 	 * Update the birthday hidden input value depending
 	 * on the changes the different <select> had.
 	 *
-	 * @since5.0.0
+	 * @since 5.0.0
 	 *
 	 * @param {event} e input event.
 	 *
@@ -216,7 +322,7 @@ tribe.tickets.meta = {};
 	 * Handle the required checkboxes. Once a checkbox changes we update
 	 * the required value and set it only to the checked ones.
 	 *
-	 * @since5.0.0
+	 * @since 5.0.0
 	 *
 	 * @param {event} e input change event.
 	 *
@@ -249,9 +355,39 @@ tribe.tickets.meta = {};
 	};
 
 	/**
+	* Adds focus effect to attendee ticket block.
+	*
+	* @since 5.1.0
+	*
+	* @param {event} e The event.
+	*/
+	obj.focusTicketAttendeeBlock = function( e ) {
+		const input = e.target;
+
+		$( input )
+			.closest( obj.selectors.formAttendeeTicketsItem )
+			.addClass( obj.selectors.formAttendeeTicketsItemFocus.className() );
+	};
+
+	/**
+	 * Remove focus effect from attendee ticket block.
+	 *
+	 * @since 5.1.0
+	 *
+	 * @param {event} e The event.
+	 */
+	obj.unFocusTicketAttendeeBlock = function( e ) {
+		const input = e.target;
+
+		$( input )
+			.closest( obj.selectors.formAttendeeTicketsItem )
+			.removeClass( obj.selectors.formAttendeeTicketsItemFocus.className() );
+	};
+
+	/**
 	 * Init tickets attendee fields.
 	 *
-	 * @since5.0.0
+	 * @since 5.0.0
 	 *
 	 * @return {void}
 	 */
@@ -267,6 +403,28 @@ tribe.tickets.meta = {};
 			'change',
 			obj.selectors.formFieldInputCheckbox.checkbox,
 			obj.handleRequiredCheckboxes
+		);
+
+		/**
+		 * Adds focus effect to attendee ticket block.
+		 *
+		 * @since 5.1.0
+		 */
+		$document.on(
+			'focus',
+			obj.selectors.formFieldInput,
+			obj.focusTicketAttendeeBlock
+		);
+
+		/**
+		 * Remove focus effect from attendee ticket block.
+		 *
+		 * @since 5.1.0
+		 */
+		$document.on(
+			'blur',
+			obj.selectors.formFieldInput,
+			obj.unFocusTicketAttendeeBlock
 		);
 	};
 

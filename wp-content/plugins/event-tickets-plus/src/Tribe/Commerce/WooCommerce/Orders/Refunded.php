@@ -21,9 +21,9 @@ class Tribe__Tickets_Plus__Commerce__WooCommerce__Orders__Refunded {
 	protected $ticket_id = 0;
 
 	/**
-	 * @var int
+	 * @var int[]
 	 */
-	protected $count_cache = false;
+	protected $count_cache = [];
 
 	/**
 	 * Get refunds count. If there's something in cache, then
@@ -46,11 +46,11 @@ class Tribe__Tickets_Plus__Commerce__WooCommerce__Orders__Refunded {
 			return;
 		}
 
-		if ( false === $this->count_cache ) {
-			$this->count_cache = $this->real_get_count( $ticket_id );
+		if ( ! isset( $this->count_cache[ $ticket_id ] ) ) {
+			$this->count_cache[ $ticket_id ] = $this->real_get_count( $ticket_id );
 		}
 
-		return $this->count_cache;
+		return $this->count_cache[ $ticket_id ];
 	}
 
 	/**
@@ -161,6 +161,25 @@ class Tribe__Tickets_Plus__Commerce__WooCommerce__Orders__Refunded {
 		$refunded_order_post_ids = array_unique( $refunded_order_post_ids );
 
 		return $refunded_order_post_ids;
+	}
+
+	/**
+	 * Reset the count cache for a specific ticket ID or all tickets.
+	 *
+	 * @since 5.1.0
+	 *
+	 * @param null|int $ticket_id The ticket ID to reset or null to reset all.
+	 */
+	public function reset_count_cache( $ticket_id = null ) {
+		if ( null === $ticket_id ) {
+			$this->count_cache = [];
+
+			return;
+		}
+
+		if ( isset( $this->count_cache[ $ticket_id ] ) ) {
+			unset( $this->count_cache[ $ticket_id ] );
+		}
 	}
 
 }

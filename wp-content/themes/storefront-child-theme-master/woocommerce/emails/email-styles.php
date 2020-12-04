@@ -86,6 +86,8 @@ body {
 #template_header_image img {
 	margin-left: 0;
 	margin-right: 0;
+	max-width: 200px;
+	margin-bottom: 40px;
 }
 
 #template_footer td {
@@ -180,7 +182,7 @@ body {
 h1 {
 	color: <?php echo esc_attr( $base ); ?>;
 	font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-	font-size: 30px;
+	font-size: 22px;
 	font-weight: 500;
 	font-style: italic;
 	line-height: 150%;

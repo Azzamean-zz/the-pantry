@@ -138,6 +138,18 @@ abstract class Tribe__Tickets_Plus__CSV_Importer__Tickets_Importer extends Tribe
 			$this->aggregator_record->meta['activity']->add( $engine->ticket_object, 'created', $ticket_id );
 		}
 
+		/**
+		 * Action fired after a ticket is created on csv import.
+		 *
+		 * @since 5.1.0
+		 *
+		 * @param int                                     $ticket_id The ID of the created ticket.
+		 * @param array                                   $record    The data for the new created ticket.
+		 * @param array                                   $data      The data for the new created ticket.
+		 * @param \Tribe__Events__Importer__File_Importer $this      The importer object, to use to extract data from the import record.
+		 */
+		do_action( 'tribe_tickets_plus_after_csv_import_ticket_created', $ticket_id, $record, $data, $this );
+
 		return $ticket_id;
 	}
 
