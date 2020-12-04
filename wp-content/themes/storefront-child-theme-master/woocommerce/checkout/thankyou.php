@@ -44,9 +44,11 @@ defined( 'ABSPATH' ) || exit;
 		$order_id = $order->get_id();
 		$event_id = get_event_id_from_order_id($order_id);
 		$attendee_list = Tribe__Tickets__Tickets::get_event_attendees($event_id);
+/*
 		echo '<pre>';
 		print_r($attendee_list);
 		echo '</pre>';
+*/
 		
 		?>
 		
