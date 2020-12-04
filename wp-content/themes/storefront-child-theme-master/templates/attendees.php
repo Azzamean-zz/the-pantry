@@ -23,11 +23,13 @@ get_header(); ?>
 		$event_id = '18520';
 	}
 	$attendee_list = Tribe__Tickets__Tickets::get_event_attendees($event_id); ?>
+
 <!--
 	<pre>
 		<?php print_r($attendee_list); ?> 
 	</pre>	
 -->
+
 	<?php
 		getAttendee($event_id);
 	
@@ -93,8 +95,10 @@ get_header(); ?>
 						$veg = " ";
 					}
 					if(isset($attendee['attendee_meta']['email']['value'])){
-				    $email = $attendee['attendee_meta']['email']['value'];
+				    	$email = $attendee['attendee_meta']['email']['value'];
 						$emails[] = $attendee['attendee_meta']['email']['value'];
+					} else {
+						$email = '';
 					}
 					if(isset($attendee['attendee_meta']['phone']['value'])){
 					    $phone = $attendee['attendee_meta']['phone']['value'];
