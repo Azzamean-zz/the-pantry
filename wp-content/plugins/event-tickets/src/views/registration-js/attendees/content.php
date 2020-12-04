@@ -5,12 +5,9 @@
  * Override this template in your own theme by creating a file at:
  * [your-theme]/tribe/tickets/registration-js/attendees/content.php
  *
- * @link    https://m.tri.be/1amp Help article for RSVP & Ticket template files.
- *
  * @since 4.11.0
- * @since 5.0.3 Updated template link.
  *
- * @version 5.0.3
+ * @version 4.11.0
  *
  */
 if (
@@ -41,10 +38,10 @@ if ( empty( $tickets ) ) {
 			$ticket = $provider->get_ticket( $event_id, $ticket['id'] );
 		}
 
-		/** @var Tribe__Tickets__Ticket_Object $ticket */
+		// Only include tickets with meta
+		$has_meta = get_post_meta( $ticket->ID, '_tribe_tickets_meta_enabled', true );
 
-		// Only include tickets with meta.
-		if ( ! $ticket->has_meta_enabled() ) {
+		if ( empty( $has_meta ) || ! tribe_is_truthy( $has_meta ) ) {
 			continue;
 		}
 		?>

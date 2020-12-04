@@ -12,7 +12,7 @@ if ( ! class_exists( 'Tribe__Tickets_Plus__Main' ) ) {
 		/**
 		 * Current version of this plugin
 		 */
-		const VERSION = '5.1.0.2';
+		const VERSION = '5.0.1';
 
 		/**
 		 * Used to store the version history.
@@ -78,40 +78,25 @@ if ( ! class_exists( 'Tribe__Tickets_Plus__Main' ) ) {
 		protected static $qr;
 
 		/**
-		 * @deprecated 5.1.0 Use `tribe( 'tickets-plus.meta' )` instead.
-		 *
 		 * @var Tribe__Tickets_Plus__Meta
 		 */
 		protected static $meta;
 
 		/**
-		 * Holds an instance of Tribe__Tickets_Plus__APM.
+		 * Holds an instance of Tribe__Tickets_Plus__APM
 		 *
 		 * @var Tribe__Tickets_Plus__APM
 		 */
 		protected static $apm_filters;
 
 		/**
-		 * Where in the themes we will look for templates.
-		 *
-		 * @since 5.1.0
-		 *
-		 * @var string
-		 */
-		public $template_namespace = 'tickets-plus';
-
-		/**
-		 * Get (and instantiate, if necessary) the instance of the class.
+		 * Get (and instantiate, if necessary) the instance of the class
 		 *
 		 * @static
 		 * @return Tribe__Tickets_Plus__Main
 		 */
 		public static function instance() {
-			try {
-				return tribe( 'tickets-plus.main' );
-			} catch ( RuntimeException $exception ) {
-				return null;
-			}
+			return tribe( 'tickets-plus.main' );
 		}
 
 		public function __construct() {
@@ -162,14 +147,8 @@ if ( ! class_exists( 'Tribe__Tickets_Plus__Main' ) ) {
 			// Meta
 			tribe_register_provider( Tribe\Tickets\Plus\Meta\Service_Provider::class );
 
-			// Attendee Registration
-			tribe_register_provider( Tribe\Tickets\Plus\Attendee_Registration\Service_Provider::class );
-
-			// @todo Refactor this in the future to move to ET+ entirely, using same backcompat ET slugs.
-			tribe_register_provider( Tribe__Tickets__Attendee_Registration__Service_Provider::class );
-
 			// Shortcodes
-			tribe_register_provider( Tribe\Tickets\Plus\Service_Providers\Shortcode::class );
+			tribe_register_provider( \Tribe\Tickets\Plus\Service_Providers\Shortcode::class );
 
 			$this->commerce_loader();
 			$this->bind_implementations();
@@ -330,12 +309,14 @@ if ( ! class_exists( 'Tribe__Tickets_Plus__Main' ) ) {
 		/**
 		 * Object accessor method for Ticket meta
 		 *
-		 * @deprecated 5.1.0 Use `tribe( 'tickets-plus.meta' )` instead.
-		 *
 		 * @return Tribe__Tickets_Plus__Meta
 		 */
 		public function meta() {
-			return tribe( 'tickets-plus.meta' );
+			if ( ! self::$meta ) {
+				self::$meta = new Tribe__Tickets_Plus__Meta( $this->plugin_path );
+			}
+
+			return self::$meta;
 		}
 
 		protected static $attendees_list;
@@ -410,23 +391,15 @@ if ( ! class_exists( 'Tribe__Tickets_Plus__Main' ) ) {
 		/**
 		 * Register Event Tickets Plus with the template update checker.
 		 *
-		 * @since 5.1.0 Updated template path structure.
-		 *
 		 * @param array $plugins
 		 *
 		 * @return array
 		 */
 		public function add_template_updates_check( $plugins ) {
 			// ET+ views can be in one of a range of different subdirectories (eddtickets, wootickets
-			// etc) so we will tell the template checker to simply look in tribe/tickets-plus and work
-			// things out from there.
+			// etc) so we will tell the template checker to simply look in views/tribe-events and work
+			// things out from there
 			$plugins[ __( 'Event Tickets Plus', 'event-tickets-plus' ) ] = [
-				self::VERSION,
-				$this->plugin_path . 'src/views',
-				trailingslashit( get_stylesheet_directory() ) . 'tribe/tickets-plus',
-			];
-
-			$plugins[ __( 'Event Tickets Plus - Legacy', 'event-tickets-plus' ) ] = [
 				self::VERSION,
 				$this->plugin_path . 'src/views',
 				trailingslashit( get_stylesheet_directory() ) . 'tribe-events',

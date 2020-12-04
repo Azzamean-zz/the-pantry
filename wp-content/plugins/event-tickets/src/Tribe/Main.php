@@ -8,7 +8,7 @@ class Tribe__Tickets__Main {
 	/**
 	 * Current version of this plugin
 	 */
-	const VERSION = '5.0.3.1';
+	const VERSION = '5.0.2';
 
 	/**
 	 * Used to store the version history.
@@ -353,6 +353,9 @@ class Tribe__Tickets__Main {
 
 		tribe_singleton( 'tickets.theme-compatibility', 'Tribe__Tickets__Theme_Compatibility' );
 
+		// Attendee Registration Page.
+		tribe_register_provider( 'Tribe__Tickets__Attendee_Registration__Service_Provider' );
+
 		// Event Tickets Provider to manage Events.
 		tribe_register_provider( Events_Service_Provider::class );
 
@@ -664,8 +667,6 @@ class Tribe__Tickets__Main {
 	/**
 	 * Register Event Tickets with the template update checker.
 	 *
-	 * @since 5.0.3 Updated template structure.
-	 *
 	 * @param array $plugins
 	 *
 	 * @return array
@@ -673,13 +674,7 @@ class Tribe__Tickets__Main {
 	public function add_template_updates_check( $plugins ) {
 		$plugins[ __( 'Event Tickets', 'event-tickets' ) ] = [
 			self::VERSION,
-			$this->plugin_path . 'src/views',
-			trailingslashit( get_stylesheet_directory() ) . 'tribe/tickets',
-		];
-
-		$plugins[ __( 'Event Tickets - Legacy', 'event-tickets' ) ] = [
-			self::VERSION,
-			$this->plugin_path . 'src/views',
+			$this->plugin_path . 'src/views/tickets',
 			trailingslashit( get_stylesheet_directory() ) . 'tribe-events/tickets',
 		];
 
@@ -721,17 +716,8 @@ class Tribe__Tickets__Main {
 	 * @since 4.11.0
 	 */
 	public function maybe_set_options_for_old_installs() {
-		/**
-		 * This Try/Catch is present to deal with a problem on Autoloading from version 5.1.0 ET+ with ET 5.0.3.
-		 *
-		 * @todo Needs to be revised once proper autoloading rules are done for Common, ET and ET+.
-		 */
-		try {
-			/** @var \Tribe__Tickets__Attendee_Registration__Main $ar_reg */
-			$ar_reg = tribe( 'tickets.attendee_registration' );
-		} catch ( \Exception $exception ) {
-			return;
-		}
+		/** @var \Tribe__Tickets__Attendee_Registration__Main $ar_reg */
+		$ar_reg = tribe( 'tickets.attendee_registration' );
 
 		// If the (boolean) option is not set, and this install predated the modal, let's set the option to false.
 		$modal_option = $ar_reg->is_modal_enabled();

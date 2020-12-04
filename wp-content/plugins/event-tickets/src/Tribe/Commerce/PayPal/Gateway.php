@@ -81,11 +81,11 @@ class Tribe__Tickets__Commerce__PayPal__Gateway {
 	 * @since 4.7
 	 */
 	public function hook() {
-		add_action( 'template_redirect', [ $this, 'add_to_cart' ] );
+		add_action( 'template_redirect', array( $this, 'add_to_cart' ) );
 	}
 
 	/**
-	 * Handles adding tickets to cart.
+	 * Handles adding tickets to cart
 	 *
 	 * @since 4.7
 	 */
@@ -93,15 +93,15 @@ class Tribe__Tickets__Commerce__PayPal__Gateway {
 		global $post;
 
 		/**
-		 * Action before adding to cart.
+		 * Action before adding to cart
 		 *
 		 * @since 4.9
 		 *
-		 * @param array $post_data The $_POST superglobal.
+		 * @param array $post_data
 		 */
 		do_action( 'tribe_tickets_commerce_paypal_gateway_pre_add_to_cart', $_POST );
 
-		// Bail if this isn't a Tribe Commerce PayPal ticket.
+		// bail if this isn't a Tribe Commerce PayPal ticket
 		if (
 			(
 				empty( $_POST['tribe_tickets'] )
@@ -126,28 +126,23 @@ class Tribe__Tickets__Commerce__PayPal__Gateway {
 		$notify_url = tribe_get_option( 'ticket-paypal-notify-url', home_url() );
 
 		/**
-		 * Filters the Notify URL.
+		 * Filters the notify URL.
 		 *
 		 * The `notify_url` argument is an IPN only argument specifying the URL PayPal should
 		 * use to POST the payment information.
 		 *
-		 * @link  https://developer.paypal.com/docs/classic/paypal-payments-standard/integration-guide/Appx_websitestandard_htmlvariables/
-		 *
-		 * @see   Tribe__Tickets__Commerce__PayPal__Handler__IPN::check_response()
-		 *
 		 * @since 4.7
 		 *
-		 * @param string  $notify_url  The Notify URL.
-		 * @param WP_Post $post        The post tickets are associated with.
-		 * @param array   $product_ids An array of ticket post IDs that are being added to the cart.
+		 * @see  Tribe__Tickets__Commerce__PayPal__Handler__IPN::check_response()
+		 * @link https://developer.paypal.com/docs/classic/paypal-payments-standard/integration-guide/Appx_websitestandard_htmlvariables/
+		 *
+		 * @param string $notify_url
+		 * @param WP_Post $post The post tickets are associated with
+		 * @param array $product_ids An array of ticket post IDs that are being added to the cart
 		 */
 		$notify_url = apply_filters( 'tribe_tickets_commerce_paypal_notify_url', $notify_url, $post, $product_ids );
 
-		$custom_args = [
-			'user_id'       => get_current_user_id(),
-			'tribe_handler' => 'tpp',
-			'pid'           => $post->ID,
-		];
+		$custom_args = array( 'user_id' => get_current_user_id(), 'tribe_handler' => 'tpp', 'pid' => $post->ID );
 
 		$invoice_number = $this->set_invoice_number();
 
@@ -158,15 +153,15 @@ class Tribe__Tickets__Commerce__PayPal__Gateway {
 		 *
 		 * @since 4.7
 		 *
-		 * @param array   $custom_args PayPal URL's `custom` argument.
-		 * @param WP_Post $post        The post tickets are associated with.
-		 * @param array   $product_ids An array of ticket post IDs that are being added to the cart.
+		 * @param array   $custom_args
+		 * @param WP_Post $post        The post tickets are associated with
+		 * @param array   $product_ids An array of ticket post IDs that are being added to the cart
 		 */
 		$custom_args = apply_filters( 'tribe_tickets_commerce_paypal_custom_args', $custom_args, $post, $product_ids );
 
-		$custom = Tribe__Tickets__Commerce__PayPal__Custom_Argument::encode( $custom_args );
+		$custom      = Tribe__Tickets__Commerce__PayPal__Custom_Argument::encode( $custom_args );
 
-		$args = [
+		$args = array(
 			'cmd'           => '_cart',
 			'add'           => 1,
 			'business'      => urlencode( trim( tribe_get_option( 'ticket-paypal-email' ) ) ),
@@ -180,17 +175,14 @@ class Tribe__Tickets__Commerce__PayPal__Gateway {
 			 * We're not sending an invoice anymore.
 			 * It would mess up the cart cookies and we ended up not using it.
 			 */
-		];
+		);
 
 		/** @var Tribe__Tickets__Commerce__PayPal__Cart__Interface $cart */
 		$cart = tribe( 'tickets.commerce.paypal.cart' );
 		$cart->set_id( $invoice_number );
 
-		/** @var Tribe__Tickets__Commerce__PayPal__Main $paypal */
-		$paypal = tribe( 'tickets.commerce.paypal' );
-
 		foreach ( $product_ids as $ticket_id ) {
-			$ticket = $paypal->get_ticket( $post->ID, $ticket_id );
+			$ticket   = tribe( 'tickets.commerce.paypal' )->get_ticket( $post->ID, $ticket_id );
 
 			$quantity = 0;
 
@@ -238,7 +230,7 @@ class Tribe__Tickets__Commerce__PayPal__Gateway {
 			/**
 			 * @see Tribe__Tickets__Commerce__PayPal__Errors::error_code_to_message for error codes
 			 */
-			wp_safe_redirect( add_query_arg( [ 'tpp_error' => 103 ], $post_url ) );
+			wp_safe_redirect( add_query_arg( array( 'tpp_error' => 103 ), $post_url ) );
 			die;
 		}
 
@@ -249,9 +241,9 @@ class Tribe__Tickets__Commerce__PayPal__Gateway {
 		 *
 		 * @since 4.7
 		 *
-		 * @param array   $args PayPal Add To Cart URL arguments.
-		 * @param array   $data POST data from Buy Now submission.
-		 * @param WP_Post $post Post object that has tickets attached to it.
+		 * @param array   $args
+		 * @param array   $data POST data from buy now submission
+		 * @param WP_Post $post Post object that has tickets attached to it
 		 */
 		$args = apply_filters( 'tribe_tickets_commerce_paypal_add_to_cart_args', $args, $_POST, $post );
 
@@ -266,7 +258,7 @@ class Tribe__Tickets__Commerce__PayPal__Gateway {
 		 * @see Tribe__Tickets__Redirections::maybe_redirect
 		 */
 		$url = add_query_arg(
-			[ 'tribe_tickets_redirect_to' => rawurlencode( $cart_url ) ],
+			array( 'tribe_tickets_redirect_to' => rawurlencode( $cart_url ) ),
 			home_url()
 		);
 
@@ -311,7 +303,7 @@ class Tribe__Tickets__Commerce__PayPal__Gateway {
 			return false;
 		}
 
-		$item_indexes = [
+		$item_indexes = array(
 			'item_number',
 			'item_name',
 			'quantity',
@@ -319,13 +311,14 @@ class Tribe__Tickets__Commerce__PayPal__Gateway {
 			'mc_shipping',
 			'tax',
 			'mc_gross_',
-		];
+		);
 
 		$item_indexes_regex = '/(' . implode( '|', $item_indexes ) . ')(\d)/';
 
-		$data = [
-			'items' => [],
-		];
+		$data = array(
+			'items' => array(),
+		);
+
 
 		foreach ( $transaction as $key => $value ) {
 			if ( ! preg_match( $item_indexes_regex, $key, $matches ) ) {
@@ -334,17 +327,14 @@ class Tribe__Tickets__Commerce__PayPal__Gateway {
 			}
 
 			$index = $matches[2];
-			$name  = trim( $matches[1], '_' );
+			$name = trim( $matches[1], '_' );
 
 			if ( ! isset( $data['items'][ $index ] ) ) {
-				$data['items'][ $index ] = [];
+				$data['items'][ $index ] = array();
 			}
 
 			$data['items'][ $index ][ $name ] = $value;
 		}
-
-		/** @var Tribe__Tickets__Commerce__PayPal__Main $paypal */
-		$paypal = tribe( 'tickets.commerce.paypal' );
 
 		foreach ( $data['items'] as &$item ) {
 			if ( ! isset( $item['item_number'] ) ) {
@@ -353,7 +343,7 @@ class Tribe__Tickets__Commerce__PayPal__Gateway {
 
 			list( $item['post_id'], $item['ticket_id'] ) = explode( ':', $item['item_number'] );
 
-			$item['ticket'] = $paypal->get_ticket( $item['post_id'], $item['ticket_id'] );
+			$item['ticket'] = tribe( 'tickets.commerce.paypal' )->get_ticket( $item['post_id'], $item['ticket_id'] );
 		}
 
 		return $data;
@@ -666,8 +656,8 @@ class Tribe__Tickets__Commerce__PayPal__Gateway {
 		 *
 		 * @since 4.7
 		 *
-		 * @param array   $args PayPal Add To Cart URL arguments.
-		 * @param array   $data POST data from Buy Now submission.
+		 * @param array   $args
+		 * @param array   $data POST data from buy now submission.
 		 * @param WP_Post $post Post object that has tickets attached to it.
 		 */
 		$args = apply_filters( 'tribe_tickets_commerce_paypal_add_to_cart_args', $args, [], $post );
@@ -825,7 +815,7 @@ class Tribe__Tickets__Commerce__PayPal__Gateway {
 		 */
 		$handler = apply_filters( 'tribe_tickets_commerce_paypal_handler', 'ipn' );
 
-		$handler = in_array( $handler, [ 'pdt', 'ipn' ] ) ? $handler : 'ipn';
+		$handler = in_array( $handler, array( 'pdt', 'ipn' ) ) ? $handler : 'ipn';
 
 		return $handler;
 	}

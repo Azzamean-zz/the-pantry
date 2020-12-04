@@ -4,14 +4,9 @@
  *
  * Override this template in your own theme by creating a file at:
  *
- *     [your-theme]/tribe/tickets-plus/attendee-list-checkbox-tickets.php
+ *     [your-theme]/tribe-events/tickets-plus/attendee-list-checkbox-tickets.php
  *
- * @link    http://m.tri.be/1amp See more documentation about our views templating system.
- *
- * @since 4.5
- * @since 5.1.0 Updated template link.
- *
- * @version 5.1.0
+ * @version 4.5
  *
  */
 $view = Tribe__Tickets__Tickets_View::instance();

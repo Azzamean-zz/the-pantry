@@ -325,7 +325,7 @@ class Tribe__Tickets_Plus__Meta__Storage {
 	/**
 	 * Store temporary data as a transient.
 	 *
-	 * @param mixed $temporary_data Temporary data to store.
+	 * @param array $temporary_data Temporary data to store.
 	 *
 	 * @return string
 	 */
@@ -412,7 +412,7 @@ class Tribe__Tickets_Plus__Meta__Storage {
 	 *
 	 * @since 4.11.0
 	 *
-	 * @param mixed       $data     Metadata to save. Will be cast to array if not already.
+	 * @param array       $data     Meta data to save.
 	 * @param null|int    $id       Post ID (or null if using current post).
 	 *                              Note: This is only for context, it does not affect what is saved.
 	 * @param null|string $hash_key The hash key.
@@ -430,13 +430,6 @@ class Tribe__Tickets_Plus__Meta__Storage {
 		if ( empty( $transient_name ) ) {
 			return false;
 		}
-
-		/**
-		 * Consistency with expected value type.
-		 *
-		 * @see get_meta_data() Notice that it bails if not returned an array value, as expected.
-		 */
-		$data = (array) $data;
 
 		$this->data_cache = $data;
 

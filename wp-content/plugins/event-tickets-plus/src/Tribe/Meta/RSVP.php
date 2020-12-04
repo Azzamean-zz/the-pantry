@@ -18,6 +18,7 @@ class Tribe__Tickets_Plus__Meta__RSVP {
 		add_action( 'tribe_template_entry_point:tickets/v2/rsvp/ari/form/fields/meta:rsvp_attendee_fields', [ $this, 'rsvp_attendee_fields' ], 10, 3 );
 		add_action( 'tribe_template_entry_point:tickets/v2/rsvp/ari/form/template/fields:rsvp_attendee_fields_template', [ $this, 'rsvp_attendee_fields' ], 10, 3 );
 
+		add_filter( 'tribe_tickets_rsvp_has_meta', [ $this, 'rsvp_has_meta' ], 10, 1 );
 		add_filter( 'tribe_tickets_rsvp_render_step_template_args_pre_process', [ $this, 'rsvp_render_ari_step' ] );
 	}
 
@@ -52,22 +53,7 @@ class Tribe__Tickets_Plus__Meta__RSVP {
 			return;
 		}
 
-		$attendee_meta = $meta[ $product_id ][ $order_attendee_id ];
-
-		/**
-		 * Allow filtering the attendee meta to be saved to the attendee.
-		 *
-		 * @since 5.1.0
-		 *
-		 * @param array    $attendee_meta   The attendee meta to be saved to the attendee.
-		 * @param int      $attendee_id     The attendee ID.
-		 * @param int      $order_id        The order ID.
-		 * @param int      $ticket_id       The ticket ID.
-		 * @param int|null $attendee_number The order attendee number.
-		 */
-		$attendee_meta_to_save = apply_filters( 'tribe_tickets_plus_attendee_save_meta', $attendee_meta, $attendee_id, $order_id, $product_id, $order_attendee_id );
-
-		update_post_meta( $attendee_id, Tribe__Tickets_Plus__Meta::META_KEY, $attendee_meta_to_save );
+		update_post_meta( $attendee_id, Tribe__Tickets_Plus__Meta::META_KEY, $meta[ $product_id ][ $order_attendee_id ] );
 	}
 
 	/**
@@ -100,42 +86,84 @@ class Tribe__Tickets_Plus__Meta__RSVP {
 	/**
 	 * Outputs the meta fields for the RSVP ticket.
 	 *
-	 * @since 5.0.0
+	 * @since5.0.0
 	 *
 	 * @param string          $hook_name        For which template include this entry point belongs.
 	 * @param string          $entry_point      Which entry point specifically we are triggering.
 	 * @param Tribe__Template $tickets_template Current instance of the template class doing this entry point.
 	 */
 	public function rsvp_attendee_fields( $hook_name, $entry_point, $tickets_template ) {
-		$rsvp        = $tickets_template->get( 'rsvp' );
-		$post_id     = $tickets_template->get( 'post_id' );
-		$attendee_id = 'rsvp_attendee_fields' === $entry_point ? 0 : null;
-		$attendee_id = tribe_tickets_plus_meta_field_get_attendee_id( $attendee_id );
+		$rsvp    = $tickets_template->get( 'rsvp' );
+		$post_id = $tickets_template->get( 'post_id' );
+		$meta    = Tribe__Tickets_Plus__Main::instance()->meta();
+		$fields  = $meta->get_meta_fields_by_ticket( $rsvp->ID );
 
-		/** @var \Tribe\Tickets\Plus\Attendee_Registration\Fields $fields */
-		$fields = tribe( 'tickets-plus.attendee-registration.fields' );
+		if ( empty( $fields ) ) {
+			return;
+		}
 
-		$fields->render( $rsvp, $post_id, $attendee_id );
+		$template = tribe( 'tickets-plus.template' );
+
+		$template_args = [
+			'post_id' => $post_id,
+			'rsvp'    => $rsvp,
+		];
+
+		// Add the rendering attributes into global context.
+		$template->add_template_globals( $args );
+
+		$html = '';
+
+		foreach ( $fields as $field ) {
+			$attendee_id = 'rsvp_attendee_fields' === $entry_point ? 0 : null;
+			$attendee_id = tribe_tickets_plus_meta_field_get_attendee_id( $attendee_id );
+			$required    = tribe_tickets_plus_meta_field_is_required( $field );
+			$classes     = [
+				'tribe-common-b1',
+				'tribe-common-b2--min-medium',
+				'tribe-tickets__form-field',
+				'tribe-tickets__form-field--' . $field->type,
+				'tribe-tickets__form-field--required' => $required,
+			];
+
+			$args = [
+				'post_id'     => $post_id,
+				'ticket'      => $rsvp,
+				'field'       => $field,
+				'value'       => null,
+				'saved_meta'  => [],
+				'attendee_id' => $attendee_id,
+				'field_name'  => tribe_tickets_plus_meta_field_name( $rsvp->ID, $field->slug, $attendee_id ),
+				'field_id'    => tribe_tickets_plus_meta_field_id( $rsvp->ID, $field->slug, '', $attendee_id ),
+				'required'    => $required,
+				'disabled'    => $field->is_restricted( $attendee_id ),
+				'classes'     => $classes,
+			];
+
+			$html .= $template->template( 'v2/components/meta/' . $field->type, $args, false );
+		}
+
+		echo $html;
 	}
 
 	/**
 	 * Check if the RSVP has meta.
 	 *
-	 * @since 5.0.0
-	 * @deprecated 5.1.0 Use `$rsvp->has_meta_enabled()` instead.
-	 *
+	 * @since5.0.0
 	 * @param Tribe__Tickets__Ticket_Object $rsvp The rsvp ticket object.
 	 *
-	 * @return bool Whether the RSVP has meta.
+	 * @return bool
 	 */
 	public function rsvp_has_meta( $rsvp ) {
-		return $rsvp->has_meta_enabled();
+		$has_meta = get_post_meta( $rsvp->ID, '_tribe_tickets_meta_enabled', true );
+
+		return tribe_is_truthy( $has_meta );
 	}
 
 	/**
 	 * Handle rendering the ARI step if ticket has ARI.
 	 *
-	 * @since 5.0.0
+	 * @since5.0.0
 	 *
 	 * @param array $args {
 	 *      The list of step template arguments.
@@ -157,11 +185,8 @@ class Tribe__Tickets_Plus__Meta__RSVP {
 			return $args;
 		}
 
-		/** @var Tribe__Tickets__Ticket_Object $rsvp */
-		$rsvp = $args['rsvp'];
-
 		// If no meta on ticket, return as normal.
-		if ( ! $rsvp->has_meta_enabled() ) {
+		if ( ! $this->rsvp_has_meta( $args['rsvp'] ) ) {
 			return $args;
 		}
 

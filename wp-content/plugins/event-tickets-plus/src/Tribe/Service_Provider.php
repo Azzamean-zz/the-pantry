@@ -36,6 +36,9 @@ class Tribe__Tickets_Plus__Service_Provider extends tad_DI52_ServiceProvider {
 		// QR code support
 		$this->container->singleton( 'tickets-plus.qr.site-settings', 'Tribe__Tickets_Plus__QR__Settings', array( 'hook' ) );
 
+		// Meta
+		$this->container->singleton( 'tickets-plus.meta.contents', 'Tribe__Tickets_Plus__Meta__Contents' );
+
 		// additional service providers
 		$this->container->register( 'Tribe__Tickets_Plus__Commerce__PayPal__Service_Provider' );
 

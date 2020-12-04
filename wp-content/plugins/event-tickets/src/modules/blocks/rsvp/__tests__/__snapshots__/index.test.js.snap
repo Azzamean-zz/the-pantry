@@ -32,7 +32,6 @@ Object {
   "save": [Function],
   "supports": Object {
     "html": false,
-    "multiple": false,
   },
   "title": "RSVP",
 }

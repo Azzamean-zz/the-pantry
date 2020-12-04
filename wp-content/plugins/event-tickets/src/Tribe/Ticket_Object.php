@@ -105,15 +105,6 @@ if ( ! class_exists( 'Tribe__Tickets__Ticket_Object' ) ) {
 		public $sku;
 
 		/**
-		 * Holds the IAC setting for the ticket.
-		 *
-		 * @since 5.0.3
-		 *
-		 * @var string
-		 */
-		public $iac = 'none';
-
-		/**
 		 * Holds the price suffix.
 		 *
 		 * @since 4.12.0
@@ -511,25 +502,16 @@ if ( ! class_exists( 'Tribe__Tickets__Ticket_Object' ) ) {
 		 * @return boolean
 		 */
 		public function is_in_stock() {
-			// If we aren't tracking stock, then always assume it is in stock.
+			// if we aren't tracking stock, then always assume it is in stock
 			if ( ! $this->managing_stock() ) {
 				return true;
 			}
 
-			/** @var Tribe__Cache $cache */
-			$cache = tribe( 'cache' );
-			$key   = __METHOD__ . '-' . $this->ID;
+			$remaining = $this->inventory();
 
-			if ( isset( $cache[ $key ] ) ) {
-				return $cache[ $key ];
-			}
+			$is_unlimited = $remaining === -1;
 
-			$remaining    = $this->inventory();
-			$is_unlimited = - 1 === $remaining;
-
-			$cache[ $key ] = false === $remaining || $remaining > 0 || $is_unlimited;
-
-			return $cache[ $key ];
+			return false === $remaining || $remaining > 0 || $is_unlimited;
 		}
 
 		/**
@@ -565,14 +547,6 @@ if ( ! class_exists( 'Tribe__Tickets__Ticket_Object' ) ) {
 		 * @return int
 		 */
 		public function inventory() {
-
-			/** @var Tribe__Cache $cache */
-			$cache = tribe( 'cache' );
-			$key   = __METHOD__ . '-' . $this->ID;
-
-			if ( isset( $cache[ $key ] ) ) {
-				return $cache[ $key ];
-			}
 			// Fetch provider (also sets if found).
 			$provider = $this->get_provider();
 
@@ -580,8 +554,7 @@ if ( ! class_exists( 'Tribe__Tickets__Ticket_Object' ) ) {
 
 			// If we don't have the provider, get the result from inventory.
 			if ( empty( $provider ) ) {
-				$cache[ $key ] = $capacity - $this->qty_sold() - $this->qty_pending();
-				return $cache[ $key ];
+				return $capacity - $this->qty_sold() - $this->qty_pending();
 			}
 
 			// If we aren't tracking stock, then always assume it is in stock or capacity is unlimited.
@@ -589,8 +562,7 @@ if ( ! class_exists( 'Tribe__Tickets__Ticket_Object' ) ) {
 				! $this->managing_stock()
 				|| -1 === $capacity
 			) {
-				$cache[ $key ] = -1;
-				return $cache[ $key ];
+				return -1;
 			}
 
 			/** @var Tribe__Tickets__Status__Manager $status_mgr */
@@ -655,8 +627,7 @@ if ( ! class_exists( 'Tribe__Tickets__Ticket_Object' ) ) {
 			$inventory = min( $inventory );
 
 			// Prevents Negative
-			$cache[ $key ] = max( $inventory, 0 );
-			return $cache[ $key ];
+			return max( $inventory, 0 );
 		}
 
 		/**
@@ -682,15 +653,7 @@ if ( ! class_exists( 'Tribe__Tickets__Ticket_Object' ) ) {
 		 * @return int
 		 */
 		public function available() {
-			// if we aren't tracking stock, then always assume it is in stock or capacity is unlimited.
-			/** @var Tribe__Cache $cache */
-			$cache = tribe( 'cache' );
-			$key   = __METHOD__ . '-' . $this->ID;
-
-			if ( isset( $cache[ $key ] ) ) {
-				return $cache[ $key ];
-			}
-
+			// if we aren't tracking stock, then always assume it is in stock or capacity is unlimited
 			if (
 				! $this->managing_stock()
 				|| -1 === $this->capacity()
@@ -706,11 +669,7 @@ if ( ! class_exists( 'Tribe__Tickets__Ticket_Object' ) ) {
 			$available = min( $values );
 
 			// Prevents Negative
-			$available = max( $available, 0 );
-
-			$cache[ $key ] = $available;
-
-			return $available;
+			return max( $available, 0 );
 		}
 
 		/**
@@ -725,14 +684,6 @@ if ( ! class_exists( 'Tribe__Tickets__Ticket_Object' ) ) {
 				return '';
 			}
 
-			/** @var Tribe__Cache $cache */
-			$cache = tribe( 'cache' );
-			$key   = __METHOD__ . '-' . $this->ID;
-
-			if ( isset( $cache[ $key ] ) ) {
-				return $cache[ $key ];
-			}
-
 			if ( is_null( $this->capacity ) ) {
 				$this->capacity = tribe_tickets_get_capacity( $this->ID );
 			}
@@ -741,8 +692,7 @@ if ( ! class_exists( 'Tribe__Tickets__Ticket_Object' ) ) {
 
 			// Unlimited is always unlimited
 			if ( -1 === (int) $this->capacity ) {
-				$cache[ $key ] = (int) $this->capacity;
-				return $cache[ $key ];
+				return (int) $this->capacity;
 			}
 
 			// If Capped or we used the local Capacity
@@ -750,14 +700,12 @@ if ( ! class_exists( 'Tribe__Tickets__Ticket_Object' ) ) {
 				Tribe__Tickets__Global_Stock::CAPPED_STOCK_MODE === $stock_mode
 				|| Tribe__Tickets__Global_Stock::OWN_STOCK_MODE === $stock_mode
 			) {
-				$cache[ $key ] = (int) $this->capacity;
-				return $cache[ $key ];
+				return (int) $this->capacity;
 			}
 
 			$event_capacity = tribe_tickets_get_capacity( $this->get_event() );
 
-			$cache[ $key ] = (int) $event_capacity;
-			return $cache[ $key ];
+			return (int) $event_capacity;
 		}
 
 		/**
@@ -1131,23 +1079,6 @@ if ( ! class_exists( 'Tribe__Tickets__Ticket_Object' ) ) {
 				}
 			}
 			return $this->event_id;
-		}
-
-		/**
-		 * Check if the ticket has meta enabled.
-		 *
-		 * @since 5.0.3
-		 *
-		 * @return bool Whether the ticket has meta enabled.
-		 */
-		public function has_meta_enabled() {
-			/**
-			 * Filters if the ticket has meta or not.
-			 *
-			 * @param bool $has_meta Whether the ticket has meta enabled.
-			 * @param int  $ticket_id The ticket ID.
-			 */
-			return (bool) apply_filters( 'tribe_tickets_has_meta_enabled', false, $this->ID );
 		}
 	}
 

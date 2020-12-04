@@ -82,7 +82,7 @@ var tribe = typeof tribe === "object" ? tribe : {}; tribe["tickets"] = tribe["ti
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 538);
+/******/ 	return __webpack_require__(__webpack_require__.s = 537);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -156,7 +156,7 @@ function throttle(ms, pattern, worker) {
 if (false) { var throwOnDirectAccess, ReactIs; } else {
   // By explicitly using `prop-types` you are opting into new production behavior.
   // http://fb.me/prop-types-in-prod
-  module.exports = __webpack_require__(458)();
+  module.exports = __webpack_require__(457)();
 }
 
 
@@ -185,7 +185,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET_TICKET_DESCRIPTION", function() { return SET_TICKET_DESCRIPTION; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET_TICKET_PRICE", function() { return SET_TICKET_PRICE; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET_TICKET_SKU", function() { return SET_TICKET_SKU; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET_TICKET_IAC_SETTING", function() { return SET_TICKET_IAC_SETTING; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET_TICKET_START_DATE", function() { return SET_TICKET_START_DATE; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET_TICKET_START_DATE_INPUT", function() { return SET_TICKET_START_DATE_INPUT; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET_TICKET_START_DATE_MOMENT", function() { return SET_TICKET_START_DATE_MOMENT; });
@@ -202,7 +201,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET_TICKET_TEMP_DESCRIPTION", function() { return SET_TICKET_TEMP_DESCRIPTION; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET_TICKET_TEMP_PRICE", function() { return SET_TICKET_TEMP_PRICE; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET_TICKET_TEMP_SKU", function() { return SET_TICKET_TEMP_SKU; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET_TICKET_TEMP_IAC_SETTING", function() { return SET_TICKET_TEMP_IAC_SETTING; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET_TICKET_TEMP_START_DATE", function() { return SET_TICKET_TEMP_START_DATE; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET_TICKET_TEMP_START_DATE_INPUT", function() { return SET_TICKET_TEMP_START_DATE_INPUT; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET_TICKET_TEMP_START_DATE_MOMENT", function() { return SET_TICKET_TEMP_START_DATE_MOMENT; });
@@ -280,7 +278,6 @@ var SET_TICKET_TITLE = _moderntribe_tickets_data_utils__WEBPACK_IMPORTED_MODULE_
 var SET_TICKET_DESCRIPTION = _moderntribe_tickets_data_utils__WEBPACK_IMPORTED_MODULE_0__[/* PREFIX_TICKETS_STORE */ "n"] + '/SET_TICKET_DESCRIPTION';
 var SET_TICKET_PRICE = _moderntribe_tickets_data_utils__WEBPACK_IMPORTED_MODULE_0__[/* PREFIX_TICKETS_STORE */ "n"] + '/SET_TICKET_PRICE';
 var SET_TICKET_SKU = _moderntribe_tickets_data_utils__WEBPACK_IMPORTED_MODULE_0__[/* PREFIX_TICKETS_STORE */ "n"] + '/SET_TICKET_SKU';
-var SET_TICKET_IAC_SETTING = _moderntribe_tickets_data_utils__WEBPACK_IMPORTED_MODULE_0__[/* PREFIX_TICKETS_STORE */ "n"] + '/SET_TICKET_IAC_SETTING';
 var SET_TICKET_START_DATE = _moderntribe_tickets_data_utils__WEBPACK_IMPORTED_MODULE_0__[/* PREFIX_TICKETS_STORE */ "n"] + '/SET_TICKET_START_DATE';
 var SET_TICKET_START_DATE_INPUT = _moderntribe_tickets_data_utils__WEBPACK_IMPORTED_MODULE_0__[/* PREFIX_TICKETS_STORE */ "n"] + '/SET_TICKET_START_DATE_INPUT';
 var SET_TICKET_START_DATE_MOMENT = _moderntribe_tickets_data_utils__WEBPACK_IMPORTED_MODULE_0__[/* PREFIX_TICKETS_STORE */ "n"] + '/SET_TICKET_START_DATE_MOMENT';
@@ -298,7 +295,6 @@ var SET_TICKET_TEMP_TITLE = _moderntribe_tickets_data_utils__WEBPACK_IMPORTED_MO
 var SET_TICKET_TEMP_DESCRIPTION = _moderntribe_tickets_data_utils__WEBPACK_IMPORTED_MODULE_0__[/* PREFIX_TICKETS_STORE */ "n"] + '/SET_TICKET_TEMP_DESCRIPTION';
 var SET_TICKET_TEMP_PRICE = _moderntribe_tickets_data_utils__WEBPACK_IMPORTED_MODULE_0__[/* PREFIX_TICKETS_STORE */ "n"] + '/SET_TICKET_TEMP_PRICE';
 var SET_TICKET_TEMP_SKU = _moderntribe_tickets_data_utils__WEBPACK_IMPORTED_MODULE_0__[/* PREFIX_TICKETS_STORE */ "n"] + '/SET_TICKET_TEMP_SKU';
-var SET_TICKET_TEMP_IAC_SETTING = _moderntribe_tickets_data_utils__WEBPACK_IMPORTED_MODULE_0__[/* PREFIX_TICKETS_STORE */ "n"] + '/SET_TICKET_TEMP_IAC_SETTING';
 var SET_TICKET_TEMP_START_DATE = _moderntribe_tickets_data_utils__WEBPACK_IMPORTED_MODULE_0__[/* PREFIX_TICKETS_STORE */ "n"] + '/SET_TICKET_TEMP_START_DATE';
 var SET_TICKET_TEMP_START_DATE_INPUT = _moderntribe_tickets_data_utils__WEBPACK_IMPORTED_MODULE_0__[/* PREFIX_TICKETS_STORE */ "n"] + '/SET_TICKET_TEMP_START_DATE_INPUT';
 var SET_TICKET_TEMP_START_DATE_MOMENT = _moderntribe_tickets_data_utils__WEBPACK_IMPORTED_MODULE_0__[/* PREFIX_TICKETS_STORE */ "n"] + '/SET_TICKET_TEMP_START_DATE_MOMENT';
@@ -353,3749 +349,6 @@ module.exports = tribe.common.utils;
 
 /***/ }),
 /* 4 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, "b", function() { return /* reexport */ constants; });
-__webpack_require__.d(__webpack_exports__, "d", function() { return /* reexport */ options_namespaceObject; });
-__webpack_require__.d(__webpack_exports__, "g", function() { return /* reexport */ types; });
-__webpack_require__.d(__webpack_exports__, "a", function() { return /* reexport */ actions; });
-__webpack_require__.d(__webpack_exports__, "f", function() { return /* reexport */ selectors_namespaceObject; });
-__webpack_require__.d(__webpack_exports__, "e", function() { return /* reexport */ watchers; });
-
-// UNUSED EXPORTS: utils
-
-// NAMESPACE OBJECT: ./src/modules/data/blocks/ticket/options.js
-var options_namespaceObject = {};
-__webpack_require__.r(options_namespaceObject);
-__webpack_require__.d(options_namespaceObject, "CAPACITY_TYPE_OPTIONS", function() { return CAPACITY_TYPE_OPTIONS; });
-
-// NAMESPACE OBJECT: ./src/modules/data/blocks/ticket/selectors.js
-var selectors_namespaceObject = {};
-__webpack_require__.r(selectors_namespaceObject);
-__webpack_require__.d(selectors_namespaceObject, "getState", function() { return getState; });
-__webpack_require__.d(selectors_namespaceObject, "getBlock", function() { return getBlock; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketsIsSelected", function() { return getTicketsIsSelected; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketsIsSettingsOpen", function() { return getTicketsIsSettingsOpen; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketsIsSettingsLoading", function() { return getTicketsIsSettingsLoading; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketsProvider", function() { return getTicketsProvider; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketsSharedCapacity", function() { return getTicketsSharedCapacity; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketsSharedCapacityInt", function() { return getTicketsSharedCapacityInt; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketsTempSharedCapacity", function() { return getTicketsTempSharedCapacity; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketsTempSharedCapacityInt", function() { return getTicketsTempSharedCapacityInt; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketsHeaderImage", function() { return getTicketsHeaderImage; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketsHeaderImageId", function() { return getTicketsHeaderImageId; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketsHeaderImageSrc", function() { return getTicketsHeaderImageSrc; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketsHeaderImageAlt", function() { return getTicketsHeaderImageAlt; });
-__webpack_require__.d(selectors_namespaceObject, "getTickets", function() { return getTickets; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketsAllClientIds", function() { return getTicketsAllClientIds; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketsByClientId", function() { return getTicketsByClientId; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketsArray", function() { return getTicketsArray; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketsCount", function() { return getTicketsCount; });
-__webpack_require__.d(selectors_namespaceObject, "hasTickets", function() { return hasTickets; });
-__webpack_require__.d(selectors_namespaceObject, "hasCreatedTickets", function() { return selectors_hasCreatedTickets; });
-__webpack_require__.d(selectors_namespaceObject, "getIndependentTickets", function() { return getIndependentTickets; });
-__webpack_require__.d(selectors_namespaceObject, "getSharedTickets", function() { return getSharedTickets; });
-__webpack_require__.d(selectors_namespaceObject, "getSharedTicketsCount", function() { return getSharedTicketsCount; });
-__webpack_require__.d(selectors_namespaceObject, "getUnlimitedTickets", function() { return getUnlimitedTickets; });
-__webpack_require__.d(selectors_namespaceObject, "hasATicketSelected", function() { return hasATicketSelected; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketsIdsInBlocks", function() { return getTicketsIdsInBlocks; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketClientId", function() { return getTicketClientId; });
-__webpack_require__.d(selectors_namespaceObject, "getTicket", function() { return getTicket; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketSold", function() { return getTicketSold; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketAvailable", function() { return getTicketAvailable; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketId", function() { return getTicketId; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketCurrencySymbol", function() { return getTicketCurrencySymbol; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketCurrencyPosition", function() { return getTicketCurrencyPosition; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketProvider", function() { return getTicketProvider; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketHasAttendeeInfoFields", function() { return getTicketHasAttendeeInfoFields; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketIsLoading", function() { return getTicketIsLoading; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketIsModalOpen", function() { return getTicketIsModalOpen; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketHasBeenCreated", function() { return getTicketHasBeenCreated; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketHasChanges", function() { return getTicketHasChanges; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketHasDurationError", function() { return getTicketHasDurationError; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketIsSelected", function() { return getTicketIsSelected; });
-__webpack_require__.d(selectors_namespaceObject, "isTicketDisabled", function() { return isTicketDisabled; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketDetails", function() { return getTicketDetails; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketTitle", function() { return getTicketTitle; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketDescription", function() { return getTicketDescription; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketPrice", function() { return getTicketPrice; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketSku", function() { return getTicketSku; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketIACSetting", function() { return getTicketIACSetting; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketStartDate", function() { return getTicketStartDate; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketStartDateInput", function() { return getTicketStartDateInput; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketStartDateMoment", function() { return getTicketStartDateMoment; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketEndDate", function() { return getTicketEndDate; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketEndDateInput", function() { return getTicketEndDateInput; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketEndDateMoment", function() { return getTicketEndDateMoment; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketStartTime", function() { return getTicketStartTime; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketStartTimeNoSeconds", function() { return getTicketStartTimeNoSeconds; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketEndTime", function() { return getTicketEndTime; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketEndTimeNoSeconds", function() { return getTicketEndTimeNoSeconds; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketStartTimeInput", function() { return getTicketStartTimeInput; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketEndTimeInput", function() { return getTicketEndTimeInput; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketCapacityType", function() { return getTicketCapacityType; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketCapacity", function() { return getTicketCapacity; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketCapacityInt", function() { return getTicketCapacityInt; });
-__webpack_require__.d(selectors_namespaceObject, "isUnlimitedTicket", function() { return isUnlimitedTicket; });
-__webpack_require__.d(selectors_namespaceObject, "isSharedTicket", function() { return isSharedTicket; });
-__webpack_require__.d(selectors_namespaceObject, "isIndependentTicket", function() { return isIndependentTicket; });
-__webpack_require__.d(selectors_namespaceObject, "isTicketPast", function() { return isTicketPast; });
-__webpack_require__.d(selectors_namespaceObject, "isTicketFuture", function() { return isTicketFuture; });
-__webpack_require__.d(selectors_namespaceObject, "isTicketOnSale", function() { return isTicketOnSale; });
-__webpack_require__.d(selectors_namespaceObject, "hasTicketOnSale", function() { return hasTicketOnSale; });
-__webpack_require__.d(selectors_namespaceObject, "allTicketsPast", function() { return allTicketsPast; });
-__webpack_require__.d(selectors_namespaceObject, "allTicketsFuture", function() { return allTicketsFuture; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketTempDetails", function() { return getTicketTempDetails; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketTempTitle", function() { return getTicketTempTitle; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketTempDescription", function() { return getTicketTempDescription; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketTempPrice", function() { return getTicketTempPrice; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketTempSku", function() { return getTicketTempSku; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketTempIACSetting", function() { return getTicketTempIACSetting; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketTempStartDate", function() { return getTicketTempStartDate; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketTempStartDateInput", function() { return getTicketTempStartDateInput; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketTempStartDateMoment", function() { return getTicketTempStartDateMoment; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketTempEndDate", function() { return getTicketTempEndDate; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketTempEndDateInput", function() { return getTicketTempEndDateInput; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketTempEndDateMoment", function() { return getTicketTempEndDateMoment; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketTempStartTime", function() { return getTicketTempStartTime; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketTempStartTimeNoSeconds", function() { return getTicketTempStartTimeNoSeconds; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketTempEndTime", function() { return getTicketTempEndTime; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketTempEndTimeNoSeconds", function() { return getTicketTempEndTimeNoSeconds; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketTempStartTimeInput", function() { return getTicketTempStartTimeInput; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketTempEndTimeInput", function() { return getTicketTempEndTimeInput; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketTempCapacityType", function() { return getTicketTempCapacityType; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketTempCapacity", function() { return getTicketTempCapacity; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketTempCapacityInt", function() { return getTicketTempCapacityInt; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketTempCapacityTypeOption", function() { return getTicketTempCapacityTypeOption; });
-__webpack_require__.d(selectors_namespaceObject, "isTempTitleValid", function() { return isTempTitleValid; });
-__webpack_require__.d(selectors_namespaceObject, "isTempCapacityValid", function() { return isTempCapacityValid; });
-__webpack_require__.d(selectors_namespaceObject, "isTempSharedCapacityValid", function() { return isTempSharedCapacityValid; });
-__webpack_require__.d(selectors_namespaceObject, "isZeroPriceValid", function() { return isZeroPriceValid; });
-__webpack_require__.d(selectors_namespaceObject, "isTicketValid", function() { return isTicketValid; });
-__webpack_require__.d(selectors_namespaceObject, "_getTotalCapacity", function() { return _getTotalCapacity; });
-__webpack_require__.d(selectors_namespaceObject, "_getTotalTempCapacity", function() { return _getTotalTempCapacity; });
-__webpack_require__.d(selectors_namespaceObject, "_getTotalSold", function() { return _getTotalSold; });
-__webpack_require__.d(selectors_namespaceObject, "_getTotalAvailable", function() { return _getTotalAvailable; });
-__webpack_require__.d(selectors_namespaceObject, "getIndependentTicketsCapacity", function() { return getIndependentTicketsCapacity; });
-__webpack_require__.d(selectors_namespaceObject, "getIndependentTicketsTempCapacity", function() { return getIndependentTicketsTempCapacity; });
-__webpack_require__.d(selectors_namespaceObject, "getIndependentTicketsSold", function() { return getIndependentTicketsSold; });
-__webpack_require__.d(selectors_namespaceObject, "getIndependentTicketsAvailable", function() { return getIndependentTicketsAvailable; });
-__webpack_require__.d(selectors_namespaceObject, "getSharedTicketsSold", function() { return getSharedTicketsSold; });
-__webpack_require__.d(selectors_namespaceObject, "getSharedTicketsAvailable", function() { return getSharedTicketsAvailable; });
-__webpack_require__.d(selectors_namespaceObject, "getIndependentAndSharedTicketsCapacity", function() { return getIndependentAndSharedTicketsCapacity; });
-__webpack_require__.d(selectors_namespaceObject, "getIndependentAndSharedTicketsTempCapacity", function() { return getIndependentAndSharedTicketsTempCapacity; });
-__webpack_require__.d(selectors_namespaceObject, "getIndependentAndSharedTicketsSold", function() { return getIndependentAndSharedTicketsSold; });
-__webpack_require__.d(selectors_namespaceObject, "getIndependentAndSharedTicketsAvailable", function() { return getIndependentAndSharedTicketsAvailable; });
-__webpack_require__.d(selectors_namespaceObject, "getTicketProviders", function() { return getTicketProviders; });
-__webpack_require__.d(selectors_namespaceObject, "getDefaultTicketProvider", function() { return getDefaultTicketProvider; });
-__webpack_require__.d(selectors_namespaceObject, "hasValidTicketProvider", function() { return selectors_hasValidTicketProvider; });
-__webpack_require__.d(selectors_namespaceObject, "hasMultipleTicketProviders", function() { return hasMultipleTicketProviders; });
-__webpack_require__.d(selectors_namespaceObject, "hasTicketProviders", function() { return hasTicketProviders; });
-__webpack_require__.d(selectors_namespaceObject, "canCreateTickets", function() { return canCreateTickets; });
-
-// EXTERNAL MODULE: ./node_modules/babel-runtime/helpers/extends.js
-var helpers_extends = __webpack_require__(9);
-var extends_default = /*#__PURE__*/__webpack_require__.n(helpers_extends);
-
-// EXTERNAL MODULE: ./node_modules/babel-runtime/helpers/toConsumableArray.js
-var toConsumableArray = __webpack_require__(262);
-var toConsumableArray_default = /*#__PURE__*/__webpack_require__.n(toConsumableArray);
-
-// EXTERNAL MODULE: ./node_modules/babel-runtime/helpers/defineProperty.js
-var defineProperty = __webpack_require__(25);
-var defineProperty_default = /*#__PURE__*/__webpack_require__.n(defineProperty);
-
-// EXTERNAL MODULE: ./node_modules/redux/es/redux.js
-var redux = __webpack_require__(16);
-
-// EXTERNAL MODULE: ./node_modules/lodash/omit.js
-var omit = __webpack_require__(321);
-var omit_default = /*#__PURE__*/__webpack_require__.n(omit);
-
-// EXTERNAL MODULE: ./src/modules/data/blocks/ticket/types.js
-var types = __webpack_require__(2);
-
-// EXTERNAL MODULE: ./node_modules/babel-runtime/helpers/slicedToArray.js
-var slicedToArray = __webpack_require__(44);
-var slicedToArray_default = /*#__PURE__*/__webpack_require__.n(slicedToArray);
-
-// EXTERNAL MODULE: external "tribe.common.utils"
-var external_tribe_common_utils_ = __webpack_require__(3);
-
-// EXTERNAL MODULE: ./node_modules/lodash/trim.js
-var trim = __webpack_require__(87);
-var trim_default = /*#__PURE__*/__webpack_require__.n(trim);
-
-// EXTERNAL MODULE: ./node_modules/lodash/find.js
-var find = __webpack_require__(85);
-var find_default = /*#__PURE__*/__webpack_require__.n(find);
-
-// EXTERNAL MODULE: ./node_modules/reselect/lib/index.js
-var lib = __webpack_require__(6);
-
-// EXTERNAL MODULE: ./node_modules/moment/moment.js
-var moment = __webpack_require__(5);
-var moment_default = /*#__PURE__*/__webpack_require__.n(moment);
-
-// EXTERNAL MODULE: ./src/modules/data/blocks/ticket/constants.js
-var constants = __webpack_require__(23);
-
-// EXTERNAL MODULE: external {"var":"wp.i18n","root":["wp","i18n"]}
-var external_var_wp_i18n_root_wp_i18n_ = __webpack_require__(15);
-
-// CONCATENATED MODULE: ./src/modules/data/blocks/ticket/options.js
-/**
- * External dependencies
- */
-
-
-/**
- * Internal dependencies
- */
-
-
-var CAPACITY_TYPE_OPTIONS = [{
-	label: Object(external_var_wp_i18n_root_wp_i18n_["__"])('Share capacity with other tickets', 'event-tickets'),
-	value: constants["TICKET_TYPES"][constants["SHARED"]]
-}, {
-	label: Object(external_var_wp_i18n_root_wp_i18n_["__"])('Set capacity for this ticket only', 'event-tickets'),
-	value: constants["TICKET_TYPES"][constants["INDEPENDENT"]]
-}, {
-	label: Object(external_var_wp_i18n_root_wp_i18n_["__"])('Unlimited', 'event-tickets'),
-	value: constants["TICKET_TYPES"][constants["UNLIMITED"]]
-}];
-// CONCATENATED MODULE: ./src/modules/data/blocks/ticket/selectors.js
-
-
-/**
- * External dependencies
- */
-
-
-
-
-/**
- * Internal dependencies
- */
-
-
-
-
-var UNLIMITED = constants["UNLIMITED"],
-    INDEPENDENT = constants["INDEPENDENT"],
-    SHARED = constants["SHARED"],
-    TICKET_TYPES = constants["TICKET_TYPES"];
-var ticketsConfig = external_tribe_common_utils_["globals"].tickets;
-
-
-var getState = function getState(state) {
-	return state;
-};
-var getBlock = function getBlock(state) {
-	return state.tickets.blocks.ticket;
-};
-
-//
-// ─── BLOCK SELECTORS ────────────────────────────────────────────────────────────
-//
-
-var getTicketsIsSelected = Object(lib["createSelector"])([getBlock], function (block) {
-	return block.isSelected;
-});
-
-var getTicketsIsSettingsOpen = Object(lib["createSelector"])([getBlock], function (block) {
-	return block.isSettingsOpen;
-});
-
-var getTicketsIsSettingsLoading = Object(lib["createSelector"])([getBlock], function (block) {
-	return block.isSettingsLoading;
-});
-
-var getTicketsProvider = Object(lib["createSelector"])([getBlock], function (block) {
-	return block.provider;
-});
-
-var getTicketsSharedCapacity = Object(lib["createSelector"])([getBlock], function (block) {
-	return block.sharedCapacity;
-});
-
-var getTicketsSharedCapacityInt = Object(lib["createSelector"])([getTicketsSharedCapacity], function (capacity) {
-	return parseInt(capacity, 10) || 0;
-});
-
-var getTicketsTempSharedCapacity = Object(lib["createSelector"])([getBlock], function (block) {
-	return block.tempSharedCapacity;
-});
-
-var getTicketsTempSharedCapacityInt = Object(lib["createSelector"])([getTicketsTempSharedCapacity], function (capacity) {
-	return parseInt(capacity, 10) || 0;
-});
-
-//
-// ─── HEADER IMAGE SELECTORS ─────────────────────────────────────────────────────
-//
-
-var getTicketsHeaderImage = Object(lib["createSelector"])([getBlock], function (block) {
-	return block.headerImage;
-});
-
-var getTicketsHeaderImageId = Object(lib["createSelector"])([getTicketsHeaderImage], function (headerImage) {
-	return headerImage.id;
-});
-
-var getTicketsHeaderImageSrc = Object(lib["createSelector"])([getTicketsHeaderImage], function (headerImage) {
-	return headerImage.src;
-});
-
-var getTicketsHeaderImageAlt = Object(lib["createSelector"])([getTicketsHeaderImage], function (headerImage) {
-	return headerImage.alt;
-});
-
-//
-// ─── TICKETS SELECTORS ──────────────────────────────────────────────────────────
-//
-
-var getTickets = Object(lib["createSelector"])([getBlock], function (block) {
-	return block.tickets;
-});
-
-var getTicketsAllClientIds = Object(lib["createSelector"])([getTickets], function (tickets) {
-	return tickets.allClientIds;
-});
-
-var getTicketsByClientId = Object(lib["createSelector"])([getTickets], function (tickets) {
-	return tickets.byClientId;
-});
-
-var getTicketsArray = Object(lib["createSelector"])([getTicketsAllClientIds, getTicketsByClientId], function (ids, tickets) {
-	return ids.map(function (id) {
-		return tickets[id];
-	});
-});
-
-var getTicketsCount = Object(lib["createSelector"])([getTicketsAllClientIds], function (allClientIds) {
-	return allClientIds.length;
-});
-
-var hasTickets = Object(lib["createSelector"])([getTicketsCount], function (count) {
-	return count > 0;
-});
-
-var selectors_hasCreatedTickets = Object(lib["createSelector"])([getTicketsArray], function (tickets) {
-	return tickets.reduce(function (hasCreated, ticket) {
-		return hasCreated || ticket.hasBeenCreated;
-	}, false);
-});
-
-var getIndependentTickets = Object(lib["createSelector"])([getTicketsArray], function (tickets) {
-	return tickets.filter(function (ticket) {
-		return ticket.details.capacityType === TICKET_TYPES[INDEPENDENT];
-	});
-});
-
-var getSharedTickets = Object(lib["createSelector"])([getTicketsArray], function (tickets) {
-	return tickets.filter(function (ticket) {
-		return ticket.details.capacityType === TICKET_TYPES[SHARED];
-	});
-});
-
-var getSharedTicketsCount = Object(lib["createSelector"])([getSharedTickets], function (tickets) {
-	return tickets.length;
-});
-
-var getUnlimitedTickets = Object(lib["createSelector"])([getTicketsArray], function (tickets) {
-	return tickets.filter(function (ticket) {
-		return ticket.details.capacityType === TICKET_TYPES[UNLIMITED];
-	});
-});
-
-var hasATicketSelected = Object(lib["createSelector"])([getTicketsArray], function (tickets) {
-	return tickets.reduce(function (selected, ticket) {
-		return selected || ticket.isSelected;
-	}, false);
-});
-
-var getTicketsIdsInBlocks = Object(lib["createSelector"])([getTicketsArray], function (tickets) {
-	return tickets.reduce(function (accumulator, ticket) {
-		if (ticket.ticketId !== 0) {
-			accumulator.push(ticket.ticketId);
-		}
-		return accumulator;
-	}, []);
-});
-
-//
-// ─── TICKET SELECTORS ───────────────────────────────────────────────────────────
-//
-
-var getTicketClientId = function getTicketClientId(state, ownProps) {
-	return ownProps.clientId;
-};
-
-var getTicket = Object(lib["createSelector"])([getTicketsByClientId, getTicketClientId], function (tickets, clientId) {
-	return tickets[clientId] || {};
-});
-
-var getTicketSold = Object(lib["createSelector"])([getTicket], function (ticket) {
-	return ticket.sold;
-});
-
-var getTicketAvailable = Object(lib["createSelector"])([getTicket], function (ticket) {
-	return ticket.available;
-});
-
-var getTicketId = Object(lib["createSelector"])([getTicket], function (ticket) {
-	return ticket.ticketId;
-});
-
-var getTicketCurrencySymbol = Object(lib["createSelector"])([getTicket], function (ticket) {
-	return ticket.currencySymbol;
-});
-
-var getTicketCurrencyPosition = Object(lib["createSelector"])([getTicket], function (ticket) {
-	return ticket.currencyPosition;
-});
-
-var getTicketProvider = Object(lib["createSelector"])([getTicket], function (ticket) {
-	return ticket.provider;
-});
-
-var getTicketHasAttendeeInfoFields = Object(lib["createSelector"])([getTicket], function (ticket) {
-	return ticket.hasAttendeeInfoFields;
-});
-
-var getTicketIsLoading = Object(lib["createSelector"])([getTicket], function (ticket) {
-	return ticket.isLoading;
-});
-
-var getTicketIsModalOpen = Object(lib["createSelector"])([getTicket], function (ticket) {
-	return ticket.isModalOpen;
-});
-
-var getTicketHasBeenCreated = Object(lib["createSelector"])([getTicket], function (ticket) {
-	return ticket.hasBeenCreated;
-});
-
-var getTicketHasChanges = Object(lib["createSelector"])([getTicket], function (ticket) {
-	return ticket.hasChanges;
-});
-
-var getTicketHasDurationError = Object(lib["createSelector"])([getTicket], function (ticket) {
-	return ticket.hasDurationError;
-});
-
-var getTicketIsSelected = Object(lib["createSelector"])([getTicket], function (ticket) {
-	return ticket.isSelected;
-});
-
-var isTicketDisabled = Object(lib["createSelector"])([hasATicketSelected, getTicketIsSelected, getTicketIsLoading, getTicketsIsSettingsOpen], function (hasSelected, isSelected, isLoading, isSettingsOpen) {
-	return hasSelected && !isSelected || isLoading || isSettingsOpen;
-});
-
-//
-// ─── TICKET DETAILS SELECTORS ───────────────────────────────────────────────────
-//
-
-var getTicketDetails = Object(lib["createSelector"])([getTicket], function (ticket) {
-	return ticket.details || {};
-});
-
-var getTicketTitle = Object(lib["createSelector"])([getTicketDetails], function (details) {
-	return details.title;
-});
-
-var getTicketDescription = Object(lib["createSelector"])([getTicketDetails], function (details) {
-	return details.description;
-});
-
-var getTicketPrice = Object(lib["createSelector"])([getTicketDetails], function (details) {
-	return details.price;
-});
-
-var getTicketSku = Object(lib["createSelector"])([getTicketDetails], function (details) {
-	return details.sku;
-});
-
-var getTicketIACSetting = Object(lib["createSelector"])([getTicketDetails], function (details) {
-	return details.iac;
-});
-
-var getTicketStartDate = Object(lib["createSelector"])([getTicketDetails], function (details) {
-	return details.startDate;
-});
-
-var getTicketStartDateInput = Object(lib["createSelector"])([getTicketDetails], function (details) {
-	return details.startDateInput;
-});
-
-var getTicketStartDateMoment = Object(lib["createSelector"])([getTicketDetails], function (details) {
-	return details.startDateMoment;
-});
-
-var getTicketEndDate = Object(lib["createSelector"])([getTicketDetails], function (details) {
-	return details.endDate;
-});
-
-var getTicketEndDateInput = Object(lib["createSelector"])([getTicketDetails], function (details) {
-	return details.endDateInput;
-});
-
-var getTicketEndDateMoment = Object(lib["createSelector"])([getTicketDetails], function (details) {
-	return details.endDateMoment;
-});
-
-var getTicketStartTime = Object(lib["createSelector"])([getTicketDetails], function (details) {
-	return details.startTime || '';
-});
-
-var getTicketStartTimeNoSeconds = Object(lib["createSelector"])([getTicketStartTime], function (startTime) {
-	return startTime.slice(0, -3);
-});
-
-var getTicketEndTime = Object(lib["createSelector"])([getTicketDetails], function (details) {
-	return details.endTime || '';
-});
-
-var getTicketEndTimeNoSeconds = Object(lib["createSelector"])([getTicketEndTime], function (endTime) {
-	return endTime.slice(0, -3);
-});
-
-var getTicketStartTimeInput = Object(lib["createSelector"])([getTicketDetails], function (details) {
-	return details.startTimeInput;
-});
-
-var getTicketEndTimeInput = Object(lib["createSelector"])([getTicketDetails], function (details) {
-	return details.endTimeInput;
-});
-
-var getTicketCapacityType = Object(lib["createSelector"])([getTicketDetails], function (details) {
-	return details.capacityType;
-});
-
-var getTicketCapacity = Object(lib["createSelector"])([getTicketDetails], function (details) {
-	return details.capacity;
-});
-
-var getTicketCapacityInt = Object(lib["createSelector"])([getTicketCapacity], function (capacity) {
-	return parseInt(capacity, 10) || 0;
-});
-
-var isUnlimitedTicket = Object(lib["createSelector"])([getTicketDetails], function (details) {
-	return details.capacityType === TICKET_TYPES[UNLIMITED];
-});
-
-var isSharedTicket = Object(lib["createSelector"])([getTicketDetails], function (details) {
-	return details.capacityType === TICKET_TYPES[SHARED];
-});
-
-var isIndependentTicket = Object(lib["createSelector"])([getTicketDetails], function (details) {
-	return details.capacityType === TICKET_TYPES[INDEPENDENT];
-});
-
-var isTicketPast = Object(lib["createSelector"])([getTicketEndDateMoment], function (endDate) {
-	return moment_default()().isAfter(endDate);
-});
-
-var isTicketFuture = Object(lib["createSelector"])([getTicketStartDateMoment], function (startDate) {
-	return moment_default()().isBefore(startDate);
-});
-
-var isTicketOnSale = Object(lib["createSelector"])([getTicketHasBeenCreated, isTicketPast, isTicketFuture], function (hasBeenCreated, isPast, isFuture) {
-	return hasBeenCreated && !isPast && !isFuture;
-});
-
-var hasTicketOnSale = Object(lib["createSelector"])([getTicketsAllClientIds, getState], function (allClientIds, state) {
-	return allClientIds.reduce(function (onSale, clientId) {
-		return onSale || isTicketOnSale(state, { clientId: clientId });
-	}, false);
-});
-
-var allTicketsPast = Object(lib["createSelector"])([getTicketsAllClientIds, getState], function (allClientIds, state) {
-	return allClientIds.reduce(function (isPast, clientId) {
-		var props = { clientId: clientId };
-		return getTicketHasBeenCreated(state, props) ? isPast && isTicketPast(state, props) : isPast;
-	}, true);
-});
-
-var allTicketsFuture = Object(lib["createSelector"])([getTicketsAllClientIds, getState], function (allClientIds, state) {
-	return allClientIds.reduce(function (isFuture, clientId) {
-		var props = { clientId: clientId };
-		return getTicketHasBeenCreated(state, props) ? isFuture && isTicketFuture(state, props) : isFuture;
-	}, true);
-});
-
-//
-// ─── TICKET TEMP DETAILS SELECTORS ──────────────────────────────────────────────
-//
-
-var getTicketTempDetails = Object(lib["createSelector"])([getTicket], function (ticket) {
-	return ticket.tempDetails || {};
-});
-
-var getTicketTempTitle = Object(lib["createSelector"])([getTicketTempDetails], function (tempDetails) {
-	return tempDetails.title;
-});
-
-var getTicketTempDescription = Object(lib["createSelector"])([getTicketTempDetails], function (tempDetails) {
-	return tempDetails.description;
-});
-
-var getTicketTempPrice = Object(lib["createSelector"])([getTicketTempDetails], function (tempDetails) {
-	return tempDetails.price;
-});
-
-var getTicketTempSku = Object(lib["createSelector"])([getTicketTempDetails], function (tempDetails) {
-	return tempDetails.sku;
-});
-
-var getTicketTempIACSetting = Object(lib["createSelector"])([getTicketTempDetails], function (tempDetails) {
-	return tempDetails.iac;
-});
-
-var getTicketTempStartDate = Object(lib["createSelector"])([getTicketTempDetails], function (tempDetails) {
-	return tempDetails.startDate;
-});
-
-var getTicketTempStartDateInput = Object(lib["createSelector"])([getTicketTempDetails], function (tempDetails) {
-	return tempDetails.startDateInput;
-});
-
-var getTicketTempStartDateMoment = Object(lib["createSelector"])([getTicketTempDetails], function (tempDetails) {
-	return tempDetails.startDateMoment;
-});
-
-var getTicketTempEndDate = Object(lib["createSelector"])([getTicketTempDetails], function (tempDetails) {
-	return tempDetails.endDate;
-});
-
-var getTicketTempEndDateInput = Object(lib["createSelector"])([getTicketTempDetails], function (tempDetails) {
-	return tempDetails.endDateInput;
-});
-
-var getTicketTempEndDateMoment = Object(lib["createSelector"])([getTicketTempDetails], function (tempDetails) {
-	return tempDetails.endDateMoment;
-});
-
-var getTicketTempStartTime = Object(lib["createSelector"])([getTicketTempDetails], function (tempDetails) {
-	return tempDetails.startTime || '';
-});
-
-var getTicketTempStartTimeNoSeconds = Object(lib["createSelector"])([getTicketTempStartTime], function (startTime) {
-	return startTime.slice(0, -3);
-});
-
-var getTicketTempEndTime = Object(lib["createSelector"])([getTicketTempDetails], function (tempDetails) {
-	return tempDetails.endTime || '';
-});
-
-var getTicketTempEndTimeNoSeconds = Object(lib["createSelector"])([getTicketTempEndTime], function (endTime) {
-	return endTime.slice(0, -3);
-});
-
-var getTicketTempStartTimeInput = Object(lib["createSelector"])([getTicketTempDetails], function (tempDetails) {
-	return tempDetails.startTimeInput;
-});
-
-var getTicketTempEndTimeInput = Object(lib["createSelector"])([getTicketTempDetails], function (tempDetails) {
-	return tempDetails.endTimeInput;
-});
-
-var getTicketTempCapacityType = Object(lib["createSelector"])([getTicketTempDetails], function (tempDetails) {
-	return tempDetails.capacityType;
-});
-
-var getTicketTempCapacity = Object(lib["createSelector"])([getTicketTempDetails], function (tempDetails) {
-	return tempDetails.capacity;
-});
-
-var getTicketTempCapacityInt = Object(lib["createSelector"])([getTicketTempCapacity], function (capacity) {
-	return parseInt(capacity, 10) || 0;
-});
-
-var getTicketTempCapacityTypeOption = Object(lib["createSelector"])([getTicketTempCapacityType], function (capacityType) {
-	return find_default()(CAPACITY_TYPE_OPTIONS, { value: capacityType }) || {};
-});
-
-var isTempTitleValid = Object(lib["createSelector"])([getTicketTempTitle], function (title) {
-	return trim_default()(title) !== '';
-});
-
-var isTempCapacityValid = Object(lib["createSelector"])([getTicketTempCapacity], function (capacity) {
-	return trim_default()(capacity) !== '' && !isNaN(capacity);
-});
-
-var isTempSharedCapacityValid = Object(lib["createSelector"])([getTicketsTempSharedCapacity], function (capacity) {
-	return trim_default()(capacity) !== '' && !isNaN(capacity);
-});
-
-var isZeroPriceValid = Object(lib["createSelector"])([getTicketTempPrice, getTicketsProvider], function (price, provider) {
-	return 0 < parseInt(price, 10) || provider !== constants["TC_CLASS"];
-});
-
-var isTicketValid = Object(lib["createSelector"])([getTicketTempCapacityType, isTempTitleValid, isTempCapacityValid, isTempSharedCapacityValid, isZeroPriceValid], function (capacityType, titleValid, capacityValid, sharedCapacityValid, zeroPriceValid) {
-	if (capacityType === TICKET_TYPES[UNLIMITED]) {
-		return titleValid && zeroPriceValid;
-	} else if (capacityType === TICKET_TYPES[SHARED]) {
-		return titleValid && sharedCapacityValid && zeroPriceValid;
-	}
-	return titleValid && capacityValid && zeroPriceValid;
-});
-
-//
-// ─── AMOUNT REDUCERS ────────────────────────────────────────────────────────────
-//
-
-var _getTotalCapacity = function _getTotalCapacity(tickets) {
-	return tickets.reduce(function (total, ticket) {
-		var capacity = parseInt(ticket.details.capacity, 10) || 0;
-		return total + capacity;
-	}, 0);
-};
-
-var _getTotalTempCapacity = function _getTotalTempCapacity(tickets) {
-	return tickets.reduce(function (total, ticket) {
-		var tempCapacity = parseInt(ticket.tempDetails.capacity, 10) || 0;
-		return total + tempCapacity;
-	}, 0);
-};
-
-var _getTotalSold = function _getTotalSold(tickets) {
-	return tickets.reduce(function (total, ticket) {
-		var sold = parseInt(ticket.sold, 10) || 0;
-		return total + sold;
-	}, 0);
-};
-
-var _getTotalAvailable = function _getTotalAvailable(tickets) {
-	return tickets.reduce(function (total, ticket) {
-		var available = parseInt(ticket.available, 10) || 0;
-		return total + available;
-	}, 0);
-};
-
-var getIndependentTicketsCapacity = Object(lib["createSelector"])(getIndependentTickets, _getTotalCapacity);
-var getIndependentTicketsTempCapacity = Object(lib["createSelector"])(getIndependentTickets, _getTotalTempCapacity);
-var getIndependentTicketsSold = Object(lib["createSelector"])(getIndependentTickets, _getTotalSold);
-var getIndependentTicketsAvailable = Object(lib["createSelector"])(getIndependentTickets, _getTotalAvailable);
-
-var getSharedTicketsSold = Object(lib["createSelector"])(getSharedTickets, _getTotalSold);
-var getSharedTicketsAvailable = Object(lib["createSelector"])([getTicketsSharedCapacityInt, getSharedTicketsSold], function (sharedCapacity, sharedSold) {
-	return Math.max(sharedCapacity - sharedSold, 0);
-});
-
-var getIndependentAndSharedTicketsCapacity = Object(lib["createSelector"])([getIndependentTicketsCapacity, getTicketsSharedCapacityInt], function (independentCapacity, sharedCapacity) {
-	return independentCapacity + sharedCapacity;
-});
-var getIndependentAndSharedTicketsTempCapacity = Object(lib["createSelector"])([getIndependentTicketsTempCapacity, getTicketsTempSharedCapacityInt], function (independentTempCapacity, tempSharedCapacity) {
-	return independentTempCapacity + tempSharedCapacity;
-});
-var getIndependentAndSharedTicketsSold = Object(lib["createSelector"])([getIndependentTicketsSold, getSharedTicketsSold], function (independentSold, sharedSold) {
-	return independentSold + sharedSold;
-});
-var getIndependentAndSharedTicketsAvailable = Object(lib["createSelector"])([getIndependentTicketsAvailable, getSharedTicketsAvailable], function (independentAvailable, sharedAvailable) {
-	return independentAvailable + sharedAvailable;
-});
-
-//
-// ─── MISC SELECTORS ─────────────────────────────────────────────────────────────
-//
-
-var getTicketProviders = function getTicketProviders() {
-	var tickets = ticketsConfig();
-	return tickets.providers || [];
-};
-
-var getDefaultTicketProvider = function getDefaultTicketProvider() {
-	var tickets = ticketsConfig();
-	return tickets.default_provider || '';
-};
-
-var selectors_hasValidTicketProvider = function hasValidTicketProvider() {
-	var provider = getDefaultTicketProvider();
-	return provider !== '' && provider !== constants["RSVP_CLASS"];
-};
-
-var hasMultipleTicketProviders = Object(lib["createSelector"])([getTicketProviders], function (providers) {
-	return providers.length > 1;
-});
-
-var hasTicketProviders = Object(lib["createSelector"])([getTicketProviders], function (providers) {
-	return providers.length > 0;
-});
-
-var canCreateTickets = Object(lib["createSelector"])([hasTicketProviders, selectors_hasValidTicketProvider], function (providers, validDefaultProvider) {
-	return providers && validDefaultProvider;
-});
-// CONCATENATED MODULE: ./src/modules/data/blocks/ticket/utils.js
-
-/**
- * External dependencies
- */
-
-
-var settings = external_tribe_common_utils_["globals"].settings,
-    priceSettings = external_tribe_common_utils_["globals"].priceSettings,
-    utils_ticketsConfig = external_tribe_common_utils_["globals"].tickets;
-/**
- * Internal dependencies
- */
-
-
-
-/**
- * Get currency symbol by provider
- */
-var utils_getProviderCurrency = function getProviderCurrency(provider) {
-	var tickets = utils_ticketsConfig();
-	var providers = getTicketProviders();
-
-	// if we don't get the provider, return the default one
-	if ('' === provider) {
-		return tickets.default_currency;
-	}
-
-	var _providers$filter = providers.filter(function (el) {
-		return el.class === provider;
-	}),
-	    _providers$filter2 = slicedToArray_default()(_providers$filter, 1),
-	    result = _providers$filter2[0];
-
-	return result ? result.currency : tickets.default_currency;
-};
-
-/**
- * Get the default provider's currency symbol
- */
-var utils_getDefaultProviderCurrency = function getDefaultProviderCurrency() {
-	return utils_getProviderCurrency(getDefaultTicketProvider());
-};
-
-/**
- * Get currency position
- */
-var utils_getDefaultCurrencyPosition = function getDefaultCurrencyPosition() {
-	var position = external_tribe_common_utils_["string"].isTruthy(settings() && settings().reverseCurrencyPosition) ? 'suffix' : 'prefix';
-
-	return priceSettings() && priceSettings().defaultCurrencyPosition ? priceSettings().defaultCurrencyPosition : position;
-};
-// CONCATENATED MODULE: ./src/modules/data/blocks/ticket/reducers/tickets/ticket/details.js
-
-/**
- * External dependencies
- */
-
-
-/**
- * Internal dependencies
- */
-
-
-
-
-var details_datePickerFormat = external_tribe_common_utils_["globals"].tecDateSettings().datepickerFormat;
-var currentMoment = moment_default()();
-var details_endMoment = currentMoment.clone().add(100, 'years');
-
-var details_startDateInput = details_datePickerFormat ? currentMoment.format(external_tribe_common_utils_["moment"].toFormat(details_datePickerFormat)) : external_tribe_common_utils_["moment"].toDate(currentMoment);
-var details_endDateInput = details_datePickerFormat ? details_endMoment.format(external_tribe_common_utils_["moment"].toFormat(details_datePickerFormat)) : external_tribe_common_utils_["moment"].toDate(details_endMoment);
-var details_iac = external_tribe_common_utils_["globals"].iacVars().iacDefault ? external_tribe_common_utils_["globals"].iacVars().iacDefault : 'none';
-
-var DEFAULT_STATE = {
-	title: '',
-	description: '',
-	price: '',
-	sku: '',
-	iac: details_iac,
-	startDate: external_tribe_common_utils_["moment"].toDatabaseDate(currentMoment),
-	startDateInput: details_startDateInput,
-	startDateMoment: currentMoment,
-	endDate: external_tribe_common_utils_["moment"].toDatabaseDate(details_endMoment),
-	endDateInput: details_endDateInput,
-	endDateMoment: details_endMoment,
-	startTime: external_tribe_common_utils_["moment"].toDatabaseTime(currentMoment),
-	endTime: external_tribe_common_utils_["moment"].toDatabaseTime(details_endMoment),
-	startTimeInput: external_tribe_common_utils_["moment"].toTime(currentMoment),
-	endTimeInput: external_tribe_common_utils_["moment"].toTime(details_endMoment),
-	capacityType: constants["TICKET_TYPES"][constants["UNLIMITED"]],
-	capacity: ''
-};
-
-/* harmony default export */ var ticket_details = (function () {
-	var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : DEFAULT_STATE;
-	var action = arguments[1];
-
-	switch (action.type) {
-		case types["SET_TICKET_TITLE"]:
-			return extends_default()({}, state, {
-				title: action.payload.title
-			});
-		case types["SET_TICKET_DESCRIPTION"]:
-			return extends_default()({}, state, {
-				description: action.payload.description
-			});
-		case types["SET_TICKET_PRICE"]:
-			return extends_default()({}, state, {
-				price: action.payload.price
-			});
-		case types["SET_TICKET_SKU"]:
-			return extends_default()({}, state, {
-				sku: action.payload.sku
-			});
-		case types["SET_TICKET_IAC_SETTING"]:
-			return extends_default()({}, state, {
-				iac: action.payload.iac
-			});
-		case types["SET_TICKET_START_DATE"]:
-			return extends_default()({}, state, {
-				startDate: action.payload.startDate
-			});
-		case types["SET_TICKET_START_DATE_INPUT"]:
-			return extends_default()({}, state, {
-				startDateInput: action.payload.startDateInput
-			});
-		case types["SET_TICKET_START_DATE_MOMENT"]:
-			return extends_default()({}, state, {
-				startDateMoment: action.payload.startDateMoment
-			});
-		case types["SET_TICKET_END_DATE"]:
-			return extends_default()({}, state, {
-				endDate: action.payload.endDate
-			});
-		case types["SET_TICKET_END_DATE_INPUT"]:
-			return extends_default()({}, state, {
-				endDateInput: action.payload.endDateInput
-			});
-		case types["SET_TICKET_END_DATE_MOMENT"]:
-			return extends_default()({}, state, {
-				endDateMoment: action.payload.endDateMoment
-			});
-		case types["SET_TICKET_START_TIME"]:
-			return extends_default()({}, state, {
-				startTime: action.payload.startTime
-			});
-		case types["SET_TICKET_END_TIME"]:
-			return extends_default()({}, state, {
-				endTime: action.payload.endTime
-			});
-		case types["SET_TICKET_START_TIME_INPUT"]:
-			return extends_default()({}, state, {
-				startTimeInput: action.payload.startTimeInput
-			});
-		case types["SET_TICKET_END_TIME_INPUT"]:
-			return extends_default()({}, state, {
-				endTimeInput: action.payload.endTimeInput
-			});
-		case types["SET_TICKET_CAPACITY_TYPE"]:
-			return extends_default()({}, state, {
-				capacityType: action.payload.capacityType
-			});
-		case types["SET_TICKET_CAPACITY"]:
-			return extends_default()({}, state, {
-				capacity: action.payload.capacity
-			});
-		default:
-			return state;
-	}
-});
-// CONCATENATED MODULE: ./src/modules/data/blocks/ticket/reducers/tickets/ticket/temp-details.js
-
-/**
- * External dependencies
- */
-
-
-/**
- * Internal dependencies
- */
-
-
-
-
-var temp_details_datePickerFormat = external_tribe_common_utils_["globals"].tecDateSettings().datepickerFormat;
-var temp_details_currentMoment = moment_default()();
-var temp_details_endMoment = temp_details_currentMoment.clone().add(100, 'years');
-
-var temp_details_startDateInput = temp_details_datePickerFormat ? temp_details_currentMoment.format(external_tribe_common_utils_["moment"].toFormat(temp_details_datePickerFormat)) : external_tribe_common_utils_["moment"].toDate(temp_details_currentMoment);
-var temp_details_endDateInput = temp_details_datePickerFormat ? temp_details_endMoment.format(external_tribe_common_utils_["moment"].toFormat(temp_details_datePickerFormat)) : external_tribe_common_utils_["moment"].toDate(temp_details_endMoment);
-var temp_details_iac = external_tribe_common_utils_["globals"].iacVars().iacDefault ? external_tribe_common_utils_["globals"].iacVars().iacDefault : 'none';
-
-var temp_details_DEFAULT_STATE = {
-	title: '',
-	description: '',
-	price: '',
-	sku: '',
-	iac: temp_details_iac,
-	startDate: external_tribe_common_utils_["moment"].toDatabaseDate(temp_details_currentMoment),
-	startDateInput: temp_details_startDateInput,
-	startDateMoment: temp_details_currentMoment,
-	endDate: external_tribe_common_utils_["moment"].toDatabaseDate(temp_details_endMoment),
-	endDateInput: temp_details_endDateInput,
-	endDateMoment: temp_details_endMoment,
-	startTime: external_tribe_common_utils_["moment"].toDatabaseTime(temp_details_currentMoment),
-	endTime: external_tribe_common_utils_["moment"].toDatabaseTime(temp_details_endMoment),
-	startTimeInput: external_tribe_common_utils_["moment"].toTime(temp_details_currentMoment),
-	endTimeInput: external_tribe_common_utils_["moment"].toTime(temp_details_endMoment),
-	capacityType: constants["TICKET_TYPES"][constants["UNLIMITED"]],
-	capacity: ''
-};
-
-/* harmony default export */ var temp_details = (function () {
-	var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : temp_details_DEFAULT_STATE;
-	var action = arguments[1];
-
-	switch (action.type) {
-		case types["SET_TICKET_TEMP_TITLE"]:
-			return extends_default()({}, state, {
-				title: action.payload.title
-			});
-		case types["SET_TICKET_TEMP_DESCRIPTION"]:
-			return extends_default()({}, state, {
-				description: action.payload.description
-			});
-		case types["SET_TICKET_TEMP_PRICE"]:
-			return extends_default()({}, state, {
-				price: action.payload.price
-			});
-		case types["SET_TICKET_TEMP_SKU"]:
-			return extends_default()({}, state, {
-				sku: action.payload.sku
-			});
-		case types["SET_TICKET_TEMP_IAC_SETTING"]:
-			return extends_default()({}, state, {
-				iac: action.payload.iac
-			});
-		case types["SET_TICKET_TEMP_START_DATE"]:
-			return extends_default()({}, state, {
-				startDate: action.payload.startDate
-			});
-		case types["SET_TICKET_TEMP_START_DATE_INPUT"]:
-			return extends_default()({}, state, {
-				startDateInput: action.payload.startDateInput
-			});
-		case types["SET_TICKET_TEMP_START_DATE_MOMENT"]:
-			return extends_default()({}, state, {
-				startDateMoment: action.payload.startDateMoment
-			});
-		case types["SET_TICKET_TEMP_END_DATE"]:
-			return extends_default()({}, state, {
-				endDate: action.payload.endDate
-			});
-		case types["SET_TICKET_TEMP_END_DATE_INPUT"]:
-			return extends_default()({}, state, {
-				endDateInput: action.payload.endDateInput
-			});
-		case types["SET_TICKET_TEMP_END_DATE_MOMENT"]:
-			return extends_default()({}, state, {
-				endDateMoment: action.payload.endDateMoment
-			});
-		case types["SET_TICKET_TEMP_START_TIME"]:
-			return extends_default()({}, state, {
-				startTime: action.payload.startTime
-			});
-		case types["SET_TICKET_TEMP_END_TIME"]:
-			return extends_default()({}, state, {
-				endTime: action.payload.endTime
-			});
-		case types["SET_TICKET_TEMP_START_TIME_INPUT"]:
-			return extends_default()({}, state, {
-				startTimeInput: action.payload.startTimeInput
-			});
-		case types["SET_TICKET_TEMP_END_TIME_INPUT"]:
-			return extends_default()({}, state, {
-				endTimeInput: action.payload.endTimeInput
-			});
-		case types["SET_TICKET_TEMP_CAPACITY_TYPE"]:
-			return extends_default()({}, state, {
-				capacityType: action.payload.capacityType
-			});
-		case types["SET_TICKET_TEMP_CAPACITY"]:
-			return extends_default()({}, state, {
-				capacity: action.payload.capacity
-			});
-		default:
-			return state;
-	}
-});
-// CONCATENATED MODULE: ./src/modules/data/blocks/ticket/reducers/tickets/ticket.js
-
-/**
- * Internal dependencies
- */
-
-
-
-
-
-var ticket_DEFAULT_STATE = {
-	details: DEFAULT_STATE,
-	tempDetails: temp_details_DEFAULT_STATE,
-	sold: 0,
-	available: 0,
-	ticketId: 0,
-	currencySymbol: utils_getDefaultProviderCurrency(),
-	currencyPosition: utils_getDefaultCurrencyPosition(),
-	provider: '',
-	hasAttendeeInfoFields: false,
-	isLoading: false,
-	isModalOpen: false,
-	hasBeenCreated: false,
-	hasChanges: false,
-	hasDurationError: false,
-	isSelected: false
-};
-
-/* harmony default export */ var tickets_ticket = (function () {
-	var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : ticket_DEFAULT_STATE;
-	var action = arguments[1];
-
-	switch (action.type) {
-		case types["SET_TICKET_TITLE"]:
-		case types["SET_TICKET_DESCRIPTION"]:
-		case types["SET_TICKET_PRICE"]:
-		case types["SET_TICKET_SKU"]:
-		case types["SET_TICKET_IAC_SETTING"]:
-		case types["SET_TICKET_START_DATE"]:
-		case types["SET_TICKET_START_DATE_INPUT"]:
-		case types["SET_TICKET_START_DATE_MOMENT"]:
-		case types["SET_TICKET_END_DATE"]:
-		case types["SET_TICKET_END_DATE_INPUT"]:
-		case types["SET_TICKET_END_DATE_MOMENT"]:
-		case types["SET_TICKET_START_TIME"]:
-		case types["SET_TICKET_END_TIME"]:
-		case types["SET_TICKET_START_TIME_INPUT"]:
-		case types["SET_TICKET_END_TIME_INPUT"]:
-		case types["SET_TICKET_CAPACITY_TYPE"]:
-		case types["SET_TICKET_CAPACITY"]:
-			return extends_default()({}, state, {
-				details: ticket_details(state.details, action)
-			});
-		case types["SET_TICKET_TEMP_TITLE"]:
-		case types["SET_TICKET_TEMP_DESCRIPTION"]:
-		case types["SET_TICKET_TEMP_PRICE"]:
-		case types["SET_TICKET_TEMP_SKU"]:
-		case types["SET_TICKET_TEMP_IAC_SETTING"]:
-		case types["SET_TICKET_TEMP_START_DATE"]:
-		case types["SET_TICKET_TEMP_START_DATE_INPUT"]:
-		case types["SET_TICKET_TEMP_START_DATE_MOMENT"]:
-		case types["SET_TICKET_TEMP_END_DATE"]:
-		case types["SET_TICKET_TEMP_END_DATE_INPUT"]:
-		case types["SET_TICKET_TEMP_END_DATE_MOMENT"]:
-		case types["SET_TICKET_TEMP_START_TIME"]:
-		case types["SET_TICKET_TEMP_END_TIME"]:
-		case types["SET_TICKET_TEMP_START_TIME_INPUT"]:
-		case types["SET_TICKET_TEMP_END_TIME_INPUT"]:
-		case types["SET_TICKET_TEMP_CAPACITY_TYPE"]:
-		case types["SET_TICKET_TEMP_CAPACITY"]:
-			return extends_default()({}, state, {
-				tempDetails: temp_details(state.tempDetails, action)
-			});
-		case types["SET_TICKET_SOLD"]:
-			return extends_default()({}, state, {
-				sold: action.payload.sold
-			});
-		case types["SET_TICKET_AVAILABLE"]:
-			return extends_default()({}, state, {
-				available: action.payload.available
-			});
-		case types["SET_TICKET_ID"]:
-			return extends_default()({}, state, {
-				ticketId: action.payload.ticketId
-			});
-		case types["SET_TICKET_CURRENCY_SYMBOL"]:
-			return extends_default()({}, state, {
-				currencySymbol: action.payload.currencySymbol
-			});
-		case types["SET_TICKET_CURRENCY_POSITION"]:
-			return extends_default()({}, state, {
-				currencyPosition: action.payload.currencyPosition
-			});
-		case types["SET_TICKET_PROVIDER"]:
-			return extends_default()({}, state, {
-				provider: action.payload.provider
-			});
-		case types["SET_TICKET_HAS_ATTENDEE_INFO_FIELDS"]:
-			return extends_default()({}, state, {
-				hasAttendeeInfoFields: action.payload.hasAttendeeInfoFields
-			});
-		case types["SET_TICKET_IS_LOADING"]:
-			return extends_default()({}, state, {
-				isLoading: action.payload.isLoading
-			});
-		case types["SET_TICKET_IS_MODAL_OPEN"]:
-			return extends_default()({}, state, {
-				isModalOpen: action.payload.isModalOpen
-			});
-		case types["SET_TICKET_HAS_BEEN_CREATED"]:
-			return extends_default()({}, state, {
-				hasBeenCreated: action.payload.hasBeenCreated
-			});
-		case types["SET_TICKET_HAS_CHANGES"]:
-			return extends_default()({}, state, {
-				hasChanges: action.payload.hasChanges
-			});
-		case types["SET_TICKET_HAS_DURATION_ERROR"]:
-			return extends_default()({}, state, {
-				hasDurationError: action.payload.hasDurationError
-			});
-		case types["SET_TICKET_IS_SELECTED"]:
-			return extends_default()({}, state, {
-				isSelected: action.payload.isSelected
-			});
-		default:
-			return state;
-	}
-});
-// CONCATENATED MODULE: ./src/modules/data/blocks/ticket/reducers/tickets.js
-
-
-
-/**
- * External dependencies
- */
-
-
-
-/**
- * Internal dependencies
- */
-
-
-
-var tickets_byClientId = function byClientId() {
-	var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-	var action = arguments[1];
-
-	switch (action.type) {
-		case types["SET_TICKET_TITLE"]:
-		case types["SET_TICKET_DESCRIPTION"]:
-		case types["SET_TICKET_PRICE"]:
-		case types["SET_TICKET_SKU"]:
-		case types["SET_TICKET_IAC_SETTING"]:
-		case types["SET_TICKET_START_DATE"]:
-		case types["SET_TICKET_START_DATE_INPUT"]:
-		case types["SET_TICKET_START_DATE_MOMENT"]:
-		case types["SET_TICKET_END_DATE"]:
-		case types["SET_TICKET_END_DATE_INPUT"]:
-		case types["SET_TICKET_END_DATE_MOMENT"]:
-		case types["SET_TICKET_START_TIME"]:
-		case types["SET_TICKET_END_TIME"]:
-		case types["SET_TICKET_START_TIME_INPUT"]:
-		case types["SET_TICKET_END_TIME_INPUT"]:
-		case types["SET_TICKET_CAPACITY_TYPE"]:
-		case types["SET_TICKET_CAPACITY"]:
-		case types["SET_TICKET_TEMP_TITLE"]:
-		case types["SET_TICKET_TEMP_DESCRIPTION"]:
-		case types["SET_TICKET_TEMP_PRICE"]:
-		case types["SET_TICKET_TEMP_SKU"]:
-		case types["SET_TICKET_TEMP_IAC_SETTING"]:
-		case types["SET_TICKET_TEMP_START_DATE"]:
-		case types["SET_TICKET_TEMP_START_DATE_INPUT"]:
-		case types["SET_TICKET_TEMP_START_DATE_MOMENT"]:
-		case types["SET_TICKET_TEMP_END_DATE"]:
-		case types["SET_TICKET_TEMP_END_DATE_INPUT"]:
-		case types["SET_TICKET_TEMP_END_DATE_MOMENT"]:
-		case types["SET_TICKET_TEMP_START_TIME"]:
-		case types["SET_TICKET_TEMP_END_TIME"]:
-		case types["SET_TICKET_TEMP_START_TIME_INPUT"]:
-		case types["SET_TICKET_TEMP_END_TIME_INPUT"]:
-		case types["SET_TICKET_TEMP_CAPACITY_TYPE"]:
-		case types["SET_TICKET_TEMP_CAPACITY"]:
-		case types["SET_TICKET_SOLD"]:
-		case types["SET_TICKET_AVAILABLE"]:
-		case types["SET_TICKET_ID"]:
-		case types["SET_TICKET_CURRENCY_SYMBOL"]:
-		case types["SET_TICKET_CURRENCY_POSITION"]:
-		case types["SET_TICKET_PROVIDER"]:
-		case types["SET_TICKET_HAS_ATTENDEE_INFO_FIELDS"]:
-		case types["SET_TICKET_IS_LOADING"]:
-		case types["SET_TICKET_IS_MODAL_OPEN"]:
-		case types["SET_TICKET_HAS_BEEN_CREATED"]:
-		case types["SET_TICKET_HAS_CHANGES"]:
-		case types["SET_TICKET_HAS_DURATION_ERROR"]:
-		case types["SET_TICKET_IS_SELECTED"]:
-		case types["REGISTER_TICKET_BLOCK"]:
-			return extends_default()({}, state, defineProperty_default()({}, action.payload.clientId, tickets_ticket(state[action.payload.clientId], action)));
-		case types["REMOVE_TICKET_BLOCK"]:
-			return omit_default()(state, [action.payload.clientId]);
-		case types["REMOVE_TICKET_BLOCKS"]:
-			return {};
-		default:
-			return state;
-	}
-};
-
-var tickets_allClientIds = function allClientIds() {
-	var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
-	var action = arguments[1];
-
-	switch (action.type) {
-		case types["REGISTER_TICKET_BLOCK"]:
-			return [].concat(toConsumableArray_default()(state), [action.payload.clientId]);
-		case types["REMOVE_TICKET_BLOCK"]:
-			return state.filter(function (clientId) {
-				return action.payload.clientId !== clientId;
-			});
-		case types["REMOVE_TICKET_BLOCKS"]:
-			return [];
-		default:
-			return state;
-	}
-};
-
-/* harmony default export */ var reducers_tickets = (Object(redux["b" /* combineReducers */])({
-	byClientId: tickets_byClientId,
-	allClientIds: tickets_allClientIds
-}));
-// EXTERNAL MODULE: ./src/modules/data/blocks/ticket/reducers/header-image.js
-var header_image = __webpack_require__(62);
-
-// CONCATENATED MODULE: ./src/modules/data/blocks/ticket/reducer.js
-
-/**
- * Internal dependencies
- */
-
-
-
-
-var reducer_DEFAULT_STATE = {
-	headerImage: header_image["a" /* DEFAULT_STATE */],
-	isSelected: false,
-	isSettingsOpen: false,
-	isSettingsLoading: false,
-	provider: '',
-	sharedCapacity: '',
-	tempSharedCapacity: '',
-	tickets: reducers_tickets(undefined, {})
-};
-
-/* harmony default export */ var reducer = (function () {
-	var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : reducer_DEFAULT_STATE;
-	var action = arguments[1];
-
-	switch (action.type) {
-		case types["SET_TICKETS_HEADER_IMAGE"]:
-			return extends_default()({}, state, {
-				headerImage: Object(header_image["b" /* default */])(state.headerImage, action)
-			});
-		case types["SET_TICKETS_IS_SELECTED"]:
-			return extends_default()({}, state, {
-				isSelected: action.payload.isSelected
-			});
-		case types["SET_TICKETS_IS_SETTINGS_OPEN"]:
-			return extends_default()({}, state, {
-				isSettingsOpen: action.payload.isSettingsOpen
-			});
-		case types["SET_TICKETS_IS_SETTINGS_LOADING"]:
-			return extends_default()({}, state, {
-				isSettingsLoading: action.payload.isSettingsLoading
-			});
-		case types["SET_TICKETS_PROVIDER"]:
-			return extends_default()({}, state, {
-				provider: action.payload.provider
-			});
-		case types["SET_TICKETS_SHARED_CAPACITY"]:
-			return extends_default()({}, state, {
-				sharedCapacity: action.payload.sharedCapacity
-			});
-		case types["SET_TICKETS_TEMP_SHARED_CAPACITY"]:
-			return extends_default()({}, state, {
-				tempSharedCapacity: action.payload.tempSharedCapacity
-			});
-		case types["SET_TICKET_TITLE"]:
-		case types["SET_TICKET_DESCRIPTION"]:
-		case types["SET_TICKET_PRICE"]:
-		case types["SET_TICKET_SKU"]:
-		case types["SET_TICKET_IAC_SETTING"]:
-		case types["SET_TICKET_START_DATE"]:
-		case types["SET_TICKET_START_DATE_INPUT"]:
-		case types["SET_TICKET_START_DATE_MOMENT"]:
-		case types["SET_TICKET_END_DATE"]:
-		case types["SET_TICKET_END_DATE_INPUT"]:
-		case types["SET_TICKET_END_DATE_MOMENT"]:
-		case types["SET_TICKET_START_TIME"]:
-		case types["SET_TICKET_END_TIME"]:
-		case types["SET_TICKET_START_TIME_INPUT"]:
-		case types["SET_TICKET_END_TIME_INPUT"]:
-		case types["SET_TICKET_CAPACITY_TYPE"]:
-		case types["SET_TICKET_CAPACITY"]:
-		case types["SET_TICKET_TEMP_TITLE"]:
-		case types["SET_TICKET_TEMP_DESCRIPTION"]:
-		case types["SET_TICKET_TEMP_PRICE"]:
-		case types["SET_TICKET_TEMP_SKU"]:
-		case types["SET_TICKET_TEMP_IAC_SETTING"]:
-		case types["SET_TICKET_TEMP_START_DATE"]:
-		case types["SET_TICKET_TEMP_START_DATE_INPUT"]:
-		case types["SET_TICKET_TEMP_START_DATE_MOMENT"]:
-		case types["SET_TICKET_TEMP_END_DATE"]:
-		case types["SET_TICKET_TEMP_END_DATE_INPUT"]:
-		case types["SET_TICKET_TEMP_END_DATE_MOMENT"]:
-		case types["SET_TICKET_TEMP_START_TIME"]:
-		case types["SET_TICKET_TEMP_END_TIME"]:
-		case types["SET_TICKET_TEMP_START_TIME_INPUT"]:
-		case types["SET_TICKET_TEMP_END_TIME_INPUT"]:
-		case types["SET_TICKET_TEMP_CAPACITY_TYPE"]:
-		case types["SET_TICKET_TEMP_CAPACITY"]:
-		case types["SET_TICKET_SOLD"]:
-		case types["SET_TICKET_AVAILABLE"]:
-		case types["SET_TICKET_ID"]:
-		case types["SET_TICKET_CURRENCY_SYMBOL"]:
-		case types["SET_TICKET_CURRENCY_POSITION"]:
-		case types["SET_TICKET_PROVIDER"]:
-		case types["SET_TICKET_HAS_ATTENDEE_INFO_FIELDS"]:
-		case types["SET_TICKET_IS_LOADING"]:
-		case types["SET_TICKET_IS_MODAL_OPEN"]:
-		case types["SET_TICKET_HAS_BEEN_CREATED"]:
-		case types["SET_TICKET_HAS_CHANGES"]:
-		case types["SET_TICKET_HAS_DURATION_ERROR"]:
-		case types["SET_TICKET_IS_SELECTED"]:
-		case types["REGISTER_TICKET_BLOCK"]:
-		case types["REMOVE_TICKET_BLOCK"]:
-		case types["REMOVE_TICKET_BLOCKS"]:
-			return extends_default()({}, state, {
-				tickets: reducers_tickets(state.tickets, action)
-			});
-		default:
-			return state;
-	}
-});
-// EXTERNAL MODULE: ./src/modules/data/blocks/ticket/actions.js
-var actions = __webpack_require__(10);
-
-// EXTERNAL MODULE: ./node_modules/babel-runtime/regenerator/index.js
-var regenerator = __webpack_require__(12);
-var regenerator_default = /*#__PURE__*/__webpack_require__.n(regenerator);
-
-// EXTERNAL MODULE: ./node_modules/lodash/includes.js
-var includes = __webpack_require__(112);
-var includes_default = /*#__PURE__*/__webpack_require__.n(includes);
-
-// EXTERNAL MODULE: ./node_modules/redux-saga/es/effects.js + 1 modules
-var effects = __webpack_require__(0);
-
-// EXTERNAL MODULE: external {"var":"wp.data","root":["wp","data"]}
-var external_var_wp_data_root_wp_data_ = __webpack_require__(18);
-
-// EXTERNAL MODULE: external {"var":"wp.blocks","root":["wp","blocks"]}
-var external_var_wp_blocks_root_wp_blocks_ = __webpack_require__(111);
-
-// EXTERNAL MODULE: ./src/modules/data/blocks/rsvp/actions.js
-var rsvp_actions = __webpack_require__(14);
-
-// EXTERNAL MODULE: ./src/modules/data/blocks/rsvp/reducers/header-image.js
-var reducers_header_image = __webpack_require__(60);
-
-// EXTERNAL MODULE: ./src/modules/data/utils.js
-var utils = __webpack_require__(8);
-
-// EXTERNAL MODULE: external "tribe.common.data"
-var external_tribe_common_data_ = __webpack_require__(35);
-
-// EXTERNAL MODULE: ./src/modules/data/shared/move/types.js
-var move_types = __webpack_require__(20);
-
-// EXTERNAL MODULE: ./src/modules/data/shared/move/selectors.js
-var selectors = __webpack_require__(33);
-
-// EXTERNAL MODULE: ./src/modules/data/shared/sagas.js
-var sagas = __webpack_require__(27);
-
-// CONCATENATED MODULE: ./src/modules/data/blocks/ticket/sagas.js
-
-
-
-
-
-
-var _marked = /*#__PURE__*/regenerator_default.a.mark(createMissingTicketBlocks),
-    _marked2 = /*#__PURE__*/regenerator_default.a.mark(setTicketsInitialState),
-    _marked3 = /*#__PURE__*/regenerator_default.a.mark(resetTicketsBlock),
-    _marked4 = /*#__PURE__*/regenerator_default.a.mark(setTicketInitialState),
-    _marked5 = /*#__PURE__*/regenerator_default.a.mark(setBodyDetails),
-    _marked6 = /*#__PURE__*/regenerator_default.a.mark(removeTicketBlock),
-    _marked7 = /*#__PURE__*/regenerator_default.a.mark(fetchTicket),
-    _marked8 = /*#__PURE__*/regenerator_default.a.mark(createNewTicket),
-    _marked9 = /*#__PURE__*/regenerator_default.a.mark(updateTicket),
-    _marked10 = /*#__PURE__*/regenerator_default.a.mark(deleteTicket),
-    _marked11 = /*#__PURE__*/regenerator_default.a.mark(fetchTicketsHeaderImage),
-    _marked12 = /*#__PURE__*/regenerator_default.a.mark(updateTicketsHeaderImage),
-    _marked13 = /*#__PURE__*/regenerator_default.a.mark(deleteTicketsHeaderImage),
-    _marked14 = /*#__PURE__*/regenerator_default.a.mark(setTicketDetails),
-    _marked15 = /*#__PURE__*/regenerator_default.a.mark(setTicketTempDetails),
-    _marked16 = /*#__PURE__*/regenerator_default.a.mark(saveTicketWithPostSave),
-    _marked17 = /*#__PURE__*/regenerator_default.a.mark(syncTicketsSaleEndWithEventStart),
-    _marked18 = /*#__PURE__*/regenerator_default.a.mark(syncTicketSaleEndWithEventStart),
-    _marked19 = /*#__PURE__*/regenerator_default.a.mark(handleEventStartDateChanges),
-    _marked20 = /*#__PURE__*/regenerator_default.a.mark(handleTicketDurationError),
-    _marked21 = /*#__PURE__*/regenerator_default.a.mark(handleTicketStartDate),
-    _marked22 = /*#__PURE__*/regenerator_default.a.mark(handleTicketEndDate),
-    _marked23 = /*#__PURE__*/regenerator_default.a.mark(handleTicketStartTime),
-    _marked24 = /*#__PURE__*/regenerator_default.a.mark(handleTicketStartTimeInput),
-    _marked25 = /*#__PURE__*/regenerator_default.a.mark(handleTicketEndTime),
-    _marked26 = /*#__PURE__*/regenerator_default.a.mark(handleTicketEndTimeInput),
-    _marked27 = /*#__PURE__*/regenerator_default.a.mark(handleTicketMove),
-    _marked28 = /*#__PURE__*/regenerator_default.a.mark(handler),
-    _marked29 = /*#__PURE__*/regenerator_default.a.mark(watchers);
-
-/**
- * External Dependencies
- */
-
-
-
-/**
- * Wordpress dependencies
- */
-
-
-
-
-/**
- * Internal dependencies
- */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-var sagas_UNLIMITED = constants["UNLIMITED"],
-    sagas_SHARED = constants["SHARED"],
-    sagas_TICKET_TYPES = constants["TICKET_TYPES"],
-    PROVIDER_CLASS_TO_PROVIDER_MAPPING = constants["PROVIDER_CLASS_TO_PROVIDER_MAPPING"];
-var sagas_ticketsConfig = external_tribe_common_utils_["globals"].tickets,
-    restNonce = external_tribe_common_utils_["globals"].restNonce,
-    tecDateSettings = external_tribe_common_utils_["globals"].tecDateSettings;
-var wpREST = external_tribe_common_utils_["api"].wpREST;
-
-
-function createMissingTicketBlocks(tickets) {
-	var _ref, insertBlock, _ref2, getBlockCount, getBlocks, ticketsBlocks;
-
-	return regenerator_default.a.wrap(function createMissingTicketBlocks$(_context) {
-		while (1) {
-			switch (_context.prev = _context.next) {
-				case 0:
-					_context.next = 2;
-					return Object(effects["b" /* call */])(external_var_wp_data_root_wp_data_["dispatch"], 'core/editor');
-
-				case 2:
-					_ref = _context.sent;
-					insertBlock = _ref.insertBlock;
-					_context.next = 6;
-					return Object(effects["b" /* call */])(external_var_wp_data_root_wp_data_["select"], 'core/editor');
-
-				case 6:
-					_ref2 = _context.sent;
-					getBlockCount = _ref2.getBlockCount;
-					getBlocks = _ref2.getBlocks;
-					_context.next = 11;
-					return Object(effects["b" /* call */])([getBlocks(), 'filter'], function (block) {
-						return block.name === 'tribe/tickets';
-					});
-
-				case 11:
-					ticketsBlocks = _context.sent;
-
-
-					ticketsBlocks.forEach(function (_ref3) {
-						var clientId = _ref3.clientId;
-
-						tickets.forEach(function (ticketId) {
-							var attributes = {
-								hasBeenCreated: true,
-								ticketId: ticketId
-							};
-							var nextChildPosition = getBlockCount(clientId);
-							var block = Object(external_var_wp_blocks_root_wp_blocks_["createBlock"])('tribe/tickets-item', attributes);
-							insertBlock(block, nextChildPosition, clientId, false);
-						});
-					});
-
-				case 13:
-				case 'end':
-					return _context.stop();
-			}
-		}
-	}, _marked, this);
-}
-
-function setTicketsInitialState(action) {
-	var get, header, sharedCapacity, ticketsList, ticketsInBlock, ticketsDiff, provider, defaultProvider;
-	return regenerator_default.a.wrap(function setTicketsInitialState$(_context2) {
-		while (1) {
-			switch (_context2.prev = _context2.next) {
-				case 0:
-					get = action.payload.get;
-					header = parseInt(get('header', header_image["a" /* DEFAULT_STATE */].id), 10);
-					sharedCapacity = get('sharedCapacity');
-					ticketsList = get('tickets', []);
-					_context2.next = 6;
-					return Object(effects["f" /* select */])(getTicketsIdsInBlocks);
-
-				case 6:
-					ticketsInBlock = _context2.sent;
-
-					// Get only the IDs of the tickets that are not in the block list already
-					ticketsDiff = ticketsList.filter(function (item) {
-						return !includes_default()(ticketsInBlock, item);
-					});
-
-					if (!(ticketsDiff.length >= 1)) {
-						_context2.next = 11;
-						break;
-					}
-
-					_context2.next = 11;
-					return Object(effects["b" /* call */])(createMissingTicketBlocks, ticketsDiff);
-
-				case 11:
-					if (!(sharedCapacity !== '0')) {
-						_context2.next = 14;
-						break;
-					}
-
-					_context2.next = 14;
-					return Object(effects["a" /* all */])([Object(effects["e" /* put */])(actions["setTicketsSharedCapacity"](sharedCapacity)), Object(effects["e" /* put */])(actions["setTicketsTempSharedCapacity"](sharedCapacity))]);
-
-				case 14:
-					if (!(!isNaN(header) && header !== 0)) {
-						_context2.next = 17;
-						break;
-					}
-
-					_context2.next = 17;
-					return Object(effects["e" /* put */])(actions["fetchTicketsHeaderImage"](header));
-
-				case 17:
-					provider = get('provider', reducer_DEFAULT_STATE.provider);
-
-					if (!(provider === constants["RSVP_CLASS"] || !provider)) {
-						_context2.next = 23;
-						break;
-					}
-
-					_context2.next = 21;
-					return Object(effects["f" /* select */])(getDefaultTicketProvider);
-
-				case 21:
-					defaultProvider = _context2.sent;
-
-					provider = defaultProvider === constants["RSVP_CLASS"] ? '' : defaultProvider;
-
-				case 23:
-					_context2.next = 25;
-					return Object(effects["e" /* put */])(actions["setTicketsProvider"](provider));
-
-				case 25:
-				case 'end':
-					return _context2.stop();
-			}
-		}
-	}, _marked2, this);
-}
-
-function resetTicketsBlock() {
-	var hasCreatedTickets, currentMeta, newMeta;
-	return regenerator_default.a.wrap(function resetTicketsBlock$(_context3) {
-		while (1) {
-			switch (_context3.prev = _context3.next) {
-				case 0:
-					_context3.next = 2;
-					return Object(effects["f" /* select */])(selectors_hasCreatedTickets);
-
-				case 2:
-					hasCreatedTickets = _context3.sent;
-					_context3.next = 5;
-					return Object(effects["a" /* all */])([Object(effects["e" /* put */])(actions["removeTicketBlocks"]()), Object(effects["e" /* put */])(actions["setTicketsIsSettingsOpen"](false))]);
-
-				case 5:
-					if (hasCreatedTickets) {
-						_context3.next = 14;
-						break;
-					}
-
-					_context3.next = 8;
-					return Object(effects["b" /* call */])([Object(external_var_wp_data_root_wp_data_["select"])('core/editor'), 'getCurrentPostAttribute'], 'meta');
-
-				case 8:
-					currentMeta = _context3.sent;
-					newMeta = extends_default()({}, currentMeta, defineProperty_default()({}, utils["d" /* KEY_TICKET_CAPACITY */], ''));
-					_context3.next = 12;
-					return Object(effects["b" /* call */])([Object(external_var_wp_data_root_wp_data_["dispatch"])('core/editor'), 'editPost'], { meta: newMeta });
-
-				case 12:
-					_context3.next = 14;
-					return Object(effects["a" /* all */])([Object(effects["e" /* put */])(actions["setTicketsSharedCapacity"]('')), Object(effects["e" /* put */])(actions["setTicketsTempSharedCapacity"](''))]);
-
-				case 14:
-				case 'end':
-					return _context3.stop();
-			}
-		}
-	}, _marked3, this);
-}
-
-function setTicketInitialState(action) {
-	var _action$payload, clientId, get, ticketId, hasBeenCreated, datePickerFormat, publishDate, startMoment, startDate, startDateInput, startTime, startTimeInput, isEvent, eventStart, endMoment, endDate, endDateInput, endTime, endTimeInput, hasTicketsPlus, sharedCapacity;
-
-	return regenerator_default.a.wrap(function setTicketInitialState$(_context4) {
-		while (1) {
-			switch (_context4.prev = _context4.next) {
-				case 0:
-					_action$payload = action.payload, clientId = _action$payload.clientId, get = _action$payload.get;
-					ticketId = get('ticketId', ticket_DEFAULT_STATE.ticketId);
-					hasBeenCreated = get('hasBeenCreated', ticket_DEFAULT_STATE.hasBeenCreated);
-					datePickerFormat = tecDateSettings().datepickerFormat;
-					_context4.next = 6;
-					return Object(effects["b" /* call */])([Object(external_var_wp_data_root_wp_data_["select"])('core/editor'), 'getEditedPostAttribute'], 'date');
-
-				case 6:
-					publishDate = _context4.sent;
-					_context4.next = 9;
-					return Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toMoment, publishDate);
-
-				case 9:
-					startMoment = _context4.sent;
-					_context4.next = 12;
-					return Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toDatabaseDate, startMoment);
-
-				case 12:
-					startDate = _context4.sent;
-					_context4.next = 15;
-					return datePickerFormat ? Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toDate, startMoment, datePickerFormat) : Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toDate, startMoment);
-
-				case 15:
-					startDateInput = _context4.sent;
-					_context4.next = 18;
-					return Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toDatabaseTime, startMoment);
-
-				case 18:
-					startTime = _context4.sent;
-					_context4.next = 21;
-					return Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toTime, startMoment);
-
-				case 21:
-					startTimeInput = _context4.sent;
-					_context4.next = 24;
-					return Object(effects["a" /* all */])([Object(effects["e" /* put */])(actions["setTicketStartDate"](clientId, startDate)), Object(effects["e" /* put */])(actions["setTicketStartDateInput"](clientId, startDateInput)), Object(effects["e" /* put */])(actions["setTicketStartDateMoment"](clientId, startMoment)), Object(effects["e" /* put */])(actions["setTicketStartTime"](clientId, startTime)), Object(effects["e" /* put */])(actions["setTicketStartTimeInput"](clientId, startTimeInput)), Object(effects["e" /* put */])(actions["setTicketTempStartDate"](clientId, startDate)), Object(effects["e" /* put */])(actions["setTicketTempStartDateInput"](clientId, startDateInput)), Object(effects["e" /* put */])(actions["setTicketTempStartDateMoment"](clientId, startMoment)), Object(effects["e" /* put */])(actions["setTicketTempStartTime"](clientId, startTime)), Object(effects["e" /* put */])(actions["setTicketTempStartTimeInput"](clientId, startTimeInput)), Object(effects["e" /* put */])(actions["setTicketHasBeenCreated"](clientId, hasBeenCreated))]);
-
-				case 24:
-					_context4.next = 26;
-					return Object(effects["b" /* call */])(sagas["e" /* isTribeEventPostType */]);
-
-				case 26:
-					isEvent = _context4.sent;
-
-					if (!(isEvent && window.tribe.events)) {
-						_context4.next = 54;
-						break;
-					}
-
-					_context4.prev = 28;
-					_context4.next = 31;
-					return Object(effects["f" /* select */])(tribe.events.data.blocks.datetime.selectors.getStart);
-
-				case 31:
-					eventStart = _context4.sent;
-					_context4.next = 34;
-					return Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toMoment, eventStart);
-
-				case 34:
-					endMoment = _context4.sent;
-					_context4.next = 37;
-					return Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toDatabaseDate, endMoment);
-
-				case 37:
-					endDate = _context4.sent;
-					_context4.next = 40;
-					return datePickerFormat ? Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toDate, endMoment, datePickerFormat) : Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toDate, endMoment);
-
-				case 40:
-					endDateInput = _context4.sent;
-					_context4.next = 43;
-					return Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toDatabaseTime, endMoment);
-
-				case 43:
-					endTime = _context4.sent;
-					_context4.next = 46;
-					return Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toTime, endMoment);
-
-				case 46:
-					endTimeInput = _context4.sent;
-					_context4.next = 49;
-					return Object(effects["a" /* all */])([Object(effects["e" /* put */])(actions["setTicketEndDate"](clientId, endDate)), Object(effects["e" /* put */])(actions["setTicketEndDateInput"](clientId, endDateInput)), Object(effects["e" /* put */])(actions["setTicketEndDateMoment"](clientId, endMoment)), Object(effects["e" /* put */])(actions["setTicketEndTime"](clientId, endTime)), Object(effects["e" /* put */])(actions["setTicketEndTimeInput"](clientId, endTimeInput)), Object(effects["e" /* put */])(actions["setTicketTempEndDate"](clientId, endDate)), Object(effects["e" /* put */])(actions["setTicketTempEndDateInput"](clientId, endDateInput)), Object(effects["e" /* put */])(actions["setTicketTempEndDateMoment"](clientId, endMoment)), Object(effects["e" /* put */])(actions["setTicketTempEndTime"](clientId, endTime)), Object(effects["e" /* put */])(actions["setTicketTempEndTimeInput"](clientId, endTimeInput))]);
-
-				case 49:
-					_context4.next = 54;
-					break;
-
-				case 51:
-					_context4.prev = 51;
-					_context4.t0 = _context4['catch'](28);
-
-					console.error(_context4.t0);
-					// ¯\_(ツ)_/¯
-
-				case 54:
-					_context4.next = 56;
-					return Object(effects["f" /* select */])(external_tribe_common_data_["plugins"].selectors.hasPlugin, external_tribe_common_data_["plugins"].constants.TICKETS_PLUS);
-
-				case 56:
-					hasTicketsPlus = _context4.sent;
-
-					if (!hasTicketsPlus) {
-						_context4.next = 60;
-						break;
-					}
-
-					_context4.next = 60;
-					return Object(effects["a" /* all */])([Object(effects["e" /* put */])(actions["setTicketCapacityType"](clientId, constants["TICKET_TYPES"][constants["SHARED"]])), Object(effects["e" /* put */])(actions["setTicketTempCapacityType"](clientId, constants["TICKET_TYPES"][constants["SHARED"]]))]);
-
-				case 60:
-					_context4.next = 62;
-					return Object(effects["f" /* select */])(getTicketsSharedCapacity);
-
-				case 62:
-					sharedCapacity = _context4.sent;
-
-					if (!sharedCapacity) {
-						_context4.next = 66;
-						break;
-					}
-
-					_context4.next = 66;
-					return Object(effects["a" /* all */])([Object(effects["e" /* put */])(actions["setTicketCapacity"](clientId, sharedCapacity)), Object(effects["e" /* put */])(actions["setTicketTempCapacity"](clientId, sharedCapacity))]);
-
-				case 66:
-					if (!(ticketId !== 0)) {
-						_context4.next = 69;
-						break;
-					}
-
-					_context4.next = 69;
-					return Object(effects["a" /* all */])([Object(effects["e" /* put */])(actions["setTicketId"](clientId, ticketId)), Object(effects["b" /* call */])(fetchTicket, { payload: { clientId: clientId, ticketId: ticketId } })]);
-
-				case 69:
-					_context4.next = 71;
-					return Object(effects["b" /* call */])(handleTicketDurationError, clientId);
-
-				case 71:
-					_context4.next = 73;
-					return Object(effects["d" /* fork */])(saveTicketWithPostSave, clientId);
-
-				case 73:
-				case 'end':
-					return _context4.stop();
-			}
-		}
-	}, _marked4, this, [[28, 51]]);
-}
-
-function setBodyDetails(clientId) {
-	var body, props, rootClientId, ticketProvider, ticketsProvider, capacityType, capacity, isUnlimited;
-	return regenerator_default.a.wrap(function setBodyDetails$(_context5) {
-		while (1) {
-			switch (_context5.prev = _context5.next) {
-				case 0:
-					body = new FormData();
-					props = { clientId: clientId };
-					_context5.next = 4;
-					return Object(effects["b" /* call */])([Object(external_var_wp_data_root_wp_data_["select"])('core/editor'), 'getBlockRootClientId'], clientId);
-
-				case 4:
-					rootClientId = _context5.sent;
-					_context5.next = 7;
-					return Object(effects["f" /* select */])(getTicketProvider, props);
-
-				case 7:
-					ticketProvider = _context5.sent;
-					_context5.next = 10;
-					return Object(effects["f" /* select */])(getTicketsProvider);
-
-				case 10:
-					ticketsProvider = _context5.sent;
-					_context5.t0 = body;
-					_context5.next = 14;
-					return Object(effects["b" /* call */])([Object(external_var_wp_data_root_wp_data_["select"])('core/editor'), 'getCurrentPostId']);
-
-				case 14:
-					_context5.t1 = _context5.sent;
-
-					_context5.t0.append.call(_context5.t0, 'post_id', _context5.t1);
-
-					body.append('provider', ticketProvider || ticketsProvider);
-					_context5.t2 = body;
-					_context5.next = 20;
-					return Object(effects["f" /* select */])(getTicketTempTitle, props);
-
-				case 20:
-					_context5.t3 = _context5.sent;
-
-					_context5.t2.append.call(_context5.t2, 'name', _context5.t3);
-
-					_context5.t4 = body;
-					_context5.next = 25;
-					return Object(effects["f" /* select */])(getTicketTempDescription, props);
-
-				case 25:
-					_context5.t5 = _context5.sent;
-
-					_context5.t4.append.call(_context5.t4, 'description', _context5.t5);
-
-					_context5.t6 = body;
-					_context5.next = 30;
-					return Object(effects["f" /* select */])(getTicketTempPrice, props);
-
-				case 30:
-					_context5.t7 = _context5.sent;
-
-					_context5.t6.append.call(_context5.t6, 'price', _context5.t7);
-
-					_context5.t8 = body;
-					_context5.next = 35;
-					return Object(effects["f" /* select */])(getTicketTempStartDate, props);
-
-				case 35:
-					_context5.t9 = _context5.sent;
-
-					_context5.t8.append.call(_context5.t8, 'start_date', _context5.t9);
-
-					_context5.t10 = body;
-					_context5.next = 40;
-					return Object(effects["f" /* select */])(getTicketTempStartTime, props);
-
-				case 40:
-					_context5.t11 = _context5.sent;
-
-					_context5.t10.append.call(_context5.t10, 'start_time', _context5.t11);
-
-					_context5.t12 = body;
-					_context5.next = 45;
-					return Object(effects["f" /* select */])(getTicketTempEndDate, props);
-
-				case 45:
-					_context5.t13 = _context5.sent;
-
-					_context5.t12.append.call(_context5.t12, 'end_date', _context5.t13);
-
-					_context5.t14 = body;
-					_context5.next = 50;
-					return Object(effects["f" /* select */])(getTicketTempEndTime, props);
-
-				case 50:
-					_context5.t15 = _context5.sent;
-
-					_context5.t14.append.call(_context5.t14, 'end_time', _context5.t15);
-
-					_context5.t16 = body;
-					_context5.next = 55;
-					return Object(effects["f" /* select */])(getTicketTempSku, props);
-
-				case 55:
-					_context5.t17 = _context5.sent;
-
-					_context5.t16.append.call(_context5.t16, 'sku', _context5.t17);
-
-					_context5.t18 = body;
-					_context5.next = 60;
-					return Object(effects["f" /* select */])(getTicketTempIACSetting, props);
-
-				case 60:
-					_context5.t19 = _context5.sent;
-
-					_context5.t18.append.call(_context5.t18, 'iac', _context5.t19);
-
-					_context5.t20 = body;
-					_context5.next = 65;
-					return Object(effects["b" /* call */])([Object(external_var_wp_data_root_wp_data_["select"])('core/editor'), 'getBlockIndex'], clientId, rootClientId);
-
-				case 65:
-					_context5.t21 = _context5.sent;
-
-					_context5.t20.append.call(_context5.t20, 'menu_order', _context5.t21);
-
-					_context5.next = 69;
-					return Object(effects["f" /* select */])(getTicketTempCapacityType, props);
-
-				case 69:
-					capacityType = _context5.sent;
-					_context5.next = 72;
-					return Object(effects["f" /* select */])(getTicketTempCapacity, props);
-
-				case 72:
-					capacity = _context5.sent;
-					isUnlimited = capacityType === sagas_TICKET_TYPES[sagas_UNLIMITED];
-
-					body.append('ticket[mode]', isUnlimited ? '' : capacityType);
-					body.append('ticket[capacity]', isUnlimited ? '' : capacity);
-
-					if (!(capacityType === sagas_TICKET_TYPES[sagas_SHARED])) {
-						_context5.next = 82;
-						break;
-					}
-
-					_context5.t22 = body;
-					_context5.next = 80;
-					return Object(effects["f" /* select */])(getTicketsTempSharedCapacity);
-
-				case 80:
-					_context5.t23 = _context5.sent;
-
-					_context5.t22.append.call(_context5.t22, 'ticket[event_capacity]', _context5.t23);
-
-				case 82:
-					return _context5.abrupt('return', body);
-
-				case 83:
-				case 'end':
-					return _context5.stop();
-			}
-		}
-	}, _marked5, this);
-}
-
-function removeTicketBlock(clientId) {
-	var _wpDispatch, removeBlock;
-
-	return regenerator_default.a.wrap(function removeTicketBlock$(_context6) {
-		while (1) {
-			switch (_context6.prev = _context6.next) {
-				case 0:
-					_wpDispatch = Object(external_var_wp_data_root_wp_data_["dispatch"])('core/editor'), removeBlock = _wpDispatch.removeBlock;
-					_context6.next = 3;
-					return Object(effects["a" /* all */])([Object(effects["e" /* put */])(actions["removeTicketBlock"](clientId)), Object(effects["b" /* call */])(removeBlock, clientId)]);
-
-				case 3:
-				case 'end':
-					return _context6.stop();
-			}
-		}
-	}, _marked6, this);
-}
-
-function fetchTicket(action) {
-	var _action$payload2, ticketId, clientId, _ref4, response, ticket, _ticket$status, status, provider, _ticket$totals, totals, available_from, available_until, cost_details, title, description, sku, iac, capacity_type, capacity, supports_attendee_information, datePickerFormat, startMoment, startDate, startDateInput, startTime, startTimeInput, endMoment, endDate, endDateInput, endTime, endTimeInput, details;
-
-	return regenerator_default.a.wrap(function fetchTicket$(_context7) {
-		while (1) {
-			switch (_context7.prev = _context7.next) {
-				case 0:
-					_action$payload2 = action.payload, ticketId = _action$payload2.ticketId, clientId = _action$payload2.clientId;
-
-					if (!(ticketId === 0)) {
-						_context7.next = 3;
-						break;
-					}
-
-					return _context7.abrupt('return');
-
-				case 3:
-					_context7.next = 5;
-					return Object(effects["e" /* put */])(actions["setTicketIsLoading"](clientId, true));
-
-				case 5:
-					_context7.prev = 5;
-					_context7.next = 8;
-					return Object(effects["b" /* call */])(wpREST, {
-						path: 'tickets/' + ticketId,
-						namespace: 'tribe/tickets/v1'
-					});
-
-				case 8:
-					_ref4 = _context7.sent;
-					response = _ref4.response;
-					ticket = _ref4.data;
-					_ticket$status = ticket.status, status = _ticket$status === undefined ? '' : _ticket$status, provider = ticket.provider;
-
-					if (!(response.status === 404 || status === 'trash' || provider === constants["RSVP"])) {
-						_context7.next = 16;
-						break;
-					}
-
-					_context7.next = 15;
-					return Object(effects["b" /* call */])(removeTicketBlock, clientId);
-
-				case 15:
-					return _context7.abrupt('return');
-
-				case 16:
-					if (!response.ok) {
-						_context7.next = 60;
-						break;
-					}
-
-					_ticket$totals = ticket.totals, totals = _ticket$totals === undefined ? {} : _ticket$totals, available_from = ticket.available_from, available_until = ticket.available_until, cost_details = ticket.cost_details, title = ticket.title, description = ticket.description, sku = ticket.sku, iac = ticket.iac, capacity_type = ticket.capacity_type, capacity = ticket.capacity, supports_attendee_information = ticket.supports_attendee_information;
-					datePickerFormat = tecDateSettings().datepickerFormat;
-					_context7.next = 21;
-					return Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toMoment, available_from);
-
-				case 21:
-					startMoment = _context7.sent;
-					_context7.next = 24;
-					return Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toDatabaseDate, startMoment);
-
-				case 24:
-					startDate = _context7.sent;
-					_context7.next = 27;
-					return datePickerFormat ? Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toDate, startMoment, datePickerFormat) : Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toDate, startMoment);
-
-				case 27:
-					startDateInput = _context7.sent;
-					_context7.next = 30;
-					return Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toDatabaseTime, startMoment);
-
-				case 30:
-					startTime = _context7.sent;
-					_context7.next = 33;
-					return Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toTime, startMoment);
-
-				case 33:
-					startTimeInput = _context7.sent;
-					_context7.next = 36;
-					return Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toMoment, '');
-
-				case 36:
-					endMoment = _context7.sent;
-					endDate = '';
-					endDateInput = '';
-					endTime = '';
-					endTimeInput = '';
-
-					if (!available_until) {
-						_context7.next = 57;
-						break;
-					}
-
-					_context7.next = 44;
-					return Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toMoment, available_until);
-
-				case 44:
-					endMoment = _context7.sent;
-					_context7.next = 47;
-					return Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toDatabaseDate, endMoment);
-
-				case 47:
-					endDate = _context7.sent;
-					_context7.next = 50;
-					return datePickerFormat ? Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toDate, endMoment, datePickerFormat) : Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toDate, endMoment);
-
-				case 50:
-					endDateInput = _context7.sent;
-					_context7.next = 53;
-					return Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toDatabaseTime, endMoment);
-
-				case 53:
-					endTime = _context7.sent;
-					_context7.next = 56;
-					return Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toTime, endMoment);
-
-				case 56:
-					endTimeInput = _context7.sent;
-
-				case 57:
-					details = {
-						title: title,
-						description: description,
-						price: cost_details.values[0],
-						sku: sku,
-						iac: iac,
-						startDate: startDate,
-						startDateInput: startDateInput,
-						startDateMoment: startMoment,
-						endDate: endDate,
-						endDateInput: endDateInput,
-						endDateMoment: endMoment,
-						startTime: startTime,
-						endTime: endTime,
-						startTimeInput: startTimeInput,
-						endTimeInput: endTimeInput,
-						capacityType: capacity_type,
-						capacity: capacity
-					};
-					_context7.next = 60;
-					return Object(effects["a" /* all */])([Object(effects["e" /* put */])(actions["setTicketDetails"](clientId, details)), Object(effects["e" /* put */])(actions["setTicketTempDetails"](clientId, details)), Object(effects["e" /* put */])(actions["setTicketSold"](clientId, totals.sold)), Object(effects["e" /* put */])(actions["setTicketAvailable"](clientId, totals.stock)), Object(effects["e" /* put */])(actions["setTicketCurrencySymbol"](clientId, cost_details.currency_symbol)), Object(effects["e" /* put */])(actions["setTicketCurrencyPosition"](clientId, cost_details.currency_position)), Object(effects["e" /* put */])(actions["setTicketProvider"](clientId, provider)), Object(effects["e" /* put */])(actions["setTicketHasAttendeeInfoFields"](clientId, supports_attendee_information)), Object(effects["e" /* put */])(actions["setTicketHasBeenCreated"](clientId, true))]);
-
-				case 60:
-					_context7.next = 65;
-					break;
-
-				case 62:
-					_context7.prev = 62;
-					_context7.t0 = _context7['catch'](5);
-
-					console.error(_context7.t0);
-					/**
-      * @todo handle error scenario
-      */
-
-				case 65:
-					_context7.next = 67;
-					return Object(effects["e" /* put */])(actions["setTicketIsLoading"](clientId, false));
-
-				case 67:
-				case 'end':
-					return _context7.stop();
-			}
-		}
-	}, _marked7, this, [[5, 62]]);
-}
-
-function createNewTicket(action) {
-	var clientId, props, _restNonce, _restNonce$add_ticket, add_ticket_nonce, body, _ref5, response, ticket, sharedCapacity, tempSharedCapacity, available, _ref6, _ref7, title, description, price, sku, iac, startDate, startDateInput, startDateMoment, endDate, endDateInput, endDateMoment, startTime, endTime, startTimeInput, endTimeInput, capacityType, capacity;
-
-	return regenerator_default.a.wrap(function createNewTicket$(_context8) {
-		while (1) {
-			switch (_context8.prev = _context8.next) {
-				case 0:
-					clientId = action.payload.clientId;
-					props = { clientId: clientId };
-					_restNonce = restNonce(), _restNonce$add_ticket = _restNonce.add_ticket_nonce, add_ticket_nonce = _restNonce$add_ticket === undefined ? '' : _restNonce$add_ticket;
-					_context8.next = 5;
-					return Object(effects["b" /* call */])(setBodyDetails, clientId);
-
-				case 5:
-					body = _context8.sent;
-
-					body.append('add_ticket_nonce', add_ticket_nonce);
-
-					_context8.prev = 7;
-					_context8.next = 10;
-					return Object(effects["e" /* put */])(actions["setTicketIsLoading"](clientId, true));
-
-				case 10:
-					_context8.next = 12;
-					return Object(effects["b" /* call */])(wpREST, {
-						path: 'tickets/',
-						namespace: 'tribe/tickets/v1',
-						initParams: {
-							method: 'POST',
-							body: body
-						}
-					});
-
-				case 12:
-					_ref5 = _context8.sent;
-					response = _ref5.response;
-					ticket = _ref5.data;
-
-					if (!response.ok) {
-						_context8.next = 51;
-						break;
-					}
-
-					_context8.next = 18;
-					return Object(effects["f" /* select */])(getTicketsSharedCapacity);
-
-				case 18:
-					sharedCapacity = _context8.sent;
-					_context8.next = 21;
-					return Object(effects["f" /* select */])(getTicketsTempSharedCapacity);
-
-				case 21:
-					tempSharedCapacity = _context8.sent;
-
-					if (!(sharedCapacity === '' && !isNaN(tempSharedCapacity) && tempSharedCapacity > 0)) {
-						_context8.next = 25;
-						break;
-					}
-
-					_context8.next = 25;
-					return Object(effects["e" /* put */])(actions["setTicketsSharedCapacity"](tempSharedCapacity));
-
-				case 25:
-					available = ticket.capacity_details.available === -1 ? 0 : ticket.capacity_details.available;
-					_context8.next = 28;
-					return Object(effects["a" /* all */])([Object(effects["f" /* select */])(getTicketTempTitle, props), Object(effects["f" /* select */])(getTicketTempDescription, props), Object(effects["f" /* select */])(getTicketTempPrice, props), Object(effects["f" /* select */])(getTicketTempSku, props), Object(effects["f" /* select */])(getTicketTempIACSetting, props), Object(effects["f" /* select */])(getTicketTempStartDate, props), Object(effects["f" /* select */])(getTicketTempStartDateInput, props), Object(effects["f" /* select */])(getTicketTempStartDateMoment, props), Object(effects["f" /* select */])(getTicketTempEndDate, props), Object(effects["f" /* select */])(getTicketTempEndDateInput, props), Object(effects["f" /* select */])(getTicketTempEndDateMoment, props), Object(effects["f" /* select */])(getTicketTempStartTime, props), Object(effects["f" /* select */])(getTicketTempEndTime, props), Object(effects["f" /* select */])(getTicketTempStartTimeInput, props), Object(effects["f" /* select */])(getTicketTempEndTimeInput, props), Object(effects["f" /* select */])(getTicketTempCapacityType, props), Object(effects["f" /* select */])(getTicketTempCapacity, props)]);
-
-				case 28:
-					_ref6 = _context8.sent;
-					_ref7 = slicedToArray_default()(_ref6, 17);
-					title = _ref7[0];
-					description = _ref7[1];
-					price = _ref7[2];
-					sku = _ref7[3];
-					iac = _ref7[4];
-					startDate = _ref7[5];
-					startDateInput = _ref7[6];
-					startDateMoment = _ref7[7];
-					endDate = _ref7[8];
-					endDateInput = _ref7[9];
-					endDateMoment = _ref7[10];
-					startTime = _ref7[11];
-					endTime = _ref7[12];
-					startTimeInput = _ref7[13];
-					endTimeInput = _ref7[14];
-					capacityType = _ref7[15];
-					capacity = _ref7[16];
-					_context8.next = 49;
-					return Object(effects["a" /* all */])([Object(effects["e" /* put */])(actions["setTicketDetails"](clientId, {
-						title: title,
-						description: description,
-						price: price,
-						sku: sku,
-						iac: iac,
-						startDate: startDate,
-						startDateInput: startDateInput,
-						startDateMoment: startDateMoment,
-						endDate: endDate,
-						endDateInput: endDateInput,
-						endDateMoment: endDateMoment,
-						startTime: startTime,
-						endTime: endTime,
-						startTimeInput: startTimeInput,
-						endTimeInput: endTimeInput,
-						capacityType: capacityType,
-						capacity: capacity
-					})), Object(effects["e" /* put */])(actions["setTicketId"](clientId, ticket.id)), Object(effects["e" /* put */])(actions["setTicketHasBeenCreated"](clientId, true)), Object(effects["e" /* put */])(actions["setTicketAvailable"](clientId, available)), Object(effects["e" /* put */])(actions["setTicketProvider"](clientId, PROVIDER_CLASS_TO_PROVIDER_MAPPING[ticket.provider_class])), Object(effects["e" /* put */])(actions["setTicketHasChanges"](clientId, false))]);
-
-				case 49:
-					_context8.next = 51;
-					return Object(effects["d" /* fork */])(saveTicketWithPostSave, clientId);
-
-				case 51:
-					_context8.next = 56;
-					break;
-
-				case 53:
-					_context8.prev = 53;
-					_context8.t0 = _context8['catch'](7);
-
-					console.error(_context8.t0);
-					/**
-      * @todo: handle error scenario
-      */
-
-				case 56:
-					_context8.prev = 56;
-					_context8.next = 59;
-					return Object(effects["e" /* put */])(actions["setTicketIsLoading"](clientId, false));
-
-				case 59:
-					return _context8.finish(56);
-
-				case 60:
-				case 'end':
-					return _context8.stop();
-			}
-		}
-	}, _marked8, this, [[7, 53, 56, 60]]);
-}
-
-function updateTicket(action) {
-	var clientId, props, _restNonce2, _restNonce2$edit_tick, edit_ticket_nonce, body, ticketId, data, _iteratorNormalCompletion, _didIteratorError, _iteratorError, _iterator, _step, _ref8, _ref9, key, value, _ref10, response, ticket, capacity_details, available, _ref11, _ref12, title, description, price, sku, iac, startDate, startDateInput, startDateMoment, endDate, endDateInput, endDateMoment, startTime, endTime, startTimeInput, endTimeInput, capacityType, capacity;
-
-	return regenerator_default.a.wrap(function updateTicket$(_context9) {
-		while (1) {
-			switch (_context9.prev = _context9.next) {
-				case 0:
-					clientId = action.payload.clientId;
-					props = { clientId: clientId };
-					_restNonce2 = restNonce(), _restNonce2$edit_tick = _restNonce2.edit_ticket_nonce, edit_ticket_nonce = _restNonce2$edit_tick === undefined ? '' : _restNonce2$edit_tick;
-					_context9.next = 5;
-					return Object(effects["b" /* call */])(setBodyDetails, clientId);
-
-				case 5:
-					body = _context9.sent;
-
-					body.append('edit_ticket_nonce', edit_ticket_nonce);
-
-					_context9.next = 9;
-					return Object(effects["f" /* select */])(getTicketId, props);
-
-				case 9:
-					ticketId = _context9.sent;
-					_context9.prev = 10;
-					data = [];
-					_iteratorNormalCompletion = true;
-					_didIteratorError = false;
-					_iteratorError = undefined;
-					_context9.prev = 15;
-
-					for (_iterator = body.entries()[Symbol.iterator](); !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-						_ref8 = _step.value;
-						_ref9 = slicedToArray_default()(_ref8, 2);
-						key = _ref9[0];
-						value = _ref9[1];
-
-						data.push(encodeURIComponent(key) + '=' + encodeURIComponent(value));
-					}
-
-					_context9.next = 23;
-					break;
-
-				case 19:
-					_context9.prev = 19;
-					_context9.t0 = _context9['catch'](15);
-					_didIteratorError = true;
-					_iteratorError = _context9.t0;
-
-				case 23:
-					_context9.prev = 23;
-					_context9.prev = 24;
-
-					if (!_iteratorNormalCompletion && _iterator.return) {
-						_iterator.return();
-					}
-
-				case 26:
-					_context9.prev = 26;
-
-					if (!_didIteratorError) {
-						_context9.next = 29;
-						break;
-					}
-
-					throw _iteratorError;
-
-				case 29:
-					return _context9.finish(26);
-
-				case 30:
-					return _context9.finish(23);
-
-				case 31:
-					_context9.next = 33;
-					return Object(effects["e" /* put */])(actions["setTicketIsLoading"](clientId, true));
-
-				case 33:
-					_context9.next = 35;
-					return Object(effects["b" /* call */])(wpREST, {
-						path: 'tickets/' + ticketId,
-						namespace: 'tribe/tickets/v1',
-						headers: {
-							'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
-						},
-						initParams: {
-							method: 'PUT',
-							body: data.join('&')
-						}
-					});
-
-				case 35:
-					_ref10 = _context9.sent;
-					response = _ref10.response;
-					ticket = _ref10.data;
-
-					if (!response.ok) {
-						_context9.next = 64;
-						break;
-					}
-
-					capacity_details = ticket.capacity_details;
-					available = capacity_details.available === -1 ? 0 : capacity_details.available;
-					_context9.next = 43;
-					return Object(effects["a" /* all */])([Object(effects["f" /* select */])(getTicketTempTitle, props), Object(effects["f" /* select */])(getTicketTempDescription, props), Object(effects["f" /* select */])(getTicketTempPrice, props), Object(effects["f" /* select */])(getTicketTempSku, props), Object(effects["f" /* select */])(getTicketTempIACSetting, props), Object(effects["f" /* select */])(getTicketTempStartDate, props), Object(effects["f" /* select */])(getTicketTempStartDateInput, props), Object(effects["f" /* select */])(getTicketTempStartDateMoment, props), Object(effects["f" /* select */])(getTicketTempEndDate, props), Object(effects["f" /* select */])(getTicketTempEndDateInput, props), Object(effects["f" /* select */])(getTicketTempEndDateMoment, props), Object(effects["f" /* select */])(getTicketTempStartTime, props), Object(effects["f" /* select */])(getTicketTempEndTime, props), Object(effects["f" /* select */])(getTicketTempStartTimeInput, props), Object(effects["f" /* select */])(getTicketTempEndTimeInput, props), Object(effects["f" /* select */])(getTicketTempCapacityType, props), Object(effects["f" /* select */])(getTicketTempCapacity, props)]);
-
-				case 43:
-					_ref11 = _context9.sent;
-					_ref12 = slicedToArray_default()(_ref11, 17);
-					title = _ref12[0];
-					description = _ref12[1];
-					price = _ref12[2];
-					sku = _ref12[3];
-					iac = _ref12[4];
-					startDate = _ref12[5];
-					startDateInput = _ref12[6];
-					startDateMoment = _ref12[7];
-					endDate = _ref12[8];
-					endDateInput = _ref12[9];
-					endDateMoment = _ref12[10];
-					startTime = _ref12[11];
-					endTime = _ref12[12];
-					startTimeInput = _ref12[13];
-					endTimeInput = _ref12[14];
-					capacityType = _ref12[15];
-					capacity = _ref12[16];
-					_context9.next = 64;
-					return Object(effects["a" /* all */])([Object(effects["e" /* put */])(actions["setTicketDetails"](clientId, {
-						title: title,
-						description: description,
-						price: price,
-						sku: sku,
-						iac: iac,
-						startDate: startDate,
-						startDateInput: startDateInput,
-						startDateMoment: startDateMoment,
-						endDate: endDate,
-						endDateInput: endDateInput,
-						endDateMoment: endDateMoment,
-						startTime: startTime,
-						endTime: endTime,
-						startTimeInput: startTimeInput,
-						endTimeInput: endTimeInput,
-						capacityType: capacityType,
-						capacity: capacity
-					})), Object(effects["e" /* put */])(actions["setTicketSold"](clientId, capacity_details.sold)), Object(effects["e" /* put */])(actions["setTicketAvailable"](clientId, available)), Object(effects["e" /* put */])(actions["setTicketHasChanges"](clientId, false))]);
-
-				case 64:
-					_context9.next = 69;
-					break;
-
-				case 66:
-					_context9.prev = 66;
-					_context9.t1 = _context9['catch'](10);
-
-					console.error(_context9.t1);
-					/**
-      * @todo: handle error scenario
-      */
-
-				case 69:
-					_context9.prev = 69;
-					_context9.next = 72;
-					return Object(effects["e" /* put */])(actions["setTicketIsLoading"](clientId, false));
-
-				case 72:
-					return _context9.finish(69);
-
-				case 73:
-				case 'end':
-					return _context9.stop();
-			}
-		}
-	}, _marked9, this, [[10, 66, 69, 73], [15, 19, 23, 31], [24,, 26, 30]]);
-}
-
-function deleteTicket(action) {
-	var clientId, props, shouldDelete, ticketId, hasBeenCreated, _restNonce3, _restNonce3$remove_ti, remove_ticket_nonce, postId, body;
-
-	return regenerator_default.a.wrap(function deleteTicket$(_context10) {
-		while (1) {
-			switch (_context10.prev = _context10.next) {
-				case 0:
-					clientId = action.payload.clientId;
-					props = { clientId: clientId };
-					_context10.next = 4;
-					return Object(effects["b" /* call */])([window, 'confirm'], Object(external_var_wp_i18n_root_wp_i18n_["__"])('Are you sure you want to delete this ticket? It cannot be undone.'));
-
-				case 4:
-					shouldDelete = _context10.sent;
-
-					if (!shouldDelete) {
-						_context10.next = 33;
-						break;
-					}
-
-					_context10.next = 8;
-					return Object(effects["f" /* select */])(getTicketId, props);
-
-				case 8:
-					ticketId = _context10.sent;
-					_context10.next = 11;
-					return Object(effects["f" /* select */])(getTicketHasBeenCreated, props);
-
-				case 11:
-					hasBeenCreated = _context10.sent;
-					_context10.next = 14;
-					return Object(effects["e" /* put */])(actions["setTicketIsSelected"](clientId, false));
-
-				case 14:
-					_context10.next = 16;
-					return Object(effects["e" /* put */])(actions["removeTicketBlock"](clientId));
-
-				case 16:
-					_context10.next = 18;
-					return Object(effects["b" /* call */])([Object(external_var_wp_data_root_wp_data_["dispatch"])('core/editor'), 'clearSelectedBlock']);
-
-				case 18:
-					_context10.next = 20;
-					return Object(effects["b" /* call */])([Object(external_var_wp_data_root_wp_data_["dispatch"])('core/editor'), 'removeBlocks'], [clientId]);
-
-				case 20:
-					if (!hasBeenCreated) {
-						_context10.next = 33;
-						break;
-					}
-
-					_restNonce3 = restNonce(), _restNonce3$remove_ti = _restNonce3.remove_ticket_nonce, remove_ticket_nonce = _restNonce3$remove_ti === undefined ? '' : _restNonce3$remove_ti;
-					_context10.next = 24;
-					return Object(effects["b" /* call */])([Object(external_var_wp_data_root_wp_data_["select"])('core/editor'), 'getCurrentPostId']);
-
-				case 24:
-					postId = _context10.sent;
-
-
-					/**
-      * Encode params to be passed into the DELETE request as PHP doesn’t transform the request body
-      * of a DELETE request into a super global.
-      */
-					body = [encodeURIComponent('post_id') + '=' + encodeURIComponent(postId), encodeURIComponent('remove_ticket_nonce') + '=' + encodeURIComponent(remove_ticket_nonce)];
-					_context10.prev = 26;
-					_context10.next = 29;
-					return Object(effects["b" /* call */])(wpREST, {
-						path: 'tickets/' + ticketId,
-						namespace: 'tribe/tickets/v1',
-						headers: {
-							'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
-						},
-						initParams: {
-							method: 'DELETE',
-							body: body.join('&')
-						}
-					});
-
-				case 29:
-					_context10.next = 33;
-					break;
-
-				case 31:
-					_context10.prev = 31;
-					_context10.t0 = _context10['catch'](26);
-
-				case 33:
-				case 'end':
-					return _context10.stop();
-			}
-		}
-	}, _marked10, this, [[26, 31]]);
-}
-
-function fetchTicketsHeaderImage(action) {
-	var id, _ref13, response, media, headerImage;
-
-	return regenerator_default.a.wrap(function fetchTicketsHeaderImage$(_context11) {
-		while (1) {
-			switch (_context11.prev = _context11.next) {
-				case 0:
-					id = action.payload.id;
-					_context11.next = 3;
-					return Object(effects["e" /* put */])(actions["setTicketsIsSettingsLoading"](true));
-
-				case 3:
-					_context11.prev = 3;
-					_context11.next = 6;
-					return Object(effects["b" /* call */])(wpREST, { path: 'media/' + id });
-
-				case 6:
-					_ref13 = _context11.sent;
-					response = _ref13.response;
-					media = _ref13.data;
-
-					if (!response.ok) {
-						_context11.next = 13;
-						break;
-					}
-
-					headerImage = {
-						id: media.id,
-						alt: media.alt_text,
-						src: media.media_details.sizes.medium.source_url
-					};
-					_context11.next = 13;
-					return Object(effects["e" /* put */])(actions["setTicketsHeaderImage"](headerImage));
-
-				case 13:
-					_context11.next = 18;
-					break;
-
-				case 15:
-					_context11.prev = 15;
-					_context11.t0 = _context11['catch'](3);
-
-					console.error(_context11.t0);
-					/**
-      * @todo: handle error scenario
-      */
-
-				case 18:
-					_context11.prev = 18;
-					_context11.next = 21;
-					return Object(effects["e" /* put */])(actions["setTicketsIsSettingsLoading"](false));
-
-				case 21:
-					return _context11.finish(18);
-
-				case 22:
-				case 'end':
-					return _context11.stop();
-			}
-		}
-	}, _marked11, this, [[3, 15, 18, 22]]);
-}
-
-function updateTicketsHeaderImage(action) {
-	var image, postId, body, slug, postType, restBase, _ref14, response, headerImage;
-
-	return regenerator_default.a.wrap(function updateTicketsHeaderImage$(_context12) {
-		while (1) {
-			switch (_context12.prev = _context12.next) {
-				case 0:
-					image = action.payload.image;
-					_context12.next = 3;
-					return Object(effects["b" /* call */])([Object(external_var_wp_data_root_wp_data_["select"])('core/editor'), 'getCurrentPostId']);
-
-				case 3:
-					postId = _context12.sent;
-					body = {
-						meta: defineProperty_default()({}, utils["i" /* KEY_TICKET_HEADER */], '' + image.id)
-					};
-					_context12.prev = 5;
-					_context12.next = 8;
-					return Object(effects["e" /* put */])(actions["setTicketsIsSettingsLoading"](true));
-
-				case 8:
-					_context12.next = 10;
-					return Object(effects["e" /* put */])(rsvp_actions["setRSVPIsSettingsLoading"](true));
-
-				case 10:
-					slug = Object(external_var_wp_data_root_wp_data_["select"])('core/editor').getCurrentPostType();
-					postType = Object(external_var_wp_data_root_wp_data_["select"])('core').getPostType(slug);
-					restBase = postType.rest_base;
-					_context12.next = 15;
-					return Object(effects["b" /* call */])(wpREST, {
-						path: restBase + '/' + postId,
-						headers: {
-							'Content-Type': 'application/json'
-						},
-						initParams: {
-							method: 'PUT',
-							body: JSON.stringify(body)
-						}
-					});
-
-				case 15:
-					_ref14 = _context12.sent;
-					response = _ref14.response;
-
-					if (!response.ok) {
-						_context12.next = 23;
-						break;
-					}
-
-					headerImage = {
-						id: image.id,
-						alt: image.alt,
-						src: image.sizes.medium.url
-					};
-					/**
-      * @todo: until rsvp and tickets header image can be separated, they need to be linked
-      */
-
-					_context12.next = 21;
-					return Object(effects["e" /* put */])(actions["setTicketsHeaderImage"](headerImage));
-
-				case 21:
-					_context12.next = 23;
-					return Object(effects["e" /* put */])(rsvp_actions["setRSVPHeaderImage"](headerImage));
-
-				case 23:
-					_context12.next = 27;
-					break;
-
-				case 25:
-					_context12.prev = 25;
-					_context12.t0 = _context12['catch'](5);
-
-				case 27:
-					_context12.prev = 27;
-					_context12.next = 30;
-					return Object(effects["e" /* put */])(actions["setTicketsIsSettingsLoading"](false));
-
-				case 30:
-					_context12.next = 32;
-					return Object(effects["e" /* put */])(rsvp_actions["setRSVPIsSettingsLoading"](false));
-
-				case 32:
-					return _context12.finish(27);
-
-				case 33:
-				case 'end':
-					return _context12.stop();
-			}
-		}
-	}, _marked12, this, [[5, 25, 27, 33]]);
-}
-
-function deleteTicketsHeaderImage() {
-	var postId, body, slug, postType, restBase, _ref15, response;
-
-	return regenerator_default.a.wrap(function deleteTicketsHeaderImage$(_context13) {
-		while (1) {
-			switch (_context13.prev = _context13.next) {
-				case 0:
-					_context13.next = 2;
-					return Object(effects["b" /* call */])([Object(external_var_wp_data_root_wp_data_["select"])('core/editor'), 'getCurrentPostId']);
-
-				case 2:
-					postId = _context13.sent;
-					body = {
-						meta: defineProperty_default()({}, utils["i" /* KEY_TICKET_HEADER */], null)
-					};
-					_context13.prev = 4;
-					_context13.next = 7;
-					return Object(effects["e" /* put */])(actions["setTicketsIsSettingsLoading"](true));
-
-				case 7:
-					_context13.next = 9;
-					return Object(effects["e" /* put */])(rsvp_actions["setRSVPIsSettingsLoading"](true));
-
-				case 9:
-					slug = Object(external_var_wp_data_root_wp_data_["select"])('core/editor').getCurrentPostType();
-					postType = Object(external_var_wp_data_root_wp_data_["select"])('core').getPostType(slug);
-					restBase = postType.rest_base;
-					_context13.next = 14;
-					return Object(effects["b" /* call */])(external_tribe_common_utils_["api"].wpREST, {
-						path: restBase + '/' + postId,
-						headers: {
-							'Content-Type': 'application/json'
-						},
-						initParams: {
-							method: 'PUT',
-							body: JSON.stringify(body)
-						}
-					});
-
-				case 14:
-					_ref15 = _context13.sent;
-					response = _ref15.response;
-
-					if (!response.ok) {
-						_context13.next = 21;
-						break;
-					}
-
-					_context13.next = 19;
-					return Object(effects["e" /* put */])(actions["setTicketsHeaderImage"](header_image["a" /* DEFAULT_STATE */]));
-
-				case 19:
-					_context13.next = 21;
-					return Object(effects["e" /* put */])(rsvp_actions["setRSVPHeaderImage"](reducers_header_image["a" /* DEFAULT_STATE */]));
-
-				case 21:
-					_context13.next = 25;
-					break;
-
-				case 23:
-					_context13.prev = 23;
-					_context13.t0 = _context13['catch'](4);
-
-				case 25:
-					_context13.prev = 25;
-					_context13.next = 28;
-					return Object(effects["e" /* put */])(actions["setTicketsIsSettingsLoading"](false));
-
-				case 28:
-					_context13.next = 30;
-					return Object(effects["e" /* put */])(rsvp_actions["setRSVPIsSettingsLoading"](false));
-
-				case 30:
-					return _context13.finish(25);
-
-				case 31:
-				case 'end':
-					return _context13.stop();
-			}
-		}
-	}, _marked13, this, [[4, 23, 25, 31]]);
-}
-
-function setTicketDetails(action) {
-	var _action$payload3, clientId, details, title, description, price, sku, iac, startDate, startDateInput, startDateMoment, endDate, endDateInput, endDateMoment, startTime, endTime, startTimeInput, endTimeInput, capacityType, capacity;
-
-	return regenerator_default.a.wrap(function setTicketDetails$(_context14) {
-		while (1) {
-			switch (_context14.prev = _context14.next) {
-				case 0:
-					_action$payload3 = action.payload, clientId = _action$payload3.clientId, details = _action$payload3.details;
-					title = details.title, description = details.description, price = details.price, sku = details.sku, iac = details.iac, startDate = details.startDate, startDateInput = details.startDateInput, startDateMoment = details.startDateMoment, endDate = details.endDate, endDateInput = details.endDateInput, endDateMoment = details.endDateMoment, startTime = details.startTime, endTime = details.endTime, startTimeInput = details.startTimeInput, endTimeInput = details.endTimeInput, capacityType = details.capacityType, capacity = details.capacity;
-					_context14.next = 4;
-					return Object(effects["a" /* all */])([Object(effects["e" /* put */])(actions["setTicketTitle"](clientId, title)), Object(effects["e" /* put */])(actions["setTicketDescription"](clientId, description)), Object(effects["e" /* put */])(actions["setTicketPrice"](clientId, price)), Object(effects["e" /* put */])(actions["setTicketSku"](clientId, sku)), Object(effects["e" /* put */])(actions["setTicketIACSetting"](clientId, iac)), Object(effects["e" /* put */])(actions["setTicketStartDate"](clientId, startDate)), Object(effects["e" /* put */])(actions["setTicketStartDateInput"](clientId, startDateInput)), Object(effects["e" /* put */])(actions["setTicketStartDateMoment"](clientId, startDateMoment)), Object(effects["e" /* put */])(actions["setTicketEndDate"](clientId, endDate)), Object(effects["e" /* put */])(actions["setTicketEndDateInput"](clientId, endDateInput)), Object(effects["e" /* put */])(actions["setTicketEndDateMoment"](clientId, endDateMoment)), Object(effects["e" /* put */])(actions["setTicketStartTime"](clientId, startTime)), Object(effects["e" /* put */])(actions["setTicketEndTime"](clientId, endTime)), Object(effects["e" /* put */])(actions["setTicketStartTimeInput"](clientId, startTimeInput)), Object(effects["e" /* put */])(actions["setTicketEndTimeInput"](clientId, endTimeInput)), Object(effects["e" /* put */])(actions["setTicketCapacityType"](clientId, capacityType)), Object(effects["e" /* put */])(actions["setTicketCapacity"](clientId, capacity))]);
-
-				case 4:
-				case 'end':
-					return _context14.stop();
-			}
-		}
-	}, _marked14, this);
-}
-
-function setTicketTempDetails(action) {
-	var _action$payload4, clientId, tempDetails, title, description, price, sku, iac, startDate, startDateInput, startDateMoment, endDate, endDateInput, endDateMoment, startTime, endTime, startTimeInput, endTimeInput, capacityType, capacity;
-
-	return regenerator_default.a.wrap(function setTicketTempDetails$(_context15) {
-		while (1) {
-			switch (_context15.prev = _context15.next) {
-				case 0:
-					_action$payload4 = action.payload, clientId = _action$payload4.clientId, tempDetails = _action$payload4.tempDetails;
-					title = tempDetails.title, description = tempDetails.description, price = tempDetails.price, sku = tempDetails.sku, iac = tempDetails.iac, startDate = tempDetails.startDate, startDateInput = tempDetails.startDateInput, startDateMoment = tempDetails.startDateMoment, endDate = tempDetails.endDate, endDateInput = tempDetails.endDateInput, endDateMoment = tempDetails.endDateMoment, startTime = tempDetails.startTime, endTime = tempDetails.endTime, startTimeInput = tempDetails.startTimeInput, endTimeInput = tempDetails.endTimeInput, capacityType = tempDetails.capacityType, capacity = tempDetails.capacity;
-					_context15.next = 4;
-					return Object(effects["a" /* all */])([Object(effects["e" /* put */])(actions["setTicketTempTitle"](clientId, title)), Object(effects["e" /* put */])(actions["setTicketTempDescription"](clientId, description)), Object(effects["e" /* put */])(actions["setTicketTempPrice"](clientId, price)), Object(effects["e" /* put */])(actions["setTicketTempSku"](clientId, sku)), Object(effects["e" /* put */])(actions["setTicketTempIACSetting"](clientId, iac)), Object(effects["e" /* put */])(actions["setTicketTempStartDate"](clientId, startDate)), Object(effects["e" /* put */])(actions["setTicketTempStartDateInput"](clientId, startDateInput)), Object(effects["e" /* put */])(actions["setTicketTempStartDateMoment"](clientId, startDateMoment)), Object(effects["e" /* put */])(actions["setTicketTempEndDate"](clientId, endDate)), Object(effects["e" /* put */])(actions["setTicketTempEndDateInput"](clientId, endDateInput)), Object(effects["e" /* put */])(actions["setTicketTempEndDateMoment"](clientId, endDateMoment)), Object(effects["e" /* put */])(actions["setTicketTempStartTime"](clientId, startTime)), Object(effects["e" /* put */])(actions["setTicketTempEndTime"](clientId, endTime)), Object(effects["e" /* put */])(actions["setTicketTempStartTimeInput"](clientId, startTimeInput)), Object(effects["e" /* put */])(actions["setTicketTempEndTimeInput"](clientId, endTimeInput)), Object(effects["e" /* put */])(actions["setTicketTempCapacityType"](clientId, capacityType)), Object(effects["e" /* put */])(actions["setTicketTempCapacity"](clientId, capacity))]);
-
-				case 4:
-				case 'end':
-					return _context15.stop();
-			}
-		}
-	}, _marked15, this);
-}
-
-/**
- * Allows the Ticket to be saved at the same time a post is being saved.
- * Avoids the user having to open up the Ticket block, and then click update again there, when changing the event start date.
- *
- * @export
- */
-function saveTicketWithPostSave(clientId) {
-	var savingChannel, notSavingChannel;
-	return regenerator_default.a.wrap(function saveTicketWithPostSave$(_context16) {
-		while (1) {
-			switch (_context16.prev = _context16.next) {
-				case 0:
-					savingChannel = void 0, notSavingChannel = void 0;
-					_context16.prev = 1;
-					_context16.next = 4;
-					return Object(effects["f" /* select */])(getTicketHasBeenCreated, { clientId: clientId });
-
-				case 4:
-					if (!_context16.sent) {
-						_context16.next = 20;
-						break;
-					}
-
-					_context16.next = 7;
-					return Object(effects["b" /* call */])(sagas["c" /* createWPEditorSavingChannel */]);
-
-				case 7:
-					savingChannel = _context16.sent;
-					_context16.next = 10;
-					return Object(effects["b" /* call */])(sagas["b" /* createWPEditorNotSavingChannel */]);
-
-				case 10:
-					notSavingChannel = _context16.sent;
-
-				case 11:
-					if (false) {}
-
-					_context16.next = 14;
-					return Object(effects["g" /* take */])(savingChannel);
-
-				case 14:
-					_context16.next = 16;
-					return Object(effects["b" /* call */])(updateTicket, { payload: { clientId: clientId } });
-
-				case 16:
-					_context16.next = 18;
-					return Object(effects["g" /* take */])(notSavingChannel);
-
-				case 18:
-					_context16.next = 11;
-					break;
-
-				case 20:
-					_context16.next = 25;
-					break;
-
-				case 22:
-					_context16.prev = 22;
-					_context16.t0 = _context16['catch'](1);
-
-					console.error(_context16.t0);
-
-				case 25:
-					_context16.prev = 25;
-
-					if (!savingChannel) {
-						_context16.next = 29;
-						break;
-					}
-
-					_context16.next = 29;
-					return Object(effects["b" /* call */])([savingChannel, 'close']);
-
-				case 29:
-					if (!notSavingChannel) {
-						_context16.next = 32;
-						break;
-					}
-
-					_context16.next = 32;
-					return Object(effects["b" /* call */])([notSavingChannel, 'close']);
-
-				case 32:
-					return _context16.finish(25);
-
-				case 33:
-				case 'end':
-					return _context16.stop();
-			}
-		}
-	}, _marked16, this, [[1, 22, 25, 33]]);
-}
-
-/**
- * Will sync all tickets
- * @param {String} prevStartDate Previous start date before latest set date time changes
- * @export
- */
-function syncTicketsSaleEndWithEventStart(prevStartDate) {
-	var ticketIds, index, clientId;
-	return regenerator_default.a.wrap(function syncTicketsSaleEndWithEventStart$(_context17) {
-		while (1) {
-			switch (_context17.prev = _context17.next) {
-				case 0:
-					_context17.next = 2;
-					return Object(effects["f" /* select */])(getTicketsAllClientIds);
-
-				case 2:
-					ticketIds = _context17.sent;
-					index = 0;
-
-				case 4:
-					if (!(index < ticketIds.length)) {
-						_context17.next = 11;
-						break;
-					}
-
-					clientId = ticketIds[index];
-					_context17.next = 8;
-					return Object(effects["b" /* call */])(syncTicketSaleEndWithEventStart, prevStartDate, clientId);
-
-				case 8:
-					index++;
-					_context17.next = 4;
-					break;
-
-				case 11:
-				case 'end':
-					return _context17.stop();
-			}
-		}
-	}, _marked17, this);
-}
-
-/**
- * Will sync Tickets sale end to be the same as event start date and time, if field has not been manually edited
- * @borrows TEC - Functionality requires TEC to be enabled
- * @param {String} prevStartDate Previous start date before latest set date time changes
- * @export
- */
-function syncTicketSaleEndWithEventStart(prevStartDate, clientId) {
-	var tempEndMoment, endMoment, _ref16, prevEventStartMoment, isNotManuallyEdited, isSyncedToEventStart, isEvent, eventStart, _ref17, endDateMoment, endDate, endDateInput, endTime, endTimeInput;
-
-	return regenerator_default.a.wrap(function syncTicketSaleEndWithEventStart$(_context18) {
-		while (1) {
-			switch (_context18.prev = _context18.next) {
-				case 0:
-					_context18.prev = 0;
-					_context18.next = 3;
-					return Object(effects["f" /* select */])(getTicketTempEndDateMoment, { clientId: clientId });
-
-				case 3:
-					tempEndMoment = _context18.sent;
-					_context18.next = 6;
-					return Object(effects["f" /* select */])(getTicketEndDateMoment, { clientId: clientId });
-
-				case 6:
-					endMoment = _context18.sent;
-					_context18.next = 9;
-					return Object(effects["b" /* call */])(sagas["a" /* createDates */], prevStartDate);
-
-				case 9:
-					_ref16 = _context18.sent;
-					prevEventStartMoment = _ref16.moment;
-					_context18.next = 13;
-					return Object(effects["a" /* all */])([Object(effects["b" /* call */])([tempEndMoment, 'local']), Object(effects["b" /* call */])([endMoment, 'local']), Object(effects["b" /* call */])([prevEventStartMoment, 'local'])]);
-
-				case 13:
-					_context18.next = 15;
-					return Object(effects["b" /* call */])([tempEndMoment, 'isSame'], endMoment, 'minute');
-
-				case 15:
-					isNotManuallyEdited = _context18.sent;
-					_context18.next = 18;
-					return Object(effects["b" /* call */])([tempEndMoment, 'isSame'], prevEventStartMoment, 'minute');
-
-				case 18:
-					isSyncedToEventStart = _context18.sent;
-					_context18.next = 21;
-					return Object(effects["b" /* call */])(sagas["e" /* isTribeEventPostType */]);
-
-				case 21:
-					isEvent = _context18.sent;
-
-					if (!(isEvent && window.tribe.events && isNotManuallyEdited && isSyncedToEventStart)) {
-						_context18.next = 36;
-						break;
-					}
-
-					_context18.next = 25;
-					return Object(effects["f" /* select */])(window.tribe.events.data.blocks.datetime.selectors.getStart);
-
-				case 25:
-					eventStart = _context18.sent;
-					_context18.next = 28;
-					return Object(effects["b" /* call */])(sagas["a" /* createDates */], eventStart);
-
-				case 28:
-					_ref17 = _context18.sent;
-					endDateMoment = _ref17.moment;
-					endDate = _ref17.date;
-					endDateInput = _ref17.dateInput;
-					endTime = _ref17.time;
-					endTimeInput = _ref17.timeInput;
-					_context18.next = 36;
-					return Object(effects["a" /* all */])([Object(effects["e" /* put */])(actions["setTicketTempEndDate"](clientId, endDate)), Object(effects["e" /* put */])(actions["setTicketTempEndDateInput"](clientId, endDateInput)), Object(effects["e" /* put */])(actions["setTicketTempEndDateMoment"](clientId, endDateMoment)), Object(effects["e" /* put */])(actions["setTicketTempEndTime"](clientId, endTime)), Object(effects["e" /* put */])(actions["setTicketTempEndTimeInput"](clientId, endTimeInput)),
-
-					// Sync Ticket end items as well so as not to make state 'manually edited'
-					Object(effects["e" /* put */])(actions["setTicketEndDate"](clientId, endDate)), Object(effects["e" /* put */])(actions["setTicketEndDateInput"](clientId, endDateInput)), Object(effects["e" /* put */])(actions["setTicketEndDateMoment"](clientId, endDateMoment)), Object(effects["e" /* put */])(actions["setTicketEndTime"](clientId, endTime)), Object(effects["e" /* put */])(actions["setTicketEndTimeInput"](clientId, endTimeInput)),
-
-					// Trigger UI button
-					Object(effects["e" /* put */])(actions["setTicketHasChanges"](clientId, true)),
-
-					// Handle ticket duration error
-					Object(effects["b" /* call */])(handleTicketDurationError, clientId)]);
-
-				case 36:
-					_context18.next = 41;
-					break;
-
-				case 38:
-					_context18.prev = 38;
-					_context18.t0 = _context18['catch'](0);
-
-					// ¯\_(ツ)_/¯
-					console.error(_context18.t0);
-
-				case 41:
-				case 'end':
-					return _context18.stop();
-			}
-		}
-	}, _marked18, this, [[0, 38]]);
-}
-
-/**
- * Listens for event start date and time changes after RSVP block is loaded.
- * @borrows TEC - Functionality requires TEC to be enabled and post type to be event
- * @export
- */
-function handleEventStartDateChanges() {
-	var postTypeChannel, isEvent, _window$tribe$events$, SET_START_DATE_TIME, SET_START_TIME, syncTask, eventStart;
-
-	return regenerator_default.a.wrap(function handleEventStartDateChanges$(_context19) {
-		while (1) {
-			switch (_context19.prev = _context19.next) {
-				case 0:
-					_context19.prev = 0;
-					_context19.next = 3;
-					return Object(effects["b" /* call */])(sagas["d" /* hasPostTypeChannel */]);
-
-				case 3:
-					postTypeChannel = _context19.sent;
-					_context19.next = 6;
-					return Object(effects["g" /* take */])(postTypeChannel);
-
-				case 6:
-					_context19.next = 8;
-					return Object(effects["b" /* call */])([postTypeChannel, 'close']);
-
-				case 8:
-					_context19.next = 10;
-					return Object(effects["b" /* call */])(sagas["e" /* isTribeEventPostType */]);
-
-				case 10:
-					isEvent = _context19.sent;
-
-					if (!(isEvent && window.tribe.events)) {
-						_context19.next = 28;
-						break;
-					}
-
-					_window$tribe$events$ = window.tribe.events.data.blocks.datetime.types, SET_START_DATE_TIME = _window$tribe$events$.SET_START_DATE_TIME, SET_START_TIME = _window$tribe$events$.SET_START_TIME;
-					syncTask = void 0;
-
-				case 14:
-					if (false) {}
-
-					_context19.next = 17;
-					return Object(effects["f" /* select */])(window.tribe.events.data.blocks.datetime.selectors.getStart);
-
-				case 17:
-					eventStart = _context19.sent;
-					_context19.next = 20;
-					return Object(effects["g" /* take */])([SET_START_DATE_TIME, SET_START_TIME]);
-
-				case 20:
-					if (!syncTask) {
-						_context19.next = 23;
-						break;
-					}
-
-					_context19.next = 23;
-					return Object(effects["c" /* cancel */])(syncTask);
-
-				case 23:
-					_context19.next = 25;
-					return Object(effects["d" /* fork */])(syncTicketsSaleEndWithEventStart, eventStart);
-
-				case 25:
-					syncTask = _context19.sent;
-					_context19.next = 14;
-					break;
-
-				case 28:
-					_context19.next = 33;
-					break;
-
-				case 30:
-					_context19.prev = 30;
-					_context19.t0 = _context19['catch'](0);
-
-					// ¯\_(ツ)_/¯
-					console.error(_context19.t0);
-
-				case 33:
-				case 'end':
-					return _context19.stop();
-			}
-		}
-	}, _marked19, this, [[0, 30]]);
-}
-
-function handleTicketDurationError(clientId) {
-	var hasDurationError, startDateMoment, endDateMoment, startTime, endTime, startTimeSeconds, endTimeSeconds, startDateTimeMoment, endDateTimeMoment, durationHasError;
-	return regenerator_default.a.wrap(function handleTicketDurationError$(_context20) {
-		while (1) {
-			switch (_context20.prev = _context20.next) {
-				case 0:
-					hasDurationError = false;
-					_context20.next = 3;
-					return Object(effects["f" /* select */])(getTicketTempStartDateMoment, { clientId: clientId });
-
-				case 3:
-					startDateMoment = _context20.sent;
-					_context20.next = 6;
-					return Object(effects["f" /* select */])(getTicketTempEndDateMoment, { clientId: clientId });
-
-				case 6:
-					endDateMoment = _context20.sent;
-
-					if (!(!startDateMoment || !endDateMoment)) {
-						_context20.next = 11;
-						break;
-					}
-
-					hasDurationError = true;
-					_context20.next = 33;
-					break;
-
-				case 11:
-					_context20.next = 13;
-					return Object(effects["f" /* select */])(getTicketTempStartTime, { clientId: clientId });
-
-				case 13:
-					startTime = _context20.sent;
-					_context20.next = 16;
-					return Object(effects["f" /* select */])(getTicketTempEndTime, { clientId: clientId });
-
-				case 16:
-					endTime = _context20.sent;
-					_context20.next = 19;
-					return Object(effects["b" /* call */])(external_tribe_common_utils_["time"].toSeconds, startTime, external_tribe_common_utils_["time"].TIME_FORMAT_HH_MM_SS);
-
-				case 19:
-					startTimeSeconds = _context20.sent;
-					_context20.next = 22;
-					return Object(effects["b" /* call */])(external_tribe_common_utils_["time"].toSeconds, endTime, external_tribe_common_utils_["time"].TIME_FORMAT_HH_MM_SS);
-
-				case 22:
-					endTimeSeconds = _context20.sent;
-					_context20.next = 25;
-					return Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].setTimeInSeconds, startDateMoment.clone(), startTimeSeconds);
-
-				case 25:
-					startDateTimeMoment = _context20.sent;
-					_context20.next = 28;
-					return Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].setTimeInSeconds, endDateMoment.clone(), endTimeSeconds);
-
-				case 28:
-					endDateTimeMoment = _context20.sent;
-					_context20.next = 31;
-					return Object(effects["b" /* call */])([startDateTimeMoment, 'isSameOrAfter'], endDateTimeMoment);
-
-				case 31:
-					durationHasError = _context20.sent;
-
-
-					if (durationHasError) {
-						hasDurationError = true;
-					}
-
-				case 33:
-					_context20.next = 35;
-					return Object(effects["e" /* put */])(actions["setTicketHasDurationError"](clientId, hasDurationError));
-
-				case 35:
-				case 'end':
-					return _context20.stop();
-			}
-		}
-	}, _marked20, this);
-}
-
-function handleTicketStartDate(action) {
-	var _action$payload5, clientId, date, dayPickerInput, startDateMoment, startDate;
-
-	return regenerator_default.a.wrap(function handleTicketStartDate$(_context21) {
-		while (1) {
-			switch (_context21.prev = _context21.next) {
-				case 0:
-					_action$payload5 = action.payload, clientId = _action$payload5.clientId, date = _action$payload5.date, dayPickerInput = _action$payload5.dayPickerInput;
-					_context21.next = 3;
-					return date ? Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toMoment, date) : undefined;
-
-				case 3:
-					startDateMoment = _context21.sent;
-					_context21.next = 6;
-					return date ? Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toDatabaseDate, startDateMoment) : '';
-
-				case 6:
-					startDate = _context21.sent;
-					_context21.next = 9;
-					return Object(effects["e" /* put */])(actions["setTicketTempStartDate"](clientId, startDate));
-
-				case 9:
-					_context21.next = 11;
-					return Object(effects["e" /* put */])(actions["setTicketTempStartDateInput"](clientId, dayPickerInput.state.value));
-
-				case 11:
-					_context21.next = 13;
-					return Object(effects["e" /* put */])(actions["setTicketTempStartDateMoment"](clientId, startDateMoment));
-
-				case 13:
-				case 'end':
-					return _context21.stop();
-			}
-		}
-	}, _marked21, this);
-}
-
-function handleTicketEndDate(action) {
-	var _action$payload6, clientId, date, dayPickerInput, endDateMoment, endDate;
-
-	return regenerator_default.a.wrap(function handleTicketEndDate$(_context22) {
-		while (1) {
-			switch (_context22.prev = _context22.next) {
-				case 0:
-					_action$payload6 = action.payload, clientId = _action$payload6.clientId, date = _action$payload6.date, dayPickerInput = _action$payload6.dayPickerInput;
-					_context22.next = 3;
-					return date ? Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toMoment, date) : undefined;
-
-				case 3:
-					endDateMoment = _context22.sent;
-					_context22.next = 6;
-					return date ? Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toDatabaseDate, endDateMoment) : '';
-
-				case 6:
-					endDate = _context22.sent;
-					_context22.next = 9;
-					return Object(effects["e" /* put */])(actions["setTicketTempEndDate"](clientId, endDate));
-
-				case 9:
-					_context22.next = 11;
-					return Object(effects["e" /* put */])(actions["setTicketTempEndDateInput"](clientId, dayPickerInput.state.value));
-
-				case 11:
-					_context22.next = 13;
-					return Object(effects["e" /* put */])(actions["setTicketTempEndDateMoment"](clientId, endDateMoment));
-
-				case 13:
-				case 'end':
-					return _context22.stop();
-			}
-		}
-	}, _marked22, this);
-}
-
-function handleTicketStartTime(action) {
-	var _action$payload7, clientId, seconds, startTime;
-
-	return regenerator_default.a.wrap(function handleTicketStartTime$(_context23) {
-		while (1) {
-			switch (_context23.prev = _context23.next) {
-				case 0:
-					_action$payload7 = action.payload, clientId = _action$payload7.clientId, seconds = _action$payload7.seconds;
-					_context23.next = 3;
-					return Object(effects["b" /* call */])(external_tribe_common_utils_["time"].fromSeconds, seconds, external_tribe_common_utils_["time"].TIME_FORMAT_HH_MM);
-
-				case 3:
-					startTime = _context23.sent;
-					_context23.next = 6;
-					return Object(effects["e" /* put */])(actions["setTicketTempStartTime"](clientId, startTime + ':00'));
-
-				case 6:
-				case 'end':
-					return _context23.stop();
-			}
-		}
-	}, _marked23, this);
-}
-
-function handleTicketStartTimeInput(action) {
-	var _action$payload8, clientId, seconds, startTime, startTimeMoment, startTimeInput;
-
-	return regenerator_default.a.wrap(function handleTicketStartTimeInput$(_context24) {
-		while (1) {
-			switch (_context24.prev = _context24.next) {
-				case 0:
-					_action$payload8 = action.payload, clientId = _action$payload8.clientId, seconds = _action$payload8.seconds;
-					_context24.next = 3;
-					return Object(effects["b" /* call */])(external_tribe_common_utils_["time"].fromSeconds, seconds, external_tribe_common_utils_["time"].TIME_FORMAT_HH_MM);
-
-				case 3:
-					startTime = _context24.sent;
-					_context24.next = 6;
-					return Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toMoment, startTime, external_tribe_common_utils_["moment"].TIME_FORMAT, false);
-
-				case 6:
-					startTimeMoment = _context24.sent;
-					_context24.next = 9;
-					return Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toTime, startTimeMoment);
-
-				case 9:
-					startTimeInput = _context24.sent;
-					_context24.next = 12;
-					return Object(effects["e" /* put */])(actions["setTicketTempStartTimeInput"](clientId, startTimeInput));
-
-				case 12:
-				case 'end':
-					return _context24.stop();
-			}
-		}
-	}, _marked24, this);
-}
-
-function handleTicketEndTime(action) {
-	var _action$payload9, clientId, seconds, endTime;
-
-	return regenerator_default.a.wrap(function handleTicketEndTime$(_context25) {
-		while (1) {
-			switch (_context25.prev = _context25.next) {
-				case 0:
-					_action$payload9 = action.payload, clientId = _action$payload9.clientId, seconds = _action$payload9.seconds;
-					_context25.next = 3;
-					return Object(effects["b" /* call */])(external_tribe_common_utils_["time"].fromSeconds, seconds, external_tribe_common_utils_["time"].TIME_FORMAT_HH_MM);
-
-				case 3:
-					endTime = _context25.sent;
-					_context25.next = 6;
-					return Object(effects["e" /* put */])(actions["setTicketTempEndTime"](clientId, endTime + ':00'));
-
-				case 6:
-				case 'end':
-					return _context25.stop();
-			}
-		}
-	}, _marked25, this);
-}
-
-function handleTicketEndTimeInput(action) {
-	var _action$payload10, clientId, seconds, endTime, endTimeMoment, endTimeInput;
-
-	return regenerator_default.a.wrap(function handleTicketEndTimeInput$(_context26) {
-		while (1) {
-			switch (_context26.prev = _context26.next) {
-				case 0:
-					_action$payload10 = action.payload, clientId = _action$payload10.clientId, seconds = _action$payload10.seconds;
-					_context26.next = 3;
-					return Object(effects["b" /* call */])(external_tribe_common_utils_["time"].fromSeconds, seconds, external_tribe_common_utils_["time"].TIME_FORMAT_HH_MM);
-
-				case 3:
-					endTime = _context26.sent;
-					_context26.next = 6;
-					return Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toMoment, endTime, external_tribe_common_utils_["moment"].TIME_FORMAT, false);
-
-				case 6:
-					endTimeMoment = _context26.sent;
-					_context26.next = 9;
-					return Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toTime, endTimeMoment);
-
-				case 9:
-					endTimeInput = _context26.sent;
-					_context26.next = 12;
-					return Object(effects["e" /* put */])(actions["setTicketTempEndTimeInput"](clientId, endTimeInput));
-
-				case 12:
-				case 'end':
-					return _context26.stop();
-			}
-		}
-	}, _marked26, this);
-}
-
-function handleTicketMove() {
-	var ticketClientIds, modalClientId;
-	return regenerator_default.a.wrap(function handleTicketMove$(_context27) {
-		while (1) {
-			switch (_context27.prev = _context27.next) {
-				case 0:
-					_context27.next = 2;
-					return Object(effects["f" /* select */])(getTicketsAllClientIds);
-
-				case 2:
-					ticketClientIds = _context27.sent;
-					_context27.next = 5;
-					return Object(effects["f" /* select */])(selectors["a" /* getModalClientId */]);
-
-				case 5:
-					modalClientId = _context27.sent;
-
-					if (!ticketClientIds.includes(modalClientId)) {
-						_context27.next = 13;
-						break;
-					}
-
-					_context27.next = 9;
-					return Object(effects["e" /* put */])(actions["setTicketIsSelected"](modalClientId, false));
-
-				case 9:
-					_context27.next = 11;
-					return Object(effects["e" /* put */])(actions["removeTicketBlock"](modalClientId));
-
-				case 11:
-					_context27.next = 13;
-					return Object(effects["b" /* call */])([Object(external_var_wp_data_root_wp_data_["dispatch"])('core/editor'), 'removeBlocks'], [modalClientId]);
-
-				case 13:
-				case 'end':
-					return _context27.stop();
-			}
-		}
-	}, _marked27, this);
-}
-
-function handler(action) {
-	return regenerator_default.a.wrap(function handler$(_context28) {
-		while (1) {
-			switch (_context28.prev = _context28.next) {
-				case 0:
-					_context28.t0 = action.type;
-					_context28.next = _context28.t0 === types["SET_TICKETS_INITIAL_STATE"] ? 3 : _context28.t0 === types["RESET_TICKETS_BLOCK"] ? 6 : _context28.t0 === types["SET_TICKET_INITIAL_STATE"] ? 9 : _context28.t0 === types["FETCH_TICKET"] ? 12 : _context28.t0 === types["CREATE_NEW_TICKET"] ? 15 : _context28.t0 === types["UPDATE_TICKET"] ? 18 : _context28.t0 === types["DELETE_TICKET"] ? 21 : _context28.t0 === types["FETCH_TICKETS_HEADER_IMAGE"] ? 24 : _context28.t0 === types["UPDATE_TICKETS_HEADER_IMAGE"] ? 27 : _context28.t0 === types["DELETE_TICKETS_HEADER_IMAGE"] ? 30 : _context28.t0 === types["SET_TICKET_DETAILS"] ? 33 : _context28.t0 === types["SET_TICKET_TEMP_DETAILS"] ? 36 : _context28.t0 === types["HANDLE_TICKET_START_DATE"] ? 39 : _context28.t0 === types["HANDLE_TICKET_END_DATE"] ? 46 : _context28.t0 === types["HANDLE_TICKET_START_TIME"] ? 53 : _context28.t0 === types["HANDLE_TICKET_END_TIME"] ? 62 : _context28.t0 === move_types["k" /* MOVE_TICKET_SUCCESS */] ? 71 : 74;
-					break;
-
-				case 3:
-					_context28.next = 5;
-					return Object(effects["b" /* call */])(setTicketsInitialState, action);
-
-				case 5:
-					return _context28.abrupt('break', 75);
-
-				case 6:
-					_context28.next = 8;
-					return Object(effects["b" /* call */])(resetTicketsBlock);
-
-				case 8:
-					return _context28.abrupt('break', 75);
-
-				case 9:
-					_context28.next = 11;
-					return Object(effects["b" /* call */])(setTicketInitialState, action);
-
-				case 11:
-					return _context28.abrupt('break', 75);
-
-				case 12:
-					_context28.next = 14;
-					return Object(effects["b" /* call */])(fetchTicket, action);
-
-				case 14:
-					return _context28.abrupt('break', 75);
-
-				case 15:
-					_context28.next = 17;
-					return Object(effects["b" /* call */])(createNewTicket, action);
-
-				case 17:
-					return _context28.abrupt('break', 75);
-
-				case 18:
-					_context28.next = 20;
-					return Object(effects["b" /* call */])(updateTicket, action);
-
-				case 20:
-					return _context28.abrupt('break', 75);
-
-				case 21:
-					_context28.next = 23;
-					return Object(effects["b" /* call */])(deleteTicket, action);
-
-				case 23:
-					return _context28.abrupt('break', 75);
-
-				case 24:
-					_context28.next = 26;
-					return Object(effects["b" /* call */])(fetchTicketsHeaderImage, action);
-
-				case 26:
-					return _context28.abrupt('break', 75);
-
-				case 27:
-					_context28.next = 29;
-					return Object(effects["b" /* call */])(updateTicketsHeaderImage, action);
-
-				case 29:
-					return _context28.abrupt('break', 75);
-
-				case 30:
-					_context28.next = 32;
-					return Object(effects["b" /* call */])(deleteTicketsHeaderImage);
-
-				case 32:
-					return _context28.abrupt('break', 75);
-
-				case 33:
-					_context28.next = 35;
-					return Object(effects["b" /* call */])(setTicketDetails, action);
-
-				case 35:
-					return _context28.abrupt('break', 75);
-
-				case 36:
-					_context28.next = 38;
-					return Object(effects["b" /* call */])(setTicketTempDetails, action);
-
-				case 38:
-					return _context28.abrupt('break', 75);
-
-				case 39:
-					_context28.next = 41;
-					return Object(effects["b" /* call */])(handleTicketStartDate, action);
-
-				case 41:
-					_context28.next = 43;
-					return Object(effects["b" /* call */])(handleTicketDurationError, action.payload.clientId);
-
-				case 43:
-					_context28.next = 45;
-					return Object(effects["e" /* put */])(actions["setTicketHasChanges"](action.payload.clientId, true));
-
-				case 45:
-					return _context28.abrupt('break', 75);
-
-				case 46:
-					_context28.next = 48;
-					return Object(effects["b" /* call */])(handleTicketEndDate, action);
-
-				case 48:
-					_context28.next = 50;
-					return Object(effects["b" /* call */])(handleTicketDurationError, action.payload.clientId);
-
-				case 50:
-					_context28.next = 52;
-					return Object(effects["e" /* put */])(actions["setTicketHasChanges"](action.payload.clientId, true));
-
-				case 52:
-					return _context28.abrupt('break', 75);
-
-				case 53:
-					_context28.next = 55;
-					return Object(effects["b" /* call */])(handleTicketStartTime, action);
-
-				case 55:
-					_context28.next = 57;
-					return Object(effects["b" /* call */])(handleTicketStartTimeInput, action);
-
-				case 57:
-					_context28.next = 59;
-					return Object(effects["b" /* call */])(handleTicketDurationError, action.payload.clientId);
-
-				case 59:
-					_context28.next = 61;
-					return Object(effects["e" /* put */])(actions["setTicketHasChanges"](action.payload.clientId, true));
-
-				case 61:
-					return _context28.abrupt('break', 75);
-
-				case 62:
-					_context28.next = 64;
-					return Object(effects["b" /* call */])(handleTicketEndTime, action);
-
-				case 64:
-					_context28.next = 66;
-					return Object(effects["b" /* call */])(handleTicketEndTimeInput, action);
-
-				case 66:
-					_context28.next = 68;
-					return Object(effects["b" /* call */])(handleTicketDurationError, action.payload.clientId);
-
-				case 68:
-					_context28.next = 70;
-					return Object(effects["e" /* put */])(actions["setTicketHasChanges"](action.payload.clientId, true));
-
-				case 70:
-					return _context28.abrupt('break', 75);
-
-				case 71:
-					_context28.next = 73;
-					return Object(effects["b" /* call */])(handleTicketMove);
-
-				case 73:
-					return _context28.abrupt('break', 75);
-
-				case 74:
-					return _context28.abrupt('break', 75);
-
-				case 75:
-				case 'end':
-					return _context28.stop();
-			}
-		}
-	}, _marked28, this);
-}
-
-function watchers() {
-	return regenerator_default.a.wrap(function watchers$(_context29) {
-		while (1) {
-			switch (_context29.prev = _context29.next) {
-				case 0:
-					_context29.next = 2;
-					return Object(effects["h" /* takeEvery */])([types["SET_TICKETS_INITIAL_STATE"], types["RESET_TICKETS_BLOCK"], types["SET_TICKET_INITIAL_STATE"], types["FETCH_TICKET"], types["CREATE_NEW_TICKET"], types["UPDATE_TICKET"], types["DELETE_TICKET"], types["FETCH_TICKETS_HEADER_IMAGE"], types["UPDATE_TICKETS_HEADER_IMAGE"], types["DELETE_TICKETS_HEADER_IMAGE"], types["SET_TICKET_DETAILS"], types["SET_TICKET_TEMP_DETAILS"], types["HANDLE_TICKET_START_DATE"], types["HANDLE_TICKET_END_DATE"], types["HANDLE_TICKET_START_TIME"], types["HANDLE_TICKET_END_TIME"], move_types["k" /* MOVE_TICKET_SUCCESS */]], handler);
-
-				case 2:
-					_context29.next = 4;
-					return Object(effects["d" /* fork */])(handleEventStartDateChanges);
-
-				case 4:
-				case 'end':
-					return _context29.stop();
-			}
-		}
-	}, _marked29, this);
-}
-// CONCATENATED MODULE: ./src/modules/data/blocks/ticket/index.js
-/**
- * Internal dependencies
- */
-
-
-
-
-
-
-
-
-
-
-/* harmony default export */ var blocks_ticket = __webpack_exports__["c"] = (reducer);
-
-
-
-/***/ }),
-/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(module) {var require;//! moment.js
@@ -8616,7 +4869,7 @@ return hooks;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(82)(module)))
 
 /***/ }),
-/* 6 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8745,6 +4998,3691 @@ function createStructuredSelector(selectors) {
     }, {});
   });
 }
+
+/***/ }),
+/* 6 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, "b", function() { return /* reexport */ constants; });
+__webpack_require__.d(__webpack_exports__, "d", function() { return /* reexport */ options_namespaceObject; });
+__webpack_require__.d(__webpack_exports__, "g", function() { return /* reexport */ types; });
+__webpack_require__.d(__webpack_exports__, "a", function() { return /* reexport */ actions; });
+__webpack_require__.d(__webpack_exports__, "f", function() { return /* reexport */ selectors_namespaceObject; });
+__webpack_require__.d(__webpack_exports__, "e", function() { return /* reexport */ watchers; });
+
+// UNUSED EXPORTS: utils
+
+// NAMESPACE OBJECT: ./src/modules/data/blocks/ticket/options.js
+var options_namespaceObject = {};
+__webpack_require__.r(options_namespaceObject);
+__webpack_require__.d(options_namespaceObject, "CAPACITY_TYPE_OPTIONS", function() { return CAPACITY_TYPE_OPTIONS; });
+
+// NAMESPACE OBJECT: ./src/modules/data/blocks/ticket/selectors.js
+var selectors_namespaceObject = {};
+__webpack_require__.r(selectors_namespaceObject);
+__webpack_require__.d(selectors_namespaceObject, "getState", function() { return getState; });
+__webpack_require__.d(selectors_namespaceObject, "getBlock", function() { return getBlock; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketsIsSelected", function() { return getTicketsIsSelected; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketsIsSettingsOpen", function() { return getTicketsIsSettingsOpen; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketsIsSettingsLoading", function() { return getTicketsIsSettingsLoading; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketsProvider", function() { return getTicketsProvider; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketsSharedCapacity", function() { return getTicketsSharedCapacity; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketsSharedCapacityInt", function() { return getTicketsSharedCapacityInt; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketsTempSharedCapacity", function() { return getTicketsTempSharedCapacity; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketsTempSharedCapacityInt", function() { return getTicketsTempSharedCapacityInt; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketsHeaderImage", function() { return getTicketsHeaderImage; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketsHeaderImageId", function() { return getTicketsHeaderImageId; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketsHeaderImageSrc", function() { return getTicketsHeaderImageSrc; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketsHeaderImageAlt", function() { return getTicketsHeaderImageAlt; });
+__webpack_require__.d(selectors_namespaceObject, "getTickets", function() { return getTickets; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketsAllClientIds", function() { return getTicketsAllClientIds; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketsByClientId", function() { return getTicketsByClientId; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketsArray", function() { return getTicketsArray; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketsCount", function() { return getTicketsCount; });
+__webpack_require__.d(selectors_namespaceObject, "hasTickets", function() { return hasTickets; });
+__webpack_require__.d(selectors_namespaceObject, "hasCreatedTickets", function() { return selectors_hasCreatedTickets; });
+__webpack_require__.d(selectors_namespaceObject, "getIndependentTickets", function() { return getIndependentTickets; });
+__webpack_require__.d(selectors_namespaceObject, "getSharedTickets", function() { return getSharedTickets; });
+__webpack_require__.d(selectors_namespaceObject, "getSharedTicketsCount", function() { return getSharedTicketsCount; });
+__webpack_require__.d(selectors_namespaceObject, "getUnlimitedTickets", function() { return getUnlimitedTickets; });
+__webpack_require__.d(selectors_namespaceObject, "hasATicketSelected", function() { return hasATicketSelected; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketsIdsInBlocks", function() { return getTicketsIdsInBlocks; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketClientId", function() { return getTicketClientId; });
+__webpack_require__.d(selectors_namespaceObject, "getTicket", function() { return getTicket; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketSold", function() { return getTicketSold; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketAvailable", function() { return getTicketAvailable; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketId", function() { return getTicketId; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketCurrencySymbol", function() { return getTicketCurrencySymbol; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketCurrencyPosition", function() { return getTicketCurrencyPosition; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketProvider", function() { return getTicketProvider; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketHasAttendeeInfoFields", function() { return getTicketHasAttendeeInfoFields; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketIsLoading", function() { return getTicketIsLoading; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketIsModalOpen", function() { return getTicketIsModalOpen; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketHasBeenCreated", function() { return getTicketHasBeenCreated; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketHasChanges", function() { return getTicketHasChanges; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketHasDurationError", function() { return getTicketHasDurationError; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketIsSelected", function() { return getTicketIsSelected; });
+__webpack_require__.d(selectors_namespaceObject, "isTicketDisabled", function() { return isTicketDisabled; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketDetails", function() { return getTicketDetails; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketTitle", function() { return getTicketTitle; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketDescription", function() { return getTicketDescription; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketPrice", function() { return getTicketPrice; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketSku", function() { return getTicketSku; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketStartDate", function() { return getTicketStartDate; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketStartDateInput", function() { return getTicketStartDateInput; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketStartDateMoment", function() { return getTicketStartDateMoment; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketEndDate", function() { return getTicketEndDate; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketEndDateInput", function() { return getTicketEndDateInput; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketEndDateMoment", function() { return getTicketEndDateMoment; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketStartTime", function() { return getTicketStartTime; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketStartTimeNoSeconds", function() { return getTicketStartTimeNoSeconds; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketEndTime", function() { return getTicketEndTime; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketEndTimeNoSeconds", function() { return getTicketEndTimeNoSeconds; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketStartTimeInput", function() { return getTicketStartTimeInput; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketEndTimeInput", function() { return getTicketEndTimeInput; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketCapacityType", function() { return getTicketCapacityType; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketCapacity", function() { return getTicketCapacity; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketCapacityInt", function() { return getTicketCapacityInt; });
+__webpack_require__.d(selectors_namespaceObject, "isUnlimitedTicket", function() { return isUnlimitedTicket; });
+__webpack_require__.d(selectors_namespaceObject, "isSharedTicket", function() { return isSharedTicket; });
+__webpack_require__.d(selectors_namespaceObject, "isIndependentTicket", function() { return isIndependentTicket; });
+__webpack_require__.d(selectors_namespaceObject, "isTicketPast", function() { return isTicketPast; });
+__webpack_require__.d(selectors_namespaceObject, "isTicketFuture", function() { return isTicketFuture; });
+__webpack_require__.d(selectors_namespaceObject, "isTicketOnSale", function() { return isTicketOnSale; });
+__webpack_require__.d(selectors_namespaceObject, "hasTicketOnSale", function() { return hasTicketOnSale; });
+__webpack_require__.d(selectors_namespaceObject, "allTicketsPast", function() { return allTicketsPast; });
+__webpack_require__.d(selectors_namespaceObject, "allTicketsFuture", function() { return allTicketsFuture; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketTempDetails", function() { return getTicketTempDetails; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketTempTitle", function() { return getTicketTempTitle; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketTempDescription", function() { return getTicketTempDescription; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketTempPrice", function() { return getTicketTempPrice; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketTempSku", function() { return getTicketTempSku; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketTempStartDate", function() { return getTicketTempStartDate; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketTempStartDateInput", function() { return getTicketTempStartDateInput; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketTempStartDateMoment", function() { return getTicketTempStartDateMoment; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketTempEndDate", function() { return getTicketTempEndDate; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketTempEndDateInput", function() { return getTicketTempEndDateInput; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketTempEndDateMoment", function() { return getTicketTempEndDateMoment; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketTempStartTime", function() { return getTicketTempStartTime; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketTempStartTimeNoSeconds", function() { return getTicketTempStartTimeNoSeconds; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketTempEndTime", function() { return getTicketTempEndTime; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketTempEndTimeNoSeconds", function() { return getTicketTempEndTimeNoSeconds; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketTempStartTimeInput", function() { return getTicketTempStartTimeInput; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketTempEndTimeInput", function() { return getTicketTempEndTimeInput; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketTempCapacityType", function() { return getTicketTempCapacityType; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketTempCapacity", function() { return getTicketTempCapacity; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketTempCapacityInt", function() { return getTicketTempCapacityInt; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketTempCapacityTypeOption", function() { return getTicketTempCapacityTypeOption; });
+__webpack_require__.d(selectors_namespaceObject, "isTempTitleValid", function() { return isTempTitleValid; });
+__webpack_require__.d(selectors_namespaceObject, "isTempCapacityValid", function() { return isTempCapacityValid; });
+__webpack_require__.d(selectors_namespaceObject, "isTempSharedCapacityValid", function() { return isTempSharedCapacityValid; });
+__webpack_require__.d(selectors_namespaceObject, "isZeroPriceValid", function() { return isZeroPriceValid; });
+__webpack_require__.d(selectors_namespaceObject, "isTicketValid", function() { return isTicketValid; });
+__webpack_require__.d(selectors_namespaceObject, "_getTotalCapacity", function() { return _getTotalCapacity; });
+__webpack_require__.d(selectors_namespaceObject, "_getTotalTempCapacity", function() { return _getTotalTempCapacity; });
+__webpack_require__.d(selectors_namespaceObject, "_getTotalSold", function() { return _getTotalSold; });
+__webpack_require__.d(selectors_namespaceObject, "_getTotalAvailable", function() { return _getTotalAvailable; });
+__webpack_require__.d(selectors_namespaceObject, "getIndependentTicketsCapacity", function() { return getIndependentTicketsCapacity; });
+__webpack_require__.d(selectors_namespaceObject, "getIndependentTicketsTempCapacity", function() { return getIndependentTicketsTempCapacity; });
+__webpack_require__.d(selectors_namespaceObject, "getIndependentTicketsSold", function() { return getIndependentTicketsSold; });
+__webpack_require__.d(selectors_namespaceObject, "getIndependentTicketsAvailable", function() { return getIndependentTicketsAvailable; });
+__webpack_require__.d(selectors_namespaceObject, "getSharedTicketsSold", function() { return getSharedTicketsSold; });
+__webpack_require__.d(selectors_namespaceObject, "getSharedTicketsAvailable", function() { return getSharedTicketsAvailable; });
+__webpack_require__.d(selectors_namespaceObject, "getIndependentAndSharedTicketsCapacity", function() { return getIndependentAndSharedTicketsCapacity; });
+__webpack_require__.d(selectors_namespaceObject, "getIndependentAndSharedTicketsTempCapacity", function() { return getIndependentAndSharedTicketsTempCapacity; });
+__webpack_require__.d(selectors_namespaceObject, "getIndependentAndSharedTicketsSold", function() { return getIndependentAndSharedTicketsSold; });
+__webpack_require__.d(selectors_namespaceObject, "getIndependentAndSharedTicketsAvailable", function() { return getIndependentAndSharedTicketsAvailable; });
+__webpack_require__.d(selectors_namespaceObject, "getTicketProviders", function() { return getTicketProviders; });
+__webpack_require__.d(selectors_namespaceObject, "getDefaultTicketProvider", function() { return getDefaultTicketProvider; });
+__webpack_require__.d(selectors_namespaceObject, "hasValidTicketProvider", function() { return selectors_hasValidTicketProvider; });
+__webpack_require__.d(selectors_namespaceObject, "hasMultipleTicketProviders", function() { return hasMultipleTicketProviders; });
+__webpack_require__.d(selectors_namespaceObject, "hasTicketProviders", function() { return hasTicketProviders; });
+__webpack_require__.d(selectors_namespaceObject, "canCreateTickets", function() { return canCreateTickets; });
+
+// EXTERNAL MODULE: ./node_modules/babel-runtime/helpers/extends.js
+var helpers_extends = __webpack_require__(9);
+var extends_default = /*#__PURE__*/__webpack_require__.n(helpers_extends);
+
+// EXTERNAL MODULE: ./node_modules/babel-runtime/helpers/toConsumableArray.js
+var toConsumableArray = __webpack_require__(262);
+var toConsumableArray_default = /*#__PURE__*/__webpack_require__.n(toConsumableArray);
+
+// EXTERNAL MODULE: ./node_modules/babel-runtime/helpers/defineProperty.js
+var defineProperty = __webpack_require__(25);
+var defineProperty_default = /*#__PURE__*/__webpack_require__.n(defineProperty);
+
+// EXTERNAL MODULE: ./node_modules/redux/es/redux.js
+var redux = __webpack_require__(16);
+
+// EXTERNAL MODULE: ./node_modules/lodash/omit.js
+var omit = __webpack_require__(321);
+var omit_default = /*#__PURE__*/__webpack_require__.n(omit);
+
+// EXTERNAL MODULE: ./src/modules/data/blocks/ticket/types.js
+var types = __webpack_require__(2);
+
+// EXTERNAL MODULE: ./node_modules/babel-runtime/helpers/slicedToArray.js
+var slicedToArray = __webpack_require__(44);
+var slicedToArray_default = /*#__PURE__*/__webpack_require__.n(slicedToArray);
+
+// EXTERNAL MODULE: external "tribe.common.utils"
+var external_tribe_common_utils_ = __webpack_require__(3);
+
+// EXTERNAL MODULE: ./node_modules/lodash/trim.js
+var trim = __webpack_require__(87);
+var trim_default = /*#__PURE__*/__webpack_require__.n(trim);
+
+// EXTERNAL MODULE: ./node_modules/lodash/find.js
+var find = __webpack_require__(85);
+var find_default = /*#__PURE__*/__webpack_require__.n(find);
+
+// EXTERNAL MODULE: ./node_modules/reselect/lib/index.js
+var lib = __webpack_require__(5);
+
+// EXTERNAL MODULE: ./node_modules/moment/moment.js
+var moment = __webpack_require__(4);
+var moment_default = /*#__PURE__*/__webpack_require__.n(moment);
+
+// EXTERNAL MODULE: ./src/modules/data/blocks/ticket/constants.js
+var constants = __webpack_require__(23);
+
+// EXTERNAL MODULE: external {"var":"wp.i18n","root":["wp","i18n"]}
+var external_var_wp_i18n_root_wp_i18n_ = __webpack_require__(15);
+
+// CONCATENATED MODULE: ./src/modules/data/blocks/ticket/options.js
+/**
+ * External dependencies
+ */
+
+
+/**
+ * Internal dependencies
+ */
+
+
+var CAPACITY_TYPE_OPTIONS = [{
+	label: Object(external_var_wp_i18n_root_wp_i18n_["__"])('Share capacity with other tickets', 'event-tickets'),
+	value: constants["TICKET_TYPES"][constants["SHARED"]]
+}, {
+	label: Object(external_var_wp_i18n_root_wp_i18n_["__"])('Set capacity for this ticket only', 'event-tickets'),
+	value: constants["TICKET_TYPES"][constants["INDEPENDENT"]]
+}, {
+	label: Object(external_var_wp_i18n_root_wp_i18n_["__"])('Unlimited', 'event-tickets'),
+	value: constants["TICKET_TYPES"][constants["UNLIMITED"]]
+}];
+// CONCATENATED MODULE: ./src/modules/data/blocks/ticket/selectors.js
+
+
+/**
+ * External dependencies
+ */
+
+
+
+
+/**
+ * Internal dependencies
+ */
+
+
+
+
+var UNLIMITED = constants["UNLIMITED"],
+    INDEPENDENT = constants["INDEPENDENT"],
+    SHARED = constants["SHARED"],
+    TICKET_TYPES = constants["TICKET_TYPES"];
+var ticketsConfig = external_tribe_common_utils_["globals"].tickets;
+
+
+var getState = function getState(state) {
+	return state;
+};
+var getBlock = function getBlock(state) {
+	return state.tickets.blocks.ticket;
+};
+
+//
+// ─── BLOCK SELECTORS ────────────────────────────────────────────────────────────
+//
+
+var getTicketsIsSelected = Object(lib["createSelector"])([getBlock], function (block) {
+	return block.isSelected;
+});
+
+var getTicketsIsSettingsOpen = Object(lib["createSelector"])([getBlock], function (block) {
+	return block.isSettingsOpen;
+});
+
+var getTicketsIsSettingsLoading = Object(lib["createSelector"])([getBlock], function (block) {
+	return block.isSettingsLoading;
+});
+
+var getTicketsProvider = Object(lib["createSelector"])([getBlock], function (block) {
+	return block.provider;
+});
+
+var getTicketsSharedCapacity = Object(lib["createSelector"])([getBlock], function (block) {
+	return block.sharedCapacity;
+});
+
+var getTicketsSharedCapacityInt = Object(lib["createSelector"])([getTicketsSharedCapacity], function (capacity) {
+	return parseInt(capacity, 10) || 0;
+});
+
+var getTicketsTempSharedCapacity = Object(lib["createSelector"])([getBlock], function (block) {
+	return block.tempSharedCapacity;
+});
+
+var getTicketsTempSharedCapacityInt = Object(lib["createSelector"])([getTicketsTempSharedCapacity], function (capacity) {
+	return parseInt(capacity, 10) || 0;
+});
+
+//
+// ─── HEADER IMAGE SELECTORS ─────────────────────────────────────────────────────
+//
+
+var getTicketsHeaderImage = Object(lib["createSelector"])([getBlock], function (block) {
+	return block.headerImage;
+});
+
+var getTicketsHeaderImageId = Object(lib["createSelector"])([getTicketsHeaderImage], function (headerImage) {
+	return headerImage.id;
+});
+
+var getTicketsHeaderImageSrc = Object(lib["createSelector"])([getTicketsHeaderImage], function (headerImage) {
+	return headerImage.src;
+});
+
+var getTicketsHeaderImageAlt = Object(lib["createSelector"])([getTicketsHeaderImage], function (headerImage) {
+	return headerImage.alt;
+});
+
+//
+// ─── TICKETS SELECTORS ──────────────────────────────────────────────────────────
+//
+
+var getTickets = Object(lib["createSelector"])([getBlock], function (block) {
+	return block.tickets;
+});
+
+var getTicketsAllClientIds = Object(lib["createSelector"])([getTickets], function (tickets) {
+	return tickets.allClientIds;
+});
+
+var getTicketsByClientId = Object(lib["createSelector"])([getTickets], function (tickets) {
+	return tickets.byClientId;
+});
+
+var getTicketsArray = Object(lib["createSelector"])([getTicketsAllClientIds, getTicketsByClientId], function (ids, tickets) {
+	return ids.map(function (id) {
+		return tickets[id];
+	});
+});
+
+var getTicketsCount = Object(lib["createSelector"])([getTicketsAllClientIds], function (allClientIds) {
+	return allClientIds.length;
+});
+
+var hasTickets = Object(lib["createSelector"])([getTicketsCount], function (count) {
+	return count > 0;
+});
+
+var selectors_hasCreatedTickets = Object(lib["createSelector"])([getTicketsArray], function (tickets) {
+	return tickets.reduce(function (hasCreated, ticket) {
+		return hasCreated || ticket.hasBeenCreated;
+	}, false);
+});
+
+var getIndependentTickets = Object(lib["createSelector"])([getTicketsArray], function (tickets) {
+	return tickets.filter(function (ticket) {
+		return ticket.details.capacityType === TICKET_TYPES[INDEPENDENT];
+	});
+});
+
+var getSharedTickets = Object(lib["createSelector"])([getTicketsArray], function (tickets) {
+	return tickets.filter(function (ticket) {
+		return ticket.details.capacityType === TICKET_TYPES[SHARED];
+	});
+});
+
+var getSharedTicketsCount = Object(lib["createSelector"])([getSharedTickets], function (tickets) {
+	return tickets.length;
+});
+
+var getUnlimitedTickets = Object(lib["createSelector"])([getTicketsArray], function (tickets) {
+	return tickets.filter(function (ticket) {
+		return ticket.details.capacityType === TICKET_TYPES[UNLIMITED];
+	});
+});
+
+var hasATicketSelected = Object(lib["createSelector"])([getTicketsArray], function (tickets) {
+	return tickets.reduce(function (selected, ticket) {
+		return selected || ticket.isSelected;
+	}, false);
+});
+
+var getTicketsIdsInBlocks = Object(lib["createSelector"])([getTicketsArray], function (tickets) {
+	return tickets.reduce(function (accumulator, ticket) {
+		if (ticket.ticketId !== 0) {
+			accumulator.push(ticket.ticketId);
+		}
+		return accumulator;
+	}, []);
+});
+
+//
+// ─── TICKET SELECTORS ───────────────────────────────────────────────────────────
+//
+
+var getTicketClientId = function getTicketClientId(state, ownProps) {
+	return ownProps.clientId;
+};
+
+var getTicket = Object(lib["createSelector"])([getTicketsByClientId, getTicketClientId], function (tickets, clientId) {
+	return tickets[clientId] || {};
+});
+
+var getTicketSold = Object(lib["createSelector"])([getTicket], function (ticket) {
+	return ticket.sold;
+});
+
+var getTicketAvailable = Object(lib["createSelector"])([getTicket], function (ticket) {
+	return ticket.available;
+});
+
+var getTicketId = Object(lib["createSelector"])([getTicket], function (ticket) {
+	return ticket.ticketId;
+});
+
+var getTicketCurrencySymbol = Object(lib["createSelector"])([getTicket], function (ticket) {
+	return ticket.currencySymbol;
+});
+
+var getTicketCurrencyPosition = Object(lib["createSelector"])([getTicket], function (ticket) {
+	return ticket.currencyPosition;
+});
+
+var getTicketProvider = Object(lib["createSelector"])([getTicket], function (ticket) {
+	return ticket.provider;
+});
+
+var getTicketHasAttendeeInfoFields = Object(lib["createSelector"])([getTicket], function (ticket) {
+	return ticket.hasAttendeeInfoFields;
+});
+
+var getTicketIsLoading = Object(lib["createSelector"])([getTicket], function (ticket) {
+	return ticket.isLoading;
+});
+
+var getTicketIsModalOpen = Object(lib["createSelector"])([getTicket], function (ticket) {
+	return ticket.isModalOpen;
+});
+
+var getTicketHasBeenCreated = Object(lib["createSelector"])([getTicket], function (ticket) {
+	return ticket.hasBeenCreated;
+});
+
+var getTicketHasChanges = Object(lib["createSelector"])([getTicket], function (ticket) {
+	return ticket.hasChanges;
+});
+
+var getTicketHasDurationError = Object(lib["createSelector"])([getTicket], function (ticket) {
+	return ticket.hasDurationError;
+});
+
+var getTicketIsSelected = Object(lib["createSelector"])([getTicket], function (ticket) {
+	return ticket.isSelected;
+});
+
+var isTicketDisabled = Object(lib["createSelector"])([hasATicketSelected, getTicketIsSelected, getTicketIsLoading, getTicketsIsSettingsOpen], function (hasSelected, isSelected, isLoading, isSettingsOpen) {
+	return hasSelected && !isSelected || isLoading || isSettingsOpen;
+});
+
+//
+// ─── TICKET DETAILS SELECTORS ───────────────────────────────────────────────────
+//
+
+var getTicketDetails = Object(lib["createSelector"])([getTicket], function (ticket) {
+	return ticket.details || {};
+});
+
+var getTicketTitle = Object(lib["createSelector"])([getTicketDetails], function (details) {
+	return details.title;
+});
+
+var getTicketDescription = Object(lib["createSelector"])([getTicketDetails], function (details) {
+	return details.description;
+});
+
+var getTicketPrice = Object(lib["createSelector"])([getTicketDetails], function (details) {
+	return details.price;
+});
+
+var getTicketSku = Object(lib["createSelector"])([getTicketDetails], function (details) {
+	return details.sku;
+});
+
+var getTicketStartDate = Object(lib["createSelector"])([getTicketDetails], function (details) {
+	return details.startDate;
+});
+
+var getTicketStartDateInput = Object(lib["createSelector"])([getTicketDetails], function (details) {
+	return details.startDateInput;
+});
+
+var getTicketStartDateMoment = Object(lib["createSelector"])([getTicketDetails], function (details) {
+	return details.startDateMoment;
+});
+
+var getTicketEndDate = Object(lib["createSelector"])([getTicketDetails], function (details) {
+	return details.endDate;
+});
+
+var getTicketEndDateInput = Object(lib["createSelector"])([getTicketDetails], function (details) {
+	return details.endDateInput;
+});
+
+var getTicketEndDateMoment = Object(lib["createSelector"])([getTicketDetails], function (details) {
+	return details.endDateMoment;
+});
+
+var getTicketStartTime = Object(lib["createSelector"])([getTicketDetails], function (details) {
+	return details.startTime || '';
+});
+
+var getTicketStartTimeNoSeconds = Object(lib["createSelector"])([getTicketStartTime], function (startTime) {
+	return startTime.slice(0, -3);
+});
+
+var getTicketEndTime = Object(lib["createSelector"])([getTicketDetails], function (details) {
+	return details.endTime || '';
+});
+
+var getTicketEndTimeNoSeconds = Object(lib["createSelector"])([getTicketEndTime], function (endTime) {
+	return endTime.slice(0, -3);
+});
+
+var getTicketStartTimeInput = Object(lib["createSelector"])([getTicketDetails], function (details) {
+	return details.startTimeInput;
+});
+
+var getTicketEndTimeInput = Object(lib["createSelector"])([getTicketDetails], function (details) {
+	return details.endTimeInput;
+});
+
+var getTicketCapacityType = Object(lib["createSelector"])([getTicketDetails], function (details) {
+	return details.capacityType;
+});
+
+var getTicketCapacity = Object(lib["createSelector"])([getTicketDetails], function (details) {
+	return details.capacity;
+});
+
+var getTicketCapacityInt = Object(lib["createSelector"])([getTicketCapacity], function (capacity) {
+	return parseInt(capacity, 10) || 0;
+});
+
+var isUnlimitedTicket = Object(lib["createSelector"])([getTicketDetails], function (details) {
+	return details.capacityType === TICKET_TYPES[UNLIMITED];
+});
+
+var isSharedTicket = Object(lib["createSelector"])([getTicketDetails], function (details) {
+	return details.capacityType === TICKET_TYPES[SHARED];
+});
+
+var isIndependentTicket = Object(lib["createSelector"])([getTicketDetails], function (details) {
+	return details.capacityType === TICKET_TYPES[INDEPENDENT];
+});
+
+var isTicketPast = Object(lib["createSelector"])([getTicketEndDateMoment], function (endDate) {
+	return moment_default()().isAfter(endDate);
+});
+
+var isTicketFuture = Object(lib["createSelector"])([getTicketStartDateMoment], function (startDate) {
+	return moment_default()().isBefore(startDate);
+});
+
+var isTicketOnSale = Object(lib["createSelector"])([getTicketHasBeenCreated, isTicketPast, isTicketFuture], function (hasBeenCreated, isPast, isFuture) {
+	return hasBeenCreated && !isPast && !isFuture;
+});
+
+var hasTicketOnSale = Object(lib["createSelector"])([getTicketsAllClientIds, getState], function (allClientIds, state) {
+	return allClientIds.reduce(function (onSale, clientId) {
+		return onSale || isTicketOnSale(state, { clientId: clientId });
+	}, false);
+});
+
+var allTicketsPast = Object(lib["createSelector"])([getTicketsAllClientIds, getState], function (allClientIds, state) {
+	return allClientIds.reduce(function (isPast, clientId) {
+		var props = { clientId: clientId };
+		return getTicketHasBeenCreated(state, props) ? isPast && isTicketPast(state, props) : isPast;
+	}, true);
+});
+
+var allTicketsFuture = Object(lib["createSelector"])([getTicketsAllClientIds, getState], function (allClientIds, state) {
+	return allClientIds.reduce(function (isFuture, clientId) {
+		var props = { clientId: clientId };
+		return getTicketHasBeenCreated(state, props) ? isFuture && isTicketFuture(state, props) : isFuture;
+	}, true);
+});
+
+//
+// ─── TICKET TEMP DETAILS SELECTORS ──────────────────────────────────────────────
+//
+
+var getTicketTempDetails = Object(lib["createSelector"])([getTicket], function (ticket) {
+	return ticket.tempDetails || {};
+});
+
+var getTicketTempTitle = Object(lib["createSelector"])([getTicketTempDetails], function (tempDetails) {
+	return tempDetails.title;
+});
+
+var getTicketTempDescription = Object(lib["createSelector"])([getTicketTempDetails], function (tempDetails) {
+	return tempDetails.description;
+});
+
+var getTicketTempPrice = Object(lib["createSelector"])([getTicketTempDetails], function (tempDetails) {
+	return tempDetails.price;
+});
+
+var getTicketTempSku = Object(lib["createSelector"])([getTicketTempDetails], function (tempDetails) {
+	return tempDetails.sku;
+});
+
+var getTicketTempStartDate = Object(lib["createSelector"])([getTicketTempDetails], function (tempDetails) {
+	return tempDetails.startDate;
+});
+
+var getTicketTempStartDateInput = Object(lib["createSelector"])([getTicketTempDetails], function (tempDetails) {
+	return tempDetails.startDateInput;
+});
+
+var getTicketTempStartDateMoment = Object(lib["createSelector"])([getTicketTempDetails], function (tempDetails) {
+	return tempDetails.startDateMoment;
+});
+
+var getTicketTempEndDate = Object(lib["createSelector"])([getTicketTempDetails], function (tempDetails) {
+	return tempDetails.endDate;
+});
+
+var getTicketTempEndDateInput = Object(lib["createSelector"])([getTicketTempDetails], function (tempDetails) {
+	return tempDetails.endDateInput;
+});
+
+var getTicketTempEndDateMoment = Object(lib["createSelector"])([getTicketTempDetails], function (tempDetails) {
+	return tempDetails.endDateMoment;
+});
+
+var getTicketTempStartTime = Object(lib["createSelector"])([getTicketTempDetails], function (tempDetails) {
+	return tempDetails.startTime || '';
+});
+
+var getTicketTempStartTimeNoSeconds = Object(lib["createSelector"])([getTicketTempStartTime], function (startTime) {
+	return startTime.slice(0, -3);
+});
+
+var getTicketTempEndTime = Object(lib["createSelector"])([getTicketTempDetails], function (tempDetails) {
+	return tempDetails.endTime || '';
+});
+
+var getTicketTempEndTimeNoSeconds = Object(lib["createSelector"])([getTicketTempEndTime], function (endTime) {
+	return endTime.slice(0, -3);
+});
+
+var getTicketTempStartTimeInput = Object(lib["createSelector"])([getTicketTempDetails], function (tempDetails) {
+	return tempDetails.startTimeInput;
+});
+
+var getTicketTempEndTimeInput = Object(lib["createSelector"])([getTicketTempDetails], function (tempDetails) {
+	return tempDetails.endTimeInput;
+});
+
+var getTicketTempCapacityType = Object(lib["createSelector"])([getTicketTempDetails], function (tempDetails) {
+	return tempDetails.capacityType;
+});
+
+var getTicketTempCapacity = Object(lib["createSelector"])([getTicketTempDetails], function (tempDetails) {
+	return tempDetails.capacity;
+});
+
+var getTicketTempCapacityInt = Object(lib["createSelector"])([getTicketTempCapacity], function (capacity) {
+	return parseInt(capacity, 10) || 0;
+});
+
+var getTicketTempCapacityTypeOption = Object(lib["createSelector"])([getTicketTempCapacityType], function (capacityType) {
+	return find_default()(CAPACITY_TYPE_OPTIONS, { value: capacityType }) || {};
+});
+
+var isTempTitleValid = Object(lib["createSelector"])([getTicketTempTitle], function (title) {
+	return trim_default()(title) !== '';
+});
+
+var isTempCapacityValid = Object(lib["createSelector"])([getTicketTempCapacity], function (capacity) {
+	return trim_default()(capacity) !== '' && !isNaN(capacity);
+});
+
+var isTempSharedCapacityValid = Object(lib["createSelector"])([getTicketsTempSharedCapacity], function (capacity) {
+	return trim_default()(capacity) !== '' && !isNaN(capacity);
+});
+
+var isZeroPriceValid = Object(lib["createSelector"])([getTicketTempPrice, getTicketsProvider], function (price, provider) {
+	return 0 < parseInt(price, 10) || provider !== constants["TC_CLASS"];
+});
+
+var isTicketValid = Object(lib["createSelector"])([getTicketTempCapacityType, isTempTitleValid, isTempCapacityValid, isTempSharedCapacityValid, isZeroPriceValid], function (capacityType, titleValid, capacityValid, sharedCapacityValid, zeroPriceValid) {
+	if (capacityType === TICKET_TYPES[UNLIMITED]) {
+		return titleValid && zeroPriceValid;
+	} else if (capacityType === TICKET_TYPES[SHARED]) {
+		return titleValid && sharedCapacityValid && zeroPriceValid;
+	}
+	return titleValid && capacityValid && zeroPriceValid;
+});
+
+//
+// ─── AMOUNT REDUCERS ────────────────────────────────────────────────────────────
+//
+
+var _getTotalCapacity = function _getTotalCapacity(tickets) {
+	return tickets.reduce(function (total, ticket) {
+		var capacity = parseInt(ticket.details.capacity, 10) || 0;
+		return total + capacity;
+	}, 0);
+};
+
+var _getTotalTempCapacity = function _getTotalTempCapacity(tickets) {
+	return tickets.reduce(function (total, ticket) {
+		var tempCapacity = parseInt(ticket.tempDetails.capacity, 10) || 0;
+		return total + tempCapacity;
+	}, 0);
+};
+
+var _getTotalSold = function _getTotalSold(tickets) {
+	return tickets.reduce(function (total, ticket) {
+		var sold = parseInt(ticket.sold, 10) || 0;
+		return total + sold;
+	}, 0);
+};
+
+var _getTotalAvailable = function _getTotalAvailable(tickets) {
+	return tickets.reduce(function (total, ticket) {
+		var available = parseInt(ticket.available, 10) || 0;
+		return total + available;
+	}, 0);
+};
+
+var getIndependentTicketsCapacity = Object(lib["createSelector"])(getIndependentTickets, _getTotalCapacity);
+var getIndependentTicketsTempCapacity = Object(lib["createSelector"])(getIndependentTickets, _getTotalTempCapacity);
+var getIndependentTicketsSold = Object(lib["createSelector"])(getIndependentTickets, _getTotalSold);
+var getIndependentTicketsAvailable = Object(lib["createSelector"])(getIndependentTickets, _getTotalAvailable);
+
+var getSharedTicketsSold = Object(lib["createSelector"])(getSharedTickets, _getTotalSold);
+var getSharedTicketsAvailable = Object(lib["createSelector"])([getTicketsSharedCapacityInt, getSharedTicketsSold], function (sharedCapacity, sharedSold) {
+	return Math.max(sharedCapacity - sharedSold, 0);
+});
+
+var getIndependentAndSharedTicketsCapacity = Object(lib["createSelector"])([getIndependentTicketsCapacity, getTicketsSharedCapacityInt], function (independentCapacity, sharedCapacity) {
+	return independentCapacity + sharedCapacity;
+});
+var getIndependentAndSharedTicketsTempCapacity = Object(lib["createSelector"])([getIndependentTicketsTempCapacity, getTicketsTempSharedCapacityInt], function (independentTempCapacity, tempSharedCapacity) {
+	return independentTempCapacity + tempSharedCapacity;
+});
+var getIndependentAndSharedTicketsSold = Object(lib["createSelector"])([getIndependentTicketsSold, getSharedTicketsSold], function (independentSold, sharedSold) {
+	return independentSold + sharedSold;
+});
+var getIndependentAndSharedTicketsAvailable = Object(lib["createSelector"])([getIndependentTicketsAvailable, getSharedTicketsAvailable], function (independentAvailable, sharedAvailable) {
+	return independentAvailable + sharedAvailable;
+});
+
+//
+// ─── MISC SELECTORS ─────────────────────────────────────────────────────────────
+//
+
+var getTicketProviders = function getTicketProviders() {
+	var tickets = ticketsConfig();
+	return tickets.providers || [];
+};
+
+var getDefaultTicketProvider = function getDefaultTicketProvider() {
+	var tickets = ticketsConfig();
+	return tickets.default_provider || '';
+};
+
+var selectors_hasValidTicketProvider = function hasValidTicketProvider() {
+	var provider = getDefaultTicketProvider();
+	return provider !== '' && provider !== constants["RSVP_CLASS"];
+};
+
+var hasMultipleTicketProviders = Object(lib["createSelector"])([getTicketProviders], function (providers) {
+	return providers.length > 1;
+});
+
+var hasTicketProviders = Object(lib["createSelector"])([getTicketProviders], function (providers) {
+	return providers.length > 0;
+});
+
+var canCreateTickets = Object(lib["createSelector"])([hasTicketProviders, selectors_hasValidTicketProvider], function (providers, validDefaultProvider) {
+	return providers && validDefaultProvider;
+});
+// CONCATENATED MODULE: ./src/modules/data/blocks/ticket/utils.js
+
+/**
+ * External dependencies
+ */
+
+
+var settings = external_tribe_common_utils_["globals"].settings,
+    priceSettings = external_tribe_common_utils_["globals"].priceSettings,
+    utils_ticketsConfig = external_tribe_common_utils_["globals"].tickets;
+/**
+ * Internal dependencies
+ */
+
+
+
+/**
+ * Get currency symbol by provider
+ */
+var utils_getProviderCurrency = function getProviderCurrency(provider) {
+	var tickets = utils_ticketsConfig();
+	var providers = getTicketProviders();
+
+	// if we don't get the provider, return the default one
+	if ('' === provider) {
+		return tickets.default_currency;
+	}
+
+	var _providers$filter = providers.filter(function (el) {
+		return el.class === provider;
+	}),
+	    _providers$filter2 = slicedToArray_default()(_providers$filter, 1),
+	    result = _providers$filter2[0];
+
+	return result ? result.currency : tickets.default_currency;
+};
+
+/**
+ * Get the default provider's currency symbol
+ */
+var utils_getDefaultProviderCurrency = function getDefaultProviderCurrency() {
+	return utils_getProviderCurrency(getDefaultTicketProvider());
+};
+
+/**
+ * Get currency position
+ */
+var utils_getDefaultCurrencyPosition = function getDefaultCurrencyPosition() {
+	var position = external_tribe_common_utils_["string"].isTruthy(settings() && settings().reverseCurrencyPosition) ? 'suffix' : 'prefix';
+
+	return priceSettings() && priceSettings().defaultCurrencyPosition ? priceSettings().defaultCurrencyPosition : position;
+};
+// CONCATENATED MODULE: ./src/modules/data/blocks/ticket/reducers/tickets/ticket/details.js
+
+/**
+ * External dependencies
+ */
+
+
+/**
+ * Internal dependencies
+ */
+
+
+
+
+var details_datePickerFormat = external_tribe_common_utils_["globals"].tecDateSettings().datepickerFormat;
+var currentMoment = moment_default()();
+var details_endMoment = currentMoment.clone().add(100, 'years');
+
+var details_startDateInput = details_datePickerFormat ? currentMoment.format(external_tribe_common_utils_["moment"].toFormat(details_datePickerFormat)) : external_tribe_common_utils_["moment"].toDate(currentMoment);
+var details_endDateInput = details_datePickerFormat ? details_endMoment.format(external_tribe_common_utils_["moment"].toFormat(details_datePickerFormat)) : external_tribe_common_utils_["moment"].toDate(details_endMoment);
+
+var DEFAULT_STATE = {
+	title: '',
+	description: '',
+	price: '',
+	sku: '',
+	startDate: external_tribe_common_utils_["moment"].toDatabaseDate(currentMoment),
+	startDateInput: details_startDateInput,
+	startDateMoment: currentMoment,
+	endDate: external_tribe_common_utils_["moment"].toDatabaseDate(details_endMoment),
+	endDateInput: details_endDateInput,
+	endDateMoment: details_endMoment,
+	startTime: external_tribe_common_utils_["moment"].toDatabaseTime(currentMoment),
+	endTime: external_tribe_common_utils_["moment"].toDatabaseTime(details_endMoment),
+	startTimeInput: external_tribe_common_utils_["moment"].toTime(currentMoment),
+	endTimeInput: external_tribe_common_utils_["moment"].toTime(details_endMoment),
+	capacityType: constants["TICKET_TYPES"][constants["UNLIMITED"]],
+	capacity: ''
+};
+
+/* harmony default export */ var ticket_details = (function () {
+	var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : DEFAULT_STATE;
+	var action = arguments[1];
+
+	switch (action.type) {
+		case types["SET_TICKET_TITLE"]:
+			return extends_default()({}, state, {
+				title: action.payload.title
+			});
+		case types["SET_TICKET_DESCRIPTION"]:
+			return extends_default()({}, state, {
+				description: action.payload.description
+			});
+		case types["SET_TICKET_PRICE"]:
+			return extends_default()({}, state, {
+				price: action.payload.price
+			});
+		case types["SET_TICKET_SKU"]:
+			return extends_default()({}, state, {
+				sku: action.payload.sku
+			});
+		case types["SET_TICKET_START_DATE"]:
+			return extends_default()({}, state, {
+				startDate: action.payload.startDate
+			});
+		case types["SET_TICKET_START_DATE_INPUT"]:
+			return extends_default()({}, state, {
+				startDateInput: action.payload.startDateInput
+			});
+		case types["SET_TICKET_START_DATE_MOMENT"]:
+			return extends_default()({}, state, {
+				startDateMoment: action.payload.startDateMoment
+			});
+		case types["SET_TICKET_END_DATE"]:
+			return extends_default()({}, state, {
+				endDate: action.payload.endDate
+			});
+		case types["SET_TICKET_END_DATE_INPUT"]:
+			return extends_default()({}, state, {
+				endDateInput: action.payload.endDateInput
+			});
+		case types["SET_TICKET_END_DATE_MOMENT"]:
+			return extends_default()({}, state, {
+				endDateMoment: action.payload.endDateMoment
+			});
+		case types["SET_TICKET_START_TIME"]:
+			return extends_default()({}, state, {
+				startTime: action.payload.startTime
+			});
+		case types["SET_TICKET_END_TIME"]:
+			return extends_default()({}, state, {
+				endTime: action.payload.endTime
+			});
+		case types["SET_TICKET_START_TIME_INPUT"]:
+			return extends_default()({}, state, {
+				startTimeInput: action.payload.startTimeInput
+			});
+		case types["SET_TICKET_END_TIME_INPUT"]:
+			return extends_default()({}, state, {
+				endTimeInput: action.payload.endTimeInput
+			});
+		case types["SET_TICKET_CAPACITY_TYPE"]:
+			return extends_default()({}, state, {
+				capacityType: action.payload.capacityType
+			});
+		case types["SET_TICKET_CAPACITY"]:
+			return extends_default()({}, state, {
+				capacity: action.payload.capacity
+			});
+		default:
+			return state;
+	}
+});
+// CONCATENATED MODULE: ./src/modules/data/blocks/ticket/reducers/tickets/ticket/temp-details.js
+
+/**
+ * External dependencies
+ */
+
+
+/**
+ * Internal dependencies
+ */
+
+
+
+
+var temp_details_datePickerFormat = external_tribe_common_utils_["globals"].tecDateSettings().datepickerFormat;
+var temp_details_currentMoment = moment_default()();
+var temp_details_endMoment = temp_details_currentMoment.clone().add(100, 'years');
+
+var temp_details_startDateInput = temp_details_datePickerFormat ? temp_details_currentMoment.format(external_tribe_common_utils_["moment"].toFormat(temp_details_datePickerFormat)) : external_tribe_common_utils_["moment"].toDate(temp_details_currentMoment);
+var temp_details_endDateInput = temp_details_datePickerFormat ? temp_details_endMoment.format(external_tribe_common_utils_["moment"].toFormat(temp_details_datePickerFormat)) : external_tribe_common_utils_["moment"].toDate(temp_details_endMoment);
+
+var temp_details_DEFAULT_STATE = {
+	title: '',
+	description: '',
+	price: '',
+	sku: '',
+	startDate: external_tribe_common_utils_["moment"].toDatabaseDate(temp_details_currentMoment),
+	startDateInput: temp_details_startDateInput,
+	startDateMoment: temp_details_currentMoment,
+	endDate: external_tribe_common_utils_["moment"].toDatabaseDate(temp_details_endMoment),
+	endDateInput: temp_details_endDateInput,
+	endDateMoment: temp_details_endMoment,
+	startTime: external_tribe_common_utils_["moment"].toDatabaseTime(temp_details_currentMoment),
+	endTime: external_tribe_common_utils_["moment"].toDatabaseTime(temp_details_endMoment),
+	startTimeInput: external_tribe_common_utils_["moment"].toTime(temp_details_currentMoment),
+	endTimeInput: external_tribe_common_utils_["moment"].toTime(temp_details_endMoment),
+	capacityType: constants["TICKET_TYPES"][constants["UNLIMITED"]],
+	capacity: ''
+};
+
+/* harmony default export */ var temp_details = (function () {
+	var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : temp_details_DEFAULT_STATE;
+	var action = arguments[1];
+
+	switch (action.type) {
+		case types["SET_TICKET_TEMP_TITLE"]:
+			return extends_default()({}, state, {
+				title: action.payload.title
+			});
+		case types["SET_TICKET_TEMP_DESCRIPTION"]:
+			return extends_default()({}, state, {
+				description: action.payload.description
+			});
+		case types["SET_TICKET_TEMP_PRICE"]:
+			return extends_default()({}, state, {
+				price: action.payload.price
+			});
+		case types["SET_TICKET_TEMP_SKU"]:
+			return extends_default()({}, state, {
+				sku: action.payload.sku
+			});
+		case types["SET_TICKET_TEMP_START_DATE"]:
+			return extends_default()({}, state, {
+				startDate: action.payload.startDate
+			});
+		case types["SET_TICKET_TEMP_START_DATE_INPUT"]:
+			return extends_default()({}, state, {
+				startDateInput: action.payload.startDateInput
+			});
+		case types["SET_TICKET_TEMP_START_DATE_MOMENT"]:
+			return extends_default()({}, state, {
+				startDateMoment: action.payload.startDateMoment
+			});
+		case types["SET_TICKET_TEMP_END_DATE"]:
+			return extends_default()({}, state, {
+				endDate: action.payload.endDate
+			});
+		case types["SET_TICKET_TEMP_END_DATE_INPUT"]:
+			return extends_default()({}, state, {
+				endDateInput: action.payload.endDateInput
+			});
+		case types["SET_TICKET_TEMP_END_DATE_MOMENT"]:
+			return extends_default()({}, state, {
+				endDateMoment: action.payload.endDateMoment
+			});
+		case types["SET_TICKET_TEMP_START_TIME"]:
+			return extends_default()({}, state, {
+				startTime: action.payload.startTime
+			});
+		case types["SET_TICKET_TEMP_END_TIME"]:
+			return extends_default()({}, state, {
+				endTime: action.payload.endTime
+			});
+		case types["SET_TICKET_TEMP_START_TIME_INPUT"]:
+			return extends_default()({}, state, {
+				startTimeInput: action.payload.startTimeInput
+			});
+		case types["SET_TICKET_TEMP_END_TIME_INPUT"]:
+			return extends_default()({}, state, {
+				endTimeInput: action.payload.endTimeInput
+			});
+		case types["SET_TICKET_TEMP_CAPACITY_TYPE"]:
+			return extends_default()({}, state, {
+				capacityType: action.payload.capacityType
+			});
+		case types["SET_TICKET_TEMP_CAPACITY"]:
+			return extends_default()({}, state, {
+				capacity: action.payload.capacity
+			});
+		default:
+			return state;
+	}
+});
+// CONCATENATED MODULE: ./src/modules/data/blocks/ticket/reducers/tickets/ticket.js
+
+/**
+ * Internal dependencies
+ */
+
+
+
+
+
+var ticket_DEFAULT_STATE = {
+	details: DEFAULT_STATE,
+	tempDetails: temp_details_DEFAULT_STATE,
+	sold: 0,
+	available: 0,
+	ticketId: 0,
+	currencySymbol: utils_getDefaultProviderCurrency(),
+	currencyPosition: utils_getDefaultCurrencyPosition(),
+	provider: '',
+	hasAttendeeInfoFields: false,
+	isLoading: false,
+	isModalOpen: false,
+	hasBeenCreated: false,
+	hasChanges: false,
+	hasDurationError: false,
+	isSelected: false
+};
+
+/* harmony default export */ var tickets_ticket = (function () {
+	var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : ticket_DEFAULT_STATE;
+	var action = arguments[1];
+
+	switch (action.type) {
+		case types["SET_TICKET_TITLE"]:
+		case types["SET_TICKET_DESCRIPTION"]:
+		case types["SET_TICKET_PRICE"]:
+		case types["SET_TICKET_SKU"]:
+		case types["SET_TICKET_START_DATE"]:
+		case types["SET_TICKET_START_DATE_INPUT"]:
+		case types["SET_TICKET_START_DATE_MOMENT"]:
+		case types["SET_TICKET_END_DATE"]:
+		case types["SET_TICKET_END_DATE_INPUT"]:
+		case types["SET_TICKET_END_DATE_MOMENT"]:
+		case types["SET_TICKET_START_TIME"]:
+		case types["SET_TICKET_END_TIME"]:
+		case types["SET_TICKET_START_TIME_INPUT"]:
+		case types["SET_TICKET_END_TIME_INPUT"]:
+		case types["SET_TICKET_CAPACITY_TYPE"]:
+		case types["SET_TICKET_CAPACITY"]:
+			return extends_default()({}, state, {
+				details: ticket_details(state.details, action)
+			});
+		case types["SET_TICKET_TEMP_TITLE"]:
+		case types["SET_TICKET_TEMP_DESCRIPTION"]:
+		case types["SET_TICKET_TEMP_PRICE"]:
+		case types["SET_TICKET_TEMP_SKU"]:
+		case types["SET_TICKET_TEMP_START_DATE"]:
+		case types["SET_TICKET_TEMP_START_DATE_INPUT"]:
+		case types["SET_TICKET_TEMP_START_DATE_MOMENT"]:
+		case types["SET_TICKET_TEMP_END_DATE"]:
+		case types["SET_TICKET_TEMP_END_DATE_INPUT"]:
+		case types["SET_TICKET_TEMP_END_DATE_MOMENT"]:
+		case types["SET_TICKET_TEMP_START_TIME"]:
+		case types["SET_TICKET_TEMP_END_TIME"]:
+		case types["SET_TICKET_TEMP_START_TIME_INPUT"]:
+		case types["SET_TICKET_TEMP_END_TIME_INPUT"]:
+		case types["SET_TICKET_TEMP_CAPACITY_TYPE"]:
+		case types["SET_TICKET_TEMP_CAPACITY"]:
+			return extends_default()({}, state, {
+				tempDetails: temp_details(state.tempDetails, action)
+			});
+		case types["SET_TICKET_SOLD"]:
+			return extends_default()({}, state, {
+				sold: action.payload.sold
+			});
+		case types["SET_TICKET_AVAILABLE"]:
+			return extends_default()({}, state, {
+				available: action.payload.available
+			});
+		case types["SET_TICKET_ID"]:
+			return extends_default()({}, state, {
+				ticketId: action.payload.ticketId
+			});
+		case types["SET_TICKET_CURRENCY_SYMBOL"]:
+			return extends_default()({}, state, {
+				currencySymbol: action.payload.currencySymbol
+			});
+		case types["SET_TICKET_CURRENCY_POSITION"]:
+			return extends_default()({}, state, {
+				currencyPosition: action.payload.currencyPosition
+			});
+		case types["SET_TICKET_PROVIDER"]:
+			return extends_default()({}, state, {
+				provider: action.payload.provider
+			});
+		case types["SET_TICKET_HAS_ATTENDEE_INFO_FIELDS"]:
+			return extends_default()({}, state, {
+				hasAttendeeInfoFields: action.payload.hasAttendeeInfoFields
+			});
+		case types["SET_TICKET_IS_LOADING"]:
+			return extends_default()({}, state, {
+				isLoading: action.payload.isLoading
+			});
+		case types["SET_TICKET_IS_MODAL_OPEN"]:
+			return extends_default()({}, state, {
+				isModalOpen: action.payload.isModalOpen
+			});
+		case types["SET_TICKET_HAS_BEEN_CREATED"]:
+			return extends_default()({}, state, {
+				hasBeenCreated: action.payload.hasBeenCreated
+			});
+		case types["SET_TICKET_HAS_CHANGES"]:
+			return extends_default()({}, state, {
+				hasChanges: action.payload.hasChanges
+			});
+		case types["SET_TICKET_HAS_DURATION_ERROR"]:
+			return extends_default()({}, state, {
+				hasDurationError: action.payload.hasDurationError
+			});
+		case types["SET_TICKET_IS_SELECTED"]:
+			return extends_default()({}, state, {
+				isSelected: action.payload.isSelected
+			});
+		default:
+			return state;
+	}
+});
+// CONCATENATED MODULE: ./src/modules/data/blocks/ticket/reducers/tickets.js
+
+
+
+/**
+ * External dependencies
+ */
+
+
+
+/**
+ * Internal dependencies
+ */
+
+
+
+var tickets_byClientId = function byClientId() {
+	var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+	var action = arguments[1];
+
+	switch (action.type) {
+		case types["SET_TICKET_TITLE"]:
+		case types["SET_TICKET_DESCRIPTION"]:
+		case types["SET_TICKET_PRICE"]:
+		case types["SET_TICKET_SKU"]:
+		case types["SET_TICKET_START_DATE"]:
+		case types["SET_TICKET_START_DATE_INPUT"]:
+		case types["SET_TICKET_START_DATE_MOMENT"]:
+		case types["SET_TICKET_END_DATE"]:
+		case types["SET_TICKET_END_DATE_INPUT"]:
+		case types["SET_TICKET_END_DATE_MOMENT"]:
+		case types["SET_TICKET_START_TIME"]:
+		case types["SET_TICKET_END_TIME"]:
+		case types["SET_TICKET_START_TIME_INPUT"]:
+		case types["SET_TICKET_END_TIME_INPUT"]:
+		case types["SET_TICKET_CAPACITY_TYPE"]:
+		case types["SET_TICKET_CAPACITY"]:
+		case types["SET_TICKET_TEMP_TITLE"]:
+		case types["SET_TICKET_TEMP_DESCRIPTION"]:
+		case types["SET_TICKET_TEMP_PRICE"]:
+		case types["SET_TICKET_TEMP_SKU"]:
+		case types["SET_TICKET_TEMP_START_DATE"]:
+		case types["SET_TICKET_TEMP_START_DATE_INPUT"]:
+		case types["SET_TICKET_TEMP_START_DATE_MOMENT"]:
+		case types["SET_TICKET_TEMP_END_DATE"]:
+		case types["SET_TICKET_TEMP_END_DATE_INPUT"]:
+		case types["SET_TICKET_TEMP_END_DATE_MOMENT"]:
+		case types["SET_TICKET_TEMP_START_TIME"]:
+		case types["SET_TICKET_TEMP_END_TIME"]:
+		case types["SET_TICKET_TEMP_START_TIME_INPUT"]:
+		case types["SET_TICKET_TEMP_END_TIME_INPUT"]:
+		case types["SET_TICKET_TEMP_CAPACITY_TYPE"]:
+		case types["SET_TICKET_TEMP_CAPACITY"]:
+		case types["SET_TICKET_SOLD"]:
+		case types["SET_TICKET_AVAILABLE"]:
+		case types["SET_TICKET_ID"]:
+		case types["SET_TICKET_CURRENCY_SYMBOL"]:
+		case types["SET_TICKET_CURRENCY_POSITION"]:
+		case types["SET_TICKET_PROVIDER"]:
+		case types["SET_TICKET_HAS_ATTENDEE_INFO_FIELDS"]:
+		case types["SET_TICKET_IS_LOADING"]:
+		case types["SET_TICKET_IS_MODAL_OPEN"]:
+		case types["SET_TICKET_HAS_BEEN_CREATED"]:
+		case types["SET_TICKET_HAS_CHANGES"]:
+		case types["SET_TICKET_HAS_DURATION_ERROR"]:
+		case types["SET_TICKET_IS_SELECTED"]:
+		case types["REGISTER_TICKET_BLOCK"]:
+			return extends_default()({}, state, defineProperty_default()({}, action.payload.clientId, tickets_ticket(state[action.payload.clientId], action)));
+		case types["REMOVE_TICKET_BLOCK"]:
+			return omit_default()(state, [action.payload.clientId]);
+		case types["REMOVE_TICKET_BLOCKS"]:
+			return {};
+		default:
+			return state;
+	}
+};
+
+var tickets_allClientIds = function allClientIds() {
+	var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+	var action = arguments[1];
+
+	switch (action.type) {
+		case types["REGISTER_TICKET_BLOCK"]:
+			return [].concat(toConsumableArray_default()(state), [action.payload.clientId]);
+		case types["REMOVE_TICKET_BLOCK"]:
+			return state.filter(function (clientId) {
+				return action.payload.clientId !== clientId;
+			});
+		case types["REMOVE_TICKET_BLOCKS"]:
+			return [];
+		default:
+			return state;
+	}
+};
+
+/* harmony default export */ var reducers_tickets = (Object(redux["b" /* combineReducers */])({
+	byClientId: tickets_byClientId,
+	allClientIds: tickets_allClientIds
+}));
+// EXTERNAL MODULE: ./src/modules/data/blocks/ticket/reducers/header-image.js
+var header_image = __webpack_require__(62);
+
+// CONCATENATED MODULE: ./src/modules/data/blocks/ticket/reducer.js
+
+/**
+ * Internal dependencies
+ */
+
+
+
+
+var reducer_DEFAULT_STATE = {
+	headerImage: header_image["a" /* DEFAULT_STATE */],
+	isSelected: false,
+	isSettingsOpen: false,
+	isSettingsLoading: false,
+	provider: '',
+	sharedCapacity: '',
+	tempSharedCapacity: '',
+	tickets: reducers_tickets(undefined, {})
+};
+
+/* harmony default export */ var reducer = (function () {
+	var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : reducer_DEFAULT_STATE;
+	var action = arguments[1];
+
+	switch (action.type) {
+		case types["SET_TICKETS_HEADER_IMAGE"]:
+			return extends_default()({}, state, {
+				headerImage: Object(header_image["b" /* default */])(state.headerImage, action)
+			});
+		case types["SET_TICKETS_IS_SELECTED"]:
+			return extends_default()({}, state, {
+				isSelected: action.payload.isSelected
+			});
+		case types["SET_TICKETS_IS_SETTINGS_OPEN"]:
+			return extends_default()({}, state, {
+				isSettingsOpen: action.payload.isSettingsOpen
+			});
+		case types["SET_TICKETS_IS_SETTINGS_LOADING"]:
+			return extends_default()({}, state, {
+				isSettingsLoading: action.payload.isSettingsLoading
+			});
+		case types["SET_TICKETS_PROVIDER"]:
+			return extends_default()({}, state, {
+				provider: action.payload.provider
+			});
+		case types["SET_TICKETS_SHARED_CAPACITY"]:
+			return extends_default()({}, state, {
+				sharedCapacity: action.payload.sharedCapacity
+			});
+		case types["SET_TICKETS_TEMP_SHARED_CAPACITY"]:
+			return extends_default()({}, state, {
+				tempSharedCapacity: action.payload.tempSharedCapacity
+			});
+		case types["SET_TICKET_TITLE"]:
+		case types["SET_TICKET_DESCRIPTION"]:
+		case types["SET_TICKET_PRICE"]:
+		case types["SET_TICKET_SKU"]:
+		case types["SET_TICKET_START_DATE"]:
+		case types["SET_TICKET_START_DATE_INPUT"]:
+		case types["SET_TICKET_START_DATE_MOMENT"]:
+		case types["SET_TICKET_END_DATE"]:
+		case types["SET_TICKET_END_DATE_INPUT"]:
+		case types["SET_TICKET_END_DATE_MOMENT"]:
+		case types["SET_TICKET_START_TIME"]:
+		case types["SET_TICKET_END_TIME"]:
+		case types["SET_TICKET_START_TIME_INPUT"]:
+		case types["SET_TICKET_END_TIME_INPUT"]:
+		case types["SET_TICKET_CAPACITY_TYPE"]:
+		case types["SET_TICKET_CAPACITY"]:
+		case types["SET_TICKET_TEMP_TITLE"]:
+		case types["SET_TICKET_TEMP_DESCRIPTION"]:
+		case types["SET_TICKET_TEMP_PRICE"]:
+		case types["SET_TICKET_TEMP_SKU"]:
+		case types["SET_TICKET_TEMP_START_DATE"]:
+		case types["SET_TICKET_TEMP_START_DATE_INPUT"]:
+		case types["SET_TICKET_TEMP_START_DATE_MOMENT"]:
+		case types["SET_TICKET_TEMP_END_DATE"]:
+		case types["SET_TICKET_TEMP_END_DATE_INPUT"]:
+		case types["SET_TICKET_TEMP_END_DATE_MOMENT"]:
+		case types["SET_TICKET_TEMP_START_TIME"]:
+		case types["SET_TICKET_TEMP_END_TIME"]:
+		case types["SET_TICKET_TEMP_START_TIME_INPUT"]:
+		case types["SET_TICKET_TEMP_END_TIME_INPUT"]:
+		case types["SET_TICKET_TEMP_CAPACITY_TYPE"]:
+		case types["SET_TICKET_TEMP_CAPACITY"]:
+		case types["SET_TICKET_SOLD"]:
+		case types["SET_TICKET_AVAILABLE"]:
+		case types["SET_TICKET_ID"]:
+		case types["SET_TICKET_CURRENCY_SYMBOL"]:
+		case types["SET_TICKET_CURRENCY_POSITION"]:
+		case types["SET_TICKET_PROVIDER"]:
+		case types["SET_TICKET_HAS_ATTENDEE_INFO_FIELDS"]:
+		case types["SET_TICKET_IS_LOADING"]:
+		case types["SET_TICKET_IS_MODAL_OPEN"]:
+		case types["SET_TICKET_HAS_BEEN_CREATED"]:
+		case types["SET_TICKET_HAS_CHANGES"]:
+		case types["SET_TICKET_HAS_DURATION_ERROR"]:
+		case types["SET_TICKET_IS_SELECTED"]:
+		case types["REGISTER_TICKET_BLOCK"]:
+		case types["REMOVE_TICKET_BLOCK"]:
+		case types["REMOVE_TICKET_BLOCKS"]:
+			return extends_default()({}, state, {
+				tickets: reducers_tickets(state.tickets, action)
+			});
+		default:
+			return state;
+	}
+});
+// EXTERNAL MODULE: ./src/modules/data/blocks/ticket/actions.js
+var actions = __webpack_require__(10);
+
+// EXTERNAL MODULE: ./node_modules/babel-runtime/regenerator/index.js
+var regenerator = __webpack_require__(11);
+var regenerator_default = /*#__PURE__*/__webpack_require__.n(regenerator);
+
+// EXTERNAL MODULE: ./node_modules/lodash/includes.js
+var includes = __webpack_require__(112);
+var includes_default = /*#__PURE__*/__webpack_require__.n(includes);
+
+// EXTERNAL MODULE: ./node_modules/redux-saga/es/effects.js + 1 modules
+var effects = __webpack_require__(0);
+
+// EXTERNAL MODULE: external {"var":"wp.data","root":["wp","data"]}
+var external_var_wp_data_root_wp_data_ = __webpack_require__(18);
+
+// EXTERNAL MODULE: external {"var":"wp.blocks","root":["wp","blocks"]}
+var external_var_wp_blocks_root_wp_blocks_ = __webpack_require__(111);
+
+// EXTERNAL MODULE: ./src/modules/data/blocks/rsvp/actions.js
+var rsvp_actions = __webpack_require__(14);
+
+// EXTERNAL MODULE: ./src/modules/data/blocks/rsvp/reducers/header-image.js
+var reducers_header_image = __webpack_require__(60);
+
+// EXTERNAL MODULE: ./src/modules/data/utils.js
+var utils = __webpack_require__(8);
+
+// EXTERNAL MODULE: external "tribe.common.data"
+var external_tribe_common_data_ = __webpack_require__(32);
+
+// EXTERNAL MODULE: ./src/modules/data/shared/move/types.js
+var move_types = __webpack_require__(19);
+
+// EXTERNAL MODULE: ./src/modules/data/shared/move/selectors.js
+var selectors = __webpack_require__(28);
+
+// EXTERNAL MODULE: ./src/modules/data/shared/sagas.js
+var sagas = __webpack_require__(29);
+
+// CONCATENATED MODULE: ./src/modules/data/blocks/ticket/sagas.js
+
+
+
+
+
+
+var _marked = /*#__PURE__*/regenerator_default.a.mark(createMissingTicketBlocks),
+    _marked2 = /*#__PURE__*/regenerator_default.a.mark(setTicketsInitialState),
+    _marked3 = /*#__PURE__*/regenerator_default.a.mark(resetTicketsBlock),
+    _marked4 = /*#__PURE__*/regenerator_default.a.mark(setTicketInitialState),
+    _marked5 = /*#__PURE__*/regenerator_default.a.mark(setBodyDetails),
+    _marked6 = /*#__PURE__*/regenerator_default.a.mark(removeTicketBlock),
+    _marked7 = /*#__PURE__*/regenerator_default.a.mark(fetchTicket),
+    _marked8 = /*#__PURE__*/regenerator_default.a.mark(createNewTicket),
+    _marked9 = /*#__PURE__*/regenerator_default.a.mark(updateTicket),
+    _marked10 = /*#__PURE__*/regenerator_default.a.mark(deleteTicket),
+    _marked11 = /*#__PURE__*/regenerator_default.a.mark(fetchTicketsHeaderImage),
+    _marked12 = /*#__PURE__*/regenerator_default.a.mark(updateTicketsHeaderImage),
+    _marked13 = /*#__PURE__*/regenerator_default.a.mark(deleteTicketsHeaderImage),
+    _marked14 = /*#__PURE__*/regenerator_default.a.mark(setTicketDetails),
+    _marked15 = /*#__PURE__*/regenerator_default.a.mark(setTicketTempDetails),
+    _marked16 = /*#__PURE__*/regenerator_default.a.mark(saveTicketWithPostSave),
+    _marked17 = /*#__PURE__*/regenerator_default.a.mark(syncTicketsSaleEndWithEventStart),
+    _marked18 = /*#__PURE__*/regenerator_default.a.mark(syncTicketSaleEndWithEventStart),
+    _marked19 = /*#__PURE__*/regenerator_default.a.mark(handleEventStartDateChanges),
+    _marked20 = /*#__PURE__*/regenerator_default.a.mark(handleTicketDurationError),
+    _marked21 = /*#__PURE__*/regenerator_default.a.mark(handleTicketStartDate),
+    _marked22 = /*#__PURE__*/regenerator_default.a.mark(handleTicketEndDate),
+    _marked23 = /*#__PURE__*/regenerator_default.a.mark(handleTicketStartTime),
+    _marked24 = /*#__PURE__*/regenerator_default.a.mark(handleTicketStartTimeInput),
+    _marked25 = /*#__PURE__*/regenerator_default.a.mark(handleTicketEndTime),
+    _marked26 = /*#__PURE__*/regenerator_default.a.mark(handleTicketEndTimeInput),
+    _marked27 = /*#__PURE__*/regenerator_default.a.mark(handleTicketMove),
+    _marked28 = /*#__PURE__*/regenerator_default.a.mark(handler),
+    _marked29 = /*#__PURE__*/regenerator_default.a.mark(watchers);
+
+/**
+ * External Dependencies
+ */
+
+
+
+/**
+ * Wordpress dependencies
+ */
+
+
+
+
+/**
+ * Internal dependencies
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var sagas_UNLIMITED = constants["UNLIMITED"],
+    sagas_SHARED = constants["SHARED"],
+    sagas_TICKET_TYPES = constants["TICKET_TYPES"],
+    PROVIDER_CLASS_TO_PROVIDER_MAPPING = constants["PROVIDER_CLASS_TO_PROVIDER_MAPPING"];
+var sagas_ticketsConfig = external_tribe_common_utils_["globals"].tickets,
+    restNonce = external_tribe_common_utils_["globals"].restNonce,
+    tecDateSettings = external_tribe_common_utils_["globals"].tecDateSettings;
+var wpREST = external_tribe_common_utils_["api"].wpREST;
+
+
+function createMissingTicketBlocks(tickets) {
+	var _ref, insertBlock, _ref2, getBlockCount, getBlocks, ticketsBlocks;
+
+	return regenerator_default.a.wrap(function createMissingTicketBlocks$(_context) {
+		while (1) {
+			switch (_context.prev = _context.next) {
+				case 0:
+					_context.next = 2;
+					return Object(effects["b" /* call */])(external_var_wp_data_root_wp_data_["dispatch"], 'core/editor');
+
+				case 2:
+					_ref = _context.sent;
+					insertBlock = _ref.insertBlock;
+					_context.next = 6;
+					return Object(effects["b" /* call */])(external_var_wp_data_root_wp_data_["select"], 'core/editor');
+
+				case 6:
+					_ref2 = _context.sent;
+					getBlockCount = _ref2.getBlockCount;
+					getBlocks = _ref2.getBlocks;
+					_context.next = 11;
+					return Object(effects["b" /* call */])([getBlocks(), 'filter'], function (block) {
+						return block.name === 'tribe/tickets';
+					});
+
+				case 11:
+					ticketsBlocks = _context.sent;
+
+
+					ticketsBlocks.forEach(function (_ref3) {
+						var clientId = _ref3.clientId;
+
+						tickets.forEach(function (ticketId) {
+							var attributes = {
+								hasBeenCreated: true,
+								ticketId: ticketId
+							};
+							var nextChildPosition = getBlockCount(clientId);
+							var block = Object(external_var_wp_blocks_root_wp_blocks_["createBlock"])('tribe/tickets-item', attributes);
+							insertBlock(block, nextChildPosition, clientId, false);
+						});
+					});
+
+				case 13:
+				case 'end':
+					return _context.stop();
+			}
+		}
+	}, _marked, this);
+}
+
+function setTicketsInitialState(action) {
+	var get, header, sharedCapacity, ticketsList, ticketsInBlock, ticketsDiff, provider, defaultProvider;
+	return regenerator_default.a.wrap(function setTicketsInitialState$(_context2) {
+		while (1) {
+			switch (_context2.prev = _context2.next) {
+				case 0:
+					get = action.payload.get;
+					header = parseInt(get('header', header_image["a" /* DEFAULT_STATE */].id), 10);
+					sharedCapacity = get('sharedCapacity');
+					ticketsList = get('tickets', []);
+					_context2.next = 6;
+					return Object(effects["f" /* select */])(getTicketsIdsInBlocks);
+
+				case 6:
+					ticketsInBlock = _context2.sent;
+
+					// Get only the IDs of the tickets that are not in the block list already
+					ticketsDiff = ticketsList.filter(function (item) {
+						return !includes_default()(ticketsInBlock, item);
+					});
+
+					if (!(ticketsDiff.length >= 1)) {
+						_context2.next = 11;
+						break;
+					}
+
+					_context2.next = 11;
+					return Object(effects["b" /* call */])(createMissingTicketBlocks, ticketsDiff);
+
+				case 11:
+					if (!(sharedCapacity !== '0')) {
+						_context2.next = 14;
+						break;
+					}
+
+					_context2.next = 14;
+					return Object(effects["a" /* all */])([Object(effects["e" /* put */])(actions["setTicketsSharedCapacity"](sharedCapacity)), Object(effects["e" /* put */])(actions["setTicketsTempSharedCapacity"](sharedCapacity))]);
+
+				case 14:
+					if (!(!isNaN(header) && header !== 0)) {
+						_context2.next = 17;
+						break;
+					}
+
+					_context2.next = 17;
+					return Object(effects["e" /* put */])(actions["fetchTicketsHeaderImage"](header));
+
+				case 17:
+					provider = get('provider', reducer_DEFAULT_STATE.provider);
+
+					if (!(provider === constants["RSVP_CLASS"] || !provider)) {
+						_context2.next = 23;
+						break;
+					}
+
+					_context2.next = 21;
+					return Object(effects["f" /* select */])(getDefaultTicketProvider);
+
+				case 21:
+					defaultProvider = _context2.sent;
+
+					provider = defaultProvider === constants["RSVP_CLASS"] ? '' : defaultProvider;
+
+				case 23:
+					_context2.next = 25;
+					return Object(effects["e" /* put */])(actions["setTicketsProvider"](provider));
+
+				case 25:
+				case 'end':
+					return _context2.stop();
+			}
+		}
+	}, _marked2, this);
+}
+
+function resetTicketsBlock() {
+	var hasCreatedTickets, currentMeta, newMeta;
+	return regenerator_default.a.wrap(function resetTicketsBlock$(_context3) {
+		while (1) {
+			switch (_context3.prev = _context3.next) {
+				case 0:
+					_context3.next = 2;
+					return Object(effects["f" /* select */])(selectors_hasCreatedTickets);
+
+				case 2:
+					hasCreatedTickets = _context3.sent;
+					_context3.next = 5;
+					return Object(effects["a" /* all */])([Object(effects["e" /* put */])(actions["removeTicketBlocks"]()), Object(effects["e" /* put */])(actions["setTicketsIsSettingsOpen"](false))]);
+
+				case 5:
+					if (hasCreatedTickets) {
+						_context3.next = 14;
+						break;
+					}
+
+					_context3.next = 8;
+					return Object(effects["b" /* call */])([Object(external_var_wp_data_root_wp_data_["select"])('core/editor'), 'getCurrentPostAttribute'], 'meta');
+
+				case 8:
+					currentMeta = _context3.sent;
+					newMeta = extends_default()({}, currentMeta, defineProperty_default()({}, utils["d" /* KEY_TICKET_CAPACITY */], ''));
+					_context3.next = 12;
+					return Object(effects["b" /* call */])([Object(external_var_wp_data_root_wp_data_["dispatch"])('core/editor'), 'editPost'], { meta: newMeta });
+
+				case 12:
+					_context3.next = 14;
+					return Object(effects["a" /* all */])([Object(effects["e" /* put */])(actions["setTicketsSharedCapacity"]('')), Object(effects["e" /* put */])(actions["setTicketsTempSharedCapacity"](''))]);
+
+				case 14:
+				case 'end':
+					return _context3.stop();
+			}
+		}
+	}, _marked3, this);
+}
+
+function setTicketInitialState(action) {
+	var _action$payload, clientId, get, ticketId, hasBeenCreated, datePickerFormat, publishDate, startMoment, startDate, startDateInput, startTime, startTimeInput, eventStart, endMoment, endDate, endDateInput, endTime, endTimeInput, hasTicketsPlus, sharedCapacity;
+
+	return regenerator_default.a.wrap(function setTicketInitialState$(_context4) {
+		while (1) {
+			switch (_context4.prev = _context4.next) {
+				case 0:
+					_action$payload = action.payload, clientId = _action$payload.clientId, get = _action$payload.get;
+					ticketId = get('ticketId', ticket_DEFAULT_STATE.ticketId);
+					hasBeenCreated = get('hasBeenCreated', ticket_DEFAULT_STATE.hasBeenCreated);
+					datePickerFormat = tecDateSettings().datepickerFormat;
+					_context4.next = 6;
+					return Object(effects["b" /* call */])([Object(external_var_wp_data_root_wp_data_["select"])('core/editor'), 'getEditedPostAttribute'], 'date');
+
+				case 6:
+					publishDate = _context4.sent;
+					_context4.next = 9;
+					return Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toMoment, publishDate);
+
+				case 9:
+					startMoment = _context4.sent;
+					_context4.next = 12;
+					return Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toDatabaseDate, startMoment);
+
+				case 12:
+					startDate = _context4.sent;
+					_context4.next = 15;
+					return datePickerFormat ? Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toDate, startMoment, datePickerFormat) : Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toDate, startMoment);
+
+				case 15:
+					startDateInput = _context4.sent;
+					_context4.next = 18;
+					return Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toDatabaseTime, startMoment);
+
+				case 18:
+					startTime = _context4.sent;
+					_context4.next = 21;
+					return Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toTime, startMoment);
+
+				case 21:
+					startTimeInput = _context4.sent;
+					_context4.next = 24;
+					return Object(effects["a" /* all */])([Object(effects["e" /* put */])(actions["setTicketStartDate"](clientId, startDate)), Object(effects["e" /* put */])(actions["setTicketStartDateInput"](clientId, startDateInput)), Object(effects["e" /* put */])(actions["setTicketStartDateMoment"](clientId, startMoment)), Object(effects["e" /* put */])(actions["setTicketStartTime"](clientId, startTime)), Object(effects["e" /* put */])(actions["setTicketStartTimeInput"](clientId, startTimeInput)), Object(effects["e" /* put */])(actions["setTicketTempStartDate"](clientId, startDate)), Object(effects["e" /* put */])(actions["setTicketTempStartDateInput"](clientId, startDateInput)), Object(effects["e" /* put */])(actions["setTicketTempStartDateMoment"](clientId, startMoment)), Object(effects["e" /* put */])(actions["setTicketTempStartTime"](clientId, startTime)), Object(effects["e" /* put */])(actions["setTicketTempStartTimeInput"](clientId, startTimeInput)), Object(effects["e" /* put */])(actions["setTicketHasBeenCreated"](clientId, hasBeenCreated))]);
+
+				case 24:
+					_context4.prev = 24;
+					_context4.next = 27;
+					return Object(effects["f" /* select */])(tribe.events.data.blocks.datetime.selectors.getStart);
+
+				case 27:
+					eventStart = _context4.sent;
+					_context4.next = 30;
+					return Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toMoment, eventStart);
+
+				case 30:
+					endMoment = _context4.sent;
+					_context4.next = 33;
+					return Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toDatabaseDate, endMoment);
+
+				case 33:
+					endDate = _context4.sent;
+					_context4.next = 36;
+					return datePickerFormat ? Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toDate, endMoment, datePickerFormat) : Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toDate, endMoment);
+
+				case 36:
+					endDateInput = _context4.sent;
+					_context4.next = 39;
+					return Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toDatabaseTime, endMoment);
+
+				case 39:
+					endTime = _context4.sent;
+					_context4.next = 42;
+					return Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toTime, endMoment);
+
+				case 42:
+					endTimeInput = _context4.sent;
+					_context4.next = 45;
+					return Object(effects["a" /* all */])([Object(effects["e" /* put */])(actions["setTicketEndDate"](clientId, endDate)), Object(effects["e" /* put */])(actions["setTicketEndDateInput"](clientId, endDateInput)), Object(effects["e" /* put */])(actions["setTicketEndDateMoment"](clientId, endMoment)), Object(effects["e" /* put */])(actions["setTicketEndTime"](clientId, endTime)), Object(effects["e" /* put */])(actions["setTicketEndTimeInput"](clientId, endTimeInput)), Object(effects["e" /* put */])(actions["setTicketTempEndDate"](clientId, endDate)), Object(effects["e" /* put */])(actions["setTicketTempEndDateInput"](clientId, endDateInput)), Object(effects["e" /* put */])(actions["setTicketTempEndDateMoment"](clientId, endMoment)), Object(effects["e" /* put */])(actions["setTicketTempEndTime"](clientId, endTime)), Object(effects["e" /* put */])(actions["setTicketTempEndTimeInput"](clientId, endTimeInput))]);
+
+				case 45:
+					_context4.next = 50;
+					break;
+
+				case 47:
+					_context4.prev = 47;
+					_context4.t0 = _context4['catch'](24);
+
+					console.error(_context4.t0);
+					// ¯\_(ツ)_/¯
+
+				case 50:
+					_context4.next = 52;
+					return Object(effects["f" /* select */])(external_tribe_common_data_["plugins"].selectors.hasPlugin, external_tribe_common_data_["plugins"].constants.TICKETS_PLUS);
+
+				case 52:
+					hasTicketsPlus = _context4.sent;
+
+					if (!hasTicketsPlus) {
+						_context4.next = 56;
+						break;
+					}
+
+					_context4.next = 56;
+					return Object(effects["a" /* all */])([Object(effects["e" /* put */])(actions["setTicketCapacityType"](clientId, constants["TICKET_TYPES"][constants["SHARED"]])), Object(effects["e" /* put */])(actions["setTicketTempCapacityType"](clientId, constants["TICKET_TYPES"][constants["SHARED"]]))]);
+
+				case 56:
+					_context4.next = 58;
+					return Object(effects["f" /* select */])(getTicketsSharedCapacity);
+
+				case 58:
+					sharedCapacity = _context4.sent;
+
+					if (!sharedCapacity) {
+						_context4.next = 62;
+						break;
+					}
+
+					_context4.next = 62;
+					return Object(effects["a" /* all */])([Object(effects["e" /* put */])(actions["setTicketCapacity"](clientId, sharedCapacity)), Object(effects["e" /* put */])(actions["setTicketTempCapacity"](clientId, sharedCapacity))]);
+
+				case 62:
+					if (!(ticketId !== 0)) {
+						_context4.next = 65;
+						break;
+					}
+
+					_context4.next = 65;
+					return Object(effects["a" /* all */])([Object(effects["e" /* put */])(actions["setTicketId"](clientId, ticketId)), Object(effects["b" /* call */])(fetchTicket, { payload: { clientId: clientId, ticketId: ticketId } })]);
+
+				case 65:
+					_context4.next = 67;
+					return Object(effects["b" /* call */])(handleTicketDurationError, clientId);
+
+				case 67:
+					_context4.next = 69;
+					return Object(effects["d" /* fork */])(saveTicketWithPostSave, clientId);
+
+				case 69:
+				case 'end':
+					return _context4.stop();
+			}
+		}
+	}, _marked4, this, [[24, 47]]);
+}
+
+function setBodyDetails(clientId) {
+	var body, props, rootClientId, ticketProvider, ticketsProvider, capacityType, capacity, isUnlimited;
+	return regenerator_default.a.wrap(function setBodyDetails$(_context5) {
+		while (1) {
+			switch (_context5.prev = _context5.next) {
+				case 0:
+					body = new FormData();
+					props = { clientId: clientId };
+					_context5.next = 4;
+					return Object(effects["b" /* call */])([Object(external_var_wp_data_root_wp_data_["select"])('core/editor'), 'getBlockRootClientId'], clientId);
+
+				case 4:
+					rootClientId = _context5.sent;
+					_context5.next = 7;
+					return Object(effects["f" /* select */])(getTicketProvider, props);
+
+				case 7:
+					ticketProvider = _context5.sent;
+					_context5.next = 10;
+					return Object(effects["f" /* select */])(getTicketsProvider);
+
+				case 10:
+					ticketsProvider = _context5.sent;
+					_context5.t0 = body;
+					_context5.next = 14;
+					return Object(effects["b" /* call */])([Object(external_var_wp_data_root_wp_data_["select"])('core/editor'), 'getCurrentPostId']);
+
+				case 14:
+					_context5.t1 = _context5.sent;
+
+					_context5.t0.append.call(_context5.t0, 'post_id', _context5.t1);
+
+					body.append('provider', ticketProvider || ticketsProvider);
+					_context5.t2 = body;
+					_context5.next = 20;
+					return Object(effects["f" /* select */])(getTicketTempTitle, props);
+
+				case 20:
+					_context5.t3 = _context5.sent;
+
+					_context5.t2.append.call(_context5.t2, 'name', _context5.t3);
+
+					_context5.t4 = body;
+					_context5.next = 25;
+					return Object(effects["f" /* select */])(getTicketTempDescription, props);
+
+				case 25:
+					_context5.t5 = _context5.sent;
+
+					_context5.t4.append.call(_context5.t4, 'description', _context5.t5);
+
+					_context5.t6 = body;
+					_context5.next = 30;
+					return Object(effects["f" /* select */])(getTicketTempPrice, props);
+
+				case 30:
+					_context5.t7 = _context5.sent;
+
+					_context5.t6.append.call(_context5.t6, 'price', _context5.t7);
+
+					_context5.t8 = body;
+					_context5.next = 35;
+					return Object(effects["f" /* select */])(getTicketTempStartDate, props);
+
+				case 35:
+					_context5.t9 = _context5.sent;
+
+					_context5.t8.append.call(_context5.t8, 'start_date', _context5.t9);
+
+					_context5.t10 = body;
+					_context5.next = 40;
+					return Object(effects["f" /* select */])(getTicketTempStartTime, props);
+
+				case 40:
+					_context5.t11 = _context5.sent;
+
+					_context5.t10.append.call(_context5.t10, 'start_time', _context5.t11);
+
+					_context5.t12 = body;
+					_context5.next = 45;
+					return Object(effects["f" /* select */])(getTicketTempEndDate, props);
+
+				case 45:
+					_context5.t13 = _context5.sent;
+
+					_context5.t12.append.call(_context5.t12, 'end_date', _context5.t13);
+
+					_context5.t14 = body;
+					_context5.next = 50;
+					return Object(effects["f" /* select */])(getTicketTempEndTime, props);
+
+				case 50:
+					_context5.t15 = _context5.sent;
+
+					_context5.t14.append.call(_context5.t14, 'end_time', _context5.t15);
+
+					_context5.t16 = body;
+					_context5.next = 55;
+					return Object(effects["f" /* select */])(getTicketTempSku, props);
+
+				case 55:
+					_context5.t17 = _context5.sent;
+
+					_context5.t16.append.call(_context5.t16, 'sku', _context5.t17);
+
+					_context5.t18 = body;
+					_context5.next = 60;
+					return Object(effects["b" /* call */])([Object(external_var_wp_data_root_wp_data_["select"])('core/editor'), 'getBlockIndex'], clientId, rootClientId);
+
+				case 60:
+					_context5.t19 = _context5.sent;
+
+					_context5.t18.append.call(_context5.t18, 'menu_order', _context5.t19);
+
+					_context5.next = 64;
+					return Object(effects["f" /* select */])(getTicketTempCapacityType, props);
+
+				case 64:
+					capacityType = _context5.sent;
+					_context5.next = 67;
+					return Object(effects["f" /* select */])(getTicketTempCapacity, props);
+
+				case 67:
+					capacity = _context5.sent;
+					isUnlimited = capacityType === sagas_TICKET_TYPES[sagas_UNLIMITED];
+
+					body.append('ticket[mode]', isUnlimited ? '' : capacityType);
+					body.append('ticket[capacity]', isUnlimited ? '' : capacity);
+
+					if (!(capacityType === sagas_TICKET_TYPES[sagas_SHARED])) {
+						_context5.next = 77;
+						break;
+					}
+
+					_context5.t20 = body;
+					_context5.next = 75;
+					return Object(effects["f" /* select */])(getTicketsTempSharedCapacity);
+
+				case 75:
+					_context5.t21 = _context5.sent;
+
+					_context5.t20.append.call(_context5.t20, 'ticket[event_capacity]', _context5.t21);
+
+				case 77:
+					return _context5.abrupt('return', body);
+
+				case 78:
+				case 'end':
+					return _context5.stop();
+			}
+		}
+	}, _marked5, this);
+}
+
+function removeTicketBlock(clientId) {
+	var _wpDispatch, removeBlock;
+
+	return regenerator_default.a.wrap(function removeTicketBlock$(_context6) {
+		while (1) {
+			switch (_context6.prev = _context6.next) {
+				case 0:
+					_wpDispatch = Object(external_var_wp_data_root_wp_data_["dispatch"])('core/editor'), removeBlock = _wpDispatch.removeBlock;
+					_context6.next = 3;
+					return Object(effects["a" /* all */])([Object(effects["e" /* put */])(actions["removeTicketBlock"](clientId)), Object(effects["b" /* call */])(removeBlock, clientId)]);
+
+				case 3:
+				case 'end':
+					return _context6.stop();
+			}
+		}
+	}, _marked6, this);
+}
+
+function fetchTicket(action) {
+	var _action$payload2, ticketId, clientId, _ref4, response, ticket, _ticket$status, status, provider, _ticket$totals, totals, available_from, available_until, cost_details, title, description, sku, capacity_type, capacity, supports_attendee_information, datePickerFormat, startMoment, startDate, startDateInput, startTime, startTimeInput, endMoment, endDate, endDateInput, endTime, endTimeInput, details;
+
+	return regenerator_default.a.wrap(function fetchTicket$(_context7) {
+		while (1) {
+			switch (_context7.prev = _context7.next) {
+				case 0:
+					_action$payload2 = action.payload, ticketId = _action$payload2.ticketId, clientId = _action$payload2.clientId;
+
+					if (!(ticketId === 0)) {
+						_context7.next = 3;
+						break;
+					}
+
+					return _context7.abrupt('return');
+
+				case 3:
+					_context7.next = 5;
+					return Object(effects["e" /* put */])(actions["setTicketIsLoading"](clientId, true));
+
+				case 5:
+					_context7.prev = 5;
+					_context7.next = 8;
+					return Object(effects["b" /* call */])(wpREST, {
+						path: 'tickets/' + ticketId,
+						namespace: 'tribe/tickets/v1'
+					});
+
+				case 8:
+					_ref4 = _context7.sent;
+					response = _ref4.response;
+					ticket = _ref4.data;
+					_ticket$status = ticket.status, status = _ticket$status === undefined ? '' : _ticket$status, provider = ticket.provider;
+
+					if (!(response.status === 404 || status === 'trash' || provider === constants["RSVP"])) {
+						_context7.next = 16;
+						break;
+					}
+
+					_context7.next = 15;
+					return Object(effects["b" /* call */])(removeTicketBlock, clientId);
+
+				case 15:
+					return _context7.abrupt('return');
+
+				case 16:
+					if (!response.ok) {
+						_context7.next = 60;
+						break;
+					}
+
+					_ticket$totals = ticket.totals, totals = _ticket$totals === undefined ? {} : _ticket$totals, available_from = ticket.available_from, available_until = ticket.available_until, cost_details = ticket.cost_details, title = ticket.title, description = ticket.description, sku = ticket.sku, capacity_type = ticket.capacity_type, capacity = ticket.capacity, supports_attendee_information = ticket.supports_attendee_information;
+					datePickerFormat = tecDateSettings().datepickerFormat;
+					_context7.next = 21;
+					return Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toMoment, available_from);
+
+				case 21:
+					startMoment = _context7.sent;
+					_context7.next = 24;
+					return Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toDatabaseDate, startMoment);
+
+				case 24:
+					startDate = _context7.sent;
+					_context7.next = 27;
+					return datePickerFormat ? Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toDate, startMoment, datePickerFormat) : Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toDate, startMoment);
+
+				case 27:
+					startDateInput = _context7.sent;
+					_context7.next = 30;
+					return Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toDatabaseTime, startMoment);
+
+				case 30:
+					startTime = _context7.sent;
+					_context7.next = 33;
+					return Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toTime, startMoment);
+
+				case 33:
+					startTimeInput = _context7.sent;
+					_context7.next = 36;
+					return Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toMoment, '');
+
+				case 36:
+					endMoment = _context7.sent;
+					endDate = '';
+					endDateInput = '';
+					endTime = '';
+					endTimeInput = '';
+
+					if (!available_until) {
+						_context7.next = 57;
+						break;
+					}
+
+					_context7.next = 44;
+					return Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toMoment, available_until);
+
+				case 44:
+					endMoment = _context7.sent;
+					_context7.next = 47;
+					return Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toDatabaseDate, endMoment);
+
+				case 47:
+					endDate = _context7.sent;
+					_context7.next = 50;
+					return datePickerFormat ? Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toDate, endMoment, datePickerFormat) : Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toDate, endMoment);
+
+				case 50:
+					endDateInput = _context7.sent;
+					_context7.next = 53;
+					return Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toDatabaseTime, endMoment);
+
+				case 53:
+					endTime = _context7.sent;
+					_context7.next = 56;
+					return Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toTime, endMoment);
+
+				case 56:
+					endTimeInput = _context7.sent;
+
+				case 57:
+					details = {
+						title: title,
+						description: description,
+						price: cost_details.values[0],
+						sku: sku,
+						startDate: startDate,
+						startDateInput: startDateInput,
+						startDateMoment: startMoment,
+						endDate: endDate,
+						endDateInput: endDateInput,
+						endDateMoment: endMoment,
+						startTime: startTime,
+						endTime: endTime,
+						startTimeInput: startTimeInput,
+						endTimeInput: endTimeInput,
+						capacityType: capacity_type,
+						capacity: capacity
+					};
+					_context7.next = 60;
+					return Object(effects["a" /* all */])([Object(effects["e" /* put */])(actions["setTicketDetails"](clientId, details)), Object(effects["e" /* put */])(actions["setTicketTempDetails"](clientId, details)), Object(effects["e" /* put */])(actions["setTicketSold"](clientId, totals.sold)), Object(effects["e" /* put */])(actions["setTicketAvailable"](clientId, totals.stock)), Object(effects["e" /* put */])(actions["setTicketCurrencySymbol"](clientId, cost_details.currency_symbol)), Object(effects["e" /* put */])(actions["setTicketCurrencyPosition"](clientId, cost_details.currency_position)), Object(effects["e" /* put */])(actions["setTicketProvider"](clientId, provider)), Object(effects["e" /* put */])(actions["setTicketHasAttendeeInfoFields"](clientId, supports_attendee_information)), Object(effects["e" /* put */])(actions["setTicketHasBeenCreated"](clientId, true))]);
+
+				case 60:
+					_context7.next = 65;
+					break;
+
+				case 62:
+					_context7.prev = 62;
+					_context7.t0 = _context7['catch'](5);
+
+					console.error(_context7.t0);
+					/**
+      * @todo handle error scenario
+      */
+
+				case 65:
+					_context7.next = 67;
+					return Object(effects["e" /* put */])(actions["setTicketIsLoading"](clientId, false));
+
+				case 67:
+				case 'end':
+					return _context7.stop();
+			}
+		}
+	}, _marked7, this, [[5, 62]]);
+}
+
+function createNewTicket(action) {
+	var clientId, props, _restNonce, _restNonce$add_ticket, add_ticket_nonce, body, _ref5, response, ticket, sharedCapacity, tempSharedCapacity, available, _ref6, _ref7, title, description, price, sku, startDate, startDateInput, startDateMoment, endDate, endDateInput, endDateMoment, startTime, endTime, startTimeInput, endTimeInput, capacityType, capacity;
+
+	return regenerator_default.a.wrap(function createNewTicket$(_context8) {
+		while (1) {
+			switch (_context8.prev = _context8.next) {
+				case 0:
+					clientId = action.payload.clientId;
+					props = { clientId: clientId };
+					_restNonce = restNonce(), _restNonce$add_ticket = _restNonce.add_ticket_nonce, add_ticket_nonce = _restNonce$add_ticket === undefined ? '' : _restNonce$add_ticket;
+					_context8.next = 5;
+					return Object(effects["b" /* call */])(setBodyDetails, clientId);
+
+				case 5:
+					body = _context8.sent;
+
+					body.append('add_ticket_nonce', add_ticket_nonce);
+
+					_context8.prev = 7;
+					_context8.next = 10;
+					return Object(effects["e" /* put */])(actions["setTicketIsLoading"](clientId, true));
+
+				case 10:
+					_context8.next = 12;
+					return Object(effects["b" /* call */])(wpREST, {
+						path: 'tickets/',
+						namespace: 'tribe/tickets/v1',
+						initParams: {
+							method: 'POST',
+							body: body
+						}
+					});
+
+				case 12:
+					_ref5 = _context8.sent;
+					response = _ref5.response;
+					ticket = _ref5.data;
+
+					if (!response.ok) {
+						_context8.next = 50;
+						break;
+					}
+
+					_context8.next = 18;
+					return Object(effects["f" /* select */])(getTicketsSharedCapacity);
+
+				case 18:
+					sharedCapacity = _context8.sent;
+					_context8.next = 21;
+					return Object(effects["f" /* select */])(getTicketsTempSharedCapacity);
+
+				case 21:
+					tempSharedCapacity = _context8.sent;
+
+					if (!(sharedCapacity === '' && !isNaN(tempSharedCapacity) && tempSharedCapacity > 0)) {
+						_context8.next = 25;
+						break;
+					}
+
+					_context8.next = 25;
+					return Object(effects["e" /* put */])(actions["setTicketsSharedCapacity"](tempSharedCapacity));
+
+				case 25:
+					available = ticket.capacity_details.available === -1 ? 0 : ticket.capacity_details.available;
+					_context8.next = 28;
+					return Object(effects["a" /* all */])([Object(effects["f" /* select */])(getTicketTempTitle, props), Object(effects["f" /* select */])(getTicketTempDescription, props), Object(effects["f" /* select */])(getTicketTempPrice, props), Object(effects["f" /* select */])(getTicketTempSku, props), Object(effects["f" /* select */])(getTicketTempStartDate, props), Object(effects["f" /* select */])(getTicketTempStartDateInput, props), Object(effects["f" /* select */])(getTicketTempStartDateMoment, props), Object(effects["f" /* select */])(getTicketTempEndDate, props), Object(effects["f" /* select */])(getTicketTempEndDateInput, props), Object(effects["f" /* select */])(getTicketTempEndDateMoment, props), Object(effects["f" /* select */])(getTicketTempStartTime, props), Object(effects["f" /* select */])(getTicketTempEndTime, props), Object(effects["f" /* select */])(getTicketTempStartTimeInput, props), Object(effects["f" /* select */])(getTicketTempEndTimeInput, props), Object(effects["f" /* select */])(getTicketTempCapacityType, props), Object(effects["f" /* select */])(getTicketTempCapacity, props)]);
+
+				case 28:
+					_ref6 = _context8.sent;
+					_ref7 = slicedToArray_default()(_ref6, 16);
+					title = _ref7[0];
+					description = _ref7[1];
+					price = _ref7[2];
+					sku = _ref7[3];
+					startDate = _ref7[4];
+					startDateInput = _ref7[5];
+					startDateMoment = _ref7[6];
+					endDate = _ref7[7];
+					endDateInput = _ref7[8];
+					endDateMoment = _ref7[9];
+					startTime = _ref7[10];
+					endTime = _ref7[11];
+					startTimeInput = _ref7[12];
+					endTimeInput = _ref7[13];
+					capacityType = _ref7[14];
+					capacity = _ref7[15];
+					_context8.next = 48;
+					return Object(effects["a" /* all */])([Object(effects["e" /* put */])(actions["setTicketDetails"](clientId, {
+						title: title,
+						description: description,
+						price: price,
+						sku: sku,
+						startDate: startDate,
+						startDateInput: startDateInput,
+						startDateMoment: startDateMoment,
+						endDate: endDate,
+						endDateInput: endDateInput,
+						endDateMoment: endDateMoment,
+						startTime: startTime,
+						endTime: endTime,
+						startTimeInput: startTimeInput,
+						endTimeInput: endTimeInput,
+						capacityType: capacityType,
+						capacity: capacity
+					})), Object(effects["e" /* put */])(actions["setTicketId"](clientId, ticket.id)), Object(effects["e" /* put */])(actions["setTicketHasBeenCreated"](clientId, true)), Object(effects["e" /* put */])(actions["setTicketAvailable"](clientId, available)), Object(effects["e" /* put */])(actions["setTicketProvider"](clientId, PROVIDER_CLASS_TO_PROVIDER_MAPPING[ticket.provider_class])), Object(effects["e" /* put */])(actions["setTicketHasChanges"](clientId, false))]);
+
+				case 48:
+					_context8.next = 50;
+					return Object(effects["d" /* fork */])(saveTicketWithPostSave, clientId);
+
+				case 50:
+					_context8.next = 55;
+					break;
+
+				case 52:
+					_context8.prev = 52;
+					_context8.t0 = _context8['catch'](7);
+
+					console.error(_context8.t0);
+					/**
+      * @todo: handle error scenario
+      */
+
+				case 55:
+					_context8.prev = 55;
+					_context8.next = 58;
+					return Object(effects["e" /* put */])(actions["setTicketIsLoading"](clientId, false));
+
+				case 58:
+					return _context8.finish(55);
+
+				case 59:
+				case 'end':
+					return _context8.stop();
+			}
+		}
+	}, _marked8, this, [[7, 52, 55, 59]]);
+}
+
+function updateTicket(action) {
+	var clientId, props, _restNonce2, _restNonce2$edit_tick, edit_ticket_nonce, body, ticketId, data, _iteratorNormalCompletion, _didIteratorError, _iteratorError, _iterator, _step, _ref8, _ref9, key, value, _ref10, response, ticket, capacity_details, available, _ref11, _ref12, title, description, price, sku, startDate, startDateInput, startDateMoment, endDate, endDateInput, endDateMoment, startTime, endTime, startTimeInput, endTimeInput, capacityType, capacity;
+
+	return regenerator_default.a.wrap(function updateTicket$(_context9) {
+		while (1) {
+			switch (_context9.prev = _context9.next) {
+				case 0:
+					clientId = action.payload.clientId;
+					props = { clientId: clientId };
+					_restNonce2 = restNonce(), _restNonce2$edit_tick = _restNonce2.edit_ticket_nonce, edit_ticket_nonce = _restNonce2$edit_tick === undefined ? '' : _restNonce2$edit_tick;
+					_context9.next = 5;
+					return Object(effects["b" /* call */])(setBodyDetails, clientId);
+
+				case 5:
+					body = _context9.sent;
+
+					body.append('edit_ticket_nonce', edit_ticket_nonce);
+
+					_context9.next = 9;
+					return Object(effects["f" /* select */])(getTicketId, props);
+
+				case 9:
+					ticketId = _context9.sent;
+					_context9.prev = 10;
+					data = [];
+					_iteratorNormalCompletion = true;
+					_didIteratorError = false;
+					_iteratorError = undefined;
+					_context9.prev = 15;
+
+					for (_iterator = body.entries()[Symbol.iterator](); !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+						_ref8 = _step.value;
+						_ref9 = slicedToArray_default()(_ref8, 2);
+						key = _ref9[0];
+						value = _ref9[1];
+
+						data.push(encodeURIComponent(key) + '=' + encodeURIComponent(value));
+					}
+
+					_context9.next = 23;
+					break;
+
+				case 19:
+					_context9.prev = 19;
+					_context9.t0 = _context9['catch'](15);
+					_didIteratorError = true;
+					_iteratorError = _context9.t0;
+
+				case 23:
+					_context9.prev = 23;
+					_context9.prev = 24;
+
+					if (!_iteratorNormalCompletion && _iterator.return) {
+						_iterator.return();
+					}
+
+				case 26:
+					_context9.prev = 26;
+
+					if (!_didIteratorError) {
+						_context9.next = 29;
+						break;
+					}
+
+					throw _iteratorError;
+
+				case 29:
+					return _context9.finish(26);
+
+				case 30:
+					return _context9.finish(23);
+
+				case 31:
+					_context9.next = 33;
+					return Object(effects["e" /* put */])(actions["setTicketIsLoading"](clientId, true));
+
+				case 33:
+					_context9.next = 35;
+					return Object(effects["b" /* call */])(wpREST, {
+						path: 'tickets/' + ticketId,
+						namespace: 'tribe/tickets/v1',
+						headers: {
+							'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+						},
+						initParams: {
+							method: 'PUT',
+							body: data.join('&')
+						}
+					});
+
+				case 35:
+					_ref10 = _context9.sent;
+					response = _ref10.response;
+					ticket = _ref10.data;
+
+					if (!response.ok) {
+						_context9.next = 63;
+						break;
+					}
+
+					capacity_details = ticket.capacity_details;
+					available = capacity_details.available === -1 ? 0 : capacity_details.available;
+					_context9.next = 43;
+					return Object(effects["a" /* all */])([Object(effects["f" /* select */])(getTicketTempTitle, props), Object(effects["f" /* select */])(getTicketTempDescription, props), Object(effects["f" /* select */])(getTicketTempPrice, props), Object(effects["f" /* select */])(getTicketTempSku, props), Object(effects["f" /* select */])(getTicketTempStartDate, props), Object(effects["f" /* select */])(getTicketTempStartDateInput, props), Object(effects["f" /* select */])(getTicketTempStartDateMoment, props), Object(effects["f" /* select */])(getTicketTempEndDate, props), Object(effects["f" /* select */])(getTicketTempEndDateInput, props), Object(effects["f" /* select */])(getTicketTempEndDateMoment, props), Object(effects["f" /* select */])(getTicketTempStartTime, props), Object(effects["f" /* select */])(getTicketTempEndTime, props), Object(effects["f" /* select */])(getTicketTempStartTimeInput, props), Object(effects["f" /* select */])(getTicketTempEndTimeInput, props), Object(effects["f" /* select */])(getTicketTempCapacityType, props), Object(effects["f" /* select */])(getTicketTempCapacity, props)]);
+
+				case 43:
+					_ref11 = _context9.sent;
+					_ref12 = slicedToArray_default()(_ref11, 16);
+					title = _ref12[0];
+					description = _ref12[1];
+					price = _ref12[2];
+					sku = _ref12[3];
+					startDate = _ref12[4];
+					startDateInput = _ref12[5];
+					startDateMoment = _ref12[6];
+					endDate = _ref12[7];
+					endDateInput = _ref12[8];
+					endDateMoment = _ref12[9];
+					startTime = _ref12[10];
+					endTime = _ref12[11];
+					startTimeInput = _ref12[12];
+					endTimeInput = _ref12[13];
+					capacityType = _ref12[14];
+					capacity = _ref12[15];
+					_context9.next = 63;
+					return Object(effects["a" /* all */])([Object(effects["e" /* put */])(actions["setTicketDetails"](clientId, {
+						title: title,
+						description: description,
+						price: price,
+						sku: sku,
+						startDate: startDate,
+						startDateInput: startDateInput,
+						startDateMoment: startDateMoment,
+						endDate: endDate,
+						endDateInput: endDateInput,
+						endDateMoment: endDateMoment,
+						startTime: startTime,
+						endTime: endTime,
+						startTimeInput: startTimeInput,
+						endTimeInput: endTimeInput,
+						capacityType: capacityType,
+						capacity: capacity
+					})), Object(effects["e" /* put */])(actions["setTicketSold"](clientId, capacity_details.sold)), Object(effects["e" /* put */])(actions["setTicketAvailable"](clientId, available)), Object(effects["e" /* put */])(actions["setTicketHasChanges"](clientId, false))]);
+
+				case 63:
+					_context9.next = 68;
+					break;
+
+				case 65:
+					_context9.prev = 65;
+					_context9.t1 = _context9['catch'](10);
+
+					console.error(_context9.t1);
+					/**
+      * @todo: handle error scenario
+      */
+
+				case 68:
+					_context9.prev = 68;
+					_context9.next = 71;
+					return Object(effects["e" /* put */])(actions["setTicketIsLoading"](clientId, false));
+
+				case 71:
+					return _context9.finish(68);
+
+				case 72:
+				case 'end':
+					return _context9.stop();
+			}
+		}
+	}, _marked9, this, [[10, 65, 68, 72], [15, 19, 23, 31], [24,, 26, 30]]);
+}
+
+function deleteTicket(action) {
+	var clientId, props, shouldDelete, ticketId, hasBeenCreated, _restNonce3, _restNonce3$remove_ti, remove_ticket_nonce, postId, body;
+
+	return regenerator_default.a.wrap(function deleteTicket$(_context10) {
+		while (1) {
+			switch (_context10.prev = _context10.next) {
+				case 0:
+					clientId = action.payload.clientId;
+					props = { clientId: clientId };
+					_context10.next = 4;
+					return Object(effects["b" /* call */])([window, 'confirm'], Object(external_var_wp_i18n_root_wp_i18n_["__"])('Are you sure you want to delete this ticket? It cannot be undone.'));
+
+				case 4:
+					shouldDelete = _context10.sent;
+
+					if (!shouldDelete) {
+						_context10.next = 33;
+						break;
+					}
+
+					_context10.next = 8;
+					return Object(effects["f" /* select */])(getTicketId, props);
+
+				case 8:
+					ticketId = _context10.sent;
+					_context10.next = 11;
+					return Object(effects["f" /* select */])(getTicketHasBeenCreated, props);
+
+				case 11:
+					hasBeenCreated = _context10.sent;
+					_context10.next = 14;
+					return Object(effects["e" /* put */])(actions["setTicketIsSelected"](clientId, false));
+
+				case 14:
+					_context10.next = 16;
+					return Object(effects["e" /* put */])(actions["removeTicketBlock"](clientId));
+
+				case 16:
+					_context10.next = 18;
+					return Object(effects["b" /* call */])([Object(external_var_wp_data_root_wp_data_["dispatch"])('core/editor'), 'clearSelectedBlock']);
+
+				case 18:
+					_context10.next = 20;
+					return Object(effects["b" /* call */])([Object(external_var_wp_data_root_wp_data_["dispatch"])('core/editor'), 'removeBlocks'], [clientId]);
+
+				case 20:
+					if (!hasBeenCreated) {
+						_context10.next = 33;
+						break;
+					}
+
+					_restNonce3 = restNonce(), _restNonce3$remove_ti = _restNonce3.remove_ticket_nonce, remove_ticket_nonce = _restNonce3$remove_ti === undefined ? '' : _restNonce3$remove_ti;
+					_context10.next = 24;
+					return Object(effects["b" /* call */])([Object(external_var_wp_data_root_wp_data_["select"])('core/editor'), 'getCurrentPostId']);
+
+				case 24:
+					postId = _context10.sent;
+
+
+					/**
+      * Encode params to be passed into the DELETE request as PHP doesn’t transform the request body
+      * of a DELETE request into a super global.
+      */
+					body = [encodeURIComponent('post_id') + '=' + encodeURIComponent(postId), encodeURIComponent('remove_ticket_nonce') + '=' + encodeURIComponent(remove_ticket_nonce)];
+					_context10.prev = 26;
+					_context10.next = 29;
+					return Object(effects["b" /* call */])(wpREST, {
+						path: 'tickets/' + ticketId,
+						namespace: 'tribe/tickets/v1',
+						headers: {
+							'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+						},
+						initParams: {
+							method: 'DELETE',
+							body: body.join('&')
+						}
+					});
+
+				case 29:
+					_context10.next = 33;
+					break;
+
+				case 31:
+					_context10.prev = 31;
+					_context10.t0 = _context10['catch'](26);
+
+				case 33:
+				case 'end':
+					return _context10.stop();
+			}
+		}
+	}, _marked10, this, [[26, 31]]);
+}
+
+function fetchTicketsHeaderImage(action) {
+	var id, _ref13, response, media, headerImage;
+
+	return regenerator_default.a.wrap(function fetchTicketsHeaderImage$(_context11) {
+		while (1) {
+			switch (_context11.prev = _context11.next) {
+				case 0:
+					id = action.payload.id;
+					_context11.next = 3;
+					return Object(effects["e" /* put */])(actions["setTicketsIsSettingsLoading"](true));
+
+				case 3:
+					_context11.prev = 3;
+					_context11.next = 6;
+					return Object(effects["b" /* call */])(wpREST, { path: 'media/' + id });
+
+				case 6:
+					_ref13 = _context11.sent;
+					response = _ref13.response;
+					media = _ref13.data;
+
+					if (!response.ok) {
+						_context11.next = 13;
+						break;
+					}
+
+					headerImage = {
+						id: media.id,
+						alt: media.alt_text,
+						src: media.media_details.sizes.medium.source_url
+					};
+					_context11.next = 13;
+					return Object(effects["e" /* put */])(actions["setTicketsHeaderImage"](headerImage));
+
+				case 13:
+					_context11.next = 18;
+					break;
+
+				case 15:
+					_context11.prev = 15;
+					_context11.t0 = _context11['catch'](3);
+
+					console.error(_context11.t0);
+					/**
+      * @todo: handle error scenario
+      */
+
+				case 18:
+					_context11.prev = 18;
+					_context11.next = 21;
+					return Object(effects["e" /* put */])(actions["setTicketsIsSettingsLoading"](false));
+
+				case 21:
+					return _context11.finish(18);
+
+				case 22:
+				case 'end':
+					return _context11.stop();
+			}
+		}
+	}, _marked11, this, [[3, 15, 18, 22]]);
+}
+
+function updateTicketsHeaderImage(action) {
+	var image, postId, body, slug, postType, restBase, _ref14, response, headerImage;
+
+	return regenerator_default.a.wrap(function updateTicketsHeaderImage$(_context12) {
+		while (1) {
+			switch (_context12.prev = _context12.next) {
+				case 0:
+					image = action.payload.image;
+					_context12.next = 3;
+					return Object(effects["b" /* call */])([Object(external_var_wp_data_root_wp_data_["select"])('core/editor'), 'getCurrentPostId']);
+
+				case 3:
+					postId = _context12.sent;
+					body = {
+						meta: defineProperty_default()({}, utils["i" /* KEY_TICKET_HEADER */], '' + image.id)
+					};
+					_context12.prev = 5;
+					_context12.next = 8;
+					return Object(effects["e" /* put */])(actions["setTicketsIsSettingsLoading"](true));
+
+				case 8:
+					_context12.next = 10;
+					return Object(effects["e" /* put */])(rsvp_actions["setRSVPIsSettingsLoading"](true));
+
+				case 10:
+					slug = Object(external_var_wp_data_root_wp_data_["select"])('core/editor').getCurrentPostType();
+					postType = Object(external_var_wp_data_root_wp_data_["select"])('core').getPostType(slug);
+					restBase = postType.rest_base;
+					_context12.next = 15;
+					return Object(effects["b" /* call */])(wpREST, {
+						path: restBase + '/' + postId,
+						headers: {
+							'Content-Type': 'application/json'
+						},
+						initParams: {
+							method: 'PUT',
+							body: JSON.stringify(body)
+						}
+					});
+
+				case 15:
+					_ref14 = _context12.sent;
+					response = _ref14.response;
+
+					if (!response.ok) {
+						_context12.next = 23;
+						break;
+					}
+
+					headerImage = {
+						id: image.id,
+						alt: image.alt,
+						src: image.sizes.medium.url
+					};
+					/**
+      * @todo: until rsvp and tickets header image can be separated, they need to be linked
+      */
+
+					_context12.next = 21;
+					return Object(effects["e" /* put */])(actions["setTicketsHeaderImage"](headerImage));
+
+				case 21:
+					_context12.next = 23;
+					return Object(effects["e" /* put */])(rsvp_actions["setRSVPHeaderImage"](headerImage));
+
+				case 23:
+					_context12.next = 27;
+					break;
+
+				case 25:
+					_context12.prev = 25;
+					_context12.t0 = _context12['catch'](5);
+
+				case 27:
+					_context12.prev = 27;
+					_context12.next = 30;
+					return Object(effects["e" /* put */])(actions["setTicketsIsSettingsLoading"](false));
+
+				case 30:
+					_context12.next = 32;
+					return Object(effects["e" /* put */])(rsvp_actions["setRSVPIsSettingsLoading"](false));
+
+				case 32:
+					return _context12.finish(27);
+
+				case 33:
+				case 'end':
+					return _context12.stop();
+			}
+		}
+	}, _marked12, this, [[5, 25, 27, 33]]);
+}
+
+function deleteTicketsHeaderImage() {
+	var postId, body, slug, postType, restBase, _ref15, response;
+
+	return regenerator_default.a.wrap(function deleteTicketsHeaderImage$(_context13) {
+		while (1) {
+			switch (_context13.prev = _context13.next) {
+				case 0:
+					_context13.next = 2;
+					return Object(effects["b" /* call */])([Object(external_var_wp_data_root_wp_data_["select"])('core/editor'), 'getCurrentPostId']);
+
+				case 2:
+					postId = _context13.sent;
+					body = {
+						meta: defineProperty_default()({}, utils["i" /* KEY_TICKET_HEADER */], null)
+					};
+					_context13.prev = 4;
+					_context13.next = 7;
+					return Object(effects["e" /* put */])(actions["setTicketsIsSettingsLoading"](true));
+
+				case 7:
+					_context13.next = 9;
+					return Object(effects["e" /* put */])(rsvp_actions["setRSVPIsSettingsLoading"](true));
+
+				case 9:
+					slug = Object(external_var_wp_data_root_wp_data_["select"])('core/editor').getCurrentPostType();
+					postType = Object(external_var_wp_data_root_wp_data_["select"])('core').getPostType(slug);
+					restBase = postType.rest_base;
+					_context13.next = 14;
+					return Object(effects["b" /* call */])(external_tribe_common_utils_["api"].wpREST, {
+						path: restBase + '/' + postId,
+						headers: {
+							'Content-Type': 'application/json'
+						},
+						initParams: {
+							method: 'PUT',
+							body: JSON.stringify(body)
+						}
+					});
+
+				case 14:
+					_ref15 = _context13.sent;
+					response = _ref15.response;
+
+					if (!response.ok) {
+						_context13.next = 21;
+						break;
+					}
+
+					_context13.next = 19;
+					return Object(effects["e" /* put */])(actions["setTicketsHeaderImage"](header_image["a" /* DEFAULT_STATE */]));
+
+				case 19:
+					_context13.next = 21;
+					return Object(effects["e" /* put */])(rsvp_actions["setRSVPHeaderImage"](reducers_header_image["a" /* DEFAULT_STATE */]));
+
+				case 21:
+					_context13.next = 25;
+					break;
+
+				case 23:
+					_context13.prev = 23;
+					_context13.t0 = _context13['catch'](4);
+
+				case 25:
+					_context13.prev = 25;
+					_context13.next = 28;
+					return Object(effects["e" /* put */])(actions["setTicketsIsSettingsLoading"](false));
+
+				case 28:
+					_context13.next = 30;
+					return Object(effects["e" /* put */])(rsvp_actions["setRSVPIsSettingsLoading"](false));
+
+				case 30:
+					return _context13.finish(25);
+
+				case 31:
+				case 'end':
+					return _context13.stop();
+			}
+		}
+	}, _marked13, this, [[4, 23, 25, 31]]);
+}
+
+function setTicketDetails(action) {
+	var _action$payload3, clientId, details, title, description, price, sku, startDate, startDateInput, startDateMoment, endDate, endDateInput, endDateMoment, startTime, endTime, startTimeInput, endTimeInput, capacityType, capacity;
+
+	return regenerator_default.a.wrap(function setTicketDetails$(_context14) {
+		while (1) {
+			switch (_context14.prev = _context14.next) {
+				case 0:
+					_action$payload3 = action.payload, clientId = _action$payload3.clientId, details = _action$payload3.details;
+					title = details.title, description = details.description, price = details.price, sku = details.sku, startDate = details.startDate, startDateInput = details.startDateInput, startDateMoment = details.startDateMoment, endDate = details.endDate, endDateInput = details.endDateInput, endDateMoment = details.endDateMoment, startTime = details.startTime, endTime = details.endTime, startTimeInput = details.startTimeInput, endTimeInput = details.endTimeInput, capacityType = details.capacityType, capacity = details.capacity;
+					_context14.next = 4;
+					return Object(effects["a" /* all */])([Object(effects["e" /* put */])(actions["setTicketTitle"](clientId, title)), Object(effects["e" /* put */])(actions["setTicketDescription"](clientId, description)), Object(effects["e" /* put */])(actions["setTicketPrice"](clientId, price)), Object(effects["e" /* put */])(actions["setTicketSku"](clientId, sku)), Object(effects["e" /* put */])(actions["setTicketStartDate"](clientId, startDate)), Object(effects["e" /* put */])(actions["setTicketStartDateInput"](clientId, startDateInput)), Object(effects["e" /* put */])(actions["setTicketStartDateMoment"](clientId, startDateMoment)), Object(effects["e" /* put */])(actions["setTicketEndDate"](clientId, endDate)), Object(effects["e" /* put */])(actions["setTicketEndDateInput"](clientId, endDateInput)), Object(effects["e" /* put */])(actions["setTicketEndDateMoment"](clientId, endDateMoment)), Object(effects["e" /* put */])(actions["setTicketStartTime"](clientId, startTime)), Object(effects["e" /* put */])(actions["setTicketEndTime"](clientId, endTime)), Object(effects["e" /* put */])(actions["setTicketStartTimeInput"](clientId, startTimeInput)), Object(effects["e" /* put */])(actions["setTicketEndTimeInput"](clientId, endTimeInput)), Object(effects["e" /* put */])(actions["setTicketCapacityType"](clientId, capacityType)), Object(effects["e" /* put */])(actions["setTicketCapacity"](clientId, capacity))]);
+
+				case 4:
+				case 'end':
+					return _context14.stop();
+			}
+		}
+	}, _marked14, this);
+}
+
+function setTicketTempDetails(action) {
+	var _action$payload4, clientId, tempDetails, title, description, price, sku, startDate, startDateInput, startDateMoment, endDate, endDateInput, endDateMoment, startTime, endTime, startTimeInput, endTimeInput, capacityType, capacity;
+
+	return regenerator_default.a.wrap(function setTicketTempDetails$(_context15) {
+		while (1) {
+			switch (_context15.prev = _context15.next) {
+				case 0:
+					_action$payload4 = action.payload, clientId = _action$payload4.clientId, tempDetails = _action$payload4.tempDetails;
+					title = tempDetails.title, description = tempDetails.description, price = tempDetails.price, sku = tempDetails.sku, startDate = tempDetails.startDate, startDateInput = tempDetails.startDateInput, startDateMoment = tempDetails.startDateMoment, endDate = tempDetails.endDate, endDateInput = tempDetails.endDateInput, endDateMoment = tempDetails.endDateMoment, startTime = tempDetails.startTime, endTime = tempDetails.endTime, startTimeInput = tempDetails.startTimeInput, endTimeInput = tempDetails.endTimeInput, capacityType = tempDetails.capacityType, capacity = tempDetails.capacity;
+					_context15.next = 4;
+					return Object(effects["a" /* all */])([Object(effects["e" /* put */])(actions["setTicketTempTitle"](clientId, title)), Object(effects["e" /* put */])(actions["setTicketTempDescription"](clientId, description)), Object(effects["e" /* put */])(actions["setTicketTempPrice"](clientId, price)), Object(effects["e" /* put */])(actions["setTicketTempSku"](clientId, sku)), Object(effects["e" /* put */])(actions["setTicketTempStartDate"](clientId, startDate)), Object(effects["e" /* put */])(actions["setTicketTempStartDateInput"](clientId, startDateInput)), Object(effects["e" /* put */])(actions["setTicketTempStartDateMoment"](clientId, startDateMoment)), Object(effects["e" /* put */])(actions["setTicketTempEndDate"](clientId, endDate)), Object(effects["e" /* put */])(actions["setTicketTempEndDateInput"](clientId, endDateInput)), Object(effects["e" /* put */])(actions["setTicketTempEndDateMoment"](clientId, endDateMoment)), Object(effects["e" /* put */])(actions["setTicketTempStartTime"](clientId, startTime)), Object(effects["e" /* put */])(actions["setTicketTempEndTime"](clientId, endTime)), Object(effects["e" /* put */])(actions["setTicketTempStartTimeInput"](clientId, startTimeInput)), Object(effects["e" /* put */])(actions["setTicketTempEndTimeInput"](clientId, endTimeInput)), Object(effects["e" /* put */])(actions["setTicketTempCapacityType"](clientId, capacityType)), Object(effects["e" /* put */])(actions["setTicketTempCapacity"](clientId, capacity))]);
+
+				case 4:
+				case 'end':
+					return _context15.stop();
+			}
+		}
+	}, _marked15, this);
+}
+
+/**
+ * Allows the Ticket to be saved at the same time a post is being saved.
+ * Avoids the user having to open up the Ticket block, and then click update again there, when changing the event start date.
+ *
+ * @export
+ */
+function saveTicketWithPostSave(clientId) {
+	var savingChannel, notSavingChannel;
+	return regenerator_default.a.wrap(function saveTicketWithPostSave$(_context16) {
+		while (1) {
+			switch (_context16.prev = _context16.next) {
+				case 0:
+					savingChannel = void 0, notSavingChannel = void 0;
+					_context16.prev = 1;
+					_context16.next = 4;
+					return Object(effects["f" /* select */])(getTicketHasBeenCreated, { clientId: clientId });
+
+				case 4:
+					if (!_context16.sent) {
+						_context16.next = 20;
+						break;
+					}
+
+					_context16.next = 7;
+					return Object(effects["b" /* call */])(sagas["c" /* createWPEditorSavingChannel */]);
+
+				case 7:
+					savingChannel = _context16.sent;
+					_context16.next = 10;
+					return Object(effects["b" /* call */])(sagas["b" /* createWPEditorNotSavingChannel */]);
+
+				case 10:
+					notSavingChannel = _context16.sent;
+
+				case 11:
+					if (false) {}
+
+					_context16.next = 14;
+					return Object(effects["g" /* take */])(savingChannel);
+
+				case 14:
+					_context16.next = 16;
+					return Object(effects["b" /* call */])(updateTicket, { payload: { clientId: clientId } });
+
+				case 16:
+					_context16.next = 18;
+					return Object(effects["g" /* take */])(notSavingChannel);
+
+				case 18:
+					_context16.next = 11;
+					break;
+
+				case 20:
+					_context16.next = 25;
+					break;
+
+				case 22:
+					_context16.prev = 22;
+					_context16.t0 = _context16['catch'](1);
+
+					console.error(_context16.t0);
+
+				case 25:
+					_context16.prev = 25;
+
+					if (!savingChannel) {
+						_context16.next = 29;
+						break;
+					}
+
+					_context16.next = 29;
+					return Object(effects["b" /* call */])([savingChannel, 'close']);
+
+				case 29:
+					if (!notSavingChannel) {
+						_context16.next = 32;
+						break;
+					}
+
+					_context16.next = 32;
+					return Object(effects["b" /* call */])([notSavingChannel, 'close']);
+
+				case 32:
+					return _context16.finish(25);
+
+				case 33:
+				case 'end':
+					return _context16.stop();
+			}
+		}
+	}, _marked16, this, [[1, 22, 25, 33]]);
+}
+
+/**
+ * Will sync all tickets
+ * @param {String} prevStartDate Previous start date before latest set date time changes
+ * @export
+ */
+function syncTicketsSaleEndWithEventStart(prevStartDate) {
+	var ticketIds, index, clientId;
+	return regenerator_default.a.wrap(function syncTicketsSaleEndWithEventStart$(_context17) {
+		while (1) {
+			switch (_context17.prev = _context17.next) {
+				case 0:
+					_context17.next = 2;
+					return Object(effects["f" /* select */])(getTicketsAllClientIds);
+
+				case 2:
+					ticketIds = _context17.sent;
+					index = 0;
+
+				case 4:
+					if (!(index < ticketIds.length)) {
+						_context17.next = 11;
+						break;
+					}
+
+					clientId = ticketIds[index];
+					_context17.next = 8;
+					return Object(effects["b" /* call */])(syncTicketSaleEndWithEventStart, prevStartDate, clientId);
+
+				case 8:
+					index++;
+					_context17.next = 4;
+					break;
+
+				case 11:
+				case 'end':
+					return _context17.stop();
+			}
+		}
+	}, _marked17, this);
+}
+
+/**
+ * Will sync Tickets sale end to be the same as event start date and time, if field has not been manually edited
+ * @borrows TEC - Functionality requires TEC to be enabled
+ * @param {String} prevStartDate Previous start date before latest set date time changes
+ * @export
+ */
+function syncTicketSaleEndWithEventStart(prevStartDate, clientId) {
+	var tempEndMoment, endMoment, _ref16, prevEventStartMoment, isNotManuallyEdited, isSyncedToEventStart, eventStart, _ref17, endDateMoment, endDate, endDateInput, endTime, endTimeInput;
+
+	return regenerator_default.a.wrap(function syncTicketSaleEndWithEventStart$(_context18) {
+		while (1) {
+			switch (_context18.prev = _context18.next) {
+				case 0:
+					_context18.prev = 0;
+					_context18.next = 3;
+					return Object(effects["f" /* select */])(getTicketTempEndDateMoment, { clientId: clientId });
+
+				case 3:
+					tempEndMoment = _context18.sent;
+					_context18.next = 6;
+					return Object(effects["f" /* select */])(getTicketEndDateMoment, { clientId: clientId });
+
+				case 6:
+					endMoment = _context18.sent;
+					_context18.next = 9;
+					return Object(effects["b" /* call */])(sagas["a" /* createDates */], prevStartDate);
+
+				case 9:
+					_ref16 = _context18.sent;
+					prevEventStartMoment = _ref16.moment;
+					_context18.next = 13;
+					return Object(effects["a" /* all */])([Object(effects["b" /* call */])([tempEndMoment, 'local']), Object(effects["b" /* call */])([endMoment, 'local']), Object(effects["b" /* call */])([prevEventStartMoment, 'local'])]);
+
+				case 13:
+					_context18.next = 15;
+					return Object(effects["b" /* call */])([tempEndMoment, 'isSame'], endMoment, 'minute');
+
+				case 15:
+					isNotManuallyEdited = _context18.sent;
+					_context18.next = 18;
+					return Object(effects["b" /* call */])([tempEndMoment, 'isSame'], prevEventStartMoment, 'minute');
+
+				case 18:
+					isSyncedToEventStart = _context18.sent;
+
+					if (!(isNotManuallyEdited && isSyncedToEventStart)) {
+						_context18.next = 33;
+						break;
+					}
+
+					_context18.next = 22;
+					return Object(effects["f" /* select */])(window.tribe.events.data.blocks.datetime.selectors.getStart);
+
+				case 22:
+					eventStart = _context18.sent;
+					_context18.next = 25;
+					return Object(effects["b" /* call */])(sagas["a" /* createDates */], eventStart);
+
+				case 25:
+					_ref17 = _context18.sent;
+					endDateMoment = _ref17.moment;
+					endDate = _ref17.date;
+					endDateInput = _ref17.dateInput;
+					endTime = _ref17.time;
+					endTimeInput = _ref17.timeInput;
+					_context18.next = 33;
+					return Object(effects["a" /* all */])([Object(effects["e" /* put */])(actions["setTicketTempEndDate"](clientId, endDate)), Object(effects["e" /* put */])(actions["setTicketTempEndDateInput"](clientId, endDateInput)), Object(effects["e" /* put */])(actions["setTicketTempEndDateMoment"](clientId, endDateMoment)), Object(effects["e" /* put */])(actions["setTicketTempEndTime"](clientId, endTime)), Object(effects["e" /* put */])(actions["setTicketTempEndTimeInput"](clientId, endTimeInput)),
+
+					// Sync Ticket end items as well so as not to make state 'manually edited'
+					Object(effects["e" /* put */])(actions["setTicketEndDate"](clientId, endDate)), Object(effects["e" /* put */])(actions["setTicketEndDateInput"](clientId, endDateInput)), Object(effects["e" /* put */])(actions["setTicketEndDateMoment"](clientId, endDateMoment)), Object(effects["e" /* put */])(actions["setTicketEndTime"](clientId, endTime)), Object(effects["e" /* put */])(actions["setTicketEndTimeInput"](clientId, endTimeInput)),
+
+					// Trigger UI button
+					Object(effects["e" /* put */])(actions["setTicketHasChanges"](clientId, true)),
+
+					// Handle ticket duration error
+					Object(effects["b" /* call */])(handleTicketDurationError, clientId)]);
+
+				case 33:
+					_context18.next = 38;
+					break;
+
+				case 35:
+					_context18.prev = 35;
+					_context18.t0 = _context18['catch'](0);
+
+					// ¯\_(ツ)_/¯
+					console.error(_context18.t0);
+
+				case 38:
+				case 'end':
+					return _context18.stop();
+			}
+		}
+	}, _marked18, this, [[0, 35]]);
+}
+
+/**
+ * Listens for event start date and time changes after RSVP block is loaded.
+ * @borrows TEC - Functionality requires TEC to be enabled and post type to be event
+ * @export
+ */
+function handleEventStartDateChanges() {
+	var postTypeChannel, isEvent, _window$tribe$events$, SET_START_DATE_TIME, SET_START_TIME, syncTask, eventStart;
+
+	return regenerator_default.a.wrap(function handleEventStartDateChanges$(_context19) {
+		while (1) {
+			switch (_context19.prev = _context19.next) {
+				case 0:
+					_context19.prev = 0;
+					_context19.next = 3;
+					return Object(effects["b" /* call */])(sagas["d" /* hasPostTypeChannel */]);
+
+				case 3:
+					postTypeChannel = _context19.sent;
+					_context19.next = 6;
+					return Object(effects["g" /* take */])(postTypeChannel);
+
+				case 6:
+					_context19.next = 8;
+					return Object(effects["b" /* call */])([postTypeChannel, 'close']);
+
+				case 8:
+					_context19.next = 10;
+					return Object(effects["b" /* call */])(sagas["e" /* isTribeEventPostType */]);
+
+				case 10:
+					isEvent = _context19.sent;
+
+					if (!(isEvent && window.tribe.events)) {
+						_context19.next = 28;
+						break;
+					}
+
+					_window$tribe$events$ = window.tribe.events.data.blocks.datetime.types, SET_START_DATE_TIME = _window$tribe$events$.SET_START_DATE_TIME, SET_START_TIME = _window$tribe$events$.SET_START_TIME;
+					syncTask = void 0;
+
+				case 14:
+					if (false) {}
+
+					_context19.next = 17;
+					return Object(effects["f" /* select */])(window.tribe.events.data.blocks.datetime.selectors.getStart);
+
+				case 17:
+					eventStart = _context19.sent;
+					_context19.next = 20;
+					return Object(effects["g" /* take */])([SET_START_DATE_TIME, SET_START_TIME]);
+
+				case 20:
+					if (!syncTask) {
+						_context19.next = 23;
+						break;
+					}
+
+					_context19.next = 23;
+					return Object(effects["c" /* cancel */])(syncTask);
+
+				case 23:
+					_context19.next = 25;
+					return Object(effects["d" /* fork */])(syncTicketsSaleEndWithEventStart, eventStart);
+
+				case 25:
+					syncTask = _context19.sent;
+					_context19.next = 14;
+					break;
+
+				case 28:
+					_context19.next = 33;
+					break;
+
+				case 30:
+					_context19.prev = 30;
+					_context19.t0 = _context19['catch'](0);
+
+					// ¯\_(ツ)_/¯
+					console.error(_context19.t0);
+
+				case 33:
+				case 'end':
+					return _context19.stop();
+			}
+		}
+	}, _marked19, this, [[0, 30]]);
+}
+
+function handleTicketDurationError(clientId) {
+	var hasDurationError, startDateMoment, endDateMoment, startTime, endTime, startTimeSeconds, endTimeSeconds, startDateTimeMoment, endDateTimeMoment, durationHasError;
+	return regenerator_default.a.wrap(function handleTicketDurationError$(_context20) {
+		while (1) {
+			switch (_context20.prev = _context20.next) {
+				case 0:
+					hasDurationError = false;
+					_context20.next = 3;
+					return Object(effects["f" /* select */])(getTicketTempStartDateMoment, { clientId: clientId });
+
+				case 3:
+					startDateMoment = _context20.sent;
+					_context20.next = 6;
+					return Object(effects["f" /* select */])(getTicketTempEndDateMoment, { clientId: clientId });
+
+				case 6:
+					endDateMoment = _context20.sent;
+
+					if (!(!startDateMoment || !endDateMoment)) {
+						_context20.next = 11;
+						break;
+					}
+
+					hasDurationError = true;
+					_context20.next = 33;
+					break;
+
+				case 11:
+					_context20.next = 13;
+					return Object(effects["f" /* select */])(getTicketTempStartTime, { clientId: clientId });
+
+				case 13:
+					startTime = _context20.sent;
+					_context20.next = 16;
+					return Object(effects["f" /* select */])(getTicketTempEndTime, { clientId: clientId });
+
+				case 16:
+					endTime = _context20.sent;
+					_context20.next = 19;
+					return Object(effects["b" /* call */])(external_tribe_common_utils_["time"].toSeconds, startTime, external_tribe_common_utils_["time"].TIME_FORMAT_HH_MM_SS);
+
+				case 19:
+					startTimeSeconds = _context20.sent;
+					_context20.next = 22;
+					return Object(effects["b" /* call */])(external_tribe_common_utils_["time"].toSeconds, endTime, external_tribe_common_utils_["time"].TIME_FORMAT_HH_MM_SS);
+
+				case 22:
+					endTimeSeconds = _context20.sent;
+					_context20.next = 25;
+					return Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].setTimeInSeconds, startDateMoment.clone(), startTimeSeconds);
+
+				case 25:
+					startDateTimeMoment = _context20.sent;
+					_context20.next = 28;
+					return Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].setTimeInSeconds, endDateMoment.clone(), endTimeSeconds);
+
+				case 28:
+					endDateTimeMoment = _context20.sent;
+					_context20.next = 31;
+					return Object(effects["b" /* call */])([startDateTimeMoment, 'isSameOrAfter'], endDateTimeMoment);
+
+				case 31:
+					durationHasError = _context20.sent;
+
+
+					if (durationHasError) {
+						hasDurationError = true;
+					}
+
+				case 33:
+					_context20.next = 35;
+					return Object(effects["e" /* put */])(actions["setTicketHasDurationError"](clientId, hasDurationError));
+
+				case 35:
+				case 'end':
+					return _context20.stop();
+			}
+		}
+	}, _marked20, this);
+}
+
+function handleTicketStartDate(action) {
+	var _action$payload5, clientId, date, dayPickerInput, startDateMoment, startDate;
+
+	return regenerator_default.a.wrap(function handleTicketStartDate$(_context21) {
+		while (1) {
+			switch (_context21.prev = _context21.next) {
+				case 0:
+					_action$payload5 = action.payload, clientId = _action$payload5.clientId, date = _action$payload5.date, dayPickerInput = _action$payload5.dayPickerInput;
+					_context21.next = 3;
+					return date ? Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toMoment, date) : undefined;
+
+				case 3:
+					startDateMoment = _context21.sent;
+					_context21.next = 6;
+					return date ? Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toDatabaseDate, startDateMoment) : '';
+
+				case 6:
+					startDate = _context21.sent;
+					_context21.next = 9;
+					return Object(effects["e" /* put */])(actions["setTicketTempStartDate"](clientId, startDate));
+
+				case 9:
+					_context21.next = 11;
+					return Object(effects["e" /* put */])(actions["setTicketTempStartDateInput"](clientId, dayPickerInput.state.value));
+
+				case 11:
+					_context21.next = 13;
+					return Object(effects["e" /* put */])(actions["setTicketTempStartDateMoment"](clientId, startDateMoment));
+
+				case 13:
+				case 'end':
+					return _context21.stop();
+			}
+		}
+	}, _marked21, this);
+}
+
+function handleTicketEndDate(action) {
+	var _action$payload6, clientId, date, dayPickerInput, endDateMoment, endDate;
+
+	return regenerator_default.a.wrap(function handleTicketEndDate$(_context22) {
+		while (1) {
+			switch (_context22.prev = _context22.next) {
+				case 0:
+					_action$payload6 = action.payload, clientId = _action$payload6.clientId, date = _action$payload6.date, dayPickerInput = _action$payload6.dayPickerInput;
+					_context22.next = 3;
+					return date ? Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toMoment, date) : undefined;
+
+				case 3:
+					endDateMoment = _context22.sent;
+					_context22.next = 6;
+					return date ? Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toDatabaseDate, endDateMoment) : '';
+
+				case 6:
+					endDate = _context22.sent;
+					_context22.next = 9;
+					return Object(effects["e" /* put */])(actions["setTicketTempEndDate"](clientId, endDate));
+
+				case 9:
+					_context22.next = 11;
+					return Object(effects["e" /* put */])(actions["setTicketTempEndDateInput"](clientId, dayPickerInput.state.value));
+
+				case 11:
+					_context22.next = 13;
+					return Object(effects["e" /* put */])(actions["setTicketTempEndDateMoment"](clientId, endDateMoment));
+
+				case 13:
+				case 'end':
+					return _context22.stop();
+			}
+		}
+	}, _marked22, this);
+}
+
+function handleTicketStartTime(action) {
+	var _action$payload7, clientId, seconds, startTime;
+
+	return regenerator_default.a.wrap(function handleTicketStartTime$(_context23) {
+		while (1) {
+			switch (_context23.prev = _context23.next) {
+				case 0:
+					_action$payload7 = action.payload, clientId = _action$payload7.clientId, seconds = _action$payload7.seconds;
+					_context23.next = 3;
+					return Object(effects["b" /* call */])(external_tribe_common_utils_["time"].fromSeconds, seconds, external_tribe_common_utils_["time"].TIME_FORMAT_HH_MM);
+
+				case 3:
+					startTime = _context23.sent;
+					_context23.next = 6;
+					return Object(effects["e" /* put */])(actions["setTicketTempStartTime"](clientId, startTime + ':00'));
+
+				case 6:
+				case 'end':
+					return _context23.stop();
+			}
+		}
+	}, _marked23, this);
+}
+
+function handleTicketStartTimeInput(action) {
+	var _action$payload8, clientId, seconds, startTime, startTimeMoment, startTimeInput;
+
+	return regenerator_default.a.wrap(function handleTicketStartTimeInput$(_context24) {
+		while (1) {
+			switch (_context24.prev = _context24.next) {
+				case 0:
+					_action$payload8 = action.payload, clientId = _action$payload8.clientId, seconds = _action$payload8.seconds;
+					_context24.next = 3;
+					return Object(effects["b" /* call */])(external_tribe_common_utils_["time"].fromSeconds, seconds, external_tribe_common_utils_["time"].TIME_FORMAT_HH_MM);
+
+				case 3:
+					startTime = _context24.sent;
+					_context24.next = 6;
+					return Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toMoment, startTime, external_tribe_common_utils_["moment"].TIME_FORMAT, false);
+
+				case 6:
+					startTimeMoment = _context24.sent;
+					_context24.next = 9;
+					return Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toTime, startTimeMoment);
+
+				case 9:
+					startTimeInput = _context24.sent;
+					_context24.next = 12;
+					return Object(effects["e" /* put */])(actions["setTicketTempStartTimeInput"](clientId, startTimeInput));
+
+				case 12:
+				case 'end':
+					return _context24.stop();
+			}
+		}
+	}, _marked24, this);
+}
+
+function handleTicketEndTime(action) {
+	var _action$payload9, clientId, seconds, endTime;
+
+	return regenerator_default.a.wrap(function handleTicketEndTime$(_context25) {
+		while (1) {
+			switch (_context25.prev = _context25.next) {
+				case 0:
+					_action$payload9 = action.payload, clientId = _action$payload9.clientId, seconds = _action$payload9.seconds;
+					_context25.next = 3;
+					return Object(effects["b" /* call */])(external_tribe_common_utils_["time"].fromSeconds, seconds, external_tribe_common_utils_["time"].TIME_FORMAT_HH_MM);
+
+				case 3:
+					endTime = _context25.sent;
+					_context25.next = 6;
+					return Object(effects["e" /* put */])(actions["setTicketTempEndTime"](clientId, endTime + ':00'));
+
+				case 6:
+				case 'end':
+					return _context25.stop();
+			}
+		}
+	}, _marked25, this);
+}
+
+function handleTicketEndTimeInput(action) {
+	var _action$payload10, clientId, seconds, endTime, endTimeMoment, endTimeInput;
+
+	return regenerator_default.a.wrap(function handleTicketEndTimeInput$(_context26) {
+		while (1) {
+			switch (_context26.prev = _context26.next) {
+				case 0:
+					_action$payload10 = action.payload, clientId = _action$payload10.clientId, seconds = _action$payload10.seconds;
+					_context26.next = 3;
+					return Object(effects["b" /* call */])(external_tribe_common_utils_["time"].fromSeconds, seconds, external_tribe_common_utils_["time"].TIME_FORMAT_HH_MM);
+
+				case 3:
+					endTime = _context26.sent;
+					_context26.next = 6;
+					return Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toMoment, endTime, external_tribe_common_utils_["moment"].TIME_FORMAT, false);
+
+				case 6:
+					endTimeMoment = _context26.sent;
+					_context26.next = 9;
+					return Object(effects["b" /* call */])(external_tribe_common_utils_["moment"].toTime, endTimeMoment);
+
+				case 9:
+					endTimeInput = _context26.sent;
+					_context26.next = 12;
+					return Object(effects["e" /* put */])(actions["setTicketTempEndTimeInput"](clientId, endTimeInput));
+
+				case 12:
+				case 'end':
+					return _context26.stop();
+			}
+		}
+	}, _marked26, this);
+}
+
+function handleTicketMove() {
+	var ticketClientIds, modalClientId;
+	return regenerator_default.a.wrap(function handleTicketMove$(_context27) {
+		while (1) {
+			switch (_context27.prev = _context27.next) {
+				case 0:
+					_context27.next = 2;
+					return Object(effects["f" /* select */])(getTicketsAllClientIds);
+
+				case 2:
+					ticketClientIds = _context27.sent;
+					_context27.next = 5;
+					return Object(effects["f" /* select */])(selectors["a" /* getModalClientId */]);
+
+				case 5:
+					modalClientId = _context27.sent;
+
+					if (!ticketClientIds.includes(modalClientId)) {
+						_context27.next = 13;
+						break;
+					}
+
+					_context27.next = 9;
+					return Object(effects["e" /* put */])(actions["setTicketIsSelected"](modalClientId, false));
+
+				case 9:
+					_context27.next = 11;
+					return Object(effects["e" /* put */])(actions["removeTicketBlock"](modalClientId));
+
+				case 11:
+					_context27.next = 13;
+					return Object(effects["b" /* call */])([Object(external_var_wp_data_root_wp_data_["dispatch"])('core/editor'), 'removeBlocks'], [modalClientId]);
+
+				case 13:
+				case 'end':
+					return _context27.stop();
+			}
+		}
+	}, _marked27, this);
+}
+
+function handler(action) {
+	return regenerator_default.a.wrap(function handler$(_context28) {
+		while (1) {
+			switch (_context28.prev = _context28.next) {
+				case 0:
+					_context28.t0 = action.type;
+					_context28.next = _context28.t0 === types["SET_TICKETS_INITIAL_STATE"] ? 3 : _context28.t0 === types["RESET_TICKETS_BLOCK"] ? 6 : _context28.t0 === types["SET_TICKET_INITIAL_STATE"] ? 9 : _context28.t0 === types["FETCH_TICKET"] ? 12 : _context28.t0 === types["CREATE_NEW_TICKET"] ? 15 : _context28.t0 === types["UPDATE_TICKET"] ? 18 : _context28.t0 === types["DELETE_TICKET"] ? 21 : _context28.t0 === types["FETCH_TICKETS_HEADER_IMAGE"] ? 24 : _context28.t0 === types["UPDATE_TICKETS_HEADER_IMAGE"] ? 27 : _context28.t0 === types["DELETE_TICKETS_HEADER_IMAGE"] ? 30 : _context28.t0 === types["SET_TICKET_DETAILS"] ? 33 : _context28.t0 === types["SET_TICKET_TEMP_DETAILS"] ? 36 : _context28.t0 === types["HANDLE_TICKET_START_DATE"] ? 39 : _context28.t0 === types["HANDLE_TICKET_END_DATE"] ? 46 : _context28.t0 === types["HANDLE_TICKET_START_TIME"] ? 53 : _context28.t0 === types["HANDLE_TICKET_END_TIME"] ? 62 : _context28.t0 === move_types["k" /* MOVE_TICKET_SUCCESS */] ? 71 : 74;
+					break;
+
+				case 3:
+					_context28.next = 5;
+					return Object(effects["b" /* call */])(setTicketsInitialState, action);
+
+				case 5:
+					return _context28.abrupt('break', 75);
+
+				case 6:
+					_context28.next = 8;
+					return Object(effects["b" /* call */])(resetTicketsBlock);
+
+				case 8:
+					return _context28.abrupt('break', 75);
+
+				case 9:
+					_context28.next = 11;
+					return Object(effects["b" /* call */])(setTicketInitialState, action);
+
+				case 11:
+					return _context28.abrupt('break', 75);
+
+				case 12:
+					_context28.next = 14;
+					return Object(effects["b" /* call */])(fetchTicket, action);
+
+				case 14:
+					return _context28.abrupt('break', 75);
+
+				case 15:
+					_context28.next = 17;
+					return Object(effects["b" /* call */])(createNewTicket, action);
+
+				case 17:
+					return _context28.abrupt('break', 75);
+
+				case 18:
+					_context28.next = 20;
+					return Object(effects["b" /* call */])(updateTicket, action);
+
+				case 20:
+					return _context28.abrupt('break', 75);
+
+				case 21:
+					_context28.next = 23;
+					return Object(effects["b" /* call */])(deleteTicket, action);
+
+				case 23:
+					return _context28.abrupt('break', 75);
+
+				case 24:
+					_context28.next = 26;
+					return Object(effects["b" /* call */])(fetchTicketsHeaderImage, action);
+
+				case 26:
+					return _context28.abrupt('break', 75);
+
+				case 27:
+					_context28.next = 29;
+					return Object(effects["b" /* call */])(updateTicketsHeaderImage, action);
+
+				case 29:
+					return _context28.abrupt('break', 75);
+
+				case 30:
+					_context28.next = 32;
+					return Object(effects["b" /* call */])(deleteTicketsHeaderImage);
+
+				case 32:
+					return _context28.abrupt('break', 75);
+
+				case 33:
+					_context28.next = 35;
+					return Object(effects["b" /* call */])(setTicketDetails, action);
+
+				case 35:
+					return _context28.abrupt('break', 75);
+
+				case 36:
+					_context28.next = 38;
+					return Object(effects["b" /* call */])(setTicketTempDetails, action);
+
+				case 38:
+					return _context28.abrupt('break', 75);
+
+				case 39:
+					_context28.next = 41;
+					return Object(effects["b" /* call */])(handleTicketStartDate, action);
+
+				case 41:
+					_context28.next = 43;
+					return Object(effects["b" /* call */])(handleTicketDurationError, action.payload.clientId);
+
+				case 43:
+					_context28.next = 45;
+					return Object(effects["e" /* put */])(actions["setTicketHasChanges"](action.payload.clientId, true));
+
+				case 45:
+					return _context28.abrupt('break', 75);
+
+				case 46:
+					_context28.next = 48;
+					return Object(effects["b" /* call */])(handleTicketEndDate, action);
+
+				case 48:
+					_context28.next = 50;
+					return Object(effects["b" /* call */])(handleTicketDurationError, action.payload.clientId);
+
+				case 50:
+					_context28.next = 52;
+					return Object(effects["e" /* put */])(actions["setTicketHasChanges"](action.payload.clientId, true));
+
+				case 52:
+					return _context28.abrupt('break', 75);
+
+				case 53:
+					_context28.next = 55;
+					return Object(effects["b" /* call */])(handleTicketStartTime, action);
+
+				case 55:
+					_context28.next = 57;
+					return Object(effects["b" /* call */])(handleTicketStartTimeInput, action);
+
+				case 57:
+					_context28.next = 59;
+					return Object(effects["b" /* call */])(handleTicketDurationError, action.payload.clientId);
+
+				case 59:
+					_context28.next = 61;
+					return Object(effects["e" /* put */])(actions["setTicketHasChanges"](action.payload.clientId, true));
+
+				case 61:
+					return _context28.abrupt('break', 75);
+
+				case 62:
+					_context28.next = 64;
+					return Object(effects["b" /* call */])(handleTicketEndTime, action);
+
+				case 64:
+					_context28.next = 66;
+					return Object(effects["b" /* call */])(handleTicketEndTimeInput, action);
+
+				case 66:
+					_context28.next = 68;
+					return Object(effects["b" /* call */])(handleTicketDurationError, action.payload.clientId);
+
+				case 68:
+					_context28.next = 70;
+					return Object(effects["e" /* put */])(actions["setTicketHasChanges"](action.payload.clientId, true));
+
+				case 70:
+					return _context28.abrupt('break', 75);
+
+				case 71:
+					_context28.next = 73;
+					return Object(effects["b" /* call */])(handleTicketMove);
+
+				case 73:
+					return _context28.abrupt('break', 75);
+
+				case 74:
+					return _context28.abrupt('break', 75);
+
+				case 75:
+				case 'end':
+					return _context28.stop();
+			}
+		}
+	}, _marked28, this);
+}
+
+function watchers() {
+	return regenerator_default.a.wrap(function watchers$(_context29) {
+		while (1) {
+			switch (_context29.prev = _context29.next) {
+				case 0:
+					_context29.next = 2;
+					return Object(effects["h" /* takeEvery */])([types["SET_TICKETS_INITIAL_STATE"], types["RESET_TICKETS_BLOCK"], types["SET_TICKET_INITIAL_STATE"], types["FETCH_TICKET"], types["CREATE_NEW_TICKET"], types["UPDATE_TICKET"], types["DELETE_TICKET"], types["FETCH_TICKETS_HEADER_IMAGE"], types["UPDATE_TICKETS_HEADER_IMAGE"], types["DELETE_TICKETS_HEADER_IMAGE"], types["SET_TICKET_DETAILS"], types["SET_TICKET_TEMP_DETAILS"], types["HANDLE_TICKET_START_DATE"], types["HANDLE_TICKET_END_DATE"], types["HANDLE_TICKET_START_TIME"], types["HANDLE_TICKET_END_TIME"], move_types["k" /* MOVE_TICKET_SUCCESS */]], handler);
+
+				case 2:
+					_context29.next = 4;
+					return Object(effects["d" /* fork */])(handleEventStartDateChanges);
+
+				case 4:
+				case 'end':
+					return _context29.stop();
+			}
+		}
+	}, _marked29, this);
+}
+// CONCATENATED MODULE: ./src/modules/data/blocks/ticket/index.js
+/**
+ * Internal dependencies
+ */
+
+
+
+
+
+
+
+
+
+
+/* harmony default export */ var blocks_ticket = __webpack_exports__["c"] = (reducer);
+
+
 
 /***/ }),
 /* 7 */
@@ -9161,7 +9099,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setTicketDescription", function() { return setTicketDescription; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setTicketPrice", function() { return setTicketPrice; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setTicketSku", function() { return setTicketSku; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setTicketIACSetting", function() { return setTicketIACSetting; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setTicketStartDate", function() { return setTicketStartDate; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setTicketStartDateInput", function() { return setTicketStartDateInput; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setTicketStartDateMoment", function() { return setTicketStartDateMoment; });
@@ -9178,7 +9115,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setTicketTempDescription", function() { return setTicketTempDescription; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setTicketTempPrice", function() { return setTicketTempPrice; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setTicketTempSku", function() { return setTicketTempSku; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setTicketTempIACSetting", function() { return setTicketTempIACSetting; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setTicketTempStartDate", function() { return setTicketTempStartDate; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setTicketTempStartDateInput", function() { return setTicketTempStartDateInput; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setTicketTempStartDateMoment", function() { return setTicketTempStartDateMoment; });
@@ -9218,7 +9154,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateTicket", function() { return updateTicket; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteTicket", function() { return deleteTicket; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setTicketInitialState", function() { return setTicketInitialState; });
-/* harmony import */ var _moderntribe_tickets_data_blocks_ticket__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+/* harmony import */ var _moderntribe_tickets_data_blocks_ticket__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6);
 /**
  * Internal dependencies
  */
@@ -9377,16 +9313,6 @@ var setTicketSku = function setTicketSku(clientId, sku) {
 		payload: {
 			clientId: clientId,
 			sku: sku
-		}
-	};
-};
-
-var setTicketIACSetting = function setTicketIACSetting(clientId, iac) {
-	return {
-		type: _moderntribe_tickets_data_blocks_ticket__WEBPACK_IMPORTED_MODULE_0__[/* types */ "g"].SET_TICKET_IAC_SETTING,
-		payload: {
-			clientId: clientId,
-			iac: iac
 		}
 	};
 };
@@ -9551,16 +9477,6 @@ var setTicketTempSku = function setTicketTempSku(clientId, sku) {
 		payload: {
 			clientId: clientId,
 			sku: sku
-		}
-	};
-};
-
-var setTicketTempIACSetting = function setTicketTempIACSetting(clientId, iac) {
-	return {
-		type: _moderntribe_tickets_data_blocks_ticket__WEBPACK_IMPORTED_MODULE_0__[/* types */ "g"].SET_TICKET_TEMP_IAC_SETTING,
-		payload: {
-			clientId: clientId,
-			iac: iac
 		}
 	};
 };
@@ -9955,19 +9871,13 @@ var setTicketInitialState = function setTicketInitialState(props) {
 
 /***/ }),
 /* 11 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = React;
+module.exports = __webpack_require__(326);
+
 
 /***/ }),
 /* 12 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(327);
-
-
-/***/ }),
-/* 13 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10183,7 +10093,7 @@ var DELETE_RSVP_HEADER_IMAGE = utils["n" /* PREFIX_TICKETS_STORE */] + '/DELETE_
 var actions = __webpack_require__(14);
 
 // EXTERNAL MODULE: ./node_modules/reselect/lib/index.js
-var lib = __webpack_require__(6);
+var lib = __webpack_require__(5);
 
 // CONCATENATED MODULE: ./src/modules/data/blocks/rsvp/selectors.js
 /**
@@ -10653,7 +10563,7 @@ var helpers_extends = __webpack_require__(9);
 var extends_default = /*#__PURE__*/__webpack_require__.n(helpers_extends);
 
 // EXTERNAL MODULE: ./node_modules/moment/moment.js
-var moment_moment = __webpack_require__(5);
+var moment_moment = __webpack_require__(4);
 var moment_default = /*#__PURE__*/__webpack_require__.n(moment_moment);
 
 // CONCATENATED MODULE: ./src/modules/data/blocks/rsvp/reducers/details.js
@@ -10951,7 +10861,7 @@ var reducer_DEFAULT_STATE = {
 	}
 });
 // EXTERNAL MODULE: ./node_modules/babel-runtime/regenerator/index.js
-var regenerator = __webpack_require__(12);
+var regenerator = __webpack_require__(11);
 var regenerator_default = /*#__PURE__*/__webpack_require__.n(regenerator);
 
 // EXTERNAL MODULE: external {"var":"wp.data","root":["wp","data"]}
@@ -10967,13 +10877,13 @@ var ticket_actions = __webpack_require__(10);
 var reducers_header_image = __webpack_require__(62);
 
 // EXTERNAL MODULE: ./src/modules/data/shared/move/types.js
-var types = __webpack_require__(20);
+var types = __webpack_require__(19);
 
 // EXTERNAL MODULE: ./src/modules/data/shared/move/selectors.js
-var selectors = __webpack_require__(33);
+var selectors = __webpack_require__(28);
 
 // EXTERNAL MODULE: ./src/modules/data/shared/sagas.js
-var sagas = __webpack_require__(27);
+var sagas = __webpack_require__(29);
 
 // CONCATENATED MODULE: ./src/modules/data/blocks/rsvp/sagas.js
 
@@ -12232,6 +12142,12 @@ function watchers() {
 
 
 /***/ }),
+/* 13 */
+/***/ (function(module, exports) {
+
+module.exports = React;
+
+/***/ }),
 /* 14 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -12288,7 +12204,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchRSVPHeaderImage", function() { return fetchRSVPHeaderImage; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateRSVPHeaderImage", function() { return updateRSVPHeaderImage; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteRSVPHeaderImage", function() { return deleteRSVPHeaderImage; });
-/* harmony import */ var _moderntribe_tickets_data_blocks_rsvp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(13);
+/* harmony import */ var _moderntribe_tickets_data_blocks_rsvp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(12);
 /**
  * Internal dependencies
  */
@@ -13697,12 +13613,6 @@ module.exports = wp.data;
 
 /***/ }),
 /* 19 */
-/***/ (function(module, exports) {
-
-module.exports = tribe.common.hoc;
-
-/***/ }),
-/* 20 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -13758,6 +13668,12 @@ var FETCH_POST_CHOICES_ERROR = _moderntribe_tickets_data_utils__WEBPACK_IMPORTED
 var MOVE_TICKET = _moderntribe_tickets_data_utils__WEBPACK_IMPORTED_MODULE_0__[/* PREFIX_TICKETS_STORE */ "n"] + '/MOVE_TICKET';
 var MOVE_TICKET_SUCCESS = _moderntribe_tickets_data_utils__WEBPACK_IMPORTED_MODULE_0__[/* PREFIX_TICKETS_STORE */ "n"] + '/MOVE_TICKET_SUCCESS';
 var MOVE_TICKET_ERROR = _moderntribe_tickets_data_utils__WEBPACK_IMPORTED_MODULE_0__[/* PREFIX_TICKETS_STORE */ "n"] + '/MOVE_TICKET_ERROR';
+
+/***/ }),
+/* 20 */
+/***/ (function(module, exports) {
+
+module.exports = tribe.common.hoc;
 
 /***/ }),
 /* 21 */
@@ -13922,7 +13838,7 @@ var objectWithoutProperties = __webpack_require__(38);
 var objectWithoutProperties_default = /*#__PURE__*/__webpack_require__.n(objectWithoutProperties);
 
 // EXTERNAL MODULE: external "React"
-var external_React_ = __webpack_require__(11);
+var external_React_ = __webpack_require__(13);
 
 // EXTERNAL MODULE: ./node_modules/prop-types/index.js
 var prop_types = __webpack_require__(1);
@@ -13936,7 +13852,7 @@ var classnames_default = /*#__PURE__*/__webpack_require__.n(classnames);
 var external_tribe_common_elements_ = __webpack_require__(21);
 
 // EXTERNAL MODULE: ./src/modules/elements/action-button/style.pcss
-var style = __webpack_require__(479);
+var style = __webpack_require__(478);
 
 // CONCATENATED MODULE: ./src/modules/elements/action-button/element.js
 
@@ -14031,7 +13947,7 @@ var noop = __webpack_require__(42);
 var noop_default = /*#__PURE__*/__webpack_require__.n(noop);
 
 // EXTERNAL MODULE: ./src/modules/elements/action-dashboard/style.pcss
-var action_dashboard_style = __webpack_require__(480);
+var action_dashboard_style = __webpack_require__(479);
 
 // CONCATENATED MODULE: ./src/modules/elements/action-dashboard/element.js
 
@@ -14136,26 +14052,26 @@ element_ActionDashboard.propTypes = {
 
 /* harmony default export */ var action_dashboard_element = (element_ActionDashboard);
 // EXTERNAL MODULE: ./node_modules/babel-runtime/helpers/classCallCheck.js
-var classCallCheck = __webpack_require__(30);
+var classCallCheck = __webpack_require__(34);
 var classCallCheck_default = /*#__PURE__*/__webpack_require__.n(classCallCheck);
 
 // EXTERNAL MODULE: ./node_modules/babel-runtime/helpers/createClass.js
-var createClass = __webpack_require__(31);
+var createClass = __webpack_require__(35);
 var createClass_default = /*#__PURE__*/__webpack_require__.n(createClass);
 
 // EXTERNAL MODULE: ./node_modules/babel-runtime/helpers/possibleConstructorReturn.js
-var possibleConstructorReturn = __webpack_require__(28);
+var possibleConstructorReturn = __webpack_require__(30);
 var possibleConstructorReturn_default = /*#__PURE__*/__webpack_require__.n(possibleConstructorReturn);
 
 // EXTERNAL MODULE: ./node_modules/babel-runtime/helpers/inherits.js
-var inherits = __webpack_require__(32);
+var inherits = __webpack_require__(36);
 var inherits_default = /*#__PURE__*/__webpack_require__.n(inherits);
 
 // EXTERNAL MODULE: external {"var":"wp.components","root":["wp","components"]}
 var external_var_wp_components_root_wp_components_ = __webpack_require__(26);
 
 // EXTERNAL MODULE: ./src/modules/elements/attendees-registration/style.pcss
-var attendees_registration_style = __webpack_require__(481);
+var attendees_registration_style = __webpack_require__(480);
 
 // CONCATENATED MODULE: ./src/modules/elements/attendees-registration/element.js
 
@@ -14283,7 +14199,7 @@ var moment = __webpack_require__(88);
 var external_tribe_common_utils_ = __webpack_require__(3);
 
 // EXTERNAL MODULE: ./src/modules/elements/date-time-range-picker/style.pcss
-var date_time_range_picker_style = __webpack_require__(484);
+var date_time_range_picker_style = __webpack_require__(483);
 
 // CONCATENATED MODULE: ./src/modules/elements/date-time-range-picker/element.js
 
@@ -14553,7 +14469,7 @@ var element_initialiseProps = function _initialiseProps() {
 
 /* harmony default export */ var date_time_range_picker_element = (element_DateTimeRangePicker);
 // EXTERNAL MODULE: ./src/modules/elements/label-with-tooltip/style.pcss
-var label_with_tooltip_style = __webpack_require__(485);
+var label_with_tooltip_style = __webpack_require__(484);
 
 // CONCATENATED MODULE: ./src/modules/elements/label-with-tooltip/element.js
 /**
@@ -14713,10 +14629,10 @@ var inactive_block_element = __webpack_require__(96);
 var external_var_wp_i18n_root_wp_i18n_ = __webpack_require__(15);
 
 // EXTERNAL MODULE: external "tribe.common.icons"
-var external_tribe_common_icons_ = __webpack_require__(64);
+var external_tribe_common_icons_ = __webpack_require__(63);
 
 // EXTERNAL MODULE: ./src/modules/elements/settings-dashboard/style.pcss
-var settings_dashboard_style = __webpack_require__(487);
+var settings_dashboard_style = __webpack_require__(486);
 
 // CONCATENATED MODULE: ./src/modules/elements/settings-dashboard/element.js
 
@@ -14811,7 +14727,7 @@ element_SettingsDashboard.propTypes = {
 
 /* harmony default export */ var settings_dashboard_element = (element_SettingsDashboard);
 // EXTERNAL MODULE: ./src/modules/elements/warning-button/style.pcss
-var warning_button_style = __webpack_require__(488);
+var warning_button_style = __webpack_require__(487);
 
 // CONCATENATED MODULE: ./src/modules/elements/warning-button/element.js
 
@@ -14916,236 +14832,6 @@ module.exports = wp.components;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return isTribeEventPostType; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return hasPostTypeChannel; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return createWPEditorSavingChannel; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return createWPEditorNotSavingChannel; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return createDates; });
-/* harmony import */ var babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(12);
-/* harmony import */ var babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var lodash_some__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(113);
-/* harmony import */ var lodash_some__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_some__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(18);
-/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var redux_saga_effects__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(0);
-/* harmony import */ var redux_saga__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(73);
-/* harmony import */ var _moderntribe_common_data__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(35);
-/* harmony import */ var _moderntribe_common_data__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_moderntribe_common_data__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _moderntribe_common_utils__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(3);
-/* harmony import */ var _moderntribe_common_utils__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_moderntribe_common_utils__WEBPACK_IMPORTED_MODULE_6__);
-
-
-
-var _marked = /*#__PURE__*/babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(isTribeEventPostType),
-    _marked2 = /*#__PURE__*/babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(createDates);
-
-/* eslint-disable max-len */
-
-/**
- * External Dependencies
- */
-
-
-
-
-
-/**
- * Internal dependencies
- */
-
-
-
-/*
- * Determines if current post is a tribe event
- * @export
- * @returns {Boolean} bool
- */
-function isTribeEventPostType() {
-	var postType;
-	return babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function isTribeEventPostType$(_context) {
-		while (1) {
-			switch (_context.prev = _context.next) {
-				case 0:
-					_context.next = 2;
-					return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_3__[/* call */ "b"])([Object(_wordpress_data__WEBPACK_IMPORTED_MODULE_2__["select"])('core/editor'), 'getEditedPostAttribute'], 'type');
-
-				case 2:
-					postType = _context.sent;
-					return _context.abrupt('return', postType === _moderntribe_common_data__WEBPACK_IMPORTED_MODULE_5__["editor"].EVENT);
-
-				case 4:
-				case 'end':
-					return _context.stop();
-			}
-		}
-	}, _marked, this);
-}
-
-/**
- * Creates event channel subscribing to WP editor state when post type is loaded.
- * Used as post type is not available upon load in some cases, so some false negatives
- *
- * @returns {Function} Channel
- */
-function hasPostTypeChannel() {
-	return Object(redux_saga__WEBPACK_IMPORTED_MODULE_4__[/* eventChannel */ "b"])(function (emit) {
-		var wpEditor = Object(_wordpress_data__WEBPACK_IMPORTED_MODULE_2__["select"])('core/editor');
-
-		var predicates = [function () {
-			return !!wpEditor.getEditedPostAttribute('type');
-		}];
-
-		// Returns unsubscribe function
-		return Object(_wordpress_data__WEBPACK_IMPORTED_MODULE_2__["subscribe"])(function () {
-			// Only emit when truthy
-			if (lodash_some__WEBPACK_IMPORTED_MODULE_1___default()(predicates, function (fn) {
-				return fn();
-			})) {
-				emit(true); // Emitted value is insignificant here, but cannot be left undefined
-			}
-		});
-	});
-}
-
-/**
- * Creates event channel subscribing to WP editor state when saving post
- *
- * @returns {Function} Channel
- */
-function createWPEditorSavingChannel() {
-	return Object(redux_saga__WEBPACK_IMPORTED_MODULE_4__[/* eventChannel */ "b"])(function (emit) {
-		var wpEditor = Object(_wordpress_data__WEBPACK_IMPORTED_MODULE_2__["select"])('core/editor');
-
-		var predicates = [function () {
-			return wpEditor.isSavingPost() && !wpEditor.isAutosavingPost();
-		}];
-
-		// Returns unsubscribe function
-		return Object(_wordpress_data__WEBPACK_IMPORTED_MODULE_2__["subscribe"])(function () {
-			// Only emit when truthy
-			if (lodash_some__WEBPACK_IMPORTED_MODULE_1___default()(predicates, function (fn) {
-				return fn();
-			})) {
-				emit(true); // Emitted value is insignificant here, but cannot be left undefined
-			}
-		});
-	});
-}
-
-/**
- * Creates event channel subscribing to WP editor state when not saving post
- *
- * @returns {Function} Channel
- */
-function createWPEditorNotSavingChannel() {
-	return Object(redux_saga__WEBPACK_IMPORTED_MODULE_4__[/* eventChannel */ "b"])(function (emit) {
-		var wpEditor = Object(_wordpress_data__WEBPACK_IMPORTED_MODULE_2__["select"])('core/editor');
-
-		var predicates = [function () {
-			return !(wpEditor.isSavingPost() && !wpEditor.isAutosavingPost());
-		}];
-
-		// Returns unsubscribe function
-		return Object(_wordpress_data__WEBPACK_IMPORTED_MODULE_2__["subscribe"])(function () {
-			// Only emit when truthy
-			if (lodash_some__WEBPACK_IMPORTED_MODULE_1___default()(predicates, function (fn) {
-				return fn();
-			})) {
-				emit(true); // Emitted value is insignificant here, but cannot be left undefined
-			}
-		});
-	});
-}
-
-/**
- * Create date objects used throughout sagas
- *
- * @export
- * @param {String} date datetime string
- * @returns {Object} Object of dates/moments
- */
-function createDates(date) {
-	var _ref, datepickerFormat, moment, currentDate, dateInput, time, timeInput;
-
-	return babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function createDates$(_context2) {
-		while (1) {
-			switch (_context2.prev = _context2.next) {
-				case 0:
-					_context2.next = 2;
-					return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_3__[/* call */ "b"])([_moderntribe_common_utils__WEBPACK_IMPORTED_MODULE_6__["globals"], 'tecDateSettings']);
-
-				case 2:
-					_ref = _context2.sent;
-					datepickerFormat = _ref.datepickerFormat;
-					_context2.next = 6;
-					return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_3__[/* call */ "b"])(_moderntribe_common_utils__WEBPACK_IMPORTED_MODULE_6__["moment"].toMoment, date);
-
-				case 6:
-					moment = _context2.sent;
-					_context2.next = 9;
-					return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_3__[/* call */ "b"])(_moderntribe_common_utils__WEBPACK_IMPORTED_MODULE_6__["moment"].toDatabaseDate, moment);
-
-				case 9:
-					currentDate = _context2.sent;
-					_context2.next = 12;
-					return datepickerFormat ? Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_3__[/* call */ "b"])(_moderntribe_common_utils__WEBPACK_IMPORTED_MODULE_6__["moment"].toDate, moment, datepickerFormat) : Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_3__[/* call */ "b"])(_moderntribe_common_utils__WEBPACK_IMPORTED_MODULE_6__["moment"].toDate, moment);
-
-				case 12:
-					dateInput = _context2.sent;
-					_context2.next = 15;
-					return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_3__[/* call */ "b"])(_moderntribe_common_utils__WEBPACK_IMPORTED_MODULE_6__["moment"].toDatabaseTime, moment);
-
-				case 15:
-					time = _context2.sent;
-					_context2.next = 18;
-					return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_3__[/* call */ "b"])(_moderntribe_common_utils__WEBPACK_IMPORTED_MODULE_6__["moment"].toTime, moment);
-
-				case 18:
-					timeInput = _context2.sent;
-					return _context2.abrupt('return', {
-						moment: moment,
-						date: currentDate,
-						dateInput: dateInput,
-						time: time,
-						timeInput: timeInput
-					});
-
-				case 20:
-				case 'end':
-					return _context2.stop();
-			}
-		}
-	}, _marked2, this);
-}
-
-/***/ }),
-/* 28 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-exports.__esModule = true;
-
-var _typeof2 = __webpack_require__(318);
-
-var _typeof3 = _interopRequireDefault(_typeof2);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = function (self, call) {
-  if (!self) {
-    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-  }
-
-  return call && ((typeof call === "undefined" ? "undefined" : (0, _typeof3.default)(call)) === "object" || typeof call === "function") ? call : self;
-};
-
-/***/ }),
-/* 29 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return END; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return isEnd; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return emitter; });
@@ -15156,7 +14842,7 @@ exports.default = function (self, call) {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return stdChannel; });
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7);
 /* harmony import */ var _buffers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(54);
-/* harmony import */ var _scheduler__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(72);
+/* harmony import */ var _scheduler__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(71);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 
@@ -15357,94 +15043,7 @@ function stdChannel(subscribe) {
 }
 
 /***/ }),
-/* 30 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-exports.__esModule = true;
-
-exports.default = function (instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-};
-
-/***/ }),
-/* 31 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-exports.__esModule = true;
-
-var _defineProperty = __webpack_require__(265);
-
-var _defineProperty2 = _interopRequireDefault(_defineProperty);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = function () {
-  function defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];
-      descriptor.enumerable = descriptor.enumerable || false;
-      descriptor.configurable = true;
-      if ("value" in descriptor) descriptor.writable = true;
-      (0, _defineProperty2.default)(target, descriptor.key, descriptor);
-    }
-  }
-
-  return function (Constructor, protoProps, staticProps) {
-    if (protoProps) defineProperties(Constructor.prototype, protoProps);
-    if (staticProps) defineProperties(Constructor, staticProps);
-    return Constructor;
-  };
-}();
-
-/***/ }),
-/* 32 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-exports.__esModule = true;
-
-var _setPrototypeOf = __webpack_require__(472);
-
-var _setPrototypeOf2 = _interopRequireDefault(_setPrototypeOf);
-
-var _create = __webpack_require__(476);
-
-var _create2 = _interopRequireDefault(_create);
-
-var _typeof2 = __webpack_require__(318);
-
-var _typeof3 = _interopRequireDefault(_typeof2);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = function (subClass, superClass) {
-  if (typeof superClass !== "function" && superClass !== null) {
-    throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : (0, _typeof3.default)(superClass)));
-  }
-
-  subClass.prototype = (0, _create2.default)(superClass && superClass.prototype, {
-    constructor: {
-      value: subClass,
-      enumerable: false,
-      writable: true,
-      configurable: true
-    }
-  });
-  if (superClass) _setPrototypeOf2.default ? (0, _setPrototypeOf2.default)(subClass, superClass) : subClass.__proto__ = superClass;
-};
-
-/***/ }),
-/* 33 */
+/* 28 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -15470,7 +15069,7 @@ exports.default = function (subClass, superClass) {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return hasSelectedPost; });
 /* harmony import */ var lodash_find__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(85);
 /* harmony import */ var lodash_find__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash_find__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var reselect__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6);
+/* harmony import */ var reselect__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
 /* harmony import */ var reselect__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(reselect__WEBPACK_IMPORTED_MODULE_1__);
 
 /**
@@ -15557,7 +15156,237 @@ var hasSelectedPost = Object(reselect__WEBPACK_IMPORTED_MODULE_1__["createSelect
 });
 
 /***/ }),
-/* 34 */
+/* 29 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return isTribeEventPostType; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return hasPostTypeChannel; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return createWPEditorSavingChannel; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return createWPEditorNotSavingChannel; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return createDates; });
+/* harmony import */ var babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(11);
+/* harmony import */ var babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var lodash_some__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(113);
+/* harmony import */ var lodash_some__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_some__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(18);
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var redux_saga_effects__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(0);
+/* harmony import */ var redux_saga__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(73);
+/* harmony import */ var _moderntribe_common_data__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(32);
+/* harmony import */ var _moderntribe_common_data__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_moderntribe_common_data__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _moderntribe_common_utils__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(3);
+/* harmony import */ var _moderntribe_common_utils__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_moderntribe_common_utils__WEBPACK_IMPORTED_MODULE_6__);
+
+
+
+var _marked = /*#__PURE__*/babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(isTribeEventPostType),
+    _marked2 = /*#__PURE__*/babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(createDates);
+
+/* eslint-disable max-len */
+
+/**
+ * External Dependencies
+ */
+
+
+
+
+
+/**
+ * Internal dependencies
+ */
+
+
+
+/*
+ * Determines if current post is a tribe event
+ * @export
+ * @returns {Boolean} bool
+ */
+function isTribeEventPostType() {
+	var postType;
+	return babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function isTribeEventPostType$(_context) {
+		while (1) {
+			switch (_context.prev = _context.next) {
+				case 0:
+					_context.next = 2;
+					return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_3__[/* call */ "b"])([Object(_wordpress_data__WEBPACK_IMPORTED_MODULE_2__["select"])('core/editor'), 'getEditedPostAttribute'], 'type');
+
+				case 2:
+					postType = _context.sent;
+					return _context.abrupt('return', postType === _moderntribe_common_data__WEBPACK_IMPORTED_MODULE_5__["editor"].EVENT);
+
+				case 4:
+				case 'end':
+					return _context.stop();
+			}
+		}
+	}, _marked, this);
+}
+
+/**
+ * Creates event channel subscribing to WP editor state when post type is loaded.
+ * Used as post type is not available upon load in some cases, so some false negatives
+ *
+ * @returns {Function} Channel
+ */
+function hasPostTypeChannel() {
+	return Object(redux_saga__WEBPACK_IMPORTED_MODULE_4__[/* eventChannel */ "b"])(function (emit) {
+		var wpEditor = Object(_wordpress_data__WEBPACK_IMPORTED_MODULE_2__["select"])('core/editor');
+
+		var predicates = [function () {
+			return !!wpEditor.getEditedPostAttribute('type');
+		}];
+
+		// Returns unsubscribe function
+		return Object(_wordpress_data__WEBPACK_IMPORTED_MODULE_2__["subscribe"])(function () {
+			// Only emit when truthy
+			if (lodash_some__WEBPACK_IMPORTED_MODULE_1___default()(predicates, function (fn) {
+				return fn();
+			})) {
+				emit(true); // Emitted value is insignificant here, but cannot be left undefined
+			}
+		});
+	});
+}
+
+/**
+ * Creates event channel subscribing to WP editor state when saving post
+ *
+ * @returns {Function} Channel
+ */
+function createWPEditorSavingChannel() {
+	return Object(redux_saga__WEBPACK_IMPORTED_MODULE_4__[/* eventChannel */ "b"])(function (emit) {
+		var wpEditor = Object(_wordpress_data__WEBPACK_IMPORTED_MODULE_2__["select"])('core/editor');
+
+		var predicates = [function () {
+			return wpEditor.isSavingPost() && !wpEditor.isAutosavingPost();
+		}];
+
+		// Returns unsubscribe function
+		return Object(_wordpress_data__WEBPACK_IMPORTED_MODULE_2__["subscribe"])(function () {
+			// Only emit when truthy
+			if (lodash_some__WEBPACK_IMPORTED_MODULE_1___default()(predicates, function (fn) {
+				return fn();
+			})) {
+				emit(true); // Emitted value is insignificant here, but cannot be left undefined
+			}
+		});
+	});
+}
+
+/**
+ * Creates event channel subscribing to WP editor state when not saving post
+ *
+ * @returns {Function} Channel
+ */
+function createWPEditorNotSavingChannel() {
+	return Object(redux_saga__WEBPACK_IMPORTED_MODULE_4__[/* eventChannel */ "b"])(function (emit) {
+		var wpEditor = Object(_wordpress_data__WEBPACK_IMPORTED_MODULE_2__["select"])('core/editor');
+
+		var predicates = [function () {
+			return !(wpEditor.isSavingPost() && !wpEditor.isAutosavingPost());
+		}];
+
+		// Returns unsubscribe function
+		return Object(_wordpress_data__WEBPACK_IMPORTED_MODULE_2__["subscribe"])(function () {
+			// Only emit when truthy
+			if (lodash_some__WEBPACK_IMPORTED_MODULE_1___default()(predicates, function (fn) {
+				return fn();
+			})) {
+				emit(true); // Emitted value is insignificant here, but cannot be left undefined
+			}
+		});
+	});
+}
+
+/**
+ * Create date objects used throughout sagas
+ *
+ * @export
+ * @param {String} date datetime string
+ * @returns {Object} Object of dates/moments
+ */
+function createDates(date) {
+	var _ref, datepickerFormat, moment, currentDate, dateInput, time, timeInput;
+
+	return babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function createDates$(_context2) {
+		while (1) {
+			switch (_context2.prev = _context2.next) {
+				case 0:
+					_context2.next = 2;
+					return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_3__[/* call */ "b"])([_moderntribe_common_utils__WEBPACK_IMPORTED_MODULE_6__["globals"], 'tecDateSettings']);
+
+				case 2:
+					_ref = _context2.sent;
+					datepickerFormat = _ref.datepickerFormat;
+					_context2.next = 6;
+					return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_3__[/* call */ "b"])(_moderntribe_common_utils__WEBPACK_IMPORTED_MODULE_6__["moment"].toMoment, date);
+
+				case 6:
+					moment = _context2.sent;
+					_context2.next = 9;
+					return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_3__[/* call */ "b"])(_moderntribe_common_utils__WEBPACK_IMPORTED_MODULE_6__["moment"].toDatabaseDate, moment);
+
+				case 9:
+					currentDate = _context2.sent;
+					_context2.next = 12;
+					return datepickerFormat ? Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_3__[/* call */ "b"])(_moderntribe_common_utils__WEBPACK_IMPORTED_MODULE_6__["moment"].toDate, moment, datepickerFormat) : Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_3__[/* call */ "b"])(_moderntribe_common_utils__WEBPACK_IMPORTED_MODULE_6__["moment"].toDate, moment);
+
+				case 12:
+					dateInput = _context2.sent;
+					_context2.next = 15;
+					return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_3__[/* call */ "b"])(_moderntribe_common_utils__WEBPACK_IMPORTED_MODULE_6__["moment"].toDatabaseTime, moment);
+
+				case 15:
+					time = _context2.sent;
+					_context2.next = 18;
+					return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_3__[/* call */ "b"])(_moderntribe_common_utils__WEBPACK_IMPORTED_MODULE_6__["moment"].toTime, moment);
+
+				case 18:
+					timeInput = _context2.sent;
+					return _context2.abrupt('return', {
+						moment: moment,
+						date: currentDate,
+						dateInput: dateInput,
+						time: time,
+						timeInput: timeInput
+					});
+
+				case 20:
+				case 'end':
+					return _context2.stop();
+			}
+		}
+	}, _marked2, this);
+}
+
+/***/ }),
+/* 30 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+
+var _typeof2 = __webpack_require__(318);
+
+var _typeof3 = _interopRequireDefault(_typeof2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = function (self, call) {
+  if (!self) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return call && ((typeof call === "undefined" ? "undefined" : (0, _typeof3.default)(call)) === "object" || typeof call === "function") ? call : self;
+};
+
+/***/ }),
+/* 31 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -15578,7 +15407,7 @@ __webpack_require__.d(__webpack_exports__, "Attendees", function() { return /* r
 __webpack_require__.d(__webpack_exports__, "Orders", function() { return /* reexport */ orders; });
 
 // EXTERNAL MODULE: external "React"
-var external_React_ = __webpack_require__(11);
+var external_React_ = __webpack_require__(13);
 var external_React_default = /*#__PURE__*/__webpack_require__.n(external_React_);
 
 // CONCATENATED MODULE: ./src/modules/icons/active/clock.svg
@@ -15874,18 +15703,105 @@ function orders_objectWithoutProperties(obj, keys) {
 
 
 /***/ }),
-/* 35 */
+/* 32 */
 /***/ (function(module, exports) {
 
 module.exports = tribe.common.data;
 
 /***/ }),
-/* 36 */
+/* 33 */
 /***/ (function(module, exports) {
 
 var core = module.exports = { version: '2.6.5' };
 if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
 
+
+/***/ }),
+/* 34 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+
+exports.default = function (instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+};
+
+/***/ }),
+/* 35 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+
+var _defineProperty = __webpack_require__(265);
+
+var _defineProperty2 = _interopRequireDefault(_defineProperty);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = function () {
+  function defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      (0, _defineProperty2.default)(target, descriptor.key, descriptor);
+    }
+  }
+
+  return function (Constructor, protoProps, staticProps) {
+    if (protoProps) defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) defineProperties(Constructor, staticProps);
+    return Constructor;
+  };
+}();
+
+/***/ }),
+/* 36 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+
+var _setPrototypeOf = __webpack_require__(471);
+
+var _setPrototypeOf2 = _interopRequireDefault(_setPrototypeOf);
+
+var _create = __webpack_require__(475);
+
+var _create2 = _interopRequireDefault(_create);
+
+var _typeof2 = __webpack_require__(318);
+
+var _typeof3 = _interopRequireDefault(_typeof2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = function (subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : (0, _typeof3.default)(superClass)));
+  }
+
+  subClass.prototype = (0, _create2.default)(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      enumerable: false,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) _setPrototypeOf2.default ? (0, _setPrototypeOf2.default)(subClass, superClass) : subClass.__proto__ = superClass;
+};
 
 /***/ }),
 /* 37 */
@@ -16099,7 +16015,7 @@ exports.default = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Thank's IE8 for his funny defineProperty
-module.exports = !__webpack_require__(65)(function () {
+module.exports = !__webpack_require__(64)(function () {
   return Object.defineProperty({}, 'a', { get: function () { return 7; } }).a != 7;
 });
 
@@ -16145,7 +16061,7 @@ module.exports = function (it, key) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var global = __webpack_require__(41);
-var core = __webpack_require__(36);
+var core = __webpack_require__(33);
 var ctx = __webpack_require__(98);
 var hide = __webpack_require__(50);
 var has = __webpack_require__(48);
@@ -16213,7 +16129,7 @@ module.exports = $export;
 /***/ (function(module, exports, __webpack_require__) {
 
 var dP = __webpack_require__(43);
-var createDesc = __webpack_require__(68);
+var createDesc = __webpack_require__(67);
 module.exports = __webpack_require__(45) ? function (object, key, value) {
   return dP.f(object, key, createDesc(1, value));
 } : function (object, key, value) {
@@ -16488,7 +16404,7 @@ module.exports = function (it) {
 
 var arrayLikeKeys = __webpack_require__(289),
     baseKeys = __webpack_require__(323),
-    isArrayLike = __webpack_require__(69);
+    isArrayLike = __webpack_require__(68);
 
 /**
  * Creates an array of the own enumerable property names of `object`.
@@ -16595,7 +16511,7 @@ function fsmIterator(fsm, q0) {
 var io = __webpack_require__(17);
 
 // EXTERNAL MODULE: ./node_modules/redux-saga/es/internal/channel.js
-var internal_channel = __webpack_require__(29);
+var internal_channel = __webpack_require__(27);
 
 // CONCATENATED MODULE: ./node_modules/redux-saga/es/internal/sagaHelpers/takeEvery.js
 
@@ -16737,7 +16653,7 @@ var sagaHelpers_throttle = /*#__PURE__*/Object(utils["k" /* deprecate */])(throt
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DEFAULT_STATE; });
-/* harmony import */ var _moderntribe_tickets_data_blocks_rsvp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(13);
+/* harmony import */ var _moderntribe_tickets_data_blocks_rsvp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(12);
 /**
  * Internal dependencies
  */
@@ -16815,49 +16731,12 @@ var DEFAULT_STATE = {
 
 /***/ }),
 /* 63 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(process) {/* 
-(The MIT License)
-Copyright (c) 2014-2019 Halász Ádám <mail@adamhalasz.com>
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-*/
-
-//  Unique Hexatridecimal ID Generator
-// ================================================
-
-//  Dependencies
-// ================================================
-var pid = process && process.pid ? process.pid.toString(36) : '' ;
-var address = '';
-if(false){ var i, mac, networkInterfaces; } 
-
-//  Exports
-// ================================================
-module.exports = module.exports.default = function(prefix, suffix){ return (prefix ? prefix : '') + address + pid + now().toString(36) + (suffix ? suffix : ''); }
-module.exports.process = function(prefix, suffix){ return (prefix ? prefix : '') + pid + now().toString(36) + (suffix ? suffix : ''); }
-module.exports.time    = function(prefix, suffix){ return (prefix ? prefix : '') + now().toString(36) + (suffix ? suffix : ''); }
-
-//  Helpers
-// ================================================
-function now(){
-    var time = Date.now();
-    var last = now.last || time;
-    return now.last = time > last ? time : last + 1;
-}
-
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(496)))
-
-/***/ }),
-/* 64 */
 /***/ (function(module, exports) {
 
 module.exports = tribe.common.icons;
 
 /***/ }),
-/* 65 */
+/* 64 */
 /***/ (function(module, exports) {
 
 module.exports = function (exec) {
@@ -16870,11 +16749,11 @@ module.exports = function (exec) {
 
 
 /***/ }),
-/* 66 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseIsNative = __webpack_require__(347),
-    getValue = __webpack_require__(352);
+var baseIsNative = __webpack_require__(346),
+    getValue = __webpack_require__(351);
 
 /**
  * Gets the native function at `key` of `object`.
@@ -16893,12 +16772,12 @@ module.exports = getNative;
 
 
 /***/ }),
-/* 67 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Symbol = __webpack_require__(71),
-    getRawTag = __webpack_require__(348),
-    objectToString = __webpack_require__(349);
+var Symbol = __webpack_require__(70),
+    getRawTag = __webpack_require__(347),
+    objectToString = __webpack_require__(348);
 
 /** `Object#toString` result references. */
 var nullTag = '[object Null]',
@@ -16927,7 +16806,7 @@ module.exports = baseGetTag;
 
 
 /***/ }),
-/* 68 */
+/* 67 */
 /***/ (function(module, exports) {
 
 module.exports = function (bitmap, value) {
@@ -16941,7 +16820,7 @@ module.exports = function (bitmap, value) {
 
 
 /***/ }),
-/* 69 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isFunction = __webpack_require__(282),
@@ -16980,14 +16859,14 @@ module.exports = isArrayLike;
 
 
 /***/ }),
-/* 70 */
+/* 69 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return showModal; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return hideModal; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return setModalData; });
-/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(20);
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(19);
 /* eslint-disable camelcase */
 /**
  * Internal Dependencies
@@ -17015,7 +16894,7 @@ var setModalData = function setModalData(payload) {
 };
 
 /***/ }),
-/* 71 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var root = __webpack_require__(46);
@@ -17027,7 +16906,7 @@ module.exports = Symbol;
 
 
 /***/ }),
-/* 72 */
+/* 71 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17098,6 +16977,43 @@ function flush() {
 }
 
 /***/ }),
+/* 72 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(process) {/* 
+(The MIT License)
+Copyright (c) 2014-2019 Halász Ádám <mail@adamhalasz.com>
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+
+//  Unique Hexatridecimal ID Generator
+// ================================================
+
+//  Dependencies
+// ================================================
+var pid = process && process.pid ? process.pid.toString(36) : '' ;
+var address = '';
+if(false){ var i, mac, networkInterfaces; } 
+
+//  Exports
+// ================================================
+module.exports = module.exports.default = function(prefix, suffix){ return (prefix ? prefix : '') + address + pid + now().toString(36) + (suffix ? suffix : ''); }
+module.exports.process = function(prefix, suffix){ return (prefix ? prefix : '') + pid + now().toString(36) + (suffix ? suffix : ''); }
+module.exports.time    = function(prefix, suffix){ return (prefix ? prefix : '') + now().toString(36) + (suffix ? suffix : ''); }
+
+//  Helpers
+// ================================================
+function now(){
+    var time = Date.now();
+    var last = now.last || time;
+    return now.last = time > last ? time : last + 1;
+}
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(496)))
+
+/***/ }),
 /* 73 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -17113,10 +17029,10 @@ __webpack_require__.d(__webpack_exports__, "a", function() { return /* reexport 
 var utils = __webpack_require__(7);
 
 // EXTERNAL MODULE: ./node_modules/redux-saga/es/internal/channel.js
-var internal_channel = __webpack_require__(29);
+var internal_channel = __webpack_require__(27);
 
 // EXTERNAL MODULE: ./node_modules/redux-saga/es/internal/scheduler.js
-var scheduler = __webpack_require__(72);
+var scheduler = __webpack_require__(71);
 
 // EXTERNAL MODULE: ./node_modules/redux-saga/es/internal/io.js
 var io = __webpack_require__(17);
@@ -18248,8 +18164,8 @@ module.exports = toKey;
 /* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var createFind = __webpack_require__(423),
-    findIndex = __webpack_require__(444);
+var createFind = __webpack_require__(422),
+    findIndex = __webpack_require__(443);
 
 /**
  * Iterates over elements of `collection`, returning the first element
@@ -18307,7 +18223,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(11);
+var _react = __webpack_require__(13);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -18571,10 +18487,10 @@ exports.default = AutosizeInput;
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseToString = __webpack_require__(299),
-    castSlice = __webpack_require__(414),
-    charsEndIndex = __webpack_require__(415),
-    charsStartIndex = __webpack_require__(418),
-    stringToArray = __webpack_require__(419),
+    castSlice = __webpack_require__(413),
+    charsEndIndex = __webpack_require__(414),
+    charsStartIndex = __webpack_require__(417),
+    stringToArray = __webpack_require__(418),
     toString = __webpack_require__(298);
 
 /** Used to match leading and trailing whitespace. */
@@ -18625,7 +18541,7 @@ module.exports = trim;
 /* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(483);
+module.exports = __webpack_require__(482);
 
 
 /***/ }),
@@ -18643,7 +18559,7 @@ module.exports = function (it) {
 /* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var core = __webpack_require__(36);
+var core = __webpack_require__(33);
 var global = __webpack_require__(41);
 var SHARED = '__core-js_shared__';
 var store = global[SHARED] || (global[SHARED] = {});
@@ -18695,12 +18611,12 @@ module.exports = function (it, tag, stat) {
 /* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var DataView = __webpack_require__(380),
+var DataView = __webpack_require__(379),
     Map = __webpack_require__(246),
-    Promise = __webpack_require__(381),
-    Set = __webpack_require__(382),
-    WeakMap = __webpack_require__(383),
-    baseGetTag = __webpack_require__(67),
+    Promise = __webpack_require__(380),
+    Set = __webpack_require__(381),
+    WeakMap = __webpack_require__(382),
+    baseGetTag = __webpack_require__(66),
     toSource = __webpack_require__(285);
 
 /** `Object#toString` result references. */
@@ -18786,13 +18702,13 @@ for (var i = 0; i < DOMIterables.length; i++) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LAYOUT; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(11);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(13);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(22);
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _style_pcss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(486);
+/* harmony import */ var _style_pcss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(485);
 /* harmony import */ var _style_pcss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_style_pcss__WEBPACK_IMPORTED_MODULE_3__);
 /**
  * External dependencies
@@ -18960,11 +18876,11 @@ module.exports = Object.create || function create(O, Properties) {
 /* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var listCacheClear = __webpack_require__(337),
-    listCacheDelete = __webpack_require__(338),
-    listCacheGet = __webpack_require__(339),
-    listCacheHas = __webpack_require__(340),
-    listCacheSet = __webpack_require__(341);
+var listCacheClear = __webpack_require__(336),
+    listCacheDelete = __webpack_require__(337),
+    listCacheGet = __webpack_require__(338),
+    listCacheHas = __webpack_require__(339),
+    listCacheSet = __webpack_require__(340);
 
 /**
  * Creates an list cache object.
@@ -19068,7 +18984,7 @@ module.exports = eq;
 /* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var getNative = __webpack_require__(66);
+var getNative = __webpack_require__(65);
 
 /* Built-in method references that are verified to be native. */
 var nativeCreate = getNative(Object, 'create');
@@ -19080,7 +18996,7 @@ module.exports = nativeCreate;
 /* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isKeyable = __webpack_require__(361);
+var isKeyable = __webpack_require__(360);
 
 /**
  * Gets the data for `map`.
@@ -19106,7 +19022,7 @@ module.exports = getMapData;
 
 var isArray = __webpack_require__(39),
     isKey = __webpack_require__(256),
-    stringToPath = __webpack_require__(397),
+    stringToPath = __webpack_require__(396),
     toString = __webpack_require__(298);
 
 /**
@@ -19131,7 +19047,7 @@ module.exports = castPath;
 /* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseGetTag = __webpack_require__(67),
+var baseGetTag = __webpack_require__(66),
     isObjectLike = __webpack_require__(52);
 
 /** `Object#toString` result references. */
@@ -19168,13 +19084,13 @@ module.exports = isSymbol;
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LAYOUT; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(11);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(13);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(22);
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _style_pcss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(482);
+/* harmony import */ var _style_pcss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(481);
 /* harmony import */ var _style_pcss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_style_pcss__WEBPACK_IMPORTED_MODULE_3__);
 /**
  * External dependencies
@@ -19256,7 +19172,7 @@ ContainerPanel.propTypes = {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return getTitle; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return getDisplayTitle; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return getDisplaySubtitle; });
-/* harmony import */ var reselect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6);
+/* harmony import */ var reselect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
 /* harmony import */ var reselect__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(reselect__WEBPACK_IMPORTED_MODULE_0__);
 /**
  * External dependencies
@@ -19290,10 +19206,10 @@ module.exports = wp.blocks;
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseIndexOf = __webpack_require__(258),
-    isArrayLike = __webpack_require__(69),
-    isString = __webpack_require__(448),
+    isArrayLike = __webpack_require__(68),
+    isString = __webpack_require__(447),
     toInteger = __webpack_require__(317),
-    values = __webpack_require__(449);
+    values = __webpack_require__(448);
 
 /* Built-in method references for those with the same name as other `lodash` methods. */
 var nativeMax = Math.max;
@@ -19350,9 +19266,9 @@ module.exports = includes;
 
 var arraySome = __webpack_require__(314),
     baseIteratee = __webpack_require__(259),
-    baseSome = __webpack_require__(451),
+    baseSome = __webpack_require__(450),
     isArray = __webpack_require__(39),
-    isIterateeCall = __webpack_require__(457);
+    isIterateeCall = __webpack_require__(456);
 
 /**
  * Checks if `predicate` returns truthy for **any** element of `collection`.
@@ -19435,7 +19351,7 @@ module.exports = Object('z').propertyIsEnumerable(0) ? Object : function (it) {
 //! author : Werner Mollentze : https://github.com/wernerm
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -19514,7 +19430,7 @@ return af;
 //! author : forabi https://github.com/forabi
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -19658,7 +19574,7 @@ return ar;
 //! author : Noureddine LOUAHEDJ : https://github.com/noureddineme
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -19721,7 +19637,7 @@ return arDz;
 //! author : Nusret Parlak: https://github.com/nusretparlak
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -19784,7 +19700,7 @@ return arKw;
 //! author : Ali Hmer: https://github.com/kikoanis
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -19915,7 +19831,7 @@ return arLy;
 //! author : Abdel Said : https://github.com/abdelsaid
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -19978,7 +19894,7 @@ return arMa;
 //! author : Suhail Alkowaileet : https://github.com/xsoh
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -20087,7 +20003,7 @@ return arSa;
 //! author : Nader Toukabri : https://github.com/naderio
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -20150,7 +20066,7 @@ return arTn;
 //! author : topchiyev : https://github.com/topchiyev
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -20261,7 +20177,7 @@ return az;
 //! Author : Menelion Elensúle : https://github.com/Oire
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -20397,7 +20313,7 @@ return be;
 //! author : Krasen Borisov : https://github.com/kraz
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -20491,7 +20407,7 @@ return bg;
 //! author : Estelle Comment : https://github.com/estellecomment
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -20554,7 +20470,7 @@ return bm;
 //! author : Kaushik Gandhi : https://github.com/kaushikgandhi
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -20677,7 +20593,7 @@ return bn;
 //! author : Thupten N. Chakrishar : https://github.com/vajradog
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -20800,7 +20716,7 @@ return bo;
 //! author : Jean-Baptiste Le Duigou : https://github.com/jbleduigou
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -20913,7 +20829,7 @@ return br;
 //! based on (hr) translation by Bojan Marković
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -21059,7 +20975,7 @@ return bs;
 //! author : Juan G. Hurtado : https://github.com/juanghurtado
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -21151,7 +21067,7 @@ return ca;
 //! author : petrbela : https://github.com/petrbela
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -21327,7 +21243,7 @@ return cs;
 //! author : Anatoly Mironov : https://github.com/mirontoli
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -21395,7 +21311,7 @@ return cv;
 //! author : https://github.com/ryangreaves
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -21479,7 +21395,7 @@ return cy;
 //! author : Ulrik Nielsen : https://github.com/mrbase
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -21545,7 +21461,7 @@ return da;
 //! author : Mikolaj Dadela : https://github.com/mik01aj
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -21628,7 +21544,7 @@ return de;
 //! author : Mikolaj Dadela : https://github.com/mik01aj
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -21708,7 +21624,7 @@ return deAt;
 //! author : sschueller : https://github.com/sschueller
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -21790,7 +21706,7 @@ return deCh;
 //! author : Jawish Hameed : https://github.com/jawish
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -21894,7 +21810,7 @@ return dv;
 //! author : Aggelos Karalias : https://github.com/mehiel
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -21998,7 +21914,7 @@ return el;
 //! author : Jared Morse : https://github.com/jarcoal
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -22069,7 +21985,7 @@ return enAu;
 //! author : Jonathan Abourbih : https://github.com/jonbca
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -22136,7 +22052,7 @@ return enCa;
 //! author : Chris Gedrim : https://github.com/chrisgedrim
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -22207,7 +22123,7 @@ return enGb;
 //! author : Chris Cartlidge : https://github.com/chriscartlidge
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -22278,7 +22194,7 @@ return enIe;
 //! author : Luke McGregor : https://github.com/lukemcgregor
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -22351,7 +22267,7 @@ return enNz;
 //! comment : miestasmia corrected the translation by colindean
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -22426,7 +22342,7 @@ return eo;
 //! author : Julio Napurí : https://github.com/julionc
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -22521,7 +22437,7 @@ return es;
 //! locale : Spanish (Dominican Republic) [es-do]
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -22617,7 +22533,7 @@ return esDo;
 //! author : bustta : https://github.com/bustta
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -22705,7 +22621,7 @@ return esUs;
 //! improvements : Illimar Tambek : https://github.com/ragulka
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -22788,7 +22704,7 @@ return et;
 //! author : Eneko Illarramendi : https://github.com/eillarra
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -22858,7 +22774,7 @@ return eu;
 //! author : Ebrahim Byagowi : https://github.com/ebraminio
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -22969,7 +22885,7 @@ return fa;
 //! author : Tarmo Aidantausta : https://github.com/bleadof
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -23080,7 +22996,7 @@ return fi;
 //! author : Ragnar Johannesen : https://github.com/ragnar123
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -23144,7 +23060,7 @@ return fo;
 //! author : John Fischer : https://github.com/jfroffice
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -23231,7 +23147,7 @@ return fr;
 //! author : Jonathan Abourbih : https://github.com/jonbca
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -23309,7 +23225,7 @@ return frCa;
 //! author : Gaspard Bucher : https://github.com/gaspard
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -23391,7 +23307,7 @@ return frCh;
 //! author : Robin van der Vliet : https://github.com/robin0van0der0v
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -23470,7 +23386,7 @@ return fy;
 //! author : Jon Ashdown : https://github.com/jonashdown
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -23550,7 +23466,7 @@ return gd;
 //! author : Juan G. Hurtado : https://github.com/juanghurtado
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -23631,7 +23547,7 @@ return gl;
 //! author : The Discoverer : https://github.com/WikiDiscoverer
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -23757,7 +23673,7 @@ return gomLatn;
 //! author : Kaushik Thanki : https://github.com/Kaushik1987
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -23887,7 +23803,7 @@ return gu;
 //! author : Tal Ater : https://github.com/TalAter
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -23988,7 +23904,7 @@ return he;
 //! author : Mayank Singhal : https://github.com/mayanksinghal
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -24116,7 +24032,7 @@ return hi;
 //! author : Bojan Marković : https://github.com/bmarkovic
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -24265,7 +24181,7 @@ return hr;
 //! author : Adam Brunner : https://github.com/adambrunner
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -24377,7 +24293,7 @@ return hu;
 //! author : Armendarabyan : https://github.com/armendarabyan
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -24477,7 +24393,7 @@ return hyAm;
 //! reference: http://id.wikisource.org/wiki/Pedoman_Umum_Ejaan_Bahasa_Indonesia_yang_Disempurnakan
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -24563,7 +24479,7 @@ return id;
 //! author : Hinrik Örn Sigurðsson : https://github.com/hinrik
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -24695,7 +24611,7 @@ return is;
 //! author: Mattia Larentis: https://github.com/nostalgiaz
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -24768,7 +24684,7 @@ return it;
 //! author : LI Long : https://github.com/baryon
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -24853,7 +24769,7 @@ return ja;
 //! reference: http://jv.wikipedia.org/wiki/Basa_Jawa
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -24939,7 +24855,7 @@ return jv;
 //! author : Irakli Janiashvili : https://github.com/irakli-janiashvili
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -25032,7 +24948,7 @@ return ka;
 //! authors : Nurlan Rakhimzhanov : https://github.com/nurlan
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -25123,7 +25039,7 @@ return kk;
 //! author : Kruy Vanna : https://github.com/kruyvanna
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -25185,7 +25101,7 @@ return km;
 //! author : Rajeev Naik : https://github.com/rajeevnaikte
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -25316,7 +25232,7 @@ return kn;
 //! author : Jeeeyul Lee <jeeeyul@gmail.com>
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -25402,7 +25318,7 @@ return ko;
 //! author : Chyngyz Arystan uulu : https://github.com/chyngyz
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -25495,7 +25411,7 @@ return ky;
 //! author : David Raison : https://github.com/kwisatz
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -25635,7 +25551,7 @@ return lb;
 //! author : Ryan Hart : https://github.com/ryanhart2
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -25709,7 +25625,7 @@ return lo;
 //! author : Mindaugas Mozūras : https://github.com/mmozuras
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -25831,7 +25747,7 @@ return lt;
 //! author : Jānis Elmeris : https://github.com/JanisE
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -25931,7 +25847,7 @@ return lv;
 //! author : Miodrag Nikač <miodrag@restartit.me> : https://github.com/miodragnikac
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -26046,7 +25962,7 @@ return me;
 //! author : John Corrigan <robbiecloset@gmail.com> : https://github.com/johnideal
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -26114,7 +26030,7 @@ return mi;
 //! author : Borislav Mickov : https://github.com/B0k0
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -26208,7 +26124,7 @@ return mk;
 //! author : Floyd Pink : https://github.com/floydpink
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -26294,7 +26210,7 @@ return ml;
 //! author : Vivek Athalye : https://github.com/vnathalye
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -26456,7 +26372,7 @@ return mr;
 //! author : Weldan Jamili : https://github.com/weldan
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -26543,7 +26459,7 @@ return ms;
 //! author : Weldan Jamili : https://github.com/weldan
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -26631,7 +26547,7 @@ return msMy;
 //! author : Tin Aung Lin : https://github.com/thanyawzinmin
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -26730,7 +26646,7 @@ return my;
 //!           Sigurd Gartmann : https://github.com/sigurdga
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -26796,7 +26712,7 @@ return nb;
 //! author : suvash : https://github.com/suvash
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -26924,7 +26840,7 @@ return ne;
 //! author : Jacob Middag : https://github.com/middagj
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -27016,7 +26932,7 @@ return nl;
 //! author : Jacob Middag : https://github.com/middagj
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -27107,7 +27023,7 @@ return nlBe;
 //! author : https://github.com/mechuwind
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -27171,7 +27087,7 @@ return nn;
 //! author : Harpreet Singh : https://github.com/harpreetkhalsagtbit
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -27299,7 +27215,7 @@ return paIn;
 //! author : Rafal Hirsz : https://github.com/evoL
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -27427,7 +27343,7 @@ return pl;
 //! author : Jefferson : https://github.com/jalex79
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -27496,7 +27412,7 @@ return pt;
 //! author : Caio Ribeiro Pereira : https://github.com/caio-ribeiro-pereira
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -27563,7 +27479,7 @@ return ptBr;
 //! author : Valentin Agachi : https://github.com/avaly
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -27643,7 +27559,7 @@ return ro;
 //! author : Коренберг Марк : https://github.com/socketpair
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -27828,7 +27744,7 @@ return ru;
 //! author : Narain Sagar : https://github.com/narainsagar
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -27930,7 +27846,7 @@ return sd;
 //! authors : Bård Rolstad Henriksen : https://github.com/karamell
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -27995,7 +27911,7 @@ return se;
 //! author : Sampath Sitinamaluwa : https://github.com/sampathsris
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -28071,7 +27987,7 @@ return si;
 //! based on work of petrbela : https://github.com/petrbela
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -28224,7 +28140,7 @@ return sk;
 //! author : Robert Sedovšek : https://github.com/sedovsek
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -28392,7 +28308,7 @@ return sl;
 //! author : Oerd Cukalla : https://github.com/oerd
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -28464,7 +28380,7 @@ return sq;
 //! author : Milan Janačković<milanjanackovic@gmail.com> : https://github.com/milan-j
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -28578,7 +28494,7 @@ return sr;
 //! author : Milan Janačković<milanjanackovic@gmail.com> : https://github.com/milan-j
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -28692,7 +28608,7 @@ return srCyrl;
 //! author : Nicolai Davies<mail@nicolai.io> : https://github.com/nicolaidavies
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -28785,7 +28701,7 @@ return ss;
 //! author : Jens Alm : https://github.com/ulmus
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -28858,7 +28774,7 @@ return sv;
 //! author : Fahad Kassim : https://github.com/fadsel
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -28921,7 +28837,7 @@ return sw;
 //! author : Arjunkumar Krishnamoorthy : https://github.com/tk120404
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -29055,7 +28971,7 @@ return ta;
 //! author : Krishna Chaitanya Thota : https://github.com/kcthota
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -29149,7 +29065,7 @@ return te;
 //! author : Onorio De J. Afonso : https://github.com/marobo
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -29220,7 +29136,7 @@ return tet;
 //! author : Kridsada Thanabulpong : https://github.com/sirn
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -29291,7 +29207,7 @@ return th;
 //! author : Dan Hagman : https://github.com/hagmandan
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -29357,7 +29273,7 @@ return tlPh;
 //! author : Dominika Kruk : https://github.com/amaranthrose
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -29482,7 +29398,7 @@ return tlh;
 //!           Burak Yiğit Kaya: https://github.com/BYK
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -29576,7 +29492,7 @@ return tr;
 //! author : Iustì Canun
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -29670,7 +29586,7 @@ return tzl;
 //! author : Abdel Said : https://github.com/abdelsaid
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -29732,7 +29648,7 @@ return tzm;
 //! author : Abdel Said : https://github.com/abdelsaid
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -29795,7 +29711,7 @@ return tzmLatn;
 //! Author : Menelion Elensúle : https://github.com/Oire
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -29950,7 +29866,7 @@ return uk;
 //! author : Zack : https://github.com/ZackVision
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -30052,7 +29968,7 @@ return ur;
 //! author : Sardor Muminov : https://github.com/muminoff
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -30114,7 +30030,7 @@ return uz;
 //! author : Rasulbek Mirzayev : github.com/Rasulbeeek
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -30176,7 +30092,7 @@ return uzLatn;
 //! author : Bang Nguyen : https://github.com/bangnk
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -30259,7 +30175,7 @@ return vi;
 //! author : Andrew Hood : https://github.com/andrewhood125
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -30331,7 +30247,7 @@ return xPseudo;
 //! author : Atolagbe Abisoye : https://github.com/andela-batolagbe
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -30396,7 +30312,7 @@ return yo;
 //! author : Zeno Zeng : https://github.com/zenozeng
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -30512,7 +30428,7 @@ return zhCn;
 //! author : Konstantin : https://github.com/skfd
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -30620,7 +30536,7 @@ return zhHk;
 //! author : Chris Lam : https://github.com/hehachris
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(5)) :
+    true ? factory(__webpack_require__(4)) :
    undefined
 }(this, (function (moment) { 'use strict';
 
@@ -30827,7 +30743,7 @@ module.exports = function (it) {
 /* 236 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseIsArguments = __webpack_require__(368),
+var baseIsArguments = __webpack_require__(367),
     isObjectLike = __webpack_require__(52);
 
 /** Used for built-in method references. */
@@ -30870,7 +30786,7 @@ module.exports = isArguments;
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(module) {var root = __webpack_require__(46),
-    stubFalse = __webpack_require__(369);
+    stubFalse = __webpack_require__(368);
 
 /** Detect free variable `exports`. */
 var freeExports =  true && exports && !exports.nodeType && exports;
@@ -30938,7 +30854,7 @@ module.exports = isPrototype;
 /* 239 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = !__webpack_require__(45) && !__webpack_require__(65)(function () {
+module.exports = !__webpack_require__(45) && !__webpack_require__(64)(function () {
   return Object.defineProperty(__webpack_require__(114)('div'), 'a', { get: function () { return 7; } }).a != 7;
 });
 
@@ -30992,7 +30908,7 @@ module.exports = __webpack_require__(50);
 var classof = __webpack_require__(235);
 var ITERATOR = __webpack_require__(37)('iterator');
 var Iterators = __webpack_require__(51);
-module.exports = __webpack_require__(36).getIteratorMethod = function (it) {
+module.exports = __webpack_require__(33).getIteratorMethod = function (it) {
   if (it != undefined) return it[ITERATOR]
     || it['@@iterator']
     || Iterators[classof(it)];
@@ -31031,11 +30947,11 @@ module.exports = arrayMap;
 /***/ (function(module, exports, __webpack_require__) {
 
 var ListCache = __webpack_require__(102),
-    stackClear = __webpack_require__(342),
-    stackDelete = __webpack_require__(343),
-    stackGet = __webpack_require__(344),
-    stackHas = __webpack_require__(345),
-    stackSet = __webpack_require__(346);
+    stackClear = __webpack_require__(341),
+    stackDelete = __webpack_require__(342),
+    stackGet = __webpack_require__(343),
+    stackHas = __webpack_require__(344),
+    stackSet = __webpack_require__(345);
 
 /**
  * Creates a stack cache object to store key-value pairs.
@@ -31063,7 +30979,7 @@ module.exports = Stack;
 /* 246 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var getNative = __webpack_require__(66),
+var getNative = __webpack_require__(65),
     root = __webpack_require__(46);
 
 /* Built-in method references that are verified to be native. */
@@ -31076,11 +30992,11 @@ module.exports = Map;
 /* 247 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var mapCacheClear = __webpack_require__(353),
-    mapCacheDelete = __webpack_require__(360),
-    mapCacheGet = __webpack_require__(362),
-    mapCacheHas = __webpack_require__(363),
-    mapCacheSet = __webpack_require__(364);
+var mapCacheClear = __webpack_require__(352),
+    mapCacheDelete = __webpack_require__(359),
+    mapCacheGet = __webpack_require__(361),
+    mapCacheHas = __webpack_require__(362),
+    mapCacheSet = __webpack_require__(363);
 
 /**
  * Creates a map cache object to store key-value pairs.
@@ -31243,7 +31159,7 @@ module.exports = nodeUtil;
 /* 252 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var arrayFilter = __webpack_require__(378),
+var arrayFilter = __webpack_require__(377),
     stubArray = __webpack_require__(292);
 
 /** Used for built-in method references. */
@@ -31405,8 +31321,8 @@ module.exports = baseGet;
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseFindIndex = __webpack_require__(311),
-    baseIsNaN = __webpack_require__(416),
-    strictIndexOf = __webpack_require__(417);
+    baseIsNaN = __webpack_require__(415),
+    strictIndexOf = __webpack_require__(416);
 
 /**
  * The base implementation of `_.indexOf` without `fromIndex` bounds checks.
@@ -31430,11 +31346,11 @@ module.exports = baseIndexOf;
 /* 259 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseMatches = __webpack_require__(424),
-    baseMatchesProperty = __webpack_require__(436),
+var baseMatches = __webpack_require__(423),
+    baseMatchesProperty = __webpack_require__(435),
     identity = __webpack_require__(301),
     isArray = __webpack_require__(39),
-    property = __webpack_require__(441);
+    property = __webpack_require__(440);
 
 /**
  * The base implementation of `_.iteratee`.
@@ -31475,7 +31391,7 @@ exports.f = __webpack_require__(37);
 /***/ (function(module, exports, __webpack_require__) {
 
 var global = __webpack_require__(41);
-var core = __webpack_require__(36);
+var core = __webpack_require__(33);
 var LIBRARY = __webpack_require__(75);
 var wksExt = __webpack_require__(260);
 var defineProperty = __webpack_require__(43).f;
@@ -31494,7 +31410,7 @@ module.exports = function (name) {
 
 exports.__esModule = true;
 
-var _from = __webpack_require__(329);
+var _from = __webpack_require__(328);
 
 var _from2 = _interopRequireDefault(_from);
 
@@ -31536,7 +31452,7 @@ if (typeof self !== 'undefined') {
 var result = Object(_ponyfill_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(root);
 /* harmony default export */ __webpack_exports__["a"] = (result);
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(284), __webpack_require__(447)(module)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(284), __webpack_require__(446)(module)))
 
 /***/ }),
 /* 264 */
@@ -31554,7 +31470,7 @@ module.exports = { "default": __webpack_require__(267), __esModule: true };
 /* 266 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseIsTypedArray = __webpack_require__(370),
+var baseIsTypedArray = __webpack_require__(369),
     baseUnary = __webpack_require__(250),
     nodeUtil = __webpack_require__(251);
 
@@ -31588,7 +31504,7 @@ module.exports = isTypedArray;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(268);
-var $Object = __webpack_require__(36).Object;
+var $Object = __webpack_require__(33).Object;
 module.exports = function defineProperty(it, key, desc) {
   return $Object.defineProperty(it, key, desc);
 };
@@ -31624,7 +31540,7 @@ module.exports = { "default": __webpack_require__(271), __esModule: true };
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(272);
-module.exports = __webpack_require__(36).Object.assign;
+module.exports = __webpack_require__(33).Object.assign;
 
 
 /***/ }),
@@ -31652,7 +31568,7 @@ var IObject = __webpack_require__(115);
 var $assign = Object.assign;
 
 // should work with symbols and should have deterministic property order (V8 bug)
-module.exports = !$assign || __webpack_require__(65)(function () {
+module.exports = !$assign || __webpack_require__(64)(function () {
   var A = {};
   var B = {};
   // eslint-disable-next-line no-undef
@@ -32013,7 +31929,7 @@ module.exports = function (TO_STRING) {
 "use strict";
 
 var create = __webpack_require__(101);
-var descriptor = __webpack_require__(68);
+var descriptor = __webpack_require__(67);
 var setToStringTag = __webpack_require__(93);
 var IteratorPrototype = {};
 
@@ -32076,7 +31992,7 @@ module.exports = Object.getPrototypeOf || function (O) {
 /* 282 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseGetTag = __webpack_require__(67),
+var baseGetTag = __webpack_require__(66),
     isObject = __webpack_require__(53);
 
 /** `Object#toString` result references. */
@@ -32253,7 +32169,7 @@ module.exports = baseAssignValue;
 /* 288 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var getNative = __webpack_require__(66);
+var getNative = __webpack_require__(65);
 
 var defineProperty = (function() {
   try {
@@ -32270,7 +32186,7 @@ module.exports = defineProperty;
 /* 289 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseTimes = __webpack_require__(367),
+var baseTimes = __webpack_require__(366),
     isArguments = __webpack_require__(236),
     isArray = __webpack_require__(39),
     isBuffer = __webpack_require__(237),
@@ -32347,8 +32263,8 @@ module.exports = overArg;
 /***/ (function(module, exports, __webpack_require__) {
 
 var arrayLikeKeys = __webpack_require__(289),
-    baseKeysIn = __webpack_require__(373),
-    isArrayLike = __webpack_require__(69);
+    baseKeysIn = __webpack_require__(372),
+    isArrayLike = __webpack_require__(68);
 
 /**
  * Creates an array of the own and inherited enumerable property names of `object`.
@@ -32561,7 +32477,7 @@ module.exports = toString;
 /* 299 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Symbol = __webpack_require__(71),
+var Symbol = __webpack_require__(70),
     arrayMap = __webpack_require__(244),
     isArray = __webpack_require__(39),
     isSymbol = __webpack_require__(108);
@@ -32743,7 +32659,7 @@ module.exports = function (done, value) {
 var classof = __webpack_require__(235);
 var ITERATOR = __webpack_require__(37)('iterator');
 var Iterators = __webpack_require__(51);
-module.exports = __webpack_require__(36).isIterable = function (it) {
+module.exports = __webpack_require__(33).isIterable = function (it) {
   var O = Object(it);
   return O[ITERATOR] !== undefined
     || '@@iterator' in O
@@ -32773,7 +32689,7 @@ module.exports = __webpack_require__(310);
 
 var anObject = __webpack_require__(47);
 var get = __webpack_require__(243);
-module.exports = __webpack_require__(36).getIterator = function (it) {
+module.exports = __webpack_require__(33).getIterator = function (it) {
   var iterFn = get(it);
   if (typeof iterFn != 'function') throw TypeError(it + ' is not iterable!');
   return anObject(iterFn.call(it));
@@ -32814,7 +32730,7 @@ module.exports = baseFindIndex;
 /* 312 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseIsEqualDeep = __webpack_require__(426),
+var baseIsEqualDeep = __webpack_require__(425),
     isObjectLike = __webpack_require__(52);
 
 /**
@@ -32848,9 +32764,9 @@ module.exports = baseIsEqual;
 /* 313 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var SetCache = __webpack_require__(427),
+var SetCache = __webpack_require__(426),
     arraySome = __webpack_require__(314),
-    cacheHas = __webpack_require__(430);
+    cacheHas = __webpack_require__(429);
 
 /** Used to compose bitmasks for value comparisons. */
 var COMPARE_PARTIAL_FLAG = 1,
@@ -33013,7 +32929,7 @@ module.exports = matchesStrictComparable;
 /* 317 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var toFinite = __webpack_require__(445);
+var toFinite = __webpack_require__(444);
 
 /**
  * Converts `value` to an integer.
@@ -33060,11 +32976,11 @@ module.exports = toInteger;
 
 exports.__esModule = true;
 
-var _iterator = __webpack_require__(460);
+var _iterator = __webpack_require__(459);
 
 var _iterator2 = _interopRequireDefault(_iterator);
 
-var _symbol = __webpack_require__(462);
+var _symbol = __webpack_require__(461);
 
 var _symbol2 = _interopRequireDefault(_symbol);
 
@@ -33096,7 +33012,7 @@ exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var pIE = __webpack_require__(81);
-var createDesc = __webpack_require__(68);
+var createDesc = __webpack_require__(67);
 var toIObject = __webpack_require__(57);
 var toPrimitive = __webpack_require__(99);
 var has = __webpack_require__(48);
@@ -33118,12 +33034,12 @@ exports.f = __webpack_require__(45) ? gOPD : function getOwnPropertyDescriptor(O
 /***/ (function(module, exports, __webpack_require__) {
 
 var arrayMap = __webpack_require__(244),
-    baseClone = __webpack_require__(336),
-    baseUnset = __webpack_require__(396),
+    baseClone = __webpack_require__(335),
+    baseUnset = __webpack_require__(395),
     castPath = __webpack_require__(107),
     copyObject = __webpack_require__(83),
-    customOmitClone = __webpack_require__(402),
-    flatRest = __webpack_require__(404),
+    customOmitClone = __webpack_require__(401),
+    flatRest = __webpack_require__(403),
     getAllKeysIn = __webpack_require__(296);
 
 /** Used to compose bitmasks for cloning. */
@@ -33206,7 +33122,7 @@ function symbolObservablePonyfill(root) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var isPrototype = __webpack_require__(238),
-    nativeKeys = __webpack_require__(371);
+    nativeKeys = __webpack_require__(370);
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -33253,10 +33169,10 @@ __webpack_require__.d(__webpack_exports__, "getStore", function() { return /* bi
 var redux = __webpack_require__(16);
 
 // EXTERNAL MODULE: ./src/modules/data/blocks/rsvp/index.js + 7 modules
-var rsvp = __webpack_require__(13);
+var rsvp = __webpack_require__(12);
 
 // EXTERNAL MODULE: ./src/modules/data/blocks/ticket/index.js + 9 modules
-var ticket = __webpack_require__(4);
+var ticket = __webpack_require__(6);
 
 // EXTERNAL MODULE: ./node_modules/babel-runtime/helpers/extends.js
 var helpers_extends = __webpack_require__(9);
@@ -33306,7 +33222,7 @@ var selectors = __webpack_require__(110);
 var actions = __webpack_require__(55);
 
 // EXTERNAL MODULE: ./node_modules/babel-runtime/regenerator/index.js
-var regenerator = __webpack_require__(12);
+var regenerator = __webpack_require__(11);
 var regenerator_default = /*#__PURE__*/__webpack_require__.n(regenerator);
 
 // EXTERNAL MODULE: ./node_modules/redux-saga/es/effects.js + 1 modules
@@ -33399,7 +33315,7 @@ function watchers() {
 
 /* harmony default export */ var blocks = (blocks_reducer);
 // EXTERNAL MODULE: ./src/modules/data/shared/move/types.js
-var move_types = __webpack_require__(20);
+var move_types = __webpack_require__(19);
 
 // CONCATENATED MODULE: ./src/modules/data/shared/move/reducers/posts.js
 
@@ -33593,10 +33509,10 @@ var external_var_wp_data_root_wp_data_ = __webpack_require__(18);
 var external_tribe_common_utils_ = __webpack_require__(3);
 
 // EXTERNAL MODULE: ./src/modules/data/shared/move/selectors.js
-var move_selectors = __webpack_require__(33);
+var move_selectors = __webpack_require__(28);
 
 // EXTERNAL MODULE: ./src/modules/data/shared/move/actions.js
-var move_actions = __webpack_require__(70);
+var move_actions = __webpack_require__(69);
 
 // CONCATENATED MODULE: ./src/modules/data/shared/move/sagas.js
 
@@ -34110,89 +34026,6 @@ var data_getStore = function getStore() {
 /* 325 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseKeys = __webpack_require__(323),
-    getTag = __webpack_require__(94),
-    isArguments = __webpack_require__(236),
-    isArray = __webpack_require__(39),
-    isArrayLike = __webpack_require__(69),
-    isBuffer = __webpack_require__(237),
-    isPrototype = __webpack_require__(238),
-    isTypedArray = __webpack_require__(266);
-
-/** `Object#toString` result references. */
-var mapTag = '[object Map]',
-    setTag = '[object Set]';
-
-/** Used for built-in method references. */
-var objectProto = Object.prototype;
-
-/** Used to check objects for own properties. */
-var hasOwnProperty = objectProto.hasOwnProperty;
-
-/**
- * Checks if `value` is an empty object, collection, map, or set.
- *
- * Objects are considered empty if they have no own enumerable string keyed
- * properties.
- *
- * Array-like values such as `arguments` objects, arrays, buffers, strings, or
- * jQuery-like collections are considered empty if they have a `length` of `0`.
- * Similarly, maps and sets are considered empty if they have a `size` of `0`.
- *
- * @static
- * @memberOf _
- * @since 0.1.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is empty, else `false`.
- * @example
- *
- * _.isEmpty(null);
- * // => true
- *
- * _.isEmpty(true);
- * // => true
- *
- * _.isEmpty(1);
- * // => true
- *
- * _.isEmpty([1, 2, 3]);
- * // => false
- *
- * _.isEmpty({ 'a': 1 });
- * // => false
- */
-function isEmpty(value) {
-  if (value == null) {
-    return true;
-  }
-  if (isArrayLike(value) &&
-      (isArray(value) || typeof value == 'string' || typeof value.splice == 'function' ||
-        isBuffer(value) || isTypedArray(value) || isArguments(value))) {
-    return !value.length;
-  }
-  var tag = getTag(value);
-  if (tag == mapTag || tag == setTag) {
-    return !value.size;
-  }
-  if (isPrototype(value)) {
-    return !baseKeys(value).length;
-  }
-  for (var key in value) {
-    if (hasOwnProperty.call(value, key)) {
-      return false;
-    }
-  }
-  return true;
-}
-
-module.exports = isEmpty;
-
-
-/***/ }),
-/* 326 */
-/***/ (function(module, exports, __webpack_require__) {
-
 "use strict";
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -34242,7 +34075,7 @@ module.exports = invariant;
 
 
 /***/ }),
-/* 327 */
+/* 326 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -34267,7 +34100,7 @@ var oldRuntime = hadRuntime && g.regeneratorRuntime;
 // Force reevalutation of runtime.js.
 g.regeneratorRuntime = undefined;
 
-module.exports = __webpack_require__(328);
+module.exports = __webpack_require__(327);
 
 if (hadRuntime) {
   // Restore the original runtime.
@@ -34283,7 +34116,7 @@ if (hadRuntime) {
 
 
 /***/ }),
-/* 328 */
+/* 327 */
 /***/ (function(module, exports) {
 
 /**
@@ -35016,22 +34849,22 @@ if (hadRuntime) {
 
 
 /***/ }),
+/* 328 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = { "default": __webpack_require__(329), __esModule: true };
+
+/***/ }),
 /* 329 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(330), __esModule: true };
+__webpack_require__(77);
+__webpack_require__(330);
+module.exports = __webpack_require__(33).Array.from;
+
 
 /***/ }),
 /* 330 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(77);
-__webpack_require__(331);
-module.exports = __webpack_require__(36).Array.from;
-
-
-/***/ }),
-/* 331 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35039,13 +34872,13 @@ module.exports = __webpack_require__(36).Array.from;
 var ctx = __webpack_require__(98);
 var $export = __webpack_require__(49);
 var toObject = __webpack_require__(92);
-var call = __webpack_require__(332);
-var isArrayIter = __webpack_require__(333);
+var call = __webpack_require__(331);
+var isArrayIter = __webpack_require__(332);
 var toLength = __webpack_require__(241);
-var createProperty = __webpack_require__(334);
+var createProperty = __webpack_require__(333);
 var getIterFn = __webpack_require__(243);
 
-$export($export.S + $export.F * !__webpack_require__(335)(function (iter) { Array.from(iter); }), 'Array', {
+$export($export.S + $export.F * !__webpack_require__(334)(function (iter) { Array.from(iter); }), 'Array', {
   // 22.1.2.1 Array.from(arrayLike, mapfn = undefined, thisArg = undefined)
   from: function from(arrayLike /* , mapfn = undefined, thisArg = undefined */) {
     var O = toObject(arrayLike);
@@ -35075,7 +34908,7 @@ $export($export.S + $export.F * !__webpack_require__(335)(function (iter) { Arra
 
 
 /***/ }),
-/* 332 */
+/* 331 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // call something on iterator step with safe closing on error
@@ -35093,7 +34926,7 @@ module.exports = function (iterator, fn, value, entries) {
 
 
 /***/ }),
-/* 333 */
+/* 332 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // check on default Array iterator
@@ -35107,13 +34940,13 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 334 */
+/* 333 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var $defineProperty = __webpack_require__(43);
-var createDesc = __webpack_require__(68);
+var createDesc = __webpack_require__(67);
 
 module.exports = function (object, index, value) {
   if (index in object) $defineProperty.f(object, index, createDesc(0, value));
@@ -35122,7 +34955,7 @@ module.exports = function (object, index, value) {
 
 
 /***/ }),
-/* 335 */
+/* 334 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var ITERATOR = __webpack_require__(37)('iterator');
@@ -35150,29 +34983,29 @@ module.exports = function (exec, skipClosing) {
 
 
 /***/ }),
-/* 336 */
+/* 335 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Stack = __webpack_require__(245),
-    arrayEach = __webpack_require__(365),
+    arrayEach = __webpack_require__(364),
     assignValue = __webpack_require__(286),
-    baseAssign = __webpack_require__(366),
-    baseAssignIn = __webpack_require__(372),
-    cloneBuffer = __webpack_require__(375),
-    copyArray = __webpack_require__(376),
-    copySymbols = __webpack_require__(377),
-    copySymbolsIn = __webpack_require__(379),
+    baseAssign = __webpack_require__(365),
+    baseAssignIn = __webpack_require__(371),
+    cloneBuffer = __webpack_require__(374),
+    copyArray = __webpack_require__(375),
+    copySymbols = __webpack_require__(376),
+    copySymbolsIn = __webpack_require__(378),
     getAllKeys = __webpack_require__(294),
     getAllKeysIn = __webpack_require__(296),
     getTag = __webpack_require__(94),
-    initCloneArray = __webpack_require__(384),
-    initCloneByTag = __webpack_require__(385),
-    initCloneObject = __webpack_require__(390),
+    initCloneArray = __webpack_require__(383),
+    initCloneByTag = __webpack_require__(384),
+    initCloneObject = __webpack_require__(389),
     isArray = __webpack_require__(39),
     isBuffer = __webpack_require__(237),
-    isMap = __webpack_require__(392),
+    isMap = __webpack_require__(391),
     isObject = __webpack_require__(53),
-    isSet = __webpack_require__(394),
+    isSet = __webpack_require__(393),
     keys = __webpack_require__(58);
 
 /** Used to compose bitmasks for cloning. */
@@ -35321,7 +35154,7 @@ module.exports = baseClone;
 
 
 /***/ }),
-/* 337 */
+/* 336 */
 /***/ (function(module, exports) {
 
 /**
@@ -35340,7 +35173,7 @@ module.exports = listCacheClear;
 
 
 /***/ }),
-/* 338 */
+/* 337 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var assocIndexOf = __webpack_require__(103);
@@ -35381,7 +35214,7 @@ module.exports = listCacheDelete;
 
 
 /***/ }),
-/* 339 */
+/* 338 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var assocIndexOf = __webpack_require__(103);
@@ -35406,7 +35239,7 @@ module.exports = listCacheGet;
 
 
 /***/ }),
-/* 340 */
+/* 339 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var assocIndexOf = __webpack_require__(103);
@@ -35428,7 +35261,7 @@ module.exports = listCacheHas;
 
 
 /***/ }),
-/* 341 */
+/* 340 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var assocIndexOf = __webpack_require__(103);
@@ -35460,7 +35293,7 @@ module.exports = listCacheSet;
 
 
 /***/ }),
-/* 342 */
+/* 341 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var ListCache = __webpack_require__(102);
@@ -35481,7 +35314,7 @@ module.exports = stackClear;
 
 
 /***/ }),
-/* 343 */
+/* 342 */
 /***/ (function(module, exports) {
 
 /**
@@ -35505,7 +35338,7 @@ module.exports = stackDelete;
 
 
 /***/ }),
-/* 344 */
+/* 343 */
 /***/ (function(module, exports) {
 
 /**
@@ -35525,7 +35358,7 @@ module.exports = stackGet;
 
 
 /***/ }),
-/* 345 */
+/* 344 */
 /***/ (function(module, exports) {
 
 /**
@@ -35545,7 +35378,7 @@ module.exports = stackHas;
 
 
 /***/ }),
-/* 346 */
+/* 345 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var ListCache = __webpack_require__(102),
@@ -35585,11 +35418,11 @@ module.exports = stackSet;
 
 
 /***/ }),
-/* 347 */
+/* 346 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isFunction = __webpack_require__(282),
-    isMasked = __webpack_require__(350),
+    isMasked = __webpack_require__(349),
     isObject = __webpack_require__(53),
     toSource = __webpack_require__(285);
 
@@ -35638,10 +35471,10 @@ module.exports = baseIsNative;
 
 
 /***/ }),
-/* 348 */
+/* 347 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Symbol = __webpack_require__(71);
+var Symbol = __webpack_require__(70);
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -35690,7 +35523,7 @@ module.exports = getRawTag;
 
 
 /***/ }),
-/* 349 */
+/* 348 */
 /***/ (function(module, exports) {
 
 /** Used for built-in method references. */
@@ -35718,10 +35551,10 @@ module.exports = objectToString;
 
 
 /***/ }),
-/* 350 */
+/* 349 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var coreJsData = __webpack_require__(351);
+var coreJsData = __webpack_require__(350);
 
 /** Used to detect methods masquerading as native. */
 var maskSrcKey = (function() {
@@ -35744,7 +35577,7 @@ module.exports = isMasked;
 
 
 /***/ }),
-/* 351 */
+/* 350 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var root = __webpack_require__(46);
@@ -35756,7 +35589,7 @@ module.exports = coreJsData;
 
 
 /***/ }),
-/* 352 */
+/* 351 */
 /***/ (function(module, exports) {
 
 /**
@@ -35775,10 +35608,10 @@ module.exports = getValue;
 
 
 /***/ }),
-/* 353 */
+/* 352 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Hash = __webpack_require__(354),
+var Hash = __webpack_require__(353),
     ListCache = __webpack_require__(102),
     Map = __webpack_require__(246);
 
@@ -35802,14 +35635,14 @@ module.exports = mapCacheClear;
 
 
 /***/ }),
-/* 354 */
+/* 353 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var hashClear = __webpack_require__(355),
-    hashDelete = __webpack_require__(356),
-    hashGet = __webpack_require__(357),
-    hashHas = __webpack_require__(358),
-    hashSet = __webpack_require__(359);
+var hashClear = __webpack_require__(354),
+    hashDelete = __webpack_require__(355),
+    hashGet = __webpack_require__(356),
+    hashHas = __webpack_require__(357),
+    hashSet = __webpack_require__(358);
 
 /**
  * Creates a hash object.
@@ -35840,7 +35673,7 @@ module.exports = Hash;
 
 
 /***/ }),
-/* 355 */
+/* 354 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var nativeCreate = __webpack_require__(105);
@@ -35861,7 +35694,7 @@ module.exports = hashClear;
 
 
 /***/ }),
-/* 356 */
+/* 355 */
 /***/ (function(module, exports) {
 
 /**
@@ -35884,7 +35717,7 @@ module.exports = hashDelete;
 
 
 /***/ }),
-/* 357 */
+/* 356 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var nativeCreate = __webpack_require__(105);
@@ -35920,7 +35753,7 @@ module.exports = hashGet;
 
 
 /***/ }),
-/* 358 */
+/* 357 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var nativeCreate = __webpack_require__(105);
@@ -35949,7 +35782,7 @@ module.exports = hashHas;
 
 
 /***/ }),
-/* 359 */
+/* 358 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var nativeCreate = __webpack_require__(105);
@@ -35978,7 +35811,7 @@ module.exports = hashSet;
 
 
 /***/ }),
-/* 360 */
+/* 359 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var getMapData = __webpack_require__(106);
@@ -36002,7 +35835,7 @@ module.exports = mapCacheDelete;
 
 
 /***/ }),
-/* 361 */
+/* 360 */
 /***/ (function(module, exports) {
 
 /**
@@ -36023,7 +35856,7 @@ module.exports = isKeyable;
 
 
 /***/ }),
-/* 362 */
+/* 361 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var getMapData = __webpack_require__(106);
@@ -36045,7 +35878,7 @@ module.exports = mapCacheGet;
 
 
 /***/ }),
-/* 363 */
+/* 362 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var getMapData = __webpack_require__(106);
@@ -36067,7 +35900,7 @@ module.exports = mapCacheHas;
 
 
 /***/ }),
-/* 364 */
+/* 363 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var getMapData = __webpack_require__(106);
@@ -36095,7 +35928,7 @@ module.exports = mapCacheSet;
 
 
 /***/ }),
-/* 365 */
+/* 364 */
 /***/ (function(module, exports) {
 
 /**
@@ -36123,7 +35956,7 @@ module.exports = arrayEach;
 
 
 /***/ }),
-/* 366 */
+/* 365 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var copyObject = __webpack_require__(83),
@@ -36146,7 +35979,7 @@ module.exports = baseAssign;
 
 
 /***/ }),
-/* 367 */
+/* 366 */
 /***/ (function(module, exports) {
 
 /**
@@ -36172,10 +36005,10 @@ module.exports = baseTimes;
 
 
 /***/ }),
-/* 368 */
+/* 367 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseGetTag = __webpack_require__(67),
+var baseGetTag = __webpack_require__(66),
     isObjectLike = __webpack_require__(52);
 
 /** `Object#toString` result references. */
@@ -36196,7 +36029,7 @@ module.exports = baseIsArguments;
 
 
 /***/ }),
-/* 369 */
+/* 368 */
 /***/ (function(module, exports) {
 
 /**
@@ -36220,10 +36053,10 @@ module.exports = stubFalse;
 
 
 /***/ }),
-/* 370 */
+/* 369 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseGetTag = __webpack_require__(67),
+var baseGetTag = __webpack_require__(66),
     isLength = __webpack_require__(249),
     isObjectLike = __webpack_require__(52);
 
@@ -36286,7 +36119,7 @@ module.exports = baseIsTypedArray;
 
 
 /***/ }),
-/* 371 */
+/* 370 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var overArg = __webpack_require__(290);
@@ -36298,7 +36131,7 @@ module.exports = nativeKeys;
 
 
 /***/ }),
-/* 372 */
+/* 371 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var copyObject = __webpack_require__(83),
@@ -36321,12 +36154,12 @@ module.exports = baseAssignIn;
 
 
 /***/ }),
-/* 373 */
+/* 372 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isObject = __webpack_require__(53),
     isPrototype = __webpack_require__(238),
-    nativeKeysIn = __webpack_require__(374);
+    nativeKeysIn = __webpack_require__(373);
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -36360,7 +36193,7 @@ module.exports = baseKeysIn;
 
 
 /***/ }),
-/* 374 */
+/* 373 */
 /***/ (function(module, exports) {
 
 /**
@@ -36386,7 +36219,7 @@ module.exports = nativeKeysIn;
 
 
 /***/ }),
-/* 375 */
+/* 374 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(module) {var root = __webpack_require__(46);
@@ -36428,7 +36261,7 @@ module.exports = cloneBuffer;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(82)(module)))
 
 /***/ }),
-/* 376 */
+/* 375 */
 /***/ (function(module, exports) {
 
 /**
@@ -36454,7 +36287,7 @@ module.exports = copyArray;
 
 
 /***/ }),
-/* 377 */
+/* 376 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var copyObject = __webpack_require__(83),
@@ -36476,7 +36309,7 @@ module.exports = copySymbols;
 
 
 /***/ }),
-/* 378 */
+/* 377 */
 /***/ (function(module, exports) {
 
 /**
@@ -36507,7 +36340,7 @@ module.exports = arrayFilter;
 
 
 /***/ }),
-/* 379 */
+/* 378 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var copyObject = __webpack_require__(83),
@@ -36529,10 +36362,10 @@ module.exports = copySymbolsIn;
 
 
 /***/ }),
-/* 380 */
+/* 379 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var getNative = __webpack_require__(66),
+var getNative = __webpack_require__(65),
     root = __webpack_require__(46);
 
 /* Built-in method references that are verified to be native. */
@@ -36542,10 +36375,10 @@ module.exports = DataView;
 
 
 /***/ }),
-/* 381 */
+/* 380 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var getNative = __webpack_require__(66),
+var getNative = __webpack_require__(65),
     root = __webpack_require__(46);
 
 /* Built-in method references that are verified to be native. */
@@ -36555,10 +36388,10 @@ module.exports = Promise;
 
 
 /***/ }),
-/* 382 */
+/* 381 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var getNative = __webpack_require__(66),
+var getNative = __webpack_require__(65),
     root = __webpack_require__(46);
 
 /* Built-in method references that are verified to be native. */
@@ -36568,10 +36401,10 @@ module.exports = Set;
 
 
 /***/ }),
-/* 383 */
+/* 382 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var getNative = __webpack_require__(66),
+var getNative = __webpack_require__(65),
     root = __webpack_require__(46);
 
 /* Built-in method references that are verified to be native. */
@@ -36581,7 +36414,7 @@ module.exports = WeakMap;
 
 
 /***/ }),
-/* 384 */
+/* 383 */
 /***/ (function(module, exports) {
 
 /** Used for built-in method references. */
@@ -36613,14 +36446,14 @@ module.exports = initCloneArray;
 
 
 /***/ }),
-/* 385 */
+/* 384 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var cloneArrayBuffer = __webpack_require__(255),
-    cloneDataView = __webpack_require__(386),
-    cloneRegExp = __webpack_require__(387),
-    cloneSymbol = __webpack_require__(388),
-    cloneTypedArray = __webpack_require__(389);
+    cloneDataView = __webpack_require__(385),
+    cloneRegExp = __webpack_require__(386),
+    cloneSymbol = __webpack_require__(387),
+    cloneTypedArray = __webpack_require__(388);
 
 /** `Object#toString` result references. */
 var boolTag = '[object Boolean]',
@@ -36696,7 +36529,7 @@ module.exports = initCloneByTag;
 
 
 /***/ }),
-/* 386 */
+/* 385 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var cloneArrayBuffer = __webpack_require__(255);
@@ -36718,7 +36551,7 @@ module.exports = cloneDataView;
 
 
 /***/ }),
-/* 387 */
+/* 386 */
 /***/ (function(module, exports) {
 
 /** Used to match `RegExp` flags from their coerced string values. */
@@ -36741,10 +36574,10 @@ module.exports = cloneRegExp;
 
 
 /***/ }),
-/* 388 */
+/* 387 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Symbol = __webpack_require__(71);
+var Symbol = __webpack_require__(70);
 
 /** Used to convert symbols to primitives and strings. */
 var symbolProto = Symbol ? Symbol.prototype : undefined,
@@ -36765,7 +36598,7 @@ module.exports = cloneSymbol;
 
 
 /***/ }),
-/* 389 */
+/* 388 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var cloneArrayBuffer = __webpack_require__(255);
@@ -36787,10 +36620,10 @@ module.exports = cloneTypedArray;
 
 
 /***/ }),
-/* 390 */
+/* 389 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseCreate = __webpack_require__(391),
+var baseCreate = __webpack_require__(390),
     getPrototype = __webpack_require__(254),
     isPrototype = __webpack_require__(238);
 
@@ -36811,7 +36644,7 @@ module.exports = initCloneObject;
 
 
 /***/ }),
-/* 391 */
+/* 390 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isObject = __webpack_require__(53);
@@ -36847,10 +36680,10 @@ module.exports = baseCreate;
 
 
 /***/ }),
-/* 392 */
+/* 391 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseIsMap = __webpack_require__(393),
+var baseIsMap = __webpack_require__(392),
     baseUnary = __webpack_require__(250),
     nodeUtil = __webpack_require__(251);
 
@@ -36880,7 +36713,7 @@ module.exports = isMap;
 
 
 /***/ }),
-/* 393 */
+/* 392 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var getTag = __webpack_require__(94),
@@ -36904,10 +36737,10 @@ module.exports = baseIsMap;
 
 
 /***/ }),
-/* 394 */
+/* 393 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseIsSet = __webpack_require__(395),
+var baseIsSet = __webpack_require__(394),
     baseUnary = __webpack_require__(250),
     nodeUtil = __webpack_require__(251);
 
@@ -36937,7 +36770,7 @@ module.exports = isSet;
 
 
 /***/ }),
-/* 395 */
+/* 394 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var getTag = __webpack_require__(94),
@@ -36961,12 +36794,12 @@ module.exports = baseIsSet;
 
 
 /***/ }),
-/* 396 */
+/* 395 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var castPath = __webpack_require__(107),
-    last = __webpack_require__(400),
-    parent = __webpack_require__(401),
+    last = __webpack_require__(399),
+    parent = __webpack_require__(400),
     toKey = __webpack_require__(84);
 
 /**
@@ -36987,10 +36820,10 @@ module.exports = baseUnset;
 
 
 /***/ }),
-/* 397 */
+/* 396 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var memoizeCapped = __webpack_require__(398);
+var memoizeCapped = __webpack_require__(397);
 
 /** Used to match property names within property paths. */
 var rePropName = /[^.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|$))/g;
@@ -37020,10 +36853,10 @@ module.exports = stringToPath;
 
 
 /***/ }),
-/* 398 */
+/* 397 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var memoize = __webpack_require__(399);
+var memoize = __webpack_require__(398);
 
 /** Used as the maximum memoize cache size. */
 var MAX_MEMOIZE_SIZE = 500;
@@ -37052,7 +36885,7 @@ module.exports = memoizeCapped;
 
 
 /***/ }),
-/* 399 */
+/* 398 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var MapCache = __webpack_require__(247);
@@ -37131,7 +36964,7 @@ module.exports = memoize;
 
 
 /***/ }),
-/* 400 */
+/* 399 */
 /***/ (function(module, exports) {
 
 /**
@@ -37157,7 +36990,7 @@ module.exports = last;
 
 
 /***/ }),
-/* 401 */
+/* 400 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseGet = __webpack_require__(257),
@@ -37179,10 +37012,10 @@ module.exports = parent;
 
 
 /***/ }),
-/* 402 */
+/* 401 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isPlainObject = __webpack_require__(403);
+var isPlainObject = __webpack_require__(402);
 
 /**
  * Used by `_.omit` to customize its `_.cloneDeep` use to only clone plain
@@ -37201,10 +37034,10 @@ module.exports = customOmitClone;
 
 
 /***/ }),
-/* 403 */
+/* 402 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseGetTag = __webpack_require__(67),
+var baseGetTag = __webpack_require__(66),
     getPrototype = __webpack_require__(254),
     isObjectLike = __webpack_require__(52);
 
@@ -37269,12 +37102,12 @@ module.exports = isPlainObject;
 
 
 /***/ }),
-/* 404 */
+/* 403 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var flatten = __webpack_require__(405),
-    overRest = __webpack_require__(408),
-    setToString = __webpack_require__(410);
+var flatten = __webpack_require__(404),
+    overRest = __webpack_require__(407),
+    setToString = __webpack_require__(409);
 
 /**
  * A specialized version of `baseRest` which flattens the rest array.
@@ -37291,10 +37124,10 @@ module.exports = flatRest;
 
 
 /***/ }),
-/* 405 */
+/* 404 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseFlatten = __webpack_require__(406);
+var baseFlatten = __webpack_require__(405);
 
 /**
  * Flattens `array` a single level deep.
@@ -37319,11 +37152,11 @@ module.exports = flatten;
 
 
 /***/ }),
-/* 406 */
+/* 405 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var arrayPush = __webpack_require__(253),
-    isFlattenable = __webpack_require__(407);
+    isFlattenable = __webpack_require__(406);
 
 /**
  * The base implementation of `_.flatten` with support for restricting flattening.
@@ -37363,10 +37196,10 @@ module.exports = baseFlatten;
 
 
 /***/ }),
-/* 407 */
+/* 406 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Symbol = __webpack_require__(71),
+var Symbol = __webpack_require__(70),
     isArguments = __webpack_require__(236),
     isArray = __webpack_require__(39);
 
@@ -37389,10 +37222,10 @@ module.exports = isFlattenable;
 
 
 /***/ }),
-/* 408 */
+/* 407 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var apply = __webpack_require__(409);
+var apply = __webpack_require__(408);
 
 /* Built-in method references for those with the same name as other `lodash` methods. */
 var nativeMax = Math.max;
@@ -37431,7 +37264,7 @@ module.exports = overRest;
 
 
 /***/ }),
-/* 409 */
+/* 408 */
 /***/ (function(module, exports) {
 
 /**
@@ -37458,11 +37291,11 @@ module.exports = apply;
 
 
 /***/ }),
-/* 410 */
+/* 409 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseSetToString = __webpack_require__(411),
-    shortOut = __webpack_require__(413);
+var baseSetToString = __webpack_require__(410),
+    shortOut = __webpack_require__(412);
 
 /**
  * Sets the `toString` method of `func` to return `string`.
@@ -37478,10 +37311,10 @@ module.exports = setToString;
 
 
 /***/ }),
-/* 411 */
+/* 410 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var constant = __webpack_require__(412),
+var constant = __webpack_require__(411),
     defineProperty = __webpack_require__(288),
     identity = __webpack_require__(301);
 
@@ -37506,7 +37339,7 @@ module.exports = baseSetToString;
 
 
 /***/ }),
-/* 412 */
+/* 411 */
 /***/ (function(module, exports) {
 
 /**
@@ -37538,7 +37371,7 @@ module.exports = constant;
 
 
 /***/ }),
-/* 413 */
+/* 412 */
 /***/ (function(module, exports) {
 
 /** Used to detect hot functions by number of calls within a span of milliseconds. */
@@ -37581,7 +37414,7 @@ module.exports = shortOut;
 
 
 /***/ }),
-/* 414 */
+/* 413 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseSlice = __webpack_require__(300);
@@ -37605,7 +37438,7 @@ module.exports = castSlice;
 
 
 /***/ }),
-/* 415 */
+/* 414 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseIndexOf = __webpack_require__(258);
@@ -37630,7 +37463,7 @@ module.exports = charsEndIndex;
 
 
 /***/ }),
-/* 416 */
+/* 415 */
 /***/ (function(module, exports) {
 
 /**
@@ -37648,7 +37481,7 @@ module.exports = baseIsNaN;
 
 
 /***/ }),
-/* 417 */
+/* 416 */
 /***/ (function(module, exports) {
 
 /**
@@ -37677,7 +37510,7 @@ module.exports = strictIndexOf;
 
 
 /***/ }),
-/* 418 */
+/* 417 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseIndexOf = __webpack_require__(258);
@@ -37703,12 +37536,12 @@ module.exports = charsStartIndex;
 
 
 /***/ }),
-/* 419 */
+/* 418 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var asciiToArray = __webpack_require__(420),
-    hasUnicode = __webpack_require__(421),
-    unicodeToArray = __webpack_require__(422);
+var asciiToArray = __webpack_require__(419),
+    hasUnicode = __webpack_require__(420),
+    unicodeToArray = __webpack_require__(421);
 
 /**
  * Converts `string` to an array.
@@ -37727,7 +37560,7 @@ module.exports = stringToArray;
 
 
 /***/ }),
-/* 420 */
+/* 419 */
 /***/ (function(module, exports) {
 
 /**
@@ -37745,7 +37578,7 @@ module.exports = asciiToArray;
 
 
 /***/ }),
-/* 421 */
+/* 420 */
 /***/ (function(module, exports) {
 
 /** Used to compose unicode character classes. */
@@ -37777,7 +37610,7 @@ module.exports = hasUnicode;
 
 
 /***/ }),
-/* 422 */
+/* 421 */
 /***/ (function(module, exports) {
 
 /** Used to compose unicode character classes. */
@@ -37823,11 +37656,11 @@ module.exports = unicodeToArray;
 
 
 /***/ }),
-/* 423 */
+/* 422 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseIteratee = __webpack_require__(259),
-    isArrayLike = __webpack_require__(69),
+    isArrayLike = __webpack_require__(68),
     keys = __webpack_require__(58);
 
 /**
@@ -37854,11 +37687,11 @@ module.exports = createFind;
 
 
 /***/ }),
-/* 424 */
+/* 423 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseIsMatch = __webpack_require__(425),
-    getMatchData = __webpack_require__(435),
+var baseIsMatch = __webpack_require__(424),
+    getMatchData = __webpack_require__(434),
     matchesStrictComparable = __webpack_require__(316);
 
 /**
@@ -37882,7 +37715,7 @@ module.exports = baseMatches;
 
 
 /***/ }),
-/* 425 */
+/* 424 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Stack = __webpack_require__(245),
@@ -37950,13 +37783,13 @@ module.exports = baseIsMatch;
 
 
 /***/ }),
-/* 426 */
+/* 425 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Stack = __webpack_require__(245),
     equalArrays = __webpack_require__(313),
-    equalByTag = __webpack_require__(431),
-    equalObjects = __webpack_require__(434),
+    equalByTag = __webpack_require__(430),
+    equalObjects = __webpack_require__(433),
     getTag = __webpack_require__(94),
     isArray = __webpack_require__(39),
     isBuffer = __webpack_require__(237),
@@ -38039,12 +37872,12 @@ module.exports = baseIsEqualDeep;
 
 
 /***/ }),
-/* 427 */
+/* 426 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var MapCache = __webpack_require__(247),
-    setCacheAdd = __webpack_require__(428),
-    setCacheHas = __webpack_require__(429);
+    setCacheAdd = __webpack_require__(427),
+    setCacheHas = __webpack_require__(428);
 
 /**
  *
@@ -38072,7 +37905,7 @@ module.exports = SetCache;
 
 
 /***/ }),
-/* 428 */
+/* 427 */
 /***/ (function(module, exports) {
 
 /** Used to stand-in for `undefined` hash values. */
@@ -38097,7 +37930,7 @@ module.exports = setCacheAdd;
 
 
 /***/ }),
-/* 429 */
+/* 428 */
 /***/ (function(module, exports) {
 
 /**
@@ -38117,7 +37950,7 @@ module.exports = setCacheHas;
 
 
 /***/ }),
-/* 430 */
+/* 429 */
 /***/ (function(module, exports) {
 
 /**
@@ -38136,15 +37969,15 @@ module.exports = cacheHas;
 
 
 /***/ }),
-/* 431 */
+/* 430 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Symbol = __webpack_require__(71),
+var Symbol = __webpack_require__(70),
     Uint8Array = __webpack_require__(297),
     eq = __webpack_require__(104),
     equalArrays = __webpack_require__(313),
-    mapToArray = __webpack_require__(432),
-    setToArray = __webpack_require__(433);
+    mapToArray = __webpack_require__(431),
+    setToArray = __webpack_require__(432);
 
 /** Used to compose bitmasks for value comparisons. */
 var COMPARE_PARTIAL_FLAG = 1,
@@ -38254,7 +38087,7 @@ module.exports = equalByTag;
 
 
 /***/ }),
-/* 432 */
+/* 431 */
 /***/ (function(module, exports) {
 
 /**
@@ -38278,7 +38111,7 @@ module.exports = mapToArray;
 
 
 /***/ }),
-/* 433 */
+/* 432 */
 /***/ (function(module, exports) {
 
 /**
@@ -38302,7 +38135,7 @@ module.exports = setToArray;
 
 
 /***/ }),
-/* 434 */
+/* 433 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var getAllKeys = __webpack_require__(294);
@@ -38397,7 +38230,7 @@ module.exports = equalObjects;
 
 
 /***/ }),
-/* 435 */
+/* 434 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isStrictComparable = __webpack_require__(315),
@@ -38427,12 +38260,12 @@ module.exports = getMatchData;
 
 
 /***/ }),
-/* 436 */
+/* 435 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseIsEqual = __webpack_require__(312),
-    get = __webpack_require__(437),
-    hasIn = __webpack_require__(438),
+    get = __webpack_require__(436),
+    hasIn = __webpack_require__(437),
     isKey = __webpack_require__(256),
     isStrictComparable = __webpack_require__(315),
     matchesStrictComparable = __webpack_require__(316),
@@ -38466,7 +38299,7 @@ module.exports = baseMatchesProperty;
 
 
 /***/ }),
-/* 437 */
+/* 436 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseGet = __webpack_require__(257);
@@ -38505,11 +38338,11 @@ module.exports = get;
 
 
 /***/ }),
-/* 438 */
+/* 437 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseHasIn = __webpack_require__(439),
-    hasPath = __webpack_require__(440);
+var baseHasIn = __webpack_require__(438),
+    hasPath = __webpack_require__(439);
 
 /**
  * Checks if `path` is a direct or inherited property of `object`.
@@ -38545,7 +38378,7 @@ module.exports = hasIn;
 
 
 /***/ }),
-/* 439 */
+/* 438 */
 /***/ (function(module, exports) {
 
 /**
@@ -38564,7 +38397,7 @@ module.exports = baseHasIn;
 
 
 /***/ }),
-/* 440 */
+/* 439 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var castPath = __webpack_require__(107),
@@ -38609,11 +38442,11 @@ module.exports = hasPath;
 
 
 /***/ }),
-/* 441 */
+/* 440 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseProperty = __webpack_require__(442),
-    basePropertyDeep = __webpack_require__(443),
+var baseProperty = __webpack_require__(441),
+    basePropertyDeep = __webpack_require__(442),
     isKey = __webpack_require__(256),
     toKey = __webpack_require__(84);
 
@@ -38647,7 +38480,7 @@ module.exports = property;
 
 
 /***/ }),
-/* 442 */
+/* 441 */
 /***/ (function(module, exports) {
 
 /**
@@ -38667,7 +38500,7 @@ module.exports = baseProperty;
 
 
 /***/ }),
-/* 443 */
+/* 442 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseGet = __webpack_require__(257);
@@ -38689,7 +38522,7 @@ module.exports = basePropertyDeep;
 
 
 /***/ }),
-/* 444 */
+/* 443 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseFindIndex = __webpack_require__(311),
@@ -38750,10 +38583,10 @@ module.exports = findIndex;
 
 
 /***/ }),
-/* 445 */
+/* 444 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var toNumber = __webpack_require__(446);
+var toNumber = __webpack_require__(445);
 
 /** Used as references for various `Number` constants. */
 var INFINITY = 1 / 0,
@@ -38798,7 +38631,7 @@ module.exports = toFinite;
 
 
 /***/ }),
-/* 446 */
+/* 445 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isObject = __webpack_require__(53),
@@ -38870,7 +38703,7 @@ module.exports = toNumber;
 
 
 /***/ }),
-/* 447 */
+/* 446 */
 /***/ (function(module, exports) {
 
 module.exports = function(originalModule) {
@@ -38900,10 +38733,10 @@ module.exports = function(originalModule) {
 
 
 /***/ }),
-/* 448 */
+/* 447 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseGetTag = __webpack_require__(67),
+var baseGetTag = __webpack_require__(66),
     isArray = __webpack_require__(39),
     isObjectLike = __webpack_require__(52);
 
@@ -38936,10 +38769,10 @@ module.exports = isString;
 
 
 /***/ }),
-/* 449 */
+/* 448 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseValues = __webpack_require__(450),
+var baseValues = __webpack_require__(449),
     keys = __webpack_require__(58);
 
 /**
@@ -38976,7 +38809,7 @@ module.exports = values;
 
 
 /***/ }),
-/* 450 */
+/* 449 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var arrayMap = __webpack_require__(244);
@@ -39001,10 +38834,10 @@ module.exports = baseValues;
 
 
 /***/ }),
-/* 451 */
+/* 450 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseEach = __webpack_require__(452);
+var baseEach = __webpack_require__(451);
 
 /**
  * The base implementation of `_.some` without support for iteratee shorthands.
@@ -39029,11 +38862,11 @@ module.exports = baseSome;
 
 
 /***/ }),
-/* 452 */
+/* 451 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseForOwn = __webpack_require__(453),
-    createBaseEach = __webpack_require__(456);
+var baseForOwn = __webpack_require__(452),
+    createBaseEach = __webpack_require__(455);
 
 /**
  * The base implementation of `_.forEach` without support for iteratee shorthands.
@@ -39049,10 +38882,10 @@ module.exports = baseEach;
 
 
 /***/ }),
-/* 453 */
+/* 452 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseFor = __webpack_require__(454),
+var baseFor = __webpack_require__(453),
     keys = __webpack_require__(58);
 
 /**
@@ -39071,10 +38904,10 @@ module.exports = baseForOwn;
 
 
 /***/ }),
-/* 454 */
+/* 453 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var createBaseFor = __webpack_require__(455);
+var createBaseFor = __webpack_require__(454);
 
 /**
  * The base implementation of `baseForOwn` which iterates over `object`
@@ -39093,7 +38926,7 @@ module.exports = baseFor;
 
 
 /***/ }),
-/* 455 */
+/* 454 */
 /***/ (function(module, exports) {
 
 /**
@@ -39124,10 +38957,10 @@ module.exports = createBaseFor;
 
 
 /***/ }),
-/* 456 */
+/* 455 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isArrayLike = __webpack_require__(69);
+var isArrayLike = __webpack_require__(68);
 
 /**
  * Creates a `baseEach` or `baseEachRight` function.
@@ -39162,11 +38995,11 @@ module.exports = createBaseEach;
 
 
 /***/ }),
-/* 457 */
+/* 456 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var eq = __webpack_require__(104),
-    isArrayLike = __webpack_require__(69),
+    isArrayLike = __webpack_require__(68),
     isIndex = __webpack_require__(248),
     isObject = __webpack_require__(53);
 
@@ -39198,7 +39031,7 @@ module.exports = isIterateeCall;
 
 
 /***/ }),
-/* 458 */
+/* 457 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39211,7 +39044,7 @@ module.exports = isIterateeCall;
 
 
 
-var ReactPropTypesSecret = __webpack_require__(459);
+var ReactPropTypesSecret = __webpack_require__(458);
 
 function emptyFunction() {}
 function emptyFunctionWithReset() {}
@@ -39269,7 +39102,7 @@ module.exports = function() {
 
 
 /***/ }),
-/* 459 */
+/* 458 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39288,13 +39121,13 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 460 */
+/* 459 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(461), __esModule: true };
+module.exports = { "default": __webpack_require__(460), __esModule: true };
 
 /***/ }),
-/* 461 */
+/* 460 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(77);
@@ -39303,24 +39136,24 @@ module.exports = __webpack_require__(260).f('iterator');
 
 
 /***/ }),
+/* 461 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = { "default": __webpack_require__(462), __esModule: true };
+
+/***/ }),
 /* 462 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(463), __esModule: true };
+__webpack_require__(463);
+__webpack_require__(468);
+__webpack_require__(469);
+__webpack_require__(470);
+module.exports = __webpack_require__(33).Symbol;
+
 
 /***/ }),
 /* 463 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(464);
-__webpack_require__(469);
-__webpack_require__(470);
-__webpack_require__(471);
-module.exports = __webpack_require__(36).Symbol;
-
-
-/***/ }),
-/* 464 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39331,23 +39164,23 @@ var has = __webpack_require__(48);
 var DESCRIPTORS = __webpack_require__(45);
 var $export = __webpack_require__(49);
 var redefine = __webpack_require__(242);
-var META = __webpack_require__(465).KEY;
-var $fails = __webpack_require__(65);
+var META = __webpack_require__(464).KEY;
+var $fails = __webpack_require__(64);
 var shared = __webpack_require__(90);
 var setToStringTag = __webpack_require__(93);
 var uid = __webpack_require__(76);
 var wks = __webpack_require__(37);
 var wksExt = __webpack_require__(260);
 var wksDefine = __webpack_require__(261);
-var enumKeys = __webpack_require__(466);
-var isArray = __webpack_require__(467);
+var enumKeys = __webpack_require__(465);
+var isArray = __webpack_require__(466);
 var anObject = __webpack_require__(47);
 var isObject = __webpack_require__(56);
 var toIObject = __webpack_require__(57);
 var toPrimitive = __webpack_require__(99);
-var createDesc = __webpack_require__(68);
+var createDesc = __webpack_require__(67);
 var _create = __webpack_require__(101);
-var gOPNExt = __webpack_require__(468);
+var gOPNExt = __webpack_require__(467);
 var $GOPD = __webpack_require__(320);
 var $DP = __webpack_require__(43);
 var $keys = __webpack_require__(74);
@@ -39561,7 +39394,7 @@ setToStringTag(global.JSON, 'JSON', true);
 
 
 /***/ }),
-/* 465 */
+/* 464 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var META = __webpack_require__(76)('meta');
@@ -39572,7 +39405,7 @@ var id = 0;
 var isExtensible = Object.isExtensible || function () {
   return true;
 };
-var FREEZE = !__webpack_require__(65)(function () {
+var FREEZE = !__webpack_require__(64)(function () {
   return isExtensible(Object.preventExtensions({}));
 });
 var setMeta = function (it) {
@@ -39620,7 +39453,7 @@ var meta = module.exports = {
 
 
 /***/ }),
-/* 466 */
+/* 465 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // all enumerable object keys, includes symbols
@@ -39641,7 +39474,7 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 467 */
+/* 466 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.2.2 IsArray(argument)
@@ -39652,7 +39485,7 @@ module.exports = Array.isArray || function isArray(arg) {
 
 
 /***/ }),
-/* 468 */
+/* 467 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // fallback for IE11 buggy Object.getOwnPropertyNames with iframe and window
@@ -39677,50 +39510,50 @@ module.exports.f = function getOwnPropertyNames(it) {
 
 
 /***/ }),
-/* 469 */
+/* 468 */
 /***/ (function(module, exports) {
 
 
 
 /***/ }),
-/* 470 */
+/* 469 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(261)('asyncIterator');
 
 
 /***/ }),
-/* 471 */
+/* 470 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(261)('observable');
 
 
 /***/ }),
+/* 471 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = { "default": __webpack_require__(472), __esModule: true };
+
+/***/ }),
 /* 472 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(473), __esModule: true };
+__webpack_require__(473);
+module.exports = __webpack_require__(33).Object.setPrototypeOf;
+
 
 /***/ }),
 /* 473 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(474);
-module.exports = __webpack_require__(36).Object.setPrototypeOf;
+// 19.1.3.19 Object.setPrototypeOf(O, proto)
+var $export = __webpack_require__(49);
+$export($export.S, 'Object', { setPrototypeOf: __webpack_require__(474).set });
 
 
 /***/ }),
 /* 474 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// 19.1.3.19 Object.setPrototypeOf(O, proto)
-var $export = __webpack_require__(49);
-$export($export.S, 'Object', { setPrototypeOf: __webpack_require__(475).set });
-
-
-/***/ }),
-/* 475 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Works with __proto__ only. Old v8 can't work with null proto objects.
@@ -39751,30 +39584,36 @@ module.exports = {
 
 
 /***/ }),
+/* 475 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = { "default": __webpack_require__(476), __esModule: true };
+
+/***/ }),
 /* 476 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(477), __esModule: true };
-
-/***/ }),
-/* 477 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(478);
-var $Object = __webpack_require__(36).Object;
+__webpack_require__(477);
+var $Object = __webpack_require__(33).Object;
 module.exports = function create(P, D) {
   return $Object.create(P, D);
 };
 
 
 /***/ }),
-/* 478 */
+/* 477 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(49);
 // 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
 $export($export.S, 'Object', { create: __webpack_require__(101) });
 
+
+/***/ }),
+/* 478 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
 
 /***/ }),
 /* 479 */
@@ -39798,12 +39637,6 @@ $export($export.S, 'Object', { create: __webpack_require__(101) });
 /* 482 */
 /***/ (function(module, exports, __webpack_require__) {
 
-// extracted by mini-css-extract-plugin
-
-/***/ }),
-/* 483 */
-/***/ (function(module, exports, __webpack_require__) {
-
 "use strict";
 
 
@@ -39819,7 +39652,7 @@ exports.getMonths = getMonths;
 exports.formatDate = formatDate;
 exports.parseDate = parseDate;
 
-var _moment = __webpack_require__(5);
+var _moment = __webpack_require__(4);
 
 var _moment2 = _interopRequireDefault(_moment);
 
@@ -39892,6 +39725,12 @@ exports.default = {
 //# sourceMappingURL=MomentLocaleUtils.js.map
 
 /***/ }),
+/* 483 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
 /* 484 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -39919,12 +39758,6 @@ exports.default = {
 /* 488 */
 /***/ (function(module, exports, __webpack_require__) {
 
-// extracted by mini-css-extract-plugin
-
-/***/ }),
-/* 489 */
-/***/ (function(module, exports, __webpack_require__) {
-
 "use strict";
 
 
@@ -39934,7 +39767,7 @@ if (true) {
 
 
 /***/ }),
-/* 490 */
+/* 489 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39979,13 +39812,13 @@ module.exports.isShallowEqualArrays = isShallowEqualArrays;
 
 
 /***/ }),
-/* 491 */
+/* 490 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var reactIs = __webpack_require__(489);
+var reactIs = __webpack_require__(488);
 
 /**
  * Copyright 2015, Yahoo! Inc.
@@ -40086,6 +39919,89 @@ function hoistNonReactStatics(targetComponent, sourceComponent, blacklist) {
 }
 
 module.exports = hoistNonReactStatics;
+
+
+/***/ }),
+/* 491 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseKeys = __webpack_require__(323),
+    getTag = __webpack_require__(94),
+    isArguments = __webpack_require__(236),
+    isArray = __webpack_require__(39),
+    isArrayLike = __webpack_require__(68),
+    isBuffer = __webpack_require__(237),
+    isPrototype = __webpack_require__(238),
+    isTypedArray = __webpack_require__(266);
+
+/** `Object#toString` result references. */
+var mapTag = '[object Map]',
+    setTag = '[object Set]';
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/**
+ * Checks if `value` is an empty object, collection, map, or set.
+ *
+ * Objects are considered empty if they have no own enumerable string keyed
+ * properties.
+ *
+ * Array-like values such as `arguments` objects, arrays, buffers, strings, or
+ * jQuery-like collections are considered empty if they have a `length` of `0`.
+ * Similarly, maps and sets are considered empty if they have a `size` of `0`.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is empty, else `false`.
+ * @example
+ *
+ * _.isEmpty(null);
+ * // => true
+ *
+ * _.isEmpty(true);
+ * // => true
+ *
+ * _.isEmpty(1);
+ * // => true
+ *
+ * _.isEmpty([1, 2, 3]);
+ * // => false
+ *
+ * _.isEmpty({ 'a': 1 });
+ * // => false
+ */
+function isEmpty(value) {
+  if (value == null) {
+    return true;
+  }
+  if (isArrayLike(value) &&
+      (isArray(value) || typeof value == 'string' || typeof value.splice == 'function' ||
+        isBuffer(value) || isTypedArray(value) || isArguments(value))) {
+    return !value.length;
+  }
+  var tag = getTag(value);
+  if (tag == mapTag || tag == setTag) {
+    return !value.size;
+  }
+  if (isPrototype(value)) {
+    return !baseKeys(value).length;
+  }
+  for (var key in value) {
+    if (hasOwnProperty.call(value, key)) {
+      return false;
+    }
+  }
+  return true;
+}
+
+module.exports = isEmpty;
 
 
 /***/ }),
@@ -40644,12 +40560,6 @@ module.exports = isShallowEqualArrays;
 
 /***/ }),
 /* 537 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-
-/***/ }),
-/* 538 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -40666,7 +40576,7 @@ var data = __webpack_require__(324);
 var external_var_wp_i18n_root_wp_i18n_ = __webpack_require__(15);
 
 // EXTERNAL MODULE: ./src/modules/icons/index.js + 11 modules
-var icons = __webpack_require__(34);
+var icons = __webpack_require__(31);
 
 // CONCATENATED MODULE: ./node_modules/react-redux/node_modules/@babel/runtime/helpers/esm/inheritsLoose.js
 function _inheritsLoose(subClass, superClass) {
@@ -40675,7 +40585,7 @@ function _inheritsLoose(subClass, superClass) {
   subClass.__proto__ = superClass;
 }
 // EXTERNAL MODULE: external "React"
-var external_React_ = __webpack_require__(11);
+var external_React_ = __webpack_require__(13);
 var external_React_default = /*#__PURE__*/__webpack_require__.n(external_React_);
 
 // EXTERNAL MODULE: ./node_modules/prop-types/index.js
@@ -40827,15 +40737,15 @@ function _objectWithoutPropertiesLoose(source, excluded) {
   return target;
 }
 // EXTERNAL MODULE: ./node_modules/react-redux/node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js
-var hoist_non_react_statics_cjs = __webpack_require__(491);
+var hoist_non_react_statics_cjs = __webpack_require__(490);
 var hoist_non_react_statics_cjs_default = /*#__PURE__*/__webpack_require__.n(hoist_non_react_statics_cjs);
 
 // EXTERNAL MODULE: ./node_modules/invariant/browser.js
-var browser = __webpack_require__(326);
+var browser = __webpack_require__(325);
 var browser_default = /*#__PURE__*/__webpack_require__.n(browser);
 
 // EXTERNAL MODULE: ./node_modules/react-is/index.js
-var react_is = __webpack_require__(489);
+var react_is = __webpack_require__(488);
 
 // CONCATENATED MODULE: ./node_modules/react-redux/es/utils/Subscription.js
 // encapsulates the subscription logic for connecting a component to the redux store, as
@@ -41597,26 +41507,26 @@ function createConnect(_temp) {
 
 
 // EXTERNAL MODULE: ./node_modules/moment/moment.js
-var moment = __webpack_require__(5);
+var moment = __webpack_require__(4);
 var moment_default = /*#__PURE__*/__webpack_require__.n(moment);
 
 // EXTERNAL MODULE: external {"var":"wp.data","root":["wp","data"]}
 var external_var_wp_data_root_wp_data_ = __webpack_require__(18);
 
 // EXTERNAL MODULE: ./node_modules/babel-runtime/helpers/classCallCheck.js
-var classCallCheck = __webpack_require__(30);
+var classCallCheck = __webpack_require__(34);
 var classCallCheck_default = /*#__PURE__*/__webpack_require__.n(classCallCheck);
 
 // EXTERNAL MODULE: ./node_modules/babel-runtime/helpers/createClass.js
-var createClass = __webpack_require__(31);
+var createClass = __webpack_require__(35);
 var createClass_default = /*#__PURE__*/__webpack_require__.n(createClass);
 
 // EXTERNAL MODULE: ./node_modules/babel-runtime/helpers/possibleConstructorReturn.js
-var possibleConstructorReturn = __webpack_require__(28);
+var possibleConstructorReturn = __webpack_require__(30);
 var possibleConstructorReturn_default = /*#__PURE__*/__webpack_require__.n(possibleConstructorReturn);
 
 // EXTERNAL MODULE: ./node_modules/babel-runtime/helpers/inherits.js
-var inherits = __webpack_require__(32);
+var inherits = __webpack_require__(36);
 var inherits_default = /*#__PURE__*/__webpack_require__.n(inherits);
 
 // EXTERNAL MODULE: ./node_modules/classnames/index.js
@@ -41688,10 +41598,10 @@ template_RSVPCounters.propTypes = {
 
 /* harmony default export */ var template = (template_RSVPCounters);
 // EXTERNAL MODULE: ./src/modules/data/blocks/rsvp/index.js + 7 modules
-var rsvp = __webpack_require__(13);
+var rsvp = __webpack_require__(12);
 
 // EXTERNAL MODULE: external "tribe.common.hoc"
-var external_tribe_common_hoc_ = __webpack_require__(19);
+var external_tribe_common_hoc_ = __webpack_require__(20);
 
 // CONCATENATED MODULE: ./src/modules/blocks/rsvp/counters/container.js
 /**
@@ -41717,7 +41627,7 @@ var container_mapStateToProps = function mapStateToProps(state) {
 
 /* harmony default export */ var container = (Object(redux["c" /* compose */])(Object(external_tribe_common_hoc_["withStore"])(), connect_connect(container_mapStateToProps))(template));
 // EXTERNAL MODULE: external "tribe.common.icons"
-var external_tribe_common_icons_ = __webpack_require__(64);
+var external_tribe_common_icons_ = __webpack_require__(63);
 
 // EXTERNAL MODULE: ./src/modules/blocks/rsvp/container-header/style.pcss
 var container_header_style = __webpack_require__(495);
@@ -41891,7 +41801,7 @@ var container_mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 /* harmony default export */ var container_header_container = (Object(redux["c" /* compose */])(Object(external_tribe_common_hoc_["withStore"])(), connect_connect(container_header_container_mapStateToProps, container_mapDispatchToProps))(container_header_template));
 // EXTERNAL MODULE: ./node_modules/uniqid/index.js
-var uniqid = __webpack_require__(63);
+var uniqid = __webpack_require__(72);
 var uniqid_default = /*#__PURE__*/__webpack_require__.n(uniqid);
 
 // EXTERNAL MODULE: ./src/modules/blocks/rsvp/duration-label/style.pcss
@@ -42253,7 +42163,7 @@ template_MoveDelete.propTypes = {
 
 /* harmony default export */ var move_delete_template = (template_MoveDelete);
 // EXTERNAL MODULE: ./src/modules/data/shared/move/actions.js
-var move_actions = __webpack_require__(70);
+var move_actions = __webpack_require__(69);
 
 // CONCATENATED MODULE: ./src/modules/blocks/rsvp/advanced-options/move-delete/container.js
 
@@ -42744,7 +42654,7 @@ template_RSVPContainerContent.propTypes = {
 
 /* harmony default export */ var container_content_template = (template_RSVPContainerContent);
 // EXTERNAL MODULE: external "tribe.common.data"
-var external_tribe_common_data_ = __webpack_require__(35);
+var external_tribe_common_data_ = __webpack_require__(32);
 
 // CONCATENATED MODULE: ./src/modules/blocks/rsvp/container-content/container.js
 /**
@@ -43570,10 +43480,10 @@ var inactive_block_container_mapStateToProps = function mapStateToProps(state) {
 
 /* harmony default export */ var inactive_block_container = (Object(redux["c" /* compose */])(Object(external_tribe_common_hoc_["withStore"])(), connect_connect(inactive_block_container_mapStateToProps))(inactive_block_template));
 // EXTERNAL MODULE: ./src/modules/data/shared/move/selectors.js
-var selectors = __webpack_require__(33);
+var selectors = __webpack_require__(28);
 
 // EXTERNAL MODULE: ./src/modules/data/shared/move/types.js
-var types = __webpack_require__(20);
+var types = __webpack_require__(19);
 
 // EXTERNAL MODULE: ./src/modules/elements/move-modal/style.pcss
 var move_modal_style = __webpack_require__(508);
@@ -43873,11 +43783,11 @@ var isArray = __webpack_require__(39);
 var isArray_default = /*#__PURE__*/__webpack_require__.n(isArray);
 
 // EXTERNAL MODULE: ./node_modules/lodash/isEmpty.js
-var lodash_isEmpty = __webpack_require__(325);
+var lodash_isEmpty = __webpack_require__(491);
 var isEmpty_default = /*#__PURE__*/__webpack_require__.n(lodash_isEmpty);
 
 // EXTERNAL MODULE: ./node_modules/@wordpress/is-shallow-equal/index.js
-var is_shallow_equal = __webpack_require__(490);
+var is_shallow_equal = __webpack_require__(489);
 var is_shallow_equal_default = /*#__PURE__*/__webpack_require__.n(is_shallow_equal);
 
 // CONCATENATED MODULE: ./src/modules/blocks/hoc/with-save-data.js
@@ -44257,7 +44167,7 @@ settings_template_SettingsActionButton.propTypes = {
 
 /* harmony default export */ var settings_template = (settings_template_SettingsActionButton);
 // EXTERNAL MODULE: ./src/modules/data/blocks/ticket/index.js + 9 modules
-var ticket = __webpack_require__(4);
+var ticket = __webpack_require__(6);
 
 // CONCATENATED MODULE: ./src/modules/blocks/tickets/action-buttons/settings/container.js
 /**
@@ -47235,243 +47145,8 @@ var container_content_advanced_options_container_mapStateToProps = function mapS
 };
 
 /* harmony default export */ var container_content_advanced_options_container = (Object(redux["c" /* compose */])(Object(external_tribe_common_hoc_["withStore"])(), connect_connect(container_content_advanced_options_container_mapStateToProps))(container_content_advanced_options_template));
-// EXTERNAL MODULE: ./src/modules/blocks/ticket/container-content/attendee-collection/style.pcss
-var attendee_collection_style = __webpack_require__(533);
-
-// CONCATENATED MODULE: ./src/modules/blocks/ticket/container-content/attendee-collection/iac-setting/template.js
-
-
-
-
-/**
- * External dependencies
- */
-
-
-
-
-/**
- * Wordpress dependencies
- */
-
-
-
-
-/**
- * Internal dependencies
- */
-
-var template_IACSetting = function (_PureComponent) {
-	inherits_default()(IACSetting, _PureComponent);
-
-	function IACSetting(props) {
-		classCallCheck_default()(this, IACSetting);
-
-		var _this = possibleConstructorReturn_default()(this, (IACSetting.__proto__ || Object.getPrototypeOf(IACSetting)).call(this, props));
-
-		_this.id = uniqid_default()('ticket-iac');
-		return _this;
-	}
-
-	createClass_default()(IACSetting, [{
-		key: 'render',
-		value: function render() {
-			var _props = this.props,
-			    iac = _props.iac,
-			    iacOptions = _props.iacOptions,
-			    isDisabled = _props.isDisabled,
-			    onChange = _props.onChange;
-
-
-			return wp.element.createElement(
-				'div',
-				null,
-				wp.element.createElement(
-					'div',
-					{ className: 'tribe-editor__ticket__content-row--iac-setting-description' },
-					Object(external_var_wp_i18n_root_wp_i18n_["__"])('Select the default way to sell tickets. Enabling Individual Attendee Collection will allow purchasers to enter a name and email for each ticket.', 'event-tickets')
-				),
-				wp.element.createElement(
-					'div',
-					{ className: classnames_default()('tribe-editor__ticket__iac-setting', 'tribe-editor__ticket__content-row', 'tribe-editor__ticket__content-row--iac-setting') },
-					wp.element.createElement(external_var_wp_components_root_wp_components_["RadioControl"], {
-						className: 'tribe-editor__ticket__iac-setting-input',
-						id: this.id,
-						type: 'text',
-						selected: iac,
-						onChange: onChange,
-						disabled: isDisabled,
-						options: iacOptions
-					})
-				)
-			);
-		}
-	}]);
-
-	return IACSetting;
-}(external_React_["PureComponent"]);
-
-template_IACSetting.propTypes = {
-	isDisabled: prop_types_default.a.bool,
-	onChange: prop_types_default.a.func.isRequired,
-	iac: prop_types_default.a.string,
-	iacOptions: prop_types_default.a.arrayOf(prop_types_default.a.shape({
-		label: prop_types_default.a.string,
-		value: prop_types_default.a.string
-	}))
-};
-
-
-/* harmony default export */ var iac_setting_template = (template_IACSetting);
-// CONCATENATED MODULE: ./src/modules/blocks/ticket/container-content/attendee-collection/iac-setting/container.js
-/**
- * External dependencies
- */
-
-
-
-/**
- * Internal dependencies
- */
-
-
-
-
-
-var iac_setting_container_mapStateToProps = function mapStateToProps(state, ownProps) {
-	return {
-		isDisabled: ticket["f" /* selectors */].isTicketDisabled(state, ownProps),
-		iac: ticket["f" /* selectors */].getTicketTempIACSetting(state, ownProps),
-		iacOptions: external_tribe_common_utils_["globals"].iacVars().iacOptions
-	};
-};
-
-var iac_setting_container_mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
-	return {
-		onChange: function onChange(value) {
-			var clientId = ownProps.clientId;
-
-			dispatch(ticket["a" /* actions */].setTicketTempIACSetting(clientId, value));
-			dispatch(ticket["a" /* actions */].setTicketHasChanges(clientId, true));
-		}
-	};
-};
-
-/* harmony default export */ var iac_setting_container = (Object(redux["c" /* compose */])(Object(external_tribe_common_hoc_["withStore"])(), connect_connect(iac_setting_container_mapStateToProps, iac_setting_container_mapDispatchToProps))(iac_setting_template));
-// CONCATENATED MODULE: ./src/modules/blocks/ticket/container-content/attendee-collection/template.js
-
-
-
-
-/**
- * External dependencies
- */
-
-
-
-
-/**
- * WordPress dependencies
- */
-
-
-
-/**
- * Internal dependencies
- */
-
-
-
-
-var template_AttendeeCollection = function (_PureComponent) {
-	inherits_default()(AttendeeCollection, _PureComponent);
-
-	function AttendeeCollection(props) {
-		classCallCheck_default()(this, AttendeeCollection);
-
-		var _this = possibleConstructorReturn_default()(this, (AttendeeCollection.__proto__ || Object.getPrototypeOf(AttendeeCollection)).call(this, props));
-
-		_this.getHeader = function () {
-			return wp.element.createElement(
-				external_React_["Fragment"],
-				null,
-				wp.element.createElement(external_var_wp_components_root_wp_components_["Dashicon"], {
-					className: 'tribe-editor__ticket__attendee-collection-header-icon',
-					icon: 'arrow-down'
-				}),
-				wp.element.createElement(
-					'span',
-					{ className: 'tribe-editor__ticket__attendee-collection-header-text' },
-					Object(external_var_wp_i18n_root_wp_i18n_["__"])('Attendee Collection', 'event-tickets')
-				)
-			);
-		};
-
-		_this.getContent = function () {
-			return wp.element.createElement(iac_setting_container, { clientId: _this.props.clientId });
-		};
-
-		_this.getRows = function () {
-			return [{
-				accordionId: _this.accordionId,
-				content: _this.getContent(),
-				contentClassName: 'tribe-editor__ticket__attendee-collection-content',
-				header: _this.getHeader(),
-				headerAttrs: { disabled: _this.props.isDisabled },
-				headerClassName: 'tribe-editor__ticket__attendee-collection-header'
-			}];
-		};
-
-		_this.accordionId = uniqid_default()();
-		return _this;
-	}
-
-	createClass_default()(AttendeeCollection, [{
-		key: 'render',
-		value: function render() {
-			return wp.element.createElement(external_tribe_common_elements_["Accordion"], {
-				className: 'tribe-editor__ticket__attendee-collection',
-				rows: this.getRows()
-			});
-		}
-	}]);
-
-	return AttendeeCollection;
-}(external_React_["PureComponent"]);
-
-template_AttendeeCollection.propTypes = {
-	clientId: prop_types_default.a.string.isRequired,
-	isDisabled: prop_types_default.a.bool,
-	hasBeenCreated: prop_types_default.a.bool
-};
-
-
-/* harmony default export */ var attendee_collection_template = (template_AttendeeCollection);
-// CONCATENATED MODULE: ./src/modules/blocks/ticket/container-content/attendee-collection/container.js
-/**
- * External dependencies
- */
-
-
-
-/**
- * Internal dependencies
- */
-
-
-
-
-
-var attendee_collection_container_mapStateToProps = function mapStateToProps(state, ownProps) {
-  return {
-    isDisabled: ticket["f" /* selectors */].isTicketDisabled(state, ownProps),
-    hasBeenCreated: ticket["f" /* selectors */].getTicketHasBeenCreated(state, ownProps)
-  };
-};
-
-/* harmony default export */ var attendee_collection_container = (Object(redux["c" /* compose */])(Object(external_tribe_common_hoc_["withStore"])(), connect_connect(attendee_collection_container_mapStateToProps))(attendee_collection_template));
 // EXTERNAL MODULE: ./src/modules/blocks/ticket/container-content/attendees-registration/style.pcss
-var attendees_registration_style = __webpack_require__(534);
+var attendees_registration_style = __webpack_require__(533);
 
 // CONCATENATED MODULE: ./src/modules/blocks/ticket/container-content/attendees-registration/template.js
 /**
@@ -47634,7 +47309,7 @@ var attendees_registration_container_mapDispatchToProps = function mapDispatchTo
 
 /* harmony default export */ var attendees_registration_container = (Object(redux["c" /* compose */])(Object(external_tribe_common_hoc_["withStore"])(), connect_connect(attendees_registration_container_mapStateToProps, attendees_registration_container_mapDispatchToProps))(attendees_registration_template));
 // EXTERNAL MODULE: ./src/modules/blocks/ticket/container-content/style.pcss
-var ticket_container_content_style = __webpack_require__(535);
+var ticket_container_content_style = __webpack_require__(534);
 
 // CONCATENATED MODULE: ./src/modules/blocks/ticket/container-content/template.js
 /**
@@ -47651,17 +47326,14 @@ var ticket_container_content_style = __webpack_require__(535);
 
 
 
-
 var template_TicketContainerContent = function TicketContainerContent(_ref) {
 	var clientId = _ref.clientId,
-	    hasTicketsPlus = _ref.hasTicketsPlus,
-	    hasIacVars = _ref.hasIacVars;
+	    hasTicketsPlus = _ref.hasTicketsPlus;
 	return wp.element.createElement(
 		external_React_["Fragment"],
 		null,
 		wp.element.createElement(capacity_container, { clientId: clientId }),
 		wp.element.createElement(container_content_advanced_options_container, { clientId: clientId }),
-		hasTicketsPlus && hasIacVars && wp.element.createElement(attendee_collection_container, { clientId: clientId }),
 		hasTicketsPlus && wp.element.createElement(attendees_registration_container, { clientId: clientId })
 	);
 };
@@ -47673,11 +47345,9 @@ template_TicketContainerContent.propTypes = {
 
 /* harmony default export */ var ticket_container_content_template = (template_TicketContainerContent);
 // CONCATENATED MODULE: ./src/modules/blocks/ticket/container-content/container.js
-
 /**
  * External dependencies
  */
-
 
 
 
@@ -47688,11 +47358,9 @@ template_TicketContainerContent.propTypes = {
 
 
 
-
 var ticket_container_content_container_mapStateToProps = function mapStateToProps(state) {
   return {
-    hasTicketsPlus: external_tribe_common_data_["plugins"].selectors.hasPlugin(state)(external_tribe_common_data_["plugins"].constants.TICKETS_PLUS),
-    hasIacVars: !isEmpty_default()(external_tribe_common_utils_["globals"].iacVars())
+    hasTicketsPlus: external_tribe_common_data_["plugins"].selectors.hasPlugin(state)(external_tribe_common_data_["plugins"].constants.TICKETS_PLUS)
   };
 };
 
@@ -47784,7 +47452,7 @@ var ticket_container_container_mapStateToProps = function mapStateToProps(state,
 
 /* harmony default export */ var ticket_container_container = (Object(redux["c" /* compose */])(Object(external_tribe_common_hoc_["withStore"])(), connect_connect(ticket_container_container_mapStateToProps))(ticket_container_template));
 // EXTERNAL MODULE: ./src/modules/blocks/ticket/dashboard/style.pcss
-var dashboard_style = __webpack_require__(536);
+var dashboard_style = __webpack_require__(535);
 
 // CONCATENATED MODULE: ./src/modules/blocks/ticket/dashboard/template.js
 /**
@@ -47869,7 +47537,6 @@ var dashboard_container_onCancelClick = function onCancelClick(state, dispatch, 
 				description: ticket["f" /* selectors */].getTicketDescription(state, ownProps),
 				price: ticket["f" /* selectors */].getTicketPrice(state, ownProps),
 				sku: ticket["f" /* selectors */].getTicketSku(state, ownProps),
-				iac: ticket["f" /* selectors */].getTicketIACSetting(state, ownProps),
 				startDate: ticket["f" /* selectors */].getTicketStartDate(state, ownProps),
 				startDateInput: ticket["f" /* selectors */].getTicketStartDateInput(state, ownProps),
 				startDateMoment: ticket["f" /* selectors */].getTicketStartDateMoment(state, ownProps),
@@ -48125,7 +47792,7 @@ var attendees_actions = __webpack_require__(55);
 var attendees_selectors = __webpack_require__(110);
 
 // EXTERNAL MODULE: ./src/modules/blocks/attendees/style.pcss
-var attendees_style = __webpack_require__(537);
+var attendees_style = __webpack_require__(536);
 
 // CONCATENATED MODULE: ./src/modules/blocks/attendees/template.js
 /**

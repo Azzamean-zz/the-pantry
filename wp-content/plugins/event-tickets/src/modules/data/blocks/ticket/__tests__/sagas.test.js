@@ -912,9 +912,6 @@ describe( 'Ticket Block sagas', () => {
 			expect( gen.next().value ).toEqual(
 				select( selectors.getTicketTempSku, props )
 			);
-			expect( gen.next().value ).toEqual(
-				select( selectors.getTicketTempIACSetting, props )
-			);
 			expect( gen.next().value ).toMatchSnapshot();
 			expect( gen.next( menuOrder ).value ).toEqual(
 				select( selectors.getTicketTempCapacityType, props )
@@ -995,7 +992,6 @@ describe( 'Ticket Block sagas', () => {
 					title: 'title',
 					description: 'description',
 					sku: '12345678',
-					iac: 'none',
 					capacity_type: 'own',
 					capacity: 100,
 					supports_attendee_information: true,
@@ -1036,7 +1032,6 @@ describe( 'Ticket Block sagas', () => {
 				description: apiResponse2.data.description,
 				price: apiResponse2.data.cost_details.values[ 0 ],
 				sku: apiResponse2.data.sku,
-				iac: apiResponse2.data.iac,
 				startDate: startDate2,
 				startDateInput: startDateInput2,
 				startDateMoment: startMoment2,
@@ -1088,7 +1083,6 @@ describe( 'Ticket Block sagas', () => {
 					title: 'title',
 					description: 'description',
 					sku: '12345678',
-					iac: 'none',
 					capacity_type: 'own',
 					capacity: 100,
 					supports_attendee_information: true,
@@ -1145,7 +1139,6 @@ describe( 'Ticket Block sagas', () => {
 				description: apiResponse3.data.description,
 				price: apiResponse3.data.cost_details.values[ 0 ],
 				sku: apiResponse3.data.sku,
-				iac: apiResponse3.data.iac,
 				startDate: startDate3,
 				startDateInput: startDateInput3,
 				startDateMoment: startMoment3,
@@ -1200,7 +1193,6 @@ describe( 'Ticket Block sagas', () => {
 			const description = 'description';
 			const price = 10;
 			const sku = '12345678';
-			const iac = 'none';
 			const startDate = '2018-11-09 19:48:42';
 			const startDateInput = '2018-11-09 19:48:42';
 			const startDateMoment = '2018-11-09 19:48:42';
@@ -1277,7 +1269,6 @@ describe( 'Ticket Block sagas', () => {
 					select( selectors.getTicketTempDescription, props ),
 					select( selectors.getTicketTempPrice, props ),
 					select( selectors.getTicketTempSku, props ),
-					select( selectors.getTicketTempIACSetting, props ),
 					select( selectors.getTicketTempStartDate, props ),
 					select( selectors.getTicketTempStartDateInput, props ),
 					select( selectors.getTicketTempStartDateMoment, props ),
@@ -1298,7 +1289,6 @@ describe( 'Ticket Block sagas', () => {
 				description,
 				price,
 				sku,
-				iac,
 				startDate,
 				startDateInput,
 				startDateMoment,
@@ -1318,7 +1308,6 @@ describe( 'Ticket Block sagas', () => {
 						description,
 						price,
 						sku,
-						iac,
 						startDate,
 						startDateInput,
 						startDateMoment,
@@ -1366,7 +1355,6 @@ describe( 'Ticket Block sagas', () => {
 					select( selectors.getTicketTempDescription, props ),
 					select( selectors.getTicketTempPrice, props ),
 					select( selectors.getTicketTempSku, props ),
-					select( selectors.getTicketTempIACSetting, props ),
 					select( selectors.getTicketTempStartDate, props ),
 					select( selectors.getTicketTempStartDateInput, props ),
 					select( selectors.getTicketTempStartDateMoment, props ),
@@ -1387,7 +1375,6 @@ describe( 'Ticket Block sagas', () => {
 				description,
 				price,
 				sku,
-				iac,
 				startDate,
 				startDateInput,
 				startDateMoment,
@@ -1407,7 +1394,6 @@ describe( 'Ticket Block sagas', () => {
 						description,
 						price,
 						sku,
-						iac,
 						startDate,
 						startDateInput,
 						startDateMoment,
@@ -1462,7 +1448,6 @@ describe( 'Ticket Block sagas', () => {
 			const description = 'description';
 			const price = 10;
 			const sku = '12345678';
-			const iac = 'none';
 			const startDate = '2018-11-09 19:48:42';
 			const startDateInput = '2018-11-09 19:48:42';
 			const startDateMoment = '2018-11-09 19:48:42';
@@ -1549,7 +1534,6 @@ describe( 'Ticket Block sagas', () => {
 					select( selectors.getTicketTempDescription, props ),
 					select( selectors.getTicketTempPrice, props ),
 					select( selectors.getTicketTempSku, props ),
-					select( selectors.getTicketTempIACSetting, props ),
 					select( selectors.getTicketTempStartDate, props ),
 					select( selectors.getTicketTempStartDateInput, props ),
 					select( selectors.getTicketTempStartDateMoment, props ),
@@ -1569,7 +1553,6 @@ describe( 'Ticket Block sagas', () => {
 				description,
 				price,
 				sku,
-				iac,
 				startDate,
 				startDateInput,
 				startDateMoment,
@@ -1589,7 +1572,6 @@ describe( 'Ticket Block sagas', () => {
 						description,
 						price,
 						sku,
-						iac,
 						startDate,
 						startDateInput,
 						startDateMoment,
@@ -1975,7 +1957,6 @@ describe( 'Ticket Block sagas', () => {
 			const description = 'description';
 			const price = 10;
 			const sku = '12345678';
-			const iac = 'none';
 			const startDate = '2018-11-09 19:48:42';
 			const startDateInput = '2018-11-09 19:48:42';
 			const startDateMoment = '2018-11-09 19:48:42';
@@ -1998,7 +1979,6 @@ describe( 'Ticket Block sagas', () => {
 						description,
 						price,
 						sku,
-						iac,
 						startDate,
 						startDateInput,
 						startDateMoment,
@@ -2022,7 +2002,6 @@ describe( 'Ticket Block sagas', () => {
 					put( actions.setTicketDescription( CLIENT_ID, description ) ),
 					put( actions.setTicketPrice( CLIENT_ID, price ) ),
 					put( actions.setTicketSku( CLIENT_ID, sku ) ),
-					put( actions.setTicketIACSetting( CLIENT_ID, iac ) ),
 					put( actions.setTicketStartDate( CLIENT_ID, startDate ) ),
 					put( actions.setTicketStartDateInput( CLIENT_ID, startDateInput ) ),
 					put( actions.setTicketStartDateMoment( CLIENT_ID, startDateMoment ) ),
@@ -2047,7 +2026,6 @@ describe( 'Ticket Block sagas', () => {
 			const description = 'description';
 			const price = 10;
 			const sku = '12345678';
-			const iac = 'none';
 			const startDate = '2018-11-09 19:48:42';
 			const startDateInput = '2018-11-09 19:48:42';
 			const startDateMoment = '2018-11-09 19:48:42';
@@ -2070,7 +2048,6 @@ describe( 'Ticket Block sagas', () => {
 						description,
 						price,
 						sku,
-						iac,
 						startDate,
 						startDateInput,
 						startDateMoment,
@@ -2094,7 +2071,6 @@ describe( 'Ticket Block sagas', () => {
 					put( actions.setTicketTempDescription( CLIENT_ID, description ) ),
 					put( actions.setTicketTempPrice( CLIENT_ID, price ) ),
 					put( actions.setTicketTempSku( CLIENT_ID, sku ) ),
-					put( actions.setTicketTempIACSetting( CLIENT_ID, iac ) ),
 					put( actions.setTicketTempStartDate( CLIENT_ID, startDate ) ),
 					put( actions.setTicketTempStartDateInput( CLIENT_ID, startDateInput ) ),
 					put( actions.setTicketTempStartDateMoment( CLIENT_ID, startDateMoment ) ),

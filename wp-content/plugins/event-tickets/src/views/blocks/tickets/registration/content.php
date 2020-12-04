@@ -8,16 +8,15 @@
  *
  * See more documentation about our Blocks Editor templating system.
  *
- * @link https://m.tri.be/1amp Help article for RSVP & Ticket template files.
+ * @link {INSERT_ARTICLE_LINK_HERE}
  *
  * @since 4.9
- * @since 5.0.3 Add `event-tickets` class to the wrapper.
+ * @version 4.11.0
  *
- * @version 5.0.3
  */
 
 ?>
-<div class="tribe-common event-tickets tribe-tickets__registration">
+<div class="tribe-common tribe-tickets__registration">
 
 	<?php $this->template( 'blocks/tickets/registration/summary/content' ); ?>
 	<?php $this->template( 'blocks/tickets/registration/attendee/content' ); ?>

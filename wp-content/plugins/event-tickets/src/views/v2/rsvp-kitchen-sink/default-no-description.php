@@ -7,7 +7,7 @@
  *
  * See more documentation about our Blocks Editor templating system.
  *
- * @link https://m.tri.be/1amp Help article for RSVP & Ticket template files.
+ * @link {INSERT_ARTICLE_LINK_HERE}
  *
  * @var Tribe__Tickets__Ticket_Object $rsvp The rsvp ticket object.
  *

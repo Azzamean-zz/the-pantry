@@ -7,7 +7,7 @@
  *
  * See more documentation about our views templating system.
  *
- * @link https://m.tri.be/1amp Help article for RSVP & Ticket template files.
+ * @link {INSERT_ARTICLE_LINK_HERE}
  *
  * @version 4.12.3
  */

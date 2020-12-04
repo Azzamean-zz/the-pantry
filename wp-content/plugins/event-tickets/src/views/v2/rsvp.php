@@ -7,7 +7,7 @@
  *
  * See more documentation about our Blocks Editor templating system.
  *
- * @link  https://m.tri.be/1amp Help article for RSVP & Ticket template files.
+ * @link  http://m.tri.be/1amp
  *
  * @since 4.12.3
  *

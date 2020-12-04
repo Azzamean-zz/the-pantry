@@ -4,14 +4,11 @@
  *
  * Override this template in your own theme by creating a file at:
  *
- *     [your-theme]/tribe/tickets-plus/attendee-list-checkbox-rsvp.php
- *
- * @link    http://m.tri.be/1amp See more documentation about our views templating system.
+ *     [your-theme]/tribe-events/tickets-plus/attendee-list-checkbox-rsvp.php
  *
  * @since 4.12.0 Added filter to turn on/off the optout checkbox.
- * @since 5.1.0 Updated template link.
  *
- * @version 5.1.0
+ * @version 4.12.0
  *
  */
 $view = Tribe__Tickets__Tickets_View::instance();

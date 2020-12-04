@@ -9,10 +9,10 @@ class Tribe__Tickets__Attendee_Registration__Template extends Tribe__Templates {
 	 */
 	public function hook() {
 
-		// Spoof the context.
+		// Spoof the context
 		add_filter( 'the_posts', [ $this, 'setup_context' ], -10 );
 
-		// Set and remove the required body classes.
+		// Set and remove the required body classes
 		add_action( 'wp', [ $this, 'set_body_classes' ] );
 
 		/*
@@ -30,15 +30,15 @@ class Tribe__Tickets__Attendee_Registration__Template extends Tribe__Templates {
 		 */
 		add_action( 'loop_start', [ $this, 'set_page_content' ], 15 );
 
-		// Modify the link for the edit post link.
+		// Modify the link for the edit post link
 		add_filter( 'edit_post_link', [ $this, 'set_edit_post_link' ] );
 
-		// Switcheroo for Genesis using the excerpt as we're saying we're on an archive.
+		// Switcheroo for Genesis using the excerpt as we're saying we're on an archive
 		add_filter( 'genesis_pre_get_option_content_archive', [ $this, 'override_genesis_archive' ], 10, 2 );
 		// Also keep content limit from truncating the form
 		add_filter( 'genesis_pre_get_option_content_archive_limit', [ $this, 'override_genesis_limit' ], 10, 2 );
 
-		// Modify the page title.
+		// Modify the page title
 		add_filter( 'document_title_parts', [ $this, 'modify_page_title' ], 1000 );
 		add_filter( 'get_the_archive_title', [ $this, 'modify_archive_title' ], 1000 );
 	}
@@ -55,7 +55,7 @@ class Tribe__Tickets__Attendee_Registration__Template extends Tribe__Templates {
 	public function setup_context( $posts ) {
 		global $wp, $wp_query;
 
-		// Bail if we're not on the attendee info page.
+		// Bail if we're not on the attendee info page
 		if ( ! $this->is_on_ar_page() ) {
 			return $posts;
 		}
@@ -73,20 +73,19 @@ class Tribe__Tickets__Attendee_Registration__Template extends Tribe__Templates {
 			}
 		}
 
-		// Empty posts.
+		// Empty posts
 		$posts = null;
-
-		// Create a fake virtual page.
+		// Create a fake virtual page
 		$posts[] = $this->spoofed_page();
 
 		// Don't tell wp_query we're anything in particular - then we don't run into issues with defaults.
-		$wp_query->is_page        = false;
-		$wp_query->is_singular    = false;
-		$wp_query->is_home        = false;
-		$wp_query->is_archive     = false;
-		$wp_query->is_category    = false;
-		$wp_query->is_404         = false;
-		$wp_query->found_posts    = 1;
+		$wp_query->is_page     = false;
+		$wp_query->is_singular = false;
+		$wp_query->is_home     = false;
+		$wp_query->is_archive  = false;
+		$wp_query->is_category = false;
+		$wp_query->is_404      = false;
+		$wp_query->found_posts = 1;
 		$wp_query->posts_per_page = 1;
 
 		return $posts;
@@ -94,7 +93,7 @@ class Tribe__Tickets__Attendee_Registration__Template extends Tribe__Templates {
 	}
 
 	/**
-	 * Convenience wrapper for tribe( 'tickets.attendee_registration' )->is_on_page() usage.
+	 * convenience wrapper for tribe( 'tickets.attendee_registration' )->is_on_page()
 	 *
 	 * @since 4.10.2
 	 *
@@ -109,29 +108,28 @@ class Tribe__Tickets__Attendee_Registration__Template extends Tribe__Templates {
 	 *
 	 * @since 4.9
 	 *
-	 * @param string $template The AR template.
 	 * @return void
 	 */
 	public function set_page_template( $template ) {
 
-		// Bail if we're not on the attendee info page.
+		// Bail if we're not on the attendee info page
 		if ( ! $this->is_on_ar_page() ) {
 			return $template;
 		}
 
-		// Use the template option set in the admin.
+		// Use the template option set in the admin
 		$template = tribe_get_option( 'ticket-attendee-info-template' );
 
 		if ( empty( $template ) ) {
-			// We should only get here if the value hasn't been set yet.
+			// we should only get here if the value hasn't been set yet
 			$template = 'default';
 		} elseif ( 'same' === $template ) {
-			// Note this could be an empty string...because.
+			//note this could be an empty string...because.
 			$template = tribe_get_option( 'tribeEventsTemplate', 'default' );
 		}
 
-		if ( in_array( $template, [ '', 'default' ], true ) ) {
-			// A bit of logic for themes without a page.php.
+		if ( in_array( $template, array( '', 'default' ), true ) ) {
+			// A bit of logic for themes without a page.php
 			$template = 'page.php';
 
 			if ( ! locate_template( $template ) ) {
@@ -167,8 +165,8 @@ class Tribe__Tickets__Attendee_Registration__Template extends Tribe__Templates {
 	 *
 	 * @since 4.11.3
 	 *
-	 * @param boolean $enqueue A boolean containing if we should enqueue.
-	 * @return boolean Whether we should enqueue frontend styles and scripts.
+	 * @param boolean $enqueue
+	 * @return boolean
 	 */
 	public function should_enqueue_frontend( $enqueue ) {
 		if ( $this->is_on_ar_page() ) {
@@ -186,30 +184,30 @@ class Tribe__Tickets__Attendee_Registration__Template extends Tribe__Templates {
 	 * @return void
 	 */
 	public function set_body_classes() {
-		// Bail if we're not on the attendee info page.
+		// Bail if we're not on the attendee info page
 		if ( ! $this->is_on_ar_page() ) {
 			return;
 		}
 
-		// Remove classes that we don't want/need.
-		add_filter( 'body_class', [ $this, 'remove_body_classes' ] );
+		// Remove classes that we don't want/need
+		add_filter( 'body_class', array( $this, 'remove_body_classes' ) );
 
-		// Add classes that we actually want/need.
-		add_filter( 'body_class', [ $this, 'add_body_classes' ] );
+		// Add classes that we actually want/need
+		add_filter( 'body_class', array( $this, 'add_body_classes' ) );
 	}
 
 	/**
 	 * Remove body classes.
 	 *
 	 * @since 4.9
-	 * @param array $classes List of classes to filter.
+	 * @param array $classes List of classes to filter
 	 *
-	 * @return array $classes Array of classes.
+	 * @return array $classes
 	 */
 	public function remove_body_classes( $classes ) {
 
-		// body classes to remove.
-		$remove = [ 'singular', 'home', 'blog', 'page-template-page-php', 'has-sidebar' ];
+		// body classes to remove
+		$remove = array( 'singular', 'home', 'blog', 'page-template-page-php', 'has-sidebar' );
 
 		foreach ( $remove as $index => $class ) {
 			$key = array_search( $class, $classes );
@@ -226,7 +224,7 @@ class Tribe__Tickets__Attendee_Registration__Template extends Tribe__Templates {
 	 * Add the required body classes
 	 *
 	 * @since 4.9
-	 * @param array $classes List of classes to filter.
+	 * @param array $classes List of classes to filter
 	 *
 	 * @return array $classes
 	 */
@@ -243,7 +241,7 @@ class Tribe__Tickets__Attendee_Registration__Template extends Tribe__Templates {
 	 * add compatibility for official themes.
 	 *
 	 * @since 4.9
-	 * @param array $classes List of classes to filter.
+	 * @param array $classes List of classes to filter
 	 * @deprecated 4.11.4
 	 *
 	 * @return array $classes
@@ -256,7 +254,7 @@ class Tribe__Tickets__Attendee_Registration__Template extends Tribe__Templates {
 	 * Checks if theme needs a compatibility fix
 	 *
 	 * @since 4.9
-	 * @param string $theme Name of template from WP_Theme->Template, defaults to current active template.
+	 * @param string $theme Name of template from WP_Theme->Template, defaults to current active template
 	 * @deprecated 4.11.4
 	 *
 	 * @return mixed
@@ -270,10 +268,10 @@ class Tribe__Tickets__Attendee_Registration__Template extends Tribe__Templates {
 	 * the query to resolve to an events template.
 	 *
 	 * @since 4.9
-	 * @param WP_Query $query The WordPress query.
+	 * @param WP_Query $query
 	 */
 	public function set_page_content( $query ) {
-		// Bail if we're not on the attendee info page.
+		// Bail if we're not on the attendee info page
 		if ( ! $this->is_on_ar_page() ) {
 			return;
 		}
@@ -289,7 +287,7 @@ class Tribe__Tickets__Attendee_Registration__Template extends Tribe__Templates {
 			add_filter( 'tribe_events_views_v2_should_hijack_page_template', '__return_false' );
 
 			// Load Attendee Registration view for the content.
-			add_filter( 'the_content', tribe_callback( 'tickets-plus.attendee-registration.view', 'get_page_content' ) );
+			add_filter( 'the_content', tribe_callback( 'tickets.attendee_registration.view', 'display_attendee_registration_page' ) );
 		}
 	}
 
@@ -302,7 +300,7 @@ class Tribe__Tickets__Attendee_Registration__Template extends Tribe__Templates {
 	 * @return string|null
 	 */
 	public function override_genesis_archive( $unused_null, $unused_setting ) {
-		// Bail if we're not on the attendee info page.
+		// Bail if we're not on the attendee info page
 		if ( ! $this->is_on_ar_page() ) {
 			return null;
 		}
@@ -315,13 +313,13 @@ class Tribe__Tickets__Attendee_Registration__Template extends Tribe__Templates {
 	 *
 	 * @since 4.10.9 - Return null if not on ar page and true if on ar page.
 	 *
-	 * @param string|null $unused_null Unused variable.
+	 * @param string|null $unused_null Unused variable
 	 * @param string $setting
 	 *
 	 * @return null|string
 	 */
 	public function override_genesis_limit( $unused_null, $setting ) {
-		// Bail if we're not on the attendee info page.
+		// Bail if we're not on the attendee info page
 		if ( ! $this->is_on_ar_page() ) {
 			return null;
 		}
@@ -334,7 +332,7 @@ class Tribe__Tickets__Attendee_Registration__Template extends Tribe__Templates {
 	 * Modify the document title
 	 *
 	 * @since 4.9
-	 * @param string $title The page title.
+	 * @param string $title
 	 *
 	 * @return array
 	 */
@@ -349,7 +347,7 @@ class Tribe__Tickets__Attendee_Registration__Template extends Tribe__Templates {
 			$title['title'] = $this->get_page_title();
 		}
 
-		// Return the title.
+		// Return the title
 		return $title;
 	}
 
@@ -357,7 +355,7 @@ class Tribe__Tickets__Attendee_Registration__Template extends Tribe__Templates {
 	 * Modify the archive title - for themes that somehow defeat our earlier hook.
 	 *
 	 * @since 4.10.2
-	 * @param string $title The archive page title.
+	 * @param string $title
 	 *
 	 * @return string
 	 */
@@ -366,7 +364,7 @@ class Tribe__Tickets__Attendee_Registration__Template extends Tribe__Templates {
 			$title = $this->get_page_title();
 		}
 
-		// Return the title.
+		// Return the title
 		return $title;
 	}
 
@@ -401,7 +399,7 @@ class Tribe__Tickets__Attendee_Registration__Template extends Tribe__Templates {
 	 */
 	public function spoofed_page() {
 
-		$spoofed_page = [
+		$spoofed_page = array(
 			'ID'                    => -1,
 			'post_status'           => 'draft',
 			'post_author'           => 1,
@@ -425,9 +423,9 @@ class Tribe__Tickets__Attendee_Registration__Template extends Tribe__Templates {
 			'ping_status'           => '',
 			'comment_status'        => 'closed',
 			'comment_count'         => 0,
-		];
+		);
 
-		return (object) $spoofed_page;
+		return ( object ) $spoofed_page;
 	}
 
 	/**
@@ -435,13 +433,11 @@ class Tribe__Tickets__Attendee_Registration__Template extends Tribe__Templates {
 	 *
 	 * @since 4.9
 	 *
-	 * @param string $link The edit post link.
-	 *
-	 * @return string The edit post link or blank if on the AR page.
+	 * @return mixed
 	 */
 	public function set_edit_post_link( $link ) {
 
-		// Bail if we're not on the attendee info page.
+		// Bail if we're not on the attendee info page
 		if ( ! $this->is_on_ar_page() ) {
 			return $link;
 		}

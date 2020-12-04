@@ -44,14 +44,10 @@ defined( 'ABSPATH' ) || exit;
 		$order_id = $order->get_id();
 		$event_id = get_event_id_from_order_id($order_id);
 		$attendee_list = Tribe__Tickets__Tickets::get_event_attendees($event_id);
+		echo '<pre>';
+		print_r($attendee_list);
+		echo '</pre>';
 		
-		foreach($attendee_list as $attendee) {
-			
-			if($attendee['order_id'] == $order_id) {
-				$attendee_infos[] = $attendee['attendee_meta'];
-			}
-			
-		}
 		?>
 		
 			<p class="woocommerce-notice woocommerce-notice--success woocommerce-thankyou-order-received"><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', esc_html__( 'Thank you. Your order has been received.', 'woocommerce' ), $order ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
@@ -66,12 +62,20 @@ defined( 'ABSPATH' ) || exit;
 				<li class="woocommerce-order-overview__order order">
 					Attendees
 					<?php
-					foreach($attendee_infos as $attendee_info) {
-						echo '<strong>';
-						echo $attendee_info['name']['value'] . '<br>';
-						echo $attendee_info['email']['value'];
-						echo '<strong>';
-						echo '<br>';
+					foreach($attendee_list as $attendee) {
+			
+						if($attendee['order_id'] == $order_id) {
+							
+							echo '<strong>';
+							echo $attendee['attendee_meta']['name']['value'] . ' - ' . $attendee['ticket'] . '<br>';
+							if(isset($attendee['attendee_meta']['email']['value'])) {
+								echo $attendee['attendee_meta']['email']['value'];
+							}
+							echo '</strong>';
+							echo '<br>';
+							
+						}
+						
 					}
 					?>
 					

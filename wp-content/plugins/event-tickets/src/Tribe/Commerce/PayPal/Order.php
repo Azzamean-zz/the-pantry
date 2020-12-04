@@ -209,14 +209,13 @@ class Tribe__Tickets__Commerce__PayPal__Order {
 	 * @since 4.7
 	 * @since 4.10.11 Avoid fatal when trying to set class status property.
 	 *
-	 * @param int        $order_post_id The Order post ID.
-	 * @param null|array $fields        List of fields to hydrate, or null for all.
+	 * @param int $order_post_id The Order post ID.
 	 *
 	 * @return Tribe__Tickets__Commerce__PayPal__Order
 	 *
 	 * @see   update
 	 */
-	public function hydrate_from_post( $order_post_id, $fields = null ) {
+	public function hydrate_from_post( $order_post_id ) {
 		$order_post = get_post( $order_post_id );
 
 		if (
@@ -245,25 +244,17 @@ class Tribe__Tickets__Commerce__PayPal__Order {
 
 		if ( ! empty( $hashed_meta ) ) {
 			foreach ( $hashed_meta as $key => $value ) {
-				if ( is_array( $fields ) && ! in_array( $key, $fields, true ) ) {
-					continue;
-				}
-
 				$this->set_meta( $key, $value );
 			}
 		}
 
 		foreach ( $this->searchable_meta_keys as $key ) {
-			if ( is_array( $fields ) && ! in_array( $key, $fields, true ) ) {
-				continue;
-			}
-
 			$prefixed_key = self::$meta_prefix . $key;
 			$this->set_meta( $key, get_post_meta( $order_post_id, $prefixed_key, true ) );
 		}
 
 		/**
-		 * Fired after an Order object has been filled from post fields and meta. *
+		 * Fired after an Orde object has been filled from post fields and meta. *
 		 *
 		 * @since 4.7
 		 *
@@ -312,26 +303,25 @@ class Tribe__Tickets__Commerce__PayPal__Order {
 	 *
 	 * @since 4.7
 	 *
-	 * @param array      $args   {
+	 * @param array $criteria  {
 	 *                         Optional. Arguments to retrieve orders. See WP_Query::parse_query() for all
 	 *                         available arguments.
 	 *
 	 * @type int    $post_id   ID, or array of IDs, of the post(s) Orders should be related to.
 	 * @type int    $ticket_id ID, or array of IDs, of the ticket(s) Orders should be related to.
 	 * }
-	 * @param null|array $fields List of fields to hydrate, or null for all.
 	 *
 	 * @return Tribe__Tickets__Commerce__PayPal__Order[]
 	 */
-	public static function find_by( array $args = [], $fields = null ) {
-		$args = wp_parse_args( $args, [
+	public static function find_by( array $args = array() ) {
+		$args = wp_parse_args( $args, array(
 			'post_type'   => Tribe__Tickets__Commerce__PayPal__Main::ORDER_OBJECT,
 			'post_status' => 'any',
 			'meta_key'    => self::$meta_prefix . 'payment_date',
 			'meta_type'   => 'DATETIME',
 			'order'       => 'DESC',
 			'orderby'     => 'meta_value',
-		] );
+		) );
 
 		global $wpdb;
 
@@ -382,7 +372,7 @@ class Tribe__Tickets__Commerce__PayPal__Order {
 		if ( $found ) {
 			foreach ( $found as $order_post_id ) {
 				$order    = new self();
-				$orders[] = $order->hydrate_from_post( $order_post_id, $fields );
+				$orders[] = $order->hydrate_from_post( $order_post_id );
 			}
 		}
 
@@ -408,13 +398,12 @@ class Tribe__Tickets__Commerce__PayPal__Order {
 	 *
 	 * @since 4.7
 	 *
-	 * @param int        $attendee_id An Attendee post ID.
-	 * @param null|array $fields      List of fields to hydrate, or null for all.
+	 * @param int $attendee_id An Attendee post ID
 	 *
 	 * @return Tribe__Tickets__Commerce__PayPal__Order|false Either an existing or new order or `false` on
 	 *                                                       failure.
 	 */
-	public static function from_attendee_id( $attendee_id, $fields = null ) {
+	public static function from_attendee_id( $attendee_id ) {
 		$order_post_id = get_post_meta( $attendee_id, Tribe__Tickets__Commerce__PayPal__Main::ATTENDEE_ORDER_KEY, true );
 
 		// validate it
@@ -426,7 +415,7 @@ class Tribe__Tickets__Commerce__PayPal__Order {
 
 		$order = new self();
 
-		$order->hydrate_from_post( $order_post_id, $fields );
+		$order->hydrate_from_post( $order_post_id );
 
 		return $order;
 	}

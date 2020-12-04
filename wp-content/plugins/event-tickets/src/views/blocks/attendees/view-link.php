@@ -11,7 +11,7 @@
  *
  * See more documentation about our Blocks Editor templating system.
  *
- * @link https://m.tri.be/1amp Help article for RSVP & Ticket template files.
+ * @link {INSERT_ARTICLE_LINK_HERE}
  *
  * @since 4.9
  * @since 4.10.8 Renamed template from order-links.php to view-link.php. Updated to not use the now-deprecated

@@ -292,11 +292,6 @@ export const getTicketSku = createSelector(
 	( details ) => details.sku,
 );
 
-export const getTicketIACSetting = createSelector(
-	[ getTicketDetails ],
-	( details ) => details.iac,
-);
-
 export const getTicketStartDate = createSelector(
 	[ getTicketDetails ],
 	( details ) => details.startDate,
@@ -462,11 +457,6 @@ export const getTicketTempPrice = createSelector(
 export const getTicketTempSku = createSelector(
 	[ getTicketTempDetails ],
 	( tempDetails ) => tempDetails.sku,
-);
-
-export const getTicketTempIACSetting = createSelector(
-	[ getTicketTempDetails ],
-	( tempDetails ) => tempDetails.iac,
 );
 
 export const getTicketTempStartDate = createSelector(

@@ -9,15 +9,13 @@ import PropTypes from 'prop-types';
  */
 import Capacity from './capacity/container';
 import AdvancedOptions from './advanced-options/container';
-import AttendeeCollection from './attendee-collection/container';
 import AttendeesRegistration from './attendees-registration/container';
 import './style.pcss';
 
-const TicketContainerContent = ( { clientId, hasTicketsPlus, hasIacVars } ) => (
+const TicketContainerContent = ( { clientId, hasTicketsPlus } ) => (
 	<Fragment>
 		<Capacity clientId={ clientId } />
 		<AdvancedOptions clientId={ clientId } />
-		{ hasTicketsPlus && hasIacVars && <AttendeeCollection clientId={ clientId } /> }
 		{ hasTicketsPlus && <AttendeesRegistration clientId={ clientId } /> }
 	</Fragment>
 );

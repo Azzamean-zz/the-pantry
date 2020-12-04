@@ -8,7 +8,7 @@
  *
  * See more documentation about our Blocks Editor templating system.
  *
- * @link https://m.tri.be/1amp Help article for RSVP & Ticket template files.
+ * @link http://m.tri.be/1amp
  *
  * @var bool $must_login Whether the user has to login to RSVP or not.
  * @var Tribe__Tickets__Ticket_Object $rsvp The rsvp ticket object.

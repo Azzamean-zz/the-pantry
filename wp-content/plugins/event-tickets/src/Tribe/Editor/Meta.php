@@ -28,7 +28,7 @@ class Tribe__Tickets__Editor__Meta extends Tribe__Editor__Meta {
 			$this->text()
 		);
 
-		/** @var Tribe__Tickets__Tickets_Handler $handler */
+		// Tickets Hander Keys
 		$handler = tribe( 'tickets.handler' );
 
 		register_meta(

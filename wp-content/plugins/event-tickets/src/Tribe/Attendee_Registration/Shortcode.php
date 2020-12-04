@@ -1,13 +1,11 @@
 <?php
-
 /**
- * Provides shortcodes for the attendee registration template.
- *
- * @since 4.10.2
- */
+* Provides shortcodes for the attendee registration templatee.
+* @since 4.10.2
+*/
 class Tribe__Tickets__Attendee_Registration__Shortcode {
 	protected $shortcode_name = 'tribe_attendee_registration';
-	protected $params         = [];
+	protected $params = array();
 
 	public function hook() {
 		// block editor has a fit if we don't bail on the admin...don't really need them in other places?
@@ -42,9 +40,11 @@ class Tribe__Tickets__Attendee_Registration__Shortcode {
 			return;
 		}
 
-		// Enqueue styles and scripts for this page.
-		tribe_asset_enqueue_group( 'tribe-tickets-registration-page' );
+		// enqueue styles and scripts for this page
+		tribe_asset_enqueue( 'event-tickets-registration-page-styles' );
+		tribe_asset_enqueue( 'event-tickets-registration-page-scripts' );
 	}
+
 
 	/**
 	 * Renders the shortcode AR page.
@@ -54,10 +54,14 @@ class Tribe__Tickets__Attendee_Registration__Shortcode {
 	 * @return string
 	 */
 	public function render() {
-		/** @var \Tribe\Tickets\Plus\Attendee_Registration\View $view */
-		$view = tribe( 'tickets-plus.attendee-registration.view' );
+		ob_start();
 
-		return $view->get_page_content();
+		/** @var Tribe__Tickets__Attendee_Registration__View $view */
+		$view = tribe( 'tickets.attendee_registration.view' );
+
+		echo $view->display_attendee_registration_shortcode();
+
+		return ob_get_clean();
 	}
 
 }

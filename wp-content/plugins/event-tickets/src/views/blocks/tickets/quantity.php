@@ -8,7 +8,7 @@
  *
  * See more documentation about our Blocks Editor templating system.
  *
- * @link https://m.tri.be/1amp Help article for RSVP & Ticket template files.
+ * @link {INSERT_ARTICLE_LINK_HERE}
  *
  * @since 4.9
  * @since 4.11.1 Corrected amount of available/remaining tickets.

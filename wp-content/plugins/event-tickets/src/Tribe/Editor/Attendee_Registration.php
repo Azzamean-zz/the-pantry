@@ -34,17 +34,7 @@ class Tribe__Tickets__Editor__Attendee_Registration {
 	 * @return string
 	 */
 	public function filter_admin_body_class( $classes ) {
-		/**
-		 * This Try/Catch is present to deal with a problem on Autoloading from version 5.1.0 ET+ with ET 5.0.3.
-		 *
-		 * @todo Needs to be revised once proper autoloading rules are done for Common, ET and ET+.
-		 */
-		try {
-			$ar_page_slug = tribe( 'tickets.attendee_registration' )->get_slug();
-		} catch( RuntimeException $error ) {
-			return $classes;
-		}
-
+		$ar_page_slug = tribe( 'tickets.attendee_registration' )->get_slug();
 
 		// if not on attendee registration page
 		if ( tribe_get_request_var( 'page', '' ) !== $ar_page_slug ) {
