@@ -574,19 +574,113 @@ $terms = get_the_terms($post_id, 'tribe_events_cat');
 //Get ticket id
 $tickets = Tribe__Tickets__Tickets::get_all_event_tickets($post_id);
 
-//add categories to tickets
-	$count = count($terms);
-	if ( $count > 0 ){
-		foreach ( $terms as $term ) {
-			
-			foreach($tickets as $ticket) {
-				$ticket_id = $ticket->ID;
-				wp_set_object_terms( $ticket_id , $term->slug, 'product_cat', true );
-			}				
+	if($terms) {
+
+		//add categories to tickets
+		$count = count($terms);
+		if ( $count > 0 ){
+			foreach ( $terms as $term ) {
+				
+				foreach($tickets as $ticket) {
+					$ticket_id = $ticket->ID;
+					wp_set_object_terms( $ticket_id , $term->slug, 'product_cat', true );
+				}				
+			}
 		}
 	}
 }
 add_action( 'save_post', 'updated_ticket_product_cat' );
+
+function get_event_id_from_order_id($id) {
+	$order = new WC_Order($id);
+	$items = $order->get_items();
+	$tickets = array();
+		
+	$info = "";
+	
+	foreach ( $items as $item_id => $item ) {
+		$product_id = $item['product_id'];
+		
+		$event_id = get_tribe_event_ID_from_product($product_id);
+
+		return $event_id;
+
+	}
+	
+}
+			
+function get_tribe_event_ID_from_product($product_id) {
+	if ( class_exists( 'Tribe__Tickets_Plus__Commerce__WooCommerce__Main' )) {
+		$my_tribe = new Tribe__Tickets_Plus__Commerce__WooCommerce__Main();
+		$my_event_id = get_post_meta($product_id, $my_tribe->event_key, true);
+		return $my_event_id;
+	}
+}
+
+//** Add fields to order emails - customer
+
+function gum_woo_checkout_fields( $order_id ) {
+	  
+	//* NEW	
+	$fieldset_meta = get_post_meta( $order_id, Tribe__Tickets_Plus__Meta::META_KEY, true );
+	$cnt = 1;
+	
+	if (! $fieldset_meta ) return;
+
+	echo '<h3> Attendees </h3>';
+	
+	foreach( $fieldset_meta AS $item => $value ) {
+		
+		foreach( $fieldset_meta[$item] AS $key => $value ) {
+				
+				$att_name 		= (isset( $value['name'] )) ? $value['name'] : '';
+				$att_lname 		= (isset( $value['last-name'] )) ? $value['last-name'] : '';
+				$att_email 		= (isset( $value['email'] )) ? $value['email'] : '';
+				$att_phone 		= (isset( $value['phone'] )) ? $value['phone'] : '';
+				
+				echo '<p>';
+				echo '<strong>Attendee - '. $cnt .'</strong><br />';
+				echo 'Name: '. $att_name .'<br />';
+				echo 'Email: '. $att_email .'<br />';
+				echo 'Phone: '. $att_phone .'<br />';
+				echo '</p>';
+			
+			$cnt++;
+			
+		}	
+	}
+}
+
+//add_action( 'woocommerce_email_customer_details', 'gum_woo_checkout_fields_email_customer' );
+
+function gum_woo_checkout_fields_email_customer( $order ) {
+	  
+	//* NEW	
+	$fieldset_meta = get_post_meta( $order->id, Tribe__Tickets_Plus__Meta::META_KEY, true );
+	$cnt = 1;
+	
+	if (! $fieldset_meta ) return;
+
+	echo '<h3> Attendees </h3>';
+	
+	foreach( $fieldset_meta AS $item => $value ) {
+		
+		foreach( $fieldset_meta[$item] AS $key => $value ) {
+				
+				$att_name 		= (isset( $value['name'] )) ? $value['name'] : '';
+				$att_email 		= (isset( $value['email'] )) ? $value['email'] : '';
+				
+				echo '<p>';
+				echo '<strong>Attendee - '. $cnt .'</strong><br />';
+				echo 'Name: '. $att_name .'<br />';
+				echo 'Email: '. $att_email .'<br />';
+				echo '</p>';
+			
+			$cnt++;
+			
+		}	
+	}
+}
 
  /**
  * Remove page header

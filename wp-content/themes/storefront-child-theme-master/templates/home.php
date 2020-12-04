@@ -24,7 +24,7 @@ get_header(); ?>
 	        <header class="page-header">
 	            <h1><a href="<?php echo site_url();?>" class="logo">The Pantry</a></h1>
 	            
-            <?php if(get_field('sub_head')) {?><h1><?php the_field('sub_head');?></h1><?php } ?>
+				<?php if(get_field('sub_head')) {?><h1><?php the_field('sub_head');?></h1><?php } ?>
 	
 	        </header>
 	

@@ -62,6 +62,7 @@ get_header(); ?>
 		<?php  while ( $query->have_posts() ) { $query->the_post(); ?>
 			<a class="grid-item <?php { echo get_field('stock'); } ?>" href="<?php the_permalink(); ?>">
 				<?php the_post_thumbnail( 'medium','style=max-width:100%;height:auto;');?>
+				<div class="vid"></div>	
 				<div class="so-text">Sold Out</div>	
 				<h3><?php echo get_field('title'); ?></h3>	
 			</a>
@@ -113,6 +114,7 @@ get_header(); ?>
 		<?php  while ( $query->have_posts() ) { $query->the_post(); ?>
 				<a class="grid-item <?php { echo get_field('stock'); } ?>" href="<?php the_permalink(); ?>">
 					<?php the_post_thumbnail( 'medium','style=max-width:100%;height:auto;');?>
+					<div class="vid"></div>	
 					<div class="so-text">Sold Out</div>	
 					<h3><?php echo get_field('title'); ?></h3>	
 				</a>

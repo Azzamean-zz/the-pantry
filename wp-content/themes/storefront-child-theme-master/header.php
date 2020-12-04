@@ -19,6 +19,7 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 <link rel="stylesheet" href="https://use.typekit.net/ybg6drv.css">
+<script src="https://use.fontawesome.com/0058c695c9.js"></script>
 
 <link rel="icon" type="image/png" href="<?php echo get_stylesheet_directory(); ?>/favicon.png">
 

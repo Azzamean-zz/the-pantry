@@ -1,6 +1,6 @@
 <?php
 /**
- * Template name: Calendar Template
+ * Template name: Calendar TO-GO Template
  * The template for displaying all pages.
  *
  * This is the template that displays all pages by default.
@@ -60,7 +60,7 @@ $first_day = $first_day->format('Y-m-d');
 	            array(
 	                'taxonomy' => 'overview-categories',
 	                'field' => 'slug',
-	                'terms' => 'class'
+	                'terms' => 'to-go'
 	            ),
 	        ),
 		);
@@ -128,13 +128,13 @@ $first_day = $first_day->format('Y-m-d');
     <main id="main" class="body wrapper" role="main">
         <header class="page-header" style="border: none;">
 		    <h1><a href="<?php echo site_url();?>" class="logo">The Pantry</a></h1>
-		    <h1 class="page-title">Classes</h1>
+		    <h1 class="page-title">To-Go</h1>
 		</header>
         <div id="home-main">
 	        <div class="cal-container">
            		<div class="cal-tools">
-	           		<a href="<?php echo site_url();?>/classes" class="<?php if(is_page('classes')){ echo 'active'; }?>"><span class="fa fa-th"></span> Grid View</a>
-	           		<a href="<?php echo site_url();?>/classes/calendar" class="active"><span class="fa fa-calendar-alt"></span> Calendar</a>
+	           		<a href="<?php echo site_url();?>/to-go" class="<?php if(is_page('to-go')){ echo 'active'; }?>"><span class="fa fa-th"></span> Grid View</a>
+	           		<a href="<?php echo site_url();?>/to-go/calendar" class="active"><span class="fa fa-calendar-alt"></span> Calendar</a>
            		</div>	
            		<div id="calendar"></div>
 	        </div>	

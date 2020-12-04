@@ -29,7 +29,48 @@ body.page {
 	}
 }
 
+table td.woocommerce-table__product-name {
+	padding-left: 5.25px !important;	
+}
+
+.order-again {
+	a.button {
+		height: auto !important	;	
+	}
+}
+
+.cal-container {
+	position: relative;	
+	.cal-tools {
+		position: absolute;	
+		top: 0;	
+		right: 0;	
+		z-index: 9;	
+		a {
+		    font-family: "brandon-grotesque","Helvetica Neue",Arial,sans-serif;
+			text-transform: uppercase;
+			display: inline-block;
+		    padding: 1.25em 2em;
+		    font-size: 11.9px;
+		    line-height: 21px;
+		    font-weight: 700;
+		    letter-spacing: .1em;
+		    border: 1px solid #fff;
+		    &:hover {
+			    background: rgba(255,255,255, .7);
+		    }
+		    &.active {
+			    border-color: #2C3E50 !important;
+			    color: #2C3E50 !important;
+			    pointer-events: none;
+			    opacity: .5;	
+		    }
+		}
+	}
+}
+
 #calendar {
+	position: relative;	
 	table {
 		margin-bottom: 0 !important;	
 	}
@@ -704,6 +745,31 @@ button.xoo-wl-open-form-btn {
 	float: right;	
 }
 
+.grid .vid {
+	background: url(../images/vid.png);
+	background-repeat: no-repeat;	
+	-webkit-background-size: 100% 100%;
+	background-size: 100% 100%;
+	width: 60px;
+    height: 38px;
+    position: absolute;
+    top: 23px;
+}
+.type-overview .entry-content {
+	position: relative;	
+}
+.type-overview .entry-content img.wp-post-image::after {
+	content: '';
+	background: url(../images/vid.png);
+	background-repeat: no-repeat;	
+	-webkit-background-size: 100% 100%;
+	background-size: 100% 100%;
+	width: 60px;
+    height: 38px;
+    position: absolute;
+    top: 23px;
+}
+
 .tribe-checkout-backlinks {
 	width: 41.1764705882%;	
 	float: right;	
@@ -827,6 +893,15 @@ a.wc-block-grid__product-link {
 		}
 	}
 }
+
+.fc-toolbar-chunk {
+	width: 100% !important;	
+}
+
+.fc .fc-daygrid-day.fc-day-today {
+	background-color: rgba(255,255,255, .6) !important;
+}
+
 @media screen and (max-width: 990px) {
 	.fc .fc-toolbar {
 		flex-wrap: wrap;
@@ -835,8 +910,20 @@ a.wc-block-grid__product-link {
 		width: 100% !important;	
 		text-align: center;	
 		h2 {
-			margin-top: 10px !important;	
+			margin-top: 20px !important;	
 			line-height: 60px;	
+		}
+	}
+	.cal-container .cal-tools {
+		position: relative;	
+		width: 100%;	
+		text-align: center;	
+		right: auto;	
+		top: auto;
+		margin-bottom: 15px;	
+		a {
+			margin-left: 2px;	
+			margin-right: 2px;	
 		}
 	}
 }

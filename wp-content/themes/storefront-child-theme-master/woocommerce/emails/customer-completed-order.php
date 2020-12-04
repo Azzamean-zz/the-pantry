@@ -49,6 +49,8 @@ do_action( 'woocommerce_email_order_meta', $order, $sent_to_admin, $plain_text, 
  */
 do_action( 'woocommerce_email_customer_details', $order, $sent_to_admin, $plain_text, $email );
 
+gum_woo_checkout_fields_email_customer($order);
+
 /**
  * Show user-defined additional content - this is set in each email's settings.
  */
