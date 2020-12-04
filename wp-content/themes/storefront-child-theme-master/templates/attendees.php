@@ -27,8 +27,8 @@ get_header(); ?>
 <!--
 	<pre>
 		<?php print_r($attendee_list); ?> 
-	</pre>	
--->
+	</pre>
+-->	
 
 	<?php
 		getAttendee($event_id);
@@ -85,6 +85,8 @@ get_header(); ?>
 			foreach($attendee_list as $attendee) {
 				$name = '';
 				$wine = '';
+				$veg = " ";
+
 				if(isset($attendee['attendee_meta']['name'])) {
 					$name = $attendee['attendee_meta']['name']['value'];
 					$names[] = $attendee['attendee_meta']['name']['value'];
@@ -160,12 +162,7 @@ get_header(); ?>
 	$result = rtrim($result,', ');
 	echo $result;
 	?>
-	
-	<?php
-	//echo '<pre>';
-	//print_r($attendee_list);
-	//echo '</pre>';
-	?>
+
 </div>	
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
