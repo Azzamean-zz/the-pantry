@@ -109,8 +109,12 @@ table td.woocommerce-table__product-name {
 
 .fc-daygrid-dot-event .fc-event-title {
 	line-height: 1.3em !important;	
-	margin-bottom: 5px !important;	
 	font-weight: 500 !important;	
+}
+
+.fc .fc-daygrid-event {
+	margin-top: 6px !important;	
+	margin-bottom: 6px;	
 }
 
 .fc-theme-standard td, .fc-theme-standard th, .fc-theme-standard .fc-scrollgrid {
