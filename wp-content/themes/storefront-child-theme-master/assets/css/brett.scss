@@ -39,32 +39,46 @@ table td.woocommerce-table__product-name {
 	}
 }
 
+.cal-tools {
+	width: 100%;
+	text-align: right;	
+	margin-bottom: 20px;
+	padding-right: 30px;			
+	a {
+	    font-family: "brandon-grotesque","Helvetica Neue",Arial,sans-serif;
+		text-transform: uppercase;
+		display: inline-block;
+	    padding: 1.25em 2em;
+	    font-size: 11.9px;
+	    line-height: 21px;
+	    font-weight: 700;
+	    letter-spacing: .1em;
+	    border: 1px solid #fff;
+	    &:hover {
+		    background: rgba(255,255,255, .7);
+	    }
+	    &.active {
+		    border-color: #2C3E50 !important;
+		    color: #2C3E50 !important;
+		    pointer-events: none;
+		    opacity: .5;	
+	    }
+	}
+}
+
 .cal-container {
 	position: relative;	
+	margin-bottom: 0;
 	.cal-tools {
+		text-align: auto;
+		width: auto;	
 		position: absolute;	
 		top: 0;	
 		right: 0;	
 		z-index: 9;	
+		padding: 0;		
 		a {
-		    font-family: "brandon-grotesque","Helvetica Neue",Arial,sans-serif;
-			text-transform: uppercase;
-			display: inline-block;
-		    padding: 1.25em 2em;
-		    font-size: 11.9px;
-		    line-height: 21px;
-		    font-weight: 700;
-		    letter-spacing: .1em;
-		    border: 1px solid #fff;
-		    &:hover {
-			    background: rgba(255,255,255, .7);
-		    }
-		    &.active {
-			    border-color: #2C3E50 !important;
-			    color: #2C3E50 !important;
-			    pointer-events: none;
-			    opacity: .5;	
-		    }
+			
 		}
 	}
 }
@@ -905,7 +919,7 @@ a.wc-block-grid__product-link {
 }
 
 .fc .fc-toolbar-title {
-	font-size: 21.25px;
+	font-size: 21.25px !important;
 }
 
 @media screen and (max-width: 990px) {
@@ -920,7 +934,7 @@ a.wc-block-grid__product-link {
 			line-height: 60px;	
 		}
 	}
-	.cal-container .cal-tools {
+	.cal-container .cal-tools, .cal-tools {
 		position: relative;	
 		width: 100%;	
 		text-align: center;	

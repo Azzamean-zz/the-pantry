@@ -133,8 +133,8 @@ $first_day = $first_day->format('Y-m-d');
         <div id="home-main">
 	        <div class="cal-container">
            		<div class="cal-tools">
-	           		<a href="<?php echo site_url();?>/to-go" class="<?php if(is_page('to-go')){ echo 'active'; }?>"><span class="fa fa-th"></span> Grid View</a>
-	           		<a href="<?php echo site_url();?>/to-go/calendar" class="active"><span class="fa fa-calendar-alt"></span> Calendar</a>
+	           		<a href="<?php echo site_url();?>/to-go" class=""><span class="fa fa-th"></span> Grid View</a>
+	           		<a href="<?php echo site_url();?>/to-go/to-go-calendar" class="active"><span class="fa fa-calendar-alt"></span> Calendar</a>
            		</div>	
            		<div id="calendar"></div>
 	        </div>	

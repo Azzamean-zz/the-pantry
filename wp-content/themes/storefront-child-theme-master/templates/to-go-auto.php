@@ -16,7 +16,10 @@ get_header(); ?>
         </header>
         
         <div class="entry-content">	
-	        		
+	   		<div class="cal-tools">
+	       		<a href="<?php echo site_url();?>/to-go" class="active"><span class="fa fa-th"></span> Grid View</a>
+	       		<a href="<?php echo site_url();?>/to-go/to-go-calendar" class=""><span class="fa fa-calendar-alt"></span> Calendar</a>
+	   		</div>	
 		<?php
 		$today = date('Ymd'); 
 		$first_day = new DateTime('first day of this month');

@@ -16,7 +16,11 @@ get_header(); ?>
         </header>
         
         <div class="entry-content">	
-	        		
+	   		 <div class="cal-tools">
+           		<a href="<?php echo site_url();?>/classes" class="active"><span class="fa fa-th"></span> Grid View</a>
+           		<a href="<?php echo site_url();?>/classes/calendar" class=""><span class="fa fa-calendar-alt"></span> Calendar</a>
+        	</div>	
+
 		<?php
 		$tz = 'America/Los_Angeles';
 		$today = new DateTime('now', new DateTimeZone($tz));
