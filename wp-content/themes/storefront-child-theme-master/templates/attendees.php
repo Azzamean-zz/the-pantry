@@ -86,6 +86,8 @@ get_header(); ?>
 				$name = '';
 				$wine = '';
 				$veg = " ";
+				$phone = " ";
+				$email = " ";
 
 				if(isset($attendee['attendee_meta']['name'])) {
 					$name = $attendee['attendee_meta']['name']['value'];
