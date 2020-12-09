@@ -1,6 +1,6 @@
 <?php
 /**
- * Template name: Auto To-Go Page Template
+ * Template name: Auto Class New Page Template
  *
  * @package storefront
  */
@@ -12,41 +12,51 @@ get_header(); ?>
         <header class="page-header" style="border: none;">
             <h1><a href="<?php echo site_url();?>" class="logo">The Pantry</a></h1>
             
-            <h1 class="page-title">To-Go</h1>
+            <h1 class="page-title">Classes</h1>
         </header>
         
         <div class="entry-content">	
-	   		<div class="cal-tools">
-	       		<a href="<?php echo site_url();?>/to-go" class="active"><span class="fa fa-th"></span> Grid View</a>
-	       		<a href="<?php echo site_url();?>/to-go/to-go-calendar" class=""><span class="fa fa-calendar-alt"></span> Calendar</a>
-	   		</div>	
+	   		 <div class="cal-tools">
+           		<a href="<?php echo site_url();?>/classes" class="active"><span class="fa fa-th"></span> Grid View</a>
+           		<a href="<?php echo site_url();?>/classes/calendar" class=""><span class="fa fa-calendar-alt"></span> Calendar</a>
+        	</div>	
+
 		<?php
-		$today = date('Ymd'); 
-		$first_day = new DateTime('first day of this month');
-		$first_day = $first_day->format('Ymd');
-		$last_day = new DateTime('last day of this month');
-		$last_day = $last_day->format('Ymd');
+		$tz = 'America/Los_Angeles';
+		$today = new DateTime('now', new DateTimeZone($tz));
 		
+		$thisMonth = new DateTime('now', new DateTimeZone($tz));
+		$nextMonth = new DateTime('first day of +1 month', new DateTimeZone($tz));
+		
+		$first_day = new DateTime('first day of this month', new DateTimeZone($tz));
+		$first_day = $first_day->format('Ymd');
+		
+		$last_day = new DateTime('last day of this month', new DateTimeZone($tz));
+		$last_day = $last_day->format('Ymd');
+				
 		$args = array(
 		    'post_type' => 'overview',
 		    'posts_per_page' => -1,
+		    'meta_key' => 'new_date',
+            'orderby' => 'meta_value_num',
+            'order' => 'ASC',
 		    'meta_query' => array(
 		        array(
 		            'key'     => 'expiration_date',
 		            'compare' => '>=',
-		            'value'   => $today,
+		            'value'   => $today->format('Ymd'),
 		        ),
 		         array(
 		            'key'     => 'expiration_date',
 		            'compare' => '<=',
 		            'value'   => $last_day,
-		        )
+		        ),
 		    ),
 		    'tax_query' => array(
 	            array(
 	                'taxonomy' => 'overview-categories',
 	                'field' => 'slug',
-	                'terms' => 'to-go'
+	                'terms' => 'class'
 	            ),
 	        ),
 		);
@@ -54,21 +64,16 @@ get_header(); ?>
 		$query = new WP_Query($args);
 	    if ( $query->have_posts() ) {
 		?>
-		<h2 class="has-text-align-center"><?php echo date('F'); ?></h2>	
+		<h2 class="has-text-align-center"><?php echo $thisMonth->format('F'); ?></h2>	
 		<div class="grid">
-		<?php
-		    while ( $query->have_posts() ) { $query->the_post();
-		?>
-				<a class="grid-item <?php { echo get_field('stock'); } ?>" href="<?php the_permalink(); ?>">
-					<?php the_post_thumbnail( 'medium','style=max-width:100%;height:auto;');?>
-					<div class="so-text">Sold Out</div>	
-					<h3><?php echo get_field('title'); ?></h3>	
-					<p><?php get_field('new_date');?></p>	
-				</a>
-			<?php
-
-	    	}
-	    	?>
+		<?php  while ( $query->have_posts() ) { $query->the_post(); ?>
+			<a class="grid-item <?php { echo get_field('stock'); } ?>" href="<?php the_permalink(); ?>">
+				<?php the_post_thumbnail( 'medium','style=max-width:100%;height:auto;');?>
+				<div class="vid"></div>	
+				<div class="so-text">Sold Out</div>	
+				<h3><?php echo get_field('title'); ?></h3>	
+			</a>
+		<?php } ?>
 	    </div>
 	    <?php
 	    }
@@ -80,13 +85,13 @@ get_header(); ?>
 		
 		$first_day = date("Ymd", strtotime(date('m', strtotime('last day of next month')).'/01/'.date('Y', strtotime('+1 year')).' 00:00:00'));
 		$last_day = date('Ymt',strtotime('last day of next month'));
-
+		
 		$args = array(
 		    'post_type' => 'overview',
 		    'posts_per_page' => -1,
-		    'meta_key'  => 'start_date',
-		    'orderby'   => 'meta_value_num',
-		    'order'     => 'ASC',
+		    'meta_key' => 'new_date',
+            'orderby' => 'meta_value_num',
+            'order' => 'ASC',
 		    'meta_query' => array(
 		        array(
 		            'key'     => 'expiration_date',
@@ -103,7 +108,7 @@ get_header(); ?>
 	            array(
 	                'taxonomy' => 'overview-categories',
 	                'field' => 'slug',
-	                'terms' => 'to-go'
+	                'terms' => 'class'
 	            ),
 	        ),
 		);
@@ -111,24 +116,22 @@ get_header(); ?>
 		$query = new WP_Query($args);
 	    if ( $query->have_posts() ) {
 		?>
-		<h2 class="has-text-align-center"><?php echo date('F',strtotime('first day of +1 month')); ?></h2>	
+		<h2 class="has-text-align-center"><?php echo $nextMonth->format('F'); ?></h2>	
 		<div class="grid">
 		<?php  while ( $query->have_posts() ) { $query->the_post(); ?>
 				<a class="grid-item <?php { echo get_field('stock'); } ?>" href="<?php the_permalink(); ?>">
 					<?php the_post_thumbnail( 'medium','style=max-width:100%;height:auto;');?>
+					<div class="vid"></div>	
 					<div class="so-text">Sold Out</div>	
 					<h3><?php echo get_field('title'); ?></h3>	
 				</a>
-			<?php
-	    	}
-	    	?>
+		<?php } ?>
 	    </div>
 	    <?php
 	    }
 		wp_reset_postdata();
 		?>
 		
-        
 		
 		</div>
 		</main><!-- #main -->

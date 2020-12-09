@@ -86,8 +86,9 @@ $first_day = $first_day->format('Y-m-d');
 					if($unixstart >= $unixtoday) {
 				?>
 				{
-		          title: '<?php echo html_entity_decode($title);?>',
+		          title: '<?php if($sold){ echo 'Sold Out - '; }?><?php echo html_entity_decode($title);?>',
 		          url: '<?php echo $link;?>',
+		          className: "<?php echo $sold;?>",
 		          start: '<?php echo $start->format("Y-m-d");?>T<?php echo $start->format("H:i:s")?>',
 		          end: '<?php echo $end->format("Y-m-d" );?>T<?php echo $end->format("H:i:s")?>',
 		        },

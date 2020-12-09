@@ -664,8 +664,8 @@ function gum_woo_checkout_fields_email_customer( $order ) {
 	
 	if (! $fieldset_meta ) return;
 
-	echo '<h3> Attendees </h3>';
-	
+	echo '<h3> Attendee Information</h3>';
+
 	foreach( $fieldset_meta AS $item => $value ) {
 		
 		foreach( $fieldset_meta[$item] AS $key => $value ) {
@@ -681,7 +681,6 @@ function gum_woo_checkout_fields_email_customer( $order ) {
 				}
 				
 				echo '<p>';
-				echo '<strong>Attendee - '. $cnt .'</strong><br />';
 				echo 'Name: '. $att_name .'<br />';
 				echo 'Email: '. $att_email .'<br />';
 				if($att_phone) {

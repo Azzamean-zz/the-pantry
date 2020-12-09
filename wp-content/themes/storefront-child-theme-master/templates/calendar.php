@@ -68,7 +68,6 @@ $first_day = $first_day->format('Y-m-d');
 		$query = new WP_Query($args);
 	    if ( $query->have_posts() ) {
 		    while ( $query->have_posts() ) { $query->the_post();
-			    
 				$link = get_permalink();
 				$sold = get_field('stock');
 				$ticket_pages = get_field('ticket_pages');
@@ -86,8 +85,9 @@ $first_day = $first_day->format('Y-m-d');
 					if($unixstart >= $unixtoday) {
 				?>
 				{
-		          title: '<?php echo html_entity_decode($title);?>',
+		          title: '<?php if($sold){ echo 'Sold Out - '; }?><?php echo html_entity_decode($title);?>',
 		          url: '<?php echo $link;?>',
+		          className: "<?php echo $sold;?>",
 		          start: '<?php echo $start->format("Y-m-d");?>T<?php echo $start->format("H:i:s")?>',
 		          end: '<?php echo $end->format("Y-m-d" );?>T<?php echo $end->format("H:i:s")?>',
 		        },
@@ -102,7 +102,7 @@ $first_day = $first_day->format('Y-m-d');
 		?>
       ]
     });
-
+	
     calendar.render();
     
     windowSize();

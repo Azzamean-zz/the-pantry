@@ -130,6 +130,9 @@ table td.woocommerce-table__product-name {
 .fc .fc-daygrid-event {
 	margin-top: 6px !important;	
 	margin-bottom: 6px;	
+	&.sold-out {
+		opacity: .3;
+	}
 }
 
 .fc-theme-standard td, .fc-theme-standard th, .fc-theme-standard .fc-scrollgrid {

@@ -34,6 +34,7 @@ get_header(); ?>
 		<p class="text-center"><i>All events are listed in Pacific Time.</i></p>		
 		
 		<?php
+		$post_id = get_the_ID();
 		$ticket_pages = get_field('ticket_pages');
 		if( $ticket_pages ): ?>
         	<ul class="homeLinks">
@@ -58,28 +59,17 @@ get_header(); ?>
 					
 					$date = strtotime('+1 day', strtotime($date));
 					
-					$now = time();
 					
 					$hoursToSubtract = '8';
 					$timeToSubtract = ($hoursToSubtract * 60 * 60);
 					
-// 					$end = $end - $timeToSubtract;
-					
+					$now = time();
 					$now = $now - $timeToSubtract;
 										
 					$class = '';
 
-/*
-
-					if ( is_user_logged_in() ) {
-						echo '<br>';
-						echo gmdate("Y-m-d H:i:s", $now);
-						echo '<br>';
-						echo gmdate("Y-m-d H:i:s", $date);
-						echo '<br>';
-						echo '<br>';
-					}
-*/
+					$newDate = DateTime::createFromFormat('m/d/Y H:i a', get_field('start_date', $post->ID));
+					$newDates[] = $newDate->format('Ymd');
 
 					if( $now > $date ) {
 						$class = 'hide';
@@ -88,7 +78,11 @@ get_header(); ?>
 						if ( 0 === $tickets_handler->get_ticket_max_purchase( $ticket_ids[0] ) ) {
 							$i++;
 						}
+																		
+						// update_field('new_date', $newDate, $post_id);
+
 					}
+										
 				?>
 		    	
 		    	<?php
@@ -111,7 +105,20 @@ get_header(); ?>
 		<?php endif; ?>
 		
 		<?php
-		$post_id = get_the_ID();
+		
+		$now = time();
+		foreach($newDates as $newDate) {
+			$stringNew = strtotime($newDate);
+			
+			$stringNew = date("ymd", strtotime($newDate));
+			$today = date("ymd", strtotime("today"));			
+					
+			if($today <= $stringNew) {
+				update_field('new_date', $newDate, $post_id);
+				break;
+			}
+		}
+		
 		if($i >= $ticketcount) {
 			if((get_field('stock')) != 'sold-out') {
 				update_field('stock', 'sold-out', $post_id);
