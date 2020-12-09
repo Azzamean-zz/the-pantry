@@ -36,6 +36,8 @@ get_header( 'shop' ); ?>
 
 			<?php wc_get_template_part( 'content', 'single-product' ); ?>
 			
+			<?php wc_print_notices(); ?>
+			
 		<?php endwhile; // end of the loop. ?>
 		
 		<article class="page">
@@ -43,6 +45,7 @@ get_header( 'shop' ); ?>
 			<?php the_field('under_product');?>
 			</div>	
 		</article>	
+		
 	
 	<?php
 		/**

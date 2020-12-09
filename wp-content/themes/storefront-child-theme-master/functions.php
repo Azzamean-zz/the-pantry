@@ -422,6 +422,9 @@ add_action('init', 'create_shopping_lists_taxonomies');
 add_filter('manage_edit-shopping_lists_columns', 'create_shopping_lists_columns' ) ;
 add_action('manage_shopping_lists_posts_custom_column', 'manage_shopping_lists_columns', 10, 2 );
 
+remove_action( 'woocommerce_before_single_product', 'woocommerce_output_all_notices', 10 );
+add_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_all_notices', 10 );
+
 /**
  * Changes the redirect URL for the Return To Shop button in the cart.
  *

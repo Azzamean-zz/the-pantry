@@ -66,6 +66,21 @@ table td.woocommerce-table__product-name {
 	}
 }
 
+.woocommerce-message {
+	.button {
+		height: auto;	
+	    font-family: "brandon-grotesque","Helvetica Neue",Arial,sans-serif;
+	    text-transform: uppercase;	
+	    background-color: transparent;
+	    border-color: none;
+	    color: #333;
+	    font-size: 15px;	
+	    &:hover {
+		    color: #a37c22;
+	    }
+	}
+}
+
 .cal-container {
 	position: relative;	
 	margin-bottom: 0;
