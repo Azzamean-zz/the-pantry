@@ -4,14 +4,17 @@
  *
  * Override this template in your own theme by creating a file at:
  *
- * [your-theme]/tribe-events/meta/checkbox.php
+ * [your-theme]/tribe/tickets-plus/meta/checkbox.php
+ *
+ * @link    http://m.tri.be/1amp See more documentation about our views templating system.
  *
  * @since 4.5.5
  * @since 4.10.2 Use md5() for field name slugs.
  * @since 4.10.7 Undo use of md5() within this file to fix editing existing responses.
  * @since 4.12.1    Updated PHP comment.
+ * @since 5.1.0 Updated template link.
  *
- * @version 4.12.1
+ * @version 5.1.0
  *
  * @var Tribe__Tickets_Plus__Meta__Field__Checkbox $this
  */

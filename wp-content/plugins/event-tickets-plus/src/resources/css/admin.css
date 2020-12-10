@@ -51,3 +51,6 @@
 		min-height: 38px;
 		padding: 0 0 0 50px;
 	}
+.tribe_attendee-collection_meta::after {
+	width: calc(100% - 160px);
+}

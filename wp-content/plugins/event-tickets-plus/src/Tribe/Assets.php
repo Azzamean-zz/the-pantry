@@ -9,6 +9,7 @@ class Tribe__Tickets_Plus__Assets {
 	 * @see   \tribe_tickets_is_enabled_post_context()
 	 */
 	public function enqueue_scripts() {
+		$plugin = tribe( 'tickets-plus.main' );
 		// Set up our base list of enqueues.
 		$enqueue_array = [
 			[ 'event-tickets-plus-tickets-css', 'tickets.css', [ 'dashicons' ] ],
@@ -19,9 +20,11 @@ class Tribe__Tickets_Plus__Assets {
 			[ 'tribe-tickets-plus-attendee-meta', 'v2/tickets-meta.js', [ 'jquery', 'tribe-common' ] ],
 		];
 
+		$plugin = tribe( 'tickets-plus.main' );
+
 		// and the engine...
 		tribe_assets(
-			tribe( 'tickets-plus.main' ),
+			$plugin,
 			$enqueue_array,
 			'wp_enqueue_scripts',
 			[
@@ -36,6 +39,142 @@ class Tribe__Tickets_Plus__Assets {
 			]
 		);
 
+		if ( function_exists( 'tribe_tickets_new_views_is_enabled' ) && tribe_tickets_new_views_is_enabled() ) {
+
+			// Tickets modal scripts.
+			tribe_asset(
+				$plugin,
+				'tribe-tickets-plus-modal',
+				'v2/tickets-modal.js',
+				[
+					'jquery',
+					'tribe-common',
+				],
+				null,
+				[
+					'groups' => [
+						'tribe-tickets-block-assets',
+						'tribe-tickets-modal',
+					],
+				]
+			);
+
+			// Tickets modal styles.
+			tribe_asset(
+				$plugin,
+				'tribe-tickets-plus-modal-styles',
+				'tickets-modal.css',
+				[],
+				null,
+				[
+					'groups' => [
+						'tribe-tickets-block-assets',
+						'tribe-tickets-modal',
+					],
+				]
+			);
+
+			// Tickets attendee ticket styles.
+			tribe_asset(
+				$plugin,
+				'tribe-tickets-plus-attendee-tickets-styles',
+				'tickets-attendee-tickets.css',
+				[],
+				null,
+				[
+					'groups' => [
+						'tribe-tickets-block-assets',
+						'tribe-tickets-modal',
+						'tribe-tickets-registration-page',
+					],
+				]
+			);
+
+			// Tickets registration page scripts.
+			tribe_asset(
+				$plugin,
+				'tribe-tickets-plus-registration-page',
+				'v2/tickets-registration-page.js',
+				[
+					'jquery',
+					'wp-util',
+					'tribe-common',
+				],
+				null,
+				[
+					'groups' => [
+						'tribe-tickets-registration-page',
+					],
+				]
+			);
+
+			// Tickets registration page styles.
+			tribe_asset(
+				$plugin,
+				'tribe-tickets-plus-registration-page-styles',
+				'tickets-registration-page.css',
+				[],
+				null,
+				[
+					'groups' => [
+						'tribe-tickets-registration-page',
+					],
+				]
+			);
+
+			tribe_asset(
+				$plugin,
+				'tribe-tickets-plus-data',
+				'v2/tickets-data.js',
+				[
+					'jquery',
+					'tribe-common',
+				],
+				null,
+				[
+					'groups' => [
+						'tribe-tickets-block-assets',
+						'tribe-tickets-registration-page',
+					],
+				]
+			);
+
+			// @TODO: we should conditionally use this if IAC is being used.
+			tribe_asset(
+				$plugin,
+				'tribe-tickets-plus-iac',
+				'v2/tickets-iac.js',
+				[
+					'jquery',
+					'wp-util',
+					'tribe-common',
+				],
+				null,
+				[
+					'groups' => [
+						'tribe-tickets-block-assets',
+						'tribe-tickets-registration-page',
+						'tribe-tickets-page-assets',
+					],
+				]
+			);
+
+			// Tickets IAC styles.
+			// @TODO: we should conditionally use this if IAC is being used.
+			tribe_asset(
+				$plugin,
+				'tribe-tickets-plus-iac-styles',
+				'tickets-iac.css',
+				[],
+				null,
+				[
+					'groups' => [
+						'tribe-tickets-block-assets',
+						'tribe-tickets-registration-page',
+					],
+				]
+			);
+		}
 	}
 
 	/**

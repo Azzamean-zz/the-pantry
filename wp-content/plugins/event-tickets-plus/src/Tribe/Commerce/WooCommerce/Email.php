@@ -84,27 +84,33 @@ class Tribe__Tickets_Plus__Commerce__WooCommerce__Email extends WC_Email {
 	 * @param int $order_id The ID of the WooCommerce order whose tickets are being emailed.
 	 */
 	public function trigger( $order_id ) {
-
 		if ( $order_id ) {
-			$this->object    = new WC_Order( $order_id );
-			$this->recipient = method_exists( $this->object, 'get_billing_email' )
-				? $this->object->get_billing_email() // WC 3.x
-				: $this->object->billing_email; // WC 2.x
+			$this->object = new WC_Order( $order_id );
 		}
 
-		if ( ! $this->is_enabled() || ! $this->get_recipient() ) {
+		if ( ! $this->is_enabled() ) {
 			return;
 		}
 
-		$sent = $this->send(
-			$this->get_recipient(),
-			$this->get_subject(),
-			$this->get_content(),
-			$this->get_headers(),
-			$this->get_attachments()
-		);
+		/** @var Tribe__Tickets_Plus__Commerce__WooCommerce__Main $commerce_woo */
+		$commerce_woo = tribe( 'tickets-plus.commerce.woo' );
 
-		if ( $sent ) {
+		// Get the attendees for the order.
+		$attendees = $commerce_woo->get_attendees_by_id( $order_id );
+
+		$send_args = [
+			'subject'            => $this->get_subject(),
+			'headers'            => $this->get_headers(),
+			'attachments'        => $this->get_attachments(),
+			'order_id'           => $order_id,
+			'send_callback'      => [ $this, 'send' ],
+			'send_purchaser_all' => true,
+		];
+
+		// Send the emails (ultimately uses the self::send() method via send_callback).
+		$sent = $commerce_woo->send_tickets_email_for_attendees( $attendees, $send_args );
+
+		if ( 0 < $sent ) {
 			$this->maybe_add_order_note_for_manual_email( $order_id );
 		}
 	}
@@ -115,8 +121,7 @@ class Tribe__Tickets_Plus__Commerce__WooCommerce__Email extends WC_Email {
 	 * @return string
 	 */
 	public function get_subject() {
-
-		$subject      = $this->subject;
+		$subject      = '';
 		$woo_settings = get_option( 'woocommerce_wootickets_settings' );
 
 		if ( ! empty( $woo_settings['subject'] ) ) {
@@ -157,7 +162,6 @@ class Tribe__Tickets_Plus__Commerce__WooCommerce__Email extends WC_Email {
 	 * @return string
 	 */
 	public function get_content_html() {
-
 		$wootickets = Tribe__Tickets_Plus__Commerce__WooCommerce__Main::get_instance();
 
 		$attendees = method_exists( $this->object, 'get_id' )

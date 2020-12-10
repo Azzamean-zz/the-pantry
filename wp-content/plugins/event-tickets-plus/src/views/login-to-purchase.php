@@ -5,9 +5,14 @@
  *
  * Override this template in your own theme by creating a file at:
  *
- *     [your-theme]/tribe-events/login-to-purchase.php
+ *     [your-theme]/tribe/tickets-plus/login-to-purchase.php
  *
- * @version 4.7
+ * @link    http://m.tri.be/1amp See more documentation about our views templating system.
+ *
+ * @since 4.7
+ * @since 5.1.0 Updated template link.
+ *
+ * @version 5.1.0
  */
 
 $login_url = Tribe__Tickets__Tickets::get_login_url();

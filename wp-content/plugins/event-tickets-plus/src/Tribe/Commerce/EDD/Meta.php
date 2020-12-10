@@ -41,7 +41,7 @@ class Tribe__Tickets_Plus__Commerce__EDD__Meta {
 		$meta_object = Tribe__Tickets_Plus__Main::instance()->meta();
 
 		// build the custom meta data that will be stored in the order meta
-		if ( ! $order_meta = $meta_object->build_order_meta( $product_ids ) ) {
+		if ( ! $order_meta = $meta_object->build_order_meta( $product_ids, true ) ) {
 			return;
 		}
 
@@ -75,6 +75,21 @@ class Tribe__Tickets_Plus__Commerce__EDD__Meta {
 			return;
 		}
 
-		update_post_meta( $attendee_id, Tribe__Tickets_Plus__Meta::META_KEY, $meta[ $product_id ][ $order_attendee_id ] );
+		$attendee_meta = $meta[ $product_id ][ $order_attendee_id ];
+
+		/**
+		 * Allow filtering the attendee meta to be saved to the attendee.
+		 *
+		 * @since 5.1.0
+		 *
+		 * @param array    $attendee_meta   The attendee meta to be saved to the attendee.
+		 * @param int      $attendee_id     The attendee ID.
+		 * @param int      $order_id        The order ID.
+		 * @param int      $ticket_id       The ticket ID.
+		 * @param int|null $attendee_number The order attendee number.
+		 */
+		$attendee_meta_to_save = apply_filters( 'tribe_tickets_plus_attendee_save_meta', $attendee_meta, $attendee_id, $order_id, $product_id, $order_attendee_id );
+
+		update_post_meta( $attendee_id, Tribe__Tickets_Plus__Meta::META_KEY, $attendee_meta_to_save );
 	}
 }

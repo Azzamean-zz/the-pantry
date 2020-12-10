@@ -1,4 +1,9 @@
 <?php
+/**
+ * WooCommerce cart functionality.
+ */
+
+use Tribe\Tickets\Plus\Attendee_Registration\IAC;
 
 /**
  * WooCommerce cart class
@@ -54,7 +59,7 @@ class Tribe__Tickets_Plus__Commerce__WooCommerce__Cart extends Tribe__Tickets_Pl
 	 */
 	public function detect_cart_quantity_change( $cart_item_key, $quantity, $old_quantity, $cart ) {
 		/** @var \Tribe__Tickets_Plus__Meta $tickets_meta */
-		$tickets_meta    = tribe( 'tickets-plus.main' )->meta();
+		$tickets_meta    = tribe( 'tickets-plus.meta' );
 		$product_id      = $cart->cart_contents[ $cart_item_key ]['product_id'];
 		$ticket_has_meta = $tickets_meta->ticket_has_meta( $product_id );
 
@@ -76,7 +81,7 @@ class Tribe__Tickets_Plus__Commerce__WooCommerce__Cart extends Tribe__Tickets_Pl
 	 */
 	public function remove_meta_for_ticket( $cart_item_key, $cart ) {
 		/** @var \Tribe__Tickets_Plus__Meta $tickets_meta */
-		$tickets_meta    = tribe( 'tickets-plus.main' )->meta();
+		$tickets_meta    = tribe( 'tickets-plus.meta' );
 		$product_id      = $cart->cart_contents[ $cart_item_key ]['product_id'];
 		$ticket_has_meta = $tickets_meta->ticket_has_meta( $product_id );
 
@@ -200,7 +205,7 @@ class Tribe__Tickets_Plus__Commerce__WooCommerce__Cart extends Tribe__Tickets_Pl
 	 * @return string The URL after potentially being modified.
 	 */
 	public function add_provider_to_cart_url( $url = '' ) {
-		_deprecated_function( __METHOD__, 'TBD', '' );
+		_deprecated_function( __METHOD__, '5.0.1', '' );
 
 		if ( empty( $url ) ) {
 			return $url;
@@ -312,6 +317,7 @@ class Tribe__Tickets_Plus__Commerce__WooCommerce__Cart extends Tribe__Tickets_Pl
 
 		$event_key  = $commerce_woo->event_key;
 		$optout_key = $commerce_woo->attendee_optout_key;
+		$iac        = IAC::NONE_KEY;
 
 		foreach ( $contents as $item ) {
 			$ticket_id       = $item['product_id'];
@@ -336,6 +342,7 @@ class Tribe__Tickets_Plus__Commerce__WooCommerce__Cart extends Tribe__Tickets_Pl
 				'quantity'  => $ticket_quantity,
 				'post_id'   => $post_id,
 				'optout'    => $optout,
+				'iac'       => $iac,
 				'provider'  => 'woo',
 			];
 		}

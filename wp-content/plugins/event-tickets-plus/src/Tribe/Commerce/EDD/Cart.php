@@ -1,5 +1,11 @@
 <?php
 /**
+ * Easy Digital Downloads cart functionality.
+ */
+
+use Tribe\Tickets\Plus\Attendee_Registration\IAC;
+
+/**
  * EDD cart class
  *
  * @since 4.9
@@ -79,7 +85,7 @@ class Tribe__Tickets_Plus__Commerce__EDD__Cart extends Tribe__Tickets_Plus__Comm
 	 */
 	public function remove_meta_for_ticket( $cart_item_key ) {
 		/** @var \Tribe__Tickets_Plus__Meta $tickets_meta */
-		$tickets_meta = tribe( 'tickets-plus.main' )->meta();
+		$tickets_meta = tribe( 'tickets-plus.meta' );
 
 		$cart = EDD()->cart;
 
@@ -168,6 +174,7 @@ class Tribe__Tickets_Plus__Commerce__EDD__Cart extends Tribe__Tickets_Plus__Comm
 
 		$event_key  = $commerce_edd->event_key;
 		$optout_key = $commerce_edd->attendee_optout_key;
+		$iac        = IAC::NONE_KEY;
 
 		foreach ( $contents as $item ) {
 			$ticket_id       = $item['id'];
@@ -192,6 +199,7 @@ class Tribe__Tickets_Plus__Commerce__EDD__Cart extends Tribe__Tickets_Plus__Comm
 				'quantity'  => $ticket_quantity,
 				'post_id'   => $post_id,
 				'optout'    => $optout,
+				'iac'       => $iac,
 				'provider'  => 'edd',
 			];
 		}

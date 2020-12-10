@@ -3,8 +3,8 @@
 Contributors: ModernTribe, brianjessee, camwynsp, paulkim, sc0ttkclark, aguseo, barry.hughes, bordoni, borkweb, cliffpaulick, courane01, faction23, GeoffBel, geoffgraham, ggwicz, jbrinley, jentheo, leahkoerper, lucatume, mastromktg, MZAWeb, neillmcshea, nicosantos, patriciahillebrandt, peterchester, reid.peifer, roblagatta, ryancurban, shane.pearlman, tribecari, vicskf, zbtirrell
 Tags: events, WooCommerce, WooTickets, add-on, ticket sales, tickets, calendar, community, registration, api, dates, date, posts, workshop, conference, meeting, seminar, concert, summit, The Events Calendar, Events Calendar PRO, ticket integration, event ticketing, RSVP, EDD, Easy Digital Downloads
 Requires at least: 4.9.14
-Tested up to: 5.5.1
-Stable tag: 5.0.1
+Tested up to: 5.5.3
+Stable tag: 5.1.0.2
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -134,6 +134,27 @@ Our Premium Plugins:
 * <a href="http://m.tri.be/fa" target="_blank">The Events Calendar: Filter Bar</a>
 
 == Changelog ==
+
+= [5.1.0.2] 2020-11-24 =
+
+* Fix - Resolve notices and fatal errors related to `[tribe_tickets]` shortcode, happening since version 5.1.0.
+
+= [5.1.0.1] 2020-11-19 =
+
+* Fix - Require Event Tickets 5.0.3+ for compatibility purposes on certain areas Event Tickets Plus that have direct calls to Event Tickets functionality. [ETP-578]
+
+= [5.1.0] 2020-11-19 =
+
+* Feature - New Individual Attendee Collection functionality now allows for collection of individual names and emails for each attendee for Tribe Commerce, WooCommerce, and Easy Digital Download tickets. You can enable this option per ticket and choose to make the fields optional or required. [ETP-364]
+* Feature - An optional new set of Ticket-specific views have been added that make it easier to customize and require less updating by our team in the future. The new views have greater automated testing coverage to improve long term stability. These views must be enabled in order to make use of the new Individual Attendee Collection feature. [ETP-364]
+* Fix - Hide showing attendee list option in the Community Ticket submission form if Block editor is enabled. [CT-37]
+* Fix - Properly remove temporary meta storage after checkout when optional Attendee Registration field values are all submitted as empty. [ETP-558]
+* Fix - Shared capacity stock changes while updating ticket. [ETP-562]
+* Tweak - Add help section update notice texts for updated directory structure. [ETP-542]
+* Language - 32 new strings added, 68 updated, 0 fuzzied, and 1 obsoleted
+* Tweak - Added filters: `tribe_tickets_plus_attendee_registration_iac_options`, `tribe_tickets_plus_attendee_registration_iac_default_setting_for_all_tickets`, `tribe_tickets_plus_attendee_registration_iac_setting_for_ticket`, `tribe_tickets_plus_attendee_registration_iac_setting_label_for_ticket`, `tribe_tickets_plus_attendee_registration_iac_fields`, `tribe_tickets_plus_attendee_registration_view_ticket_data`, `tribe_tickets_attendee_registration_has_required_meta`, `tribe_tickets_attendee_registration_is_meta_up_to_date`, `tribe_attendee_registration_cart_provider`, `tribe_attendee_registration_form_no_provider_class`, `tribe_attendee_registration_form_classes`, `tribe_attendee_registration_form_class`, `tribe_tickets_attendee_create_individual_name`, `tribe_tickets_plus_attendee_save_meta`, `tribe_tickets_attendee_create_individual_email`, `tribe_tickets_plus_editor_configuration_vars`, `tribe_tickets_plus_meta_field_class`, `tribe_tickets_plus_ticket_has_meta_enabled`, `tribe_tickets_plus_meta_field_pre_value`, `tribe_tickets_plus_meta_field_types_collection`, `tribe_tickets_my_tickets_allow_email_resend_on_attendee_email_update`, `tribe_tickets_plus_show_unlimited_availability`, `tribe_tickets_plus_hide_attendees_list_optout`
+* Tweak - Added actions: `tribe_tickets_plus_after_csv_import_ticket_created`, `tribe_tickets_plus_commerce_paypal_meta_before_save`, `tribe_tickets_plus_meta_contents_up_to_date`, `tribe_tickets_plus_attendee_update`, `tribe_tickets_plus_after_my_tickets_attendee_update`, `tribe_tickets_plus_after_my_tickets_attendee_updates`, `tribe_tickets_registration_content_before_all_events`
+* Tweak - Changed views: `attendees-list`, `eddtickets/tickets`, `login-to-purchase`, `meta`, `meta/birth`, `meta/checkbox`, `meta/datetime`, `meta/email`, `meta/number`, `meta/radio`, `meta/select`, `meta/telephone`, `meta/text`, `meta/url`, `tickets-plus/attendee-list-checkbox-rsvp`, `tickets-plus/attendee-list-checkbox-tickets`, `tickets-plus/email-qr`, `tickets-plus/orders-edit-meta`, `tickets-plus/orders-tickets`, `tpp/attendees-list-optout`, `v2/attendee-registration/button/back-to-cart`, `v2/attendee-registration/button/submit`, `v2/attendee-registration/content`, `v2/attendee-registration/content/attendees/content`, `v2/attendee-registration/content/attendees/error`, `v2/attendee-registration/content/attendees/fields`, `v2/attendee-registration/content/event`, `v2/attendee-registration/content/event/summary`, `v2/attendee-registration/content/event/summary/description`, `v2/attendee-registration/content/event/summary/title`, `v2/attendee-registration/content/notice`, `v2/attendee-registration/content/title`, `v2/attendee-registration/footer`, `v2/attendee-registration/mini-cart`, `v2/attendee-registration/mini-cart/title`, `v2/components/meta/birth`, `v2/components/meta/checkbox`, `v2/components/meta/datetime`, `v2/components/meta/email`, `v2/components/meta/number`, `v2/components/meta/radio`, `v2/components/meta/select`, `v2/components/meta/telephone`, `v2/components/meta/text`, `v2/components/meta/url`, `v2/iac/attendee-registration/email-disclaimer`, `v2/iac/attendee-registration/unique-email-error`, `v2/iac/attendee-registration/unique-name-error`, `v2/iac/my-tickets/resend-email-template`, `v2/modal/attendee-registration`, `v2/modal/attendee-registration/footer`, `v2/modal/attendee-registration/notice/error`, `v2/modal/attendee-registration/notice/non-ar`, `v2/modal/attendee-registration/title`, `v2/modal/cart`, `v2/modal/form`, `v2/modal/item/opt-out`, `v2/modal/item/remove`, `v2/modal/item/total`, `v2/modal/target`, `v2/tickets/commerce/fields`, `v2/tickets/commerce/fields/edd`, `v2/tickets/commerce/fields/woo`, `v2/tickets/submit/button-modal`, `wootickets/tickets`
 
 = [5.0.1] 2020-09-21 =
 

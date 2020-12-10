@@ -149,6 +149,19 @@ class Tribe__Tickets_Plus__Tickets_View {
 					if ( ! empty( $attendee_optout_key ) ) {
 						update_post_meta( $attendee['attendee_id'], $attendee_optout_key, $optout );
 					}
+
+					/**
+					 * Allow hooking into after the attendee data has been updated.
+					 *
+					 * @since 5.1.0
+					 *
+					 * @param int|null                $attendee_id               The attendee ID.
+					 * @param int                     $order_id                  The order ID.
+					 * @param int                     $ticket_id                 The ticket ID.
+					 * @param int                     $post_id                   The ID of the post associated to the ticket.
+					 * @param Tribe__Tickets__Tickets $provider                  The current ticket provider object.
+					 */
+					do_action( 'tribe_tickets_plus_attendee_update', $attendee['attendee_id'], $order_id, $attendee['product_id'], $attendee['event_id'], $provider );
 				}
 			}
 		}
@@ -164,7 +177,7 @@ class Tribe__Tickets_Plus__Tickets_View {
 			$attendee_owner = $this->get_attendee_owner( $attendee_id );
 
 			// Only saves if this user is the owner
-			if ( $user_id != $attendee_owner ) {
+			if ( $user_id !== $attendee_owner ) {
 				continue;
 			}
 
@@ -236,10 +249,23 @@ class Tribe__Tickets_Plus__Tickets_View {
 
 			$values = (array) get_post_meta( $attendee_id, Tribe__Tickets_Plus__Meta::META_KEY, true );
 
+			/**
+			 * Allow filtering the attendee meta to be saved to the attendee.
+			 *
+			 * @since 5.1.0
+			 *
+			 * @param array    $attendee_meta   The attendee meta to be saved to the attendee.
+			 * @param int      $attendee_id     The attendee ID.
+			 * @param int      $order_id        The order ID.
+			 * @param int      $ticket_id       The ticket ID.
+			 * @param int|null $attendee_number The order attendee number.
+			 */
+			$data_to_save = apply_filters( 'tribe_tickets_plus_attendee_save_meta', $data, $attendee_id, $attendee['order_id'], $attendee['product_id'], null );
+
 			// Only write to database if arrays do not match, regardless of the order of keys
-			if ( $data != $values ) {
+			if ( $data_to_save != $values ) {
 				// Updates the meta information associated with individual attendees
-				update_post_meta( $attendee_id, Tribe__Tickets_Plus__Meta::META_KEY, $data );
+				update_post_meta( $attendee_id, Tribe__Tickets_Plus__Meta::META_KEY, $data_to_save );
 
 				/**
 				 * An Action fired when an Attendees Meta Data is Updated.
@@ -250,34 +276,72 @@ class Tribe__Tickets_Plus__Tickets_View {
 				 * @param int   $attendee_id the ID of an attendee.
 				 * @param int   $event_id    the ID of an event.
 				 */
-				do_action( 'event_tickets_plus_attendee_meta_update', $data, $attendee_id, $event_id );
+				do_action( 'event_tickets_plus_attendee_meta_update', $data_to_save, $attendee_id, $event_id );
 			}
+
+			$provider = Tribe__Tickets__Tickets::get_ticket_provider_instance( $attendee['provider'] );
+
+			/**
+			 * Allow hooking into after the attendee update is completed.
+			 *
+			 * @since 5.1.0
+			 *
+			 * @param int|null                $attendee_id  The attendee ID.
+			 * @param array                   $data_to_save The data that was saved.
+			 * @param array                   $data         The data prior to filtering for saving.
+			 * @param int                     $order_id     The order ID.
+			 * @param int                     $ticket_id    The ticket ID.
+			 * @param int                     $post_id      The ID of the post associated to the ticket.
+			 * @param Tribe__Tickets__Tickets $provider     The current ticket provider object.
+			 */
+			do_action( 'tribe_tickets_plus_after_my_tickets_attendee_update', $attendee_id, $data_to_save, $data, $attendee['order_id'], $attendee['product_id'], $event_id, $provider );
 		}
+
+		/**
+		 * Allow hooking into after the attendee updates are all completed.
+		 *
+		 * @since 5.1.0
+		 *
+		 * @param int $post_id The ID of the post associated to the ticket.
+		 */
+		do_action( 'tribe_tickets_plus_after_my_tickets_attendee_updates', $event_id );
 	}
 
 	/**
-	 * Add the template for Editing Meta on an RSVP
-	 * @param array $attendee Attendee information
-	 * @param int $i          Index of the Attendee
+	 * Add the template for Editing Meta on an RSVP.
+	 *
+	 * @param array $attendee The attendee information.
+	 * @param int   $i        The attendee index position.
 	 */
 	public function add_meta_to_rsvp( $attendee, $i ) {
+		/** @var \Tribe\Tickets\Plus\Attendee_Registration\IAC $iac */
+		$iac = tribe( 'tickets-plus.attendee-registration.iac' );
+
 		$args = [
-			'order_id' => $attendee['order_id'],
-			'order'    => $attendee,
-			'attendee' => $attendee,
-			'i'        => $i,
+			'order_id'                    => $attendee['order_id'],
+			'order'                       => $attendee,
+			'attendee'                    => $attendee,
+			'i'                           => $i,
+			'ticket'                      => get_post( $attendee['product_id'] ),
+			'field_slug_for_resend_email' => $iac->get_iac_ticket_field_slug_for_resend_email(),
 		];
+
 		tribe_tickets_get_template_part( 'tickets-plus/orders-edit-meta', null, $args );
 	}
 
 	/**
 	 * Outputs custom attendee meta for RSVP attendee order records
 	 *
-	 * @param array $attendee Attendee data
+	 * @param array $attendee The attendee information.
 	 */
 	public function output_attendee_meta( $attendee ) {
+		/** @var \Tribe\Tickets\Plus\Attendee_Registration\IAC $iac */
+		$iac = tribe( 'tickets-plus.attendee-registration.iac' );
+
 		$args = [
-			'attendee' => $attendee,
+			'attendee'                    => $attendee,
+			'ticket'                      => get_post( $attendee['product_id'] ),
+			'field_slug_for_resend_email' => $iac->get_iac_ticket_field_slug_for_resend_email(),
 		];
 
 		tribe_tickets_get_template_part( 'tickets-plus/orders-edit-meta', null, $args );

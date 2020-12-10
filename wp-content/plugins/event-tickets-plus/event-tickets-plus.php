@@ -3,7 +3,7 @@
 Plugin Name: Event Tickets Plus
 Plugin URI:  http://m.tri.be/1acc
 Description: Event Tickets Plus lets you sell tickets to events, collect custom attendee information, and more! Includes advanced options like shared capacity between tickets, ticket QR codes, and integrations with your favorite ecommerce provider.
-Version: 5.0.1
+Version: 5.1.0.2
 Author: Modern Tribe, Inc.
 Author URI: http://m.tri.be/28
 License: GPLv2 or later
@@ -85,7 +85,12 @@ function tribe_register_event_tickets_plus() {
 		return;
 	}
 
-	tribe_init_tickets_plus_autoloading();
+	$plugin_path = trailingslashit( EVENT_TICKETS_PLUS_DIR );
+
+	require_once $plugin_path . 'src/Tribe/Plugin_Register.php';
+	include_once $plugin_path . 'src/Tribe/PUE/Helper.php';
+	require_once $plugin_path . 'src/Tribe/PUE.php';
+	require_once $plugin_path . 'src/Tribe/Main.php';
 
 	new Tribe__Tickets_Plus__Plugin_Register();
 
@@ -123,10 +128,18 @@ function event_tickets_plus_init() {
 	$plugin_can_run = apply_filters( 'tribe_event_tickets_plus_can_run', $plugin_can_run );
 
 	if ( $plugin_can_run ) {
+		tribe_init_tickets_plus_autoloading();
+
 		tribe( 'tickets-plus.main' )->instance();
 
 		return;
 	}
+
+	// Attempt to avoid fatals in older ET versions.
+	add_action( 'init', static function() {
+		remove_all_filters( 'tribe_events_tickets_attendee_registration_modal_content' );
+		remove_filter( 'tribe_tickets_commerce_paypal_add_to_cart_args', tribe_callback( 'tickets.attendee_registration.meta', 'add_product_delete_to_paypal_url' ), 10, 1 );
+	} );
 
 	// if we have the plugin register the dependency check will handle the messages
 	if ( class_exists( 'Tribe__Abstract_Plugin_Register' ) ) {

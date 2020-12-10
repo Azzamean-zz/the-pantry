@@ -2,15 +2,18 @@
 /**
  * List of Ticket Orders.
  *
- * Override this template in your own theme by creating a file at [your-theme]/tribe-events/tickets-plus/orders-tickets.php
+ * Override this template in your own theme by creating a file at [your-theme]/tribe/tickets-plus/orders-tickets.php
  *
  * @package TribeEventsCalendar
+ *
+ * @link    http://m.tri.be/1amp See more documentation about our views templating system.
  *
  * @since   4.11.2 Use customizable ticket name functions.
  * @since   4.12.1 Account for empty post type object, such as if post type got disabled.
  * @since   4.12.3 Update detecting ticket provider to account for possibly inactive provider.
+ * @since 5.1.0 Updated template link.
  *
- * @version 4.12.3
+ * @version 5.1.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

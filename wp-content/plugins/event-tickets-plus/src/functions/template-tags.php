@@ -30,14 +30,14 @@ if ( ! function_exists( 'tribe_tickets_plus_meta_field_is_required' ) ) {
 	/**
 	 * Check if the AR field is required.
 	 *
-	 * @since5.0.0
+	 * @since 5.0.0
 	 *
 	 * @param object $field The field object.
 	 *
 	 * @return bool True if is required
 	 */
 	function tribe_tickets_plus_meta_field_is_required( $field ) {
-		return isset( $field->required ) && 'on' === $field->required;
+		return $field->is_required();
 	}
 }
 
@@ -45,7 +45,7 @@ if ( ! function_exists( 'tribe_tickets_plus_meta_field_get_attendee_id' ) ) {
 	/**
 	 * Get the attendee ID for the meta field.
 	 *
-	 * @since5.0.0
+	 * @since 5.0.0
 	 *
 	 * @param string|null $attendee_id The attendee ID or null to default to dynamic ID.
 	 *
@@ -64,7 +64,7 @@ if ( ! function_exists( 'tribe_tickets_plus_meta_field_name' ) ) {
 	/**
 	 * Build the AR meta field name.
 	 *
-	 * @since5.0.0
+	 * @since 5.0.0
 	 *
 	 * @param int         $ticket_id   The ticket ID.
 	 * @param string|null $field_slug  The field slug.
@@ -90,7 +90,7 @@ if ( ! function_exists( 'tribe_tickets_plus_meta_field_id' ) ) {
 	/**
 	 * Build the AR field `id`.
 	 *
-	 * @since5.0.0
+	 * @since 5.0.0
 	 *
 	 * @param int         $ticket_id   The ticket ID.
 	 * @param string      $field_slug  The field slug.

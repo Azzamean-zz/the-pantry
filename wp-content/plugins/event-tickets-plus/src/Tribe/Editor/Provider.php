@@ -22,6 +22,7 @@ class Tribe__Tickets_Plus__Editor__Provider extends tad_DI52_ServiceProvider {
 		}
 
 		$this->container->singleton( 'tickets-plus.editor.assets', 'Tribe__Tickets_Plus__Editor__Assets', array( 'register' ) );
+		$this->container->singleton( 'tickets-plus.editor.configuration', \Tribe\Tickets\Plus\Editor\Configuration::class, [ 'hook' ] );
 		$this->hook();
 	}
 
@@ -35,6 +36,7 @@ class Tribe__Tickets_Plus__Editor__Provider extends tad_DI52_ServiceProvider {
 	 */
 	protected function hook() {
 		tribe( 'tickets-plus.editor.assets' );
+		tribe( 'tickets-plus.editor.configuration' );
 	}
 
 	/**

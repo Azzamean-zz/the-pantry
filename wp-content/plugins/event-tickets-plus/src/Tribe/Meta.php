@@ -36,13 +36,7 @@ class Tribe__Tickets_Plus__Meta {
 	 *
 	 */
 	public static function instance() {
-		static $instance;
-
-		if ( ! $instance instanceof self ) {
-			$instance = new self;
-		}
-
-		return $instance;
+		return tribe( 'tickets-plus.meta' );
 	}
 
 	/**
@@ -58,6 +52,13 @@ class Tribe__Tickets_Plus__Meta {
 			$this->path = trailingslashit( $path );
 		}
 
+		/*
+		 * Event Tickets compatibility filters.
+		 *
+		 * Set the tribe_tickets_has_meta_enabled filter to priority 9 for backwards compatible filter usage.
+		 */
+		add_filter( 'tribe_tickets_has_meta_enabled', [ $this, 'filter_ticket_has_meta_enabled' ], 9, 2 );
+		add_filter( 'tribe_tickets_data_ticket_ids_have_meta_fields', [ $this, 'filter_data_ticket_ids_have_meta_fields' ], 10, 2 );
 
 		add_action( 'event_tickets_after_save_ticket', array( $this, 'save_meta' ), 10, 3 );
 
@@ -134,72 +135,80 @@ class Tribe__Tickets_Plus__Meta {
 	}
 
 	/**
-	 * Retrieves custom meta fields for a given ticket
+	 * Get the list of meta field objects for the ticket.
 	 *
-	 * @param int $ticket_id ID of ticket post
-	 * @return array
+	 * @param int $ticket_id The ticket ID.
+	 *
+	 * @return Tribe__Tickets_Plus__Meta__Field__Abstract_Field[] The list of meta field objects for the ticket.
 	 */
 	public function get_meta_fields_by_ticket( $ticket_id ) {
-		$fields = array();
+		$fields = [];
 
 		if ( empty( $ticket_id ) ) {
 			return $fields;
 		}
 
 		$field_meta = get_post_meta( $ticket_id, self::META_KEY, true );
-		$fields     = array();
 
-		if ( $field_meta ) {
-			foreach ( (array) $field_meta as $field ) {
-				if ( empty( $field['type'] ) ) {
-					continue;
-				}
+		if ( empty( $field_meta ) || ! is_array( $field_meta ) ) {
+			$field_meta = [];
+		}
 
-				$field_object = $this->generate_field( $ticket_id, $field['type'], $field );
+		$fields = [];
 
-				if ( ! $field_object ) {
-					continue;
-				}
-
-				$fields[] = $field_object;
+		foreach ( $field_meta as $field ) {
+			if ( empty( $field['type'] ) ) {
+				continue;
 			}
+
+			$field_object = $this->generate_field( $ticket_id, $field['type'], $field );
+
+			if ( ! $field_object ) {
+				continue;
+			}
+
+			$fields[] = $field_object;
 		}
 
 		/**
-		 * Filters the fields for a ticket
+		 * Allow filtering the list of meta fields for a ticket.
 		 *
-		 * @var array $fields array of fields to filter
-		 * @param int $ticket_id ID of ticket post
-		 * @return array $fields the filtered array
+		 * @param Tribe__Tickets_Plus__Meta__Field__Abstract_Field[] $fields    List of meta field objects for the ticket.
+		 * @param int                                                $ticket_id The ticket ID.
 		 */
-		$fields = apply_filters( 'event_tickets_plus_meta_fields_by_ticket', $fields, $ticket_id );
-
-		return $fields;
+		return apply_filters( 'event_tickets_plus_meta_fields_by_ticket', $fields, $ticket_id );
 	}
 
 	/**
-	 * Retrieves the meta fields for all tickets associated with the specified event.
+	 * Get the list of meta field objects for tickets on the post.
 	 *
-	 * @param int $post_id ID of parent "event" post
-	 * @return array
+	 * @param int $post_id The post ID.
+	 *
+	 * @return Tribe__Tickets_Plus__Meta__Field__Abstract_Field[] The list of meta field objects for tickets on the post.
 	 */
 	public function get_meta_fields_by_event( $post_id ) {
-		$fields = array();
+		$fields = [];
 
-		foreach ( Tribe__Tickets__Tickets::get_event_tickets( $post_id ) as $ticket ) {
+		$tickets = Tribe__Tickets__Tickets::get_event_tickets( $post_id );
+
+		foreach ( $tickets as $ticket ) {
 			$meta_fields = $this->get_meta_fields_by_ticket( $ticket->ID );
 
 			if ( is_array( $meta_fields ) && ! empty( $meta_fields ) ) {
-				$fields = array_merge( $fields, $meta_fields );
+				$fields[] = $meta_fields;
 			}
 		}
 
+		// Merge all of the field arrays together.
+		if ( $fields ) {
+			$fields = array_merge( ...$fields );
+		}
+
 		/**
-		 * Returns a list of meta fields in use with various tickets associated with
-		 * a specific event.
+		 * Allow filtering the list of meta fields for tickets on the post.
 		 *
-		 * @var array $fields
-		 * @param int $post_id ID of parent "event" post
+		 * @param Tribe__Tickets_Plus__Meta__Field__Abstract_Field[] $fields  List of meta field objects for tickets on the post.
+		 * @param int                                                $post_id The post ID.
 		 */
 		return apply_filters( 'tribe_tickets_plus_get_meta_fields_by_event', $fields, $post_id );
 	}
@@ -214,7 +223,7 @@ class Tribe__Tickets_Plus__Meta {
 	public function metabox( $unused_post_id, $unused_ticket_id ) {
 		_deprecated_function( __METHOD__, '4.6', 'Tribe__Tickets_Plus__Meta::accordion_content' );
 
-		$this->accordion_content( $unused_post_id, $ticket_id );
+		$this->accordion_content( $unused_post_id, $unused_ticket_id );
 	}
 
 	/**
@@ -232,7 +241,7 @@ class Tribe__Tickets_Plus__Meta {
 			return;
 		}
 
-		$enable_meta = $this->meta_enabled( $ticket_id );
+		$enable_meta = $this->ticket_has_meta( $ticket_id );
 		$active_meta = $this->get_meta_fields_by_ticket( $ticket_id );
 		$templates   = $this->meta_fieldset()->get_fieldsets();
 
@@ -257,7 +266,7 @@ class Tribe__Tickets_Plus__Meta {
 			return;
 		}
 
-		$enable_meta = $this->meta_enabled( $ticket_id );
+		$enable_meta = $this->ticket_has_meta( $ticket_id );
 		$active_meta = $this->get_meta_fields_by_ticket( $ticket_id );
 		$templates   = $this->meta_fieldset()->get_fieldsets();
 
@@ -288,18 +297,14 @@ class Tribe__Tickets_Plus__Meta {
 	/**
 	 * Returns whether or not custom meta is enabled for the given ticket
 	 *
+	 * @deprecated 5.1.0 Use `$meta->ticket_has_meta( $ticket_id )` instead.
+	 *
 	 * @param int $ticket_id ID of ticket post
-	 * @return bool
+	 *
+	 * @return bool Whether a ticket has meta enabeld.
 	 */
 	public function meta_enabled( $ticket_id ) {
-		$meta_enabled = get_post_meta( $ticket_id, self::ENABLE_META_KEY, true );
-
-		return (
-			'true' === strtolower( $meta_enabled )
-			|| 'yes' === strtolower( $meta_enabled )
-			|| true === strtolower( $meta_enabled )
-			|| 1 == strtolower( $meta_enabled )
-		);
+		return $this->ticket_has_meta( $ticket_id );
 	}
 
 	/**
@@ -450,15 +455,28 @@ class Tribe__Tickets_Plus__Meta {
 	/**
 	 * Generates a field object
 	 *
-	 * @since 4.1
+	 * @since 4.1 Method introduced.
+	 * @since 5.1.0 Added support for filtering the field class.
 	 *
-	 * @param int $ticket_id ID of ticket post the field is attached to
-	 * @param string $type Type of field being generated
-	 * @param array $data Field settings for the field
+	 * @param int    $ticket_id ID of ticket post the field is attached to.
+	 * @param string $type      Type of field being generated.
+	 * @param array  $data      Field settings for the field.
+	 *
 	 * @return Tribe__Tickets_Plus__Meta__Field__Abstract_Field child class
 	 */
 	public function generate_field( $ticket_id, $type, $data = array() ) {
 		$class = 'Tribe__Tickets_Plus__Meta__Field__' . ucwords( $type );
+
+		/**
+		 * Allow filtering the field class used so custom field classes can be supported.
+		 *
+		 * @since 5.1.0
+		 *
+		 * @param string $class Class name to use for the field.
+		 * @param string $type  Type of field being generated.
+		 * @param array  $data  Field settings for the field.
+		 */
+		$class = apply_filters( 'tribe_tickets_plus_meta_field_class', $class, $type, $data );
 
 		if ( ! class_exists( $class ) ) {
 			return null;
@@ -468,38 +486,85 @@ class Tribe__Tickets_Plus__Meta {
 	}
 
 	/**
+	 * Generates a field objects for a list of fields.
+	 *
+	 * @since 5.1.0
+	 *
+	 * @param int   $ticket_id ID of ticket post the field is attached to.
+	 * @param array $fields    List of field configurations.
+	 *
+	 * @return Tribe__Tickets_Plus__Meta__Field__Abstract_Field[] List of field objects.
+	 */
+	public function generate_fields( $ticket_id, $fields ) {
+		$field_objects = [];
+
+		foreach ( $fields as $field ) {
+			// Check if we already have a field object.
+			if ( $field instanceof Tribe__Tickets_Plus__Meta__Field__Abstract_Field ) {
+				$field_objects[] = $field;
+
+				continue;
+			}
+
+			// Check if we have the required type.
+			if ( empty( $field['type'] ) ) {
+				continue;
+			}
+
+			// Set up the object.
+			$field_object = $this->generate_field( $ticket_id, $field['type'], $field );
+
+			// Skip if the field object class was not found / set up properly.
+			if ( ! $field_object instanceof Tribe__Tickets_Plus__Meta__Field__Abstract_Field ) {
+				continue;
+			}
+
+			$field_objects[] = $field_object;
+		}
+
+		return $field_objects;
+	}
+
+	/**
 	 * Retrieves custom meta data from the cookie
 	 *
 	 * @since 4.1
 	 *
-	 * @param int $product_id Commerce provider product ID
-	 * @return array
+	 * @param int  $product_id    Commerce provider product ID.
+	 * @param bool $include_empty Whether to include empty values.
+	 *
+	 * @return array Custom meta data from the cookie.
 	 */
-	public function get_meta_cookie_data( $product_id ) {
+	public function get_meta_cookie_data( $product_id, $include_empty = false ) {
 		$meta_data = $this->storage->get_meta_data_for( $product_id );
-		$meta_data = $this->storage->remove_empty_values_recursive( $meta_data );
+
+		if ( ! $include_empty ) {
+			$meta_data = $this->storage->remove_empty_values_recursive( $meta_data );
+		}
 
 		return $meta_data;
 	}
 
 	/**
-	 * Builds the meta data structure for storage in orders
+	 * Builds the meta data structure for storage in orders.
 	 *
 	 * @since 4.1
 	 *
-	 * @param array $product_ids Collection of Product IDs in an order
-	 * @return array
+	 * @param array $product_ids   Collection of Product IDs in an order.
+	 * @param bool  $include_empty Whether to include empty values.
+	 *
+	 * @return array The meta data for an order.
 	 */
-	public function build_order_meta( $product_ids ) {
+	public function build_order_meta( $product_ids, $include_empty = false ) {
 		if ( ! $product_ids ) {
 			return array();
 		}
 
 		$meta_object = Tribe__Tickets_Plus__Main::instance()->meta();
-		$meta = array();
+		$meta        = [];
 
 		foreach ( $product_ids as $product_id ) {
-			$data = $meta_object->get_meta_cookie_data( $product_id );
+			$data = $meta_object->get_meta_cookie_data( $product_id, $include_empty );
 
 			if ( ! $data ) {
 				continue;
@@ -518,10 +583,6 @@ class Tribe__Tickets_Plus__Meta {
 
 				$meta[ $id ] = array_merge_recursive( $meta[ $id ], $the_meta );
 			}
-		}
-
-		if ( empty( $meta ) ) {
-			return array();
 		}
 
 		return $meta;
@@ -584,8 +645,8 @@ class Tribe__Tickets_Plus__Meta {
 			return false;
 		}
 
- 		// Bail if we receive an empty array
- 		if ( empty( $cart_tickets ) ) {
+		// Bail if we receive an empty array.
+		if ( empty( $cart_tickets ) ) {
 			return false;
 		}
 
@@ -642,18 +703,76 @@ class Tribe__Tickets_Plus__Meta {
 	}
 
 	/**
-	 * See if a ticket has meta
+	 * Determine whether the ticket object has ticket has meta enabled.
+	 *
+	 * @since 5.1.0
+	 *
+	 * @param bool $has_meta  Whether the ticket has meta enabled.
+	 * @param int  $ticket_id The ticket ID.
+	 *
+	 * @return bool Whether the ticket has meta enabled.
+	 */
+	public function filter_ticket_has_meta_enabled( $has_meta, $ticket_id ) {
+		// Allow other filters to override first.
+		if ( $has_meta ) {
+			return $has_meta;
+		}
+
+		return $this->ticket_has_meta( $ticket_id );
+	}
+
+	/**
+	 * Determine whether any of the ticket IDs have meta enabled and have fields.
+	 *
+	 * @since 5.1.0
+	 *
+	 * @param bool  $tickets_have_meta_fields Whether the ticket IDs have meta fields.
+	 * @param array $ticket_ids               The ticket IDs.
+	 *
+	 * @return bool Whether any the tickets have meta enabled and have fields.
+	 */
+	public function filter_data_ticket_ids_have_meta_fields( $tickets_have_meta_fields, $ticket_ids ) {
+		foreach ( $ticket_ids as $ticket_id ) {
+			$meta_enabled = $this->ticket_has_meta( $ticket_id );
+
+			if ( ! $meta_enabled ) {
+				continue;
+			}
+
+			$meta_fields = $this->get_meta_fields_by_ticket( $ticket_id );
+
+			if ( empty( $meta_fields ) ) {
+				continue;
+			}
+
+			return true;
+		}
+
+		return false;
+	}
+
+	/**
+	 * Determine whether the ticket has ticket has meta enabled.
 	 *
 	 * @since 4.10.1
 	 *
-	 * @param int $ticket_id
+	 * @param int $ticket_id The ticket ID.
 	 *
-	 * @return bool
+	 * @return bool Whether the ticket has meta enabled.
 	 */
 	public function ticket_has_meta( $ticket_id ) {
 		$has_meta = get_post_meta( $ticket_id, self::ENABLE_META_KEY, true );
+		$has_meta = ! empty( $has_meta ) && tribe_is_truthy( $has_meta );
 
-		return ! empty( $has_meta ) && tribe_is_truthy( $has_meta );
+		/**
+		 * Filters whether the ticket has meta or not.
+		 *
+		 * @since 5.1.0
+		 *
+		 * @param bool $has_meta  Whether the ticket has meta enabled.
+		 * @param int  $ticket_id The ticket ID.
+		 */
+		return (bool) apply_filters( 'tribe_tickets_plus_ticket_has_meta_enabled', $has_meta, $ticket_id );
 	}
 
 	/**
@@ -676,45 +795,49 @@ class Tribe__Tickets_Plus__Meta {
 	}
 
 	/**
-	 * Checks if a ticket has required meta
+	 * Checks if a ticket has required meta.
 	 *
 	 * @since 4.9
 	 *
-	 * @param int    $ticket_id
-	 * @param string $slug
+	 * @param int $ticket_id The ticket ID.
+	 *
+	 * @return bool Whether the ticket has required meta.
 	 */
 	public function meta_has_required_fields( $ticket_id ) {
- 		// Get the meta fields for this ticket
+		// Get the meta fields for this ticket.
 		$ticket_meta = $this->get_meta_fields_by_ticket( $ticket_id );
- 		foreach ( $ticket_meta as $meta ) {
+
+		foreach ( $ticket_meta as $meta ) {
+			// If any meta is required, return true right away.
 			if ( 'on' === $meta->required ) {
 				return true;
 			}
 		}
- 		return false;
+
+		return false;
 	}
 
 	/**
-	 * Checks if the meta field is required, by slug, for a ticket
+	 * Checks if the meta field is required by slug, for a specific ticket.
 	 *
 	 * @since 4.9
 	 *
-	 * @param int    $ticket_id
-	 * @param string $slug
+	 * @param int    $ticket_id The ticket ID.
+	 * @param string $slug      Meta field slug.
+	 *
+	 * @return bool Whether the ticket meta field has required meta.
 	 */
 	public function meta_is_required( $ticket_id, $slug ) {
-
-		// Get the meta fields for this ticket
+		// Get the meta fields for this ticket.
 		$ticket_meta = $this->get_meta_fields_by_ticket( $ticket_id );
 
 		foreach ( $ticket_meta as $meta ) {
-
-			// Bail if the slug is different from the one we want to check
+			// Skip if the slug is different from the one we want to check.
 			if ( $slug !== $meta->slug ) {
 				continue;
 			}
 
-			// Get the value and get out of the loop
+			// Get the value and get out of the loop.
 			return ( 'on' === $meta->required );
 		}
 
@@ -975,5 +1098,39 @@ class Tribe__Tickets_Plus__Meta {
 
 		// Maybe set attendee meta cookie and handle saving of meta.
 		$this->storage->maybe_set_attendee_meta_cookie( $ticket_meta, $provider );
+	}
+
+	/**
+	 * Get the meta field value from field value key for the attendee.
+	 *
+	 * @since 5.1.0
+	 *
+	 * @param string   $key             The meta field value key.
+	 * @param int      $ticket_id       The ticket ID.
+	 * @param int|null $attendee_number The attendee number index value from the order, starting with zero.
+	 * @param int      $order_id        The order ID.
+	 *
+	 * @return string|null The meta field value from field value key for the attendee.
+	 */
+	public function get_meta_field_value_from_key_for_attendee( $key, $ticket_id, $attendee_number, $order_id ) {
+		// Require a ticket and order ID and attendee number.
+		if ( ! $ticket_id || ! $order_id || null === $attendee_number ) {
+			return null;
+		}
+
+		// Attempt to get the value from the POSTed information.
+		if ( ! empty( $_POST['tribe-tickets-meta'][ $attendee_number ][ $key ] ) ) {
+			return $_POST['tribe-tickets-meta'][ $attendee_number ][ $key ];
+		}
+
+		// Get saved meta field values from the order meta key.
+		$meta = get_post_meta( $order_id, self::META_KEY, true );
+
+		// Check if the ticket is in the saved meta field values.
+		if ( ! is_array( $meta ) || ! isset( $meta[ $ticket_id ][ $attendee_number ][ $key ] ) ) {
+			return null;
+		}
+
+		return $meta[ $ticket_id ][ $attendee_number ][ $key ];
 	}
 }

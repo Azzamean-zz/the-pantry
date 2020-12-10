@@ -4,15 +4,18 @@
  *
  * Override this template in your own theme by creating a file at:
  *
- *     [your-theme]/tribe-events/meta/birth.php
+ *     [your-theme]/tribe/tickets-plus/meta/birth.php
+ *
+ * @link    http://m.tri.be/1amp See more documentation about our views templating system.
  *
  * @deprecated 4.12.3 Replaced by event-tickets/src/views/registration-js/attendees/fields/birth.php.
  *
- * @version5.0.0
- *
  * @since 4.12.1 Introduced template.
  * @since 4.12.3 Add a separate label per input for screen readers.
- * @since5.0.0 Set proper text domain.
+ * @since 5.0.0 Set proper text domain.
+ * @since 5.1.0 Updated template link.
+ *
+ * @version 5.1.0
  *
  * @var Tribe__Tickets_Plus__Meta__Field__Birth $this
  */

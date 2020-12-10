@@ -13,6 +13,15 @@ class Tribe__Tickets_Plus__Commerce__PayPal__Meta extends Tribe__Tickets_Plus__M
 	protected $meta_id;
 
 	/**
+	 * The current order attendee ID.
+	 *
+	 * @since 5.1.0
+	 *
+	 * @var int
+	 */
+	protected $order_attendee_id;
+
+	/**
 	 * @var array
 	 */
 	protected $ticket_meta = array();
@@ -182,7 +191,33 @@ class Tribe__Tickets_Plus__Commerce__PayPal__Meta extends Tribe__Tickets_Plus__M
 			return;
 		}
 
-		update_post_meta( $attendee_id, Tribe__Tickets_Plus__Meta::META_KEY, $attendee_meta );
+		/**
+		 * Allow hooking into the process before we filter and save the attendee meta information.
+		 *
+		 * @since 5.1.0
+		 *
+		 * @param array    $attendee_meta   The attendee meta to be saved to the attendee.
+		 * @param int      $attendee_id     The attendee ID.
+		 * @param int      $order_id        The order ID.
+		 * @param int      $ticket_id       The ticket ID.
+		 * @param int|null $attendee_number The order attendee number.
+		 */
+		do_action( 'tribe_tickets_plus_commerce_paypal_meta_before_save', $attendee_meta, $attendee_id, $order_id, $product_id, $this->order_attendee_id );
+
+		/**
+		 * Allow filtering the attendee meta to be saved to the attendee.
+		 *
+		 * @since 5.1.0
+		 *
+		 * @param array    $attendee_meta   The attendee meta to be saved to the attendee.
+		 * @param int      $attendee_id     The attendee ID.
+		 * @param int      $order_id        The order ID.
+		 * @param int      $ticket_id       The ticket ID.
+		 * @param int|null $attendee_number The order attendee number.
+		 */
+		$attendee_meta_to_save = apply_filters( 'tribe_tickets_plus_attendee_save_meta', $attendee_meta, $attendee_id, $order_id, $product_id, $this->order_attendee_id );
+
+		update_post_meta( $attendee_id, Tribe__Tickets_Plus__Meta::META_KEY, $attendee_meta_to_save );
 	}
 
 	/**
@@ -267,6 +302,12 @@ class Tribe__Tickets_Plus__Commerce__PayPal__Meta extends Tribe__Tickets_Plus__M
 		$first = is_array( $first ) ? $first : array();
 
 		$this->ticket_meta[ $product_id ] = $all_ticket_attendee_meta;
+
+		if ( null === $this->order_attendee_id ) {
+			$this->order_attendee_id = 0;
+		} else {
+			$this->order_attendee_id ++;
+		}
 
 		return $first;
 	}

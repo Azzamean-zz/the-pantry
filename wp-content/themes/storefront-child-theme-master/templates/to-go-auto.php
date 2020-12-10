@@ -63,7 +63,6 @@ get_header(); ?>
 					<?php the_post_thumbnail( 'medium','style=max-width:100%;height:auto;');?>
 					<div class="so-text">Sold Out</div>	
 					<h3><?php echo get_field('title'); ?></h3>	
-					<p><?php get_field('new_date');?></p>	
 				</a>
 			<?php
 

@@ -1,4 +1,13 @@
 <?php
+
+/** @var \Tribe__Editor $editor */
+$editor = tribe( 'editor' );
+
+// Don't show this setting if block editor is active.
+if ( $editor->is_events_using_blocks() ) {
+	return;
+}
+
 $post_id = get_the_ID();
 
 // Get value from metadata
