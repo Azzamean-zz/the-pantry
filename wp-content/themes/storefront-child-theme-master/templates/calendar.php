@@ -78,7 +78,7 @@ $first_day = $first_day->format('Y-m-d');
 					$end = DateTime::createFromFormat('m/d/Y g:i a', get_field('end_date', $post->ID));
 					$title = str_replace("&#8211;", "-", get_the_title($post->ID));
 					$title = substr($title, strpos($title, "-") + 1);
-					
+// 					$link = get_the_permalink();
 					$unixstart = strtotime(get_field('start_date', $post->ID));
 					$unixtoday = strtotime('today UTC+8');
 					

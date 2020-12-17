@@ -5,6 +5,15 @@
  */
 
 get_header(); ?>
+
+<?php 
+if(isset($_GET['month'])) {
+	$month = $_GET['month'];
+} else {
+	$month = date('m');
+}
+?>
+
 <style>
 	body {
 		background: none !important;
@@ -17,23 +26,57 @@ get_header(); ?>
 <div class="big-container">
 
 	<?php
+		
+	$tz = 'America/Los_Angeles';
+	$today = new DateTime('now', new DateTimeZone($tz));
+	
+	$thisMonth = new DateTime('now', new DateTimeZone($tz));
+	$nextMonth = new DateTime('first day of +1 month', new DateTimeZone($tz));
+	
+	$first_day = new DateTime('first day of this month', new DateTimeZone($tz));
+	$first_day = $first_day->format('Y-' . $month . '-d H:i:s');
+	
+	$last_day = new DateTime('last day of this month', new DateTimeZone($tz));
+	$last_day = $last_day->format('Y-' . $month . '-d H:i:s');
+	
 	$args = array(
 	    'post_type' => 'ticket-page',
-	    'posts_per_page' => 10,
-	    'meta_key' => 'start_date',
-        'orderby' => 'meta_value_num',
-        'order' => 'DESC',
+	    'posts_per_page' => 5,
+	    'order'          => 'ASC',
+	    'orderby'        => 'meta_value',
+	    'meta_key'       => 'start_date',
+	    'meta_type'      => 'DATETIME',
+	    'meta_query' => array(
+	        array(
+	            'key'     => 'start_date',
+	            'compare' => '>=',
+	            'value'   => $first_day,
+	            'type'    => 'DATETIME',
+	        ),
+	         array(
+	            'key'     => 'start_date',
+	            'compare' => '<=',
+	            'value'   => $last_day,
+	            'type'    => 'DATETIME',
+	        )
+	    ),
 	);
+	
+/*
+	echo '<pre>';
+	print_r($args);
+	echo '</pre>';
+*/
 	
 	$query = new WP_Query($args);
     if ( $query->have_posts() ) {
 	?>
-	
+		
 	<div class="clearfix"></div>	
 	
 	<div class="filter-boxes">
 		<label><input type="checkbox" name="attendee" checked="checked"> Ticket Name</label>	
-		<label><input type="checkbox" name="purchaser" checked="checked"> Attendees</label>	
+		<label><input type="checkbox" name="purchaser" checked="checked"> Available</label>	
 	</div>	
 	
 	<table id="attendee-table" class="tablesorter">
@@ -51,6 +94,11 @@ get_header(); ?>
 			$tids = tribe_get_woo_tickets_ids($ticket_id);
 
 			$tickets_handler = tribe( 'tickets.handler' );
+			$totals = Tribe__Tickets__Tickets::get_all_event_tickets( $ticket_id );
+			
+			echo '<pre>';
+			print_r($totals);
+			echo '</pre>';
 			?>
 				
 			<tr>
