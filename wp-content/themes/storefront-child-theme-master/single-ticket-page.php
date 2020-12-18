@@ -88,18 +88,7 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php
-function yourprefix_add_to_content( $content ) { 
-	$start = get_field('start_date');				
-// 	$start = date('F d, Y', strtotime("-48 hours", $start));
-	
-	$start = (new DateTime($start))->modify('-48 hours')->format('F d, Y');
-	
-    if( is_singular('ticket-page') ) {
-        $content .= '<h3 style="margin-bottom:30px;">Note: Ingredient Kit are available up until 2 days prior the class date</h3>';
-    }
-    return $content;
-}
+<?php	
 
 do_action( 'storefront_sidebar' );
 get_footer();

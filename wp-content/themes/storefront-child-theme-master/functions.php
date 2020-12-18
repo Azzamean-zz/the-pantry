@@ -836,10 +836,19 @@ function get_qty_available($id) {
 
 add_filter('woocommerce_checkout_get_value','__return_empty_string',10);
  
+function yourprefix_add_to_content($content) { 
+	$start = get_field('start_date');					
+	$start = (new DateTime($start))->modify('-48 hours')->format('F d, Y');
+	
+    if( is_singular('ticket-page') ) {
+        $content .= '<h3 style="margin-bottom:30px;">Note: Ingredient Kit are available up until 2 days prior the class date</h3>';
+    }
+    return $content;
+}
+
+add_filter( 'the_content', 'yourprefix_add_to_content' );		
+ 
  /**
  * Remove related products output
  */
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
-
-
-add_filter( 'the_content', 'yourprefix_add_to_content' );	
