@@ -3,8 +3,8 @@
 Contributors: ModernTribe, brianjessee, camwynsp, paulkim, sc0ttkclark, aguseo, barry.hughes, bordoni, borkweb, cliffpaulick, courane01, faction23, GeoffBel, geoffgraham, ggwicz, jbrinley, jentheo, leahkoerper, lucatume, mastromktg, MZAWeb, neillmcshea, nicosantos, patriciahillebrandt, peterchester, reid.peifer, roblagatta, ryancurban, shane.pearlman, tribecari, vicskf, zbtirrell
 Tags: events, WooCommerce, WooTickets, add-on, ticket sales, tickets, calendar, community, registration, api, dates, date, posts, workshop, conference, meeting, seminar, concert, summit, The Events Calendar, Events Calendar PRO, ticket integration, event ticketing, RSVP, EDD, Easy Digital Downloads
 Requires at least: 4.9.14
-Tested up to: 5.5.3
-Stable tag: 5.1.0.2
+Tested up to: 5.6.0
+Stable tag: 5.1.1
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -134,6 +134,18 @@ Our Premium Plugins:
 * <a href="http://m.tri.be/fa" target="_blank">The Events Calendar: Filter Bar</a>
 
 == Changelog ==
+
+= [5.1.1] 2020-12-15 =
+
+* Feature - V2 Customizer - Add background color css overrides. [ETP-556]
+* Feature - V2 Customizer - Add Event Title color css overrides. [ETP-576]
+* Feature - V2 Customizer - Add Event Date & Time color css overrides. [ETP-575]
+* Fix - Resolve a potential fatal error when saving a page using the Block Editor that contains the Attendee Registration Page shortcode. [ETP-598]
+* Fix - Resolve PHP notices on the Attendee Registration Page from WooCommerce and Easy Digital Commerce ticket details when multiple Commerce Providers may be available. [ETP-599]
+* Tweak - Added support for placeholders on the new Meta Field views (v2/components/meta/*.php) and make use of them in Individual Attendee Collection to show "Optional" text when collection is optional. [ETP-577]
+* Tweak - Moved ticket editor warnings to Event Tickets. [ET-947]
+* Tweak - Add opaque backgrounds for selected bordered elements. [ETP-579]
+* Language - 1 new strings added, 8 updated, 0 fuzzied, and 3 obsoleted
 
 = [5.1.0.2] 2020-11-24 =
 

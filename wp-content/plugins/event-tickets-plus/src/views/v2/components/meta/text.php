@@ -9,8 +9,9 @@
  *
  * @since 5.0.0
  * @since 5.1.0 Added support for div HTML attributes.
+ * @since 5.1.1 Added support for placeholders.
  *
- * @version 5.1.0
+ * @version 5.1.1
  *
  * @var string $field_name The meta field name.
  * @var string $field_id The meta field id.
@@ -18,6 +19,9 @@
  * @var string|int $attendee_id The attendee ID, to build the ID/name.
  * @var array $classes Array containing the CSS classes for the field.
  * @var array $attributes Array containing the HTML attributes for the field.
+ * @var string $placeholder The field placeholder text.
+ * @var bool $disabled Field is disabled or not.
+ * @var string $value Value for field.
  * @var Tribe__Tickets__Ticket_Object $ticket The ticket object.
  * @var Tribe__Tickets_Plus__Meta__Field__Text $field.
  *
@@ -40,6 +44,7 @@ $multiline = Tribe__Utils__Array::get( $field, [ 'extra', 'multiline' ], null );
 				id="<?php echo esc_attr( $field_id ); ?>"
 				class="tribe-common-form-control-text__input tribe-tickets__form-field-input"
 				name="<?php echo esc_attr( $field_name ); ?>"
+				placeholder="<?php echo esc_attr( $placeholder ); ?>"
 				<?php tribe_required( $required ); ?>
 				<?php tribe_disabled( $disabled ); ?>
 			><?php echo esc_textarea( $value ); ?></textarea>
@@ -50,6 +55,7 @@ $multiline = Tribe__Utils__Array::get( $field, [ 'extra', 'multiline' ], null );
 				class="tribe-common-form-control-text__input tribe-tickets__form-field-input"
 				name="<?php echo esc_attr( $field_name ); ?>"
 				value="<?php echo esc_attr( $value ); ?>"
+				placeholder="<?php echo esc_attr( $placeholder ); ?>"
 				<?php tribe_required( $required ); ?>
 				<?php tribe_disabled( $disabled ); ?>
 			/>

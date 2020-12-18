@@ -144,9 +144,14 @@ class Tribe__Tickets_Plus__Commerce__EDD__Cart extends Tribe__Tickets_Plus__Comm
 		if ( ! empty( $provider ) && ! in_array( $provider, $providers, true ) ) {
 			return $tickets;
 		}
+
 		$commerce_tickets = $this->commerce_get_tickets_in_cart( $tickets );
 
 		foreach ( $commerce_tickets as $ticket ) {
+			if ( ! is_array( $ticket ) ) {
+				continue;
+			}
+
 			$tickets[ $ticket['ticket_id'] ] = $ticket['quantity'];
 		}
 

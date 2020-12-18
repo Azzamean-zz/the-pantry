@@ -409,6 +409,10 @@ body.page-tribe-attendee-registration .entry-content,
 		width: 98%;
 	}
 
+body.page-tribe-attendee-registration .tribe-tickets__registration {
+		padding: 0 20px;
+	}
+
 /* -----------------------------------------------------------------------------
 	 * Hide from screenreaders & browsers
 	 * ----------------------------------------------------------------------------- */
@@ -704,7 +708,7 @@ body.page-tribe-attendee-registration.tribe-theme-twentyseventeen .tribe-common 
 
 body.page-tribe-attendee-registration.tribe-theme-twentytwenty .entry-content .tribe-tickets__registration {
 			max-width: 960px !important;
-		 }
+		}
 
 /* Theme overrides */
 

@@ -394,6 +394,7 @@
 	}
 
 .event-tickets .tribe-tickets__attendee-tickets-item, .entry .entry-content .event-tickets .tribe-tickets__attendee-tickets-item {
+		background-color: #fff;
 		border: solid #e4e4e4;
 		border-width: 1px 1px 1px 4px;
 		clear: both;

@@ -266,14 +266,16 @@ class IAC {
 		$is_iac_required = self::REQUIRED_KEY === $ticket_iac_setting;
 
 		$field_required = $is_iac_required ? 'on' : '';
+		$placeholder    = $is_iac_allowed ? __( 'Optional', 'event-tickets-plus' ) : '';
 
 		$name_field = [
-			'id'       => 0,
-			'type'     => 'text',
-			'label'    => __( 'Name', 'event-tickets-plus' ),
-			'slug'     => $this->get_iac_ticket_field_slug_for_name(),
-			'required' => $field_required,
-			'classes'  => [
+			'id'          => 0,
+			'type'        => 'text',
+			'label'       => __( 'Name', 'event-tickets-plus' ),
+			'placeholder' => $placeholder,
+			'slug'        => $this->get_iac_ticket_field_slug_for_name(),
+			'required'    => $field_required,
+			'classes'     => [
 				'tribe-tickets__iac-field',
 				'tribe-tickets__iac-field--name',
 				'tribe-tickets__form-field--unique' => $is_iac_required,
@@ -281,17 +283,18 @@ class IAC {
 		];
 
 		$email_field = [
-			'id'       => 0,
-			'type'     => 'email',
-			'label'    => __( 'Email', 'event-tickets-plus' ),
-			'slug'     => $this->get_iac_ticket_field_slug_for_email(),
-			'required' => $field_required,
-			'classes'  => [
+			'id'          => 0,
+			'type'        => 'email',
+			'label'       => __( 'Email', 'event-tickets-plus' ),
+			'placeholder' => $placeholder,
+			'slug'        => $this->get_iac_ticket_field_slug_for_email(),
+			'required'    => $field_required,
+			'classes'     => [
 				'tribe-tickets__iac-field',
 				'tribe-tickets__iac-field--email',
 				'tribe-tickets__form-field--unique' => $is_iac_required,
 			],
-			'extra'    => [
+			'extra'       => [
 				'attributes' => [
 					'data-resend-limit-reached' => '0',
 				],

@@ -2,28 +2,28 @@
 # This file is distributed under the same license as the Event Tickets Plus package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Event Tickets Plus 5.1.0\n"
+"Project-Id-Version: Event Tickets Plus 5.1.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/event-tickets-"
 "plus\n"
-"POT-Creation-Date: 2020-11-17 16:56:09+00:00\n"
+"POT-Creation-Date: 2020-12-11 06:25:49+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2020-11-17 16:56\n"
+"PO-Revision-Date: 2020-12-11 06:25\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 
-#. #-#-#-#-#  event-tickets-plus.pot (Event Tickets Plus 5.1.0)  #-#-#-#-#
+#. #-#-#-#-#  event-tickets-plus.pot (Event Tickets Plus 5.1.1)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
-#: event-tickets-plus.php:57 src/Tribe/Main.php:416
+#: event-tickets-plus.php:57 src/Tribe/Main.php:423
 msgid "Event Tickets Plus"
 msgstr ""
 
-#: event-tickets-plus.php:215
+#: event-tickets-plus.php:228
 msgid "Event Tickets"
 msgstr ""
 
-#: event-tickets-plus.php:220
+#: event-tickets-plus.php:233
 msgid ""
 "To begin using Event Tickets Plus, please install and activate the latest "
 "version of %1$s%2$s%3$s and ensure its own requirements have been met."
@@ -103,11 +103,15 @@ msgctxt "Individual Attendee Collection setting choice"
 msgid "Require Individual Attendee Collection"
 msgstr ""
 
-#: src/Tribe/Attendee_Registration/IAC.php:273
+#: src/Tribe/Attendee_Registration/IAC.php:269
+msgid "Optional"
+msgstr ""
+
+#: src/Tribe/Attendee_Registration/IAC.php:274
 msgid "Name"
 msgstr ""
 
-#: src/Tribe/Attendee_Registration/IAC.php:286
+#: src/Tribe/Attendee_Registration/IAC.php:288
 #: src/Tribe/Commerce/EDD/Orders/Table.php:128
 #: src/Tribe/Commerce/WooCommerce/Orders/Table.php:120
 msgid "Email"
@@ -362,22 +366,6 @@ msgid ""
 "of <a href=\"%s\" class=\"thickbox\" title=\"%s\">%s</a>."
 msgstr ""
 
-#: src/Tribe/Commerce/Warnings.php:44
-msgid "Warning"
-msgstr ""
-
-#: src/Tribe/Commerce/Warnings.php:51
-msgid "Hide Warning"
-msgstr ""
-
-#: src/Tribe/Commerce/Warnings.php:74
-msgid ""
-"This is a recurring event. If you add tickets they will only show up on the "
-"next upcoming event in the recurrence pattern. The same ticket form will "
-"appear across all events in the series. Please configure your events "
-"accordingly."
-msgstr ""
-
 #. Translators: dynamic 'tickets' text.
 #: src/Tribe/Commerce/WooCommerce/Email.php:31
 msgid ""
@@ -528,11 +516,11 @@ msgstr ""
 msgid "As soon as an order is created"
 msgstr ""
 
-#: src/Tribe/Main.php:422
+#: src/Tribe/Main.php:429
 msgid "Event Tickets Plus - Legacy"
 msgstr ""
 
-#: src/Tribe/Main.php:529
+#: src/Tribe/Main.php:536
 msgid "Require users to log in before they purchase tickets"
 msgstr ""
 
@@ -541,7 +529,7 @@ msgid "Checked"
 msgstr ""
 
 #. translators: %s: The field ID.
-#: src/Tribe/Meta/Field/Abstract_Field.php:126
+#: src/Tribe/Meta/Field/Abstract_Field.php:168
 msgid "Field %s"
 msgstr ""
 

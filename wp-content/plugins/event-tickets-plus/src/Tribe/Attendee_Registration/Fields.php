@@ -70,14 +70,15 @@ class Fields {
 
 		foreach ( $fields as $field ) {
 			$context = [
-				'field'      => $field,
-				'value'      => null,
-				'field_name' => tribe_tickets_plus_meta_field_name( $ticket->ID, $field->slug, $attendee_id ),
-				'field_id'   => tribe_tickets_plus_meta_field_id( $ticket->ID, $field->slug, '', $attendee_id ),
-				'required'   => $field->is_required(),
-				'disabled'   => $field->is_restricted( $attendee_id ),
-				'classes'    => $field->get_css_classes(),
-				'attributes' => $field->get_attributes(),
+				'field'       => $field,
+				'value'       => null,
+				'field_name'  => tribe_tickets_plus_meta_field_name( $ticket->ID, $field->slug, $attendee_id ),
+				'field_id'    => tribe_tickets_plus_meta_field_id( $ticket->ID, $field->slug, '', $attendee_id ),
+				'required'    => $field->is_required(),
+				'disabled'    => $field->is_restricted( $attendee_id ),
+				'classes'     => $field->get_css_classes(),
+				'attributes'  => $field->get_attributes(),
+				'placeholder' => $field->get_placeholder(),
 			];
 
 			$return .= $template->template( 'v2/components/meta/' . $field->type, $context, $echo );

@@ -12,7 +12,7 @@ if ( ! class_exists( 'Tribe__Tickets_Plus__Main' ) ) {
 		/**
 		 * Current version of this plugin
 		 */
-		const VERSION = '5.1.0.2';
+		const VERSION = '5.1.1';
 
 		/**
 		 * Used to store the version history.
@@ -170,6 +170,9 @@ if ( ! class_exists( 'Tribe__Tickets_Plus__Main' ) ) {
 
 			// Shortcodes
 			tribe_register_provider( Tribe\Tickets\Plus\Service_Providers\Shortcode::class );
+
+			// Views v2 compatibility.
+			tribe_register_provider( Tribe\Tickets\Plus\Views\V2\Service_Provider::class );
 
 			$this->commerce_loader();
 			$this->bind_implementations();

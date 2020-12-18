@@ -23,8 +23,6 @@ class Tribe__Tickets_Plus__Service_Provider extends tad_DI52_ServiceProvider {
 		$this->container->singleton( 'tickets-plus.editor', 'Tribe__Tickets_Plus__Editor', array( 'hook' ) );
 		$this->container->bind( 'tickets-plus.template', 'Tribe__Tickets_Plus__Template' );
 
-		$this->container->singleton( 'tickets-plus.commerce.warnings', new Tribe__Tickets_Plus__Commerce__Warnings );
-
 		// We use String here to specifically not load it before used
 		$this->container->singleton( 'tickets-plus.commerce.woo', 'Tribe__Tickets_Plus__Commerce__WooCommerce__Main' );
 		$this->container->singleton( 'tickets-plus.commerce.edd', 'Tribe__Tickets_Plus__Commerce__EDD__Main' );

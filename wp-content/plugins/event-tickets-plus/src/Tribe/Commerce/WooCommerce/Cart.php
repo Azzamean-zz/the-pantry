@@ -271,6 +271,10 @@ class Tribe__Tickets_Plus__Commerce__WooCommerce__Cart extends Tribe__Tickets_Pl
 		$rest_tickets = $this->commerce_get_tickets_in_cart( $tickets );
 
 		foreach ( $rest_tickets as $ticket ) {
+			if ( ! is_array( $ticket ) ) {
+				continue;
+			}
+
 			$tickets[ $ticket['ticket_id'] ] = $ticket['quantity'];
 		}
 

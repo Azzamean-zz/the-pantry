@@ -45,7 +45,7 @@ get_header(); ?>
 				</header>
 				
 				<h3><?php echo $start_date; ?> - <?php echo $end_date;?></h3>	
-
+				
 				<?php
 				do_action( 'storefront_single_post_top' );
 				/**
@@ -55,7 +55,6 @@ get_header(); ?>
 				 * @hooked storefront_post_content         - 30
 				 */
 				do_action( 'storefront_single_post' );
-			
 				/**
 				 * Functions hooked in to storefront_single_post_bottom action
 				 *
@@ -64,7 +63,6 @@ get_header(); ?>
 				 */
 				do_action( 'storefront_single_post_bottom' );
 				?>
-			
 			</article><!-- #post-## -->
 			
 			<?php
@@ -91,5 +89,17 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php
+function yourprefix_add_to_content( $content ) { 
+	$start = get_field('start_date');				
+// 	$start = date('F d, Y', strtotime("-48 hours", $start));
+	
+	$start = (new DateTime($start))->modify('-48 hours')->format('F d, Y');
+	
+    if( is_singular('ticket-page') ) {
+        $content .= '<h3 style="margin-bottom:30px;">Note: Ingredient Kit are available up until 2 days prior the class date</h3>';
+    }
+    return $content;
+}
+
 do_action( 'storefront_sidebar' );
 get_footer();

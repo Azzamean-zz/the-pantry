@@ -36,6 +36,16 @@ abstract class Tribe__Tickets_Plus__Meta__Field__Abstract_Field implements Field
 	public $classes = [];
 	public $attributes = [];
 
+	/**
+	 * The placeholder value to be used (for fields that support it).
+	 *
+	 * @since 5.1.1
+	 *
+	 * @var string
+	 */
+	public $placeholder;
+
+	// @todo Future: Look into why this is not used at all and if it's intention is still needed.
 	abstract public function save_value( $attendee_id, $field, $value );
 
 	/**
@@ -62,17 +72,49 @@ abstract class Tribe__Tickets_Plus__Meta__Field__Abstract_Field implements Field
 			return;
 		}
 
-		$this->id         = isset( $data['id'] ) ? $data['id'] : null;
-		$this->label      = isset( $data['label'] ) ? $data['label'] : null;
-		$this->slug       = isset( $data['slug'] ) ? $data['slug'] : null;
-		$this->required   = isset( $data['required'] ) ? $data['required'] : null;
-		$this->extra      = isset( $data['extra'] ) ? $data['extra'] : [];
-		$this->classes    = isset( $data['classes'] ) ? $data['classes'] : [];
-		$this->attributes = isset( $data['attributes'] ) ? $data['attributes'] : [];
+		$this->id          = isset( $data['id'] ) ? $data['id'] : null;
+		$this->label       = isset( $data['label'] ) ? $data['label'] : null;
+		$this->slug        = isset( $data['slug'] ) ? $data['slug'] : null;
+		$this->required    = isset( $data['required'] ) ? $data['required'] : null;
+		$this->extra       = isset( $data['extra'] ) ? $data['extra'] : [];
+		$this->classes     = isset( $data['classes'] ) ? $data['classes'] : [];
+		$this->attributes  = isset( $data['attributes'] ) ? $data['attributes'] : [];
+		$this->placeholder = isset( $data['placeholder'] ) ? $data['placeholder'] : '';
 
 		if ( $this->label && null === $this->slug ) {
 			$this->slug = sanitize_title( $this->label );
 		}
+
+		// Run config hooks.
+		$this->run_config_hooks( $data );
+	}
+
+	/**
+	 * Handle running the config hooks for the field object.
+	 *
+	 * @param array $data The initial data provided for the object.
+	 */
+	public function run_config_hooks( $data = [] ) {
+		/**
+		 * Allow filtering the field placeholder text.
+		 *
+		 * @since 5.1.1
+		 *
+		 * @param string                                           $placeholder The field placeholder text.
+		 * @param Tribe__Tickets_Plus__Meta__Field__Abstract_Field $field       The field object.
+		 * @param array                                            $data        The initial data provided for the object.
+		 */
+		$this->placeholder = apply_filters( 'tribe_tickets_plus_meta_field_placeholder', $this->placeholder, $this, $data );
+
+		/**
+		 * Allow customizing the field object after it has been set up.
+		 *
+		 * @since 5.1.1
+		 *
+		 * @param Tribe__Tickets_Plus__Meta__Field__Abstract_Field $field The field object.
+		 * @param array                                            $data  The initial data provided for the object.
+		 */
+		do_action( 'tribe_tickets_plus_meta_field_after_setup', $this, $data );
 	}
 
 	/**
@@ -127,14 +169,15 @@ abstract class Tribe__Tickets_Plus__Meta__Field__Abstract_Field implements Field
 		$slug  = isset( $data['slug'] ) ? $data['slug'] : sanitize_title( $label );
 
 		$meta = [
-			'id'         => $id,
-			'type'       => isset( $data['type'] ) ? $data['type'] : 'text',
-			'required'   => isset( $data['required'] ) ? $data['required'] : '',
-			'label'      => $label,
-			'slug'       => $slug,
-			'extra'      => isset( $data['extra'] ) ? $data['extra'] : [],
-			'classes'    => isset( $data['classes'] ) ? $data['classes'] : [],
-			'attributes' => isset( $data['attributes'] ) ? $data['attributes'] : [],
+			'id'          => $id,
+			'type'        => isset( $data['type'] ) ? $data['type'] : 'text',
+			'required'    => isset( $data['required'] ) ? $data['required'] : '',
+			'label'       => $label,
+			'slug'        => $slug,
+			'extra'       => isset( $data['extra'] ) ? $data['extra'] : [],
+			'classes'     => isset( $data['classes'] ) ? $data['classes'] : [],
+			'attributes'  => isset( $data['attributes'] ) ? $data['attributes'] : [],
+			'placeholder' => isset( $data['placeholder'] ) ? $data['placeholder'] : '',
 		];
 
 		return $this->build_extra_field_settings( $meta, $data );
@@ -336,6 +379,8 @@ abstract class Tribe__Tickets_Plus__Meta__Field__Abstract_Field implements Field
 	 * @return string
 	 */
 	public function render_admin_field() {
+		// @todo Future: Replace this with an admin view call instead.
+
 		$tickets_plus = Tribe__Tickets_Plus__Main::instance();
 
 		$name    = $tickets_plus->plugin_path . 'src/admin-views/meta-fields/' . sanitize_file_name( $this->type ) . '.php';
@@ -350,15 +395,19 @@ abstract class Tribe__Tickets_Plus__Meta__Field__Abstract_Field implements Field
 		$ticket_specific_settings = $this->sanitize_field_options_for_render( $ticket_specific_settings );
 		$data                     = array_merge( $data, (array) $ticket_specific_settings );
 
-		$field_id   = wp_rand();
-		$type       = $this->type;
-		$label      = ! empty( $this->label ) ? $this->label : '';
-		$required   = ! empty( $this->required ) ? $this->required : '';
-		$slug       = ! empty( $this->slug ) ? $this->slug : sanitize_title( $label );
-		$extra      = $this->extra;
-		$classes    = $this->classes;
-		$attributes = $this->attributes;
-		$type_name  = tribe( Field_Types_Collection::class )->get_name_by_id( $this->type );
+		// Alias $this to $field for usage in templates.
+		$field = $this;
+
+		$field_id    = wp_rand();
+		$type        = $this->type;
+		$label       = ! empty( $this->label ) ? $this->label : '';
+		$required    = ! empty( $this->required ) ? $this->required : '';
+		$slug        = ! empty( $this->slug ) ? $this->slug : sanitize_title( $label );
+		$extra       = $this->extra;
+		$classes     = $this->classes;
+		$attributes  = $this->attributes;
+		$placeholder = $this->placeholder;
+		$type_name   = tribe( Field_Types_Collection::class )->get_name_by_id( $this->type );
 
 		ob_start();
 		include $wrapper;
@@ -412,5 +461,16 @@ abstract class Tribe__Tickets_Plus__Meta__Field__Abstract_Field implements Field
 	 */
 	public function get_attributes() {
 		return $this->attributes;
+	}
+
+	/**
+	 * Get the placeholder value for field.
+	 *
+	 * @since 5.1.1
+	 *
+	 * @return string
+	 */
+	public function get_placeholder() {
+		return $this->placeholder;
 	}
 }

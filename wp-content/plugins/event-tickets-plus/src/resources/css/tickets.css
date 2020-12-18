@@ -582,9 +582,10 @@ a.tribe-attendees-list-showall {
 	}
 
 .tribe-orders-list .tribe-tickets-list > .tribe-item {
-			padding: 20px;
+			background-color: #fff;
 			border: 1px solid #ededed;
 			border-bottom: 0;
+			padding: 20px;
 		}
 
 .tribe-orders-list .tribe-tickets-list > .tribe-item:last-child {

@@ -231,7 +231,7 @@ class Folder extends Controller {
       // 'is_upload' => $current_screen != null && $current_screen->id === 'upload' ? 1 : 0,
       'i18n' => i18n::getTranslation(),
       'media_mode' => get_user_option('media_library_mode', get_current_user_id()),
-      'json_url' => apply_filters('filebird_json_url', rest_url(NJFB_REST_URL)),
+      'json_url' => apply_filters('filebird_json_url', rtrim(rest_url(NJFB_REST_URL),"/")),
       'media_url' => admin_url('upload.php'),
       'auto_import_url' => esc_url(add_query_arg(array('page' => 'filebird-settings', 'tab' => 'update-db', 'autorun' => 'true'), admin_url('/options-general.php')))
     )));
@@ -407,7 +407,7 @@ class Folder extends Controller {
       if($insert !== false) {
         wp_send_json_success(array('id' => $insert));
       } else {
-        wp_send_json_error(array('mess' => __('Please choose another name.', 'filebird')));
+        wp_send_json_error(array('mess' => __('A folder with this name already exists. Please choose another one.', 'filebird')));
       }
     } else {
       wp_send_json_error(array(
@@ -425,7 +425,7 @@ class Folder extends Controller {
       if($update === true) {
         wp_send_json_success();
       } else {
-        wp_send_json_error(array('mess' => __('Please choose another name.', 'filebird')));
+        wp_send_json_error(array('mess' => __('A folder with this name already exists. Please choose another one.', 'filebird')));
       }
       
     }

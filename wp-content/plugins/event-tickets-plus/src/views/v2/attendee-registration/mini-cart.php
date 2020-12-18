@@ -10,8 +10,9 @@
  * @link    http://m.tri.be/1amp
  *
  * @since   5.1.0
+ * @since   5.1.1 Added $currency to the passed context for the tickets footer template.
  *
- * @version 5.1.0
+ * @version 5.1.1
  *
  * @var \Tribe\Tickets\Plus\Attendee_Registration\View $this                   [Global] The AR View instance.
  * @var array                                          $events                 [Global] Multidimensional array of post IDs with their ticket data.
@@ -80,6 +81,7 @@ $et_template = tribe( 'tickets.editor.template' );
 		'v2/tickets/footer',
 		[
 			'is_mini'  => true,
+			'post_id'  => 0,
 			'provider' => $cart_provider,
 		]
 	);
@@ -103,6 +105,7 @@ $et_template = tribe( 'tickets.editor.template' );
 			'post_id'  => $post_id,
 			'tickets'  => $tickets,
 			'provider' => $cart_provider,
+			'currency' => $currency,
 		]
 	);
 	?>

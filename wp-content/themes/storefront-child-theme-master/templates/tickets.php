@@ -41,7 +41,7 @@ if(isset($_GET['month'])) {
 	
 	$args = array(
 	    'post_type' => 'ticket-page',
-	    'posts_per_page' => 5,
+	    'posts_per_page' => -1,
 	    'order'          => 'ASC',
 	    'orderby'        => 'meta_value',
 	    'meta_key'       => 'start_date',
@@ -76,14 +76,16 @@ if(isset($_GET['month'])) {
 	
 	<div class="filter-boxes">
 		<label><input type="checkbox" name="attendee" checked="checked"> Ticket Name</label>	
-		<label><input type="checkbox" name="purchaser" checked="checked"> Available</label>	
+		<label><input type="checkbox" name="stock" checked="checked"> Stock</label>	
+		<label><input type="checkbox" name="sold" checked="checked"> Sold</label>	
 	</div>	
 	
 	<table id="attendee-table" class="tablesorter">
 		<thead>
 			<tr>
 				<th class="name">Ticket Name</th>
-				<th class="available">Available</th>
+				<th class="stock">Stock</th>
+				<th class="sold">Sold</th>
 			</tr>
 		</thead>	
 		<tbody>			
@@ -93,17 +95,22 @@ if(isset($_GET['month'])) {
 			$ticket_id = get_the_ID();
 			$tids = tribe_get_woo_tickets_ids($ticket_id);
 
-			$tickets_handler = tribe( 'tickets.handler' );
+			// $tickets_handler = tribe( 'tickets.handler' );
 			$totals = Tribe__Tickets__Tickets::get_all_event_tickets( $ticket_id );
 			
+
+/*
 			echo '<pre>';
-			print_r($totals);
+			print_r($totals[0]);
 			echo '</pre>';
+*/
+
 			?>
 				
 			<tr>
-				<td class="name"><?php the_title();?></td>	
-				<td class="available"><?php echo $tickets_handler->get_ticket_max_purchase( $tids[0] ); ?></td>	
+				<td class="name"><a href="<?php echo $totals[0]->admin_link; ?>"><?php the_title();?></a></td>	
+				<td class="stock"><?php echo $totals[0]->stock; ?></td>	
+				<td class="sold"><?php echo $totals[0]->qty_sold; ?></td>	
 			</tr>			
 			<?php } ?>
 		</tbody>	

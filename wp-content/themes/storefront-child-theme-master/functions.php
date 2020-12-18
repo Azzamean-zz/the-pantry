@@ -840,3 +840,6 @@ add_filter('woocommerce_checkout_get_value','__return_empty_string',10);
  * Remove related products output
  */
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
+
+
+add_filter( 'the_content', 'yourprefix_add_to_content' );	
