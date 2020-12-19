@@ -62,11 +62,13 @@ if(isset($_GET['month'])) {
 	    ),
 	);
 	
+
 /*
 	echo '<pre>';
 	print_r($args);
 	echo '</pre>';
 */
+
 	
 	$query = new WP_Query($args);
     if ( $query->have_posts() ) {
@@ -75,7 +77,7 @@ if(isset($_GET['month'])) {
 	<div class="clearfix"></div>	
 	
 	<div class="filter-boxes">
-		<label><input type="checkbox" name="attendee" checked="checked"> Ticket Name</label>	
+		<label><input type="checkbox" name="ticket-name" checked="checked"> Ticket Name</label>	
 		<label><input type="checkbox" name="stock" checked="checked"> Stock</label>	
 		<label><input type="checkbox" name="sold" checked="checked"> Sold</label>	
 	</div>	
@@ -108,7 +110,7 @@ if(isset($_GET['month'])) {
 			?>
 				
 			<tr>
-				<td class="name"><a href="<?php echo $totals[0]->admin_link; ?>"><?php the_title();?></a></td>	
+				<td class="ticket-name"><a href="<?php echo $totals[0]->admin_link; ?>"><?php the_title();?></a></td>	
 				<td class="stock"><?php echo $totals[0]->stock; ?></td>	
 				<td class="sold"><?php echo $totals[0]->qty_sold; ?></td>	
 			</tr>			

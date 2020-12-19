@@ -57,7 +57,7 @@ function create_ticket_page_taxonomies() {
 		'ticket-page',
 		array(
 			'hierarchical' => true,
-			'label' => 'Category',
+			'label' => 'Ticket Category',
 			'query_var' => true,
 			'rewrite' => array('slug' => 'ticket-page-categories')
 		)
@@ -841,12 +841,12 @@ function yourprefix_add_to_content($content) {
 	$start = (new DateTime($start))->modify('-48 hours')->format('F d, Y');
 	
     if( is_singular('ticket-page') ) {
-        $content .= '<h3 style="margin-bottom:30px;">Note: Ingredient Kit are available up until 2 days prior the class date</h3>';
+        $content .= '<h3 style="margin-bottom:30px;">Note: Ingredient Kits are available up until 2 days prior the class date</h3>';
     }
     return $content;
 }
 
-add_filter( 'the_content', 'yourprefix_add_to_content' );		
+// add_filter( 'the_content', 'yourprefix_add_to_content' );		
  
  /**
  * Remove related products output
