@@ -24,19 +24,38 @@ get_header(); ?>
 	}
 	$attendee_list = Tribe__Tickets__Tickets::get_event_attendees($event_id); ?>
 
+
 <!--
 	<pre>
 		<?php print_r($attendee_list); ?> 
-	</pre>
--->	
+	</pre>	
+-->
+
 
 	<?php
 		getAttendee($event_id);
-	
+		$meta = array();
+		$i = 0;
 		foreach($attendee_list as $attendee) {
 			$class[] = $attendee['ticket'];
+			$attendee_metas[] = $attendee['attendee_meta'];
+			
+			$metas[$i]['purchaser'] = $attendee['purchaser_name'];
+			$i++;
 		}
+		$i = 0;
+		
 		$classcounts = array_count_values($class);
+		?>
+		<?php
+		foreach($attendee_metas as $key => $value) {
+			
+			foreach($value as $value_key => $value_value) {
+				$label = $value_value['label'];
+				$value = $value_value['value'];
+			}
+
+		}	
 		
 		foreach($classcounts as $classkey => $classcount) {
 		?>
@@ -46,7 +65,6 @@ get_header(); ?>
 			</div>	
 		<?php } ?>
 	
-	<?php // echo count($attendee_list); ?>
 	<div class="clearfix"></div>	
 	
 	<div class="filter-boxes">

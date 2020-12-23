@@ -100,6 +100,7 @@ if(isset($_GET['month'])) {
 			// $tickets_handler = tribe( 'tickets.handler' );
 			$totals = Tribe__Tickets__Tickets::get_all_event_tickets( $ticket_id );
 			
+			foreach($totals as $total) {
 
 /*
 			echo '<pre>';
@@ -107,13 +108,15 @@ if(isset($_GET['month'])) {
 			echo '</pre>';
 */
 
+
 			?>
 				
 			<tr>
-				<td class="ticket-name"><a href="<?php echo $totals[0]->admin_link; ?>"><?php the_title();?></a></td>	
-				<td class="stock"><?php echo $totals[0]->stock; ?></td>	
-				<td class="sold"><?php echo $totals[0]->qty_sold; ?></td>	
+				<td class="ticket-name"><a href="<?php echo $total->admin_link; ?>"><?php echo $total->name; ?></a></td>	
+				<td class="stock"><?php echo $total->stock; ?></td>	
+				<td class="sold"><?php echo $total->qty_sold; ?></td>	
 			</tr>			
+			<?php } ?>
 			<?php } ?>
 		</tbody>	
 	</table>

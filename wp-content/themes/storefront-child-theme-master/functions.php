@@ -45,7 +45,7 @@ function create_ticket_page() {
 			'menu_icon' => 'dashicons-tickets-alt',
 			'public' => true,
 			'rewrite' => array('slug' => 'ticket-page'),
-			'supports' => array('title','editor','author','excerpt','comments','revisions')
+			'supports' => array('title','editor','author','excerpt','comments','revisions','thumbnail')
 		)
 	);
 	flush_rewrite_rules();
@@ -840,13 +840,14 @@ function yourprefix_add_to_content($content) {
 	$start = get_field('start_date');					
 	$start = (new DateTime($start))->modify('-48 hours')->format('F d, Y');
 	
-    if( is_singular('ticket-page') ) {
-        $content .= '<h3 style="margin-bottom:30px;">Note: Ingredient Kits are available up until 2 days prior the class date</h3>';
+    if((is_singular('ticket-page')) &&  (has_term('class','ticket-page-categories'))) {
+        $content .= '<h3 style="margin-bottom:50px; text-align: center;">Note: Ingredient Kits are available up until 2 days prior the class date</h3>';
     }
-    return $content;
+    
+    return $content;    
 }
 
-// add_filter( 'the_content', 'yourprefix_add_to_content' );		
+add_filter( 'the_content', 'yourprefix_add_to_content' );		
  
  /**
  * Remove related products output

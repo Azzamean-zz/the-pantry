@@ -48,6 +48,12 @@ get_header(); ?>
 				
 				<?php
 				do_action( 'storefront_single_post_top' );
+				
+				//if(has_term('class','ticket-page-categories')) {
+				?>
+<!-- 					<h3 style="margin-bottom:30px; text-align: right;">Note: Ingredient Kits are available up until 2 days prior the class date</h3> -->
+				<?php
+				
 				/**
 				 * Functions hooked into storefront_single_post add_action
 				 *
@@ -60,16 +66,12 @@ get_header(); ?>
 				 *
 				 * @hooked storefront_post_nav         - 10
 				 * @hooked storefront_display_comments - 20
-				 */
+				 */ 
 				do_action( 'storefront_single_post_bottom' );
 				?>
 			</article><!-- #post-## -->
 
 			<?php
-			if(has_term('class','ticket-page-categories')) {
-			?>
-				<h3 style="margin-bottom:30px; text-align: right;">Note: Ingredient Kits are available up until 2 days prior the class date</h3>
-			<?php }
 				$ticket_ids = tribe_get_woo_tickets_ids($post->ID);
 				echo do_shortcode('[xoo_wl_form id="' . $ticket_ids[0] . '" type="inline_toggle" text="Join Waitlist"]');				
 			
