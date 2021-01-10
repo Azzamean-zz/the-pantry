@@ -20,6 +20,8 @@ get_header(); ?>
 		while ( have_posts() ) :
 			the_post();
 			
+			$post_id = get_the_ID();
+			
 			$date_string = get_field('start_date');
 			$end_date_string = get_field('end_date');
 			
@@ -33,7 +35,23 @@ get_header(); ?>
 			do_action( 'storefront_single_post_before' );
 			?>
 			
-			<?php $event_id = get_the_ID(); ?>
+			<?php 
+				$event_id = get_the_ID(); 
+				$tickets = find_tickets($event_id);
+			?>
+<!--
+			<pre>
+				<?php // print_r($tickets[0]->stock); ?>
+			</pre>	
+-->
+			
+			<?php if($tickets[0]->stock <= 0) {
+				update_field('ticket_stock', 'sold-out', $post_id);
+			} else {
+				update_field('ticket_stock', '', $post_id);
+			}
+			?>
+			
 			<?php if( current_user_can('editor') || current_user_can('administrator') ) {  ?>
 			    <div class="attendee-list-link">
 				    <a href="<?php echo site_url();?>/attendee-list?event=<?php echo $event_id;?>">View Attendees (Since 10/11)</a>
@@ -70,11 +88,87 @@ get_header(); ?>
 				do_action( 'storefront_single_post_bottom' );
 				?>
 			</article><!-- #post-## -->
-
-			<?php
-				$ticket_ids = tribe_get_woo_tickets_ids($post->ID);
-				echo do_shortcode('[xoo_wl_form id="' . $ticket_ids[0] . '" type="inline_toggle" text="Join Waitlist"]');				
 			
+			<?php	
+			
+			$post_id = get_the_ID();
+			
+			$ticket_ids = tribe_get_woo_tickets_ids($post_id);
+			echo do_shortcode('[xoo_wl_form id="' . $ticket_ids[0] . '" type="inline_toggle" text="Join Waitlist"]');		
+			
+			$ticket_pages = get_field('other_dates');
+			if( $ticket_pages ): ?>
+				<hr class="wp-block-separator">
+				<h2>Other Dates</h2>
+				<p class="text-center"><i>All events are listed in Pacific Time.</i></p>		
+	        	<ul class="homeLinks">
+		        <?php
+			    $ticketcount = 0;
+				$i = 0;	
+				?>
+			    <?php foreach( $ticket_pages as $post ): setup_postdata($post);?>
+			    	
+			    	<?php
+				    	$ticket_ids = tribe_get_woo_tickets_ids($post->ID);
+						$tickets_handler = tribe( 'tickets.handler' );
+					
+						$end = strtotime('tomorrow midnight');
+						
+						// $end = date("m/d/Y h:i:s A T",$end);
+						
+						$expiration = get_field('end_date');
+						
+						$expiration = strtotime($expiration);
+						$date = date("Y-m-d", $expiration);
+						
+						$date = strtotime('+1 day', strtotime($date));
+						
+						
+						$hoursToSubtract = '8';
+						$timeToSubtract = ($hoursToSubtract * 60 * 60);
+						
+						$now = time();
+						$now = $now - $timeToSubtract;
+											
+						$class = '';
+	
+						$newDate = DateTime::createFromFormat('m/d/Y H:i a', get_field('start_date', $post->ID));
+						$newDates[] = $newDate->format('Ymd');
+	
+						if( $now > $date ) {
+							$class = 'hide';
+						} else {
+							$ticketcount++;
+							if ( 0 === $tickets_handler->get_ticket_max_purchase( $ticket_ids[0] ) ) {
+								$i++;
+							}
+																			
+							// update_field('new_date', $newDate, $post_id);
+	
+						}
+											
+					?>
+			    	
+			    	<?php		
+					$date_string = get_field('start_date');
+					$date = DateTime::createFromFormat('m/d/Y g:i a', $date_string);
+									
+					?>
+					
+					<?php if ( 0 === $tickets_handler->get_ticket_max_purchase( $ticket_ids[0] ) ) { ?>
+						<li class="<?php echo $class;?>"><a href="<?php the_permalink(); ?>"><?php echo $date->format('D, F d, g:i a'); ?> - Sold Out</a></li>
+					<?php } else { ?>
+						<li class="<?php echo $class;?>"><a href="<?php the_permalink(); ?>"><?php echo $date->format('D, F d, g:i a'); ?></a></li>
+					<?php } ?>
+			    <?php endforeach; ?>
+			    </ul>
+			    <?php 
+			    // Reset the global post object so that the rest of the page works correctly.
+			    wp_reset_postdata(); ?>
+			<?php endif; ?>
+
+			
+			<?php			
 
 			do_action( 'storefront_single_post_after' );
 			

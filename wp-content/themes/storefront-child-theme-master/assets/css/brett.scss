@@ -139,7 +139,7 @@ table td.woocommerce-table__product-name {
 	margin-top: 6px !important;	
 	margin-bottom: 6px;	
 	&.sold-out {
-		opacity: .3;
+		color: #888;
 	}
 }
 
@@ -268,6 +268,39 @@ h3 time {
 			display: block;	
 		}
 	}
+	.has-post-thumbnail.ticket-page-categories-class {
+		.entry-content {
+			position: relative;	
+			&::before {
+				content: '';
+				width: 115px;	
+				height: 68px;	
+				-webkit-background-size: 115px 68px;
+				background-size:115px 68px;
+				z-index: 9;	
+				display: block;	
+				position: absolute;	
+				top: 30px;	
+				left: 0;	
+				background-image: url(../images/vid.png);
+				background-repeat: no-repeat;	
+			}
+		}
+	}
+}
+
+.tribe-common .tribe-common-b2.tribe-tickets__item__details__content {
+	font-weight: normal;	
+	font-weight: 300;
+	line-height: 1.3;	
+	font-size: 16px;	
+	padding-right: 30px;	
+	margin-top: 10px;		
+}
+
+.fc .fc-scroller-harness {
+	overflow: visible !important;	
+	z-index: 999;	
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -368,7 +401,7 @@ html {
 }
 
 .pageFooter {
-	z-index: 99;	
+	z-index: 999999;	
 }
 
 body.single-team, body.single-shopping-lists {
@@ -920,8 +953,10 @@ body.page-tribe-attendee-registration .tribe-common .tribe-tickets__mini-cart {
 }
 
 form.checkout {
+/*
 	padding-left: 30px;	
 	padding-right: 30px;	
+*/
 }
 
 .entry-taxonomy {
@@ -981,6 +1016,7 @@ a.wc-block-grid__product-link {
 	border: 1px solid #a37c22;
 	color: #000;	
 	padding-bottom: .7em;	
+	margin-bottom: 1.2em;	
 	p {
 		color: #000;	
 	}
@@ -1002,6 +1038,69 @@ a.wc-block-grid__product-link {
 
 .fc .fc-toolbar-title {
 	font-size: 21.25px !important;
+}
+
+.flexible-checkout-fields-before_customer_details  {
+	padding: 1em 1.618em;
+    margin-bottom: 2.617924em;
+    margin-left: 0;
+    color: #fff;
+    clear: both;
+    background: #a37c22 !important;
+    border: 1px solid #a37c22;
+    h4 {
+	    margin: 0;	
+	    color: #fff;
+		font-family: "brandon-grotesque","Helvetica Neue",Arial,sans-serif;
+		text-transform: uppercase;	
+    }
+}
+
+.fc .td {
+	&:hover {
+		position: relative;	
+		z-index: 999999999;	
+	}
+}
+
+.hover-end {
+	position: absolute;
+	min-width: 220px;
+	background: #fff;
+	left: 30px;
+	bottom: 100%;
+	display: none;
+	z-index: 99;
+	img {
+		-webkit-border-radius: 0;
+		-moz-border-radius: 0;
+		border-radius: 0;	
+	}
+	h3 {
+		font-size: 1.1em;	
+		padding: 10px;	
+		span.caldate {
+			color: rgba(0,0,0,.6)
+		}
+	}
+}
+
+.code {
+	text-transform: uppercase !important;	
+}
+
+.fc-day-sat {
+	.hover-end {
+		right: 30px;	
+		left: auto;	
+	}
+}
+
+.fc-daygrid-day-frame:hover {
+	z-index: 999;
+}
+.fc-event:hover .hover-end {
+	display: block;
 }
 
 @media screen and (max-width: 990px) {

@@ -677,7 +677,7 @@ function gum_woo_checkout_fields_email_customer( $order ) {
 				if(isset($value['do-you-need-a-vegetarian-option'])){
 					$veg = "Yes";
 				} else {
-					$veg = "";
+					$veg = "No";
 				}
 				
 				echo '<p>';
@@ -847,7 +847,7 @@ function yourprefix_add_to_content($content) {
     return $content;    
 }
 
-add_filter( 'the_content', 'yourprefix_add_to_content' );		
+// add_filter( 'the_content', 'yourprefix_add_to_content' );		
  
  /**
  * Remove related products output
