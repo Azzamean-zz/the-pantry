@@ -25,6 +25,10 @@ button.xoo-wl-open-form-btn {
 	float: none !important;	
 }
 
+.tribe-common div.tribe-dialog {
+	z-index: 99 !important;	
+}
+
 .filter-boxes {
 	width: 100%;	
 	float: left;
