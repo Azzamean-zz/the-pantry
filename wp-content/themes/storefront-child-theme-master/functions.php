@@ -658,30 +658,7 @@ function gum_woo_checkout_fields( $order_id ) {
 
 function gum_woo_checkout_fields_email_customer( $order ) {
 	  
-	$product_categories = array();
-	
-	// Loop through order items
-	foreach( $order->get_items() as $items ){
-	    // Get an array of the WP_Terms of the product categories
-	    $terms = wp_get_post_terms( $items->get_product_id(), 'product_cat' );
-	
-	    // Loop through the product categories WP_Term objects
-	    foreach( $terms as $wp_term ){
-	        // Get the product category ID
-	        $term_id = $wp_term->term_id;
-	        // Get the product category Nmae
-	        $term_name = $wp_term->name;
-	        // Get the product category Slug
-	        $term_slug = $wp_term->slug;
-	        // Get the product category Parent ID
-	        $term_parent_id = $wp_term->parent;
-	
-	        // Set each product category WP_Term object in an array (avoiding duplicates)
-	        $product_categories[$wp_term->term_id] = $wp_term;
-	    }
-	}
-	// Output the raw data of all product categories in the order (Testing)
-	var_dump($product_categories);
+	 
 	  
 	//* NEW	
 	$fieldset_meta = get_post_meta( $order->get_id(), Tribe__Tickets_Plus__Meta::META_KEY, true );
