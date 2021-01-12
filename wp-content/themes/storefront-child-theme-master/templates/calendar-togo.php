@@ -115,7 +115,7 @@ $first_day = $first_day->format('Y-m-d');
       ],
 
     });
-	calendar.gotoDate('2021-02-01');
+
     calendar.render();
     
     windowSize();
