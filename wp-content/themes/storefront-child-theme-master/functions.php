@@ -667,6 +667,7 @@ function gum_woo_checkout_fields_email_customer( $order ) {
 	if (! $fieldset_meta ) return;
 
 	echo '<h3> Attendee Information</h3>';
+	
 	foreach( $fieldset_meta AS $item => $value ) {
 		
 		foreach( $fieldset_meta[$item] AS $key => $value ) {
@@ -675,6 +676,7 @@ function gum_woo_checkout_fields_email_customer( $order ) {
 				$att_email 		= (isset( $value['email'] )) ? $value['email'] : '';
 				$att_phone 		= (isset( $value['phone'] )) ? $value['phone'] : '';
 				$att_wine 		= (isset( $value['please-select-your-wine'] )) ? $value['please-select-your-wine'] : '';
+				// echo $value['do-you-need-a-vegetarian-option'];
 				
 				echo '<p>';
 				echo 'Name: '. $att_name .'<br />';
@@ -684,8 +686,7 @@ function gum_woo_checkout_fields_email_customer( $order ) {
 				}
 				
 				if(isset($value['do-you-need-a-vegetarian-option'])){
-					$veg = "Yes";
-					echo 'Vegetarian Option: '. $veg .'<br />';
+					echo 'Vegetarian Option: Yes<br />';
 				}
 				
 				if($att_wine) {
