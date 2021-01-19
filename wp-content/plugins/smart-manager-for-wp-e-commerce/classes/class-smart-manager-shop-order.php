@@ -80,7 +80,9 @@ if ( ! class_exists( 'Smart_Manager_Shop_Order' ) ) {
 
 			$visible_columns = array('ID', 'post_date', '_billing_first_name', '_billing_last_name', '_billing_email', 'post_status', '_order_total', 'details', '_payment_method_title', 'shipping_method', 'coupons_used', 'line_items');
 
-			$numeric_columns = array('_billing_phone', '_billing_postcode', '_cart_discount', '_cart_discount_tax', '_customer_user', '_shipping_postcode');
+			$numeric_columns = array('_billing_phone', '_cart_discount', '_cart_discount_tax', '_customer_user');
+
+			$string_columns = array('_billing_postcode', '_shipping_postcode');
 
 			$post_status_col_index = sm_multidimesional_array_search('posts_post_status', 'data', $dashboard_model['columns']);
 			
@@ -158,8 +160,12 @@ if ( ! class_exists( 'Smart_Manager_Shop_Order' ) ) {
 					$column ['name'] = $column ['key'] = __('Date', 'smart-manager-for-wp-e-commerce');
 				} else if ($src == 'post_status') {
 					$column ['name'] = $column ['key'] = __('Status', 'smart-manager-for-wp-e-commerce');
+				} else if ($src == 'post_excerpt') {
+					$column ['name'] = $column ['key'] = __('Customer provided note', 'smart-manager-for-wp-e-commerce');
 				} else if( !empty( $numeric_columns ) && in_array( $src, $numeric_columns ) ) {
 					$column ['type'] = $column ['editor'] = 'numeric';
+				} else if( !empty( $string_columns ) && in_array( $src, $string_columns ) ) {
+					$column ['type'] = $column ['editor'] = 'text';
 				}
 			}
 

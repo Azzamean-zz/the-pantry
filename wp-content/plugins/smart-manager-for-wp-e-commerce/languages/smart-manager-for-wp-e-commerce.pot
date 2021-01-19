@@ -4,10 +4,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Smart Manager For WooCommerce – Stock Management, Bulk "
-"Edit & more... 5.1.0\n"
+"Edit & more... 5.3.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/smart-manager-for-"
 "wp-e-commerce\n"
-"POT-Creation-Date: 2020-11-21 04:30+0000\n"
+"POT-Creation-Date: 2021-01-15 08:32+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -41,10 +41,7 @@ msgstr ""
 msgid "Hey %1s, you just unlocked %2s Off on Smart Manager Pro!"
 msgstr ""
 
-#: class-smart-manager.php:857 classes/class-smart-manager-pricing.php:309 
-#: classes/class-smart-manager-pricing.php:320 
-#: classes/class-smart-manager-pricing.php:332 
-#: classes/class-smart-manager-pricing.php:343
+#: class-smart-manager.php:857
 msgid "25%"
 msgstr ""
 
@@ -53,36 +50,36 @@ msgstr ""
 msgid "%s to check Smart Manager Pro features and claim your discount."
 msgstr ""
 
-#: class-smart-manager.php:858 classes/class-smart-manager-pricing.php:537
+#: class-smart-manager.php:858 classes/class-smart-manager-pricing.php:549
 msgid "Click here"
 msgstr ""
 
-#: class-smart-manager.php:1100
+#: class-smart-manager.php:1098
 msgid ""
 "Delete Permanently is disabled. Please contact store administrator for "
 "enabling the same."
 msgstr ""
 
-#: class-smart-manager.php:1130
+#: class-smart-manager.php:1128
 msgid ""
 "In the meanwhile, you can use Smart Manager. But before using actions like "
 msgstr ""
 
-#: class-smart-manager.php:1130 
+#: class-smart-manager.php:1128 
 #: classes/class-smart-manager-admin-welcome.php:321
 msgid "Bulk Edit"
 msgstr ""
 
-#: class-smart-manager.php:1130
+#: class-smart-manager.php:1128
 msgid "Duplicate Records"
 msgstr ""
 
-#: class-smart-manager.php:1130 
+#: class-smart-manager.php:1128 
 #: classes/class-smart-manager-admin-welcome.php:309
 msgid "Delete Records"
 msgstr ""
 
-#: class-smart-manager.php:1130
+#: class-smart-manager.php:1128
 msgid "you will have to wait for the current background process to finish."
 msgstr ""
 
@@ -91,23 +88,23 @@ msgstr ""
 msgid "%1s"
 msgstr ""
 
-#: class-smart-manager.php:1444
+#: class-smart-manager.php:1443
 msgid "An upgrade for Smart Manager Pro"
 msgstr ""
 
-#: class-smart-manager.php:1444
+#: class-smart-manager.php:1443
 msgid "is available."
 msgstr ""
 
-#: class-smart-manager.php:1444
+#: class-smart-manager.php:1443
 msgid "Click to upgrade."
 msgstr ""
 
-#: class-smart-manager.php:1529
+#: class-smart-manager.php:1528
 msgid "A required Smart Manager file is missing. Can't continue. "
 msgstr ""
 
-#: class-smart-manager.php:1544
+#: class-smart-manager.php:1543
 msgid "Error:"
 msgstr ""
 
@@ -255,66 +252,69 @@ msgid "1 site (Annual)"
 msgstr ""
 
 #: classes/class-smart-manager-pricing.php:304
-msgid "$149/yr"
+msgid "$149"
 msgstr ""
 
 #: classes/class-smart-manager-pricing.php:305
-msgid "$112/yr"
+msgid "$112"
 msgstr ""
 
 #: classes/class-smart-manager-pricing.php:309 
-#: classes/class-smart-manager-pricing.php:320 
-#: classes/class-smart-manager-pricing.php:332 
-#: classes/class-smart-manager-pricing.php:343
-#, php-format
-msgid "Get %s off"
+#: classes/class-smart-manager-pricing.php:321 
+#: classes/class-smart-manager-pricing.php:333 
+#: classes/class-smart-manager-pricing.php:344
+msgid "Buy Now"
 msgstr ""
 
 #: classes/class-smart-manager-pricing.php:313
+msgid "Best Seller"
+msgstr ""
+
+#: classes/class-smart-manager-pricing.php:314
 msgid "1 site (Lifetime)"
 msgstr ""
 
-#: classes/class-smart-manager-pricing.php:315
+#: classes/class-smart-manager-pricing.php:316
 msgid "$449"
 msgstr ""
 
-#: classes/class-smart-manager-pricing.php:316
+#: classes/class-smart-manager-pricing.php:317
 msgid "$337"
 msgstr ""
 
-#: classes/class-smart-manager-pricing.php:325
+#: classes/class-smart-manager-pricing.php:326
 msgid "5 sites (Annual)"
 msgstr ""
 
-#: classes/class-smart-manager-pricing.php:327
-msgid "$179/yr"
-msgstr ""
-
 #: classes/class-smart-manager-pricing.php:328
-msgid "$135/yr"
+msgid "$179"
 msgstr ""
 
-#: classes/class-smart-manager-pricing.php:336
+#: classes/class-smart-manager-pricing.php:329
+msgid "$135"
+msgstr ""
+
+#: classes/class-smart-manager-pricing.php:337
 msgid "5 sites (Lifetime)"
 msgstr ""
 
-#: classes/class-smart-manager-pricing.php:338
+#: classes/class-smart-manager-pricing.php:339
 msgid "$479"
 msgstr ""
 
-#: classes/class-smart-manager-pricing.php:339
+#: classes/class-smart-manager-pricing.php:340
 msgid "$360"
 msgstr ""
 
-#: classes/class-smart-manager-pricing.php:349
+#: classes/class-smart-manager-pricing.php:350
 msgid " Read what Jeff has to say about Smart Manager Pro:"
 msgstr ""
 
-#: classes/class-smart-manager-pricing.php:352
+#: classes/class-smart-manager-pricing.php:353
 msgid "I would happily pay five times for this product!"
 msgstr ""
 
-#: classes/class-smart-manager-pricing.php:354
+#: classes/class-smart-manager-pricing.php:355
 msgid ""
 "What really sold me on Smart Manager Pro was Bulk Edit. My assistant does "
 "not have to do any complex math now (earlier, I always feared she would make "
@@ -323,167 +323,175 @@ msgid ""
 "sales were up by 19.5%."
 msgstr ""
 
-#: classes/class-smart-manager-pricing.php:359
-msgid " Get tons of more features with Smart Manager Pro!"
+#: classes/class-smart-manager-pricing.php:360
+msgid " More powerful features with Smart Manager Pro!"
 msgstr ""
 
-#: classes/class-smart-manager-pricing.php:364
+#: classes/class-smart-manager-pricing.php:365
 msgid "Features"
 msgstr ""
 
-#: classes/class-smart-manager-pricing.php:367
+#: classes/class-smart-manager-pricing.php:368
 msgid "Free"
 msgstr ""
 
-#: classes/class-smart-manager-pricing.php:370 
+#: classes/class-smart-manager-pricing.php:371 
 #: classes/class-smart-manager-admin-welcome.php:323 
 #: classes/class-smart-manager-admin-welcome.php:339
 msgid "Pro"
 msgstr ""
 
-#: classes/class-smart-manager-pricing.php:377
+#: classes/class-smart-manager-pricing.php:378
 msgid "Supported Post Types"
 msgstr ""
 
-#: classes/class-smart-manager-pricing.php:381
+#: classes/class-smart-manager-pricing.php:382
 msgid "5 POST TYPES"
 msgstr ""
 
-#: classes/class-smart-manager-pricing.php:382
+#: classes/class-smart-manager-pricing.php:383
 msgid "WordPress: Posts"
 msgstr ""
 
-#: classes/class-smart-manager-pricing.php:383
+#: classes/class-smart-manager-pricing.php:384
 msgid "WooCommerce: Products, Variations, Orders, Coupons"
 msgstr ""
 
-#: classes/class-smart-manager-pricing.php:388
+#: classes/class-smart-manager-pricing.php:389
 msgid "ALL POST TYPES"
 msgstr ""
 
-#: classes/class-smart-manager-pricing.php:389
+#: classes/class-smart-manager-pricing.php:390
 msgid "Everything in Lite +"
 msgstr ""
 
-#: classes/class-smart-manager-pricing.php:391
+#: classes/class-smart-manager-pricing.php:392
 msgid "WordPress: Pages, Media, Users"
 msgstr ""
 
-#: classes/class-smart-manager-pricing.php:392
+#: classes/class-smart-manager-pricing.php:393
 msgid "WooCommerce Post Types: Customers, Subscriptions, Smart Offers"
 msgstr ""
 
-#: classes/class-smart-manager-pricing.php:393
+#: classes/class-smart-manager-pricing.php:394
 msgid "and all your WordPress custom post types and their custom fields"
 msgstr ""
 
-#: classes/class-smart-manager-pricing.php:398
+#: classes/class-smart-manager-pricing.php:399
 msgid "Inline editing"
 msgstr ""
 
-#: classes/class-smart-manager-pricing.php:402
+#: classes/class-smart-manager-pricing.php:403
 msgid "Only 3 records at a time"
 msgstr ""
 
-#: classes/class-smart-manager-pricing.php:406
+#: classes/class-smart-manager-pricing.php:407
 msgid "Unlimited records"
 msgstr ""
 
-#: classes/class-smart-manager-pricing.php:411
+#: classes/class-smart-manager-pricing.php:412
 msgid "Add and delete records"
 msgstr ""
 
-#: classes/class-smart-manager-pricing.php:422
+#: classes/class-smart-manager-pricing.php:423
 msgid "Customizable Columns"
 msgstr ""
 
-#: classes/class-smart-manager-pricing.php:433
+#: classes/class-smart-manager-pricing.php:434
 msgid "Simple Search"
 msgstr ""
 
-#: classes/class-smart-manager-pricing.php:444 
+#: classes/class-smart-manager-pricing.php:445 
 #: classes/class-smart-manager-admin-welcome.php:285
 msgid "Advanced Search"
 msgstr ""
 
-#: classes/class-smart-manager-pricing.php:448
+#: classes/class-smart-manager-pricing.php:449
 msgid "Only using AND operator"
 msgstr ""
 
-#: classes/class-smart-manager-pricing.php:452
+#: classes/class-smart-manager-pricing.php:453
 msgid "Using AND + OR operator"
 msgstr ""
 
-#: classes/class-smart-manager-pricing.php:457
-msgid "Bulk / Batch Update"
+#: classes/class-smart-manager-pricing.php:458
+msgid "Bulk Edit / Batch Update"
 msgstr ""
 
-#: classes/class-smart-manager-pricing.php:464
+#: classes/class-smart-manager-pricing.php:465
 msgid ""
 "Set to, Append, Prepend, Increase / Decrease by %, Increase / Decrease by "
 "number, Set datetime to, Set date to, Set time to, Upload images and many "
 "more..."
 msgstr ""
 
-#: classes/class-smart-manager-pricing.php:469
+#: classes/class-smart-manager-pricing.php:470
 msgid "Export all / filtered records as CSV"
 msgstr ""
 
-#: classes/class-smart-manager-pricing.php:480
+#: classes/class-smart-manager-pricing.php:481
 msgid ""
 "Duplicate single / multiple / all records for a particular post type  in a "
 "single click"
 msgstr ""
 
-#: classes/class-smart-manager-pricing.php:491
+#: classes/class-smart-manager-pricing.php:492
+msgid "Custom views / Segmented views"
+msgstr ""
+
+#: classes/class-smart-manager-pricing.php:503
 msgid "Manage WordPress User roles"
 msgstr ""
 
-#: classes/class-smart-manager-pricing.php:502
+#: classes/class-smart-manager-pricing.php:514
 msgid "Print packing slips for WooCommerce orders in bulk"
 msgstr ""
 
-#: classes/class-smart-manager-pricing.php:513
+#: classes/class-smart-manager-pricing.php:525
 msgid "View Customer Lifetime Value (LTV)"
 msgstr ""
 
-#: classes/class-smart-manager-pricing.php:524
+#: classes/class-smart-manager-pricing.php:536
 msgid "Help"
 msgstr ""
 
-#: classes/class-smart-manager-pricing.php:527
+#: classes/class-smart-manager-pricing.php:539
 msgid "WP forum"
 msgstr ""
 
-#: classes/class-smart-manager-pricing.php:530
+#: classes/class-smart-manager-pricing.php:542
 msgid "Priority support via Email"
 msgstr ""
 
-#: classes/class-smart-manager-pricing.php:537
+#: classes/class-smart-manager-pricing.php:549
 #, php-format
 msgid "Want to know more about Smart Manager Pro? %s."
 msgstr ""
 
-#: classes/class-smart-manager-shop-order.php:158 
-#: pro/classes/class-smart-manager-pro-shop-subscription.php:174
+#: classes/class-smart-manager-shop-order.php:160 
+#: pro/classes/class-smart-manager-pro-shop-subscription.php:175
 msgid "Date"
 msgstr ""
 
-#: classes/class-smart-manager-shop-order.php:160 
-#: pro/classes/class-smart-manager-pro-shop-subscription.php:176
+#: classes/class-smart-manager-shop-order.php:162 
+#: pro/classes/class-smart-manager-pro-shop-subscription.php:177
 msgid "Status"
 msgstr ""
 
-#: classes/class-smart-manager-shop-order.php:431
+#: classes/class-smart-manager-shop-order.php:164
+msgid "Customer provided note"
+msgstr ""
+
+#: classes/class-smart-manager-shop-order.php:437
 msgid "Qty"
 msgstr ""
 
-#: classes/class-smart-manager-shop-order.php:431 
+#: classes/class-smart-manager-shop-order.php:437 
 #: pro/templates/order-invoice.php:163
 msgid "Price"
 msgstr ""
 
-#: classes/class-smart-manager-shop-order.php:434 
+#: classes/class-smart-manager-shop-order.php:440 
 #: pro/classes/class-smart-manager-pro-product.php:107
 msgid "Cost of Good"
 msgstr ""

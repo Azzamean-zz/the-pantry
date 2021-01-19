@@ -92,8 +92,9 @@ if ( ! class_exists( 'Smart_Manager_Pro_Shop_Subscription' ) ) {
 
 			$visible_columns = array('ID', 'post_date', 'post_status', '_billing_email', '_billing_first_name', '_billing_last_name', '_order_total', '_billing_interval', '_billing_period', '_payment_method_title', '_schedule_next_payment', '_schedule_end');
 
-			$numeric_columns = array('_billing_phone', '_billing_postcode', '_cart_discount', '_cart_discount_tax', '_customer_user', '_shipping_postcode', '_billing_interval');
+			$numeric_columns = array('_billing_phone', '_cart_discount', '_cart_discount_tax', '_customer_user', '_billing_interval');
 
+			$string_columns = array('_billing_postcode', '_shipping_postcode');
 
 			$post_status_col_index = sm_multidimesional_array_search('posts_post_status', 'data', $dashboard_model['columns']);
 			
@@ -182,6 +183,8 @@ if ( ! class_exists( 'Smart_Manager_Pro_Shop_Subscription' ) ) {
 					$column = $this->generate_dropdown_col_model( $column, $subscription_period );				
 				} else if( !empty( $numeric_columns ) && in_array( $src, $numeric_columns ) ) {
 					$column ['type'] = $column ['editor'] = 'numeric';
+				} else if( !empty( $string_columns ) && in_array( $src, $string_columns ) ) {
+					$column ['type'] = $column ['editor'] = 'text';
 				}
 			}
 

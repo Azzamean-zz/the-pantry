@@ -853,3 +853,9 @@ function yourprefix_add_to_content($content) {
  * Remove related products output
  */
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
+
+ /**
+ * Reminder Emails
+ */
+ 
+

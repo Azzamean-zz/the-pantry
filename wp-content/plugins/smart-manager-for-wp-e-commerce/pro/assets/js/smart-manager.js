@@ -376,44 +376,6 @@ var sm_beta_hide_dialog = function(IDs, gID) {
     index = 0;
 }
 
-//function to handle multiple search conditions
-Smart_Manager.prototype.addAdvancedSearchCondition = function() { 
-
-    window.smart_manager.search_count++;
-
-    let searchBoxOldId = "sm_advanced_search_box_0",
-        searchBoxOldValue = "sm_advanced_search_box_value_0",
-        searchBoxNewId = "sm_advanced_search_box_" + window.smart_manager.search_count,
-        SearchBoxNewValue = "sm_advanced_search_box_value_" + window.smart_manager.search_count;
-
-
-    jQuery("#sm_advanced_search_box").append(jQuery("#" + searchBoxOldId).clone().attr('id', searchBoxNewId));
-    jQuery("#sm_advanced_search_box").append(jQuery("#" + searchBoxOldValue).clone().attr({'id': SearchBoxNewValue, 'name': SearchBoxNewValue}));
-
-    jQuery("#" + searchBoxNewId).empty().css({'margin-top':'0.5em'});
-    jQuery("#" + SearchBoxNewValue).val('');
-
-    var visualsearch_params  = {
-                                el      : jQuery("#"+searchBoxNewId),
-                                placeholder: "Enter your search conditions here!",
-                                strict: false,
-                                search: function(json){
-                                    window.smart_manager.advancedSearchQuery[window.smart_manager.search_count] = json;
-                                    jQuery("#"+SearchBoxNewValue).val(json);
-                                },
-                                parameters: window.smart_manager.col_model_search
-                            };
-
-    if( window.smart_manager.advancedSearchQuery[window.smart_manager.search_count] != '' && typeof(window.smart_manager.advancedSearchQuery[window.smart_manager.search_count]) != 'undefined' && window.smart_manager.isJSON( window.smart_manager.advancedSearchQuery[window.smart_manager.search_count] ) ) {
-        visualsearch_params.defaultquery = JSON.parse(window.smart_manager.advancedSearchQuery[window.smart_manager.search_count]);
-        jQuery("#"+SearchBoxNewValue).val(window.smart_manager.advancedSearchQuery[window.smart_manager.search_count]);
-    }                            
-
-    window.visualSearch = new VisualSearch(visualsearch_params);
-}
-
-
-
 // ========================================================================
 // EXPORT CSV
 // ========================================================================
@@ -428,11 +390,9 @@ Smart_Manager.prototype.generateCsvExport = function() {
                               SM_IS_WOO30: window.smart_manager.sm_is_woo30,
                               sort_params: (window.smart_manager.currentDashboardModel.hasOwnProperty('sort_params') ) ? window.smart_manager.currentDashboardModel.sort_params : '',
                               table_model: (window.smart_manager.currentDashboardModel.hasOwnProperty('tables') ) ? window.smart_manager.currentDashboardModel.tables : '',
-                              search_text: window.smart_manager.simpleSearchText
+                              search_text: window.smart_manager.simpleSearchText,
+                              advanced_search_query: JSON.stringify(window.smart_manager.advancedSearchQuery)
                           };
-
-    params['search_query[]'] = window.smart_manager.advancedSearchQuery;
-
     //Code for handling views
     let viewSlug = window.smart_manager.getViewSlug(window.smart_manager.dashboardName);
     
@@ -442,7 +402,7 @@ Smart_Manager.prototype.generateCsvExport = function() {
         params['active_module'] = (window.smart_manager.viewPostTypes.hasOwnProperty(viewSlug)) ? window.smart_manager.viewPostTypes[viewSlug] : window.smart_manager.dashboard_key;
     }
 
-    let export_url = window.smart_manager.sm_ajax_url + '&cmd='+ params['cmd'] +'&active_module='+ params['active_module'] +'&security='+ params['security'] +'&pro='+ params['pro'] +'&SM_IS_WOO30='+ params['SM_IS_WOO30'] +'&SM_IS_WOO30='+ params['SM_IS_WOO30'] +'&sort_params='+ encodeURIComponent(JSON.stringify(params['sort_params'])) +'&table_model='+ encodeURIComponent(JSON.stringify(params['table_model'])) +'&search_query[]='+ encodeURIComponent(window.smart_manager.advancedSearchQuery)+'&search_text='+ params['search_text'];
+    let export_url = window.smart_manager.sm_ajax_url + '&cmd='+ params['cmd'] +'&active_module='+ params['active_module'] +'&security='+ params['security'] +'&pro='+ params['pro'] +'&SM_IS_WOO30='+ params['SM_IS_WOO30'] +'&SM_IS_WOO30='+ params['SM_IS_WOO30'] +'&sort_params='+ encodeURIComponent(JSON.stringify(params['sort_params'])) +'&table_model='+ encodeURIComponent(JSON.stringify(params['table_model'])) +'&advanced_search_query='+ encodeURIComponent(JSON.stringify(window.smart_manager.advancedSearchQuery))+'&search_text='+ params['search_text'];
     export_url += ( window.smart_manager.date_params.hasOwnProperty('date_filter_params') ) ? '&date_filter_params='+ window.smart_manager.date_params['date_filter_params'] : '';
     export_url += ( window.smart_manager.date_params.hasOwnProperty('date_filter_query') ) ? '&date_filter_query='+ window.smart_manager.date_params['date_filter_query'] : '';
     
@@ -478,7 +438,7 @@ Smart_Manager.prototype.printInvoice = function() {
                         search_text: window.smart_manager.simpleSearchText
                     };
 
-    let url = window.smart_manager.sm_ajax_url + '&cmd='+ params.data['cmd'] +'&active_module='+ params.data['active_module'] +'&security='+ params.data['security'] +'&pro='+ params.data['pro'] +'&SM_IS_WOO30='+ params.data['SM_IS_WOO30'] +'&SM_IS_WOO30='+ params.data['SM_IS_WOO30'] +'&sort_params='+ encodeURIComponent(JSON.stringify(params.data['sort_params'])) +'&table_model='+ encodeURIComponent(JSON.stringify(params.data['table_model'])) +'&search_query[]='+ encodeURIComponent(window.smart_manager.advancedSearchQuery) +'&search_text='+ params.data['search_text'] + '&selected_ids=' + params.data['selected_ids'];
+    let url = window.smart_manager.sm_ajax_url + '&cmd='+ params.data['cmd'] +'&active_module='+ params.data['active_module'] +'&security='+ params.data['security'] +'&pro='+ params.data['pro'] +'&SM_IS_WOO30='+ params.data['SM_IS_WOO30'] +'&SM_IS_WOO30='+ params.data['SM_IS_WOO30'] +'&sort_params='+ encodeURIComponent(JSON.stringify(params.data['sort_params'])) +'&table_model='+ encodeURIComponent(JSON.stringify(params.data['table_model'])) +'&advanced_search_query='+ encodeURIComponent(JSON.stringify(window.smart_manager.advancedSearchQuery)) +'&search_text='+ params.data['search_text'] + '&selected_ids=' + params.data['selected_ids'];
     params.call_url = url;
     params.data_type = 'html';
 
@@ -531,7 +491,7 @@ Smart_Manager.prototype.duplicateRecords = function() {
 
         params.showLoader = false;
 
-        if( window.smart_manager.simpleSearchText != '' || window.smart_manager.advancedSearchQuery != '' ) {
+        if( window.smart_manager.simpleSearchText != '' || window.smart_manager.advancedSearchQuery.length > 0 ) {
             params.data.filteredResults = 1;
         }
 
@@ -562,7 +522,7 @@ Smart_Manager.prototype.saveView = function(action = 'create') {
         currentDashboardState = JSON.parse(currentDashboardState);
         currentDashboardState['search_params'] = {
                                             'isAdvanceSearch': ((window.smart_manager.advancedSearchQuery.length > 0) ? 'true' : 'false'),
-                                            'params': ((window.smart_manager.advancedSearchQuery.length > 0) ? window.smart_manager.advancedSearchQuery.map((q) => JSON.parse(q)) : window.smart_manager.simpleSearchText),
+                                            'params': ((window.smart_manager.advancedSearchQuery.length > 0) ? window.smart_manager.advancedSearchQuery : window.smart_manager.simpleSearchText),
         }
 
         //AJAX to create & save view
@@ -799,7 +759,7 @@ Smart_Manager.prototype.processBatchUpdate = function() {
 
         params.showLoader = false;
 
-    if( window.smart_manager.simpleSearchText != '' || window.smart_manager.advancedSearchQuery != '' ) {
+    if( window.smart_manager.simpleSearchText != '' || window.smart_manager.advancedSearchQuery.length > 0 ) {
         params.data.filteredResults = 1;
     }
 
@@ -919,7 +879,7 @@ Smart_Manager.prototype.createBatchUpdateDialog = function() {
         return;
     }
 
-    let allItemsOptionText = ( window.smart_manager.simpleSearchText != '' || window.smart_manager.advancedSearchQuery != '' ) ? 'All Items In Search Results' : 'All Items In Store';
+    let allItemsOptionText = ( window.smart_manager.simpleSearchText != '' || window.smart_manager.advancedSearchQuery.length > 0 ) ? 'All Items In Search Results' : 'All Items In Store';
 
     let entire_store_batch_update_html = "<tr>"+
                                             ( ( window.smart_manager.selectAll === false ) ? "<td style='white-space: pre;'><input type='radio' name='batch_update_storewide' value='selected_ids' checked/>Selected Items</td>" : '' ) +
@@ -1348,7 +1308,7 @@ Smart_Manager.prototype.deleteAllRecords = function ( actionArgs ) {
 
         params.showLoader = false;
 
-        if( window.smart_manager.simpleSearchText != '' || window.smart_manager.advancedSearchQuery != '' ) {
+        if( window.smart_manager.simpleSearchText != '' || window.smart_manager.advancedSearchQuery.length > 0 ) {
             params.data.filteredResults = 1;
         }
 

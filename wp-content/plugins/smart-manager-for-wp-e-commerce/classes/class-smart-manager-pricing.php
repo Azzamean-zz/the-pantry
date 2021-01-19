@@ -32,14 +32,14 @@ class Smart_Manager_Pricing {
 				max-width: 1375px;
 			}
 			.sm_discount_code {
-				color: #2D9FE3;
+				color: #6875F5;
 				font-weight: 600;
 				font-size: 1.1em;
 			}
 			.sm_sub_headline {
 				font-size: 1.6em;
 				font-weight: 400;
-				color: #008cddc7;
+				color: #6875F5;
 				text-align: center;
 				line-height: 1.5em;
 				margin: 0 auto 1em;
@@ -268,7 +268,7 @@ class Smart_Manager_Pricing {
 			}
 			table.sm_feature_table th.sm_pro_features {
 				background-color: #DCDDFC !important;
-				color: #4D51F4 !important;
+				color: #6875F5 !important;
 			}
 			table.sm_feature_table td.sm_feature_name {
 				text-transform: capitalize;
@@ -287,7 +287,7 @@ class Smart_Manager_Pricing {
 				margin-top: 2em;
 			}
 			.clr-a {
-				color: #f42267 !important;
+				color: #6875F5 !important;
 			}
 			.update-nag , .error, .updated{ 
 				display:none; 
@@ -301,15 +301,16 @@ class Smart_Manager_Pricing {
 					<div class="sm_column column_one_fourth pricing">
 						<span class="sm_plan"><h4 class="clr-a center"><?php echo __( '1 site (Annual)', 'smart-manager-for-wp-e-commerce' ); ?></h4></span>
 						<span class="sm_price">
-							<p><del class="center"><?php echo __( '$149/yr', 'smart-manager-for-wp-e-commerce' ); ?></del></p>
-							<h2><?php echo __( '$112/yr', 'smart-manager-for-wp-e-commerce' ); ?></h2>
+							<p><del class="center"><?php echo __( '$149', 'smart-manager-for-wp-e-commerce' ); ?></del></p>
+							<h2><?php echo __( '$112', 'smart-manager-for-wp-e-commerce' ); ?></h2>
 						</span>
 
 						<div class="center">
-							<a class="sm_button small green center" href="https://www.storeapps.org/?buy-now=18694&qty=1&coupon=sm-25off&page=722&with-cart=1&utm_source=sm&utm_medium=in_app_pricing&utm_campaign=single_annual" target="_blank" rel="noopener"><?php echo sprintf( __( 'Get %s off', 'smart-manager-for-wp-e-commerce' ), '<span class="sm_discount_amount">' . __( '25%', 'smart-manager-for-wp-e-commerce' ) . '</span>' ); ?></a>
+							<a class="sm_button small green center" href="https://www.storeapps.org/?buy-now=18694&qty=1&coupon=sm-25off&page=722&with-cart=1&utm_source=sm&utm_medium=in_app_pricing&utm_campaign=single_annual" target="_blank" rel="noopener"><?php _e( 'Buy Now', 'smart-manager-for-wp-e-commerce' ); ?></a>
 						</div>
 					</div>
-					<div class="sm_column column_one_fourth pricing sm_lifetime_price scaleup" style="border-color: #008cdd;">
+					<div class="sm_column column_one_fourth pricing sm_lifetime_price scaleup" style="border-color: #252f3fe6;padding: 0;border-width: 0.2em;">
+						<div style="text-align: center;background: #252f3fe6;color: #FFF;padding: 1em;font-weight: 900;"> <?php echo __( 'Best Seller', 'smart-manager-for-wp-e-commerce' ); ?> </div>
 						<span class="sm_plan"><h4 class="clr-a center"><?php echo __( '1 site (Lifetime)', 'smart-manager-for-wp-e-commerce' ); ?></h4></span>
 						<span class="sm_price">
 							<p><del class="center"><?php echo __( '$449', 'smart-manager-for-wp-e-commerce' ); ?></del></p>
@@ -317,19 +318,19 @@ class Smart_Manager_Pricing {
 						</span>
 
 						<div class="center">
-							<a class="sm_button small green center" href="https://www.storeapps.org/?buy-now=86835&qty=1&coupon=sm-25off-l&page=722&with-cart=1&utm_source=sm&utm_medium=in_app_pricing&utm_campaign=single_lifetime" target="_blank" rel="noopener"><?php echo sprintf( __( 'Get %s off', 'smart-manager-for-wp-e-commerce' ), '<span class="sm_discount_amount">' . __( '25%', 'smart-manager-for-wp-e-commerce' ) . '</span>' ); ?><span style="width: 1em; height: 1em; background-image: url('https://www.storeapps.org/wp-content/themes/storeapps/assets/images/fidget.svg'); display: inline-block; margin-left: 0.5em" class="fidget spin"></span></a>
+							<a class="sm_button small green center" href="https://www.storeapps.org/?buy-now=86835&qty=1&coupon=sm-25off-l&page=722&with-cart=1&utm_source=sm&utm_medium=in_app_pricing&utm_campaign=single_lifetime" target="_blank" rel="noopener"><?php _e( 'Buy Now', 'smart-manager-for-wp-e-commerce' ); ?><span style="width: 1em; height: 1em; background-image: url('https://www.storeapps.org/wp-content/themes/storeapps/assets/images/fidget.svg'); display: inline-block; margin-left: 0.5em" class="fidget spin"></span></a>
 						</div>
 					</div>
 					<div class="sm_column column_one_fourth pricing">
 
 						<span class="sm_plan"><h4 class="clr-a center"><?php echo __( '5 sites (Annual)', 'smart-manager-for-wp-e-commerce' ); ?></h4></span>
 						<span class="sm_price">
-							<p><del class="center"><?php echo __( '$179/yr', 'smart-manager-for-wp-e-commerce' ); ?></del></p>
-							<h2><?php echo __( '$135/yr', 'smart-manager-for-wp-e-commerce' ); ?></h2>
+							<p><del class="center"><?php echo __( '$179', 'smart-manager-for-wp-e-commerce' ); ?></del></p>
+							<h2><?php echo __( '$135', 'smart-manager-for-wp-e-commerce' ); ?></h2>
 						</span>
 
 						<div class="center">
-							<a class="sm_button small green center" href="https://www.storeapps.org/?buy-now=18693&qty=1&coupon=sm-25off&page=722&with-cart=1&utm_source=sm&utm_medium=in_app_pricing&utm_campaign=multi_annual" target="_blank" rel="noopener"><?php echo sprintf( __( 'Get %s off', 'smart-manager-for-wp-e-commerce' ), '<span class="sm_discount_amount">' . __( '25%', 'smart-manager-for-wp-e-commerce' ) . '</span>' ); ?></a>
+							<a class="sm_button small green center" href="https://www.storeapps.org/?buy-now=18693&qty=1&coupon=sm-25off&page=722&with-cart=1&utm_source=sm&utm_medium=in_app_pricing&utm_campaign=multi_annual" target="_blank" rel="noopener"><?php _e( 'Buy Now', 'smart-manager-for-wp-e-commerce' ); ?></a>
 						</div>
 					</div>
 					<div class="sm_column column_one_fourth pricing sm_last sm_lifetime_price">
@@ -340,7 +341,7 @@ class Smart_Manager_Pricing {
 						</span>
 
 						<div class="center">
-							<a class="sm_button small green center" href="https://www.storeapps.org/?buy-now=86836&qty=1&coupon=sm-25off-l&page=722&with-cart=1&utm_source=sm&utm_medium=in_app_pricing&utm_campaign=multi_lifetime" target="_blank" rel="noopener"><?php echo sprintf( __( 'Get %s off', 'smart-manager-for-wp-e-commerce' ), '<span class="sm_discount_amount">' . __( '25%', 'smart-manager-for-wp-e-commerce' ) . '</span>' ); ?></a>
+							<a class="sm_button small green center" href="https://www.storeapps.org/?buy-now=86836&qty=1&coupon=sm-25off-l&page=722&with-cart=1&utm_source=sm&utm_medium=in_app_pricing&utm_campaign=multi_lifetime" target="_blank" rel="noopener"><?php _e( 'Buy Now', 'smart-manager-for-wp-e-commerce' ); ?></a>
 						</div>
 					</div>
 				</div>
@@ -356,7 +357,7 @@ class Smart_Manager_Pricing {
 				</div>
 			</div>
 			<div class="sm_row" id="sm_comparison_table">
-				<div class="sm_sub_headline"><span class="dashicons dashicons-awards"></span><?php echo __( ' Get tons of more features with Smart Manager Pro!', 'smart-manager-for-wp-e-commerce' ); ?></div>
+				<div class="sm_sub_headline"><span class="dashicons dashicons-awards"></span><?php echo __( ' More powerful features with Smart Manager Pro!', 'smart-manager-for-wp-e-commerce' ); ?></div>
 				<table class="sm_feature_table wp-list-table widefat fixed">
 					<thead>
 						<tr>
@@ -454,7 +455,7 @@ class Smart_Manager_Pricing {
 						</tr>
 						<tr>
 							<td class="sm_feature_name">
-								<strong><?php echo __( 'Bulk / Batch Update', 'smart-manager-for-wp-e-commerce' ); ?></strong>
+								<strong><?php echo __( 'Bulk Edit / Batch Update', 'smart-manager-for-wp-e-commerce' ); ?></strong>
 							</td>
 							<td class="sm_free_feature_name">
 								<span class='dashicons dashicons-no-alt'></span>
@@ -478,6 +479,17 @@ class Smart_Manager_Pricing {
 						<tr>
 							<td class="sm_feature_name">
 								<?php echo __( 'Duplicate single / multiple / all records for a particular post type  in a single click', 'smart-manager-for-wp-e-commerce' ); ?>
+							</td>
+							<td class="sm_free_feature_name">
+								<span class='dashicons dashicons-no-alt'></span>
+							</td>
+							<td class="sm_pro_feature_name">
+								<span class='dashicons dashicons-yes'></span>
+							</td>
+						</tr>
+						<tr>
+							<td class="sm_feature_name">
+								<?php echo __( 'Custom views / Segmented views', 'smart-manager-for-wp-e-commerce' ); ?>
 							</td>
 							<td class="sm_free_feature_name">
 								<span class='dashicons dashicons-no-alt'></span>
@@ -534,7 +546,7 @@ class Smart_Manager_Pricing {
 				</table>
 			</div>
 			<div class="sm_row" id="sm_product_page_link">
-				<?php echo sprintf( __( 'Want to know more about Smart Manager Pro? %s.', 'smart-manager-for-wp-e-commerce' ), '<a style="color: #008cddc7;" target="_blank" href="https://www.storeapps.org/product/smart-manager/?utm_source=sm&utm_medium=in_app_pricing&utm_campaign=sm_know">' . __( 'Click here', 'smart-manager-for-wp-e-commerce' ) . '</a>' ); ?>
+				<?php echo sprintf( __( 'Want to know more about Smart Manager Pro? %s.', 'smart-manager-for-wp-e-commerce' ), '<a style="color: #6875F5;" target="_blank" href="https://www.storeapps.org/product/smart-manager/?utm_source=sm&utm_medium=in_app_pricing&utm_campaign=sm_know">' . __( 'Click here', 'smart-manager-for-wp-e-commerce' ) . '</a>' ); ?>
 			</div>
 		</div>
 		<?php

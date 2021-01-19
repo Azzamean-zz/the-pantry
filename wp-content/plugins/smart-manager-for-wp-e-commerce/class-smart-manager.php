@@ -908,13 +908,13 @@ class Smart_Manager {
 						'jquery-effects-explode' , 'jquery-effects-fade' , 'jquery-effects-fold' , 'jquery-effects-highlight' , 'jquery-effects-pulsate' , 'jquery-effects-scale' ,
 						'jquery-effects-shake' , 'jquery-effects-slide' , 'jquery-effects-transfer', 'underscore');
 
-		if ( isset($_GET['page']) && $_GET['page'] == "smart-manager" ) {
+		// if ( isset($_GET['page']) && $_GET['page'] == "smart-manager" ) {
 			wp_register_script ( 'sm_select2', plugins_url ( '/assets/js/select2/select2.full.min.js', SM_PLUGIN_FILE ), $deps, '4.0.5' );
 			wp_enqueue_script( 'sm_select2' );
 			if( isset( $_GET['sm-settings'] ) ){
 				return;
 			}
-		}
+		// }
 					
 		//Registering scripts for jqgrid lib.
 	//       wp_register_script ( 'sm_jquery_ui_multiselect', plugins_url ( '/assets/js/jqgrid/ui.multiselect.js', SM_PLUGIN_FILE ), $deps, '1.10.2' );
@@ -926,12 +926,10 @@ class Smart_Manager {
 		// wp_register_script ( 'sm_chosen', plugins_url ( '/assets/js/chosen/chosen.jquery.min.js', SM_PLUGIN_FILE ), array ('sm_handsontable_select2'), '1.3.0' );
 		// wp_register_script ( 'sm_sortable', plugins_url ( '/assets/js/sortable/sortable.min.js', SM_PLUGIN_FILE ), array ('sm_chosen'), '1.8.1' );
 
-		//Registering scripts for visualsearch lib.
-		wp_register_script ( 'sm_visualsearch_dependencies_beta', plugins_url ( '/assets/js/visualsearch/backbone.js', SM_PLUGIN_FILE ), $deps, $this->version );
-		wp_register_script ( 'sm_search_beta', plugins_url ( '/assets/js/visualsearch/search.js', SM_PLUGIN_FILE ), array ('sm_visualsearch_dependencies_beta'), $this->version );
-
-
-		$last_reg_script = 'sm_search_beta';
+		wp_register_script ( 'sm_mithril', plugins_url ( '/assets/js/mithril/mithril.min.js', SM_PLUGIN_FILE ), $deps, $this->version );
+		wp_register_script ( 'sm_search_styles', plugins_url ( '/assets/js/styles.js', SM_PLUGIN_FILE ), array( 'sm_mithril' ), $this->version );
+		wp_register_script ( 'sm_search', plugins_url ( '/assets/js/admin.js', SM_PLUGIN_FILE ), array( 'sm_search_styles' ), $this->version );
+		$last_reg_script = 'sm_mithril';
 
 		//Code for loading custom js automatically
 		$custom_lib_js_lite = glob( $this->plugin_path .'/assets/js/*/*.js' );
@@ -946,7 +944,7 @@ class Smart_Manager {
 				$folder_path = substr($file, 0, (strrpos($file, '/', -3)));
 				$folder_name = substr($folder_path, (strrpos($folder_path, '/', -3) + 1));
 
-				if( 'visualsearch' === $folder_name ) {
+				if( 'mithril' === $folder_name ) {
 					continue;
 				}
 
@@ -981,7 +979,7 @@ class Smart_Manager {
 
 			$file_nm = 'sm_custom_'.preg_replace('/[\s\-.]/','_',substr($file, (strrpos($file, '/', -3) + 1)));
 
-			if ( $file_nm == 'sm_custom_smart_manager_js' ) {
+			if ( $file_nm == 'sm_custom_smart_manager_js' || $file_nm == 'sm_custom_styles_js' || $file_nm == 'sm_custom_admin_js' ) {
 				continue;
 			}
 
@@ -1167,9 +1165,7 @@ class Smart_Manager {
 		wp_enqueue_style( 'wp-jquery-ui-dialog' );
 		
 		//Registering styles for visualsearch lib.
-		wp_register_style ( 'sm_beta_search_reset', plugins_url ( '/assets/js/visualsearch/reset.css', SM_PLUGIN_FILE ), array (), $this->version );
-		wp_register_style ( 'sm_beta_search_icons', plugins_url ( '/assets/js/visualsearch/icons.css', SM_PLUGIN_FILE ), array ('sm_beta_search_reset'), $this->version );
-		wp_register_style ( 'sm_beta_search_workspace', plugins_url ( '/assets/js/visualsearch/workspace.css', SM_PLUGIN_FILE ), array ('sm_beta_search_icons'), $this->version );
+		wp_register_style ( 'sm_search', plugins_url ( '/assets/css/styles.css', SM_PLUGIN_FILE ), array(), $this->version );
 
 		//Code for loading custom js for PRO automatically
 		$custom_css_lite = glob( $this->plugin_path .'/assets/css/*/*.css' );
@@ -1184,7 +1180,7 @@ class Smart_Manager {
 
 		if( !empty( $custom_css ) ) {
 			$index = 0;
-			$last_reg_script = 'sm_beta_search_workspace';
+			$last_reg_script = 'sm_search';
 			foreach ( $custom_css as $file ) {
 
 				$folder_name = '';
@@ -1196,7 +1192,7 @@ class Smart_Manager {
 
 				$file_nm = 'sm_'. ( !empty( $pro_flag ) ? $pro_flag.'_' : '' ) .'custom_'.preg_replace('/[\s\-.]/','_',substr($file, (strrpos($file, '/', -3) + 1)));
 
-				if( $file_nm == 'sm_pro_custom_smart_manager_css' ) {
+				if( $file_nm == 'sm_pro_custom_smart_manager_css' || $file_nm == 'sm_pro_custom_styles_css' ) {
 					continue;
 				}
 
@@ -1389,7 +1385,7 @@ class Smart_Manager {
 			} else if ( SMPRO === false && get_option('sm_dismiss_admin_notice') == '1') { ?>
 					<div id="message" class="updated fade" style="display:block !important;">
 						<p> <?php
-								printf( ('<b>' . __( 'Important:', SM_TEXT_DOMAIN ) . '</b> ' . __( 'Upgrade to Pro to get features like \'<i>Manage any Custom Post Type</i>\' , \'<i>Batch Update</i>\' , \'<i>Export CSV </i>\' , \'<i>Duplicate Products</i>\' &amp; many more...', SM_TEXT_DOMAIN ) . " " . '<br /><a href="%1s" target=_storeapps>' . " " .__( 'Learn more about Pro version', SM_TEXT_DOMAIN ) . '</a> ' . __( 'or take a', SM_TEXT_DOMAIN ) . " " . '<a href="%2s" target=_livedemo>' . " " . __( 'Live Demo', SM_TEXT_DOMAIN ) . '</a>'), 'https://www.storeapps.org/product/smart-manager', 'http://demo.storeapps.org/?demo=sm-woo' );							
+								printf( ('<b>' . __( 'Important:', SM_TEXT_DOMAIN ) . '</b> ' . __( 'Upgrade to Pro to get features like \'<i>Manage any Custom Post Type</i>\' , \'<i>Bulk Edit</i>\' , \'<i>Export CSV </i>\' , \'<i>Duplicate Products</i>\' &amp; many more...', SM_TEXT_DOMAIN ) . " " . '<br /><a href="%1s" target=_storeapps>' . " " .__( 'Learn more about Pro version', SM_TEXT_DOMAIN ) . '</a> ' . __( 'or take a', SM_TEXT_DOMAIN ) . " " . '<a href="%2s" target=_livedemo>' . " " . __( 'Live Demo', SM_TEXT_DOMAIN ) . '</a>'), 'https://www.storeapps.org/product/smart-manager', 'http://demo.storeapps.org/?demo=sm-woo' );							
 							?>
 						</p>
 					</div>
@@ -1405,6 +1401,10 @@ class Smart_Manager {
 		$latest_version = $this->get_latest_version();
 		$is_pro_updated = $this->is_pro_updated();
 
+		?>
+		<div id="sa_smart_manager_main"> </div>
+		<?php
+			wp_enqueue_script( 'sm_search' );
 		?>
 		<div class="wrap" style="margin: 0!important;">
 			<style>
@@ -1436,7 +1436,6 @@ class Smart_Manager {
 					?>
 				</span>
 			</div>
-		</div>
 		<?php
 			if (! $is_pro_updated) {
 				?> <?php
@@ -1469,7 +1468,7 @@ class Smart_Manager {
 					<div></div>
 				</div>
 			</div>
-
+		</div>
 			<?php
 		
 	}

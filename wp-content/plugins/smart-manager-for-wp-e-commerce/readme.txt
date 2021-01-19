@@ -5,9 +5,9 @@ Author URI: https://www.storeapps.org/shop/
 Plugin URI: https://www.storeapps.org/product/smart-manager/?utm_source=wprepo&utm_medium=web&utm_campaign=smwp_readme
 Tags: bulk edit, woocommerce bulk edit, stock management, products editor, woocommerce, woocommerce advanced bulk edit, woocommerce stock manager, woocommerce inventory management, woocommerce bulk price change, woocommerce manage stock, woocommerce bulk edit products, woocommerce, store manager, bulk update, inline edit, manage variations, bulk edit, coupons, shop manager, batch update, wp ecommerce, productivity, products, variations, orders, customers, manager, pro, manager pro, pro manager, extension, premium, free, woocommerce customer management, inventory management
 Requires at least: 4.8.0
-Tested up to: 5.5.3
+Tested up to: 5.6
 Requires PHP: 5.6+
-Stable tag: 5.1.0
+Stable tag: 5.3.0
 License: GPLv3
 
 The #1 and a powerful tool to manage stock, inventory from a single place. Super quick and super easy.
@@ -69,9 +69,9 @@ https://www.youtube.com/watch?v=COXCuX2rFrk
 - Perform operations like append, prepend, increase, decrease, etc. in bulk. 
 - Update single/multiple fields for few or all records at once...without errors! 
 - Reduce prices, increase inventory levels, change product categories, attributes, order status or any other fields, all in bulk quickly...without errors! 
-- Copy any field from any record using Batch update.
+- Copy any field from any record using Bulk edit / Batch update.
 - Filter any post type & perform bulk edit operations on them.
-- Utilize your time. Switch to other tasks while the Batch update runs in the background.
+- Utilize your time. Switch to other tasks while the Bulk edit / Batch update runs in the background.
 - **Inline edit multiple records in one-go** without saving entries every time.
 - Inline update ‘Product Gallery Images, Featured Image’ using the media library.
 - Delete all products - based on filters, categories, attributes. Delete featured images, media library images directly from the grid.
@@ -81,6 +81,9 @@ https://www.youtube.com/watch?v=COXCuX2rFrk
 
 https://www.youtube.com/watch?v=20iodFpP5ow
 
+- Create Excel-like **custom views** or segmented views, i.e **view only the data you want.**  Enable / disable data columns, make edits, apply filters, save. Supports all post types.
+- Predefined custom views - Product Stock & Product Price List
+- Set permissions based on user roles as to who can create and access custom views.
 - **Export CSV** for all post types - all or filtered data using date filters, search filters or column filters.
 - Add your own logo to **packing slips/order printing** and also print the same in bulk.
 - Know the **lifetime value (LTV)** of all your customers along with their total purchases to date and last order details.
@@ -197,9 +200,29 @@ It also gives the warm feeling of supporting further development of the plugin.
 
 3. Column selection for display
 
-4. Batch Update (only in Pro version)
+4. Bulk edit / Batch update (only in Pro version)
 
 == Changelog ==
+
+= 5.3.0 (15.01.2021) =
+* New: Improved UI for advanced search functionality
+* New: WooCommerce 4.9.0 compatible
+* Update: Avoid clearing search when switching between simple & advanced search
+* Update: Change column name of 'Excerpt' column to 'Customer provided note' in Orders dashboard
+* Fix: Advanced search functionality not working
+* Fix: Fix vulnerability code reported by Jetpack scan
+* Fix: Dashboard appears blank in some cases
+* Update: POT file
+* Fix: Some minor fixes
+
+= 5.2.0 (10.12.2020) =
+* New: WordPress 5.6 & WooCommerce 4.8.0 compatible
+* Update: Alphabetically sorted list of multi-select custom taxonomies like Product Category, Product Tags, etc. while inline editing the same
+* Fix: Bulk Edit / Batch Update not working when trying to update the entire search result (Pro)
+* Fix: 'Billing Postcode' & 'Shipping Postcode' only accepting numeric values for Orders & Subscriptions dashboard
+* Fix: Advanced search using null or blank values not returning proper results if the meta is not present
+* Update: POT file
+* Fix: Some minor fixes
 
 = 5.1.0 (21.11.2020) =
 * New: WooCommerce 4.7.0 compatible
@@ -1608,6 +1631,12 @@ It also gives the warm feeling of supporting further development of the plugin.
 * Product administration features
 
 == Upgrade Notice ==
+
+= 5.3.0 =
+Introducing Improved UI for advanced search functionality, WooCommerce 4.9.0 compatible, Avoid clearing search when switching between simple & advanced search and fixes related to Advanced search functionality not working, Fix vulnerability code reported by Jetpack scan, Dashboard appears blank in some cases and other important fixes and updates. Recommended upgrade.
+
+= 5.2.0 =
+WordPress 5.6 & WooCommerce 4.8.0 compatible, Updates related to Alphabetically sorted list of multi-select custom taxonomies in inline edit, Fixes related to Bulk Edit / Batch Update not working when trying to update the entire search result, 'Billing Postcode' & 'Shipping Postcode' only accepting numeric values for Orders & Subscriptions dashboard and other important fixes and updates. Recommended upgrade.
 
 = 5.1.0 =
 WooCommerce 4.7.0 compatible, Important updates in StoreApps Connector and other important fixes and updates. Recommended upgrade.

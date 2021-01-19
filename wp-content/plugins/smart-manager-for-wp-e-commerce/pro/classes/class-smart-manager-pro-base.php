@@ -421,7 +421,7 @@ if ( ! class_exists( 'Smart_Manager_Pro_Base' ) ) {
 			$selected_ids = array();
 
 			if( !empty( $this->req_params['filteredResults'] ) ) {
-				$post_ids = get_transient('sm_beta_search_post_ids');
+				$post_ids = get_transient('sa_sm_search_post_ids');
 				$selected_ids = ( !empty( $post_ids ) ) ? explode( ",", $post_ids ) : array();
 			} else {
 
@@ -515,7 +515,7 @@ if ( ! class_exists( 'Smart_Manager_Pro_Base' ) ) {
 
 			if( !empty( $identifier ) && ! empty( $selected_ids ) ) {
 
-				$default_params = array( 'process_name' => 'Batch Update', 
+				$default_params = array( 'process_name' => 'Bulk edit / Batch update', 
 										'callback' => array( 'class_path' => $this->req_params['class_path'], 
 															'func' => array( $this->req_params['class_nm'], 'process_batch_update' ) ),
 										'id_count' => count($selected_ids),

@@ -20,6 +20,7 @@ Smart_Manager.prototype.init = function() {
 	this.column_names= new Array();
 	this.advancedSearchQuery= new Array();
 	this.simpleSearchText = '';
+	this.advancedSearchRuleCount = 0;
 	this.post_data_params = '';
 	this.month_names_short = '';
 	this.dashboardStates = {};
@@ -75,7 +76,8 @@ Smart_Manager.prototype.init = function() {
 	this.sm_wp_editor_html = ''; //variable for storing the html of the wp editor
 	this.sm_last_edited_row_id = '';
 	this.sm_last_edited_col = '';
-	this.col_model_search = '';
+	this.col_model_search = {};
+	this.advancedSearchURLParam = "#!/advancedSearch";
 	this.currentColModel = '';
 
 	//defining default actions for batch update
@@ -83,6 +85,27 @@ Smart_Manager.prototype.init = function() {
 	this.batch_update_action_number = {set_to:'set to', increase_by_per:'increase by %', decrease_by_per:'decrease by %', increase_by_num:'increase by number', decrease_by_num:'decrease by number'};
 	this.batch_update_action_datetime = {set_datetime_to:'set datetime to', set_date_to:'set date to', set_time_to:'set time to'};
 	this.batch_update_action_multilist = {set_to:'set to', add_to:'add to', remove_from:'remove from'};
+
+	// defining operators for diff datatype for advanced search
+
+	let intOperators = {
+		'eq': '==',
+		'neq': '!=',
+		'lt': '<',
+		'gt': '>',
+		'lte': '<=',
+		'gte': '>='
+	}
+
+	this.possibleOperators = {
+			'numeric': intOperators,
+			'date': intOperators,
+			'sm.datetime': intOperators,
+			'dropdown': {'is': 'is', 'is not': 'is not'},
+			'text': {'is': 'is', 'like': 'contains', 'is not': 'is not', 'not like': 'not contains'}
+	}
+
+	this.savedSearch = []
 
 	this.batch_background_process = sm_beta_params.batch_background_process;
 	this.sm_success_msg = sm_beta_params.success_msg;
@@ -247,27 +270,13 @@ Smart_Manager.prototype.loadNavBar = function() {
 	let selected = '',
 	switchSearchType = ( window.smart_manager.searchType == 'simple' ) ? 'Advanced' : 'Simple';
 
-	window.smart_manager.simpleSearchContent = "<input type='text' id='sm_simple_search_box' placeholder='Type to search...'>";
-	window.smart_manager.advancedSearchContent = '<div style="width: 100%; display: flex;">'+
-													'<div id="sm_advanced_search_box" style="width:74.85%">'+
-														'<div id="sm_advanced_search_box_0" style="width: 100%;"></div>'+
-														'<input type="text" id="sm_advanced_search_box_value_0" name="sm_advanced_search_box_value_0" hidden>'+
-													'</div>'+ 
-													'<input type="text" id="sm_advanced_search_query" hidden>'+
-													'<div id="sm_advanced_search_or" style="cursor: pointer;color: #3892D3;" title="Add Another Condition">'+
-														'<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="float: inherit;height: 3em;">'+
-															'<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>'+
-														'</svg>'+
+	window.smart_manager.simpleSearchContent = "<input type='text' id='sm_simple_search_box' placeholder='Type to search...' value='"+window.smart_manager.simpleSearchText+"'>";
+	window.smart_manager.advancedSearchContent = '<div id="sm_advanced_search" title="Click to add/edit condition">'+
+													'<div id="sm_advanced_search_content">'+window.smart_manager.advancedSearchRuleCount+' condition'+((window.smart_manager.advancedSearchRuleCount > 1) ? 's' : '')+'</div>'+
+													'<div id="sm_advanced_search_icon">'+
+														'<span class="dashicons dashicons-edit-large"></span>'+
 													'</div>'+
-													'<div style="margin-left: 1em;cursor: pointer;line-height:0em;">'+
-														'<button id="sm_advanced_search_submit" title="Search" style="height: 2.5em;border: 1px solid #3892D3;background-color: white;border-radius: 3px;cursor: pointer;line-height: 1.5em;color: #515151;display: flex;padding-top: 0.5em;">'+
-															'<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="height: 1.5em;">'+
-																'<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>'+
-															'</svg>'+
-															'<span>Search</span>'+
-														'</button>'+
-													'</div>'+
-												'</div> ';
+												'</div>';
 
 	//Code for dashboards select2
 	window.smart_manager.dashboard_select_options = '';
@@ -482,8 +491,9 @@ Smart_Manager.prototype.initialize_advanced_search = function() {
 	}
 
 	let colModel = JSON.parse( JSON.stringify( window.smart_manager.currentColModel ) );
+	window.smart_manager.col_model_search = {}
 
-	window.smart_manager.col_model_search = Object.entries(colModel).map(([key, obj]) => {
+	Object.entries(colModel).map(([key, obj]) => {
 
 		if( obj.hasOwnProperty('searchable') && obj.searchable == 1 ) { 
 
@@ -505,49 +515,19 @@ Smart_Manager.prototype.initialize_advanced_search = function() {
 					}
 				}
 			}
-		
-			return obj; 
+
+			if (obj.type == "number") {
+				obj.type = 'numeric'
+			}
+
+			window.smart_manager.col_model_search[obj.table_name +'.'+ obj.col_name] = {
+																							'title': obj.name_display,
+																							'type': obj.type,
+																							'values': (obj.search_values) ? obj.search_values : {}
+																						};
 		}
 	});
-
-	window.smart_manager.col_model_search = window.smart_manager.col_model_search.filter(function( element ) {
-	   return element !== undefined;
-	});
-
-	var visualsearch_params = {};
-	
-	window.smart_manager.search_count = 1;
-
-	visualsearch_params  = {
-							el      : jQuery("#sm_advanced_search_box_0"),
-							placeholder: "Enter your search conditions here!",
-							strict: false,
-							search: function(json){
-								window.smart_manager.advancedSearchQuery[0] = json;
-								jQuery("#sm_advanced_search_box_value_0").val(json);
-							},
-							parameters: window.smart_manager.col_model_search
-						};
-
-	if( window.smart_manager.advancedSearchQuery[0] != '' && typeof(window.smart_manager.advancedSearchQuery[0]) != 'undefined' && window.smart_manager.isJSON( window.smart_manager.advancedSearchQuery[0] ) ) {
-		visualsearch_params.defaultquery = JSON.parse(window.smart_manager.advancedSearchQuery[0]);
-		jQuery("#sm_advanced_search_box_value_0").val(JSON.stringify(JSON.parse(window.smart_manager.advancedSearchQuery[0])));
-	}                            
-
-	window.visualSearch = new VisualSearch(visualsearch_params);
-
-	if( window.smart_manager.sm_beta_pro == 1 ) { //handling multiple search conditions for pro
-		if( window.smart_manager.advancedSearchQuery[0] != '' && typeof(window.smart_manager.advancedSearchQuery[0]) != 'undefined' && window.smart_manager.advancedSearchQuery.length > 1 ) { //for search
-
-			for(let i=0; i<window.smart_manager.advancedSearchQuery.length-1; i++) {
-				window.smart_manager.search_count = i;
-				if ( typeof window.smart_manager.addAdvancedSearchCondition !== "undefined" && typeof window.smart_manager.addAdvancedSearchCondition === "function" ) {
-					window.smart_manager.addAdvancedSearchCondition();
-				}
-			}    
-		}
-	}
-
+	jQuery('#sm_advanced_search_content').html(window.smart_manager.advancedSearchRuleCount+' condition'+((window.smart_manager.advancedSearchRuleCount > 1) ? 's' : ''))
 }
 
 Smart_Manager.prototype.showLoader = function( is_show = true ) {
@@ -743,7 +723,7 @@ Smart_Manager.prototype.setDashboardModel = function (response) {
 						searchType = 'advanced'
 					}
 				}
-	
+
 				if(response.search_params.hasOwnProperty('params')){
 					if( searchType == 'simple' ) {
 						window.smart_manager.simpleSearchText = response.search_params.params;
@@ -752,6 +732,19 @@ Smart_Manager.prototype.setDashboardModel = function (response) {
 					} else {
 						window.smart_manager.simpleSearchText = '';
 						window.smart_manager.advancedSearchQuery = response.search_params.params;
+
+						// code to update the advanced seach rule count
+						window.smart_manager.advancedSearchRuleCount = 0;
+						if(window.smart_manager.advancedSearchQuery.length > 0){
+							if(Object.keys(window.smart_manager.advancedSearchQuery[0]).length > 0){
+								let rules = (window.smart_manager.advancedSearchQuery[0].hasOwnProperty('rules')) ? window.smart_manager.advancedSearchQuery[0].rules : []
+								if(rules.length > 0){
+									rules.map((s)=>{
+										window.smart_manager.advancedSearchRuleCount += s.rules.length
+									})
+								}
+							}
+						}
 						jQuery('#search_switch').prop('checked', true);
 					}
 				}
@@ -949,10 +942,9 @@ Smart_Manager.prototype.getDataDefaultParams = function(params) {
 						  SM_IS_WOO30: window.smart_manager.sm_is_woo30,
 						  sort_params: (window.smart_manager.currentDashboardModel.hasOwnProperty('sort_params') ) ? window.smart_manager.currentDashboardModel.sort_params : '',
 						  table_model: (window.smart_manager.currentDashboardModel.hasOwnProperty('tables') ) ? window.smart_manager.currentDashboardModel.tables : '',
-						  search_text: window.smart_manager.simpleSearchText
+						  search_text: (window.smart_manager.searchType == 'simple') ? window.smart_manager.simpleSearchText : '',
+						  advanced_search_query: JSON.stringify((window.smart_manager.searchType != 'simple') ? window.smart_manager.advancedSearchQuery : [])
 					  };
-
-	defaultParams.data['search_query[]'] = window.smart_manager.advancedSearchQuery;
 
 	// Code for passing extra param for view handling
 	if( window.smart_manager.sm_beta_pro == 1 ) {
@@ -1892,6 +1884,10 @@ Smart_Manager.prototype.loadGrid = function() {
 
 					}
 
+					multiselect_data.sort(function(a,b){
+						return a.term.localeCompare(b.term);
+					})
+
 					multiselect_chkbox_list += '<ul>';
 
 					for (var index in multiselect_data) {
@@ -1909,16 +1905,22 @@ Smart_Manager.prototype.loadGrid = function() {
 						var child_val = multiselect_data[index].child;
 						multiselect_chkbox_list += '<ul class="children">';
 
-						for (var child_id in child_val) {
+						let childValKeys = Object.keys(multiselect_data[index].child);
 
+						childValKeys.sort(function(a,b){
+							return child_val[a].localeCompare(child_val[b]);
+						})
+
+						childValKeys.map(function(key) {
 							var child_checked = '';
 
-							if (current_value != '' && current_value.indexOf(child_val[child_id]) != -1) {
+							if (current_value != '' && current_value.indexOf(child_val[key]) != -1) {
 								child_checked = 'checked';                        
 							} 
 
-							multiselect_chkbox_list += '<li> <input type="checkbox" name="chk_multiselect" value="'+ child_id +'" '+ child_checked +'>  '+ child_val[child_id] +'</li>';
-						}
+							multiselect_chkbox_list += '<li> <input type="checkbox" name="chk_multiselect" value="'+ key +'" '+ child_checked +'>  '+ child_val[key] +'</li>';
+						});
+						
 						multiselect_chkbox_list += '</ul>';
 					}               
 
@@ -1972,6 +1974,8 @@ Smart_Manager.prototype.reset = function( fullReset = false ){
 		window.smart_manager.column_names = [];
 		window.smart_manager.simpleSearchText = '';
 		window.smart_manager.advancedSearchQuery = new Array();
+		window.smart_manager.advancedSearchRuleCount = 0;
+		window.smart_manager.col_model_search = {}
 	}
 
 	window.smart_manager.currentDashboardData = [];
@@ -2005,6 +2009,16 @@ Smart_Manager.prototype.refresh = function( dataParams ) {
 	}
 
 	window.smart_manager.getData(dataParams);
+}
+
+Smart_Manager.prototype.showAdvanceSearchDialog = function() {
+	if(window.location.href.includes(window.smart_manager.advancedSearchURLParam)){
+		window.location.href = window.location.href.replace(new RegExp(window.smart_manager.advancedSearchURLParam, "g"), window.smart_manager.advancedSearchURLParam)
+	} else if(window.location.href.includes("#!/")){
+		window.location.href = window.location.href.replace(new RegExp("#!/", "g"), window.smart_manager.advancedSearchURLParam)
+	} else {
+		window.location.href = window.location.href + window.smart_manager.advancedSearchURLParam;
+	}
 }
 
 Smart_Manager.prototype.event_handler = function() {
@@ -2100,27 +2114,49 @@ Smart_Manager.prototype.event_handler = function() {
 		
 	})
 	
+	.off( 'click', '#sm_advanced_search' ).on( 'click', '#sm_advanced_search' ,function(e){
+		e.preventDefault();
+
+		if ( typeof (window.smart_manager.showAdvanceSearchDialog) !== "undefined" && typeof (window.smart_manager.showAdvanceSearchDialog) === "function" ) {
+			window.smart_manager.showAdvanceSearchDialog()
+		}
+	})
+
 	.off( 'change', '#search_switch').on( 'change', '#search_switch' ,function(){ //request for handling switch search types
 
 		let switchSearchType = jQuery(this).attr('switchSearchType'),
 			title = jQuery("label[for='"+ jQuery(this).attr("id") +"']").attr('title'),
 			content = '';
 
-		if(window.smart_manager.clearSearchOnSwitch){
-			window.smart_manager.advancedSearchQuery = new Array();
-			window.smart_manager.simpleSearchText = '';
-		}
+		// if(window.smart_manager.clearSearchOnSwitch){
+		// 	window.smart_manager.advancedSearchQuery = new Array();
+		// 	window.smart_manager.simpleSearchText = '';
+		// }
 
 		jQuery(this).attr('switchSearchType', window.smart_manager.searchType);
 		jQuery("label[for='"+ jQuery(this).attr("id") +"']").attr('title', title.replace(String(switchSearchType).capitalize(), String(window.smart_manager.searchType).capitalize()));
 
 		window.smart_manager.searchType = switchSearchType;
 		content = ( window.smart_manager.searchType == 'simple' ) ? window.smart_manager.simpleSearchContent : window.smart_manager.advancedSearchContent;
-		
 		jQuery('#sm_nav_bar_search #search_content').html(content);
 
-		if ( typeof (window.smart_manager.initialize_advanced_search) !== "undefined" && typeof (window.smart_manager.initialize_advanced_search) === "function" && window.smart_manager.searchType != 'simple' ) {
-			window.smart_manager.initialize_advanced_search();
+		if( window.smart_manager.searchType == 'simple' ) {
+			jQuery('#sm_simple_search_box').val(window.smart_manager.simpleSearchText);
+		} else {
+			// Code to initialize search col model
+			if ( typeof (window.smart_manager.initialize_advanced_search) !== "undefined" && typeof (window.smart_manager.initialize_advanced_search) === "function" ) {
+				window.smart_manager.initialize_advanced_search();
+			}
+
+			// Code to show the advanced search dialog in case of no conditions
+			if ( window.smart_manager.advancedSearchRuleCount == 0 && typeof (window.smart_manager.showAdvanceSearchDialog) !== "undefined" && typeof (window.smart_manager.showAdvanceSearchDialog) === "function" ) {
+				window.smart_manager.showAdvanceSearchDialog()
+			}
+		}
+
+		// code for refreshing the dashboard based on the search
+		if ( (window.smart_manager.simpleSearchText != '' || window.smart_manager.advancedSearchRuleCount > 0) && typeof (window.smart_manager.load_dashboard) !== "undefined" && typeof (window.smart_manager.load_dashboard) === "function" ) {
+			window.smart_manager.load_dashboard()
 		}
 
 	})
@@ -2131,26 +2167,6 @@ Smart_Manager.prototype.event_handler = function() {
 			window.smart_manager.simpleSearchText = jQuery('#sm_simple_search_box').val();
 			window.smart_manager.refresh();
 		}, 1000);
-	})
-
-	.off( 'click', '#sm_advanced_search_submit').on( 'click', '#sm_advanced_search_submit' ,function(){ //request for handling advanced search
-
-		jQuery('input[id^="sm_advanced_search_box_"]').each(function() {
-
-			var val = jQuery(this).val();
-
-			if( val.length == 0 ) {
-				var id = jQuery(this).attr('id'),
-					index = id.lastIndexOf("_"),
-					key = id.substr(index+1);    
-
-				delete(window.smart_manager.advancedSearchQuery[key]);
-			}
-			
-		});
-
-		window.smart_manager.load_dashboard();
-		
 	})
 
 	//Code to handle the inline save functionality
@@ -2470,20 +2486,6 @@ Smart_Manager.prototype.event_handler = function() {
 			} else {
 				window.smart_manager.showNotification();
 			}
-		}
-	})
-
-	//Code for handling adding advanced search conditions
-	.off('click', '#sm_advanced_search_or').on('click', '#sm_advanced_search_or', function () {
-		if( window.smart_manager.sm_beta_pro == 1 ) { 
-			jQuery("#sm_advanced_search_or").removeAttr('disabled');
-			if ( typeof window.smart_manager.addAdvancedSearchCondition !== "undefined" && typeof window.smart_manager.addAdvancedSearchCondition === "function" ) {
-				window.smart_manager.addAdvancedSearchCondition();    
-			}
-			
-		} else {
-			jQuery("#sm_advanced_search_or").attr('disabled','disabled');
-			window.smart_manager.showNotification();
 		}
 	})
 
