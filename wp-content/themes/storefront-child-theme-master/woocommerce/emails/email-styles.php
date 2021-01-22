@@ -214,7 +214,7 @@ h3 {
 
 a {
 	color: <?php echo esc_attr( $link_color ); ?>;
-	font-weight: normal;
+	font-weight: bold;
 	text-decoration: underline;
 }
 

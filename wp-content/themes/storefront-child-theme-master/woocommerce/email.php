@@ -60,6 +60,9 @@ if ( has_action( 'woocommerce_email_header' ) ) {
 			margin: 10px inherit;
 			display: inline-block;
 		}
+		a {
+			font-weight: bold;
+		}
 
 </style>
 <style type="text/css"><?php echo ( isset( $coupon_styles ) && ! empty( $coupon_styles ) ) ? $coupon_styles : ''; // phpcs:ignore ?></style>
