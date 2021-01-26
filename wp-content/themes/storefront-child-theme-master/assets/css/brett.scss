@@ -1108,6 +1108,12 @@ a.wc-block-grid__product-link {
 	display: block;
 }
 
+.page-template-calendar, .page-template-calendar-togo {
+	.pageFooter {
+		z-index: 999;	
+	}
+}
+
 @media screen and (max-width: 990px) {
 	.fc .fc-toolbar {
 		flex-wrap: wrap;

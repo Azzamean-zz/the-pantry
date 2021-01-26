@@ -900,7 +900,7 @@ function send_reminder_email() {
 	    while ( $query->have_posts() ) { $query->the_post();						    
 		    
 			$class_start_date = new DateTime(get_field('start_date'));
-			$class_date = $class_start_date->format('F j, Y');
+			$class_date = $class_start_date->format('F j');
 			$class_time = $class_start_date->format('g:ia');
 			
 		    $class_link = get_the_permalink();
@@ -937,13 +937,14 @@ function send_reminder_email() {
 			    	$attendee_name = $attendee['attendee_meta']['name']['value'];					
 			    	$email = $attendee['attendee_meta']['email']['value'];
 					$mailer = WC()->mailer();
-				    $recipient = 'brett@deicreative.com';
+				    $recipient = 'hornerbrett@gmail.com';
 
 				    $class_name_friendly = str_replace("&#8211;", "-", $class_name);
 					$class_name_friendly = substr($class_name_friendly, strpos($class_name_friendly, "-") + 1);
-				    
+				    $class_name_friendly = preg_replace('/^([^,]*).*$/', '$1', $class_name_friendly);
+
 				    $subject = $class_date . ' ' . $class_time . ' ' . $class_name_friendly . ' ' . 'online class & ingredient kit reminder';
-				    $content = get_reminder_email($attendee_name, $class_name, $instructor, $class_id, $class_date, $class_time, $list_link, $packet, $zoom_info, $prep_instructions, $mailer);
+				    $content = get_reminder_email($attendee_name, $class_name, $class_name_friendly, $instructor, $class_id, $class_date, $class_time, $list_link, $packet, $zoom_info, $prep_instructions, $mailer);
 
 				    $headers = "Content-Type: text/html\r\n";
 				    $mailer->send($recipient, $subject, $content, $headers);
@@ -958,12 +959,13 @@ function send_reminder_email() {
 	} wp_reset_postdata();
 }
 
-function get_reminder_email($attendee_name, $class_name, $instructor, $class_id, $class_date, $class_time, $list_link, $packet, $zoom_info, $prep_instructions, $mailer) {
+function get_reminder_email($attendee_name, $class_name, $class_name_friendly, $instructor, $class_id, $class_date, $class_time, $list_link, $packet, $zoom_info, $prep_instructions, $mailer) {
 	$template = 'emails/reminder.php';
 	return wc_get_template_html($template, array(
 		'attendee_name' => $attendee_name,
 		'email_heading' => 'Hi there!',
 		'class_name' => $class_name,
+		'class_name_friendly' => $class_name_friendly,
 		'instructor' => $instructor,
 		'class_id' => $class_id,
 		'class_date' => $class_date,
@@ -1024,7 +1026,7 @@ function send_shopping_list_email() {
 	    while ( $query->have_posts() ) { $query->the_post();						    
 		    
 			$class_start_date = new DateTime(get_field('start_date'));
-			$class_date = $class_start_date->format('F j, Y');
+			$class_date = $class_start_date->format('F j');
 			$class_time = $class_start_date->format('g:i a');
 			
 		    $class_link = get_the_permalink();
@@ -1033,27 +1035,32 @@ function send_shopping_list_email() {
 		    if(get_field('shopping_list')) {
 			    $list_link = get_field('shopping_list');
 			    $list_link = $list_link['url'];
+		    } else {
+			    $list_link = '';
 		    }
 		    $class_id = get_the_ID();
 		    
 		    $attendee_list = Tribe__Tickets__Tickets::get_event_attendees($class_id);
 		    $emails = [];
+		    $email = '';
 		    foreach($attendee_list as $attendee) {
 			    if(isset($attendee['attendee_meta']['email']['value'])){
 			    	$attendee_name = $attendee['attendee_meta']['name']['value'];					
 			    	$email = $attendee['attendee_meta']['email']['value'];
 
 					$mailer = WC()->mailer();
-				    $recipient = 'hornerbrett@gmail.com';
+				    $recipient = $email;
 
 				    $class_name_friendly = str_replace("&#8211;", "-", $class_name);
 					$class_name_friendly = substr($class_name_friendly, strpos($class_name_friendly, "-") + 1);
-				    
-				    $subject = $class_date . ' ' . $class_time . ' ' . $class_name_friendly . ' ' . 'class shopping list';
+				    $class_name_friendly = preg_replace('/^([^,]*).*$/', '$1', $class_name_friendly);
 
-				    $content = get_shopping_list_email($attendee_name, $class_name, $instructor, $class_id, $class_date, $class_time, $list_link, $mailer);
+				    $subject = $class_date . ' ' . $class_name_friendly . ' ' . 'class shopping list';
+
+				    $content = get_shopping_list_email($attendee_name, $class_name, $class_name_friendly, $instructor, $class_id, $class_date, $class_time, $list_link, $mailer);
 
 				    $headers = "Content-Type: text/html\r\n";
+				    $headers .= "Bcc: hornerbrett@gmail.com, shannon@deicreative.com, info@thepantryseattle.com" . "\r\n";
 				    $mailer->send($recipient, $subject, $content, $headers);
 
 					$emails[] = $attendee['attendee_meta']['email']['value'];
@@ -1065,12 +1072,13 @@ function send_shopping_list_email() {
 	} wp_reset_postdata();
 }
 
-function get_shopping_list_email($attendee_name, $class_name, $instructor, $class_id, $class_date, $class_time, $list_link, $mailer) {
+function get_shopping_list_email($attendee_name, $class_name, $class_name_friendly, $instructor, $class_id, $class_date, $class_time, $list_link, $mailer) {
 	$template = 'emails/shopping-list.php';
 	return wc_get_template_html($template, array(
 		'attendee_name' => $attendee_name,
-		'email_heading' => 'Shopping List Reminder',
+		'email_heading' => 'Hello friends,',
 		'class_name' => $class_name,
+		'class_name_friendly' => $class_name_friendly,
 		'instructor' => $instructor,
 		'class_id' => $class_id,
 		'class_date' => $class_date,
@@ -1128,7 +1136,7 @@ function send_class_evaluation_email() {
 	    while ( $query->have_posts() ) { $query->the_post();						    
 		    
 			$class_start_date = new DateTime(get_field('start_date'));
-			$class_date = $class_start_date->format('F j, Y');
+			$class_date = $class_start_date->format('F j');
 			$class_time = $class_start_date->format('g:i a');
 			
 		    $class_link = get_the_permalink();
@@ -1153,8 +1161,9 @@ function send_class_evaluation_email() {
 
 				    $class_name_friendly = str_replace("&#8211;", "-", $class_name);
 					$class_name_friendly = substr($class_name_friendly, strpos($class_name_friendly, "-") + 1);
+				    $class_name_friendly = preg_replace('/^([^,]*).*$/', '$1', $class_name_friendly);
 				    
-					$subject = $class_date . ' ' . $class_name_friendly . ' ' . 'pickup reminder + recipes!';
+					$subject = $class_date . ' ' . $class_name_friendly . ' ' . 'class evaluation';
 
 				    $content = get_class_evaluation_email($attendee_name, $class_name, $instructor, $class_id, $class_date, $class_time, $survey, $mailer);
 
@@ -1232,7 +1241,7 @@ function send_to_go_reminder_email() {
 	    while ( $query->have_posts() ) { $query->the_post();						    
 		    
 			$class_start_date = new DateTime(get_field('start_date'));
-			$class_date = $class_start_date->format('F j, Y');
+			$class_date = $class_start_date->format('F j');
 			$class_time = $class_start_date->format('g:i a');
 			
 		    $class_link = get_the_permalink();
@@ -1260,7 +1269,8 @@ function send_to_go_reminder_email() {
 
 				    $class_name_friendly = str_replace("&#8211;", "-", $class_name);
 					$class_name_friendly = substr($class_name_friendly, strpos($class_name_friendly, "-") + 1);
-				    
+				    $class_name_friendly = preg_replace('/^([^,]*).*$/', '$1', $class_name_friendly);
+
 					$subject = $class_date . ' ' . $class_name_friendly . ' ' . 'pickup reminder + recipes!';
 
 				    $content = get_to_go_reminder_email($attendee_name, $class_name, $class_id, $class_date, $packet, $class_time, $mailer);
@@ -1295,3 +1305,4 @@ function get_to_go_reminder_email($attendee_name, $class_name, $class_id, $class
 }
 
 add_action( 'send_to_go_reminder_email', 'send_to_go_reminder_email');
+add_action( 'send_shopping_list_email', 'send_shopping_list_email');

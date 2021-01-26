@@ -37,11 +37,11 @@ get_header(); ?>
 				$today = $today->format('Y-m-d H:i:s');
 				
 				$start_day = new DateTime('today midnight', new DateTimeZone($tz));
-				$start_day->modify('+3 day');
+				$start_day->modify('+97 day');
 				$start_day = $start_day->format('Y-m-d H:i:s');
 				
 				$end_day = new DateTime('tomorrow midnight', new DateTimeZone($tz));
-				$end_day->modify('+3 day');
+				$end_day->modify('+97 day');
 				$end_day = $end_day->format('Y-m-d H:i:s');
 			
 				// echo $start_day;
@@ -107,6 +107,7 @@ get_header(); ?>
 					    
 					    $attendee_list = Tribe__Tickets__Tickets::get_event_attendees($class_id);
 					    $emails = [];
+					    $email = '';
 					    foreach($attendee_list as $attendee) {
 						    if(isset($attendee['attendee_meta']['email']['value'])){
 						    	$attendee_name = $attendee['attendee_meta']['name']['value'];					
@@ -118,11 +119,10 @@ get_header(); ?>
 			
 							    $subject = $class_date . ' ' . $class_time . ' ' . $class_name_friendly . ' ' . 'online class & ingredient kit reminder';
 								
-								echo $subject;
+								echo $subject . ' ' . $email;
 								echo '<br>';
 			
 								$emails[] = $attendee['attendee_meta']['email']['value'];
-								break;
 							}
 			
 						}
@@ -191,6 +191,7 @@ get_header(); ?>
 						    
 						    $attendee_list = Tribe__Tickets__Tickets::get_event_attendees($class_id);
 						    $emails = [];
+						    $i = 1;
 						    foreach($attendee_list as $attendee) {
 							    if(isset($attendee['attendee_meta']['email']['value'])){
 							    	$attendee_name = $attendee['attendee_meta']['name']['value'];					
@@ -202,10 +203,10 @@ get_header(); ?>
 								    
 								    $subject = $class_date . ' ' . $class_time . ' ' . $class_name_friendly . ' ' . 'class shopping list';
 
-									echo $subject;
+									echo $subject . ' ' . $email;
 									echo '<br>';
 									$emails[] = $attendee['attendee_meta']['email']['value'];
-									break;
+									$i++;
 								}
 				
 							}
