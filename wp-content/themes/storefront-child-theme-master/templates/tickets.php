@@ -7,6 +7,8 @@
 get_header(); ?>
 
 <?php 
+$query = $_GET;
+
 if(isset($_GET['month'])) {
 	$month = $_GET['month'];
 } else {
@@ -24,6 +26,82 @@ if(isset($_GET['month'])) {
 	}
 </style>	
 <div class="big-container">
+	<ul class="homeLinks">
+		<?php
+		$query['month'] = '01';
+		$query_result = http_build_query($query);
+		?>
+		<li><a class="month-01" href="<?php echo $_SERVER['PHP_SELF']; ?>/tickets?<?php echo $query_result; ?>">January</a></li>
+		<?php
+		$query['month'] = '02';
+		$query_result = http_build_query($query);
+		?>
+		<li><a class="month-02" href="<?php echo $_SERVER['PHP_SELF']; ?>/tickets?<?php echo $query_result; ?>">February</a></li>
+		<?php
+		$query['month'] = '03';
+		$query_result = http_build_query($query);
+		?>
+		<li><a class="month-03" href="<?php echo $_SERVER['PHP_SELF']; ?>/tickets?<?php echo $query_result; ?>">March</a></li>
+		<?php
+		$query['month'] = '04';
+		$query_result = http_build_query($query);
+		?>
+		<li><a class="month-04" href="<?php echo $_SERVER['PHP_SELF']; ?>/tickets?<?php echo $query_result; ?>">April</a></li>
+		<?php
+		$query['month'] = '05';
+		$query_result = http_build_query($query);
+		?>
+		<li><a class="month-05" href="<?php echo $_SERVER['PHP_SELF']; ?>/tickets?<?php echo $query_result; ?>">May</a></li>
+		<?php
+		$query['month'] = '06';
+		$query_result = http_build_query($query);
+		?>
+		<li><a class="month-06" href="<?php echo $_SERVER['PHP_SELF']; ?>/tickets?<?php echo $query_result; ?>">June</a></li>
+		<?php
+		$query['month'] = '07';
+		$query_result = http_build_query($query);
+		?>
+		<li><a class="month-07" href="<?php echo $_SERVER['PHP_SELF']; ?>/tickets?<?php echo $query_result; ?>">July</a></li>
+		<?php
+		$query['month'] = '08';
+		$query_result = http_build_query($query);
+		?>
+		<li><a class="month-08" href="<?php echo $_SERVER['PHP_SELF']; ?>/tickets?<?php echo $query_result; ?>">August</a></li>
+		<?php
+		$query['month'] = '09';
+		$query_result = http_build_query($query);
+		?>
+		<li><a class="month-09" href="<?php echo $_SERVER['PHP_SELF']; ?>/tickets?<?php echo $query_result; ?>">September</a></li>
+		<?php
+		$query['month'] = '10';
+		$query_result = http_build_query($query);
+		?>
+		<li><a class="month-10" href="<?php echo $_SERVER['PHP_SELF']; ?>/tickets?<?php echo $query_result; ?>">October</a></li>
+		<?php
+		$query['month'] = '11';
+		$query_result = http_build_query($query);
+		?>
+		<li><a class="month-11" href="<?php echo $_SERVER['PHP_SELF']; ?>/tickets?<?php echo $query_result; ?>">November</a></li>
+		<?php
+		$query['month'] = '12';
+		$query_result = http_build_query($query);
+		?>
+		<li><a class="month-12" href="<?php echo $_SERVER['PHP_SELF']; ?>/tickets?<?php echo $query_result; ?>">December</a></li>
+	</ul>	
+	<hr style="margin-bottom: 60px;">
+	<ul class="homeLinks">
+		<?php
+		$query['type'] = 'class';
+		$query_result = http_build_query($query);
+		?>
+		<li><a class="type-class" href="<?php echo $_SERVER['PHP_SELF']; ?>/tickets?<?php echo $query_result; ?>">Class</a></li>
+		<?php
+		$query['type'] = 'to-go';
+		$query_result = http_build_query($query);
+		?>
+		<li><a class="type-to-go" href="<?php echo $_SERVER['PHP_SELF']; ?>/tickets?<?php echo $query_result; ?>">To-Go</a></li>
+	</ul>	
+
 
 	<?php
 		
@@ -38,7 +116,7 @@ if(isset($_GET['month'])) {
 	
 	$last_day = new DateTime('last day of this month', new DateTimeZone($tz));
 	$last_day = $last_day->format('Y-' . $month . '-d H:i:s');
-	
+
 	$args = array(
 	    'post_type' => 'ticket-page',
 	    'posts_per_page' => -1,
@@ -62,14 +140,23 @@ if(isset($_GET['month'])) {
 	    ),
 	);
 	
-
+	if(isset($_GET['type'])) {
+		$type = $_GET['type'];
+		$args['tax_query'] = array(
+	        array(
+	            'taxonomy' => 'ticket-page-categories',
+	            'field' => 'slug',
+	            'terms' => $type,
+	        ),
+	    );
+	}
+	
 /*
 	echo '<pre>';
 	print_r($args);
 	echo '</pre>';
 */
 
-	
 	$query = new WP_Query($args);
     if ( $query->have_posts() ) {
 	?>
@@ -81,11 +168,12 @@ if(isset($_GET['month'])) {
 		<label><input type="checkbox" name="stock" checked="checked"> Stock</label>	
 		<label><input type="checkbox" name="sold" checked="checked"> Sold</label>	
 	</div>	
-	
+
 	<table id="attendee-table" class="tablesorter">
 		<thead>
 			<tr>
 				<th class="name">Ticket Name</th>
+				<th class="waitlist">Waitlist</th>
 				<th class="stock">Stock</th>
 				<th class="sold">Sold</th>
 			</tr>
@@ -101,6 +189,13 @@ if(isset($_GET['month'])) {
 			$totals = Tribe__Tickets__Tickets::get_all_event_tickets( $ticket_id );
 			
 			foreach($totals as $total) {
+				
+				$waitlist = get_post_meta( $total->ID, 'woocommerce_waitlist', true );
+				if($waitlist) {
+					$waitlist = count($waitlist);
+				} else {
+					$waitlist = '0';
+				}
 
 /*
 			echo '<pre>';
@@ -113,6 +208,7 @@ if(isset($_GET['month'])) {
 				
 			<tr>
 				<td class="ticket-name"><a href="<?php echo $total->admin_link; ?>"><?php echo $total->name; ?></a></td>	
+				<td class="waitlist"><?php echo $waitlist; ?></td>	
 				<td class="stock"><?php echo $total->stock; ?></td>	
 				<td class="sold"><?php echo $total->qty_sold; ?></td>	
 			</tr>			
@@ -131,6 +227,8 @@ if(isset($_GET['month'])) {
 <script>
 	$(document).ready(function() {
 	  $("#attendee-table").tablesorter();
+	  $('.homeLinks a.month-<?php echo $month;?>').addClass('active');
+	  $('.homeLinks a.type-<?php echo $type;?>').addClass('active');
 	});
 	
 	$("input:checkbox:not(:checked)").each(function() {

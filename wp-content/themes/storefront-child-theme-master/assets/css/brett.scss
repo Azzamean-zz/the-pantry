@@ -17,6 +17,11 @@ body.page {
 	}
 }
 
+.homeLinks a.active {
+	background: rgba(255,255,255,.25);
+	color: #791919;
+}
+
 .xoo-wl-btn-container {
 	text-align: center !important;	
 }

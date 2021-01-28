@@ -855,6 +855,32 @@ function yourprefix_add_to_content($content) {
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
 
  /**
+ * Get waitlist Counts
+ */
+
+function wcwl_get_count_for_event( $event_id ) {
+   $tickets = Tribe__Tickets__Tickets::get_all_event_tickets( $event_id );
+   if ( $tickets ) {
+      foreach ( $tickets as $ticket ) {
+         $waitlist = get_post_meta( $ticket->ID, 'woocommerce_waitlist', true );
+         if ( $waitlist ) {
+            echo( $ticket->name . ': ' . count( $waitlist ) );
+            echo 'There is a waitlist';
+         } else {
+	         echo 'there is no waitlist';
+         }
+      }
+   }
+}
+
+/*
+add_action( 'admin_init', 'wcwl_get_event_counts' );
+function wcwl_get_event_counts() {
+   wcwl_get_count_for_event( 42682 );
+}
+*/
+
+ /**
  * Reminder Emails
  */
  
