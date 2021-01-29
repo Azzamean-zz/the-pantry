@@ -963,7 +963,7 @@ function send_reminder_email() {
 			    	$attendee_name = $attendee['attendee_meta']['name']['value'];					
 			    	$email = $attendee['attendee_meta']['email']['value'];
 					$mailer = WC()->mailer();
-				    $recipient = 'hornerbrett@gmail.com';
+				    $recipient = 'brett@deicreative.com';
 
 				    $class_name_friendly = str_replace("&#8211;", "-", $class_name);
 					$class_name_friendly = substr($class_name_friendly, strpos($class_name_friendly, "-") + 1);
@@ -973,6 +973,7 @@ function send_reminder_email() {
 				    $content = get_reminder_email($attendee_name, $class_name, $class_name_friendly, $instructor, $class_id, $class_date, $class_time, $list_link, $packet, $zoom_info, $prep_instructions, $mailer);
 
 				    $headers = "Content-Type: text/html\r\n";
+				    $headers .= "Bcc: hornerbrett@gmail.com, shannon@deicreative.com" . "\r\n";
 				    $mailer->send($recipient, $subject, $content, $headers);
 
 					$emails[] = $attendee['attendee_meta']['email']['value'];
@@ -1075,7 +1076,7 @@ function send_shopping_list_email() {
 			    	$email = $attendee['attendee_meta']['email']['value'];
 
 					$mailer = WC()->mailer();
-				    $recipient = $email;
+				    $recipient = 'brett@deicreative.com';
 
 				    $class_name_friendly = str_replace("&#8211;", "-", $class_name);
 					$class_name_friendly = substr($class_name_friendly, strpos($class_name_friendly, "-") + 1);
@@ -1086,7 +1087,7 @@ function send_shopping_list_email() {
 				    $content = get_shopping_list_email($attendee_name, $class_name, $class_name_friendly, $instructor, $class_id, $class_date, $class_time, $list_link, $mailer);
 
 				    $headers = "Content-Type: text/html\r\n";
-				    $headers .= "Bcc: hornerbrett@gmail.com, shannon@deicreative.com, info@thepantryseattle.com" . "\r\n";
+				    $headers .= "Bcc: hornerbrett@gmail.com, shannon@deicreative.com" . "\r\n";
 				    $mailer->send($recipient, $subject, $content, $headers);
 
 					$emails[] = $attendee['attendee_meta']['email']['value'];
@@ -1330,5 +1331,5 @@ function get_to_go_reminder_email($attendee_name, $class_name, $class_id, $class
 	));
 }
 
-add_action( 'send_to_go_reminder_email', 'send_to_go_reminder_email');
+add_action( 'send_reminder_email', 'send_reminder_email');
 add_action( 'send_shopping_list_email', 'send_shopping_list_email');
