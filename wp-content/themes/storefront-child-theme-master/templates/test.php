@@ -37,11 +37,11 @@ get_header(); ?>
 				$today = $today->format('Y-m-d H:i:s');
 				
 				$start_day = new DateTime('today midnight', new DateTimeZone($tz));
-				$start_day->modify('+97 day');
+				$start_day->modify('+3 day');
 				$start_day = $start_day->format('Y-m-d H:i:s');
 				
 				$end_day = new DateTime('tomorrow midnight', new DateTimeZone($tz));
-				$end_day->modify('+97 day');
+				$end_day->modify('+3 day');
 				$end_day = $end_day->format('Y-m-d H:i:s');
 			
 				// echo $start_day;
@@ -53,6 +53,7 @@ get_header(); ?>
 				    'orderby'        => 'meta_value',
 				    'meta_key'       => 'start_date',
 				    'meta_type'      => 'DATETIME',
+					'post_status'    => 'publish',
 					'meta_query' => array(
 					     array(
 					        'key'		=> 'start_date',
