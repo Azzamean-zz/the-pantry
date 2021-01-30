@@ -42,11 +42,22 @@ get_header(); ?>
 			
 			$metas[$i]['ticket'] = $attendee['ticket_name'];
 			$metas[$i]['purchaser'] = $attendee['purchaser_name'];
-			$metas[$i]['attendee'] = $attendee['attendee_meta'];
+// 			$metas[$i]['attendee'] = $attendee['attendee_meta'];
 			$metas[$i]['order_id'] = $attendee['order_id'];
 			
-			foreach($attendee_metas as $attendee_meta_key => $attendee_meta_value) {
+			foreach($attendee_metas[$i] as $attendee_meta_key => $attendee_meta_value) {
+				
 				$metas[$i][$attendee_meta_key] = $attendee_meta_value['value'];
+				
+/*
+				echo '<pre>';
+
+				print_r($attendee_meta_key);
+				print_r($attendee_meta_value['value']);
+
+				echo '</pre>';
+*/
+				// $metas[$i][$attendee_meta_key] = $attendee_meta_value['value'];
 			}
 			
 			$i++;
@@ -65,9 +76,11 @@ get_header(); ?>
 
 		}	
 		
+/*
 		echo '<pre>';
 		print_r($metas);
 		echo '</pre>';
+*/
 		
 		foreach($classcounts as $classkey => $classcount) {
 		?>
