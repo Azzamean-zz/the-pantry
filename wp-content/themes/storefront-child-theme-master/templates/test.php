@@ -68,6 +68,13 @@ get_header(); ?>
 			                'field' => 'slug',
 			                'terms' => 'class'
 			            ),
+			            array(
+			                'taxonomy' => 'ticket-page-categories',
+			                'field' => 'slug',
+			                'terms' => 'no-reminder',
+			                'operator' => 'NOT IN'
+			            ),
+					    'relation' => 'AND',
 			        ),
 				);
 			
@@ -170,6 +177,13 @@ get_header(); ?>
 				                'field' => 'slug',
 				                'terms' => 'class'
 				            ),
+				            array(
+				                'taxonomy' => 'ticket-page-categories',
+				                'field' => 'slug',
+				                'terms' => 'no-reminder',
+				                'operator' => 'NOT IN'
+				            ),
+						    'relation' => 'AND',
 				        ),
 					);
 				
@@ -253,6 +267,13 @@ get_header(); ?>
 				                'field' => 'slug',
 				                'terms' => 'class'
 				            ),
+				            array(
+				                'taxonomy' => 'ticket-page-categories',
+				                'field' => 'slug',
+				                'terms' => 'no-reminder',
+				                'operator' => 'NOT IN'
+				            ),
+						    'relation' => 'AND',
 				        ),
 					);
 				
@@ -331,6 +352,13 @@ get_header(); ?>
 				                'field' => 'slug',
 				                'terms' => 'to-go'
 				            ),
+							array(
+				                'taxonomy' => 'ticket-page-categories',
+				                'field' => 'slug',
+				                'terms' => 'no-reminder',
+				                'operator' => 'NOT IN'
+				            ),
+						    'relation' => 'AND',
 				        ),
 					);
 				
@@ -367,7 +395,6 @@ get_header(); ?>
 									echo $subject;
 									echo '<br>';
 									$emails[] = $attendee['attendee_meta']['email']['value'];
-									break;
 								}
 				
 							}

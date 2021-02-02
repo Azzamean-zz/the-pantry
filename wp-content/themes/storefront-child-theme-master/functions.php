@@ -919,6 +919,13 @@ function send_reminder_email() {
                 'field' => 'slug',
                 'terms' => 'class'
             ),
+            array(
+                'taxonomy' => 'ticket-page-categories',
+                'field' => 'slug',
+                'terms' => 'no-reminder',
+                'operator' => 'NOT IN'
+            ),
+		    'relation' => 'AND',
         ),
 	);
 
@@ -1045,6 +1052,13 @@ function send_shopping_list_email() {
                 'field' => 'slug',
                 'terms' => 'class'
             ),
+            array(
+                'taxonomy' => 'ticket-page-categories',
+                'field' => 'slug',
+                'terms' => 'no-reminder',
+                'operator' => 'NOT IN'
+            ),
+		    'relation' => 'AND',
         ),
 	);
 
@@ -1155,6 +1169,13 @@ function send_class_evaluation_email() {
                 'field' => 'slug',
                 'terms' => 'class'
             ),
+            array(
+                'taxonomy' => 'ticket-page-categories',
+                'field' => 'slug',
+                'terms' => 'no-reminder',
+                'operator' => 'NOT IN'
+            ),
+		    'relation' => 'AND',
         ),
 	);
 
@@ -1184,7 +1205,7 @@ function send_class_evaluation_email() {
 			    	$email = $attendee['attendee_meta']['email']['value'];
 
 					$mailer = WC()->mailer();
-				    $recipient = 'hornerbrett@gmail.com';
+				    $recipient = $email;
 
 				    $class_name_friendly = str_replace("&#8211;", "-", $class_name);
 					$class_name_friendly = substr($class_name_friendly, strpos($class_name_friendly, "-") + 1);
@@ -1195,10 +1216,10 @@ function send_class_evaluation_email() {
 				    $content = get_class_evaluation_email($attendee_name, $class_name, $instructor, $class_id, $class_date, $class_time, $survey, $mailer);
 
 				    $headers = "Content-Type: text/html\r\n";
+				    $headers .= "Bcc: hornerbrett@gmail.com, shannon@deicreative.com, info@thepantryseattle.com" . "\r\n";
 				    $mailer->send($recipient, $subject, $content, $headers);
 
 					$emails[] = $attendee['attendee_meta']['email']['value'];
-					break;
 				}
 
 			}
@@ -1260,6 +1281,13 @@ function send_to_go_reminder_email() {
                 'field' => 'slug',
                 'terms' => 'to-go'
             ),
+            array(
+                'taxonomy' => 'ticket-page-categories',
+                'field' => 'slug',
+                'terms' => 'no-reminder',
+                'operator' => 'NOT IN'
+            ),
+		    'relation' => 'AND',
         ),
 	);
 
@@ -1292,7 +1320,7 @@ function send_to_go_reminder_email() {
 			    	$email = $attendee['attendee_meta']['email']['value'];
 
 					$mailer = WC()->mailer();
-				    $recipient = 'hornerbrett@gmail.com';
+				    $recipient = $email;
 
 				    $class_name_friendly = str_replace("&#8211;", "-", $class_name);
 					$class_name_friendly = substr($class_name_friendly, strpos($class_name_friendly, "-") + 1);
@@ -1303,10 +1331,10 @@ function send_to_go_reminder_email() {
 				    $content = get_to_go_reminder_email($attendee_name, $class_name, $class_id, $class_date, $packet, $class_time, $mailer);
 
 				    $headers = "Content-Type: text/html\r\n";
+				    $headers .= "Bcc: hornerbrett@gmail.com, shannon@deicreative.com, info@thepantryseattle.com" . "\r\n";
 				    $mailer->send($recipient, $subject, $content, $headers);
 
 					$emails[] = $attendee['attendee_meta']['email']['value'];
-					break;
 				}
 
 			}
@@ -1333,3 +1361,5 @@ function get_to_go_reminder_email($attendee_name, $class_name, $class_id, $class
 
 add_action( 'send_reminder_email', 'send_reminder_email');
 add_action( 'send_shopping_list_email', 'send_shopping_list_email');
+add_action( 'send_class_evaluation_email', 'send_class_evaluation_email');
+add_action( 'send_to_go_reminder_email', 'send_to_go_reminder_email');
