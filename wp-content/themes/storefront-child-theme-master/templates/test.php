@@ -310,7 +310,6 @@ get_header(); ?>
 									echo $subject;
 									echo '<br>';
 									$emails[] = $attendee['attendee_meta']['email']['value'];
-									break;
 								}
 				
 							}
