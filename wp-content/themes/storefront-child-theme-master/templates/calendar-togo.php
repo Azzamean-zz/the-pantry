@@ -19,6 +19,11 @@ get_header(); ?>
 <?php 
 $first_day = new DateTime('first day of this month');
 $first_day = $first_day->format('Y-m-d');
+if(isset($_GET['month'])) {
+	$month = $_GET['month'];
+	$first_day = new DateTime('2021-' . $month . '-01');
+	$first_day = $first_day->format('Y-m-d');
+}
 ?>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

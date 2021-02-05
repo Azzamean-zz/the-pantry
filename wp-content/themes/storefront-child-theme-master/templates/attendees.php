@@ -25,11 +25,13 @@ get_header(); ?>
 	$attendee_list = Tribe__Tickets__Tickets::get_event_attendees($event_id); ?>
 
 
+
 <!--
 	<pre>
 		<?php print_r($attendee_list); ?> 
 	</pre>	
 -->
+
 
 
 	<?php

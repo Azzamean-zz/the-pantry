@@ -307,7 +307,7 @@ get_header(); ?>
 								    
 								    $subject = $class_date . ' ' . $class_time . ' ' . $class_name_friendly . ' ' . 'class evaluation';
 
-									echo $subject;
+									echo $subject . ' ' . $email;
 									echo '<br>';
 									$emails[] = $attendee['attendee_meta']['email']['value'];
 								}
@@ -391,7 +391,7 @@ get_header(); ?>
 								    
 								    $subject = $class_date . ' ' . $class_time . ' ' . $class_name_friendly . ' ' . 'pickup reminder + recipes!';
 
-									echo $subject;
+									echo $subject . ' ' . $email;
 									echo '<br>';
 									$emails[] = $attendee['attendee_meta']['email']['value'];
 								}
