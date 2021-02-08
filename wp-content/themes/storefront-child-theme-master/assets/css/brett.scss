@@ -1123,6 +1123,17 @@ a.wc-block-grid__product-link {
 	}
 }
 
+.fc-h-event {
+	border: none !important;
+	background: rgba(255,255,255,.25) !important;
+	-webkit-border-radius: 0 !important;
+	-moz-border-radius: 0 !important;
+	border-radius: 0 !important;	
+	.fc-event-main {
+		color: #000 !important;	
+	}
+}
+
 @media screen and (max-width: 990px) {
 	.fc .fc-toolbar {
 		flex-wrap: wrap;
