@@ -1130,7 +1130,12 @@ a.wc-block-grid__product-link {
 	-moz-border-radius: 0 !important;
 	border-radius: 0 !important;	
 	.fc-event-main {
-		color: #000 !important;	
+		color: #000;	
+	}
+	&.sold-out {
+		.fc-event-main {
+			color: #888;	
+		}
 	}
 }
 
