@@ -1055,7 +1055,7 @@ function send_shopping_list_email() {
             array(
                 'taxonomy' => 'ticket-page-categories',
                 'field' => 'slug',
-                'terms' => 'no-reminder',
+                'terms' => 'no-shopping',
                 'operator' => 'NOT IN'
             ),
 		    'relation' => 'AND',
@@ -1169,13 +1169,6 @@ function send_class_evaluation_email() {
                 'field' => 'slug',
                 'terms' => 'class'
             ),
-            array(
-                'taxonomy' => 'ticket-page-categories',
-                'field' => 'slug',
-                'terms' => 'no-reminder',
-                'operator' => 'NOT IN'
-            ),
-		    'relation' => 'AND',
         ),
 	);
 
@@ -1281,13 +1274,6 @@ function send_to_go_reminder_email() {
                 'field' => 'slug',
                 'terms' => 'to-go'
             ),
-            array(
-                'taxonomy' => 'ticket-page-categories',
-                'field' => 'slug',
-                'terms' => 'no-reminder',
-                'operator' => 'NOT IN'
-            ),
-		    'relation' => 'AND',
         ),
 	);
 

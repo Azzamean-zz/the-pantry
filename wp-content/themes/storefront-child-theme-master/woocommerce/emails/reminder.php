@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 do_action( 'woocommerce_email_header', $email_heading, $email ); ?>
 
 <p>
-This email is to remind you that you are signed up to attend our online <?= esc_html( $class_name_friendly ); ?> class with <?= esc_html( $instructor ); ?> on <?= esc_html( $class_date ); ?>! Class will begin at <?= esc_html( $class_time ); ?> PT and will run for about 2 hours. The virtual waiting room will open about 10 minutes before class, so plan to get there a bit early to make sure you're good-to-go.</p>	
+This email is to remind you that you are signed up to attend our online <?= esc_html( $class_name_friendly ); ?> class with <?= esc_html( $instructor ); ?> on <?= esc_html( $class_date ); ?>! Class will begin at <?= esc_html( $class_time ); ?> PT and will run for about 2-2.5 hours. The virtual waiting room will open about 10 minutes before class, so plan to get there a bit early to make sure you're good-to-go.</p>	
 
 <p>There are a few things to prepare ahead of class:</p>
 

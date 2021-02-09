@@ -150,12 +150,6 @@ if(isset($_GET['month'])) {
 	        ),
 	    );
 	}
-	
-/*
-	echo '<pre>';
-	print_r($args);
-	echo '</pre>';
-*/
 
 	$query = new WP_Query($args);
     if ( $query->have_posts() ) {
@@ -191,11 +185,15 @@ if(isset($_GET['month'])) {
 			foreach($totals as $total) {
 				
 				$waitlist = get_post_meta( $total->ID, 'woocommerce_waitlist', true );
+				$total_sold = ($total->capacity - $total->stock);
+				
 				if($waitlist) {
 					$waitlist = count($waitlist);
 				} else {
 					$waitlist = '0';
 				}
+
+
 
 
 /*
@@ -205,14 +203,13 @@ if(isset($_GET['month'])) {
 */
 
 
-
 			?>
 				
 			<tr>
 				<td class="ticket-name"><a href="<?php echo $total->admin_link; ?>"><?php echo $total->name; ?></a></td>	
 				<td class="waitlist"><?php echo $waitlist; ?></td>	
 				<td class="stock"><?php echo $total->stock; ?></td>	
-				<td class="sold"><?php echo $total->qty_sold; ?></td>	
+				<td class="sold"><?php echo $total_sold; ?></td>	
 			</tr>			
 			<?php } ?>
 			<?php } ?>
