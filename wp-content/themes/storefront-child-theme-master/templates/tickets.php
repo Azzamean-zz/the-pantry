@@ -119,7 +119,7 @@ if(isset($_GET['month'])) {
 
 	$args = array(
 	    'post_type' => 'ticket-page',
-	    'posts_per_page' => 30,
+	    'posts_per_page' => -1,
 	    'order'          => 'ASC',
 	    'orderby'        => 'meta_value',
 	    'meta_key'       => 'start_date',
