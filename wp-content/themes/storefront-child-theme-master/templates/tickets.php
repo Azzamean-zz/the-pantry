@@ -198,9 +198,11 @@ if(isset($_GET['month'])) {
 				}
 
 
+/*
 			echo '<pre>';
 			print_r($totals[0]);
 			echo '</pre>';
+*/
 
 
 
