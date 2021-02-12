@@ -193,20 +193,16 @@ if(isset($_GET['month'])) {
 					$waitlist = '0';
 				}
 
-
-
-
 /*
 			echo '<pre>';
 			print_r($totals[0]);
 			echo '</pre>';
 */
 
-
 			?>
 				
 			<tr>
-				<td class="ticket-name"><a href="<?php echo $total->admin_link; ?>"><?php echo $total->name; ?></a></td>	
+				<td class="ticket-name"><a href="<?php echo get_edit_post_link(); ?>"><?php echo $total->name; ?></a></td>	
 				<td class="waitlist"><?php echo $waitlist; ?></td>	
 				<td class="stock"><?php echo $total->stock; ?></td>	
 				<td class="sold"><?php echo $total_sold; ?></td>	
