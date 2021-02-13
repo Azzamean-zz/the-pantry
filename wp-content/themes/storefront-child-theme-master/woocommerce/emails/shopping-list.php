@@ -28,7 +28,7 @@ do_action( 'woocommerce_email_header', $email_heading, $email ); ?>
 
 <p>We'll send out the recipes and a Zoom link a bit closer to class, but we wanted to go ahead and get <a href="<?= esc_html( $list_link ); ?>">the shopping and equipment list</a> to you in case you're limiting your shopping trips. </p>
 
-<p>If you purchased an ingredient kit, we'll send more details about pick-up soon! The equipment you'll need can be found on the attached list.</p>
+<p>If you purchased an ingredient kit, we'll send more details about pick-up soon! Please note that our bartending classes do not have an ingredient kit option at this time. The equipment you'll need can be found on the list linked above.</p>	
 
 <p>Also, if you don't have Zoom yet, don't forget to download it! </p>
 
