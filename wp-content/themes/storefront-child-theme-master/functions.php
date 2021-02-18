@@ -982,6 +982,7 @@ function send_reminder_email() {
 
 				    $headers = "Content-Type: text/html\r\n";
 				    $headers .= "Bcc: hornerbrett@gmail.com, shannon@deicreative.com, info@thepantryseattle.com" . "\r\n";
+				    $headers .= "List-Unsubscribe: <mailto:info@thepantryseattle.com?subject=unsubscribe>\r\n";
 				    $mailer->send($recipient, $subject, $content, $headers);
 
 					$emails[] = $attendee['attendee_meta']['email']['value'];
@@ -1102,6 +1103,7 @@ function send_shopping_list_email() {
 
 				    $headers = "Content-Type: text/html\r\n";
 				    $headers .= "Bcc: hornerbrett@gmail.com, shannon@deicreative.com, info@thepantryseattle.com" . "\r\n";
+				    $headers .= "List-Unsubscribe: <mailto:info@thepantryseattle.com?subject=unsubscribe>\r\n";
 				    $mailer->send($recipient, $subject, $content, $headers);
 
 					$emails[] = $attendee['attendee_meta']['email']['value'];
@@ -1210,6 +1212,7 @@ function send_class_evaluation_email() {
 
 				    $headers = "Content-Type: text/html\r\n";
 				    $headers .= "Bcc: hornerbrett@gmail.com, shannon@deicreative.com, info@thepantryseattle.com" . "\r\n";
+				    $headers .= "List-Unsubscribe: <mailto:info@thepantryseattle.com?subject=unsubscribe>\r\n";
 				    $mailer->send($recipient, $subject, $content, $headers);
 
 					$emails[] = $attendee['attendee_meta']['email']['value'];
@@ -1318,6 +1321,7 @@ function send_to_go_reminder_email() {
 
 				    $headers = "Content-Type: text/html\r\n";
 				    $headers .= "Bcc: hornerbrett@gmail.com, shannon@deicreative.com, info@thepantryseattle.com" . "\r\n";
+				    $headers .= "List-Unsubscribe: <mailto:info@thepantryseattle.com?subject=unsubscribe>\r\n";
 				    $mailer->send($recipient, $subject, $content, $headers);
 
 					$emails[] = $attendee['attendee_meta']['email']['value'];
