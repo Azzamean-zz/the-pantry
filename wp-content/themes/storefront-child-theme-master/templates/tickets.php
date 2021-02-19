@@ -108,6 +108,10 @@ if(isset($_GET['month'])) {
 	$tz = 'America/Los_Angeles';
 	$today = new DateTime('now', new DateTimeZone($tz));
 	
+	$year = date('Y');
+	
+	$query_date = $year . $month . '-01';
+	
 	$thisMonth = new DateTime('now', new DateTimeZone($tz));
 	$nextMonth = new DateTime('first day of +1 month', new DateTimeZone($tz));
 	
@@ -116,7 +120,9 @@ if(isset($_GET['month'])) {
 	
 	$last_day = new DateTime('last day of this month', new DateTimeZone($tz));
 	$last_day = $last_day->format('Y-' . $month . '-d H:i:s');
-
+	
+	$last_day = date("Y-m-t", strtotime($first_day));
+	
 	$args = array(
 	    'post_type' => 'ticket-page',
 	    'posts_per_page' => -1,
@@ -184,20 +190,16 @@ if(isset($_GET['month'])) {
 			
 			foreach($totals as $total) {
 				
-				$waitlist = get_post_meta( $total->ID, 'woocommerce_waitlist', true );
 				$total_sold = ($total->capacity - $total->stock);
 				
-				if($waitlist) {
-					$waitlist = count($waitlist);
+				$wait = xoo_wl_db()->get_waitlisted_count( $total->ID );
+				
+				if($wait['totalQuantity']) {
+					$waitlist = $wait['totalQuantity'];
 				} else {
-					$waitlist = '0';
+					$waitlist = 0;
 				}
 
-/*
-			echo '<pre>';
-			print_r($totals[0]);
-			echo '</pre>';
-*/
 
 			?>
 				
