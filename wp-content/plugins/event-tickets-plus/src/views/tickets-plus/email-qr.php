@@ -4,7 +4,7 @@
  *
  * Override this template in your own theme by creating a file at [your-theme]/tribe/tickets-plus/email-qr.php
  *
- * @link    http://m.tri.be/1amp See more documentation about our views templating system.
+ * @link    https://evnt.is/1amp See more documentation about our views templating system.
  *
  * @since 4.7.6
  * @since 5.1.0 Updated template link.

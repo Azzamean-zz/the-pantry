@@ -43,14 +43,6 @@ class Tribe__Tickets_Plus__Attendees_List extends Attendees_List {
 
 		// Create the ShortCode
 		add_shortcode( 'tribe_attendees_list', array( $myself, 'shortcode' ) );
-
-		// Purging the attendees cache on all the modules
-		// @todo: make this a little bit more clean
-		add_action( 'event_tickets_rsvp_ticket_created', array( $myself, 'purge_transient' ), 10, 3 );
-		add_action( 'event_ticket_woo_attendee_created', array( $myself, 'purge_transient' ), 10, 3 );
-		add_action( 'event_tickets_woocommerce_tickets_generated_for_product', array( $myself, 'purge_transient_post_ticket' ), 10, 4 );
-
-		add_action( 'event_tickets_edd_ticket_created', array( $myself, 'edd_purge_transient' ), 10, 2 );
 	}
 
 	/**

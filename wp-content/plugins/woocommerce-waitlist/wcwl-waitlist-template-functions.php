@@ -224,7 +224,7 @@ function wcwl_get_data_for_template( $product, $context, $notice ) {
  *
  * @return array
  */
-function wcwl_get_data_for_event_template( $event_id, $context = 'update', $notice ) {
+function wcwl_get_data_for_event_template( $event_id, $context = 'update', $notice = '' ) {
 	$user                = get_user_by( 'id', get_current_user_id() );
 	$data                = wcwl_get_default_template_values( $user, $event_id, $context, $notice );
 	$data['on_waitlist'] = false;

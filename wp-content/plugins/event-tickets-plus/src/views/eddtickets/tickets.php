@@ -6,7 +6,7 @@
  *
  *     [your-theme]/tribe/tickets-plus/eddtickets/tickets.php
  *
- * @link    http://m.tri.be/1amp See more documentation about our views templating system.
+ * @link    https://evnt.is/1amp See more documentation about our views templating system.
  *
  * @deprecated 4.11.0
  *

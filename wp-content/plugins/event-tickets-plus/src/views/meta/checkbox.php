@@ -6,7 +6,7 @@
  *
  * [your-theme]/tribe/tickets-plus/meta/checkbox.php
  *
- * @link    http://m.tri.be/1amp See more documentation about our views templating system.
+ * @link    https://evnt.is/1amp See more documentation about our views templating system.
  *
  * @since 4.5.5
  * @since 4.10.2 Use md5() for field name slugs.

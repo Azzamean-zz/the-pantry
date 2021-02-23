@@ -6,7 +6,7 @@
  *
  * [your-theme]/tribe/tickets-plus/meta/select.php
  *
- * @link    http://m.tri.be/1amp See more documentation about our views templating system.
+ * @link    https://evnt.is/1amp See more documentation about our views templating system.
  *
  * @since 4.3.5
  * @since 4.10.7 Added var documentation for `$this`.

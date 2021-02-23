@@ -6,7 +6,7 @@
  *
  *     [your-theme]/tribe/tickets-plus/meta/birth.php
  *
- * @link    http://m.tri.be/1amp See more documentation about our views templating system.
+ * @link    https://evnt.is/1amp See more documentation about our views templating system.
  *
  * @deprecated 4.12.3 Replaced by event-tickets/src/views/registration-js/attendees/fields/birth.php.
  *

@@ -25,14 +25,16 @@
 		<div class="wcwl_intro">
 			<p><?php echo $intro; ?></p>
 		</div>
-		<div class="wcwl_notice woocommerce-message">
-			<div aria-live="polite">
-				<p><?php echo $notice; ?></p>
+		<?php if ( $notice ) { ?>
+			<div class="wcwl_notice woocommerce-message">
+				<div aria-live="polite">
+					<p><?php echo $notice; ?></p>
+				</div>
+				<button type="button" class="wcwl_notice_dismiss">
+					<span class="screen-reader-text"><?php echo $dismiss_notification_text; ?></span>
+				</button>
 			</div>
-			<button type="button" class="wcwl_notice_dismiss">
-				<span class="screen-reader-text"><?php echo $dismiss_notification_text; ?></span>
-			</button>
-		</div>
+		<?php } ?>
 		<?php if ( $opt_in && ! $on_waitlist ) { ?>
 			<div class="wcwl_optin">
 				<input type="checkbox" name="wcwl_optin" id="wcwl_optin">

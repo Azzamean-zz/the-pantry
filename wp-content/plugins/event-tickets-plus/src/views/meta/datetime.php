@@ -6,7 +6,7 @@
  *
  * [your-theme]/tribe/tickets-plus/meta/datetime.php
  *
- * @link    http://m.tri.be/1amp See more documentation about our views templating system.
+ * @link    https://evnt.is/1amp See more documentation about our views templating system.
  *
  * @since   4.12.1
  * @since   5.1.0 Support the min/max extra arguments to manually set minimum/maximum date.

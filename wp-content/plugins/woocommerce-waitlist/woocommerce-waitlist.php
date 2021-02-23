@@ -3,21 +3,21 @@
  * Plugin Name: WooCommerce Waitlist
  * Plugin URI: http://www.woothemes.com/products/woocommerce-waitlist/
  * Description: This plugin enables registered users to request an email notification when an out-of-stock product comes back into stock. It tallies these registrations in the admin panel for review and provides details.
- * Version: 2.2.2
+ * Version: 2.2.3
  * Author: Neil Pie
  * Author URI: https://pie.co.de/
  * Developer: Neil Pie
  * Developer URI: https://pie.co.de/
  * Woo: 122144:55d9643a241ecf5ad501808c0787483f
  * WC requires at least: 3.0.0
- * WC tested up to: 4.5.2
+ * WC tested up to: 5.0.0
  * Requires at least: 4.2.0
- * Tested up to: 5.5.1
+ * Tested up to: 5.6.1
  * Text Domain: woocommerce-waitlist
  * Domain Path: /assets/languages/
  * License: GNU General Public License v3.0
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
- * Copyright: © 2015-2020 WooCommerce
+ * Copyright: © 2015-2021 WooCommerce
  *
  * @package WooCommerce Waitlist
  */
@@ -331,10 +331,13 @@ if ( ! class_exists( 'WooCommerce_Waitlist_Plugin' ) ) {
 		 * @param mixed  $meta_value meta value.
 		 */
 		public function perform_mailout_if_ticket_stock_updated( $meta_id, $post_id, $meta_key, $meta_value ) {
-			if ( ! tribe_events_product_is_ticket( $post_id ) ) {
+			if ( '_stock_status' !== $meta_key ) {
 				return;
 			}
-			if ( '_stock_status' !== $meta_key ) {
+			if ( ! function_exists( 'tribe_events_product_is_ticket' ) ) {
+				return;
+			}
+			if ( ! tribe_events_product_is_ticket( $post_id ) ) {
 				return;
 			}
 			$product = wc_get_product( $post_id );
@@ -390,10 +393,12 @@ if ( ! class_exists( 'WooCommerce_Waitlist_Plugin' ) ) {
 		 * @param WC_Product $product updated product.
 		 */
 		public function do_mailout( $product ) {
-			$stock_level = $this->get_minimum_stock_level( $product->get_id() );
-			if ( $this->minimum_stock_requirement_met( $product, $stock_level ) && $this->stock_level_has_broken_threshold( $product, $stock_level ) ) {
-				$product->waitlist = new Pie_WCWL_Waitlist( $product );
-				$product->waitlist->waitlist_mailout();
+			if ( apply_filters( 'wcwl_waitlist_should_do_mailout', true, $product ) ) {
+				$stock_level = $this->get_minimum_stock_level( $product->get_id() );
+				if ( $this->minimum_stock_requirement_met( $product, $stock_level ) && $this->stock_level_has_broken_threshold( $product, $stock_level ) ) {
+					$product->waitlist = new Pie_WCWL_Waitlist( $product );
+					$product->waitlist->waitlist_mailout();
+				}
 			}
 		}
 

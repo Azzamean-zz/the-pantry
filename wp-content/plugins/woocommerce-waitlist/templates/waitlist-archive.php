@@ -27,7 +27,10 @@ $button_text = wcwl_get_button_text( $context );
 			<div class="spinner"></div>
 		</div>
 		<?php echo wcwl_get_waitlist_fields( $product_id, $context, $notice, $lang ); ?>
-	<?php } else { ?>
+	<?php
+	} else {
+		if ( $notice ) {
+	?>
 		<div class="wcwl_notice woocommerce-message">
 			<div aria-live="polite">
 				<p><?php echo $notice; ?></p>
@@ -36,6 +39,7 @@ $button_text = wcwl_get_button_text( $context );
 				<span class="screen-reader-text"><?php echo $dismiss_notification_text; ?></span>
 			</button>
 		</div>
+	<?php } ?>
 		<div class="wcwl_email_elements wcwl_hide">
 			<label for="wcwl_email_<?php echo $product_id; ?>" class="wcwl_email_label wcwl_visually_hidden"><?php echo $email_address_label_text; ?></label>
 			<input type="email" value="<?php echo $user_email; ?>" id="wcwl_email_<?php echo $product_id; ?>" name="wcwl_email" class="wcwl_email" placeholder="<?php echo $email_address_placeholder_text; ?>" <?php if ( $user_email ) { echo 'disabled'; } ?>/>

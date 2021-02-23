@@ -324,9 +324,14 @@ class Tribe__Tickets_Plus__Commerce__WooCommerce__Cart extends Tribe__Tickets_Pl
 		$iac        = IAC::NONE_KEY;
 
 		foreach ( $contents as $item ) {
-			$ticket_id       = $item['product_id'];
-			$ticket_quantity = $item['quantity'];
-			$optout          = false;
+			$ticket_id = $item['product_id'];
+			$optout    = false;
+			
+			/*
+			 * Sometimes there are WooCommerce integrations that set this as a float,
+			 * it needs to be an int for our strict checks later down the line.
+			 */
+			$ticket_quantity = (int) $item['quantity'];
 
 			if ( isset( $item[ $optout_key ] ) ) {
 				$optout = $item[ $optout_key ];

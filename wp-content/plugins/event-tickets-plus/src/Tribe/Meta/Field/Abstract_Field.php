@@ -473,4 +473,17 @@ abstract class Tribe__Tickets_Plus__Meta__Field__Abstract_Field implements Field
 	public function get_placeholder() {
 		return $this->placeholder;
 	}
+
+	/**
+	 * Get the formatted value.
+	 *
+	 * @since 5.2.0
+	 *
+	 * @param string|mixed $value The current value.
+	 *
+	 * @return string|mixed The formatted value.
+	 */
+	public function get_formatted_value( $value ) {
+		return $value;
+	}
 }

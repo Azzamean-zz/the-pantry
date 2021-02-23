@@ -236,6 +236,7 @@ tribe.tickets.registration = {};
 
 		$.each( meta, function( metaIndex, ticket ) {
 			const $currentContainers = $containers.filter( '[data-ticket-id="' + ticket.ticket_id + '"]' );
+			const $tempTextarea = $( '<textarea />' );
 
 			if ( ! $currentContainers.length ) {
 				return;
@@ -249,16 +250,27 @@ tribe.tickets.registration = {};
 
 				const $ticketContainers = $currentContainers.find( obj.selectors.metaItem );
 				$.each( datum, function( index, value ) {
+					// Set value of temporary textarea.
+					$tempTextarea.html( value );
+
+					const formattedValue = $tempTextarea.text();
 					const $field = $ticketContainers.eq( current ).find( '[name*="' + index + '"]' );
+
 					if ( ! $field.is( ':radio' ) && ! $field.is( ':checkbox' ) ) {
-						$field.val( value );
+						$field.val( formattedValue );
 					} else {
 						$field.each( function() {
 							const $item = $( this );
-							if ( value === $item.val() ) {
+
+							if ( formattedValue === $item.val() ) {
 								$item.prop( 'checked', true );
 							}
 						} );
+					}
+
+					// Populate for the birthday selects.
+					if ( $field.hasClass( 'tribe-tickets__form-field--birth-value' ) ) {
+						tribe.tickets.meta.populateFieldBirthday();
 					}
 				} );
 

@@ -1,5 +1,7 @@
 <?php
 
+use Tribe\Tickets\Plus\Repositories\Traits\Attendee;
+
 /**
  * Class Tribe__Tickets_Plus__Attendee_Repository
  *
@@ -10,11 +12,20 @@
  */
 class Tribe__Tickets_Plus__Attendee_Repository extends Tribe__Tickets__Attendee_Repository {
 
+	use Attendee;
+
 	/**
 	 * {@inheritdoc}
 	 */
 	public function __construct() {
 		parent::__construct();
+
+		// Set up the update field aliases.
+		$update_fields_aliases = $this->get_attendee_update_fields_aliases();
+
+		foreach ( $update_fields_aliases as $alias => $field_name ) {
+			$this->add_update_field_alias( $alias, $field_name );
+		}
 
 		// Easy Digital Downloads
 		$this->schema['edd_order'] = [ $this, 'filter_by_edd_order' ];
@@ -41,10 +52,16 @@ class Tribe__Tickets_Plus__Attendee_Repository extends Tribe__Tickets__Attendee_
 	 * @return array A map in the shape [ <repository_slug> => <service_name> ]
 	 */
 	public function filter_attendee_repository_map( $map ) {
-		// Easy Digital Downloads
+		// Tribe Commerce provider.
+		$map['tribe-commerce'] = 'tickets-plus.attendee-repository.commerce';
+
+		// RSVP provider.
+		$map['rsvp'] = 'tickets-plus.attendee-repository.rsvp';
+
+		// Easy Digital Downloads provider.
 		$map['edd'] = 'tickets-plus.attendee-repository.edd';
 
-		// WooCommerce
+		// WooCommerce provider.
 		$map['woo'] = 'tickets-plus.attendee-repository.woo';
 
 		return $map;
@@ -461,6 +478,25 @@ class Tribe__Tickets_Plus__Attendee_Repository extends Tribe__Tickets__Attendee_
 				ON purchaser_order_meta{$affix}.post_id = purchaser_meta.meta_value
 			", 'purchaser-order-meta' . $affix );
 		}
+	}
+
+	/**
+	 * Set up the arguments to set for the attendee for this provider.
+	 *
+	 * @since 5.2.0
+	 *
+	 * @param array                              $args          List of arguments to set for the attendee.
+	 * @param array                              $attendee_data List of additional attendee data.
+	 * @param null|Tribe__Tickets__Ticket_Object $ticket        The ticket object or null if not relying on it.
+	 *
+	 * @return array List of arguments to set for the attendee.
+	 */
+	public function setup_attendee_args( $args, $attendee_data, $ticket = null ) {
+		return parent::setup_attendee_args(
+			$this->handle_setup_attendee_args( $args, $attendee_data, $ticket ),
+			$attendee_data,
+			$ticket
+		);
 	}
 
 }

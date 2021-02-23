@@ -67,7 +67,7 @@ class Customizer {
 		) {
 			// Attendee registration page background color override.
 			$css_template .= '
-				body.page-tribe-attendee-registration .tribe-tickets__registration {
+				body.page-tribe-attendee-registration:not(.page-tribe-attendee-registration--shortcode) .tribe-tickets__registration {
 					background-color: <%= global_elements.background_color %>;
 				}
 			';

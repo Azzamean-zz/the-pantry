@@ -7,10 +7,10 @@
  *
  * See more documentation about our views templating system.
  *
- * @link    http://m.tri.be/1amp
+ * @link    https://evnt.is/1amp
  *
  * @since   5.1.0
- * @since   5.1.1 Added $currency to the passed context for the tickets footer template.
+ * @since   5.2.0 Added $currency to the passed context for the tickets footer template.
  *
  * @version 5.1.1
  *
@@ -83,6 +83,7 @@ $et_template = tribe( 'tickets.editor.template' );
 			'is_mini'  => true,
 			'post_id'  => 0,
 			'provider' => $cart_provider,
+			'currency' => $currency,
 		]
 	);
 	?>

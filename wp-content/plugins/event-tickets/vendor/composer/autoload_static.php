@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit1fb11c675d2f4b36fac2fa701cf41b1b
+class ComposerStaticInitd3c4d1c01af240ba2702fa1739263a00
 {
     public static $prefixLengthsPsr4 = array (
         'T' => 
@@ -21,6 +21,7 @@ class ComposerStaticInit1fb11c675d2f4b36fac2fa701cf41b1b
     );
 
     public static $classMap = array (
+        'Tribe\\Tickets\\Admin\\Manager\\Service_Provider' => __DIR__ . '/../..' . '/src/Tribe/Admin/Manager/Service_Provider.php',
         'Tribe\\Tickets\\Editor\\Warnings' => __DIR__ . '/../..' . '/src/Tribe/Editor/Warnings.php',
         'Tribe\\Tickets\\Events\\Attendees_List' => __DIR__ . '/../..' . '/src/Tribe/Events/Attendees_List.php',
         'Tribe\\Tickets\\Events\\Service_Provider' => __DIR__ . '/../..' . '/src/Tribe/Events/Service_Provider.php',
@@ -40,6 +41,7 @@ class ComposerStaticInit1fb11c675d2f4b36fac2fa701cf41b1b
         'Tribe\\Tickets\\Promoter\\Triggers\\Models\\Attendee' => __DIR__ . '/../..' . '/src/Tribe/Promoter/Triggers/Models/Attendee.php',
         'Tribe\\Tickets\\Promoter\\Triggers\\Observers\\Commerce' => __DIR__ . '/../..' . '/src/Tribe/Promoter/Triggers/Observers/Commerce.php',
         'Tribe\\Tickets\\Promoter\\Triggers\\Observers\\RSVP' => __DIR__ . '/../..' . '/src/Tribe/Promoter/Triggers/Observers/RSVP.php',
+        'Tribe\\Tickets\\Repositories\\Order' => __DIR__ . '/../..' . '/src/Tribe/Repositories/Order.php',
         'Tribe\\Tickets\\Repositories\\Post_Repository' => __DIR__ . '/../..' . '/src/Tribe/Repositories/Post_Repository.php',
         'Tribe\\Tickets\\Repositories\\Traits\\Event' => __DIR__ . '/../..' . '/src/Tribe/Repositories/Traits/Event.php',
         'Tribe\\Tickets\\Repositories\\Traits\\Post_Attendees' => __DIR__ . '/../..' . '/src/Tribe/Repositories/Traits/Post_Attendees.php',
@@ -50,9 +52,9 @@ class ComposerStaticInit1fb11c675d2f4b36fac2fa701cf41b1b
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit1fb11c675d2f4b36fac2fa701cf41b1b::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit1fb11c675d2f4b36fac2fa701cf41b1b::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit1fb11c675d2f4b36fac2fa701cf41b1b::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitd3c4d1c01af240ba2702fa1739263a00::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitd3c4d1c01af240ba2702fa1739263a00::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitd3c4d1c01af240ba2702fa1739263a00::$classMap;
 
         }, null, ClassLoader::class);
     }

@@ -5,7 +5,7 @@
  * Override this template in your own theme by creating a file at:
  * [your-theme]/tribe/tickets-plus/v2/modal/item/total.php
  *
- * @link http://m.tri.be/1amp
+ * @link https://evnt.is/1amp
  *
  * @since   5.1.0
  *

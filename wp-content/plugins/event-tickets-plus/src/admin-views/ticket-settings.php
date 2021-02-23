@@ -126,7 +126,7 @@ $attendee_options = [
 					'event-tickets-plus'
 				),
 				tribe_get_ticket_label_plural_lowercase( 'modal_notice_tooltip' ),
-				'<a href="http://m.tri.be/attendee-registration" target="_blank" rel="noopener noreferrer">',
+				'<a href="https://evnt.is/attendee-registration" target="_blank" rel="noopener noreferrer">',
 				'</a>'
 			),
 			[

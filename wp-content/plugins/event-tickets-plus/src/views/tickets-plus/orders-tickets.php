@@ -6,7 +6,7 @@
  *
  * @package TribeEventsCalendar
  *
- * @link    http://m.tri.be/1amp See more documentation about our views templating system.
+ * @link    https://evnt.is/1amp See more documentation about our views templating system.
  *
  * @since   4.11.2 Use customizable ticket name functions.
  * @since   4.12.1 Account for empty post type object, such as if post type got disabled.

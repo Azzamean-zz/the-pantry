@@ -2,6 +2,8 @@
 
 namespace Tribe\Tickets\Plus\Attendee_Registration;
 
+use Tribe__Utils__Array as Arr;
+
 /**
  * Class Fields
  *
@@ -29,15 +31,17 @@ class Fields {
 	 * Renders the form fields for ticket meta.
 	 *
 	 * @since 5.1.0
+	 * @since 5.2.0 Added $values parameter to pass along the values of each field to be rendered.
 	 *
 	 * @param \Tribe__Tickets__Ticket_Object $ticket      The ticket object.
 	 * @param int                            $post_id     The post ID.
 	 * @param int|null                       $attendee_id The attendee ID.
 	 * @param boolean                        $echo        Whether to echo the fields.
+	 * @param array                          $values      List of values for meta fields.
 	 *
 	 * @return string The template string, even if it's rendered on screen already.
 	 */
-	public function render( $ticket, $post_id, $attendee_id = null, $echo = true ) {
+	public function render( $ticket, $post_id, $attendee_id = null, $echo = true, $values = [] ) {
 		/** @var \Tribe__Tickets_Plus__Meta $meta */
 		$meta = tribe( 'tickets-plus.meta' );
 
@@ -69,9 +73,10 @@ class Fields {
 		$return = '';
 
 		foreach ( $fields as $field ) {
+			// Get value from $values[ $slug ]['value'] (direct from attendee meta as stored).
 			$context = [
 				'field'       => $field,
-				'value'       => null,
+				'value'       => Arr::get( $values, [ $field->slug, 'value' ], null ),
 				'field_name'  => tribe_tickets_plus_meta_field_name( $ticket->ID, $field->slug, $attendee_id ),
 				'field_id'    => tribe_tickets_plus_meta_field_id( $ticket->ID, $field->slug, '', $attendee_id ),
 				'required'    => $field->is_required(),

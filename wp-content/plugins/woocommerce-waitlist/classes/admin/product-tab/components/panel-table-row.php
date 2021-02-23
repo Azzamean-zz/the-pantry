@@ -31,12 +31,10 @@ if ( ! is_email( $email ) ) {
 					<?php
 				}
 				echo $email;
-				if ( isset( $user->ID ) ) {
-					?>
+				?>
 					</a>
-					<?php
+				<?php
 					echo Pie_WCWL_Custom_Tab::get_user_language_flag( $email, $product_id );
-				}
 				?>
 					<?php
 					if ( isset( $errors[ $email ] ) ) {

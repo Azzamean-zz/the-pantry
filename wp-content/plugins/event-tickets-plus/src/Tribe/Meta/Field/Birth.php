@@ -82,4 +82,34 @@ class Tribe__Tickets_Plus__Meta__Field__Birth extends Tribe__Tickets_Plus__Meta_
 
 	public function save_value( $attendee_id, $field, $value ) {
 	}
+
+	/**
+	 * Get the formatted value.
+	 *
+	 * @since 5.2.0
+	 *
+	 * @param string|mixed $value The current value.
+	 *
+	 * @return string|mixed The formatted value.
+	 */
+	public function get_formatted_value( $value ) {
+		$formatted_value = [
+			'year'  => '',
+			'month' => '',
+			'day'   => '',
+		];
+
+		if ( ! empty( $value ) ) {
+			// Format: YYYY-MM-DD.
+			$value = explode( '-', $value );
+
+			if ( 3 === count( $value ) ) {
+				$formatted_value['year']  = $value[0];
+				$formatted_value['month'] = $value[1];
+				$formatted_value['day']   = $value[2];
+			}
+		}
+
+		return $formatted_value;
+	}
 }

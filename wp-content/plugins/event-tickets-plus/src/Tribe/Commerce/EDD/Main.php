@@ -503,16 +503,15 @@ class Tribe__Tickets_Plus__Commerce__EDD__Main extends Tribe__Tickets_Plus__Tick
 	 * @param array $args      {
 	 *      The list of arguments to use for sending ticket emails.
 	 *
-	 *      @type string       $subject              The email subject.
-	 *      @type string       $content              The email content.
-	 *      @type string       $from_name            The name to send tickets from.
-	 *      @type string       $from_email           The email to send tickets from.
-	 *      @type array|string $headers              The list of headers to send.
-	 *      @type array        $attachments          The list of attachments to send.
-	 *      @type string       $provider             The provider slug (rsvp, tpp, woo, edd).
-	 *      @type int          $post_id              The post/event ID to send the emails for.
-	 *      @type string|int   $order_id             The order ID to send the emails for.
-	 *      @type string|int   $ticket_sent_meta_key The meta key to use for marking an attendee ticket as sent.
+	 *      @type string       $subject     The email subject.
+	 *      @type string       $content     The email content.
+	 *      @type string       $from_name   The name to send tickets from.
+	 *      @type string       $from_email  The email to send tickets from.
+	 *      @type array|string $headers     The list of headers to send.
+	 *      @type array        $attachments The list of attachments to send.
+	 *      @type string       $provider    The provider slug (rsvp, tpp, woo, edd).
+	 *      @type int          $post_id     The post/event ID to send the emails for.
+	 *      @type string|int   $order_id    The order ID to send the emails for.
 	 * }
 	 *
 	 * @return int The number of emails sent successfully.
@@ -569,13 +568,12 @@ class Tribe__Tickets_Plus__Commerce__EDD__Main extends Tribe__Tickets_Plus__Tick
 
 		$args = array_merge(
 			[
-				'subject'              => $subject,
-				'from_name'            => $from_name,
-				'from_email'           => $from_email,
-				'headers'              => $headers,
-				'attachments'          => $attachments,
-				'provider'             => 'edd',
-				'ticket_sent_meta_key' => $this->attendee_ticket_sent,
+				'subject'     => $subject,
+				'from_name'   => $from_name,
+				'from_email'  => $from_email,
+				'headers'     => $headers,
+				'attachments' => $attachments,
+				'provider'    => 'edd',
 			],
 			$args
 		);
@@ -730,6 +728,9 @@ class Tribe__Tickets_Plus__Commerce__EDD__Main extends Tribe__Tickets_Plus__Tick
 	 * @return bool
 	 */
 	public function save_ticket( $post_id, $ticket, $raw_data = [] ) {
+		// Run anything we might need on parent method.
+		parent::save_ticket( $post_id, $ticket, $raw_data );
+
 		// assume we are updating until we find out otherwise
 		$save_type = 'update';
 
@@ -1442,6 +1443,7 @@ class Tribe__Tickets_Plus__Commerce__EDD__Main extends Tribe__Tickets_Plus__Tick
 		$security      = get_post_meta( $attendee->ID, $this->security_code, true );
 		$optout        = get_post_meta( $attendee->ID, $this->attendee_optout_key, true );
 		$user_id       = get_post_meta( $attendee->ID, $this->attendee_user_id, true );
+		$ticket_sent   = (int) get_post_meta( $attendee->ID, $this->attendee_ticket_sent, true );
 		$product       = get_post( $product_id );
 		$product_title = ( ! empty( $product ) ) ? $product->post_title : get_post_meta( $attendee->ID, $this->deleted_product, true ) . ' ' . __( '(deleted)', 'eddtickets' );
 
@@ -1475,6 +1477,7 @@ class Tribe__Tickets_Plus__Commerce__EDD__Main extends Tribe__Tickets_Plus__Tick
 				'check_in'      => $checkin,
 				'optout'        => $optout,
 				'user_id'       => $user_id,
+				'ticket_sent'   => $ticket_sent,
 
 				// Fields for Email Tickets.
 				'event_id'      => get_post_meta( $attendee->ID, $this->attendee_event_key, true ),
@@ -1582,8 +1585,19 @@ class Tribe__Tickets_Plus__Commerce__EDD__Main extends Tribe__Tickets_Plus__Tick
 
 		$user_info = edd_get_payment_meta_user_info( $order_id );
 
+		// The order does not exist so return some default values.
 		if ( empty( $user_info ) ) {
-			return array();
+			return [
+				'order_id'           => null,
+				'order_status'       => null,
+				'order_status_label' => null,
+				'order_warning'      => null,
+				'purchaser_name'     => null,
+				'purchaser_email'    => null,
+				'provider'           => __CLASS__,
+				'provider_slug'      => $this->orm_provider,
+				'purchase_time'      => null,
+			];
 		}
 
 		$name          = $user_info['first_name'] . ' ' . $user_info['last_name'];
@@ -2322,8 +2336,15 @@ class Tribe__Tickets_Plus__Commerce__EDD__Main extends Tribe__Tickets_Plus__Tick
 			$optout = (int) $optout;
 		}
 
-		// Get the event this tickets is for
-		$post_id = get_post_meta( $product_id, $this->event_key, true );
+		// Get the ticket.
+		$ticket = $this->get_ticket( null, $product_id );
+
+		if ( empty( $ticket ) ) {
+			return false;
+		}
+
+		// Get the event this tickets is for.
+		$post_id = $ticket->get_event_id();
 
 		if ( empty( $post_id ) ) {
 			return false;
@@ -2378,49 +2399,20 @@ class Tribe__Tickets_Plus__Commerce__EDD__Main extends Tribe__Tickets_Plus__Tick
 			 */
 			$individual_attendee_email = apply_filters( 'tribe_tickets_attendee_create_individual_email', $email, $i, $order_id, $product_id, $post_id, $this );
 
-			$attendee = array(
-				'post_status' => 'publish',
-				'post_title'  => $order_id . ' | ' . $individual_attendee_name . ' | ' . ( $i + 1 ),
-				'post_type'   => $this->attendee_object,
-				'ping_status' => 'closed',
-			);
+			$attendee_data = [
+				'title'          => $order_id . ' | ' . $individual_attendee_name . ' | ' . ( $i + 1 ),
+				'full_name'      => $individual_attendee_name,
+				'email'          => $individual_attendee_email,
+				'ticket_id'      => $product_id,
+				'order_id'       => $order_id,
+				'post_id'        => $post_id,
+				'optout'         => $optout,
+				'price_paid'     => $this->get_price_value( $product_id ),
+				'price_currency' => $currency_symbol,
+				'user_id'        => $user_id,
+			];
 
-			// Insert individual ticket purchased
-			$attendee_id = wp_insert_post( $attendee );
-
-			update_post_meta( $attendee_id, self::ATTENDEE_PRODUCT_KEY, $product_id );
-			update_post_meta( $attendee_id, self::ATTENDEE_ORDER_KEY, $order_id );
-			update_post_meta( $attendee_id, self::ATTENDEE_EVENT_KEY, $post_id );
-			update_post_meta( $attendee_id, $this->security_code, $this->generate_security_code( $order_id . '_' . $attendee_id ) );
-			update_post_meta( $attendee_id, $this->attendee_optout_key, $optout );
-			update_post_meta( $attendee_id, '_paid_price', $this->get_price_value( $product_id ) );
-			update_post_meta( $attendee_id, '_price_currency_symbol', $currency_symbol );
-
-			update_post_meta( $attendee_id, $this->full_name, $individual_attendee_name );
-			update_post_meta( $attendee_id, $this->email, $individual_attendee_email );
-
-			/**
-			 * Easy Digital Downloads specific action fired when an EDD-driven attendee ticket for an event is generated
-			 *
-			 * @param int $attendee_id ID of attendee ticket
-			 * @param int $post_id ID of event
-			 * @param int $order_id Easy Digital Downloads order ID
-			 * @param int $product_id Easy Digital Downloads product ID
-			 */
-			do_action( 'event_ticket_edd_attendee_created', $attendee_id, $post_id, $order_id, $product_id );
-
-			/**
-			 * Action fired when an attendee ticket is generated
-			 *
-			 * @param int $attendee_id ID of attendee ticket
-			 * @param int $order EDD order ID
-			 * @param int $product_id Product ID attendee is "purchasing"
-			 * @param int $order_attendee_id Attendee # for order
-			 */
-			do_action( 'event_tickets_edd_ticket_created', $attendee_id, $order_id, $product_id, $i );
-
-			$this->record_attendee_user_id( $attendee_id, $user_id );
-			$this->clear_attendees_cache( $post_id );
+			$this->create_attendee( $ticket, $attendee_data );
 		}
 
 		return true;

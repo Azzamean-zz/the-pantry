@@ -1,5 +1,6 @@
 <?php
 
+use Tribe__Utils__Array as Arr;
 
 /**
  * Class Tribe__Tickets_Plus__Meta__Storage
@@ -78,6 +79,11 @@ class Tribe__Tickets_Plus__Meta__Storage {
 			if ( ! empty( $_POST['process-tickets'] ) ) {
 				return false;
 			}
+
+			// Skip admin manager requests.
+			if ( 'tribe_tickets_admin_manager' === Arr::get( $_POST, 'action' ) ) {
+				return false;
+			}
 		}
 
 		// Bad meta.
@@ -91,6 +97,8 @@ class Tribe__Tickets_Plus__Meta__Storage {
 
 			return false;
 		}
+
+		$ticket_meta = $this->maybe_reformat_meta( $ticket_meta );
 
 		// Update the cookie / meta.
 		if ( null !== $this->get_hash_cookie() ) {
@@ -120,6 +128,34 @@ class Tribe__Tickets_Plus__Meta__Storage {
 
 		$has_new_meta = false;
 
+		// Clean up attendee meta (even though there's nothing to merge with.
+		$ticket_meta = $this->combine_new_and_saved_attendee_meta( $ticket_meta, [] );
+
+		$set = $this->update_meta_data( $ticket_meta, null, $hash_key );
+
+		if ( ! $set ) {
+			return false;
+		}
+
+		$this->set_hash_cookie( $hash_key, $ticket_meta, $provider );
+
+		return $hash_key;
+	}
+
+	/**
+	 * Maybe reformat the new meta based on attendee meta values.
+	 *
+	 * @since 5.2.0
+	 *
+	 * @param array $ticket_meta List of ticket meta to reformat.
+	 *
+	 * @return array List of ticket meta that has been reformatted.
+	 */
+	private function maybe_reformat_meta( $ticket_meta ) {
+		if ( empty( $ticket_meta ) || ! is_array( $ticket_meta ) ) {
+			return $ticket_meta;
+		}
+
 		$first_meta = current( $ticket_meta );
 
 		if ( ! empty( $first_meta['attendees'] ) ) {
@@ -138,20 +174,9 @@ class Tribe__Tickets_Plus__Meta__Storage {
 			$ticket_meta = $new_meta;
 		}
 
-		$ticket_meta = Tribe__Utils__Array::escape_multidimensional_array( $ticket_meta );
+		$ticket_meta = Arr::escape_multidimensional_array( $ticket_meta );
 
-		// Clean up attendee meta (even though there's nothing to merge with.
-		$ticket_meta = $this->combine_new_and_saved_attendee_meta( $ticket_meta, [] );
-
-		$set = $this->update_meta_data( $ticket_meta, null, $hash_key );
-
-		if ( ! $set ) {
-			return false;
-		}
-
-		$this->set_hash_cookie( $hash_key, $ticket_meta, $provider );
-
-		return $hash_key;
+		return $ticket_meta;
 	}
 
 	/**
@@ -183,8 +208,6 @@ class Tribe__Tickets_Plus__Meta__Storage {
 		if ( $has_updated_meta_cookie ) {
 			return $hash_key;
 		}
-
-		$ticket_meta = Tribe__Utils__Array::escape_multidimensional_array( $ticket_meta );
 
 		$stored_ticket_meta = $this->get_meta_data();
 
@@ -544,21 +567,19 @@ class Tribe__Tickets_Plus__Meta__Storage {
 	 * @return array a multidimensional array of attendee meta with no empty values
 	 */
 	public function remove_empty_values_recursive( $input ) {
-		foreach ( $input as &$value ) {
+		foreach ( $input as $key => $value ) {
 			if ( is_array( $value ) ) {
 				$value = $this->remove_empty_values_recursive( $value );
+
+				if ( empty( $value ) ) {
+					unset( $input[ $key ]);
+				}
+			} elseif ( '' === $value || null === $value ) {
+				unset( $input[ $key ]);
 			}
 		}
 
-		// reset array for current to work correctly
-		reset( $input );
-		if ( is_array( current( $input ) ) ) {
-			// if current item is an array return it to prevent notices of string to array
-			return array_filter( $input );
-		}
-
-		// remove empty values, but keep 0 as a value
-		return array_filter( $input, 'strlen' );
+		return $input;
 	}
 
 	/**

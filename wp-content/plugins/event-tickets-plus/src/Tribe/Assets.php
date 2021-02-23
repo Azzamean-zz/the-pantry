@@ -17,7 +17,6 @@ class Tribe__Tickets_Plus__Assets {
 			[ 'jquery-cookie', 'vendor/jquery.cookie/jquery.cookie.js', [ 'jquery' ] ],
 			[ 'event-tickets-plus-attendees-list-js', 'attendees-list.js', [ 'event-tickets-attendees-list-js' ] ],
 			[ 'event-tickets-plus-meta-js', 'meta.js', [ 'jquery-cookie', 'jquery-deparam' ] ],
-			[ 'tribe-tickets-plus-attendee-meta', 'v2/tickets-meta.js', [ 'jquery', 'tribe-common' ] ],
 		];
 
 		$plugin = tribe( 'tickets-plus.main' );
@@ -36,6 +35,28 @@ class Tribe__Tickets_Plus__Assets {
 					],
 				],
 				'conditionals' => tribe_callback( 'tickets.assets', 'should_enqueue_frontend' ),
+			]
+		);
+
+		// Tickets meta validation library.
+		tribe_asset(
+			$plugin,
+			'tribe-tickets-plus-attendee-meta',
+			'v2/tickets-meta.js',
+			[
+				'jquery',
+				'tribe-common',
+			],
+			null,
+			[
+				'groups' => [
+					'tribe-tickets-block-assets',
+					'tribe-tickets-modal',
+					'tribe-tickets-rsvp',
+					'tribe-tickets-registration-page',
+					'tribe-tickets-admin',
+					'tribe-tickets-forms',
+				],
 			]
 		);
 

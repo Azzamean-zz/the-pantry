@@ -203,7 +203,7 @@ if ( ! class_exists( 'Pie_WCWL_Waitlist_Left_Email' ) ) {
 					'product_link'  => get_permalink( $product_id ),
 					'email_heading' => apply_filters( 'woocommerce_email_heading_' . $this->id, $this->get_translated_string( $this->heading, $this->language ) ),
 					'product_id'    => $product_id,
-					'email'         => $email,
+					'email'         => $this->recipient,
 				),
 				false,
 				$this->template_base

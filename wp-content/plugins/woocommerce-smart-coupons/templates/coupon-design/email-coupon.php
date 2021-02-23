@@ -51,7 +51,7 @@ $style_colors = 'background-color: ' . $background_color . '; color: ' . $foregr
 
 	echo '</div>';
 
-	echo '<div class="code" style="text-transform:uppercase;">' . esc_html( $coupon_code ) . '</div>';
+	echo '<div class="code">' . esc_html( $coupon_code ) . '</div>';
 
 	$show_coupon_description = get_option( 'smart_coupons_show_coupon_description', 'no' );
 	if ( ! empty( $coupon_description ) && 'yes' === $show_coupon_description ) {

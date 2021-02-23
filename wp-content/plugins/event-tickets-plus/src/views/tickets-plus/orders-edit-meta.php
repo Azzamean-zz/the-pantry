@@ -6,20 +6,22 @@
  *
  *     [your-theme]/tribe/tickets-plus/orders-edit-meta.php
  *
- * @link    http://m.tri.be/1amp See more documentation about our views templating system.
+ * @link    https://evnt.is/1amp See more documentation about our views templating system.
  *
  * @since   4.4.3
  * @since   4.10.2 Set global for whether or not a ticket has any meta fields to show.
  * @since   4.10.7 Rearranged some variables.
  * @since   4.11.2 Use customizable ticket name functions.
  * @since   5.1.0 Replaced usage of Tribe__Tickets_Plus__Meta::meta_enabled() with ticket_has_meta() method and add support for resending email.
+ * @since   5.2.0 Added $allow_resending_email variable usage.
  *
- * @version 5.1.0
+ * @version 5.2.0
  *
  * @see \Tribe__Tickets__Tickets::get_attendee() Each ticket provider implements this method.
- * @var array $attendee The attendee information.
- * @var string $field_slug_for_resend_email The slug for the Re-send Email field.
- * @var WP_Post|null $ticket The ticket post object.
+ * @var array        $attendee                    The attendee information.
+ * @var string       $field_slug_for_resend_email The slug for the Re-send Email field.
+ * @var WP_Post|null $ticket                      The ticket post object.
+ * @var bool         $allow_resending_email       If resending email is allowed.
  */
 
 global $tribe_my_tickets_have_meta;
@@ -76,6 +78,7 @@ if ( $meta->ticket_has_meta( $ticket->ID ) ) {
 		'attendee'                    => $attendee,
 		'ticket'                      => $ticket,
 		'field_slug_for_resend_email' => $field_slug_for_resend_email,
+		'allow_resending_email'       => $allow_resending_email,
 	];
 
 	$template->add_template_globals( $template_globals );

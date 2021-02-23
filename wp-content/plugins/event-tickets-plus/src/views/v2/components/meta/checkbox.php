@@ -5,12 +5,13 @@
  * Override this template in your own theme by creating a file at:
  * [your-theme]/tribe/tickets-plus/v2/components/meta/checkbox.php
  *
- * @link    http://m.tri.be/1amp See more documentation about our views templating system.
+ * @link    https://evnt.is/1amp See more documentation about our views templating system.
  *
  * @since 5.0.0
  * @since 5.1.0 Added support for div HTML attributes.
+ * @since 5.2.0 Fixed handling of showing selected checkbox options.
  *
- * @version 5.1.0
+ * @version 5.2.0
  *
  * @var string $field_name The meta field name.
  * @var string $field_id The meta field id.
@@ -31,6 +32,8 @@ if ( ! $options ) {
 	return;
 }
 
+$formatted_value = $field->get_formatted_value( $value );
+
 $field_slug = $field->slug;
 ?>
 <div
@@ -50,7 +53,6 @@ $field_slug = $field->slug;
 			$option_id   = tribe_tickets_plus_meta_field_id( $ticket->ID, $field_slug, $option_slug, $attendee_id );
 			$slug        = $field_slug . '_' . $option_slug;
 			$field_name  = tribe_tickets_plus_meta_field_name( $ticket->ID, $slug, $attendee_id );
-			$value       = [];
 			?>
 
 		<div class="tribe-common-form-control-checkbox">
@@ -64,7 +66,7 @@ $field_slug = $field->slug;
 					name="<?php echo esc_attr( $field_name ); ?>"
 					type="checkbox"
 					value="<?php echo esc_attr( $option ); ?>"
-					<?php checked( true, in_array( $slug, $value, true ) ); ?>
+					<?php checked( in_array( $option, $formatted_value, true ) ); ?>
 					<?php disabled( $field->is_restricted( $attendee_id ) ); ?>
 					<?php tribe_required( $required ); ?>
 				/>

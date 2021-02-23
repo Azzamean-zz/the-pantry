@@ -1,5 +1,16 @@
 *** WooCommerce Waitlist Change Log ***
 
+2021.02.10 - version 2.2.3
+* Fix: issue with plain text emails not displaying as expected
+* Fix: fatal error with events plugin add-on 'Enhance Woo Order Templates'
+* Fix: removed waitlist notice from product page if it was empty
+* Fix: php8 deprecation notice fix
+* Fix: events ticket class checks updated as new classes have been added/changed (checkbox HTML)
+* Added: action hooks before and after waitlist mailout process
+* Added: filter to customise when mailout should be processed
+* Added: user flag for guests in admin panel row
+* Added: include wcwl prefix to ticket variable names to avoid potential conflicts
+
 2020.10.20 - version 2.2.2
 * Fix: priority for supported products array adjustment as some products not showing waitlist tab in admin
 

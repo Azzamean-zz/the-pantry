@@ -112,3 +112,42 @@ if ( ! function_exists( 'tribe_tickets_plus_meta_field_id' ) ) {
 		return $field_id;
 	}
 }
+
+if ( ! function_exists( 'tribe_tickets_ma_is_enabled' ) ) {
+	/**
+	 * Determine whether the MA feature is enabled.
+	 *
+	 * @todo Remove this function before release.
+	 *
+	 * In order: the function will check the constant, the environment variable, and then
+	 * allow filtering.
+	 *
+	 * @since 5.2.0
+	 *
+	 * @return bool Whether the Manual Attendees feature is enabled.
+	 */
+	function tribe_tickets_ma_is_enabled() {
+		// Check for constant.
+		if ( defined( 'TRIBE_TICKETS_MA_ENABLED' ) ) {
+			return (bool) TRIBE_TICKETS_MA_ENABLED;
+		}
+
+		// Check for env var.
+		$env_var = getenv( 'TRIBE_TICKETS_MA_ENABLED' );
+
+		if ( false !== $env_var ) {
+			return (bool) $env_var;
+		}
+
+		/**
+		 * Allows filtering whether the manual attendee is enabled.
+		 *
+		 * @since 5.2.0
+		 *
+		 * @param bool $enabled Whether the manual attendee is enabled.
+		 *
+		 * @var bool   $enabled Whether the manual attendee is enabled.
+		 */
+		return (bool) apply_filters( 'tribe_tickets_manual_attendees_enabled', true );
+	}
+}

@@ -174,7 +174,7 @@ trait Protected_Content {
 				$args['by']['provider'] = $type;
 			}
 
-			$has_ticket_attendees = (boolean) Tickets::get_event_attendees_count( $post_id, $args );
+			$has_ticket_attendees = (bool) Tickets::get_event_attendees_count( $post_id, $args );
 		}
 
 		// Are we checking for ticketed but they have no matching attendees?
@@ -243,7 +243,7 @@ trait Protected_Content {
 		 *      @type string  $args           The list of all shortcode arguments.
 		 * }
 		 */
-		$can_see_content = (boolean) apply_filters(
+		$can_see_content = (bool) apply_filters(
 			'tribe_tickets_shortcode_can_see_content',
 			$can_see_content,
 			$filter_args,
@@ -275,7 +275,7 @@ trait Protected_Content {
 		 *      @type string  $args           The list of all shortcode arguments.
 		 * }
 		 */
-		$can_see_content = (boolean) apply_filters(
+		$can_see_content = (bool) apply_filters(
 			"tribe_tickets_shortcode_{$context}_can_see_content",
 			$can_see_content,
 			$filter_args,

@@ -26,8 +26,9 @@ do_action( 'woocommerce_email_header', $email_heading, $email ); ?>
 	_e( 'You have been sent this email because your email address was registered on a waitlist for this product.', 'woocommerce-waitlist' );
 	?>
 </p>
+<?php $product_link_name = strtok( $product_link, '?' ); ?>
 <p>
-	<?php printf( __( 'If you would like to purchase %1$s please visit the following link: %2$s', 'woocommerce-waitlist' ), $product_title, '<a href="' . $product_link . '">' . $product_link . '</a>' ); ?>
+	<?php printf( __( 'If you would like to purchase %1$s please visit the following link: %2$s', 'woocommerce-waitlist' ), $product_title, '<a href="' . $product_link . '">' . $product_link_name . '</a>' ); ?>
 </p>
 
 <?php if ( WooCommerce_Waitlist_Plugin::persistent_waitlists_are_disabled( $product_id ) && ! $triggered_manually ) {

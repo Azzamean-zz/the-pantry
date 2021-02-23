@@ -5,7 +5,7 @@
  * Override this template in your own theme by creating a file at:
  * [your-theme]/tribe/tickets-plus/v2/modal/attendee-registration.php
  *
- * @link    http://m.tri.be/1amp See more documentation about our views templating system.
+ * @link    https://evnt.is/1amp See more documentation about our views templating system.
  *
  * @since   5.1.0
  *

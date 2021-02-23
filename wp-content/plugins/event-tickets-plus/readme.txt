@@ -1,19 +1,19 @@
 === Event Tickets Plus ===
 
-Contributors: ModernTribe, brianjessee, camwynsp, paulkim, sc0ttkclark, aguseo, barry.hughes, bordoni, borkweb, cliffpaulick, courane01, faction23, GeoffBel, geoffgraham, ggwicz, jbrinley, jentheo, leahkoerper, lucatume, mastromktg, MZAWeb, neillmcshea, nicosantos, patriciahillebrandt, peterchester, reid.peifer, roblagatta, ryancurban, shane.pearlman, tribecari, vicskf, zbtirrell
+Contributors: theeventscalendar, brianjessee, camwynsp, paulkim, sc0ttkclark, aguseo, bordoni, borkweb, GeoffBel, geoffgraham, jentheo, leahkoerper, lucatume, neillmcshea, patriciahillebrandt, tribecari, vicskf, zbtirrell, juanfra
 Tags: events, WooCommerce, WooTickets, add-on, ticket sales, tickets, calendar, community, registration, api, dates, date, posts, workshop, conference, meeting, seminar, concert, summit, The Events Calendar, Events Calendar PRO, ticket integration, event ticketing, RSVP, EDD, Easy Digital Downloads
 Requires at least: 4.9.14
 Tested up to: 5.6.0
-Stable tag: 5.1.1
+Stable tag: 5.2.0
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Event Tickets Plus allows you to sell tickets to your events using WooCommerce, Easy Digital Downloads, or our built in Tribe Commerce tool. Use it on your posts and pages, or add <a href="http://m.tri.be/18vc">The Events Calendar</a> and sell tickets from your events listings.
+Event Tickets Plus allows you to sell tickets to your events using WooCommerce, Easy Digital Downloads, or our built in Commerce tool. Use it on your posts and pages, or add <a href="https://evnt.is/18vc">The Events Calendar</a> and sell tickets from your events listings.
 
 == Description ==
 
-Event Tickets Plus adds features and functionality onto the core Event Tickets plugin, so you can sell tickets with WooCommerce or Easy Digital Downloads. You can sell tickets on any existing post type or use <a href="http://m.tri.be/18vc">The Events Calendar</a> for a full events and ticketing solution. Event Tickets Plus gives you the power to keep ticket sales contained entirely within your site. This means no more sending buyers to a third-party portal or requiring an outside solution. Tickets have unique QR codes that make checking in your guests a breeze. Plus, the plugin allows you to take advantage of many of the powerful features already built into your commerce provider (reports, SKU tracking, etc) and apply those specifically to tickets. Whether soliciting free RSVPs to a community gathering or hosting a huge party with multiple price tiers, Event Tickets has got you covered.
+Event Tickets Plus adds features and functionality onto the core Event Tickets plugin, so you can sell tickets with WooCommerce or Easy Digital Downloads. You can sell tickets on any existing post type or use <a href="https://evnt.is/18vc">The Events Calendar</a> for a full events and ticketing solution. Event Tickets Plus gives you the power to keep ticket sales contained entirely within your site. This means no more sending buyers to a third-party portal or requiring an outside solution. Tickets have unique QR codes that make checking in your guests a breeze. Plus, the plugin allows you to take advantage of many of the powerful features already built into your commerce provider (reports, SKU tracking, etc) and apply those specifically to tickets. Whether soliciting free RSVPs to a community gathering or hosting a huge party with multiple price tiers, Event Tickets has got you covered.
 
 = Event Tickets =
 
@@ -40,13 +40,13 @@ Event Tickets Plus adds features and functionality onto the core Event Tickets p
 
 == Documentation ==
 
-Our <a href="http://m.tri.be/18ve">New User Primer</a> will help you get started. More tutorials are available at http://m.tri.be/44
+Our <a href="https://evnt.is/18ve">New User Primer</a> will help you get started. More tutorials are available at https://evnt.is/44
 
 == Frequently Asked Questions ==
 
 = Where do I go to file a bug or ask a question? =
 
-Please visit the <a href="http://m.tri.be/18vf">Tickets Plus</a> forum for questions or comments.
+Please visit the <a href="https://evnt.is/18vf">Tickets Plus</a> forum for questions or comments.
 
 = Are there any troubleshooting steps you'd suggest I try that might resolve my issue before I post a new thread? =
 
@@ -58,24 +58,28 @@ Note that we aren't going to say "tough luck" if you identify a plugin/theme con
 
 = I'm still stuck. Where do I go to file a bug or ask a question? =
 
-If you're an Event Tickets Plus user, you're entitled access to our actively-monitored <a href="http://m.tri.be/18vg">premium forums</a> at the theeventscalendar.com website. We can provide a deeper level of support here and hit these forums on a daily basis during the work week. We respond to posts within 24-48 hours (during the week).
+If you're an Event Tickets Plus user, you're entitled access to our actively-monitored <a href="https://evnt.is/18vg">premium forums</a> at the theeventscalendar.com website. We can provide a deeper level of support here and hit these forums on a daily basis during the work week. We respond to posts within 24-48 hours (during the week).
 
 == Contributors ==
 
-The plugin is produced by <a href="http://m.tri.be/3i">Modern Tribe Inc</a>.
+The plugin is produced by <a href="https://evnt.is/1aor">The Events Calendar</a>.
 
 = Current Contributors =
 
-* <a href="https://profiles.wordpress.org/users/barryhughes">Barry Hughes</a>
 * <a href="https://profiles.wordpress.org/users/brianjessee">Brian Jessee</a>
 * <a href="https://profiles.wordpress.org/users/geoffgraham">Geoff Graham</a>
-* <a href="https://profiles.wordpress.org/users/ggwicz">George Gecewicz</a>
 * <a href="https://profiles.wordpress.org/users/bordoni">Gustavo Bordoni</a>
-* <a href="https://profiles.wordpress.org/users/jbrinley">Jonathan Brinley</a>
 * <a href="https://profiles.wordpress.org/users/leahkoerper">Leah Koerper</a>
 * <a href="https://profiles.wordpress.org/users/lucatume">Luca Tumedei</a>
 * <a href="https://profiles.wordpress.org/users/borkweb">Matthew Batchelder</a>
 * <a href="https://profiles.wordpress.org/users/neillmcshea">Neill McShea</a>
+* <a href="https://profiles.wordpress.org/users/zbtirrell">Zachary Tirrell</a>
+
+= Past Contributors =
+
+* <a href="https://profiles.wordpress.org/users/barryhughes">Barry Hughes</a>
+* <a href="https://profiles.wordpress.org/users/ggwicz">George Gecewicz</a>
+* <a href="https://profiles.wordpress.org/users/jbrinley">Jonathan Brinley</a>
 * <a href="https://profiles.wordpress.org/users/mastromktg">Nick Mastromattei</a>
 * <a href="https://profiles.wordpress.org/users/nicosantos">Nico Santo</a>
 * <a href="https://profiles.wordpress.org/users/peterchester">Peter Chester</a>
@@ -84,10 +88,6 @@ The plugin is produced by <a href="http://m.tri.be/3i">Modern Tribe Inc</a>.
 * <a href="https://profiles.wordpress.org/users/ryancurban">Ryan Urban</a>
 * <a href="https://profiles.wordpress.org/users/faction23">Samuel Estok</a>
 * <a href="https://profiles.wordpress.org/users/shane.pearlman">Shane Pearlman</a>
-* <a href="https://profiles.wordpress.org/users/zbtirrell">Zachary Tirrell</a>
-
-= Past Contributors =
-
 * <a href="https://profiles.wordpress.org/users/brook-tribe">Brook Harding</a>
 * <a href="https://profiles.wordpress.org/users/caseypatrickdriscoll">Casey Driscoll</a>
 * <a href="https://profiles.wordpress.org/users/ckpicker">Casey Picker</a>
@@ -112,28 +112,52 @@ The plugin is produced by <a href="http://m.tri.be/3i">Modern Tribe Inc</a>.
 
 = Translations =
 
-Modern Tribe’s premium plugins are translated by volunteers at <a href=“http://m.tri.be/194h”>translations.theeventscalendar.com</a>. There you can find a list of available languages, download translation files, or help update the translations. Thank you to everyone who helps to maintain our translations!
+The Events Calendar’s premium plugins are translated by volunteers at <a href=“https://evnt.is/194h”>translations.theeventscalendar.com</a>. There you can find a list of available languages, download translation files, or help update the translations. Thank you to everyone who helps to maintain our translations!
 
 == Add-Ons ==
 
-But wait: there's more! We've got a whole stable of plugins available to help you be awesome at what you do. Check out a full list of the products below, and over at <a href="http://m.tri.be/18vh">The Events Calendar website.</a>
+But wait: there's more! We've got a whole stable of plugins available to help you be awesome at what you do. Check out a full list of the products below, and over at <a href="https://evnt.is/18vh">The Events Calendar website.</a>
 
 Our Free Plugins:
 
 * <a href="https://wordpress.org/plugins/the-events-calendar/" target="_blank">The Events Calendar</a>
-* <a href="http://m.tri.be/18vx" target="_blank">Event Tickets</a>
+* <a href="https://evnt.is/18vx" target="_blank">Event Tickets</a>
 * <a href="http://wordpress.org/plugins/advanced-post-manager/?ref=tec-readme" target="_blank">Advanced Post Manager</a>
 
 Our Premium Plugins:
 
-* <a href="http://m.tri.be/2c" target="_blank">Events Calendar PRO</a>
-* <a href="http://m.tri.be/18vy" target="_blank">Event Tickets Plus</a>
-* <a href="http://m.tri.be/2e" target="_blank">The Events Calendar: Eventbrite Tickets</a>
-* <a href="http://m.tri.be/2g" target="_blank">The Events Calendar: Community Events</a>
-* <a href="http://m.tri.be/18vw" target="_blank">The Events Calendar: Community Tickets</a>
-* <a href="http://m.tri.be/fa" target="_blank">The Events Calendar: Filter Bar</a>
+* <a href="https://evnt.is/2c" target="_blank">Events Calendar PRO</a>
+* <a href="https://evnt.is/18vy" target="_blank">Event Tickets Plus</a>
+* <a href="https://evnt.is/2e" target="_blank">The Events Calendar: Eventbrite Tickets</a>
+* <a href="https://evnt.is/2g" target="_blank">The Events Calendar: Community Events</a>
+* <a href="https://evnt.is/18vw" target="_blank">The Events Calendar: Community Tickets</a>
+* <a href="https://evnt.is/fa" target="_blank">The Events Calendar: Filter Bar</a>
 
 == Changelog ==
+
+= [5.2.0] 2021-02-16 =
+
+* Feature - You can now add and edit attendees directly from the Attendees Report screen -- Choose the ticket or RSVP then fill out the attendee details and a ticket will be set up and emailed to them. You can edit existing attendees and all of the things you love about Attendee Registration has come along for the party too! [ETP-366]
+* Feature - WooCommerce and Easy Digital Download attendees are now generated through the new Event Tickets 5.1.0 Attendees API which provides more flexibility for adding and editing attendees at the code-level. [ETP-366]
+* Feature - There's a new Orders API for setting up a corresponding WooCommerce or Easy Digital Downloads order for an attendee generated through the Attendees API. [ETP-366]
+* Fix - Add a workaround for a potential WooCommerce fatal error until WooCommerce 5.1 is released. [ETP-635]
+* Fix - Always enforce an integer for WooCommerce when we use the cart contents because some WooCommerce-related plugins may directly modify the cart contents and set the quantity to an unexpected format (float). [ETP-631]
+* Fix - Ensure form submissions for Attendee Registration Information is prepared when updating the persistent cookie the same as it is prepared for creating the cookie.
+* Fix - Ensure single Attendee Registration Fields are retained properly when processing Attendee Registration Information for storage. [ETP-642]
+* Tweak - Handle currently selected values in the Attendee Registration Field templates (v2) for Birth Date field, Radio field, and Checkbox field.
+* Tweak - Allow providing values to Attendee Registration Fields at the code level so the fields can be prepopulated on render. [ETP-366]
+* Tweak - Extend the Attendees Repository code from Event Tickets for Tribe Commerce and RSVPs so that meta integration is handled directly on attendee save. [ETP-366]
+* Tweak - Added filters: `tribe_tickets_plus_manual_attendees_user_allowed_to_add`, `tribe_tickets_plus_manual_attendees_user_allowed_to_edit`, `tribe_tickets_plus_manual_attendees_add_capabilities`, `tribe_tickets_plus_manual_attendees_edit_capabilities`, `tribe_tickets_plus_manual_attendees_show_on_front`, `tribe_tickets_plus_meta_render_table_meta_data_orphaned_data`, `tribe_tickets_plus_repositories_traits_attendee_meta`, `tribe_tickets_manual_attendees_enabled`
+* Tweak - Removed filters: `wootickets_attendee_insert_args`
+* Tweak - Added actions: `event_tickets_woocommerce_tickets_generated`, `event_tickets_woocommerce_tickets_generated_for_product`
+* Tweak - Changed views: `attendees-list`, `eddtickets/tickets`, `login-to-purchase`, `meta`, `meta/birth`, `meta/checkbox`, `meta/datetime`, `meta/email`, `meta/number`, `meta/radio`, `meta/select`, `meta/telephone`, `meta/text`, `meta/url`, `tickets-plus/attendee-list-checkbox-rsvp`, `tickets-plus/attendee-list-checkbox-tickets`, `tickets-plus/email-qr`, `tickets-plus/orders-edit-meta`, `tickets-plus/orders-tickets`, `tpp/attendees-list-optout`, `v2/attendee-registration/button/back-to-cart`, `v2/attendee-registration/button/submit`, `v2/attendee-registration/content`, `v2/attendee-registration/content/attendees/content`, `v2/attendee-registration/content/attendees/error`, `v2/attendee-registration/content/attendees/fields`, `v2/attendee-registration/content/event`, `v2/attendee-registration/content/event/summary`, `v2/attendee-registration/content/event/summary/description`, `v2/attendee-registration/content/event/summary/title`, `v2/attendee-registration/content/notice`, `v2/attendee-registration/content/title`, `v2/attendee-registration/footer`, `v2/attendee-registration/mini-cart`, `v2/attendee-registration/mini-cart/title`, `v2/components/meta/birth`, `v2/components/meta/checkbox`, `v2/components/meta/datetime`, `v2/components/meta/email`, `v2/components/meta/number`, `v2/components/meta/radio`, `v2/components/meta/select`, `v2/components/meta/telephone`, `v2/components/meta/text`, `v2/components/meta/url`, `v2/iac/attendee-registration/email-disclaimer`, `v2/iac/attendee-registration/unique-email-error`, `v2/iac/attendee-registration/unique-name-error`, `v2/iac/my-tickets/resend-email-template`, `v2/modal/attendee-registration`, `v2/modal/attendee-registration/footer`, `v2/modal/attendee-registration/notice/error`, `v2/modal/attendee-registration/notice/non-ar`, `v2/modal/attendee-registration/title`, `v2/modal/cart`, `v2/modal/form`, `v2/modal/item/opt-out`, `v2/modal/item/remove`, `v2/modal/item/total`, `v2/modal/target`, `v2/tickets/commerce/fields`, `v2/tickets/commerce/fields/edd`, `v2/tickets/commerce/fields/woo`, `v2/tickets/submit/button-modal`, `wootickets/tickets`
+* Language - 28 new strings added, 40 updated, 0 fuzzied, and 0 obsoleted
+
+= [5.1.2] 2021-01-20 =
+
+* Fix - Prevent potential fatal errors by passing the currency object to the context for the tickets footer template in the Attendee Registration mini cart in all cases. [ETP-629]
+* Fix - Multiple shortcodes `[tribe_tickets post_id="ID"]` in a single page will now properly work with Modal and adding to cart. [ETP-627]
+* Fix - 2 new strings added, 3 updated, 0 fuzzied, and 2 obsoleted
 
 = [5.1.1] 2020-12-15 =
 

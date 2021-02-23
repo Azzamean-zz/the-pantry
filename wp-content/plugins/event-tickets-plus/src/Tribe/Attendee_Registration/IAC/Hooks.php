@@ -73,14 +73,14 @@ class Hooks {
 	}
 
 	/**
-	 * Filter whether the ticket has meta.
+	 * Filter and add any custom meta fields needed for IAC.
 	 *
 	 * @since 5.1.0
 	 *
 	 * @param Tribe__Tickets_Plus__Meta__Field__Abstract_Field[] $fields    List of meta field objects for the ticket.
 	 * @param int                                                $ticket_id The ticket ID.
 	 *
-	 * @return bool Whether the ticket has meta.
+	 * @return array The list of meta fields for a specific ticket.
 	 */
 	public function filter_event_tickets_plus_meta_fields_by_ticket( $fields, $ticket_id ) {
 		// Only override when we intend to.

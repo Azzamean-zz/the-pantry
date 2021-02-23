@@ -3,7 +3,7 @@
  * Coupon Email Content
  *
  * @author      StoreApps
- * @version     1.3.0
+ * @version     1.4.0
  * @package     woocommerce-smart-coupons/templates/plain/
  */
 
@@ -62,7 +62,7 @@ if ( has_action( 'woocommerce_email_header' ) ) {
 		}
 
 </style>
-<style type="text/css"><?php echo ( isset( $coupon_styles ) && ! empty( $coupon_styles ) ) ? $coupon_styles : ''; // phpcs:ignore ?></style>
+<style type="text/css"><?php echo ( isset( $coupon_styles ) && ! empty( $coupon_styles ) ) ? esc_html( wp_strip_all_tags( $coupon_styles, true ) ) : ''; // phpcs:ignore ?></style>
 <?php
 if ( 'custom-design' !== $design ) {
 	?>
@@ -129,7 +129,7 @@ if ( ! empty( $receiver_details ) ) {
 		if ( ! empty( $expiry_date ) ) {
 			$expiry_time = (int) get_post_meta( $coupon_id, 'wc_sc_expiry_time', true );
 			if ( ! empty( $expiry_time ) ) {
-				if ( $this->is_wc_gte_30() && $expiry_date instanceof WC_DateTime ) {
+				if ( $woocommerce_smart_coupon->is_wc_gte_30() && $expiry_date instanceof WC_DateTime ) {
 					$expiry_date = $expiry_date->getTimestamp();
 				} elseif ( ! is_int( $expiry_date ) ) {
 					$expiry_date = strtotime( $expiry_date );

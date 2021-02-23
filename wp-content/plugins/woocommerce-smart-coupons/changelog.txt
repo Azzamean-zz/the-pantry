@@ -1,5 +1,61 @@
 *** WooCommerce Smart Coupons Changelog ***
 
+2021.02.05 - version 4.16.5
+* Fix: Product attributes restrictions are not getting copied in auto-generated coupons
+* Fix: Coupons are not getting sent on renewals only in case of variable subscription
+* Fix: Auto-apply coupons not working for 'Recurring Product % Discount' coupon if the sign up fee is 0 (zero)
+* Update: POT file
+
+2021.02.01 - version 4.16.0
+* New: Tested up to WooCommerce 4.9.2
+* Update: Improvements related to sanitizing & escaping data
+* Update: POT file
+
+2021.01.15 - version 4.15.0
+* New: Tested up to WooCommerce 4.9.0
+* Fix: Error 'Invalid payment method' when fully paid via store credit [WPML]
+* Fix: When the 'Max discount' is set, sometimes the discount calculated is not accurate
+* Update: POT file
+
+2021.01.05 - version 4.14.0
+* Fix: 'Exclude attributes' restriction overriding 'Exclude categories' restriction
+* Fix: 'Max discount' is not getting calculated properly in case of WooCommerce setting for a decimal value other than 2
+* Fix: Setting 'Disable email restriction' not working in case of coupons scheduled to be sent at a later date
+* Fix: Purchased coupons that are scheduled to be sent later via email, are not getting emailed in some cases
+* Fix: Removed unnecessary 'console.log'
+* Fix: HTML & CSS of add & remove button of 'Taxonomy' restrictions for responsiveness
+* Update: Display details of scheduled coupons in order under 'Generated coupons' meta box
+* Update: POT file
+
+2020.12.10 - version 4.13.0
+* New: Tested upto WooCommerce 4.7.1, 4.8.0 & WordPress 5.6.0
+* New: Coupon usage restrictions for various product taxonomies
+* Update: Support for modifying the input field provided for those products which allows purchasing store credit of any amount
+* Update: Better handling of validation of the input field for those products which allows purchasing store credit of any amount
+* Update: Pass the expiry date through a common formatting function on the Smart Coupons admin setting page
+* Update: CSS for coupon location field
+* Update: POT file
+
+2020.11.09 - version 4.12.2
+* Fix: Uncaught ReferenceError: sc_coupon_message_ajax is not defined
+* Fix: Uncaught ReferenceError: sc_available_coupons_ajax is not defined
+* Update: POT file
+
+2020.11.07 - version 4.12.1
+* New: Tested upto WooCommerce 4.6.2
+* Fix: Email not sending for purchased coupons which are scheduled to be sent 'LATER'
+* Fix: Not checking order statuses while validating new user coupon in the case of guest users
+* Fix: Sometimes showing fatal error if a coupon which is about to be displayed is deleted
+* Fix: Uncaught Error: Using $this when not in object context from 2 templates: email.php & combined-email.php
+* Fix: JavaScript error: Trying to declare the variable a second time
+* Update: Hook 'wc_sc_max_coupon_to_show_on_myaccount' & setting 'wc_sc_setting_max_coupon_to_show_on_myaccount'
+* Update: Limit on the number of coupons to be loaded in the coupons tab on the my account page
+* Update: Improvements in coupon tabs on the my account page such that segments will get loaded only if it has some data
+* Update: Use coupon setting 'Exclude sale items' during generation of coupon description
+* Update: Set the position of Print button to right on my account page
+* Update: Minor change in logic of displaying coupon to ensure correct number of coupons to display as per setting
+* Update: POT file
+
 2020.11.02 - version 4.12.0
 * New: Tested upto WooCommerce 4.6.1 & WordPress 5.5.3
 * New: Usage restriction to exclude user roles

@@ -317,13 +317,27 @@ class Tribe__Tickets_Plus__Tickets_View {
 		/** @var \Tribe\Tickets\Plus\Attendee_Registration\IAC $iac */
 		$iac = tribe( 'tickets-plus.attendee-registration.iac' );
 
+		$ticket = get_post( $attendee['product_id'] );
+
+		/**
+		 * This filter allows the admin to control the re-send email option when an attendee's email is updated.
+		 *
+		 * @since 5.1.0
+		 *
+		 * @param bool         $allow_resending_email Whether to allow email resending.
+		 * @param WP_Post|null $ticket                The ticket post object if available, otherwise null.
+		 * @param array|null   $attendee              The attendee information if available, otherwise null.
+		 */
+		$allow_resending_email = (bool) apply_filters( 'tribe_tickets_my_tickets_allow_email_resend_on_attendee_email_update', true, $ticket, $attendee );
+
 		$args = [
 			'order_id'                    => $attendee['order_id'],
 			'order'                       => $attendee,
 			'attendee'                    => $attendee,
 			'i'                           => $i,
-			'ticket'                      => get_post( $attendee['product_id'] ),
+			'ticket'                      => $ticket,
 			'field_slug_for_resend_email' => $iac->get_iac_ticket_field_slug_for_resend_email(),
+			'allow_resending_email'       => $allow_resending_email,
 		];
 
 		tribe_tickets_get_template_part( 'tickets-plus/orders-edit-meta', null, $args );
@@ -338,10 +352,24 @@ class Tribe__Tickets_Plus__Tickets_View {
 		/** @var \Tribe\Tickets\Plus\Attendee_Registration\IAC $iac */
 		$iac = tribe( 'tickets-plus.attendee-registration.iac' );
 
+		$ticket = get_post( $attendee['product_id'] );
+
+		/**
+		 * This filter allows the admin to control the re-send email option when an attendee's email is updated.
+		 *
+		 * @since 5.1.0
+		 *
+		 * @param bool         $allow_resending_email Whether to allow email resending.
+		 * @param WP_Post|null $ticket                The ticket post object if available, otherwise null.
+		 * @param array|null   $attendee              The attendee information if available, otherwise null.
+		 */
+		$allow_resending_email = (bool) apply_filters( 'tribe_tickets_my_tickets_allow_email_resend_on_attendee_email_update', true, $ticket, $attendee );
+
 		$args = [
 			'attendee'                    => $attendee,
-			'ticket'                      => get_post( $attendee['product_id'] ),
+			'ticket'                      => $ticket,
 			'field_slug_for_resend_email' => $iac->get_iac_ticket_field_slug_for_resend_email(),
+			'allow_resending_email'       => $allow_resending_email,
 		];
 
 		tribe_tickets_get_template_part( 'tickets-plus/orders-edit-meta', null, $args );

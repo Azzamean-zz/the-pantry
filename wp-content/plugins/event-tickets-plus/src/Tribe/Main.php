@@ -12,7 +12,7 @@ if ( ! class_exists( 'Tribe__Tickets_Plus__Main' ) ) {
 		/**
 		 * Current version of this plugin
 		 */
-		const VERSION = '5.1.1';
+		const VERSION = '5.2.0';
 
 		/**
 		 * Used to store the version history.
@@ -167,6 +167,9 @@ if ( ! class_exists( 'Tribe__Tickets_Plus__Main' ) ) {
 
 			// @todo Refactor this in the future to move to ET+ entirely, using same backcompat ET slugs.
 			tribe_register_provider( Tribe__Tickets__Attendee_Registration__Service_Provider::class );
+
+			// Manual Attendees.
+			tribe_register_provider( Tribe\Tickets\Plus\Manual_Attendees\Service_Provider::class );
 
 			// Shortcodes
 			tribe_register_provider( Tribe\Tickets\Plus\Service_Providers\Shortcode::class );

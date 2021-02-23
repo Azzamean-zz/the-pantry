@@ -4,7 +4,7 @@
  *
  * @author      StoreApps
  * @since       4.6.0
- * @version     1.1.0
+ * @version     1.2.0
  *
  * @package     woocommerce-smart-coupons/includes/
  */
@@ -97,17 +97,17 @@ if ( ! class_exists( 'WC_SC_Auto_Apply_Coupon' ) ) {
 		public function usage_restriction( $coupon_id = 0, $coupon = null ) {
 			?>
 			<script type="text/javascript">
-				jQuery(function(){
+				jQuery(function() {
 					let show_hide_auto_apply_field = function() {
 						let discount_type = jQuery('select#discount_type').val();
-						if ( 'smart_coupon' === discount_type ) {
-							jQuery( '.wc_sc_auto_apply_coupon_field' ).hide();
+						if ('smart_coupon' === discount_type) {
+							jQuery('.wc_sc_auto_apply_coupon_field').hide();
 						} else {
-							jQuery( '.wc_sc_auto_apply_coupon_field' ).show();
+							jQuery('.wc_sc_auto_apply_coupon_field').show();
 						}
 					}
 					show_hide_auto_apply_field();
-					jQuery('select#discount_type').on('change', function(){
+					jQuery('select#discount_type').on('change', function() {
 						show_hide_auto_apply_field();
 					});
 				});
@@ -295,9 +295,19 @@ if ( ! class_exists( 'WC_SC_Auto_Apply_Coupon' ) ) {
 								$discount_type = ( ! empty( $coupon->discount_type ) ) ? $coupon->discount_type : '';
 							}
 							if ( ! empty( $coupon_code ) && 'smart_coupon' !== $discount_type && $coupon->is_valid() ) {
-								$cart_total = ( $this->is_wc_greater_than( '3.1.2' ) ) ? $cart->get_cart_contents_total() : $cart->cart_contents_total;
+								$cart_total    = ( $this->is_wc_greater_than( '3.1.2' ) ) ? $cart->get_cart_contents_total() : $cart->cart_contents_total;
+								$is_auto_apply = apply_filters(
+									'wc_sc_is_auto_apply',
+									( $cart_total > 0 ),
+									array(
+										'source'     => $this,
+										'cart_obj'   => $cart,
+										'coupon_obj' => $coupon,
+										'cart_total' => $cart_total,
+									)
+								);
 								// Check if cart still requires a coupon discount and does not have coupon already applied.
-								if ( $cart_total > 0 && ! $cart->has_discount( $coupon_code ) ) {
+								if ( true === $is_auto_apply && ! $cart->has_discount( $coupon_code ) ) {
 									$cart->add_discount( $coupon_code );
 								}
 								$valid_coupon_counter++;

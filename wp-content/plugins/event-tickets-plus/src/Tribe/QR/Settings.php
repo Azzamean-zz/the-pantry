@@ -59,7 +59,7 @@ class Tribe__Tickets_Plus__QR__Settings {
 								'Emailed %1$s can include QR codes to provide secure check in for your attendees. %2$sDownload our Event Ticket Plus app%3$s for an easy mobile check-in process that syncs with your attendee records.', 'event-tickets-plus'
 							),
 							$ticket_label_plural_lower,
-							'<a href="https://m.tri.be/1a55" target="_blank" rel="noopener noreferrer">',
+							'<a href="https://evnt.is/1a55" target="_blank" rel="noopener noreferrer">',
 							'</a>'
 						)
 						. '</p>',

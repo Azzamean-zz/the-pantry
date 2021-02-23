@@ -206,7 +206,7 @@ if ( ! class_exists( 'Pie_WCWL_Waitlist_Mailout' ) ) {
 					'product_link'       => $this->generate_product_link( $this->object ),
 					'email_heading'      => apply_filters( 'woocommerce_email_heading_' . $this->id, $this->get_translated_string( $this->heading, $this->language ) ),
 					'product_id'         => $product_id,
-					'email'              => $email,
+					'email'              => $this->recipient,
 					'triggered_manually' => $this->triggered_manually,
 				),
 				false,

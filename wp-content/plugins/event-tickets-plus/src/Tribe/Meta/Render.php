@@ -1,5 +1,7 @@
 <?php
 
+use Tribe__Utils__Array as Arr;
+
 class Tribe__Tickets_Plus__Meta__Render {
 	public function __construct() {
 		add_filter( 'tribe_tickets_attendee_table_columns', array( $this, 'insert_details_column' ), 20 );
@@ -76,7 +78,8 @@ class Tribe__Tickets_Plus__Meta__Render {
 
 		foreach ( $meta_fields as $field ) {
 			if ( 'checkbox' === $field->type && isset( $field->extra['options'] ) ) {
-				$values = array();
+				$values = [];
+
 				foreach ( $field->extra['options'] as $option ) {
 					if ( '' === $option ) {
 						continue;
@@ -92,6 +95,7 @@ class Tribe__Tickets_Plus__Meta__Render {
 
 					if ( isset( $meta_data[ $key ] ) ) {
 						$values[] = $meta_data[ $key ];
+
 						unset( $orphaned_data[ $key ] );
 					}
 				}
@@ -104,6 +108,7 @@ class Tribe__Tickets_Plus__Meta__Render {
 				$value = implode( ', ', $values );
 			} elseif ( isset( $meta_data[ $field->slug ] ) ) {
 				$value = $meta_data[ $field->slug ];
+
 				unset( $orphaned_data[ $field->slug ] );
 			} else {
 				continue;
@@ -113,35 +118,62 @@ class Tribe__Tickets_Plus__Meta__Render {
 				$value = '&nbsp;';
 			}
 
-			$valid_meta_html .= '
-				<dt class="event-tickets-meta-label_' . sanitize_html_class( $field->slug ) . '">
-					' . wp_kses_post( $field->label ) . '
-				</dt>
-				<dd class="event-tickets-meta-data_' . sanitize_html_class( $field->slug ) . '">
-					' . wp_kses_post( $value ) . '
-				</dd>
-			';
+			$valid_meta_html .= sprintf(
+				'
+					<dt class="event-tickets-meta-label_%1$s">
+						%2$s
+					</dt>
+					<dd class="event-tickets-meta-data_%1$s">
+						%3$s
+					</dd>
+				',
+				sanitize_html_class( $field->slug ),
+				wp_kses_post( $field->label ),
+				wp_kses_post( $value )
+			);
 		}
 
 		if ( ! empty( $valid_meta_html ) ) {
 			$valid_meta_html = '<dl>' . $valid_meta_html . '</dl>';
 		}
 
+		/**
+		 * Allow filtering of the orphaned data shown on the page.
+		 *
+		 * @since 5.2.0
+		 *
+		 * @param array                                              $orphaned_data The orphaned data.
+		 * @param Tribe__Tickets_Plus__Meta__Field__Abstract_Field[] $meta_fields   The list of meta field objects for the ticket.
+		 * @param array                                              $meta_data     The meta data for all fields.
+		 */
+		$orphaned_data = apply_filters( 'tribe_tickets_plus_meta_render_table_meta_data_orphaned_data', $orphaned_data, $meta_fields, $meta_data );
+
 		foreach ( $orphaned_data as $key => $value ) {
-			$value = trim( $value );
+			// We have to skip these values as they cannot be accurately displayed.
+			if ( is_array( $value ) || is_object( $value ) ) {
+				continue;
+			}
+
+			$value = trim( (string) $value );
 
 			// There is no value for this meta.
 			if ( '' === $value ) {
 				continue;
 			}
 
-			$key = esc_html( $key );
-			$value = esc_html( $value );
-
-			$orphaned_meta_html .= "
-				<dt class='event-tickets-orphaned-meta-label'> $key </dt>
-				<dd class='event-tickets-orphaned-meta-data'> $value </dd>
-			";
+			$orphaned_meta_html .= sprintf(
+				'
+					<dt class="event-tickets-orphaned-meta-label event-tickets-orphaned-meta-label_%1$s">
+						%2$s
+					</dt>
+					<dd class="event-tickets-orphaned-meta-data event-tickets-orphaned-meta-data_%1$s">
+						%3$s
+					</dd>
+				',
+				sanitize_html_class( $key ),
+				wp_kses_post( $key ),
+				wp_kses_post( $value )
+			);
 		}
 
 		if ( ! empty( $orphaned_meta_html ) ) {

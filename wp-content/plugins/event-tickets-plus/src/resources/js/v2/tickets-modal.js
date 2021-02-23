@@ -702,7 +702,7 @@ tribe.tickets.modal = {};
 	 */
 	obj.bindBeforeTicketsSubmit = function( event, $form, params ) {
 		// @todo: See if we can make it relative to the form instead of using IDs
-		$( '#tribe_tickets_block_ar_data' ).val( JSON.stringify( params ) );
+		$form.find( '#tribe_tickets_block_ar_data' ).val( JSON.stringify( params ) );
 	};
 
 	/**
@@ -747,7 +747,7 @@ tribe.tickets.modal = {};
 				const $modal = $( dialogEl );
 				const $form = $modal.find( obj.selectors.form );
 				const $modalCart = $modal.find( obj.selectors.cartForm );
-				const $tribeTicket = $modal.closest( tribe.tickets.block.selectors.container );
+				const $tribeTicket = $document.find( tribe.tickets.block.selectors.form ).filter( '[data-post-id="' + $form.data( 'postId' ) + '"]' );
 				const $cartItems = $tribeTicket.find( tribe.tickets.block.selectors.item );
 
 				// Show the loader.
@@ -759,7 +759,7 @@ tribe.tickets.modal = {};
 						const id = $blockCartItem.data( 'ticketId' );
 						const $modalCartItem = $modalCart.find( '[data-ticket-id="' + id + '"]' );
 
-						if ( ! $modalCartItem ) {
+						if ( 0 === $modalCartItem.length || 0 === $blockCartItem.length ) {
 							return;
 						}
 

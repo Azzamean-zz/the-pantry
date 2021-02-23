@@ -6,12 +6,13 @@
  * Override this template in your own theme by creating a file at:
  * [your-theme]/tribe/tickets-plus/v2/components/meta/radio.php
  *
- * @link    http://m.tri.be/1amp See more documentation about our views templating system.
+ * @link    https://evnt.is/1amp See more documentation about our views templating system.
  *
  * @since 5.0.0
  * @since 5.1.0 Added support for div HTML attributes.
+ * @since 5.2.0 Fixed handling of showing selected radio option.
  *
- * @version 5.1.0
+ * @version 5.2.0
  *
  * @var string $field_name The meta field name.
  * @var string $field_id The meta field id.
@@ -32,9 +33,7 @@ if ( ! $options ) {
 	return;
 }
 
-$value      = '';
 $field_slug = $field->slug;
-
 ?>
 <div
 	<?php tribe_classes( $classes ); ?>
@@ -52,7 +51,6 @@ $field_slug = $field->slug;
 			$option_slug = md5( sanitize_title( $option ) );
 			$option_id   = tribe_tickets_plus_meta_field_id( $ticket->ID, $field_slug, $option_slug, $attendee_id );
 			$slug        = $field_slug . '_' . $option_slug;
-			$value       = [];
 			?>
 
 		<div class="tribe-common-form-control-radio">
@@ -66,7 +64,7 @@ $field_slug = $field->slug;
 					name="<?php echo esc_attr( $field_name ); ?>"
 					type="radio"
 					value="<?php echo esc_attr( $option ); ?>"
-					<?php checked( true, in_array( $slug, $value, true ) ); ?>
+					<?php checked( $option, $value ); ?>
 					<?php tribe_required( $required ); ?>
 					<?php disabled( $field->is_restricted( $attendee_id ) ); ?>
 				/>

@@ -437,6 +437,7 @@ if ( ! class_exists( 'Pie_WCWL_Waitlist' ) ) {
 		 */
 		public function waitlist_mailout() {
 			if ( ! empty( $this->waitlist ) ) {
+				do_action( 'wcwl_before_waitlist_notification_emails', $this->waitlist );
 				global $woocommerce, $sitepress;
 				if ( isset( $sitepress ) ) {
 					$this->check_translations_for_waitlist_entries( $this->product_id );
@@ -457,6 +458,7 @@ if ( ! class_exists( 'Pie_WCWL_Waitlist' ) ) {
 						$this->maybe_remove_user( $user );
 					}
 				}
+				do_action( 'wcwl_after_waitlist_notification_emails', $this->waitlist );
 			}
 		}
 
@@ -474,8 +476,9 @@ if ( ! class_exists( 'Pie_WCWL_Waitlist' ) ) {
 				} else {
 					$waitlist = get_post_meta( $translated_product->element_id, WCWL_SLUG, true );
 					if ( is_array( $waitlist ) && ! empty( $waitlist ) ) {
-						$logger = new WC_Logger();
-						$logger->log( 'warning', sprintf( __( 'Woocommerce Waitlist data found for translated product %1$d (main product ID = %2$d)' ), $translated_product->element_id, $product_id ) );
+						$logger  = wc_get_logger();
+		        $context = array( 'source' => 'woocommerce-waitlist' );
+						$logger->debug( sprintf( __( 'Woocommerce Waitlist data found for translated product %1$d (main product ID = %2$d)' ), $translated_product->element_id, $product_id ), array( 'source' => 'woocommerce-waitlist' ) );
 						update_option( '_' . WCWL_SLUG . '_corrupt_data', true );
 					}
 				}

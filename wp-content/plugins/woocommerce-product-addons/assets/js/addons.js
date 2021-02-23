@@ -121,11 +121,7 @@ jQuery( function( $ ) {
 					}
 				} )
 
-				.on( 'keyup', '.wc-pao-addon-custom-textarea, .wc-pao-addon-custom-text, .wc-pao-addon-custom-price', function() {
-					$( this ).trigger( 'woocommerce-product-addons-update' );
-				} )
-
-				.on( 'change', '.wc-pao-addon input, .wc-pao-addon textarea, .wc-pao-addon select, input.qty', function() {
+				.on( 'input change', '.wc-pao-addon input, .wc-pao-addon textarea, .wc-pao-addon select, input.qty, .wc-pao-addon-custom-text, .wc-pao-addon-custom-price', function() {
 					$( this ).trigger( 'woocommerce-product-addons-update' );
 				} )
 
@@ -557,6 +553,19 @@ jQuery( function( $ ) {
 			} );
 
 			$cart.find( '.wc-pao-addon-custom, .wc-pao-addon-custom-textarea, .wc-pao-addon input, .wc-pao-addon textarea, .wc-pao-addon select, input.qty, .variations select' ).change();
+
+			var submitButton = $cart.get( 0 ).querySelector( 'button[type="submit"]' );
+			if ( submitButton ) {
+				// Center into view and focus first invalid field when trying to submit.
+				submitButton.addEventListener( 'click', function() {
+					var invalidField = $cart.get( 0 ).querySelector( '*:invalid' );
+					invalidField.focus();
+					invalidField.scrollIntoView( {
+						block: 'center',
+						inline: 'center'
+					} );
+				});
+			}
 
 			$( '.wc-pao-addon-image-swatch' ).tipTip( { delay: 200 } );
 		},

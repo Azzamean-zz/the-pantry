@@ -6,7 +6,7 @@
  *
  *     [your-theme]/tribe/tickets-plus/tpp/attendees-list-optout.php
  *
- * @link    http://m.tri.be/1amp See more documentation about our views templating system.
+ * @link    https://evnt.is/1amp See more documentation about our views templating system.
  *
  * @since 4.7
  * @since 5.1.0 Updated template link.

@@ -119,7 +119,10 @@ if(isset($_GET['month'])) {
 	$first_day = $first_day->format('Y-' . $month . '-d H:i:s');
 	
 	$last_day = new DateTime('last day of this month', new DateTimeZone($tz));
-	$last_day = $last_day->format('Y-' . $month . '-d H:i:s');
+	
+	$nextmonth = $month + 1;
+	
+	$last_day = $last_day->format('Y-' . $nextmonth . '-d H:i:s');
 	
 	$last_day = date("Y-m-t", strtotime($first_day));
 	
@@ -187,11 +190,23 @@ if(isset($_GET['month'])) {
 
 			// $tickets_handler = tribe( 'tickets.handler' );
 			$totals = Tribe__Tickets__Tickets::get_all_event_tickets( $ticket_id );
+
+/*
+			echo '<pre>';
+			print_r($totals);
+			echo '<pre>';
+*/
 			
 			foreach($totals as $total) {
 				
+/*
+				echo '<pre>';
+				print_r(tribe_tickets_get_ticket_stock_message($total));
+				echo '</pre>';
+*/
+
 				$total_sold = ($total->capacity - $total->stock);
-				
+
 				$wait = xoo_wl_db()->get_waitlisted_count( $total->ID );
 				
 				if($wait['totalQuantity']) {
@@ -199,7 +214,6 @@ if(isset($_GET['month'])) {
 				} else {
 					$waitlist = 0;
 				}
-
 
 			?>
 				

@@ -7,29 +7,20 @@
  *
  * See more documentation about our views templating system.
  *
- * @link http://m.tri.be/1amp
+ * @link https://evnt.is/1amp
  *
  * @since 5.1.0
+ * @since 5.2.0 Moved the resend hook into a variable passed into the template.
  *
- * @version 5.1.0
+ * @version 5.2.0
  *
- * @var WP_Post $ticket The ticket post object.
- * @var array $attendee The attendee information.
- * @var string $field_slug_for_resend_email The slug to use for the Re-send Email field.
+ * @var WP_Post $ticket                      The ticket post object.
+ * @var array   $attendee                    The attendee information.
+ * @var string  $field_slug_for_resend_email The slug to use for the Re-send Email field.
+ * @var bool    $allow_resending_email       If resending email is allowed.
  */
 
-/**
- * This filter allows the admin to control the re-send email option when an attendee's email is updated.
- *
- * @since 5.1.0
- *
- * @param bool    $iac_resend_email Whether to allow email resending.
- * @param WP_Post $ticket           The ticket post object.
- * @param array   $attendee         The attendee information.
- */
-$iac_resend_email = (int) apply_filters( 'tribe_tickets_my_tickets_allow_email_resend_on_attendee_email_update', true, $ticket, $attendee );
-
-if ( empty( $iac_resend_email ) ) {
+if ( empty( $allow_resending_email ) ) {
 	return;
 }
 ?>

@@ -19,4 +19,21 @@ class Tribe__Tickets_Plus__Meta__Field__Checkbox extends Tribe__Tickets_Plus__Me
 
 	public function save_value( $attendee_id, $field, $value ) {
 	}
+
+	/**
+	 * Get the formatted value.
+	 *
+	 * @since 5.2.0
+	 *
+	 * @param string|mixed $value The current value.
+	 *
+	 * @return string|mixed The formatted value.
+	 */
+	public function get_formatted_value( $value ) {
+		if ( empty( $value ) ) {
+			$value = [];
+		}
+
+		return (array) $value;
+	}
 }

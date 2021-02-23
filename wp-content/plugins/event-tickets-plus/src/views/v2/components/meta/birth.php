@@ -5,12 +5,13 @@
  * Override this template in your own theme by creating a file at:
  * [your-theme]/tribe/tickets-plus/v2/components/meta/birth.php
  *
- * @link    http://m.tri.be/1amp See more documentation about our views templating system.
+ * @link    https://evnt.is/1amp See more documentation about our views templating system.
  *
  * @since 5.0.0
  * @since 5.1.0 Added support for div HTML attributes.
+ * @since 5.2.0 Fixed handling of showing current value of field.
  *
- * @version 5.1.0
+ * @version 5.2.0
  *
  * @var string $field_name The meta field name.
  * @var string $field_d The meta field id.
@@ -25,6 +26,11 @@
  * @see     Tribe__Tickets_Plus__Meta__Field__Birth
  */
 
+$formatted_value = $field->get_formatted_value( $value );
+
+$selected_month = $formatted_value['month'];
+$selected_day   = $formatted_value['day'];
+$selected_year  = $formatted_value['year'];
 ?>
 <div
 	<?php tribe_classes( $classes ); ?>
@@ -48,9 +54,16 @@
 			<?php tribe_required( $required ); ?>
 			class="tribe-common-form-control-text__input tribe-tickets__form-field--birth-month"
 		>
-			<option value="" disabled selected><?php esc_html_e( 'Month', 'event-tickets-plus' ); ?></option>
+			<option
+				value=""
+				disabled
+				<?php selected( $selected_month, '' ); ?>
+			><?php esc_html_e( 'Month', 'event-tickets-plus' ); ?></option>
 			<?php foreach ( $field->get_months() as $month_number => $month_name ) : ?>
-				<option value="<?php echo esc_attr( $month_number ); ?>"><?php echo esc_html( $month_name ); ?></option>
+				<option
+					value="<?php echo esc_attr( $month_number ); ?>"
+					<?php selected( $selected_month, $month_number ); ?>
+				><?php echo esc_html( $month_name ); ?></option>
 			<?php endforeach; ?>
 		</select>
 
@@ -66,9 +79,16 @@
 			<?php tribe_required( $required ); ?>
 			class="tribe-common-form-control-text__input tribe-tickets__form-field--birth-day"
 		>
-			<option value="" disabled selected><?php esc_html_e( 'Day', 'event-tickets-plus' ); ?></option>
+			<option
+				value=""
+				disabled
+				<?php selected( $selected_day, '' ); ?>
+			><?php esc_html_e( 'Day', 'event-tickets-plus' ); ?></option>
 			<?php foreach ( $field->get_days() as $birth_day ) : ?>
-				<option value="<?php echo esc_attr( $birth_day ); ?>"><?php echo esc_html( $birth_day ); ?></option>
+				<option
+					value="<?php echo esc_attr( $birth_day ); ?>"
+					<?php selected( $selected_day, $birth_day ); ?>
+				><?php echo esc_html( $birth_day ); ?></option>
 			<?php endforeach; ?>
 		</select>
 
@@ -84,9 +104,16 @@
 			<?php tribe_required( $required ); ?>
 			class="tribe-common-form-control-text__input tribe-tickets__form-field--birth-year"
 		>
-			<option value="" disabled selected><?php esc_html_e( 'Year', 'event-tickets-plus' ); ?></option>
+			<option
+				value=""
+				disabled
+				<?php selected( $selected_year, '' ); ?>
+			><?php esc_html_e( 'Year', 'event-tickets-plus' ); ?></option>
 			<?php foreach ( $field->get_years() as $birth_year ) : ?>
-				<option value="<?php echo esc_attr( $birth_year ); ?>"><?php echo esc_html( $birth_year ); ?></option>
+				<option
+					value="<?php echo esc_attr( $birth_year ); ?>"
+					<?php selected( $selected_year, $birth_year ); ?>
+				><?php echo esc_html( $birth_year ); ?></option>
 			<?php endforeach; ?>
 		</select>
 		<input

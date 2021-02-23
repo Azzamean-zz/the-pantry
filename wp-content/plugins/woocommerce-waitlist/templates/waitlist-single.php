@@ -29,14 +29,16 @@
 		<div class="wcwl_intro">
 			<p><?php echo $intro; ?></p>
 		</div>
-		<div class="wcwl_notice woocommerce-message">
-			<div aria-live="polite">
-				<p><?php echo $notice; ?></p>
+		<?php if ( $notice ) { ?>
+			<div class="wcwl_notice woocommerce-message">
+				<div aria-live="polite">
+					<p><?php echo $notice; ?></p>
+				</div>
+				<button type="button" class="wcwl_notice_dismiss">
+					<span class="screen-reader-text"><?php echo $dismiss_notification_text; ?></span>
+				</button>
 			</div>
-			<button type="button" class="wcwl_notice_dismiss">
-				<span class="screen-reader-text"><?php echo $dismiss_notification_text; ?></span>
-			</button>
-		</div>
+		<?php } ?>
 		<?php if ( $opt_in && ! $on_waitlist ) { ?>
 			<div class="wcwl_optin">
 				<input type="checkbox" name="wcwl_optin" id="wcwl_optin">
@@ -45,7 +47,7 @@
 		<?php } ?>
 		<div class="wcwl_email_elements <?php echo $email_class; ?>">
 			<label for="wcwl_email_<?php echo $product_id; ?>" class="wcwl_email_label wcwl_visually_hidden"><?php echo $email_address_label_text; ?></label>
-			<input type="email" value="<?php echo $user_email; ?>" id="wcwl_email_<?php echo $product_id; ?>" name="wcwl_email" class="wcwl_email" placeholder="<?php echo $email_address_placeholder_text; ?>" 
+			<input type="email" value="<?php echo $user_email; ?>" id="wcwl_email_<?php echo $product_id; ?>" name="wcwl_email" class="wcwl_email" placeholder="<?php echo $email_address_placeholder_text; ?>"
 			<?php
 			if ( $user_email ) {
 				echo 'disabled'; }
