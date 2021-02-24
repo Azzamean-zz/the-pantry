@@ -118,13 +118,13 @@ if(isset($_GET['month'])) {
 	$first_day = new DateTime('first day of this month', new DateTimeZone($tz));
 	$first_day = $first_day->format('Y-' . $month . '-d H:i:s');
 	
-	$last_day = new DateTime('last day of this month', new DateTimeZone($tz));
+	$last_day = new DateTime('first day of next month', new DateTimeZone($tz));
 	
 	$nextmonth = $month + 1;
 	
 	$last_day = $last_day->format('Y-' . $nextmonth . '-d H:i:s');
 	
-	$last_day = date("Y-m-t", strtotime($first_day));
+// 	$last_day = date("Y-m-t", strtotime($first_day));
 	
 	$args = array(
 	    'post_type' => 'ticket-page',
