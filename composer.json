@@ -4,7 +4,7 @@
     "ext-intl": "*",
     "ext-mbstring": "*",
     "ext-imagick": "*",
-    "ext-memcached": "*",
+    "ext-memcache": "*",
     "ext-mcrypt": "*"
   }
 }

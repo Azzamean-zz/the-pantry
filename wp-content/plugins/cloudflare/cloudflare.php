@@ -3,8 +3,7 @@
 Plugin Name: Cloudflare
 Plugin URI: https://blog.cloudflare.com/new-wordpress-plugin/
 Description: Cloudflare speeds up and protects your WordPress site.
-Version: 4.1.0
-Requires PHP: 7.2
+Version: 3.8.9
 Author: Cloudflare, Inc.
 License: BSD-3-Clause
 */
@@ -14,7 +13,7 @@ License: BSD-3-Clause
 // To enable HTTP/2 Server Push feature:
 // define('CLOUDFLARE_HTTP2_SERVER_PUSH_ACTIVE', true);
 
-// Cloudflare has a limit of how many resources can be pushed by HTTP/2 Server Push
+// Cloudflare has a limit of how many resourses can be pushed by HTTP/2 Server Push
 // (3 KiB by default). Add the following to change that amount:
 // define('CLOUDFLARE_HTTP2_SERVER_PUSH_HEADER_SIZE', 3072);
 
@@ -26,7 +25,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('CLOUDFLARE_MIN_PHP_VERSION', '7.2');
+define('CLOUDFLARE_MIN_PHP_VERSION', '5.3.10');
 define('CLOUDFLARE_MIN_WP_VERSION', '3.4');
 define('CLOUDFLARE_PLUGIN_DIR', plugin_dir_path(__FILE__));
 
