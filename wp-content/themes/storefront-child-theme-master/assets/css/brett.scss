@@ -34,6 +34,10 @@ body.page {
 	text-align: center !important;	
 }
 
+.fc-h-event .fc-event-main {
+	color: #000 !important;	
+}
+
 button.xoo-wl-open-form-btn {
 	float: none !important;	
 }
@@ -1151,11 +1155,11 @@ a.wc-block-grid__product-link {
 	-moz-border-radius: 0 !important;
 	border-radius: 0 !important;	
 	.fc-event-main {
-		color: #000;	
+		color: #000 !important;	
 	}
 	&.sold-out {
 		.fc-event-main {
-			color: #888;	
+			color: #888 !important;	
 		}
 	}
 }
