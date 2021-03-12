@@ -21,15 +21,19 @@ if ( ! empty( $args['custom_attributes'] ) && is_array( $args['custom_attributes
     }
 }
 ?>
-<p class="form-row form-datepicker <?php echo implode( ' ', $args['class'] ); ?>" id="<?php echo $key ?>_field" data-priotiry="<?php echo $args['priority']; ?>">
-	<label for="<?php echo $key; ?>"><?php echo wp_kses( $args['label'], '' ); ?> <?php echo $required; ?></label>
+<p class="form-row form-datepicker <?php echo esc_attr( implode( ' ', $args['class'] ) ); ?>"
+   id="<?php echo $key ?>_field"
+   data-priotiry="<?php echo $args['priority']; ?>">
+	<label for="<?php echo $key; ?>">
+		<?php echo wp_kses( $args['label'], '' ); ?> <?php echo $required; ?>
+	</label>
 	<input type="text"
         class="input-text load-datepicker"
         name="<?php echo $key; ?>"
         id="<?php echo $key; ?>"
-	    placeholder="<?php echo $args['placeholder']; ?>"
-        value="<?php echo $value; ?>"
-		date_format="<?php echo $args['custom_attributes']['date_format'] ?>"
+	    placeholder="<?php echo esc_attr( $args['placeholder'] ); ?>"
+        value="<?php echo esc_attr( $value ); ?>"
+		date_format="<?php echo esc_attr( $args['custom_attributes']['date_format'] ); ?>"
         days_before="<?php echo ( isset( $args['custom_attributes']['days_before'] ) ? $args['custom_attributes']['days_before'] : '' ); ?>"
         days_after="<?php echo ( isset( $args['custom_attributes']['days_after'] ) ? $args['custom_attributes']['days_after'] : '' ); ?>"
         <?php echo empty( $custom_attributes ) ? '' : implode( ' ', $custom_attributes ); ?>

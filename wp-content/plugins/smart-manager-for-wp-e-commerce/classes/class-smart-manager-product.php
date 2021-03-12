@@ -33,7 +33,7 @@ if ( ! class_exists( 'Smart_Manager_Product' ) ) {
 			add_filter('posts_where',array(&$this,'sm_product_query_post_where_cond'),100,2);
 			add_filter('posts_orderby',array(&$this,'sm_product_query_order_by'),100,2);
 
-			add_filter( 'sm_terms_sort_join_condition' ,array( &$this, 'sm_product_terms_sort_join_condition' ) );
+			add_filter( 'sm_terms_sort_join_condition' ,array( &$this, 'sm_product_terms_sort_join_condition' ), 100, 2 );
 			
 			//filters for handling search
 			add_filter('sm_search_postmeta_cond',array(&$this,'sm_search_postmeta_cond'),10,2);
@@ -54,6 +54,7 @@ if ( ! class_exists( 'Smart_Manager_Product' ) ) {
 			add_action('sm_search_terms_conditions_array_complete',array(&$this,'search_terms_conditions_array_complete'),10,1);
 
 			add_filter('sm_search_query_postmeta_where',array(&$this,'sm_search_query_postmeta_where'),10,2);
+			add_action( 'sm_search_postmeta_condition_complete', array( &$this,'search_postmeta_condition_complete' ), 10, 3 );
 
 			add_filter('sm_batch_update_copy_from_ids_select',array(&$this,'sm_batch_update_copy_from_ids_select'),10,2);
 			// add_action('admin_footer',array(&$this,'attribute_handling'));
@@ -427,12 +428,12 @@ if ( ! class_exists( 'Smart_Manager_Product' ) ) {
 			global $wpdb;
 
 			if(!empty( $search_params ) && !empty( $search_params['cond_postmeta_col_name'] ) ) {
-				if( $search_params['cond_postmeta_col_name'] == '_regular_price' || $search_params['cond_postmeta_col_name'] == '_sale_price' ) {
-	               $sm_search_query_postmeta_where .= " AND {$wpdb->prefix}postmeta.post_id NOT IN (SELECT post_parent 
-	                                                                  FROM {$wpdb->prefix}posts
-	                                                                  WHERE post_type IN ('product', 'product_variation')
-	                                                                    AND post_parent > 0) ";
-	            }
+				// if( $search_params['cond_postmeta_col_name'] == '_regular_price' || $search_params['cond_postmeta_col_name'] == '_sale_price' ) {
+	            //    $sm_search_query_postmeta_where .= " AND {$wpdb->prefix}postmeta.post_id NOT IN (SELECT post_parent 
+	            //                                                       FROM {$wpdb->prefix}posts
+	            //                                                       WHERE post_type IN ('product', 'product_variation')
+	            //                                                         AND post_parent > 0) ";
+	            // }
 
 	            if( $search_params['cond_postmeta_col_name'] == '_product_attributes' ) {
 	            	$index = strpos($sm_search_query_postmeta_where, 'WHERE');
@@ -445,6 +446,30 @@ if ( ! class_exists( 'Smart_Manager_Product' ) ) {
 
 			return $sm_search_query_postmeta_where;
 			
+		}
+
+		//function to handle postmeta condition complete
+		public function search_postmeta_condition_complete( $result_terms_search = array(), $search_params = array(), $query_params = array() ) {
+			
+			global $wpdb;
+			
+			if( ! empty( $search_params ) && ! empty( $query_params ) && ! empty( $search_params['cond_postmeta_col_name'] ) ) {
+				// code to insert parent ids in case of search for regular_price or sale_price
+				if( $search_params['cond_postmeta_col_name'] == '_regular_price' || $search_params['cond_postmeta_col_name'] == '_sale_price' ) {
+					$query_params['select'] = str_replace( 'postmeta.post_id', 'posts.post_parent', $query_params['select'] );
+					
+					$from_join_str = 'sm_advanced_search_temp.product_id = '.$wpdb->prefix.'postmeta.post_id';
+					if( strpos( $query_params['from'], $from_join_str ) !== false ) {
+						$query_params['from'] = str_replace( $from_join_str, 'sm_advanced_search_temp.product_id = '.$wpdb->prefix.'posts.post_parent', $query_params['from'] );
+					}
+					
+					$query_postmeta_search = "REPLACE INTO {$wpdb->base_prefix}sm_advanced_search_temp
+													(". $query_params['select'] ."
+													". $query_params['from'] ."
+													".$query_params['where'].")";
+					$result_postmeta_search = $wpdb->query ( $query_postmeta_search );
+				}
+			}
 		}
 
 		//function to handle posts custom where clause
@@ -513,15 +538,20 @@ if ( ! class_exists( 'Smart_Manager_Product' ) ) {
 			return $where;
 		}
 
-		public function sm_product_terms_sort_join_condition ( $join_condition ) {
+		public function sm_product_terms_sort_join_condition ( $join_condition, $wp_query_obj ) {
 
 			global $wpdb;
 
-			if( !empty( $this->req_params['sort_params']['column'] ) ) {
-				$col_exploded = explode( "/", $this->req_params['sort_params']['column'] );
-				$this->req_params['sort_params']['column_nm'] = ( !empty( $col_exploded[1] ) ) ? $col_exploded[1] : '';
+			$sort_params = array();
+			if( $wp_query_obj ){
+				$sort_params = ( ! empty( $wp_query_obj->query_vars['sm_sort_params'] ) ) ? $wp_query_obj->query_vars['sm_sort_params'] : array();		
+			}
 
-				if( !empty( $this->req_params['sort_params']['column_nm'] ) && $this->req_params['sort_params']['column_nm'] == 'product_visibility_featured' ) {
+			if( !empty( $sort_params['column'] ) ) {
+				$col_exploded = explode( "/", $sort_params['column'] );
+				$sort_params['column_nm'] = ( !empty( $col_exploded[1] ) ) ? $col_exploded[1] : '';
+
+				if( !empty( $sort_params['column_nm'] ) && $sort_params['column_nm'] == 'product_visibility_featured' ) {
 					$join_condition = " AND ( ". $wpdb->prefix ."term_taxonomy.taxonomy LIKE 'product_visibility' AND ". $wpdb->prefix ."terms.slug = 'featured' ) ";
 				}
 			}
@@ -533,26 +563,30 @@ if ( ! class_exists( 'Smart_Manager_Product' ) ) {
 	
 			global $wpdb;
 
+			$sort_params = array();
+			if( $wp_query_obj ){
+				$sort_params = ( ! empty( $wp_query_obj->query_vars['sm_sort_params'] ) ) ? $wp_query_obj->query_vars['sm_sort_params'] : array();		
+			}
+			
+			if ( !empty( $sort_params ) && empty( $sort_params['default'] ) && ( ( !empty( $sort_params['column_nm'] ) && ( ( $sort_params['column_nm'] != 'ID' ) || ( $sort_params['column_nm'] == 'ID' && $sort_params['sortOrder'] == 'ASC' ) ) ) || empty( $sort_params['coumn_nm'] ) ) ) {
 
-			if ( !empty( $this->req_params['sort_params'] ) && empty( $this->req_params['sort_params']['default'] ) && ( ( !empty( $this->req_params['sort_params']['column_nm'] ) && ( ( $this->req_params['sort_params']['column_nm'] != 'ID' ) || ( $this->req_params['sort_params']['column_nm'] == 'ID' && $this->req_params['sort_params']['sortOrder'] == 'ASC' ) ) ) || empty( $this->req_params['sort_params']['coumn_nm'] ) ) ) {
+				if( empty( $sort_params['column_nm'] ) ) {
+					$col_exploded = explode( "/", $sort_params['column'] );
 
-				if( empty( $this->req_params['sort_params']['column_nm'] ) ) {
-					$col_exploded = explode( "/", $this->req_params['sort_params']['column'] );
-
-					$this->req_params['sort_params']['table'] = $col_exploded[0];
+					$sort_params['table'] = $col_exploded[0];
 
 					if ( sizeof($col_exploded) == 2) {
-						$this->req_params['sort_params']['column_nm'] = $col_exploded[1];
+						$sort_params['column_nm'] = $col_exploded[1];
 					}
 
-					$this->req_params['sort_params']['sortOrder'] = strtoupper( $this->req_params['sort_params']['sortOrder'] );
+					$sort_params['sortOrder'] = strtoupper( $sort_params['sortOrder'] );
 				}
 
-				$sort_order = ( !empty( $this->req_params['sort_params']['sortOrder'] ) ) ? $this->req_params['sort_params']['sortOrder'] : 'ASC';
+				$sort_order = ( !empty( $sort_params['sortOrder'] ) ) ? $sort_params['sortOrder'] : 'ASC';
 
-				if ( ( !empty( $this->req_params['sort_params']['table'] ) ) && $this->req_params['sort_params']['table'] == 'posts' ) {				
-					$order_by = $this->req_params['sort_params']['column_nm'] .' '. $sort_order;
-				} else if ( !empty( $this->req_params['sort_params']['table'] ) && $this->req_params['sort_params']['table'] == 'terms' ) {
+				if ( ( !empty( $sort_params['table'] ) ) && $sort_params['table'] == 'posts' ) {				
+					$order_by = $sort_params['column_nm'] .' '. $sort_order;
+				} else if ( !empty( $sort_params['table'] ) && $sort_params['table'] == 'terms' ) {
 					$order_by = $wpdb->prefix. 'term_relationships.term_taxonomy_id '.$sort_order ;
 				}
 
@@ -562,6 +596,7 @@ if ( ! class_exists( 'Smart_Manager_Product' ) ) {
 				$order_by = 'parent_sort_id DESC';
 				$this->prod_sort = false;
 			}
+
 			return $order_by;
 		}
 
@@ -1253,10 +1288,15 @@ if ( ! class_exists( 'Smart_Manager_Product' ) ) {
 				$variation_ids = array();
 				$key_post_ids = array();
 
+				$parent_product_count = 0;
 				foreach ($data_model['items'] as $key => $data) {
 
 					if (empty($data['posts_id'])) continue;
 					$post_ids[] = $data['posts_id'];
+
+					if( isset( $data['posts_post_parent'] ) && 0 === intval( $data['posts_post_parent'] ) ) {
+						$parent_product_count++;
+					}
 
 					if ( empty( $data['posts_post_parent'] ) ) {
 						continue;
@@ -1264,6 +1304,8 @@ if ( ! class_exists( 'Smart_Manager_Product' ) ) {
 					$variation_ids[] = $data['posts_id'];
 					$key_post_ids[$data['posts_id']] = $key;
 				}
+
+				$data_model ['loaded_total_count'] = $parent_product_count;
 
 				if( !empty( $variation_ids ) ) { //Code for fetching variation attributes for variation title
 					$variation_attribute_results = $wpdb->get_results( $wpdb->prepare("SELECT post_id,

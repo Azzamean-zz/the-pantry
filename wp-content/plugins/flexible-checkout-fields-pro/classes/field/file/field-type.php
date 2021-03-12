@@ -137,7 +137,7 @@ class Flexible_Checkout_Fields_Pro_File_Field_Type extends Flexible_Checkout_Fie
 
 		$session_data = WC()->session->get( 'checkout-fields', array() );
 		foreach ( $settings['shipping'] as $field ) {
-			if ( ( $field['type'] === 'file' ) && isset( $session_data[ 'billing_' . $field['short_name'] ] ) ) {
+			if ( isset( $field['type'] ) && ( $field['type'] === 'file' ) && isset( $session_data[ 'billing_' . $field['short_name'] ] ) ) {
 				$session_data[ 'shipping_' . $field['short_name'] ] = $session_data[ 'billing_' . $field['short_name'] ];
 			}
 		}

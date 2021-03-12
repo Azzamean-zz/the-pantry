@@ -11,7 +11,7 @@ use FCFProVendor\WPDesk_Plugin_Info;
 use FCFProVendor\WPDesk\PluginBuilder\Plugin\AbstractPlugin;
 use FCFProVendor\WPDesk\PluginBuilder\Plugin\HookableCollection;
 use FCFProVendor\WPDesk\PluginBuilder\Plugin\HookableParent;
-use WPDesk\FCF\Pro\Admin;
+use WPDesk\FCF\Pro\Plugin\Compatibility;
 use WPDesk\FCF\Pro\Pricing;
 
 /**
@@ -29,16 +29,46 @@ class Plugin extends AbstractPlugin implements HookableCollection {
 	private $script_version = '1';
 
 	/**
+	 * Instance of old version main class of plugin.
+	 *
+	 * @var \Flexible_Checkout_Fields_Pro_Plugin
+	 */
+	private $plugin_old;
+
+	/**
 	 * Plugin constructor.
 	 *
-	 * @param WPDesk_Plugin_Info $plugin_info Plugin info.
+	 * @param WPDesk_Plugin_Info                   $plugin_info Plugin info.
+	 * @param \Flexible_Checkout_Fields_Pro_Plugin $plugin_old Main plugin.
 	 */
-	public function __construct( WPDesk_Plugin_Info $plugin_info ) {
+	public function __construct( WPDesk_Plugin_Info $plugin_info, \Flexible_Checkout_Fields_Pro_Plugin $plugin_old ) {
 		parent::__construct( $plugin_info );
 
 		$this->plugin_url       = $this->plugin_info->get_plugin_url();
 		$this->plugin_namespace = $this->plugin_info->get_text_domain();
 		$this->script_version   = $plugin_info->get_version();
+		$this->plugin_old       = $plugin_old;
+	}
+
+	/**
+	 * Initializes plugin external state after "flexible_checkout_fields/init" action.
+	 *
+	 * In case of compatibility problems, displays Admin Notices.
+	 *
+	 * @return void
+	 */
+	public function load_action_init() {
+		add_action(
+			'flexible_checkout_fields/init',
+			function( $integrator ) {
+				$compatibility = new Compatibility();
+				$compatibility->set_plugin( $this );
+
+				if ( $compatibility->check_plugin_compatibility( $integrator ) ) {
+					$this->plugin_old->load_after_action_init();
+				}
+			}
+		);
 	}
 
 	/**
@@ -50,10 +80,11 @@ class Plugin extends AbstractPlugin implements HookableCollection {
 	 * @return void
 	 */
 	public function init() {
-		$this->add_hookable( new Admin\Assets() );
+		( new Field\Types() )->init();
 		$this->add_hookable( new Pricing\Fields() );
 		$this->add_hookable( new Pricing\Session() );
-		$this->add_hookable( new Pricing\Settings() );
+		( new Settings\Forms() )->init();
+		( new Settings\Routes() )->init();
 	}
 
 	/**

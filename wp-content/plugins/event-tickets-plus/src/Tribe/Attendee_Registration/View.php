@@ -136,6 +136,7 @@ class View extends Tribe__Tickets_Plus__Template {
 			'currency_config'        => $currency_config,
 			'is_modal'               => null,
 			'non_meta_count'         => $non_meta_count,
+			'handler'                => tribe( 'tickets.handler' ),
 		];
 
 		if ( tribe_tickets_new_views_is_enabled() ) {

@@ -102,9 +102,24 @@ if(isset($_GET['month'])) {
 		<li><a class="type-to-go" href="<?php echo $_SERVER['PHP_SELF']; ?>/tickets?<?php echo $query_result; ?>">To-Go</a></li>
 	</ul>	
 
-
+	<?php	
+	// This is SQL to do the same thing as this page, in hopes to perform the queries faster and less taxing on teh db
+	$items = array();
+	
+	$posts = $wpdb->get_results("SELECT ID, post_title FROM $wpdb->posts WHERE post_status = 'publish'
+	AND post_type='tribe_wooticket' LIMIT 10");
+	
+	foreach($posts as $post) {
+		$attendees[] = $wpdb->get_results("SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN( $post->ID ) ORDER BY meta_id ASC");
+	}
+	?>
+<!--
+	<pre>
+		<?php // print_r($r); ?>
+	</pre>
+-->	
 	<?php
-		
+	
 	$tz = 'America/Los_Angeles';
 	$today = new DateTime('now', new DateTimeZone($tz));
 	

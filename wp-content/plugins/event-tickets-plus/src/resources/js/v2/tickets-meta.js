@@ -1,9 +1,10 @@
+/* global tribe, jQuery */
 /**
  * Makes sure we have all the required levels on the Tribe Object
  *
  * @since 5.0.0
  *
- * @type {PlainObject}
+ * @type {Object}
  */
 tribe.tickets = tribe.tickets || {};
 
@@ -12,7 +13,7 @@ tribe.tickets = tribe.tickets || {};
  *
  * @since 5.0.0
  *
- * @type {PlainObject}
+ * @type {Object}
  */
 tribe.tickets.meta = {};
 
@@ -21,8 +22,8 @@ tribe.tickets.meta = {};
  *
  * @since 5.0.0
  *
- * @param  {PlainObject} $   jQuery
- * @param  {PlainObject} obj tribe.tickets.meta
+ * @param  {Object} $   jQuery
+ * @param  {Object} obj tribe.tickets.meta
  *
  * @return {void}
  */
@@ -35,7 +36,7 @@ tribe.tickets.meta = {};
 	 *
 	 * @since 5.0.0
 	 *
-	 * @type {PlainObject}
+	 * @type {Object}
 	 */
 	obj.selectors = {
 		formAttendeeTicketsWrapper: '.tribe-tickets__attendee-tickets',
@@ -76,7 +77,7 @@ tribe.tickets.meta = {};
 	 *
 	 * @param {jQuery} $form jQuery object that is the form we are validating.
 	 *
-	 * @returns {boolean} If the form validates.
+	 * @returns {array} If the form validates.
 	 */
 	obj.validateForm = function( $form ) {
 		const $attendeeTickets = $form.find( obj.selectors.formAttendeeTicketsItem );
@@ -302,7 +303,7 @@ tribe.tickets.meta = {};
 	 *
 	 * @since 5.0.0
 	 *
-	 * @param {event} e input event.
+	 * @param {Event} e input event.
 	 *
 	 * @return {void}
 	 */
@@ -324,7 +325,7 @@ tribe.tickets.meta = {};
 	 *
 	 * @since 5.0.0
 	 *
-	 * @param {event} e input change event.
+	 * @param {Event} e input change event.
 	 *
 	 * @return {void}
 	 */
@@ -359,7 +360,7 @@ tribe.tickets.meta = {};
 	*
 	* @since 5.1.0
 	*
-	* @param {event} e The event.
+	* @param {Event} e The event.
 	*/
 	obj.focusTicketAttendeeBlock = function( e ) {
 		const input = e.target;
@@ -374,7 +375,7 @@ tribe.tickets.meta = {};
 	 *
 	 * @since 5.1.0
 	 *
-	 * @param {event} e The event.
+	 * @param {Event} e The event.
 	 */
 	obj.unFocusTicketAttendeeBlock = function( e ) {
 		const input = e.target;
@@ -429,5 +430,5 @@ tribe.tickets.meta = {};
 	};
 
 	// Configure on document ready.
-	$document.ready( obj.ready );
+	$( obj.ready );
 } )( jQuery, tribe.tickets.meta );

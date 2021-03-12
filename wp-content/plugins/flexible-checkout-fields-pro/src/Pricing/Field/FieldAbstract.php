@@ -10,12 +10,14 @@ namespace WPDesk\FCF\Pro\Pricing\Field;
 use FCFProVendor\WPDesk\View\Renderer\SimplePhpRenderer;
 use FCFProVendor\WPDesk\View\Resolver\DirResolver;
 use WPDesk\FCF\Pro\Pricing\Field\FieldInterface;
-use WPDesk\FCF\Pro\Pricing\Settings;
 
 /**
  * FieldAbstract class for Pricing.
  */
 abstract class FieldAbstract implements FieldInterface {
+
+	const OPTION_PRICING_ENABLED = 'pricing_enabled';
+	const OPTION_PRICING_VALUES  = 'pricing_values';
 
 	/**
 	 * Settings of field.
@@ -39,7 +41,7 @@ abstract class FieldAbstract implements FieldInterface {
 	 * @return bool Status of pricing for field.
 	 */
 	public function is_pricing_enabled() {
-		return ( isset( $this->field_data[ Settings::OPTION_PRICING_ENABLED ] ) && $this->field_data[ Settings::OPTION_PRICING_ENABLED ] );
+		return ( isset( $this->field_data[ self::OPTION_PRICING_ENABLED ] ) && $this->field_data[ self::OPTION_PRICING_ENABLED ] );
 	}
 
 	/**
@@ -76,7 +78,7 @@ abstract class FieldAbstract implements FieldInterface {
 	 * @return array Types of pricing.
 	 */
 	public function get_field_pricing_types() {
-		$types = $this->field_data[ Settings::OPTION_PRICING_VALUES ] ?? [];
+		$types = $this->field_data[ self::OPTION_PRICING_VALUES ] ?? [];
 		foreach ( $types as $value => $type ) {
 			if ( empty( $type['value'] ) ) {
 				unset( $types[ $value ] );

@@ -15,9 +15,21 @@ class Api {
 
     protected static $instance = null;
 
+    public static function getInstance() {
+        if (null == self::$instance) {
+          self::$instance = new self;
+          self::$instance->doHooks();
+        }
+        return self::$instance;
+    }
+
     public function __construct() {
+    }
+
+    private function doHooks(){
         add_action('rest_api_init', array($this, 'registerRestFields'));
     }
+
     public function registerRestFields() {
         register_rest_route(NJFB_REST_URL,
           'fbv-api',
@@ -34,6 +46,16 @@ class Api {
           array(
             'methods' => 'GET',
             'callback' => array($this, 'publicRestApiGetFolders'),
+            'permission_callback' => array($this, 'resPublicPermissionsCheck'),
+          )
+        );
+
+        //GET http://yoursite/wp-json/filebird/public/v1/folder/?folder_id=
+        register_rest_route(NJFB_REST_PUBLIC_URL,
+          'folder',
+          array(
+            'methods' => 'GET',
+            'callback' => array($this, 'publicRestApiGetFolderDetail'),
             'permission_callback' => array($this, 'resPublicPermissionsCheck'),
           )
         );
@@ -90,6 +112,12 @@ class Api {
 
         wp_send_json_success($data);
     }
+    public function publicRestApiGetFolderDetail() {
+        $folder_id = isset($_GET['folder_id']) ? (int)$_GET['folder_id'] : '';
+        wp_send_json_success(array(
+            'folder' => FolderModel::findById($folder_id, 'id, name, parent')
+        ));
+    }
     public function publicRestApiGetAttachmentIds() {
         $folder_id = isset($_GET['folder_id']) ? (int)$_GET['folder_id'] : '';
         if($folder_id != '') {
@@ -135,13 +163,6 @@ class Api {
             return $key === $this->getBearerToken();
         }
         return false;
-    }
-
-    public static function getInstance() {
-        if (null == self::$instance) {
-          self::$instance = new self;
-        }
-        return self::$instance;
     }
 
     private function generateRandomString($length = 10) {

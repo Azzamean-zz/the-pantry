@@ -272,7 +272,5 @@ tribe_event_tickets_plus.meta.admin.event = tribe_event_tickets_plus.meta.admin.
 		}
 	};
 
-	$( function() {
-		my.init();
-	} );
+	$( my.init );
 } )( window, document, jQuery, tribe_event_tickets_plus.meta.admin );

@@ -6,7 +6,7 @@ Author URI: https://puri.io
 Author: Morgan Hvidt
 Donate link: https://www.paypal.me/morganhvidt/
 Requires at least: 4.0
-Tested up to: 5.5
+Tested up to: 5.6
 Requires PHP: 5.6
 Stable tag: trunk
 License: GPLv2 or later
@@ -88,11 +88,15 @@ The Checkout Countdown top bar works with any theme that doesn't use a **fixed h
 
 == Changelog ==
 
+= 3.1.3 =
+* Tested and ready for WooCommerce 4.8+
+* Tested and ready for WordPress 5.6+
+
 = 3.1.1 =
 * Improvement: Get the correct cart url when the cart page is something other than /cart/, when using the redirect feature.
 
 = 3.1.0 =
-* New: Pro option to change the amount of time the expiry message appears. 
+* New: Pro option to change the amount of time the expiry message appears.
 * Update: The countdown banner won't hide while showing the expired the message if no default message is set.
 * Update: Ready and tested with WooCommerce 4.3
 * Update: Ready and tested with WordPress 5.5
@@ -121,7 +125,7 @@ The Checkout Countdown top bar works with any theme that doesn't use a **fixed h
 * Ensures all enqueued scripts are loading in the footer.
 * Updated Translation files.
 * Pro - Fixed reset time when adding to cart while using add to cart redirection.
-* Pro - Fixed bug that prevented the cart from clearing time when customers returned, after their cart expired. 
+* Pro - Fixed bug that prevented the cart from clearing time when customers returned, after their cart expired.
 
 = 3.0.2 =
 
@@ -139,9 +143,9 @@ Checkout Countdown Pro support:
 
 = 3.0.0 =
 
-**Important! Big update to both Checkout Countdown Free & Pro 3.0** 
+**Important! Big update to both Checkout Countdown Free & Pro 3.0**
 We highly recommend that you check your site if you've done custom integrations and read more about the 3.0 release!
- 
+
 [Read Release Notes](https://puri.io/blog/checkout-countdown-3-0-release-notes/)
 
 = 2.4.3 =

@@ -74,7 +74,7 @@ tribe.tickets.table = {};
 		}
 	};
 
-	$( document ).ready( function () {
+	$( function() {
 		// trigger once at start
 		obj.toggle_sortable();
 

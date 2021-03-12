@@ -1,10 +1,10 @@
-/* global tribe */
+/* global tribe, jQuery, TribeTicketOptions */
 /**
  * Makes sure we have all the required levels on the Tribe Object
  *
  * @since 5.1.0
  *
- * @type   {PlainObject}
+ * @type   {Object}
  */
 tribe.tickets = tribe.tickets || {};
 tribe.dialogs = tribe.dialogs || {};
@@ -15,7 +15,7 @@ tribe.dialogs.events = tribe.dialogs.events || {};
  *
  * @since 5.1.0
  *
- * @type   {PlainObject}
+ * @type   {Object}
  */
 tribe.tickets.modal = {};
 
@@ -24,8 +24,8 @@ tribe.tickets.modal = {};
  *
  * @since 5.1.0
  *
- * @param  {PlainObject} $ jQuery
- * @param  {PlainObject} obj obj
+ * @param  {Object} $ jQuery
+ * @param  {Object} obj obj
  *
  * @return {void}
  */
@@ -490,7 +490,7 @@ tribe.tickets.modal = {};
 				// Save meta and cart.
 				const params = {
 					tribe_tickets_provider: tribe.tickets.block.commerceSelector[ provider ],
-					tribe_tickets_tickets: tribe.tickets.block.getTicketsForCart( $container ),
+					tribe_tickets_tickets: tribe.tickets.block.getTicketsForCart( $form ),
 					tribe_tickets_meta: tribe.tickets.data.getMetaForSave( $metaFormItems ),
 					tribe_tickets_post_id: postId,
 				};
@@ -756,7 +756,7 @@ tribe.tickets.modal = {};
 				$cartItems.each(
 					function() {
 						const $blockCartItem = $( this );
-						const id = $blockCartItem.data( 'ticketId' );
+						const id = $blockCartItem.data( 'ticket-id' );
 						const $modalCartItem = $modalCart.find( '[data-ticket-id="' + id + '"]' );
 
 						if ( 0 === $modalCartItem.length || 0 === $blockCartItem.length ) {
@@ -801,6 +801,65 @@ tribe.tickets.modal = {};
 	};
 
 	/**
+	 * Maybe submit Tickets Block if no tickets with AR fields are in cart.
+	 *
+	 * @since 5.2.1
+	 *
+	 * @return {void}
+	 */
+	obj.maybeSubmitBlockIfNoArTicketInCart = function() {
+		if ( !! TribeTicketsModal.ShowIfNoTicketWithArInCart ) {
+			return;
+		}
+
+		$document.find( tribe.tickets.block.selectors.blockSubmit ).on(
+			'click',
+			function( e ) {
+				const $button = $( this );
+				const $form = $( this ).closest( 'form' );
+				const $cartItems = $form.find( tribe.tickets.block.selectors.item );
+				const dialogId = $button.data( 'js' ).replace( 'trigger-dialog-', '' );
+
+				let ticketsWithArMetaInCart = 0;
+
+				$cartItems.each(
+					function() {
+						const $blockCartItem = $( this );
+
+						const qtyInCart = tribe.tickets.block.getQty( $blockCartItem );
+						const hasArFields = $blockCartItem.data( 'ticket-ar-fields' );
+
+						if ( hasArFields && 0 < qtyInCart ) {
+							ticketsWithArMetaInCart++;
+						}
+					}
+				);
+
+				// If there are tickets with AR meta in cart.
+				if ( ! ticketsWithArMetaInCart ) {
+					// Destroy the dialog so it doesn't trigger the opening.
+					let dialogToDestroy;
+
+					// Iterate and find the dialog to destroy.
+					tribe.dialogs.dialogs.forEach( function( dialog, index ) {
+						if ( dialog.id === dialogId ) {
+							dialogToDestroy = index;
+						}
+					} );
+
+					// If the dialog was found, destroy tit.
+					if ( ! isNaN( dialogToDestroy ) ) {
+						tribe.dialogs.dialogs[ dialogToDestroy ].a11yInstance.destroy();
+					}
+
+					// Submit the tickets block form.
+					tribe.tickets.block.ticketsSubmit( $form );
+				}
+			}
+		);
+	};
+
+	/**
 	 * Handles the initialization of the scripts when document is ready.
 	 *
 	 * @since 5.1.0
@@ -833,11 +892,12 @@ tribe.tickets.modal = {};
 			obj.bindAfterSetupTicketsBlock
 		);
 
+		obj.maybeSubmitBlockIfNoArTicketInCart();
 		obj.bindModalOpen();
 		obj.bindModalClose();
 		obj.bindDocumentKeypress();
 	};
 
 	// Configure on document ready.
-	$document.ready( obj.ready );
+	$( obj.ready );
 } )( jQuery, tribe.tickets.modal );

@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WooCommerce Flexible Checkout Fields PRO\n"
-"POT-Creation-Date: 2020-11-02 12:24+0100\n"
-"PO-Revision-Date: 2020-11-02 12:27+0100\n"
-"Last-Translator: Piotr Jabłonowski <piotr.jablonowski@wpdesk.net>\n"
+"POT-Creation-Date: 2021-02-28 18:44+0100\n"
+"PO-Revision-Date: 2021-02-28 18:44+0100\n"
+"Last-Translator: Mateusz Gbiorczyk <mateusz.gbiorczyk@wpdesk.net>\n"
 "Language-Team: Maciej Swoboda <maciej.swoboda@gmail.com>\n"
 "Language: pl_PL\n"
 "MIME-Version: 1.0\n"
@@ -51,7 +51,7 @@ msgstr "Plik  %s jest za duży!"
 #: classes/field/file/ajax.php:119
 #, php-format
 msgid "Not allowed file type %1$s for file %2$s"
-msgstr "Niedopuszczalny typ pliku %s dla %s"
+msgstr "Niedopuszczalny typ pliku %1$s dla %2$s"
 
 #: classes/field/file/ajax.php:160
 msgid "File uploaded"
@@ -77,56 +77,10 @@ msgstr "Lista rozwijana (multi-select)"
 #: classes/field/multi-select/views/order-field.php:40
 #: templates/fields/colorpicker.php:15 templates/fields/datepicker.php:15
 #: templates/fields/file.php:15 templates/fields/inspirecheckbox.php:15
-#: templates/fields/inspireradio.php:15 templates/fields/multiselect.php:62
+#: templates/fields/inspireradio.php:15 templates/fields/multiselect.php:66
 #: templates/fields/timepicker.php:15
 msgid "Required Field"
 msgstr "Pole wymagane"
-
-#: classes/flexible-checkout-fields-conditional-logic.php:75
-#: classes/flexible-checkout-fields-pro-plugin.php:341
-#: classes/views/shipping-conditional-logic/shipping-conditional-logic.php:69
-msgid "No Shipping Zones or Global Methods"
-msgstr "Brak stref wysyłki lub metod globalnych"
-
-#: classes/flexible-checkout-fields-conditional-logic.php:76
-#: classes/flexible-checkout-fields-pro-plugin.php:342
-msgid "Select Shipping Zone"
-msgstr "Wybierz strefę wysyłki"
-
-#: classes/flexible-checkout-fields-conditional-logic.php:77
-#: classes/flexible-checkout-fields-pro-plugin.php:343
-#: classes/views/settings-field-java-script.php:492
-msgid "Select Shipping Method"
-msgstr "Wybierz metodę wysyłki"
-
-#: classes/flexible-checkout-fields-conditional-logic.php:78
-#: classes/flexible-checkout-fields-pro-plugin.php:344
-msgid "Shipping Methods"
-msgstr "Metody wysyłki"
-
-#: classes/flexible-checkout-fields-conditional-logic.php:79
-#: classes/flexible-checkout-fields-pro-plugin.php:345
-msgid "Shipping Zones"
-msgstr "Strefy wysyłki"
-
-#: classes/flexible-checkout-fields-conditional-logic.php:207
-msgid "Advanced"
-msgstr "Zaawansowane"
-
-#: classes/flexible-checkout-fields-conditional-logic.php:257
-#: classes/flexible-checkout-fields-conditional-logic.php:268
-msgid "Disabled section:"
-msgstr "Wyłączona sekcja:"
-
-#: classes/flexible-checkout-fields-conditional-logic.php:294
-#: classes/views/settings-field-java-script.php:367
-msgid "checked"
-msgstr "zaznaczone"
-
-#: classes/flexible-checkout-fields-conditional-logic.php:295
-#: classes/views/settings-field-java-script.php:367
-msgid "unchecked"
-msgstr "niezaznaczone"
 
 #: classes/flexible-checkout-fields-order-metabox.php:71
 #: tests/unit/test-order-metabox.php:650
@@ -137,431 +91,184 @@ msgstr "Flexible Checkout Fields"
 msgid "Settings"
 msgstr "Ustawienia"
 
-#: classes/flexible-checkout-fields-pro-plugin.php:249
+#: classes/flexible-checkout-fields-pro-plugin.php:248
 msgid "Docs"
 msgstr "Docs"
 
-#: classes/flexible-checkout-fields-pro-plugin.php:250
+#: classes/flexible-checkout-fields-pro-plugin.php:249
 msgid "Support"
 msgstr "Wsparcie"
 
-#: classes/flexible-checkout-fields-pro.php:124
-#: classes/views/settings-js-options.php:23
+#: classes/flexible-checkout-fields-pro.php:102
 msgid "Yes"
 msgstr "Tak"
 
-#: classes/flexible-checkout-fields-pro.php:253
+#: classes/flexible-checkout-fields-pro.php:212
 msgid "Before Customer Details"
 msgstr "Dane klienta (przed)"
 
-#: classes/flexible-checkout-fields-pro.php:254
+#: classes/flexible-checkout-fields-pro.php:213
 msgid "Before Customer Details Fields"
-msgstr "Przed polami sekcji Dane klienta"
+msgstr "Pola sekcji Dane klienta (przed)"
 
-#: classes/flexible-checkout-fields-pro.php:262
+#: classes/flexible-checkout-fields-pro.php:221
 msgid "After Customer Details"
 msgstr "Dane klienta (po)"
 
-#: classes/flexible-checkout-fields-pro.php:263
+#: classes/flexible-checkout-fields-pro.php:222
 msgid "After Customer Details Fields"
-msgstr "Po polach sekcji Dane klienta"
+msgstr "Pola sekcji Dane klienta (po)"
 
-#: classes/flexible-checkout-fields-pro.php:271
+#: classes/flexible-checkout-fields-pro.php:230
 msgid "Before Billing Form"
 msgstr "Płatność (przed)"
 
-#: classes/flexible-checkout-fields-pro.php:272
+#: classes/flexible-checkout-fields-pro.php:231
 msgid "Before Billing Form Fields"
-msgstr "Przed polami sekcji Szczegóły płatności"
+msgstr "Pola sekcji Płatność (przed)"
 
-#: classes/flexible-checkout-fields-pro.php:280
+#: classes/flexible-checkout-fields-pro.php:239
 msgid "After Billing Form"
 msgstr "Płatność (po)"
 
-#: classes/flexible-checkout-fields-pro.php:281
+#: classes/flexible-checkout-fields-pro.php:240
 msgid "After Billing Form Fields"
-msgstr "Po polach sekcji Szczegóły płatności"
+msgstr "Pola sekcji Płatność (po)"
 
-#: classes/flexible-checkout-fields-pro.php:289
+#: classes/flexible-checkout-fields-pro.php:248
 msgid "Before Shipping Form"
 msgstr "Wysyłka (przed)"
 
-#: classes/flexible-checkout-fields-pro.php:290
+#: classes/flexible-checkout-fields-pro.php:249
 msgid "Before Shipping Form Fields"
-msgstr "Przed polami sekcji Adres wysyłki"
+msgstr "Pola sekcji Wysyłka (przed)"
 
-#: classes/flexible-checkout-fields-pro.php:298
+#: classes/flexible-checkout-fields-pro.php:257
 msgid "After Shipping Form"
 msgstr "Wysyłka (po)"
 
-#: classes/flexible-checkout-fields-pro.php:299
+#: classes/flexible-checkout-fields-pro.php:258
 msgid "After Shipping Form Fields"
-msgstr "Po polach sekcji Adres wysyłki"
+msgstr "Pola sekcji Wysyłka (po)"
 
-#: classes/flexible-checkout-fields-pro.php:307
+#: classes/flexible-checkout-fields-pro.php:266
 msgid "Before Registration Form"
 msgstr "Rejestracja (przed)"
 
-#: classes/flexible-checkout-fields-pro.php:308
+#: classes/flexible-checkout-fields-pro.php:267
 msgid "Before Registration Form Fields"
-msgstr "Przed polami sekcji Formularz rejestracji"
+msgstr "Pola sekcji Rejestracja (przed)"
 
-#: classes/flexible-checkout-fields-pro.php:316
+#: classes/flexible-checkout-fields-pro.php:275
 msgid "After Registration Form"
 msgstr "Rejestracja (po)"
 
-#: classes/flexible-checkout-fields-pro.php:317
+#: classes/flexible-checkout-fields-pro.php:276
 msgid "After Registration Form Fields"
-msgstr "Po polach Formularz rejestracji"
+msgstr "Pola sekcji Rejestracja (po)"
 
-#: classes/flexible-checkout-fields-pro.php:325
+#: classes/flexible-checkout-fields-pro.php:284
 msgid "Before Order Notes"
 msgstr "Notatki (przed)"
 
-#: classes/flexible-checkout-fields-pro.php:326
+#: classes/flexible-checkout-fields-pro.php:285
 msgid "Before Order Notes Fields"
-msgstr "Przed polami sekcji Notatki do zamówienia"
+msgstr "Pola sekcji Notatki (przed)"
 
-#: classes/flexible-checkout-fields-pro.php:334
+#: classes/flexible-checkout-fields-pro.php:293
 msgid "After Order Notes"
 msgstr "Notatki (po)"
 
-#: classes/flexible-checkout-fields-pro.php:335
+#: classes/flexible-checkout-fields-pro.php:294
 msgid "After Order Notes Fields"
-msgstr "Po polach Notatki do zamówienia"
+msgstr "Pola sekcji Notatki (po)"
 
-#: classes/flexible-checkout-fields-pro.php:343
+#: classes/flexible-checkout-fields-pro.php:302
 msgid "Before Submit"
 msgstr "Zatwierdź (przed)"
 
-#: classes/flexible-checkout-fields-pro.php:344
+#: classes/flexible-checkout-fields-pro.php:303
 msgid "Before Submit Fields"
-msgstr "Przed polami sekcji Kupuję"
+msgstr "Pola sekcji Zatwierdź (przed)"
 
-#: classes/flexible-checkout-fields-pro.php:352
+#: classes/flexible-checkout-fields-pro.php:311
 msgid "After Submit"
 msgstr "Zatwierdź (po)"
 
-#: classes/flexible-checkout-fields-pro.php:353
+#: classes/flexible-checkout-fields-pro.php:312
 msgid "After Submit Fields"
-msgstr "Po polach sekcji Kupuję"
+msgstr "Pola sekcji Zatwierdź (po)"
 
-#: classes/flexible-checkout-fields-pro.php:516
-msgid "Missing Value"
-msgstr "Brak wartości"
-
-#: classes/flexible-checkout-fields-pro.php:571
+#: classes/flexible-checkout-fields-pro.php:474
 msgid "Checkbox"
 msgstr "Wybór (checkbox)"
 
-#: classes/flexible-checkout-fields-pro.php:572
-#: classes/views/settings-js-change.php:17
-#: classes/views/settings-js-options.php:21 src/Pricing/views/settings.php:54
+#: classes/flexible-checkout-fields-pro.php:475
+#: src/Settings/Option/LogicFieldsRulesValueOption.php:57
+#: src/Settings/Option/OptionsKeyOption.php:66
+#: src/Settings/Option/PlaceholderCheckboxOption.php:34
+#: src/Settings/Option/PricingValuesValueOption.php:54
 msgid "Value"
 msgstr "Wartość"
 
-#: classes/flexible-checkout-fields-pro.php:578
+#: classes/flexible-checkout-fields-pro.php:481
 msgid "Radio button"
 msgstr "Wybór (radio)"
 
-#: classes/flexible-checkout-fields-pro.php:585
+#: classes/flexible-checkout-fields-pro.php:488
 msgid "Select (Drop Down)"
 msgstr "Lista rozwijana (select)"
 
-#: classes/flexible-checkout-fields-pro.php:592
+#: classes/flexible-checkout-fields-pro.php:495
 msgid "Date"
 msgstr "Data"
 
-#: classes/flexible-checkout-fields-pro.php:596
+#: classes/flexible-checkout-fields-pro.php:499
 msgid "Time"
 msgstr "Czas"
 
-#: classes/flexible-checkout-fields-pro.php:600
+#: classes/flexible-checkout-fields-pro.php:503
 msgid "Color Picker"
 msgstr "Wybór koloru"
 
-#: classes/flexible-checkout-fields-pro.php:605
+#: classes/flexible-checkout-fields-pro.php:508
 msgid "Headline"
 msgstr "Nagłówek"
 
-#: classes/flexible-checkout-fields-pro.php:613
+#: classes/flexible-checkout-fields-pro.php:516
 msgid "HTML"
 msgstr "HTML"
-
-#: classes/views/docs-metabox.php:4
-msgid "Knowledge Base"
-msgstr "Baza wiedzy"
-
-#: classes/views/docs-metabox.php:6
-msgid "Documentation"
-msgstr "Dokumentacja"
-
-#: classes/views/docs-metabox.php:17
-msgid "Adding Custom Fields"
-msgstr "Dodawanie własnych pól"
-
-#: classes/views/docs-metabox.php:28
-msgid "Field Types"
-msgstr "Typy pól"
-
-#: classes/views/docs-metabox.php:39
-msgid "Conditional Logic"
-msgstr "Logika warunkowa"
-
-#: classes/views/docs-metabox.php:50
-msgid "Assigning price to Custom Fields"
-msgstr "Przypisanie ceny do własnego pola"
-
-#: classes/views/docs-metabox.php:61 classes/views/settings-settings.php:3
-msgid "Custom Sections"
-msgstr "Dodatkowe sekcje"
-
-#: classes/views/docs-metabox.php:65
-msgid "Usage Examples"
-msgstr "Przykłady zastosowania"
-
-#: classes/views/docs-metabox.php:76
-msgid "Additional Agreements at the Checkout"
-msgstr "Dodatkowe checkboxy jako zgody"
 
 #: classes/views/order-additional-fields.php:7
 msgid "Additional checkout fields"
 msgstr "Dodatkowe pola zamówienia"
 
-#: classes/views/settings-field-advanced.php:12
-msgid "Enable Product/Category Conditional Logic"
-msgstr "Włącz logikę warunkową dla produktów/kategorii"
+#: classes/views/shipping-conditional-logic/shipping-conditional-logic.php:20
+msgid "Enable Shipping Methods Logic"
+msgstr "Włącz logikę warunkową dla metod wysyłki"
 
-#: classes/views/settings-field-advanced.php:30
-#: classes/views/settings-field-advanced.php:186
 #: classes/views/shipping-conditional-logic/shipping-conditional-logic.php:33
 msgid "Show this field if"
 msgstr "Pokaż to pole jeśli"
 
-#: classes/views/settings-field-advanced.php:37
-#: classes/views/settings-field-advanced.php:193
 #: classes/views/shipping-conditional-logic/shipping-conditional-logic.php:40
 msgid "Hide this field if"
 msgstr "Ukryj to pole jeśli"
 
-#: classes/views/settings-field-advanced.php:46
-#: classes/views/settings-field-advanced.php:202
-msgid "All rules match (and)"
-msgstr "Spełnione są wszystkie reguły (i)"
-
-#: classes/views/settings-field-advanced.php:53
-#: classes/views/settings-field-advanced.php:209
 #: classes/views/shipping-conditional-logic/shipping-conditional-logic.php:49
+#: src/Settings/Option/LogicFieldsGroupOperatorOption.php:77
+#: src/Settings/Option/LogicProductsGroupOperatorOption.php:77
+#: src/Settings/Option/LogicShippingGroupOperatorOption.php:76
 msgid "One or more rules match (or)"
 msgstr "Spełniona jest jedna lub kilka reguł (lub)"
 
-#: classes/views/settings-field-advanced.php:63
-#: classes/views/settings-field-advanced.php:219
 #: classes/views/shipping-conditional-logic/shipping-conditional-logic.php:59
+#: src/Settings/Option/LogicFieldsRulesOption.php:58
+#: src/Settings/Option/LogicProductsRulesOption.php:60
+#: src/Settings/Option/LogicShippingRulesOption.php:58
 #, php-format
 msgid "Rule #%s"
 msgstr "Reguła #%s"
-
-#: classes/views/settings-field-advanced.php:74
-#: classes/views/settings-field-java-script.php:446
-msgid "Cart contains"
-msgstr "Koszyk zawiera"
-
-#: classes/views/settings-field-advanced.php:87
-#: classes/views/settings-field-java-script.php:452
-msgid "Product"
-msgstr "Produkt"
-
-#: classes/views/settings-field-advanced.php:94
-#: classes/views/settings-field-java-script.php:453
-msgid "Product Category"
-msgstr "Produkt z kategorii"
-
-#: classes/views/settings-field-advanced.php:112
-#: classes/views/settings-field-java-script.php:465
-msgid "Select products"
-msgstr "Wybierz produkty"
-
-#: classes/views/settings-field-advanced.php:142
-#: classes/views/settings-field-java-script.php:472
-msgid "Select categories"
-msgstr "Wybierz kategorie"
-
-#: classes/views/settings-field-advanced.php:146
-#: classes/views/settings-field-advanced.php:265
-#: classes/views/settings-field-java-script.php:435
-#: classes/views/settings-field-java-script.php:477
-#: classes/views/settings-field-java-script.php:497
-#: classes/views/shipping-conditional-logic/shipping-conditional-logic.php:149
-msgid "Delete rule"
-msgstr "Usuń regułę"
-
-#: classes/views/settings-field-advanced.php:154
-#: classes/views/settings-field-advanced.php:273
-#: classes/views/shipping-conditional-logic/shipping-conditional-logic.php:157
-msgid "Add rule"
-msgstr "Dodaj regułę"
-
-#: classes/views/settings-field-advanced.php:168
-msgid "Enable Fields Conditional Logic"
-msgstr "Włącz logikę warunkową dla pól"
-
-#: classes/views/settings-field-advanced.php:225
-#: classes/views/settings-field-java-script.php:149
-#: classes/views/settings-field-java-script.php:300
-#: classes/views/settings-field-java-script.php:351
-#: classes/views/settings-field-java-script.php:386
-#: classes/views/settings-field-java-script.php:417
-msgid "Select field"
-msgstr "Wybierz pole"
-
-#: classes/views/settings-field-advanced.php:240
-#: classes/views/settings-field-java-script.php:423
-msgid "is"
-msgstr "Jest"
-
-#: classes/views/settings-field-advanced.php:253
-#: classes/views/settings-field-java-script.php:270
-#: classes/views/settings-field-java-script.php:429
-msgid "Select value"
-msgstr "Wybierz wartość"
-
-#: classes/views/settings-field-advanced.php:283
-#, php-format
-msgid ""
-"When you use many types of logic, the priority will be set by order as "
-"above. <a href=\"%s\" target=\"_blank\">Read more →</a>"
-msgstr ""
-"Korzystając z wielu typów logiki, priorytet zostanie ustawiony według "
-"kolejności, jak wyżej. <a href=\"%s\" target=\"_blank\">Czytaj więcej →</a>"
-
-#: classes/views/settings-field-java-script.php:19
-msgid "Enter <code>select2</code> to apply styling"
-msgstr ""
-
-#: classes/views/settings-field-java-script.php:162
-#: classes/views/settings-field-java-script.php:267
-msgid "Select field first"
-msgstr "Najpierw wybierz pole"
-
-#: classes/views/settings-field-java-script.php:337
-msgid ""
-"Unable to delete this field. This field is used in conditional logic on "
-"field(s): [fields]."
-msgstr ""
-"Brak możliwości usunięcia tego pola. To pole jest używane w logice "
-"warunkowej na polu (polach): [fields]."
-
-#: classes/views/settings-field-java-script.php:412
-#: classes/views/settings-field-java-script.php:442
-#: classes/views/settings-field-java-script.php:483
-msgid "New Rule"
-msgstr "Nowa reguła"
-
-#: classes/views/settings-html-datepicker.php:3
-#: classes/views/settings-js-html.php:13
-msgid "Date format"
-msgstr ""
-
-#: classes/views/settings-html-datepicker.php:7
-msgid "Date format <code>dd.mm.yy</code>"
-msgstr ""
-
-#: classes/views/settings-html-datepicker.php:10
-#: classes/views/settings-js-html.php:18
-msgid "Days before"
-msgstr ""
-
-#: classes/views/settings-html-datepicker.php:14
-#: classes/views/settings-html-datepicker.php:21
-#: classes/views/settings-js-html.php:20 classes/views/settings-js-html.php:25
-msgid "Leave blank for unlimited"
-msgstr ""
-
-#: classes/views/settings-html-datepicker.php:17
-#: classes/views/settings-js-html.php:23
-msgid "Days after"
-msgstr ""
-
-#: classes/views/settings-html-file.php:3 classes/views/settings-js-html.php:3
-msgid "Allowed file types"
-msgstr ""
-
-#: classes/views/settings-html-file.php:7 classes/views/settings-js-html.php:5
-msgid ""
-"Format: comma separated list WITHOUT space. Example: <code>pdf,doc,jpg</code>"
-msgstr ""
-"Format: lista oddzielona przecinkami BEZ spacji. Przykład: <code>pdf, doc,"
-"jpg</code>"
-
-#: classes/views/settings-html-file.php:10 classes/views/settings-js-html.php:8
-msgid "Maximum file size [MB]"
-msgstr ""
-
-#: classes/views/settings-html-file.php:14
-#: classes/views/settings-js-html.php:10
-msgid "Maximum file size in MB."
-msgstr ""
-
-#: classes/views/settings-js-change.php:5
-#: classes/views/settings-js-change.php:11
-#: classes/views/settings-js-options.php:6
-#: classes/views/settings-js-options.php:15
-msgid "Placeholder"
-msgstr ""
-
-#: classes/views/settings-js-html.php:15
-msgid "Date format <code>dd.mm.yy</code>."
-msgstr ""
-
-#: classes/views/settings-js-options.php:4
-#: classes/views/settings-js-options.php:13
-msgid "Options"
-msgstr "Opcje"
-
-#: classes/views/settings-js-options.php:4
-#: classes/views/settings-js-options.php:13
-msgid ""
-"Format: <code>Value : Name</code>. Value will be in the code, name will be "
-"visible to the user. One option per line. Example:<br /><code>woman : I am a "
-"woman</code><br /><code>man : I am a man</code>"
-msgstr ""
-
-#: classes/views/settings-settings-section-settings.php:7
-msgid "Section Settings"
-msgstr "Ustawienia sekcji"
-
-#: classes/views/settings-settings-section-settings.php:9
-msgid "Section Title"
-msgstr ""
-
-#: classes/views/settings-settings-section-settings.php:14
-msgid "Section Title Tag"
-msgstr ""
-
-#: classes/views/settings-settings-section-settings.php:25
-msgid "CSS Class"
-msgstr ""
-
-#: classes/views/settings-settings.php:7
-msgid ""
-"Select custom sections and Save changes. Selected sections appear as tabs in "
-"the plugin menu."
-msgstr ""
-
-#: classes/views/settings-settings.php:16
-msgid "Toggle Hooks"
-msgstr ""
-
-#: classes/views/settings-settings.php:18
-msgid ""
-"Please note that some sections may not be available in your theme or may "
-"look garbled. This is not the plugin issue, but the theme issue."
-msgstr ""
-
-#: classes/views/shipping-conditional-logic/shipping-conditional-logic.php:20
-msgid "Enable Shipping Methods Logic"
-msgstr "Włącz logikę warunkową dla metod wysyłki"
 
 #: classes/views/shipping-conditional-logic/shipping-conditional-logic.php:62
 msgid "Shipping Zone"
@@ -570,6 +277,11 @@ msgstr "Strefa wysyłki"
 #: classes/views/shipping-conditional-logic/shipping-conditional-logic.php:67
 msgid "No shipping zone selected"
 msgstr "Nie wybrano strefy wysyłki"
+
+#: classes/views/shipping-conditional-logic/shipping-conditional-logic.php:69
+#: src/Settings/Route/ShippingZonesRoute.php:43
+msgid "No Shipping Zones or Global Methods"
+msgstr "Brak stref wysyłki lub metod globalnych"
 
 #: classes/views/shipping-conditional-logic/shipping-conditional-logic.php:86
 msgid "Shipping Method"
@@ -587,38 +299,63 @@ msgstr "Metoda wysyłki została wyłączona lub usunięta"
 msgid "No methods found for this zone"
 msgstr "Nie znaleziono metod dla tej strefy"
 
-#: src/Pricing/Field/FieldAbstract.php:95
+#: classes/views/shipping-conditional-logic/shipping-conditional-logic.php:149
+msgid "Delete rule"
+msgstr "Usuń regułę"
+
+#: classes/views/shipping-conditional-logic/shipping-conditional-logic.php:157
+msgid "Add rule"
+msgstr "Dodaj regułę"
+
+#: src/Plugin/Compatibility.php:164
+msgid ""
+"Flexible Checkout Fields and Flexible Checkout Fields PRO plugins are not "
+"compatible with each other!"
+msgstr ""
+"Wtyczki Flexible Checkout Fields oraz Flexible Checkout Fields PRO są ze "
+"sobą niekompatybilne!"
+
+#: src/Plugin/Compatibility.php:184
+#, php-format
+msgid ""
+"Update both plugins to the latest versions for trouble-free use of all "
+"functionalities. Working with plugins now comes with limitations and risks. "
+"%sWe improve both versions on a regular basis. Updating the free and PRO "
+"versions at the same time guarantees their correct operation."
+msgstr ""
+"Zaktualizuj obie wtyczki do najnowszych wersji, aby móc bez problemów "
+"korzystać ze wszystkich funkcjonalności. Obecnie funkcjonowanie wtyczek jest "
+"ograniczone i obarczone ryzykiem. %sObie wersje wtyczek są przez nas stale "
+"ulepszane i tylko aktualizowanie obu wtyczek jednocześnie gwarantuje ich "
+"prawidłowe działanie."
+
+#: src/Plugin/Compatibility.php:197
+#, php-format
+msgid ""
+"Update both plugins to the latest versions to use all the features of the "
+"PRO plugin. This plugin has now been deactivated as it is not compatible. "
+"%sWe improve both versions on a regular basis. Updating the free and PRO "
+"versions at the same time guarantees their correct operation."
+msgstr ""
+"Zaktualizuj obie wtyczki do najnowszych wersji, aby móc korzystać z "
+"funkcjonalności wtyczki Flexible Checkout Fields PRO, która została "
+"wyłączona z powodu niekompatybilności. %sObie wersje wtyczek są przez nas "
+"stale ulepszane i tylko aktualizowanie obu wtyczek jednocześnie gwarantuje "
+"ich prawidłowe działanie."
+
+#: src/Plugin/Compatibility.php:231
+msgid "Flexible Checkout Fields PRO update needed!"
+msgstr "Flexible Checkout Fields PRO wymaga aktualizacji!"
+
+#: src/Plugin/Compatibility.php:239
+#, php-format
+msgid "To manage plugins on your site, visit the Plugins page: %s"
+msgstr "Aby zarządzać wtyczkami na swojej witrynie, odwiedź stronę Wtyczki: %s"
+
+#: src/Pricing/Field/FieldAbstract.php:97
 #, php-format
 msgid "Pricing options for %s"
 msgstr "Opcje ceny dla %s"
-
-#: src/Pricing/Field/FieldIntegration.php:116
-msgid "Fixed"
-msgstr "Stała kwota"
-
-#: src/Pricing/Field/FieldIntegration.php:117
-msgid "Percentage of Subtotal (ex. VAT)"
-msgstr "Procent sumy koszyka (bez VAT)"
-
-#: src/Pricing/Field/FieldIntegration.php:118
-msgid "Percentage of Subtotal (incl. VAT)"
-msgstr "Procent sumy koszyka (z VAT)"
-
-#: src/Pricing/Field/FieldIntegration.php:119
-msgid "Percentage of Total"
-msgstr "Procent sumy całkowitej"
-
-#: src/Pricing/Field/FieldIntegration.php:130
-msgid "None"
-msgstr "Brak"
-
-#: src/Pricing/Field/FieldIntegration.php:139
-msgid "Standard rates"
-msgstr "Standardowe stawki"
-
-#: src/Pricing/Settings.php:67
-msgid "Pricing"
-msgstr "Cena"
 
 #: src/Pricing/Type/TypeFixed.php:32
 #, php-format
@@ -630,13 +367,13 @@ msgstr "(%1$s %2$s bez VAT)"
 msgid "%s%% of Subtotal incl. VAT"
 msgstr "%s%% sumy koszyka z VAT"
 
-#: src/Pricing/Type/TypePercentSubtotalTaxed.php:44
+#: src/Pricing/Type/TypePercentSubtotalTaxed.php:45
 #: src/Pricing/Type/TypePercentSubtotalUntaxed.php:42
 #, php-format
 msgid "%s%% of Subtotal"
 msgstr "%s%% sumy koszyka"
 
-#: src/Pricing/Type/TypePercentSubtotalUntaxed.php:44
+#: src/Pricing/Type/TypePercentSubtotalUntaxed.php:45
 #, php-format
 msgid "%s%% of Subtotal ex. VAT"
 msgstr "%s%% sumy koszyka bez VAT"
@@ -646,26 +383,312 @@ msgstr "%s%% sumy koszyka bez VAT"
 msgid "%s%% of Total"
 msgstr "%s%% sumy całkowitej"
 
-#: src/Pricing/views/settings-disabled.php:11
-msgid "Price settings are not available for this type of field."
-msgstr "Opcje ceny nie są dostępne dla tego typu pola."
+#: src/Settings/Option/DateFormatOption.php:54
+msgid "Date format"
+msgstr "Format daty"
 
-#: src/Pricing/views/settings-js.php:11
+#: src/Settings/Option/DateFormatOption.php:63
+msgid "Enter the WordPress date format."
+msgstr "Wprowadź format daty WordPress."
+
+#: src/Settings/Option/DateFormatOption.php:74
+#: src/Settings/Option/FileTypesOption.php:74
+#: src/Settings/Option/LogicFieldsGroupActionOption.php:65
+#: src/Settings/Option/LogicFieldsGroupOperatorOption.php:65
+#: src/Settings/Option/LogicFieldsRulesConditionOption.php:67
+#: src/Settings/Option/LogicFieldsRulesFieldOption.php:66
+#: src/Settings/Option/LogicFieldsRulesValueOption.php:68
+#: src/Settings/Option/LogicProductsGroupActionOption.php:65
+#: src/Settings/Option/LogicProductsGroupOperatorOption.php:65
+#: src/Settings/Option/LogicProductsRulesConditionOption.php:65
+#: src/Settings/Option/LogicProductsRulesValueCatsOption.php:68
+#: src/Settings/Option/LogicProductsRulesValueProductsOption.php:68
+#: src/Settings/Option/LogicProductsRulesWhatOption.php:66
+#: src/Settings/Option/LogicShippingGroupActionOption.php:65
+#: src/Settings/Option/LogicShippingGroupOperatorOption.php:65
+#: src/Settings/Option/LogicShippingRulesMethodOption.php:67
+#: src/Settings/Option/LogicShippingRulesZoneOption.php:66
+#: src/Settings/Option/OptionsKeyOption.php:56
+#: src/Settings/Option/OptionsValueOption.php:56
+msgid "This field is required."
+msgstr "Pole wymagane."
+
+#: src/Settings/Option/DaysAfterOption.php:54
+msgid "Days after"
+msgstr "Dni po"
+
+#: src/Settings/Option/DaysAfterOption.php:63
 msgid ""
-"The price settings for the new field are available after saving the settings."
-msgstr "Opcje ceny dla nowego pola będą dostępne gdy zapiszesz ustawienia."
+"Enter the range of days available in the calendar after the current date. "
+"Leave blank if the choice is not to be limited. The setting will not skip "
+"weekends and holidays."
+msgstr ""
+"Wprowadź zakres dni dostępnych w kalendarzu po bieżącej dacie. Pozostaw "
+"puste, jeśli wybór nie ma być ograniczany. To ustawienie nie pominie "
+"weekendów i świąt."
 
-#: src/Pricing/views/settings.php:25
-msgid "Enable Pricing"
-msgstr "Włącz cenę"
+#: src/Settings/Option/DaysBeforeOption.php:54
+msgid "Days before"
+msgstr "Dni przed"
 
-#: src/Pricing/views/settings.php:39
-msgid "Price type"
-msgstr "Rodzaj ceny"
+#: src/Settings/Option/DaysBeforeOption.php:63
+msgid ""
+"Enter the range of days available in the calendar before the current date. "
+"Leave blank if the choice is not to be limited. The setting will not skip "
+"weekends and holidays."
+msgstr ""
+"Wprowadź zakres dni dostępnych w kalendarzu przed bieżącą datą. Pozostaw "
+"puste, jeśli wybór nie ma być ograniczany. To ustawienie nie pominie "
+"weekendów i świąt."
 
-#: src/Pricing/views/settings.php:67
+#: src/Settings/Option/DefaultCheckboxOption.php:24
+#: src/Settings/Option/DefaultOption.php:54
+#: src/Settings/Option/DefaultOptionsOption.php:24
+msgid "Default value"
+msgstr "Domyślna wartość"
+
+#: src/Settings/Option/DefaultCheckboxOption.php:33
+msgid "Enter \"Yes\" if the checkbox is to be selected by default."
+msgstr "Wpisz „Tak”, jeśli pole wyboru ma być domyślnie zaznaczone."
+
+#: src/Settings/Option/DefaultOptionsOption.php:33
+msgid "Enter the value of the option to be set as default."
+msgstr "Wprowadź wartość opcji, która ma zostać ustawiona jako domyślna."
+
+#: src/Settings/Option/FileSizeOption.php:54
+msgid "Maximum file size in MB"
+msgstr "Maksymalny rozmiar pliku w MB"
+
+#: src/Settings/Option/FileTypesOption.php:54
+msgid "Allowed file types"
+msgstr "Dozwolone typu plików"
+
+#: src/Settings/Option/FileTypesOption.php:63
+msgid "Separate values with comma (example: pdf,doc,jpg)."
+msgstr "Oddziel wartości przecinkami (na przykład: pdf,doc,jpg)."
+
+#: src/Settings/Option/FilesDirInfoOption.php:62
+#, php-format
+msgid ""
+"Files will be saved to: %s. The file will not be an attachment to the "
+"confirmation email."
+msgstr ""
+"Pliki zostaną zapisane w: %s. Plik nie będzie załącznikiem do wiadomości e-"
+"mail potwierdzających zamówienie."
+
+#: src/Settings/Option/LogicFieldsEnabledOption.php:54
+msgid "Enable conditional logic based on FCF fields"
+msgstr "Włącz logikę warunkową opartą na polach FCF"
+
+#: src/Settings/Option/LogicFieldsEnabledOption.php:63
+msgid ""
+"This logic supports fields with values added using FCF. Default WooCommerce "
+"fields are not taken into account."
+msgstr ""
+"Ta logika obsługuje pola z wartościami dodanymi za pomocą FCF. Domyślne pola "
+"WooCommerce nie są brane pod uwagę."
+
+#: src/Settings/Option/LogicFieldsGroupActionOption.php:54
+#: src/Settings/Option/LogicProductsGroupActionOption.php:54
+#: src/Settings/Option/LogicShippingGroupActionOption.php:54
+msgid "What to do?"
+msgstr "Co zrobić?"
+
+#: src/Settings/Option/LogicFieldsGroupActionOption.php:76
+#: src/Settings/Option/LogicProductsGroupActionOption.php:76
+#: src/Settings/Option/LogicShippingGroupActionOption.php:76
+msgid "Show this field"
+msgstr "Pokaż to pole"
+
+#: src/Settings/Option/LogicFieldsGroupActionOption.php:77
+#: src/Settings/Option/LogicProductsGroupActionOption.php:77
+#: src/Settings/Option/LogicShippingGroupActionOption.php:77
+msgid "Hide this field"
+msgstr "Ukryj to pole"
+
+#: src/Settings/Option/LogicFieldsGroupOperatorOption.php:54
+#: src/Settings/Option/LogicProductsGroupOperatorOption.php:54
+#: src/Settings/Option/LogicShippingGroupOperatorOption.php:54
+msgid "When to do?"
+msgstr "Kiedy?"
+
+#: src/Settings/Option/LogicFieldsGroupOperatorOption.php:76
+#: src/Settings/Option/LogicProductsGroupOperatorOption.php:76
+msgid "All rules match (and)"
+msgstr "Spełnione są wszystkie reguły (i)"
+
+#: src/Settings/Option/LogicFieldsRulesConditionOption.php:56
+#: src/Settings/Option/LogicProductsRulesConditionOption.php:54
+msgid "Condition"
+msgstr "Warunek"
+
+#: src/Settings/Option/LogicFieldsRulesFieldOption.php:55
+msgid "Field"
+msgstr "Pole"
+
+#: src/Settings/Option/LogicInfoOption.php:57
+#, php-format
+msgid ""
+"You can combine rules from different logic groups. In this case the logic "
+"will work when the conditions from each of the active groups are met. "
+"%1$sRead more%2$s"
+msgstr ""
+"Możesz łączyć reguły z różnych grup logicznych. W takim przypadku logika "
+"warunkowa zadziała, gdy zostaną spełnione warunki z każdej z aktywnych grup. "
+"%1$sCzytaj więcej%2$s"
+
+#: src/Settings/Option/LogicInfoWcOption.php:29
+#, php-format
+msgid ""
+"You can combine rules from different logic groups. In this case the logic "
+"will work when the conditions from each of the active groups are met. "
+"WooCommerce forces this field to be %1$srequired%2$s. Make sure hiding is "
+"possible and will not cause a validation error. %3$sRead more%4$s"
+msgstr ""
+"Możesz łączyć reguły z różnych grup logicznych. W takim przypadku logika "
+"zadziała, gdy zostaną spełnione warunki z każdej z aktywnych grup. "
+"WooCommerce wymusza, aby to pole było %1$swymagane%2$s. Upewnij się, że "
+"ukrywanie jest możliwe i nie spowoduje błędu walidacji. %3$sCzytaj więcej%4$s"
+
+#: src/Settings/Option/LogicProductsEnabledOption.php:54
+msgid "Enable conditional logic based on product/category"
+msgstr "Włącz logikę warunkową opartą na produkcie/kategorii"
+
+#: src/Settings/Option/LogicProductsRulesConditionOption.php:76
+msgid "Cart contains"
+msgstr "Koszyk zawiera"
+
+#: src/Settings/Option/LogicProductsRulesValueCatsOption.php:57
+msgid "Categories"
+msgstr "Kategorie"
+
+#: src/Settings/Option/LogicProductsRulesValueProductsOption.php:57
+msgid "Products"
+msgstr "Wszystkie produkty"
+
+#: src/Settings/Option/LogicProductsRulesWhatOption.php:55
+msgid "Cart item"
+msgstr "Zawartość koszyka"
+
+#: src/Settings/Option/LogicProductsRulesWhatOption.php:89
+msgid "Product"
+msgstr "Produkt"
+
+#: src/Settings/Option/LogicProductsRulesWhatOption.php:90
+msgid "Product category"
+msgstr "Kategoria produktu"
+
+#: src/Settings/Option/LogicShippingEnabledOption.php:54
+msgid "Enable conditional logic based on shipping methods"
+msgstr "Włącz logikę warunkową opartą na metodach wysyłki"
+
+#: src/Settings/Option/LogicShippingRulesMethodOption.php:56
+msgid "Shipping method"
+msgstr "Metoda wysyłki"
+
+#: src/Settings/Option/LogicShippingRulesZoneOption.php:55
+msgid "Shipping zone"
+msgstr "Strefa wysyłki"
+
+#: src/Settings/Option/OptionsOption.php:56
+msgid "Options"
+msgstr "Opcje"
+
+#: src/Settings/Option/OptionsOption.php:65
+msgid ""
+"Enter a value and a label for each field option. The value will not be "
+"visible in the form. The label will be visible."
+msgstr ""
+"Wprowadź wartość i etykietę dla każdej opcji pola. Wartość nie będzie "
+"widoczna w formularzu. Etykieta będzie widoczna."
+
+#: src/Settings/Option/OptionsOption.php:75
+#, php-format
+msgid "Option #%s"
+msgstr "Opcja #%s"
+
+#: src/Settings/Option/OptionsValueOption.php:66
+msgid "Label"
+msgstr "Etykieta"
+
+#: src/Settings/Option/PricingEnabledOption.php:54
+msgid "Enable pricing"
+msgstr "Włącz ceny"
+
+#: src/Settings/Option/PricingInfoOption.php:57
+#, php-format
+msgid ""
+"The impact on the final purchase amount depends on the selected price type "
+"and its value. %1$sRead more%2$s"
+msgstr ""
+"Wpływ na ostateczną kwotę zakupu zależy od wybranego rodzaju ceny i jej "
+"wartości. %1$sCzytaj więcej%2$s"
+
+#: src/Settings/Option/PricingValuesOption.php:60
+#, php-format
+msgid "Pricing options for \"%s\""
+msgstr "Opcje ceny dla \"%s\""
+
+#: src/Settings/Option/PricingValuesTaxesOption.php:55
 msgid "Tax class"
 msgstr "Klasa podatkowa"
+
+#: src/Settings/Option/PricingValuesTaxesOption.php:84
+msgid "Standard rates"
+msgstr "Standardowe stawki"
+
+#: src/Settings/Option/PricingValuesTypeOption.php:54
+msgid "Price basis"
+msgstr "Podstawa ceny"
+
+#: src/Settings/Option/PricingValuesTypeOption.php:64
+msgid "Fixed"
+msgstr "Stała kwota"
+
+#: src/Settings/Option/PricingValuesTypeOption.php:65
+msgid "Percentage of Subtotal (ex. VAT)"
+msgstr "Procent sumy koszyka (bez VAT)"
+
+#: src/Settings/Option/PricingValuesTypeOption.php:66
+msgid "Percentage of Subtotal (incl. VAT)"
+msgstr "Procent sumy koszyka (z VAT)"
+
+#: src/Settings/Option/PricingValuesTypeOption.php:67
+msgid "Percentage of Total"
+msgstr "Procent sumy całkowitej"
+
+#: src/Settings/Option/SectionCssOption.php:45
+msgid "CSS class"
+msgstr "Klasa CSS"
+
+#: src/Settings/Option/SectionTagOption.php:45
+msgid "Section title tag"
+msgstr "Tag tytułu sekcji"
+
+#: src/Settings/Option/SectionTitleOption.php:45
+msgid "Section title"
+msgstr "Tytuł sekcji"
+
+#: src/Settings/Option/SettingSectionsOption.php:45
+msgid "Custom Sections"
+msgstr "Dodatkowe sekcje"
+
+#: src/Settings/Option/SettingSectionsOption.php:54
+#, fuzzy
+msgid "Selected sections appear as tabs in the plugin menu."
+msgstr "Wybrane sekcje pojawiają się jako zakładki w menu wtyczki."
+
+#: src/Settings/Route/FieldsConditionRoute.php:73
+msgid "is"
+msgstr "jest"
+
+#: src/Settings/Route/FieldsValueRoute.php:45
+msgid "checked"
+msgstr "zaznaczone"
+
+#: src/Settings/Route/FieldsValueRoute.php:46
+msgid "unchecked"
+msgstr "niezaznaczone"
 
 #: templates/fields/file.php:33
 msgid "Upload File"
@@ -675,6 +698,10 @@ msgstr "Dodaj plik"
 msgid "Remove File"
 msgstr "Usuń plik"
 
+#: templates/notices/compatibility-error.php:19
+msgid "Learn more"
+msgstr "Zobacz więcej"
+
 #. Plugin Name of the plugin/theme
 msgid "Flexible Checkout Fields PRO"
 msgstr "Flexible Checkout Fields PRO"
@@ -682,18 +709,137 @@ msgstr "Flexible Checkout Fields PRO"
 #. Plugin URI of the plugin/theme
 msgid ""
 "https://www.wpdesk.net/products/flexible-checkout-fields-pro-woocommerce/"
-msgstr ""
+msgstr "https://www.wpdesk.pl/sklep/flexible-product-fields-pro-woocommerce/"
 
 #. Description of the plugin/theme
 msgid ""
 "Extension to the free version. Adds new field types, custom sections and "
 "more."
 msgstr ""
+"Rozszerzenie do wersji darmowej. Dodaje nowe typy pól, niestandardowe sekcje "
+"i nie tylko."
 
 #. Author of the plugin/theme
 msgid "WP Desk"
-msgstr ""
+msgstr "WP Desk"
 
 #. Author URI of the plugin/theme
 msgid "https://www.wpdesk.net/"
-msgstr ""
+msgstr "https://www.wpdesk.pl/"
+
+#~ msgid "None"
+#~ msgstr "Brak"
+
+#~ msgid "Pricing"
+#~ msgstr "Cena"
+
+#~ msgid "Price settings are not available for this type of field."
+#~ msgstr "Opcje ceny nie są dostępne dla tego typu pola."
+
+#~ msgid ""
+#~ "The price settings for the new field are available after saving the "
+#~ "settings."
+#~ msgstr "Opcje ceny dla nowego pola będą dostępne gdy zapiszesz ustawienia."
+
+#~ msgid "Enable Pricing"
+#~ msgstr "Włącz cenę"
+
+#~ msgid "Price type"
+#~ msgstr "Rodzaj ceny"
+
+#~ msgid "Select Shipping Zone"
+#~ msgstr "Wybierz strefę wysyłki"
+
+#~ msgid "Select Shipping Method"
+#~ msgstr "Wybierz metodę wysyłki"
+
+#~ msgid "Shipping Methods"
+#~ msgstr "Metody wysyłki"
+
+#~ msgid "Shipping Zones"
+#~ msgstr "Strefy wysyłki"
+
+#~ msgid "Advanced"
+#~ msgstr "Zaawansowane"
+
+#~ msgid "Disabled section:"
+#~ msgstr "Wyłączona sekcja:"
+
+#~ msgid "Missing Value"
+#~ msgstr "Brak wartości"
+
+#~ msgid "Knowledge Base"
+#~ msgstr "Baza wiedzy"
+
+#~ msgid "Documentation"
+#~ msgstr "Dokumentacja"
+
+#~ msgid "Adding Custom Fields"
+#~ msgstr "Dodawanie własnych pól"
+
+#~ msgid "Field Types"
+#~ msgstr "Typy pól"
+
+#~ msgid "Conditional Logic"
+#~ msgstr "Logika warunkowa"
+
+#~ msgid "Assigning price to Custom Fields"
+#~ msgstr "Przypisanie ceny do własnego pola"
+
+#~ msgid "Usage Examples"
+#~ msgstr "Przykłady zastosowania"
+
+#~ msgid "Additional Agreements at the Checkout"
+#~ msgstr "Dodatkowe checkboxy jako zgody"
+
+#~ msgid "Enable Product/Category Conditional Logic"
+#~ msgstr "Włącz logikę warunkową dla produktów/kategorii"
+
+#~ msgid "Product Category"
+#~ msgstr "Produkt z kategorii"
+
+#~ msgid "Select products"
+#~ msgstr "Wybierz produkty"
+
+#~ msgid "Select categories"
+#~ msgstr "Wybierz kategorie"
+
+#~ msgid "Enable Fields Conditional Logic"
+#~ msgstr "Włącz logikę warunkową dla pól"
+
+#~ msgid "Select field"
+#~ msgstr "Wybierz pole"
+
+#~ msgid "Select value"
+#~ msgstr "Wybierz wartość"
+
+#~ msgid ""
+#~ "When you use many types of logic, the priority will be set by order as "
+#~ "above. <a href=\"%s\" target=\"_blank\">Read more →</a>"
+#~ msgstr ""
+#~ "Korzystając z wielu typów logiki, priorytet zostanie ustawiony według "
+#~ "kolejności, jak wyżej. <a href=\"%s\" target=\"_blank\">Czytaj więcej →</"
+#~ "a>"
+
+#~ msgid "Select field first"
+#~ msgstr "Najpierw wybierz pole"
+
+#~ msgid ""
+#~ "Unable to delete this field. This field is used in conditional logic on "
+#~ "field(s): [fields]."
+#~ msgstr ""
+#~ "Brak możliwości usunięcia tego pola. To pole jest używane w logice "
+#~ "warunkowej na polu (polach): [fields]."
+
+#~ msgid "New Rule"
+#~ msgstr "Nowa reguła"
+
+#~ msgid ""
+#~ "Format: comma separated list WITHOUT space. Example: <code>pdf,doc,jpg</"
+#~ "code>"
+#~ msgstr ""
+#~ "Format: lista oddzielona przecinkami BEZ spacji. Przykład: <code>pdf, doc,"
+#~ "jpg</code>"
+
+#~ msgid "Section Settings"
+#~ msgstr "Ustawienia sekcji"

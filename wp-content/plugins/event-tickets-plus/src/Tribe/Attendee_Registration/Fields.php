@@ -91,4 +91,29 @@ class Fields {
 
 		return $return;
 	}
+
+	/**
+	 * Filter the tickets block ticket data attributes.
+	 *
+	 * @since 5.2.1
+	 *
+	 * @param array                         $attributes The HTML data attributes.
+	 * @param Tribe__Tickets__Ticket_Object $ticket The ticket object.
+	 *
+	 * @return array The HTML data attributes.
+	 */
+	public function maybe_add_html_attribute_to_ticket( $attributes, $ticket ) {
+		/** @var \Tribe__Tickets_Plus__Meta $meta */
+		$meta = tribe( 'tickets-plus.meta' );
+
+		$fields = $meta->get_meta_fields_by_ticket( $ticket->ID );
+
+		if ( empty( $fields ) ) {
+			return $attributes;
+		}
+
+		$attributes['data-ticket-ar-fields'] = 'true';
+
+		return $attributes;
+	}
 }

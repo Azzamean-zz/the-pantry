@@ -17,9 +17,10 @@ if ( ! empty( $args['custom_attributes'] ) && is_array( $args['custom_attributes
     }
 }
 ?>
-<p
-    class="form-row form-row-wide form-info <?php echo implode( ' ', $args['class'] ); ?>"
-    id="<?php echo $key; ?>_field"
-    data-priotiry="<?php echo $args['priority']; ?>"
+<p class="form-row form-row-wide form-info <?php echo esc_attr( implode( ' ', $args['class'] ) ); ?>"
+	id="<?php echo $key; ?>_field"
+	data-priotiry="<?php echo $args['priority']; ?>"
 	<?php echo empty( $custom_attributes ) ? '' : implode( ' ', $custom_attributes ); ?>
-><?php echo wp_kses_post( $args['label'] ); ?></p>
+	>
+	<?php echo wp_kses_post( $args['label'] ); ?>
+</p>

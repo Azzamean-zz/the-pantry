@@ -4,10 +4,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Smart Manager For WooCommerce – Stock Management, Bulk "
-"Edit & more... 5.3.0\n"
+"Edit & more... 5.8.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/smart-manager-for-"
 "wp-e-commerce\n"
-"POT-Creation-Date: 2021-01-15 08:32+0000\n"
+"POT-Creation-Date: 2021-03-05 14:07+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,223 +18,223 @@ msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "X-Generator: Loco https://localise.biz/"
 
-#: class-smart-manager.php:666
+#: class-smart-manager.php:665
 msgid "<span class=\"sm_pricing_icon\"> 🔥 </span> Go Pro"
 msgstr ""
 
-#: class-smart-manager.php:670 
+#: class-smart-manager.php:669 
 #: classes/class-smart-manager-admin-welcome.php:242 
 #: pro/classes/class-smart-manager-pro-access-privilege.php:179
 msgid "Settings"
 msgstr ""
 
-#: class-smart-manager.php:673
+#: class-smart-manager.php:672
 msgid "Docs & Support"
 msgstr ""
 
-#: class-smart-manager.php:679
+#: class-smart-manager.php:678
 msgid "StoreApps Plugins"
 msgstr ""
 
-#: class-smart-manager.php:857
+#: class-smart-manager.php:856
 #, php-format
 msgid "Hey %1s, you just unlocked %2s Off on Smart Manager Pro!"
 msgstr ""
 
-#: class-smart-manager.php:857
+#: class-smart-manager.php:856
 msgid "25%"
 msgstr ""
 
-#: class-smart-manager.php:858
+#: class-smart-manager.php:857
 #, php-format
 msgid "%s to check Smart Manager Pro features and claim your discount."
 msgstr ""
 
-#: class-smart-manager.php:858 classes/class-smart-manager-pricing.php:549
+#: class-smart-manager.php:857 classes/class-smart-manager-pricing.php:549
 msgid "Click here"
 msgstr ""
 
-#: class-smart-manager.php:1098
+#: class-smart-manager.php:1097
 msgid ""
 "Delete Permanently is disabled. Please contact store administrator for "
 "enabling the same."
 msgstr ""
 
-#: class-smart-manager.php:1128
+#: class-smart-manager.php:1127
 msgid ""
 "In the meanwhile, you can use Smart Manager. But before using actions like "
 msgstr ""
 
-#: class-smart-manager.php:1128 
+#: class-smart-manager.php:1127 
 #: classes/class-smart-manager-admin-welcome.php:321
 msgid "Bulk Edit"
 msgstr ""
 
-#: class-smart-manager.php:1128
+#: class-smart-manager.php:1127
 msgid "Duplicate Records"
 msgstr ""
 
-#: class-smart-manager.php:1128 
+#: class-smart-manager.php:1127 
 #: classes/class-smart-manager-admin-welcome.php:309
 msgid "Delete Records"
 msgstr ""
 
-#: class-smart-manager.php:1128
+#: class-smart-manager.php:1127
 msgid "you will have to wait for the current background process to finish."
 msgstr ""
 
-#: class-smart-manager.php:1435
+#: class-smart-manager.php:1434
 #, php-format
 msgid "%1s"
 msgstr ""
 
-#: class-smart-manager.php:1443
+#: class-smart-manager.php:1442
 msgid "An upgrade for Smart Manager Pro"
 msgstr ""
 
-#: class-smart-manager.php:1443
+#: class-smart-manager.php:1442
 msgid "is available."
 msgstr ""
 
-#: class-smart-manager.php:1443
+#: class-smart-manager.php:1442
 msgid "Click to upgrade."
 msgstr ""
 
-#: class-smart-manager.php:1528
+#: class-smart-manager.php:1527
 msgid "A required Smart Manager file is missing. Can't continue. "
 msgstr ""
 
-#: class-smart-manager.php:1543
+#: class-smart-manager.php:1542
 msgid "Error:"
 msgstr ""
 
-#: classes/class-smart-manager-product.php:641
+#: classes/class-smart-manager-product.php:676
 msgid "Shop and search results"
 msgstr ""
 
-#: classes/class-smart-manager-product.php:642
+#: classes/class-smart-manager-product.php:677
 msgid "Shop only"
 msgstr ""
 
-#: classes/class-smart-manager-product.php:643
+#: classes/class-smart-manager-product.php:678
 msgid "Search results only"
 msgstr ""
 
-#: classes/class-smart-manager-product.php:644
+#: classes/class-smart-manager-product.php:679
 msgid "Hidden"
 msgstr ""
 
-#: classes/class-smart-manager-product.php:750 
-#: classes/class-smart-manager-product.php:756
+#: classes/class-smart-manager-product.php:785 
+#: classes/class-smart-manager-product.php:791
 msgid "Taxable"
 msgstr ""
 
-#: classes/class-smart-manager-product.php:751 
-#: classes/class-smart-manager-product.php:757
+#: classes/class-smart-manager-product.php:786 
+#: classes/class-smart-manager-product.php:792
 msgid "Shipping only"
 msgstr ""
 
-#: classes/class-smart-manager-product.php:752 
-#: classes/class-smart-manager-product.php:758 
+#: classes/class-smart-manager-product.php:787 
+#: classes/class-smart-manager-product.php:793 
 #: pro/classes/class-smart-manager-pro-base.php:27
 msgid "None"
 msgstr ""
 
-#: classes/class-smart-manager-product.php:768
+#: classes/class-smart-manager-product.php:803
 msgid "In stock"
 msgstr ""
 
-#: classes/class-smart-manager-product.php:769
+#: classes/class-smart-manager-product.php:804
 msgid "Out of stock"
 msgstr ""
 
-#: classes/class-smart-manager-product.php:770
+#: classes/class-smart-manager-product.php:805
 msgid "On backorder"
 msgstr ""
 
-#: classes/class-smart-manager-product.php:795
+#: classes/class-smart-manager-product.php:830
 msgid "Standard"
 msgstr ""
 
-#: classes/class-smart-manager-product.php:796
+#: classes/class-smart-manager-product.php:831
 msgid "Reduced Rate"
 msgstr ""
 
-#: classes/class-smart-manager-product.php:797
+#: classes/class-smart-manager-product.php:832
 msgid "Zero Rate"
 msgstr ""
 
-#: classes/class-smart-manager-product.php:816
+#: classes/class-smart-manager-product.php:851
 msgid "Do Not Allow"
 msgstr ""
 
-#: classes/class-smart-manager-product.php:817
+#: classes/class-smart-manager-product.php:852
 msgid "Allow, but notify customer"
 msgstr ""
 
-#: classes/class-smart-manager-product.php:818
+#: classes/class-smart-manager-product.php:853
 msgid "Allow"
 msgstr ""
 
-#: classes/class-smart-manager-product.php:845 
-#: classes/class-smart-manager-product.php:847
+#: classes/class-smart-manager-product.php:880 
+#: classes/class-smart-manager-product.php:882
 msgid "No shipping class"
 msgstr ""
 
-#: classes/class-smart-manager-product.php:849 
+#: classes/class-smart-manager-product.php:884 
 #: pro/templates/order-invoice.php:162
 msgid "SKU"
 msgstr ""
 
-#: classes/class-smart-manager-product.php:852
+#: classes/class-smart-manager-product.php:887
 msgid "Name"
 msgstr ""
 
-#: classes/class-smart-manager-product.php:854 
+#: classes/class-smart-manager-product.php:889 
 #: pro/classes/class-smart-manager-pro-wc-membership-plan.php:97 
 #: pro/classes/class-smart-manager-pro-wc-membership-plan.php:98
 msgid "Slug"
 msgstr ""
 
-#: classes/class-smart-manager-product.php:856 
+#: classes/class-smart-manager-product.php:891 
 #: classes/class-smart-manager-shop-coupon.php:117
 msgid "Description"
 msgstr ""
 
-#: classes/class-smart-manager-product.php:858
+#: classes/class-smart-manager-product.php:893
 msgid "Additional Description"
 msgstr ""
 
-#: classes/class-smart-manager-product.php:872
+#: classes/class-smart-manager-product.php:907
 msgid "External Url"
 msgstr ""
 
-#: classes/class-smart-manager-product.php:876
+#: classes/class-smart-manager-product.php:911
 msgid "Image"
 msgstr ""
 
-#: classes/class-smart-manager-product.php:885
+#: classes/class-smart-manager-product.php:920
 msgid "Featured Image"
 msgstr ""
 
-#: classes/class-smart-manager-product.php:956
+#: classes/class-smart-manager-product.php:991
 msgid "Attributes"
 msgstr ""
 
-#: classes/class-smart-manager-product.php:989
+#: classes/class-smart-manager-product.php:1024
 msgid "Attributes: custom"
 msgstr ""
 
-#: classes/class-smart-manager-product.php:1035
+#: classes/class-smart-manager-product.php:1070
 msgid "Catalog Visibility"
 msgstr ""
 
-#: classes/class-smart-manager-product.php:1082
+#: classes/class-smart-manager-product.php:1117
 msgid "Featured"
 msgstr ""
 
-#: classes/class-smart-manager-product.php:1840 
-#: classes/class-smart-manager-product.php:1843
+#: classes/class-smart-manager-product.php:1882 
+#: classes/class-smart-manager-product.php:1885
 msgid "Featured Image updated successfully"
 msgstr ""
 
@@ -1121,60 +1121,60 @@ msgstr ""
 msgid "Robots Meta"
 msgstr ""
 
-#: pro/classes/class-smart-manager-pro-background-updater.php:280
+#: pro/classes/class-smart-manager-pro-background-updater.php:282
 msgid "All"
 msgstr ""
 
 #. 1. Error title 2. The bulk process
-#: pro/classes/class-smart-manager-pro-background-updater.php:293
+#: pro/classes/class-smart-manager-pro-background-updater.php:295
 #, php-format
 msgid ""
 "%1$s: The %2$s process has stopped. Please review the Smart Manager "
 "dashboard to check the status."
 msgstr ""
 
-#: pro/classes/class-smart-manager-pro-background-updater.php:293
+#: pro/classes/class-smart-manager-pro-background-updater.php:295
 msgid "Error"
 msgstr ""
 
-#: pro/classes/class-smart-manager-pro-background-updater.php:301
+#: pro/classes/class-smart-manager-pro-background-updater.php:303
 msgid "Important"
 msgstr ""
 
-#: pro/classes/class-smart-manager-pro-background-updater.php:302
+#: pro/classes/class-smart-manager-pro-background-updater.php:304
 msgid "request is running"
 msgstr ""
 
-#: pro/classes/class-smart-manager-pro-background-updater.php:303
+#: pro/classes/class-smart-manager-pro-background-updater.php:305
 msgid "in the background. You will be notified on"
 msgstr ""
 
-#: pro/classes/class-smart-manager-pro-background-updater.php:303
+#: pro/classes/class-smart-manager-pro-background-updater.php:305
 msgid "when it is completed."
 msgstr ""
 
-#: pro/classes/class-smart-manager-pro-background-updater.php:308
+#: pro/classes/class-smart-manager-pro-background-updater.php:310
 msgid "Progress"
 msgstr ""
 
-#: pro/classes/class-smart-manager-pro-background-updater.php:309
+#: pro/classes/class-smart-manager-pro-background-updater.php:311
 msgid "--:--:--"
 msgstr ""
 
-#: pro/classes/class-smart-manager-pro-background-updater.php:315
+#: pro/classes/class-smart-manager-pro-background-updater.php:317
 msgid "NOTE"
 msgstr ""
 
-#: pro/classes/class-smart-manager-pro-background-updater.php:323
+#: pro/classes/class-smart-manager-pro-background-updater.php:325
 msgid "for"
 msgstr ""
 
-#: pro/classes/class-smart-manager-pro-background-updater.php:323
+#: pro/classes/class-smart-manager-pro-background-updater.php:325
 msgid "completed Successfully"
 msgstr ""
 
 #. 1. The bulk process
-#: pro/classes/class-smart-manager-pro-background-updater.php:334
+#: pro/classes/class-smart-manager-pro-background-updater.php:336
 #, php-format
 msgid "Are you sure you want to stop the %s process? Click OK to stop."
 msgstr ""

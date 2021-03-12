@@ -6,7 +6,7 @@
  * @type {{}}
  */
 var tribe_ticket_plus_qr = tribe_ticket_plus_qr || {};
-( function ( $, obj ) {
+( function( $, obj ) {
 	'use strict';
 
 	obj.init = function() {
@@ -24,14 +24,11 @@ var tribe_ticket_plus_qr = tribe_ticket_plus_qr || {};
 		this.$generate_key_msg = $( '.tribe-enerate-qr-api-key-msg' );
 		this.$generate_key_input = $( '[name="tickets-plus-qr-options-api-key"]' );
 
-		this.$generate_key.on( 'click', function ( e ) {
+		this.$generate_key.on( 'click', function( e ) {
 			e.preventDefault();
 			obj.qr_ajax();
-
 		} );
-
 	};
-
 
 	/**
 	 * AJAX to Generate and Save QR Key
@@ -59,9 +56,7 @@ var tribe_ticket_plus_qr = tribe_ticket_plus_qr || {};
 				}
 			}
 		);
-
 	};
 
-	$( document ).ready( obj.init );
-
-})( jQuery, tribe_ticket_plus_qr );
+	$( obj.init );
+} )( jQuery, tribe_ticket_plus_qr );

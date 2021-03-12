@@ -71,7 +71,7 @@ if ( ! class_exists( 'ccfwoo_pro_EDD_Client' ) ) :
 		 * Enqueue Scripts
 		 */
 		public function enqueue_scripts() {
-			wp_register_script( 'ccfwoo_pro-edd-client', plugins_url( 'script.js', __FILE__ ), array( 'jquery' ), $this->plugin['version'] );
+			wp_register_script( 'ccfwoo_pro-edd-client', plugins_url( 'script.js', __FILE__ ), false, $this->plugin['version'] );
 			wp_enqueue_script( 'ccfwoo_pro-edd-client' );
 
 			wp_localize_script( 'ccfwoo_pro-edd-client', 'ccfwoo_pro_edd_client', $this->plugin );
@@ -123,14 +123,15 @@ if ( ! class_exists( 'ccfwoo_pro_EDD_Client' ) ) :
 
 			?>
 			<tr class="plugin-update-tr active">
-				<td class="plugin-update colspanchange" colspan="3">
-					<div class="update-message notice inline notice-error notice-alt">
+				<td class="plugin-update colspanchange" colspan="100%">
+					<div class="update-message notice inline notice-error notice-alt ccfwoo_pro-edd-client-wrapper">
 						<p><a href="javascript:void(0);" class="ccfwoo_pro-edd-client-cred-link"><?php echo $text_description; ?></a></p>
-						<div id="<?php echo 'ec-' . $this->plugin['machine_name']; ?>" class="ccfwoo_pro-edd-client-row" style="display:none">
+						<div class="ccfwoo_pro-edd-client-row" style="display:none">
 							<input class="ccfwoo_pro-edd-client-license-key" value="<?php echo esc_html( $this->plugin['license'] ); ?>" type="text" placeholder="<?php echo $text_placeholder; ?>"/>
 							<button class="button ccfwoo_pro-edd-client-button" data-action=<?php echo $this->plugin['machine_name'] . '-ccfwoo_pro-edd-client-operations'; ?> data-operation="activate_license" data-nonce="<?php echo wp_create_nonce( $this->plugin['machine_name'] . '-ccfwoo_pro-edd-client-operations' ); ?>"> <span class="dashicons dashicons-update"></span> <?php echo $text_button; ?></button>
 						</div>
 					</div>
+					<div class="ccfwoo_pro-edd-client-message"></div>
 				</td>
 			</tr>
 			<?php
@@ -160,7 +161,7 @@ if ( ! class_exists( 'ccfwoo_pro_EDD_Client' ) ) :
 
 			<tr class="ccfwoo_pro-edd-client-row plugin-update-tr active update" style="display: none">
 
-			<td colspan="3" class="plugin-update colspanchange">    
+			<td colspan="100%" class="plugin-update colspanchange">    
 				  
 					<div class="ccfwoo_pro-edd-client-row update-message inline notice-alt">
 						<input class="ccfwoo_pro-edd-client-license-key" type="text" style="margin-right:-14px; border-top-right-radius:0px; border-bottom-right-radius:0px; border-right:0px;" value="<?php echo esc_html( $this->plugin['license'] ); ?>"/>
@@ -172,6 +173,8 @@ if ( ! class_exists( 'ccfwoo_pro_EDD_Client' ) ) :
 						<button class="button ccfwoo_pro-edd-client-button" data-action=<?php echo esc_html( $this->plugin['machine_name'] . '-ccfwoo_pro-edd-client-operations' ); ?> data-operation="check_expiry" data-nonce="<?php echo wp_create_nonce( $this->plugin['machine_name'] . '-ccfwoo_pro-edd-client-operations' ); ?>"> <span class="dashicons dashicons-update"></span> <?php echo esc_html( $text_check_expiry ); ?></button>
 
 						<button class="button ccfwoo_pro-edd-client-button" data-action=<?php echo $this->plugin['machine_name'] . '-ccfwoo_pro-edd-client-operations'; ?> data-operation="deactivate_license" data-nonce="<?php echo wp_create_nonce( $this->plugin['machine_name'] . '-ccfwoo_pro-edd-client-operations' ); ?>"> <span class="dashicons dashicons-update"></span> <?php echo esc_html( $text_deactive_license ); ?></button>
+
+						<div class="ccfwoo_pro-edd-client-message"></div>
 					</div>
 				</td>
 			</tr>
@@ -189,7 +192,7 @@ if ( ! class_exists( 'ccfwoo_pro_EDD_Client' ) ) :
 			$text_button = __( 'Activate License', 'checkout-countdown-pro' );
 
 			?>
-			<div class="notice notice-warning is-dismissible">
+			<div class="ccfwoo_pro-edd-client-notice notice notice-warning is-dismissible">
 				<p><?php echo $text_description; ?>
 					<input class="ccfwoo_pro-edd-client-license-key" type="text" placeholder="<?php echo $text_placeholder; ?>"/>
 					<button class="button ccfwoo_pro-edd-client-button" data-action=<?php echo $this->plugin['machine_name'] . '-ccfwoo_pro-edd-client-operations'; ?> data-operation="activate_license" data-nonce="<?php echo wp_create_nonce( $this->plugin['machine_name'] . '-ccfwoo_pro-edd-client-operations' ); ?>"> <span class="dashicons dashicons-update"></span> <?php echo $text_button; ?></button>
@@ -238,7 +241,7 @@ if ( ! class_exists( 'ccfwoo_pro_EDD_Client' ) ) :
 					}
 					break;
 				case 'activate_license':
-					$license = ! empty( $_POST['license'] ) ? $_POST['license'] : wp_send_json_error( __( 'License field can not be empty', 'checkout-countdown-pro' ) );
+					$license = ! empty( $_POST['license'] ) ? $_POST['license'] : $this->send_json( __( 'License field can not be empty', 'checkout-countdown-pro' ) );
 					$license = sanitize_text_field( $license );
 
 					$license_data = $this->validate_license( $license, $this->plugin['item_id'], $this->plugin['store_url'] );

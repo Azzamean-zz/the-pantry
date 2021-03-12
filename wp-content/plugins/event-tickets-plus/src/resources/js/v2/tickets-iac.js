@@ -1,10 +1,10 @@
-/* global tribe */
+/* global tribe, jQuery */
 /**
  * Makes sure we have all the required levels on the Tribe Object
  *
  * @since 5.1.0
  *
- * @type   {PlainObject}
+ * @type   {Object}
  */
 tribe.tickets = tribe.tickets || {};
 
@@ -13,7 +13,7 @@ tribe.tickets = tribe.tickets || {};
  *
  * @since 5.1.0
  *
- * @type   {PlainObject}
+ * @type   {Object}
  */
 tribe.tickets.iac = {};
 
@@ -22,8 +22,8 @@ tribe.tickets.iac = {};
  *
  * @since 5.1.0
  *
- * @param  {PlainObject} $   jQuery
- * @param  {PlainObject} obj tribe.tickets.data
+ * @param  {Object} $   jQuery
+ * @param  {Object} obj tribe.tickets.data
  *
  * @return {void}
  */
@@ -87,7 +87,9 @@ tribe.tickets.iac = {};
 	 * @param {number} attendeeId The attendee ID.
 	 */
 	obj.ticketsPageMetaEmailReSendCheckboxAdd = function( $input, attendeeId ) {
-		const hasCheckbox = $input.closest( obj.selectors.ticketsPageMetaEmail ).find( obj.selectors.ticketsPageMetaEmailReSend ).length;
+		const hasCheckbox = $input
+			.closest( obj.selectors.ticketsPageMetaEmail )
+			.find( obj.selectors.ticketsPageMetaEmailReSend ).length;
 
 		// Bail if it was added already.
 		if ( hasCheckbox ) {
@@ -107,7 +109,7 @@ tribe.tickets.iac = {};
 	 *
 	 * @since 5.1.0
 	 *
-	 * @param {event} event The event.
+	 * @param {Event} event The event.
 	 */
 	obj.bindEmailChangeCheck = function( event ) {
 		const $input = $( event.target );
@@ -159,7 +161,7 @@ tribe.tickets.iac = {};
 	 *
 	 * @since 5.1.0
 	 *
-	 * @param {event} event The event.
+	 * @param {Event} event The event.
 	 * @param {jQuery} $container The container of the tickets page.
 	 */
 	obj.bindTicketsPageActions = function( event, $container ) {
@@ -260,7 +262,7 @@ tribe.tickets.iac = {};
 	 * @since 5.1.0
 	 *
 	 * @param {number} index The index.
-	 * @param {object} attendeeTicketsForm The tickets form we are getting the values from.
+	 * @param {Object} attendeeTicketsForm The tickets form we are getting the values from.
 	 */
 	obj.loadUniqueMetaValuesPerTicket = function( index, attendeeTicketsForm ) {
 		const $attendeeTicketsForm = $( attendeeTicketsForm );
@@ -274,11 +276,11 @@ tribe.tickets.iac = {};
 		// Get the input values by its type and store them in the object so we fetch once.
 		const $emailInputs = $attendeeTicketsForm.find( obj.selectors.formFieldEmail + ' input' );
 		const emailValues = obj.getInputValuesToArray( $emailInputs );
-		obj.attendeeTicketData[ ticketId ][ 'email' ] = emailValues;
+		obj.attendeeTicketData[ ticketId ].email = emailValues;
 
 		const $nameInputs = $attendeeTicketsForm.find( obj.selectors.formFieldName + ' input' );
 		const nameValues = obj.getInputValuesToArray( $nameInputs );
-		obj.attendeeTicketData[ ticketId ][ 'name' ] = nameValues;
+		obj.attendeeTicketData[ ticketId ].name = nameValues;
 	};
 
 	/**
@@ -387,5 +389,5 @@ tribe.tickets.iac = {};
 	};
 
 	// Configure on document ready.
-	$document.ready( obj.ready );
+	$( obj.ready );
 } )( jQuery, tribe.tickets.iac );

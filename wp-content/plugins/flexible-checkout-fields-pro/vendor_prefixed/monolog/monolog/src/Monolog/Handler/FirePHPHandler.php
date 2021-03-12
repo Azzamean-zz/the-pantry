@@ -61,7 +61,7 @@ class FirePHPHandler extends \FCFProVendor\Monolog\Handler\AbstractProcessingHan
      *
      * @see createHeader()
      * @param  array  $record
-     * @return string
+     * @return array
      */
     protected function createRecordHeader(array $record)
     {

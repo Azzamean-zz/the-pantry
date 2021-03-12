@@ -3624,7 +3624,7 @@ if ( ! class_exists( 'Tribe__Tickets__Tickets' ) ) {
 		 *
 		 * @see get_ticket_provider_instance()
 		 *
-		 * @since TBD
+		 * @since 5.1.1
 		 *
 		 * @param int  $post_id          The post ID of the post/event to which RSVP(s)/ticket(s) are attached.
 		 * @param bool $return_instances Whether to return instances, otherwise it will return class name strings.
@@ -4033,7 +4033,7 @@ if ( ! class_exists( 'Tribe__Tickets__Tickets' ) ) {
 			}
 
 			$lookup_user_from_email = Arr::get( $args, 'use_existing_user', true );
-			$create_user_from_email = Arr::get( $args, 'create_user', true );
+			$create_user_from_email = Arr::get( $args, 'create_user', false );
 			$send_new_user_info     = Arr::get( $args, 'send_email', false );
 
 			/**

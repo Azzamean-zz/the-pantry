@@ -136,7 +136,7 @@ tribe_event_tickets_plus.meta.event = tribe_event_tickets_plus.meta.event || {};
 			) {
 				val = $field.find( 'input:checked' ).length ? 'checked' : '';
 			} else if ( $field.is( my.selectors.field.select ) ) {
-				val = $field.find('select').val();
+				val = $field.find( 'select' ).val();
 			} else if (
 				$field.is( my.selectors.horizontal_datepicker.day ) ||
 				$field.is( my.selectors.horizontal_datepicker.month ) ||

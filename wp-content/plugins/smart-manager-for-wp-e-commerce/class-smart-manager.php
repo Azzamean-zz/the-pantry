@@ -517,7 +517,6 @@ class Smart_Manager {
 	* Function to to handle media links on plugin page
 	*/ 
 	public function add_plugin_social_links() {
-
 		$is_pro_available = $this->is_pro_available();
 		if( $is_pro_available === true ) { //request ftp credentials form
 			wp_print_request_filesystem_credentials_modal();
@@ -1445,7 +1444,7 @@ class Smart_Manager {
 				?> <?php
 			}
 
-			if( function_exists('show_upgrade_notifications') ) {
+			if( is_callable( array( $this, 'show_upgrade_notifications' ) ) ) {
 				$this->show_upgrade_notifications();
 			}
 		?>

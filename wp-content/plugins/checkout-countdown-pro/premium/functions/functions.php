@@ -4,7 +4,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-
 /**
  * Remove upgrade notices.
  */
@@ -25,15 +24,6 @@ function ccfwoo_process_clear_cart() {
 }
 add_action( 'wp_ajax_ccfwoo_process_clear_cart', 'ccfwoo_process_clear_cart' );
 add_action( 'wp_ajax_nopriv_ccfwoo_process_clear_cart', 'ccfwoo_process_clear_cart' );
-
-/**
- * Sets 'ccfwoo_pro_reset_interval' inside enqueued js to true .
- * used for restarting the countdown when a product is added to cart .
- */
-function ccfwoo_add_to_cart() {
-	add_filter( 'ccfwoo_pro_reset_interval', '__return_true' );
-}
-add_action( 'woocommerce_add_to_cart', 'ccfwoo_add_to_cart' );
 
 /**
  * Removes specific product form cart.
@@ -70,7 +60,11 @@ function ccfwoo_empty_cart() {
 	foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
 
 		if ( $cart_item_key ) {
+
 			WC()->cart->remove_cart_item( $cart_item_key );
+
+			// Allow third-parties to access the removed product.
+			do_action( 'ccfwoo_product_removed_from_cart', $item_data );
 		}
 	}
 

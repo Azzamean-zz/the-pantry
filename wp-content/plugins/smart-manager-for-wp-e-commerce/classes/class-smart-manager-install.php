@@ -255,6 +255,11 @@ class Smart_Manager_Install {
 
 		require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
 		dbDelta( $tables );
+
+		// Added code in v5.5.0 as in some cases the sm_views table was not created
+		if ( is_callable( array( __CLASS__, 'update_500_create_tables' ) ) ) {
+			call_user_func( array( __CLASS__, 'update_500_create_tables' ) );
+		}
 	}
 }
 

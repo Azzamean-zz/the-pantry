@@ -74,10 +74,11 @@ function ccfwoo_loading_html() {
     <div class="ccfwoo-loading-dots--dot"></div>
     <div class="ccfwoo-loading-dots--dot"></div>
     <div class="ccfwoo-loading-dots--dot"></div>
-</div>';
+	</div>';
 
 	return $loading_dots;
 }
+
 /**
  * HTML Content for the countdown.
  * Can also return as WC notice.
@@ -91,9 +92,8 @@ function ccfwoo_countdown_html_content( $type ) {
 		$notice_html  = '<div class="checkout-countdown-wrapper checkout-countdown-notice" id="cc-countdown-wrap">
     <div class="checkout-countdown-content" id="cc-countdown-timer">';
 		$notice_html .= $loading_dots;
-		$notice_html .= '</div>
-</div>';
-
+		$notice_html .= '</div></div>';
+		// error, notice or success.
 		return wc_print_notice( $notice_html, 'error' );
 	}
 
@@ -112,11 +112,11 @@ function ccfwoo_countdown_html_content( $type ) {
 	$add_classes .= ccfwoo_get_option( 'enable_banner_message' ) !== 'on' && ccfwoo_get_cart_content() === 0 ?
 	'ccfwoo-is-hidden' : '';
 
-	$html      = '<div class="checkout-countdown-wrapper ' . $add_classes . '" id="' . $add_id . '">';
-	$html     .= '<div class="checkout-countdown-content">';
-		$html .= $loading_dots;
-		$html .= '</div>';
-	$html     .= '</div>';
+	$html = '<div class="checkout-countdown-wrapper ' . $add_classes . '" id="' . $add_id . '">';
+	$html .= '<div class="checkout-countdown-content">';
+	$html .= $loading_dots;
+	$html .= '</div>';
+	$html .= '</div>';
 
 	return $html;
 }

@@ -2020,7 +2020,7 @@ class Tribe__Tickets_Plus__Commerce__WooCommerce__Main extends Tribe__Tickets_Pl
 		] );
 
 		foreach ( $considered_incomplete as &$incomplete ) {
-			$incomplete = '"' . $incomplete . '"';
+			$incomplete = "'" . $incomplete . "'";
 		}
 
 		return implode( ', ', $considered_incomplete );

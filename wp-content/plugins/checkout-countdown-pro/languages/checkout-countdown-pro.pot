@@ -27,107 +27,107 @@ msgstr ""
 msgid "Click here to enter your license key for %s to get security updates."
 msgstr ""
 
-#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:121, dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:188
+#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:121, dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:191
 msgid "Enter Your License"
 msgstr ""
 
-#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:122, dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:189
+#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:122, dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:192
 msgid "Activate License"
 msgstr ""
 
-#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:144
+#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:145
 msgid "Change License"
 msgstr ""
 
-#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:152
+#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:153
 msgid "Beta Opt-in"
 msgstr ""
 
-#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:149
+#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:150
 msgid "Beta Opt-out"
 msgstr ""
 
-#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:156
+#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:157
 msgid "Check Expiry Date"
 msgstr ""
 
-#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:157
+#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:158
 msgid "Deactivate License"
 msgstr ""
 
-#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:186
+#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:189
 msgid "Almost done - Activate license to make %s properly work on your site"
 msgstr ""
 
-#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:225, dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:282
+#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:228, dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:285
 msgid "Something went wrong"
 msgstr ""
 
-#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:237
+#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:240
 msgid "You have disabled beta updates."
 msgstr ""
 
-#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:234
+#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:237
 msgid "You enabled beta updates. Warning beta updates are for testing purposes only. "
 msgstr ""
 
-#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:250
+#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:253
 msgid "License successfully activated"
 msgstr ""
 
-#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:258
+#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:261
 msgid "License deactivated for this site"
 msgstr ""
 
-#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:275
+#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:278
 msgid "You entered the same license, use another one."
 msgstr ""
 
-#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:271
+#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:274
 msgid "License Successfully Changed."
 msgstr ""
 
-#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:329
+#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:332
 msgid "Your license key expired on %s."
 msgstr ""
 
-#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:336
+#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:339
 msgid "Your license key has been disabled."
 msgstr ""
 
-#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:341
+#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:344
 msgid "Invalid license."
 msgstr ""
 
-#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:347
+#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:350
 msgid "Your license is not active for this URL."
 msgstr ""
 
-#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:352
+#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:355
 msgid "This appears to be an invalid license key for %s."
 msgstr ""
 
-#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:315, dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:399, dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:438, dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:507
+#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:318, dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:402, dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:441, dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:510
 msgid "An error occurred, please try again."
 msgstr ""
 
-#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:452
+#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:455
 msgid "Invalid license key"
 msgstr ""
 
-#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:450
+#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:453
 msgid "license has been disabled."
 msgstr ""
 
-#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:448
+#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:451
 msgid "License expired on: "
 msgstr ""
 
-#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:446
+#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:449
 msgid "License expiry: "
 msgstr ""
 
-#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:460
+#: dist/checkout-countdown-pro/premium/components/edd-client/edd-client.php:463
 msgid "Need help?"
 msgstr ""
 

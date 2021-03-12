@@ -5,7 +5,7 @@
  */
 function ccfwoo_core_enqueue_scripts() {
 
-	wp_enqueue_style( 'ccfwoo-style', plugin_dir_url( __FILE__ ) . '../assets/checkout-countdown.min.css', array(), '3.1.1' );
+	wp_enqueue_style( 'ccfwoo-style', plugin_dir_url( __FILE__ ) . '../assets/checkout-countdown.min.css', array(), '3.1.3' );
 
 	if ( ccfwoo_get_option( 'bar_position', false, 'top' ) === 'top' ) {
 		$position = 'position: relative;';
@@ -28,7 +28,7 @@ function ccfwoo_core_enqueue_scripts() {
 	 wp_add_inline_style( 'ccfwoo-style', $inline_css );
 
 	// Load Javascript and Access settings as variables.
-	wp_enqueue_script( 'ccfwoo-countdown', plugin_dir_url( __FILE__ ) . '../assets/checkout-countdown.min.js', array(), '3.1.1', true );
+	wp_enqueue_script( 'ccfwoo-countdown', plugin_dir_url( __FILE__ ) . '../assets/checkout-countdown.min.js', array(), '3.1.3', true );
 
 	$countdown_text = sprintf(
 		/* translators: %s: is the countdown text. */

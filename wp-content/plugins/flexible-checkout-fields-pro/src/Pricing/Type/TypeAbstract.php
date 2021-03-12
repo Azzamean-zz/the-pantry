@@ -82,8 +82,8 @@ abstract class TypeAbstract implements TypeInterface {
 	public function get_percentage_of_fee_net_value( float $base_price ): float {
 		if ( $this->get_option_data()['value'] < 0 ) {
 			$totals      = \WC()->cart->get_totals();
-			$total_net   = ( $totals['cart_contents_total'] + ( ( $totals['shipping_tax'] > 0 ) ? $totals['shipping_total'] : 0 ) );
-			$total_taxes = ( $totals['cart_contents_tax'] + $totals['shipping_tax'] );
+			$total_net   = ( $totals['cart_contents_total'] + $totals['shipping_total'] );
+			$total_taxes = ( $totals['cart_contents_tax'] + $this->get_taxes_for_shipping( $totals ) );
 			$fees_net    = $this->get_nontaxable_fees_net();
 			$fees_taxes  = $this->get_nontaxable_fees_taxes();
 			return ( ( $total_net + $fees_net ) / ( $total_net + $fees_net + $total_taxes + $fees_taxes ) );
@@ -93,6 +93,26 @@ abstract class TypeAbstract implements TypeInterface {
 			return ( $base_price / ( $base_price + $tax_value ) );
 		}
 		return 1;
+	}
+
+	/**
+	 * Calculates amount of taxes for shipping.
+	 *
+	 * @param array $totals All calculated totals for Cart.
+	 *
+	 * @return float Taxes value for shipping.
+	 */
+	private function get_taxes_for_shipping( array $totals ): float {
+		if ( $totals['shipping_tax'] > 0 ) {
+			return $totals['shipping_tax'];
+		}
+
+		$tax_class = get_option( 'woocommerce_shipping_tax_class' );
+		if ( ( $tax_class === 'inherit' ) && ( $cart = \WC()->cart->get_cart() ) ) {
+			$tax_class = reset( $cart )['data']->get_tax_class();
+		}
+		$tax_rates = \WC_Tax::get_rates( $tax_class, \WC()->customer );
+		return array_sum( \WC_Tax::calc_tax( $totals['shipping_total'], $tax_rates, false ) );
 	}
 
 	/**

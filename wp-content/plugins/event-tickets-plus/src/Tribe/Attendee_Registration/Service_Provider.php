@@ -78,6 +78,12 @@ class Service_Provider extends tad_DI52_ServiceProvider {
 		add_action( 'edd_purchase_form_before_submit', $this->container->callback( 'tickets-plus.attendee-registration.iac.hooks', 'enable_override_meta' ), 9 );
 		add_action( 'woocommerce_checkout_before_order_review', $this->container->callback( 'tickets-plus.attendee-registration.iac.hooks', 'enable_override_meta' ), 9 );
 
+		// Maybe add ARF data attributes to the ticket in the tickets block.
+		add_filter( 'tribe_tickets_block_ticket_html_attributes', $this->container->callback( 'tickets-plus.attendee-registration.fields', 'maybe_add_html_attribute_to_ticket' ), 10, 2 );
+
+		// Maybe add IAC data attributes to the ticket in the tickets block.
+		add_filter( 'tribe_tickets_block_ticket_html_attributes', $this->container->callback( 'tickets-plus.attendee-registration.iac.hooks', 'maybe_add_html_attribute_to_ticket' ), 10, 2 );
+
 		// Handle IAC integration.
 		add_filter( 'tribe_tickets_plus_ticket_has_meta_enabled', $this->container->callback( 'tickets-plus.attendee-registration.iac.hooks', 'filter_tribe_tickets_plus_ticket_has_meta_enabled' ), 10, 2 );
 		add_filter( 'event_tickets_plus_meta_fields_by_ticket', $this->container->callback( 'tickets-plus.attendee-registration.iac.hooks', 'filter_event_tickets_plus_meta_fields_by_ticket' ), 10, 2 );

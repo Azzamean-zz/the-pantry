@@ -1,10 +1,10 @@
-/* global tribe */
+/* global tribe, JSON, jQuery */
 /**
  * Makes sure we have all the required levels on the Tribe Object
  *
  * @since 5.1.0
  *
- * @type   {PlainObject}
+ * @type   {Object}
  */
 tribe.tickets = tribe.tickets || {};
 
@@ -13,7 +13,7 @@ tribe.tickets = tribe.tickets || {};
  *
  * @since 5.1.0
  *
- * @type   {PlainObject}
+ * @type   {Object}
  */
 tribe.tickets.data = {};
 
@@ -22,8 +22,8 @@ tribe.tickets.data = {};
  *
  * @since 5.1.0
  *
- * @param  {PlainObject} $   jQuery
- * @param  {PlainObject} obj tribe.tickets.data
+ * @param  {Object} $   jQuery
+ * @param  {Object} obj tribe.tickets.data
  *
  * @return {void}
  */
@@ -48,12 +48,12 @@ tribe.tickets.data = {};
 
 		sessionStorage.setItem(
 			'tribe_tickets_attendees-' + postId,
-			window.JSON.stringify( meta )
+			JSON.stringify( meta )
 		);
 
 		sessionStorage.setItem(
 			'tribe_tickets_cart-' + postId,
-			window.JSON.stringify( tickets )
+			JSON.stringify( tickets )
 		);
 	};
 
@@ -64,7 +64,7 @@ tribe.tickets.data = {};
 	 *
 	 * @param {jQuery} $items The jQuery object of the items.
 	 *
-	 * @returns {object} Meta data object.
+	 * @returns {Object} Meta data object.
 	 */
 	obj.getMetaForSave = function( $items ) {
 		const meta = [];
@@ -154,8 +154,8 @@ tribe.tickets.data = {};
 	 */
 	obj.getLocal = function( eventId ) {
 		const postId = eventId || tribe.tickets.utils.getTicketsPostId();
-		const meta = window.JSON.parse( sessionStorage.getItem( 'tribe_tickets_attendees-' + postId ) );
-		const tickets = window.JSON.parse( sessionStorage.getItem( 'tribe_tickets_cart-' + postId ) );
+		const meta = JSON.parse( sessionStorage.getItem( 'tribe_tickets_attendees-' + postId ) );
+		const tickets = JSON.parse( sessionStorage.getItem( 'tribe_tickets_cart-' + postId ) );
 		const ret = {};
 		ret.meta = meta;
 		ret.tickets = tickets;
@@ -192,7 +192,7 @@ tribe.tickets.data = {};
 		ret.tickets = {};
 		const deferred = $.Deferred();
 		const postId = eventId || tribe.tickets.utils.getTicketsPostId();
-		const meta = window.JSON.parse( sessionStorage.getItem( 'tribe_tickets_attendees-' + postId ) );
+		const meta = JSON.parse( sessionStorage.getItem( 'tribe_tickets_attendees-' + postId ) );
 
 		if ( null !== meta ) {
 			ret.meta = meta;
@@ -200,7 +200,7 @@ tribe.tickets.data = {};
 
 		// If we haven't reloaded the page, assume the cart hasn't changed since we did.
 		if ( ! pageLoad ) {
-			const tickets = window.JSON.parse( sessionStorage.getItem( 'tribe_tickets_cart-' + postId ) );
+			const tickets = JSON.parse( sessionStorage.getItem( 'tribe_tickets_cart-' + postId ) );
 
 			if ( null !== tickets && tickets.length ) {
 				ret.tickets = tickets;
@@ -224,13 +224,13 @@ tribe.tickets.data = {};
 					if ( null === meta ) {
 						sessionStorage.setItem(
 							'tribe_tickets_attendees-' + postId,
-							window.JSON.stringify( data.meta )
+							JSON.stringify( data.meta )
 						);
 					}
 
 					sessionStorage.setItem(
 						'tribe_tickets_cart-' + postId, // @todo: review this and how to get it from the container data.
-						window.JSON.stringify( data.tickets )
+						JSON.stringify( data.tickets )
 					);
 
 					ret = {
@@ -282,5 +282,5 @@ tribe.tickets.data = {};
 	};
 
 	// Configure on document ready.
-	$document.ready( obj.ready );
+	$( obj.ready );
 } )( jQuery, tribe.tickets.data );

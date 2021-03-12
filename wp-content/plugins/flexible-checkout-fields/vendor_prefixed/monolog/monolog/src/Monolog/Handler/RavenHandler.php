@@ -36,7 +36,7 @@ class RavenHandler extends \FcfVendor\Monolog\Handler\AbstractProcessingHandler
      */
     protected $ravenClient;
     /**
-     * @var LineFormatter The formatter to use for the logs generated via handleBatch()
+     * @var FormatterInterface The formatter to use for the logs generated via handleBatch()
      */
     protected $batchFormatter;
     /**

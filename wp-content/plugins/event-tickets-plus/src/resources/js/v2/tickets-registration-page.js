@@ -1,10 +1,10 @@
-/* global tribe */
+/* global tribe, jQuery */
 /**
  * Makes sure we have all the required levels on the Tribe Object
  *
  * @since 5.1.0
  *
- * @type {PlainObject}
+ * @type {Object}
  */
 tribe.tickets = tribe.tickets || {};
 
@@ -13,7 +13,7 @@ tribe.tickets = tribe.tickets || {};
  *
  * @since 5.1.0
  *
- * @type {PlainObject}
+ * @type {Object}
  */
 tribe.tickets.registration = {};
 
@@ -22,8 +22,8 @@ tribe.tickets.registration = {};
  *
  * @since 5.1.0
  *
- * @param  {PlainObject} $ jQuery
- * @param  {PlainObject} obj obj
+ * @param  {Object} $ jQuery
+ * @param  {Object} obj obj
  *
  * @return {void}
  */
@@ -468,6 +468,6 @@ tribe.tickets.registration = {};
 	};
 
 	// Configure on document ready.
-	$document.ready( obj.ready );
+	$( obj.ready );
 } )( jQuery, tribe.tickets.registration );
 /* eslint-enable max-len */

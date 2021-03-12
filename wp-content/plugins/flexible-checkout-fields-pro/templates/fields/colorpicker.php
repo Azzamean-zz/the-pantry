@@ -21,15 +21,19 @@ if ( ! empty( $args['custom_attributes'] ) && is_array( $args['custom_attributes
     }
 }
 ?>
-<p class="form-row form-colorpicker <?php echo implode( ' ', $args['class'] ); ?>" id="<?php echo $key; ?>_field" data-priotiry="<?php echo $args['priority']; ?>">
-    <label for="<?php echo $key; ?>"><?php echo wp_kses( $args['label'], '' );?> <?php echo $required; ?></label>
+<p class="form-row form-colorpicker <?php echo esc_attr( implode( ' ', $args['class'] ) ); ?>"
+   id="<?php echo $key; ?>_field"
+   data-priotiry="<?php echo $args['priority']; ?>">
+    <label for="<?php echo $key; ?>">
+		<?php echo wp_kses( $args['label'], '' );?> <?php echo $required; ?>
+	</label>
 	<input
 		type="text"
 	    class="input-text load-colorpicker"
 	    name="<?php echo $key; ?>"
 	    id="<?php echo $key; ?>"
-	    placeholder="<?php echo $args['placeholder']; ?>"
-	    value="<?php echo $value; ?>"
+	    placeholder="<?php echo esc_attr( $args['placeholder'] ); ?>"
+	    value="<?php echo esc_attr( $value ); ?>"
 		<?php echo empty( $custom_attributes ) ? '' : implode( ' ', $custom_attributes ); ?>
 	/>
 </p>

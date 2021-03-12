@@ -3,7 +3,9 @@
 /**
  * Class Flexible_Checkout_Fields_Pro_Types
  */
-class Flexible_Checkout_Fields_Pro_Types {
+class Flexible_Checkout_Fields_Pro_Types implements \FCFProVendor\WPDesk\PluginBuilder\Plugin\HookablePluginDependant {
+
+	use \FCFProVendor\WPDesk\PluginBuilder\Plugin\PluginAccess;
 
 	/**
 	 * Plugin.
@@ -18,16 +20,19 @@ class Flexible_Checkout_Fields_Pro_Types {
 	 * @param Flexible_Checkout_Fields_Pro_Plugin $plugin Plugin.
 	 */
 	public function __construct( $plugin ) {
-
 		$this->plugin = $plugin;
+	}
 
+	/**
+	 * Fires hooks
+	 */
+	public function hooks() {
 		add_filter( 'woocommerce_form_field_datepicker', array( $this, 'inspire_checkout_field_datepicker' ), 999, 4 );
 		add_filter( 'woocommerce_form_field_colorpicker', array( $this, 'inspire_checkout_field_colorpicker' ), 999, 4 );
 		add_filter( 'woocommerce_form_field_timepicker', array( $this, 'inspire_checkout_field_timepicker' ), 999, 4 );
 		add_filter( 'woocommerce_form_field_heading', array( $this, 'inspire_checkout_field_heading' ), 999, 4 );
 		add_filter( 'woocommerce_form_field_info', array( $this, 'inspire_checkout_field_info' ), 999, 4 );
 		add_filter( 'woocommerce_form_field_inspirecheckbox', array( $this, 'inspire_checkout_field_inspirecheckbox' ), 999, 4 );
-
 	}
 
 	public function get_settings() {

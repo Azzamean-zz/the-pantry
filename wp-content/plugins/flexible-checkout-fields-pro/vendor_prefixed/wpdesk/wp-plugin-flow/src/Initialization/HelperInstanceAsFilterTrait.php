@@ -19,7 +19,7 @@ trait HelperInstanceAsFilterTrait
      */
     private function get_helper_version()
     {
-        return 4;
+        return 5;
     }
     /**
      * Returns filter action name for helper instance

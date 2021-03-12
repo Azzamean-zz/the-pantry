@@ -3,8 +3,8 @@
 Contributors: theeventscalendar, brianjessee, camwynsp, paulkim, sc0ttkclark, aguseo, bordoni, borkweb, GeoffBel, geoffgraham, jentheo, leahkoerper, lucatume, neillmcshea, patriciahillebrandt, tribecari, vicskf, zbtirrell, juanfra
 Tags: events, WooCommerce, WooTickets, add-on, ticket sales, tickets, calendar, community, registration, api, dates, date, posts, workshop, conference, meeting, seminar, concert, summit, The Events Calendar, Events Calendar PRO, ticket integration, event ticketing, RSVP, EDD, Easy Digital Downloads
 Requires at least: 4.9.14
-Tested up to: 5.6.0
-Stable tag: 5.2.0
+Tested up to: 5.7.0
+Stable tag: 5.2.1
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -134,6 +134,15 @@ Our Premium Plugins:
 * <a href="https://evnt.is/fa" target="_blank">The Events Calendar: Filter Bar</a>
 
 == Changelog ==
+
+= [5.2.1] 2021-03-04 =
+
+* Fix - Compatibility with WordPress 5.7 and jQuery 3.5.X [ETP-626]
+* Fix - Attendees will no longer have a new user created (if they did not already exist), which was introduced in Event Tickets Plus 5.2.0. To turn this on, you can simply add the filter `add_filter( 'tribe_tickets_attendee_create_user_from_email', '__return_true' );`
+* Fix - Removed the 'Edit' column from the Attendees Report export CSV file. [ETP-652]
+* Tweak - Add filter `tribe_tickets_modal_show_if_no_ticket_with_ar_in_cart` you can return false on to skip the Attendee Registration Modal if no tickets with Attendee Registration fields are in cart. [ETP-516]
+* Tweak - Tweaked incomplete order status queries for MySQL 8+ compatibility in the WooCommerce integration. [ETP-669]
+* Language - 0 new strings added, 30 updated, 0 fuzzied, and 0 obsoleted
 
 = [5.2.0] 2021-02-16 =
 

@@ -22,9 +22,9 @@ if ( ! empty( $args['custom_attributes'] ) && is_array( $args['custom_attributes
 	}
 }
 ?>
-<p class="form-row form-file <?php echo implode( ' ', $args['class'] ) ?>" id="<?php echo $key; ?>_field" data-priotiry="<?php echo $args['priority']; ?>">
+<p class="form-row form-file <?php echo esc_attr( implode( ' ', $args['class'] ) ) ?>" id="<?php echo $key; ?>_field" data-priotiry="<?php echo $args['priority']; ?>">
 	<label for="<?php echo $key; ?>"><?php echo wp_kses( $args['label'], '' ); ?> <?php echo $required; ?></label>
-	<input type="text" style="display:none;" class="inspire-file" name="<?php echo $key; ?>" id="<?php echo $key; ?>" placeholder="<?php echo $args['placeholder']; ?>" value="<?php echo $value; ?>" />
+	<input type="text" style="display:none;" class="inspire-file" name="<?php echo $key; ?>" id="<?php echo $key; ?>" placeholder="<?php echo esc_attr( $args['placeholder'] ); ?>" value="<?php echo $value; ?>" />
 	<input type="file" field_name="<?php echo $key; ?>" style="display:none;" class="inspire-file-file" name="<?php echo $key; ?>_file" id="<?php echo $key; ?>_file" value="<?php echo $value; ?>"
 	<?php echo empty( $custom_attributes ) ? '' : implode( ' ', $custom_attributes ); ?>
 	'/>

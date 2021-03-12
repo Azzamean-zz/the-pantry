@@ -15,28 +15,6 @@ document.addEventListener('DOMContentLoaded', function () {
 		window.ccfwooController.restartInterval();
 	}
 
-	// Restart countdown when add to cart button is click. 
-	// fallback for when WC bypasses other checks when redirecting to checkout.
-	if (ccfwooPro.reset_add_to_cart === 'on' && window.ccfwooController.hasCart()) {
-
-		// All added to cart buttons on singe products & archive/shop pages
-		const addToCartButtons = document.querySelectorAll('button.single_add_to_cart_button, .add_to_cart_button');
-
-		if (addToCartButtons) {
-
-			for (let i = 0; i < addToCartButtons.length; i++) {
-				addToCartButtons[i].addEventListener('click', function (event) {
-					if (event.target.disabled || event.target.classList.contains('disabled')) {
-						// Button is disabled. Don't do anything.
-					} else {
-						window.ccfwooController.restartInterval();
-					}
-
-				});
-			}
-		}
-	}
-
 });
 
 /*

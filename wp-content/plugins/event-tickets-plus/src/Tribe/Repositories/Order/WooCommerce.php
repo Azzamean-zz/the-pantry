@@ -72,7 +72,7 @@ class WooCommerce extends Order {
 		$first_name        = Arr::get( $order_data, 'first_name' );
 		$last_name         = Arr::get( $order_data, 'last_name' );
 		$user_id           = (int) Arr::get( $order_data, 'user_id', 0 );
-		$create_user       = (bool) Arr::get( $order_data, 'create_user', true );
+		$create_user       = (bool) Arr::get( $order_data, 'create_user', false );
 		$use_existing_user = (bool) Arr::get( $order_data, 'use_existing_user', true );
 		$send_emails       = (bool) Arr::get( $order_data, 'send_emails', false );
 		$order_status      = Arr::get( $order_data, 'order_status', 'completed' );

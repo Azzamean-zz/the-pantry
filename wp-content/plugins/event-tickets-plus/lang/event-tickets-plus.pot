@@ -2,18 +2,18 @@
 # This file is distributed under the same license as the Event Tickets Plus package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Event Tickets Plus 5.2.0\n"
+"Project-Id-Version: Event Tickets Plus 5.2.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/event-tickets-"
 "plus\n"
-"POT-Creation-Date: 2021-02-11 06:11:34+00:00\n"
+"POT-Creation-Date: 2021-03-02 12:51:54+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2021-02-11 06:11\n"
+"PO-Revision-Date: 2021-03-02 12:51\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 
-#. #-#-#-#-#  event-tickets-plus.pot (Event Tickets Plus 5.2.0)  #-#-#-#-#
+#. #-#-#-#-#  event-tickets-plus.pot (Event Tickets Plus 5.2.1)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
 #: event-tickets-plus.php:57 src/Tribe/Main.php:429
 msgid "Event Tickets Plus"
@@ -108,14 +108,14 @@ msgid "Optional"
 msgstr ""
 
 #: src/Tribe/Attendee_Registration/IAC.php:274
-#: src/admin-views/manual-attendees/fields/name.php:43
+#: src/admin-views/manual-attendees/fields/name.php:44
 msgid "Name"
 msgstr ""
 
 #: src/Tribe/Attendee_Registration/IAC.php:288
 #: src/Tribe/Commerce/EDD/Orders/Table.php:128
 #: src/Tribe/Commerce/WooCommerce/Orders/Table.php:120
-#: src/admin-views/manual-attendees/fields/email.php:43
+#: src/admin-views/manual-attendees/fields/email.php:44
 msgid "Email"
 msgstr ""
 
@@ -526,34 +526,34 @@ msgstr ""
 msgid "Require users to log in before they purchase tickets"
 msgstr ""
 
-#: src/Tribe/Manual_Attendees/Hooks.php:44
+#: src/Tribe/Manual_Attendees/Hooks.php:54
 msgctxt "row action"
 msgid "Edit Attendee"
 msgstr ""
 
-#: src/Tribe/Manual_Attendees/Hooks.php:50
-#: src/Tribe/Manual_Attendees/Hooks.php:118
+#: src/Tribe/Manual_Attendees/Hooks.php:60
+#: src/Tribe/Manual_Attendees/Hooks.php:154
 msgctxt "modal title"
 msgid "Edit Attendee Info"
 msgstr ""
 
-#: src/Tribe/Manual_Attendees/Hooks.php:78
+#: src/Tribe/Manual_Attendees/Hooks.php:103
 msgctxt "attendee table edit column header"
 msgid "Edit"
 msgstr ""
 
-#: src/Tribe/Manual_Attendees/Hooks.php:108
+#: src/Tribe/Manual_Attendees/Hooks.php:144
 msgctxt "edit attendee button"
 msgid "Edit Attendee"
 msgstr ""
 
-#: src/Tribe/Manual_Attendees/Hooks.php:159
 #: src/Tribe/Manual_Attendees/Hooks.php:200
+#: src/Tribe/Manual_Attendees/Hooks.php:246
 msgctxt "Add new attendee modal title"
 msgid "Add Attendee"
 msgstr ""
 
-#: src/Tribe/Manual_Attendees/Hooks.php:196
+#: src/Tribe/Manual_Attendees/Hooks.php:242
 msgctxt "Add new attendee button for report page heading"
 msgid "Add New"
 msgstr ""
@@ -561,7 +561,7 @@ msgstr ""
 #: src/Tribe/Manual_Attendees/Modal.php:82
 #: src/Tribe/Manual_Attendees/Modal.php:142
 #: src/Tribe/Manual_Attendees/Modal.php:151
-#: src/admin-views/manual-attendees/add/buttons.php:40
+#: src/admin-views/manual-attendees/add/buttons.php:43
 msgid "Add Attendee"
 msgstr ""
 
@@ -570,27 +570,27 @@ msgctxt "Add Attendee button for Attendee list"
 msgid "+ Add Attendee"
 msgstr ""
 
-#: src/Tribe/Manual_Attendees/View.php:90
+#: src/Tribe/Manual_Attendees/View.php:94
 msgid "Invalid ticket set, please try again."
 msgstr ""
 
-#: src/Tribe/Manual_Attendees/View.php:94
+#: src/Tribe/Manual_Attendees/View.php:98
 msgid "Invalid ticket and attendee information provided, please try again."
 msgstr ""
 
-#: src/Tribe/Manual_Attendees/View.php:105
+#: src/Tribe/Manual_Attendees/View.php:109
 msgid "You must provide an Attendee name and email address, please try again."
 msgstr ""
 
-#: src/Tribe/Manual_Attendees/View.php:123
+#: src/Tribe/Manual_Attendees/View.php:127
 msgid "Invalid attendee set, please try again."
 msgstr ""
 
-#: src/Tribe/Manual_Attendees/View.php:130
+#: src/Tribe/Manual_Attendees/View.php:134
 msgid "Unable to update this attendee, please try again."
 msgstr ""
 
-#: src/Tribe/Manual_Attendees/View.php:140
+#: src/Tribe/Manual_Attendees/View.php:144
 msgid "Unable to create this attendee, please try again."
 msgstr ""
 
@@ -1131,69 +1131,69 @@ msgstr ""
 
 #. translators: %1$s: opening <strong> tag. %2$s: formatted quantity remaining.
 #. %3$s: closing </strong> tag.
-#: src/admin-views/manual-attendees/add/availability.php:41
+#: src/admin-views/manual-attendees/add/availability.php:45
 msgctxt "ticket stock message (remaining stock)"
 msgid "Remaining: %1$s %2$s %3$s"
 msgstr ""
 
-#: src/admin-views/manual-attendees/add/message-full.php:50
+#: src/admin-views/manual-attendees/add/message-full.php:53
 msgid ""
 "You can still proceed, but adding this attendee will overbook your ticket."
 msgstr ""
 
-#: src/admin-views/manual-attendees/add/message-price.php:36
+#: src/admin-views/manual-attendees/add/message-price.php:39
 msgid ""
 "When assigning or reassigning a ticket to an attendee: the attendee will "
 "receive the ticket at a $0 fee - regardless of the ticket's cost."
 msgstr ""
 
-#: src/admin-views/manual-attendees/add/success.php:38
+#: src/admin-views/manual-attendees/add/success.php:41
 msgid "New attendee has been added for this event."
 msgstr ""
 
-#: src/admin-views/manual-attendees/add/success.php:39
-#: src/admin-views/manual-attendees/edit/success.php:39
+#: src/admin-views/manual-attendees/add/success.php:42
+#: src/admin-views/manual-attendees/edit/success.php:42
 msgid ""
 "This page will refresh automatically. Do not leave or manually refresh this "
 "page."
 msgstr ""
 
-#: src/admin-views/manual-attendees/add/ticket-select.php:45
-#: src/admin-views/manual-attendees/add/ticket-select.php:53
+#: src/admin-views/manual-attendees/add/ticket-select.php:47
+#: src/admin-views/manual-attendees/add/ticket-select.php:55
 msgid "Select a ticket"
 msgstr ""
 
-#: src/admin-views/manual-attendees/edit/buttons.php:40
+#: src/admin-views/manual-attendees/edit/buttons.php:43
 msgid "Update Attendee"
 msgstr ""
 
-#: src/admin-views/manual-attendees/edit/success.php:38
+#: src/admin-views/manual-attendees/edit/success.php:41
 msgid "The attendee information has been edited."
 msgstr ""
 
-#: src/admin-views/manual-attendees/fields/email-resend.php:43
+#: src/admin-views/manual-attendees/fields/email-resend.php:46
 msgid "Re-send RSVP email"
 msgstr ""
 
-#: src/admin-views/manual-attendees/fields/email-resend.php:43
+#: src/admin-views/manual-attendees/fields/email-resend.php:46
 #: src/views/v2/iac/my-tickets/resend-email-template.php:45
 msgid "Re-send ticket email"
 msgstr ""
 
-#: src/admin-views/manual-attendees/fields/email.php:43
-#: src/admin-views/manual-attendees/fields/name.php:43
+#: src/admin-views/manual-attendees/fields/email.php:44
+#: src/admin-views/manual-attendees/fields/name.php:44
 msgid "required"
 msgstr ""
 
-#: src/admin-views/manual-attendees/fields/email.php:54
+#: src/admin-views/manual-attendees/fields/email.php:55
 msgid "attendee@email.com"
 msgstr ""
 
-#: src/admin-views/manual-attendees/fields/name.php:54
+#: src/admin-views/manual-attendees/fields/name.php:55
 msgid "Attendee Name"
 msgstr ""
 
-#: src/admin-views/manual-attendees/message-error.php:43
+#: src/admin-views/manual-attendees/message-error.php:46
 msgctxt "Note about missing required fields, in the manual attendees form."
 msgid "You have field(s) that require information."
 msgstr ""

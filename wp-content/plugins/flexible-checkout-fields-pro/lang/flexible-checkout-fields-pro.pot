@@ -1,759 +1,652 @@
+# Copyright (C) 2021 WP Desk
+# This file is distributed under the same license as the Flexible Checkout Fields PRO plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Flexible Checkout Fields PRO\n"
-"Report-Msgid-Bugs-To: \n"
-"Last-Translator: Grzegorz Rola <grola@wpdesk.pl>\n"
-"Language-Team: Maciej Swoboda <maciej.swoboda@gmail.com>\n"
+"Project-Id-Version: Flexible Checkout Fields PRO 3.0.3\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/flexible-checkout-fields-pro\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2020-11-02T15:51:47+00:00\n"
-"PO-Revision-Date: 2020-11-02T15:51:47+00:00\n"
-"Language: \n"
-"X-Poedit-Basepath: ..\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPathExcluded-0: *.js\n"
-"X-Poedit-WPHeader: flexible-checkout-fields-pro.php\n"
+"POT-Creation-Date: 2021-03-11T15:54:02+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.4.0\n"
+"X-Domain: flexible-checkout-fields-pro\n"
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/field/datepicker/validation.php:38
+#. Plugin Name of the plugin
+msgid "Flexible Checkout Fields PRO"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "https://www.wpdesk.net/products/flexible-checkout-fields-pro-woocommerce/"
+msgstr ""
+
+#. Description of the plugin
+msgid "Extension to the free version. Adds new field types, custom sections and more."
+msgstr ""
+
+#. Author of the plugin
+msgid "WP Desk"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://www.wpdesk.net/"
+msgstr ""
+
+#. translators: %s: field label
+#: classes/field/datepicker/validation.php:38
 msgid "%s is not a valid date."
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/field/datepicker/validation.php:47
+#. translators: %s: field label
+#: classes/field/datepicker/validation.php:47
 msgid "%s is too early."
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/field/datepicker/validation.php:56
+#. translators: %s: field label
+#: classes/field/datepicker/validation.php:56
 msgid "%s is too late."
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/field/file/ajax.php:95
+#. Translators: file name.
+#: classes/field/file/ajax.php:95
 msgid "There is no field with name %s"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/field/file/ajax.php:104
+#. Translators: filename.
+#: classes/field/file/ajax.php:104
 msgid "File %s is to big!"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/field/file/ajax.php:119
+#. Translators: file type and file name.
+#: classes/field/file/ajax.php:119
 msgid "Not allowed file type %1$s for file %2$s"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/field/file/ajax.php:160
+#: classes/field/file/ajax.php:160
 msgid "File uploaded"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/field/file/field-type.php:67
+#: classes/field/file/field-type.php:67
 msgid "File Upload"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/field/file/field-type.php:69
+#. Translators: upload folder.
+#: classes/field/file/field-type.php:69
 msgid "Files will be saved to: %s"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/field/file/order-metabox.php:44
+#: classes/field/file/order-metabox.php:44
 msgid "Attachments"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/field/multi-select/views/order-field.php:40
-#: /builds/wpdesk/flexible-checkout-fields-pro/templates/fields/colorpicker.php:15
-#: /builds/wpdesk/flexible-checkout-fields-pro/templates/fields/datepicker.php:15
-#: /builds/wpdesk/flexible-checkout-fields-pro/templates/fields/file.php:15
-#: /builds/wpdesk/flexible-checkout-fields-pro/templates/fields/inspirecheckbox.php:15
-#: /builds/wpdesk/flexible-checkout-fields-pro/templates/fields/inspireradio.php:15
-#: /builds/wpdesk/flexible-checkout-fields-pro/templates/fields/multiselect.php:62
-#: /builds/wpdesk/flexible-checkout-fields-pro/templates/fields/timepicker.php:15
-msgid "Required Field"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/field/multi-select/field-type.php:55
+#: classes/field/multi-select/field-type.php:55
 msgid "Multi-select"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/views/shipping-conditional-logic/shipping-conditional-logic.php:20
-msgid "Enable Shipping Methods Logic"
+#: classes/field/multi-select/views/order-field.php:40
+#: templates/fields/colorpicker.php:15
+#: templates/fields/datepicker.php:15
+#: templates/fields/file.php:15
+#: templates/fields/inspirecheckbox.php:15
+#: templates/fields/inspireradio.php:15
+#: templates/fields/multiselect.php:66
+#: templates/fields/timepicker.php:15
+msgid "Required Field"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/views/shipping-conditional-logic/shipping-conditional-logic.php:33
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/views/settings-field-advanced.php:30
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/views/settings-field-advanced.php:186
-msgid "Show this field if"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/views/shipping-conditional-logic/shipping-conditional-logic.php:40
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/views/settings-field-advanced.php:37
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/views/settings-field-advanced.php:193
-msgid "Hide this field if"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/views/shipping-conditional-logic/shipping-conditional-logic.php:49
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/views/settings-field-advanced.php:53
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/views/settings-field-advanced.php:209
-msgid "One or more rules match (or)"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/views/shipping-conditional-logic/shipping-conditional-logic.php:59
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/views/settings-field-advanced.php:63
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/views/settings-field-advanced.php:219
-msgid "Rule #%s"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/views/shipping-conditional-logic/shipping-conditional-logic.php:62
-msgid "Shipping Zone"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/views/shipping-conditional-logic/shipping-conditional-logic.php:67
-msgid "No shipping zone selected"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/views/shipping-conditional-logic/shipping-conditional-logic.php:69
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-conditional-logic.php:75
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro-plugin.php:341
-msgid "No Shipping Zones or Global Methods"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/views/shipping-conditional-logic/shipping-conditional-logic.php:86
-msgid "Shipping Method"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/views/shipping-conditional-logic/shipping-conditional-logic.php:90
-msgid "No Shipping Method was selected"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/views/shipping-conditional-logic/shipping-conditional-logic.php:108
-msgid "Shipping Method was disabled or deleted"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/views/shipping-conditional-logic/shipping-conditional-logic.php:112
-msgid "No methods found for this zone"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/views/shipping-conditional-logic/shipping-conditional-logic.php:149
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/views/settings-field-advanced.php:146
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/views/settings-field-advanced.php:265
-msgid "Delete rule"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/views/shipping-conditional-logic/shipping-conditional-logic.php:157
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/views/settings-field-advanced.php:154
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/views/settings-field-advanced.php:273
-msgid "Add rule"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/views/settings-field-advanced.php:12
-msgid "Enable Product/Category Conditional Logic"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/views/settings-field-advanced.php:46
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/views/settings-field-advanced.php:202
-msgid "All rules match (and)"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/views/settings-field-advanced.php:74
-msgid "Cart contains"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/views/settings-field-advanced.php:87
-msgid "Product"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/views/settings-field-advanced.php:94
-msgid "Product Category"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/views/settings-field-advanced.php:112
-msgid "Select products"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/views/settings-field-advanced.php:142
-msgid "Select categories"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/views/settings-field-advanced.php:168
-msgid "Enable Fields Conditional Logic"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/views/settings-field-advanced.php:225
-msgid "Select field"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/views/settings-field-advanced.php:240
-msgid "is"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/views/settings-field-advanced.php:253
-msgid "Select value"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/views/settings-field-advanced.php:283
-msgid "When you use many types of logic, the priority will be set by order as above. <a href=\"%s\" target=\"_blank\">Read more →</a>"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/views/settings-field-java-script.php:337
-msgid "Unable to delete this field. This field is used in conditional logic on field(s): [fields]."
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/views/settings-field-java-script.php:412
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/views/settings-field-java-script.php:442
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/views/settings-field-java-script.php:483
-msgid "New Rule"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-conditional-logic.php:76
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro-plugin.php:342
-msgid "Select Shipping Zone"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-conditional-logic.php:77
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro-plugin.php:343
-msgid "Select Shipping Method"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-conditional-logic.php:78
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro-plugin.php:344
-msgid "Shipping Methods"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-conditional-logic.php:79
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro-plugin.php:345
-msgid "Shipping Zones"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-conditional-logic.php:207
-msgid "Advanced"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-conditional-logic.php:257
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-conditional-logic.php:268
-msgid "Disabled section:"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-conditional-logic.php:294
-msgid "checked"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-conditional-logic.php:295
-msgid "unchecked"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-order-metabox.php:71
-#: /builds/wpdesk/flexible-checkout-fields-pro/tests/unit/test-order-metabox.php:650
+#: classes/flexible-checkout-fields-order-metabox.php:71
+#: tests/unit/test-order-metabox.php:650
 msgid "Flexible Checkout Fields"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro-plugin.php:247
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-builder/src/Plugin/AbstractPlugin.php:198
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-helper/src/Page/SettingsPage.php:46
+#: classes/flexible-checkout-fields-pro-plugin.php:247
 msgid "Settings"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro-plugin.php:249
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-builder/src/Plugin/AbstractPlugin.php:194
+#: classes/flexible-checkout-fields-pro-plugin.php:248
 msgid "Docs"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro-plugin.php:250
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-builder/src/Plugin/AbstractPlugin.php:191
+#: classes/flexible-checkout-fields-pro-plugin.php:249
 msgid "Support"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro.php:124
+#: classes/flexible-checkout-fields-pro.php:102
 msgid "Yes"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro.php:253
+#: classes/flexible-checkout-fields-pro.php:212
 msgid "Before Customer Details"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro.php:254
+#: classes/flexible-checkout-fields-pro.php:213
 msgid "Before Customer Details Fields"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro.php:262
+#: classes/flexible-checkout-fields-pro.php:221
 msgid "After Customer Details"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro.php:263
+#: classes/flexible-checkout-fields-pro.php:222
 msgid "After Customer Details Fields"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro.php:271
+#: classes/flexible-checkout-fields-pro.php:230
 msgid "Before Billing Form"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro.php:272
+#: classes/flexible-checkout-fields-pro.php:231
 msgid "Before Billing Form Fields"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro.php:280
+#: classes/flexible-checkout-fields-pro.php:239
 msgid "After Billing Form"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro.php:281
+#: classes/flexible-checkout-fields-pro.php:240
 msgid "After Billing Form Fields"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro.php:289
+#: classes/flexible-checkout-fields-pro.php:248
 msgid "Before Shipping Form"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro.php:290
+#: classes/flexible-checkout-fields-pro.php:249
 msgid "Before Shipping Form Fields"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro.php:298
+#: classes/flexible-checkout-fields-pro.php:257
 msgid "After Shipping Form"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro.php:299
+#: classes/flexible-checkout-fields-pro.php:258
 msgid "After Shipping Form Fields"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro.php:307
+#: classes/flexible-checkout-fields-pro.php:266
 msgid "Before Registration Form"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro.php:308
+#: classes/flexible-checkout-fields-pro.php:267
 msgid "Before Registration Form Fields"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro.php:316
+#: classes/flexible-checkout-fields-pro.php:275
 msgid "After Registration Form"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro.php:317
+#: classes/flexible-checkout-fields-pro.php:276
 msgid "After Registration Form Fields"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro.php:325
+#: classes/flexible-checkout-fields-pro.php:284
 msgid "Before Order Notes"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro.php:326
+#: classes/flexible-checkout-fields-pro.php:285
 msgid "Before Order Notes Fields"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro.php:334
+#: classes/flexible-checkout-fields-pro.php:293
 msgid "After Order Notes"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro.php:335
+#: classes/flexible-checkout-fields-pro.php:294
 msgid "After Order Notes Fields"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro.php:343
+#: classes/flexible-checkout-fields-pro.php:302
 msgid "Before Submit"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro.php:344
+#: classes/flexible-checkout-fields-pro.php:303
 msgid "Before Submit Fields"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro.php:352
+#: classes/flexible-checkout-fields-pro.php:311
 msgid "After Submit"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro.php:353
+#: classes/flexible-checkout-fields-pro.php:312
 msgid "After Submit Fields"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro.php:516
-msgid "Missing Value"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro.php:571
+#: classes/flexible-checkout-fields-pro.php:474
 msgid "Checkbox"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro.php:572
+#: classes/flexible-checkout-fields-pro.php:475
+#: src/Settings/Option/LogicFieldsRulesValueOption.php:57
+#: src/Settings/Option/OptionsKeyOption.php:66
+#: src/Settings/Option/PlaceholderCheckboxOption.php:34
+#: src/Settings/Option/PricingValuesValueOption.php:54
 msgid "Value"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro.php:578
+#: classes/flexible-checkout-fields-pro.php:481
 msgid "Radio button"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro.php:585
+#: classes/flexible-checkout-fields-pro.php:488
 msgid "Select (Drop Down)"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro.php:592
+#: classes/flexible-checkout-fields-pro.php:495
 msgid "Date"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro.php:596
+#: classes/flexible-checkout-fields-pro.php:499
 msgid "Time"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro.php:600
+#: classes/flexible-checkout-fields-pro.php:503
 msgid "Color Picker"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro.php:605
+#: classes/flexible-checkout-fields-pro.php:508
 msgid "Headline"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/classes/flexible-checkout-fields-pro.php:613
+#: classes/flexible-checkout-fields-pro.php:516
 msgid "HTML"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/src/Pricing/Field/FieldAbstract.php:95
+#: classes/views/order-additional-fields.php:7
+msgid "Additional checkout fields"
+msgstr ""
+
+#: classes/views/shipping-conditional-logic/shipping-conditional-logic.php:20
+msgid "Enable Shipping Methods Logic"
+msgstr ""
+
+#: classes/views/shipping-conditional-logic/shipping-conditional-logic.php:33
+msgid "Show this field if"
+msgstr ""
+
+#: classes/views/shipping-conditional-logic/shipping-conditional-logic.php:40
+msgid "Hide this field if"
+msgstr ""
+
+#: classes/views/shipping-conditional-logic/shipping-conditional-logic.php:49
+#: src/Settings/Option/LogicFieldsGroupOperatorOption.php:77
+#: src/Settings/Option/LogicProductsGroupOperatorOption.php:77
+#: src/Settings/Option/LogicShippingGroupOperatorOption.php:76
+msgid "One or more rules match (or)"
+msgstr ""
+
+#. translators: %s: rule index
+#: classes/views/shipping-conditional-logic/shipping-conditional-logic.php:59
+#: src/Settings/Option/LogicFieldsRulesOption.php:58
+#: src/Settings/Option/LogicProductsRulesOption.php:60
+#: src/Settings/Option/LogicShippingRulesOption.php:58
+msgid "Rule #%s"
+msgstr ""
+
+#: classes/views/shipping-conditional-logic/shipping-conditional-logic.php:62
+msgid "Shipping Zone"
+msgstr ""
+
+#: classes/views/shipping-conditional-logic/shipping-conditional-logic.php:67
+msgid "No shipping zone selected"
+msgstr ""
+
+#: classes/views/shipping-conditional-logic/shipping-conditional-logic.php:69
+#: src/Settings/Route/ShippingZonesRoute.php:43
+msgid "No Shipping Zones or Global Methods"
+msgstr ""
+
+#: classes/views/shipping-conditional-logic/shipping-conditional-logic.php:86
+msgid "Shipping Method"
+msgstr ""
+
+#: classes/views/shipping-conditional-logic/shipping-conditional-logic.php:90
+msgid "No Shipping Method was selected"
+msgstr ""
+
+#: classes/views/shipping-conditional-logic/shipping-conditional-logic.php:108
+msgid "Shipping Method was disabled or deleted"
+msgstr ""
+
+#: classes/views/shipping-conditional-logic/shipping-conditional-logic.php:112
+msgid "No methods found for this zone"
+msgstr ""
+
+#: classes/views/shipping-conditional-logic/shipping-conditional-logic.php:149
+msgid "Delete rule"
+msgstr ""
+
+#: classes/views/shipping-conditional-logic/shipping-conditional-logic.php:157
+msgid "Add rule"
+msgstr ""
+
+#: src/Plugin/Compatibility.php:169
+msgid "Flexible Checkout Fields and Flexible Checkout Fields PRO plugins are not compatible with each other!"
+msgstr ""
+
+#. translators: %s: break-line char
+#: src/Plugin/Compatibility.php:189
+msgid "Update both plugins to the latest versions for trouble-free use of all functionalities. Working with plugins now comes with limitations and risks. %sWe improve both versions on a regular basis. Updating the free and PRO versions at the same time guarantees their correct operation."
+msgstr ""
+
+#. translators: %s: break-line char
+#: src/Plugin/Compatibility.php:202
+msgid "Update both plugins to the latest versions to use all the features of the PRO plugin. This plugin has now been deactivated as it is not compatible. %sWe improve both versions on a regular basis. Updating the free and PRO versions at the same time guarantees their correct operation."
+msgstr ""
+
+#: src/Plugin/Compatibility.php:236
+msgid "Flexible Checkout Fields PRO update needed!"
+msgstr ""
+
+#. translators: %s: Plugins screen URL.
+#: src/Plugin/Compatibility.php:244
+msgid "To manage plugins on your site, visit the Plugins page: %s"
+msgstr ""
+
+#. translators: %s: field label
+#: src/Pricing/Field/FieldAbstract.php:97
 msgid "Pricing options for %s"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/src/Pricing/Field/FieldIntegration.php:116
-msgid "Fixed"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/src/Pricing/Field/FieldIntegration.php:117
-msgid "Percentage of Subtotal (ex. VAT)"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/src/Pricing/Field/FieldIntegration.php:118
-msgid "Percentage of Subtotal (incl. VAT)"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/src/Pricing/Field/FieldIntegration.php:119
-msgid "Percentage of Total"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/src/Pricing/Field/FieldIntegration.php:130
-msgid "None"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/src/Pricing/Field/FieldIntegration.php:139
-msgid "Standard rates"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/src/Pricing/Type/TypeFixed.php:32
+#. translators: %$1s: price operator (+ or -), %$2s: formatted price
+#: src/Pricing/Type/TypeFixed.php:32
 msgid "(%1$s %2$s ex. VAT)"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/src/Pricing/Type/TypePercentSubtotalTaxed.php:42
+#. translators: %s: percentage value
+#: src/Pricing/Type/TypePercentSubtotalTaxed.php:42
 msgid "%s%% of Subtotal incl. VAT"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/src/Pricing/Type/TypePercentSubtotalTaxed.php:45
-#: /builds/wpdesk/flexible-checkout-fields-pro/src/Pricing/Type/TypePercentSubtotalUntaxed.php:42
+#. translators: %s: percentage value
+#: src/Pricing/Type/TypePercentSubtotalTaxed.php:45
+#: src/Pricing/Type/TypePercentSubtotalUntaxed.php:42
 msgid "%s%% of Subtotal"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/src/Pricing/Type/TypePercentSubtotalUntaxed.php:45
+#. translators: %s: percentage value
+#: src/Pricing/Type/TypePercentSubtotalUntaxed.php:45
 msgid "%s%% of Subtotal ex. VAT"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/src/Pricing/Type/TypePercentTotal.php:40
+#. translators: %s: percentage value
+#: src/Pricing/Type/TypePercentTotal.php:40
 msgid "%s%% of Total"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/src/Pricing/Settings.php:67
-msgid "Pricing"
+#: src/Settings/Option/DateFormatOption.php:54
+msgid "Date format"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/templates/fields/file.php:33
+#: src/Settings/Option/DateFormatOption.php:63
+msgid "Enter the WordPress date format."
+msgstr ""
+
+#: src/Settings/Option/DateFormatOption.php:74
+#: src/Settings/Option/FileTypesOption.php:74
+#: src/Settings/Option/LogicFieldsGroupActionOption.php:65
+#: src/Settings/Option/LogicFieldsGroupOperatorOption.php:65
+#: src/Settings/Option/LogicFieldsRulesConditionOption.php:67
+#: src/Settings/Option/LogicFieldsRulesFieldOption.php:66
+#: src/Settings/Option/LogicFieldsRulesValueOption.php:68
+#: src/Settings/Option/LogicProductsGroupActionOption.php:65
+#: src/Settings/Option/LogicProductsGroupOperatorOption.php:65
+#: src/Settings/Option/LogicProductsRulesConditionOption.php:65
+#: src/Settings/Option/LogicProductsRulesValueCatsOption.php:68
+#: src/Settings/Option/LogicProductsRulesValueProductsOption.php:68
+#: src/Settings/Option/LogicProductsRulesWhatOption.php:66
+#: src/Settings/Option/LogicShippingGroupActionOption.php:65
+#: src/Settings/Option/LogicShippingGroupOperatorOption.php:65
+#: src/Settings/Option/LogicShippingRulesMethodOption.php:67
+#: src/Settings/Option/LogicShippingRulesZoneOption.php:66
+#: src/Settings/Option/OptionsKeyOption.php:56
+#: src/Settings/Option/OptionsValueOption.php:56
+msgid "This field is required."
+msgstr ""
+
+#: src/Settings/Option/DaysAfterOption.php:54
+msgid "Days after"
+msgstr ""
+
+#: src/Settings/Option/DaysAfterOption.php:63
+msgid "Enter the range of days available in the calendar after the current date. Leave blank if the choice is not to be limited. The setting will not skip weekends and holidays."
+msgstr ""
+
+#: src/Settings/Option/DaysBeforeOption.php:54
+msgid "Days before"
+msgstr ""
+
+#: src/Settings/Option/DaysBeforeOption.php:63
+msgid "Enter the range of days available in the calendar before the current date. Leave blank if the choice is not to be limited. The setting will not skip weekends and holidays."
+msgstr ""
+
+#: src/Settings/Option/DefaultCheckboxOption.php:24
+#: src/Settings/Option/DefaultOption.php:54
+#: src/Settings/Option/DefaultOptionsOption.php:24
+msgid "Default value"
+msgstr ""
+
+#: src/Settings/Option/DefaultCheckboxOption.php:33
+msgid "Enter \"Yes\" if the checkbox is to be selected by default."
+msgstr ""
+
+#: src/Settings/Option/DefaultOptionsOption.php:33
+msgid "Enter the value of the option to be set as default."
+msgstr ""
+
+#. translators: %s: uploads path
+#: src/Settings/Option/FilesDirInfoOption.php:62
+msgid "Files will be saved to: %s. The file will not be an attachment to the confirmation email."
+msgstr ""
+
+#: src/Settings/Option/FileSizeOption.php:54
+msgid "Maximum file size in MB"
+msgstr ""
+
+#: src/Settings/Option/FileTypesOption.php:54
+msgid "Allowed file types"
+msgstr ""
+
+#: src/Settings/Option/FileTypesOption.php:63
+msgid "Separate values with comma (example: pdf,doc,jpg)."
+msgstr ""
+
+#: src/Settings/Option/LogicFieldsEnabledOption.php:54
+msgid "Enable conditional logic based on FCF fields"
+msgstr ""
+
+#: src/Settings/Option/LogicFieldsEnabledOption.php:63
+msgid "This logic supports fields with values added using FCF. Default WooCommerce fields are not taken into account."
+msgstr ""
+
+#: src/Settings/Option/LogicFieldsGroupActionOption.php:54
+#: src/Settings/Option/LogicProductsGroupActionOption.php:54
+#: src/Settings/Option/LogicShippingGroupActionOption.php:54
+msgid "What to do?"
+msgstr ""
+
+#: src/Settings/Option/LogicFieldsGroupActionOption.php:76
+#: src/Settings/Option/LogicProductsGroupActionOption.php:76
+#: src/Settings/Option/LogicShippingGroupActionOption.php:76
+msgid "Show this field"
+msgstr ""
+
+#: src/Settings/Option/LogicFieldsGroupActionOption.php:77
+#: src/Settings/Option/LogicProductsGroupActionOption.php:77
+#: src/Settings/Option/LogicShippingGroupActionOption.php:77
+msgid "Hide this field"
+msgstr ""
+
+#: src/Settings/Option/LogicFieldsGroupOperatorOption.php:54
+#: src/Settings/Option/LogicProductsGroupOperatorOption.php:54
+#: src/Settings/Option/LogicShippingGroupOperatorOption.php:54
+msgid "When to do?"
+msgstr ""
+
+#: src/Settings/Option/LogicFieldsGroupOperatorOption.php:76
+#: src/Settings/Option/LogicProductsGroupOperatorOption.php:76
+msgid "All rules match (and)"
+msgstr ""
+
+#: src/Settings/Option/LogicFieldsRulesConditionOption.php:56
+#: src/Settings/Option/LogicProductsRulesConditionOption.php:54
+msgid "Condition"
+msgstr ""
+
+#: src/Settings/Option/LogicFieldsRulesFieldOption.php:55
+msgid "Field"
+msgstr ""
+
+#. translators: %1$s: anchor opening tag, %2$s: anchor closing tag
+#: src/Settings/Option/LogicInfoOption.php:57
+msgid "You can combine rules from different logic groups. In this case the logic will work when the conditions from each of the active groups are met. %1$sRead more%2$s"
+msgstr ""
+
+#. translators:  %1$s: anchor opening tag, %2$s: anchor closing tag, %3$s: anchor opening tag, %4$s: anchor closing tag
+#: src/Settings/Option/LogicInfoWcOption.php:29
+msgid "You can combine rules from different logic groups. In this case the logic will work when the conditions from each of the active groups are met. WooCommerce forces this field to be %1$srequired%2$s. Make sure hiding is possible and will not cause a validation error. %3$sRead more%4$s"
+msgstr ""
+
+#: src/Settings/Option/LogicProductsEnabledOption.php:54
+msgid "Enable conditional logic based on product/category"
+msgstr ""
+
+#: src/Settings/Option/LogicProductsRulesConditionOption.php:76
+msgid "Cart contains"
+msgstr ""
+
+#: src/Settings/Option/LogicProductsRulesValueCatsOption.php:57
+msgid "Categories"
+msgstr ""
+
+#: src/Settings/Option/LogicProductsRulesValueProductsOption.php:57
+msgid "Products"
+msgstr ""
+
+#: src/Settings/Option/LogicProductsRulesWhatOption.php:55
+msgid "Cart item"
+msgstr ""
+
+#: src/Settings/Option/LogicProductsRulesWhatOption.php:89
+msgid "Product"
+msgstr ""
+
+#: src/Settings/Option/LogicProductsRulesWhatOption.php:90
+msgid "Product category"
+msgstr ""
+
+#: src/Settings/Option/LogicShippingEnabledOption.php:54
+msgid "Enable conditional logic based on shipping methods"
+msgstr ""
+
+#: src/Settings/Option/LogicShippingRulesMethodOption.php:56
+msgid "Shipping method"
+msgstr ""
+
+#: src/Settings/Option/LogicShippingRulesZoneOption.php:55
+msgid "Shipping zone"
+msgstr ""
+
+#: src/Settings/Option/OptionsOption.php:56
+msgid "Options"
+msgstr ""
+
+#: src/Settings/Option/OptionsOption.php:65
+msgid "Enter a value and a label for each field option. The value will not be visible in the form. The label will be visible."
+msgstr ""
+
+#. translators: %s row index
+#: src/Settings/Option/OptionsOption.php:75
+msgid "Option #%s"
+msgstr ""
+
+#: src/Settings/Option/OptionsValueOption.php:66
+msgid "Label"
+msgstr ""
+
+#: src/Settings/Option/PricingEnabledOption.php:54
+msgid "Enable pricing"
+msgstr ""
+
+#. translators: %1$s: anchor opening tag, %2$s: anchor closing tag
+#: src/Settings/Option/PricingInfoOption.php:57
+msgid "The impact on the final purchase amount depends on the selected price type and its value. %1$sRead more%2$s"
+msgstr ""
+
+#. translators: %s: option value
+#: src/Settings/Option/PricingValuesOption.php:60
+msgid "Pricing options for \"%s\""
+msgstr ""
+
+#: src/Settings/Option/PricingValuesTaxesOption.php:55
+msgid "Tax class"
+msgstr ""
+
+#: src/Settings/Option/PricingValuesTaxesOption.php:84
+msgid "Standard rates"
+msgstr ""
+
+#: src/Settings/Option/PricingValuesTypeOption.php:54
+msgid "Price basis"
+msgstr ""
+
+#: src/Settings/Option/PricingValuesTypeOption.php:64
+msgid "Fixed"
+msgstr ""
+
+#: src/Settings/Option/PricingValuesTypeOption.php:65
+msgid "Percentage of Subtotal (ex. VAT)"
+msgstr ""
+
+#: src/Settings/Option/PricingValuesTypeOption.php:66
+msgid "Percentage of Subtotal (incl. VAT)"
+msgstr ""
+
+#: src/Settings/Option/PricingValuesTypeOption.php:67
+msgid "Percentage of Total"
+msgstr ""
+
+#: src/Settings/Option/SectionCssOption.php:45
+msgid "CSS class"
+msgstr ""
+
+#: src/Settings/Option/SectionTagOption.php:45
+msgid "Section title tag"
+msgstr ""
+
+#: src/Settings/Option/SectionTitleOption.php:45
+msgid "Section title"
+msgstr ""
+
+#: src/Settings/Option/SettingSectionsOption.php:45
+msgid "Custom Sections"
+msgstr ""
+
+#: src/Settings/Option/SettingSectionsOption.php:54
+msgid "Selected sections appear as tabs in the plugin menu."
+msgstr ""
+
+#: src/Settings/Route/FieldsConditionRoute.php:74
+msgid "is"
+msgstr ""
+
+#: src/Settings/Route/FieldsValueRoute.php:46
+msgid "checked"
+msgstr ""
+
+#: src/Settings/Route/FieldsValueRoute.php:47
+msgid "unchecked"
+msgstr ""
+
+#: templates/fields/file.php:33
 msgid "Upload File"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/templates/fields/file.php:34
+#: templates/fields/file.php:34
 msgid "Remove File"
 msgstr ""
 
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-basic-requirements/src/Basic_Requirement_Checker.php:181
-msgid "The &#8220;%s&#8221; plugin cannot run on PHP versions older than %s. Please contact your host and ask them to upgrade."
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-basic-requirements/src/Basic_Requirement_Checker.php:184
-msgid "The &#8220;%s&#8221; plugin cannot run on WordPress versions older than %s. Please update WordPress."
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-basic-requirements/src/Basic_Requirement_Checker.php:187
-msgid "The &#8220;%s&#8221; plugin cannot run on WooCommerce versions older than %s. Please update WooCommerce."
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-basic-requirements/src/Basic_Requirement_Checker.php:190
-msgid "The &#8220;%s&#8221; plugin cannot run without OpenSSL module version at least %s. Please update OpenSSL module."
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-basic-requirements/src/Basic_Requirement_Checker.php:277
-msgid "The &#8220;%s&#8221; plugin requires at least %s version of %s to work correctly. Please update it"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-basic-requirements/src/Basic_Requirement_Checker.php:349
-msgid "The &#8220;%s&#8221; plugin cannot run without %s active. Please install and activate %s plugin."
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-basic-requirements/src/Basic_Requirement_Checker.php:399
-msgid "The &#8220;%s&#8221; plugin requires free %s plugin. <a href=\"%s\">Install %s →</a>"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-basic-requirements/src/Basic_Requirement_Checker.php:405
-msgid "The &#8220;%s&#8221; plugin requires activating %s plugin. <a href=\"%s\">Activate %s →</a>"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-basic-requirements/src/Basic_Requirement_Checker.php:446
-msgid "The &#8220;%s&#8221; plugin cannot run without %s php module installed. Please contact your host and ask them to install %s."
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-basic-requirements/src/Basic_Requirement_Checker.php:471
-msgid "The &#8220;%s&#8221; plugin cannot run without %s php setting set to %s. Please contact your host and ask them to set %s."
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-basic-requirements/src/Basic_Requirement_Checker_With_Update_Disable.php:29
-msgid "The &#8220;%s&#8221; plugin disables temporarily as required %s plugin is being upgraded."
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-logs/src/WP/WPCapture.php:23
-msgid "Can not enable WP Desk Debug log! Cannot create directory %s or this directory is not writeable!"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-logs/src/WP/WPCapture.php:36
-msgid "Can not enable WP Desk Debug log! Cannot create file %s!"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-logs/src/deprecated/wpdesk-logger.php:59
-msgid "Disabled"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-logs/src/deprecated/wpdesk-logger.php:59
-msgid "Emergency"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-logs/src/deprecated/wpdesk-logger.php:59
-msgid "Alert"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-logs/src/deprecated/wpdesk-logger.php:59
-msgid "Critical"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-logs/src/deprecated/wpdesk-logger.php:59
-msgid "Error"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-logs/src/deprecated/wpdesk-logger.php:59
-msgid "Warning"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-logs/src/deprecated/wpdesk-logger.php:59
-msgid "Notice"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-logs/src/deprecated/wpdesk-logger.php:59
-msgid "Info"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-logs/src/deprecated/wpdesk-logger.php:59
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-helper/src/Integration/LogsIntegration.php:36
-msgid "Debug"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-helper/src/Integration/LogsIntegration.php:37
-msgid "WP Desk Debug Log"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-helper/src/Integration/LogsIntegration.php:64
-msgid "Writes error log to %s."
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-helper/src/Integration/LogsIntegration.php:92
-msgid "WP Desk Debug Log is enabled. %1$sPlease disable it after testing%2$s."
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-helper/src/Integration/TrackerIntegration.php:51
-msgid "Plugin usage tracking"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-helper/src/Integration/TrackerIntegration.php:52
-msgid "Allow WP Desk to track plugin usage"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-helper/src/Integration/TrackerIntegration.php:76
-msgid "No sensitive data is tracked, %sread more%s."
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-helper/src/Page/LibraryDebugPage.php:29
-msgid "Library report"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-helper/src/HelperRemoveNotice.php:43
-msgid "We recommend to <a href=\"%s\">deactivate and remove</a> the \"WP Desk Helper\" plugin as it is no longer required by WP Desk plugins"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-helper/src/HelperRemoveNotice.php:56
-msgid "We recommend to <a href=\"%s\">remove</a> the \"WP Desk Helper\" plugin as it is no longer required by WP Desk plugins"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-helper/src/UpgradeSoonNotice.php:62
-msgid "The PHP version your shop is currently using is deprecated. We highly advise to upgrade it to at least %s since the support for this one will be dropped soon."
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-helper/src/UpgradeSoonNotice.php:65
-msgid "The WooCommerce version your shop is currently using is deprecated. We highly advise to upgrade it to at least %s since the support for this one will be dropped soon."
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-helper/src/UpgradeSoonNotice.php:68
-msgid "The WordPress version your shop is currently using is deprecated. We highly advise to upgrade it to at least %s since the support for this one will be dropped soon."
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-license/src/ApiManager/class-wc-api-manager-menu.php:59
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-license/src/ApiManager/class-wc-api-manager-menu.php:64
-msgid "Save Changes"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-license/src/ApiManager/class-wc-api-manager-menu.php:77
-msgid "API Key Activation"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-license/src/ApiManager/class-wc-api-manager-menu.php:78
-msgid "API Key Status"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-license/src/ApiManager/class-wc-api-manager-menu.php:79
-msgid "API Subscription Key"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-license/src/ApiManager/class-wc-api-manager-menu.php:80
-msgid "API Subscription email"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-license/src/ApiManager/class-wc-api-manager-menu.php:83
-msgid "API Key Deactivation"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-license/src/ApiManager/class-wc-api-manager-menu.php:84
-msgid "Deactivate API Key"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-license/src/ApiManager/class-wc-api-manager-menu.php:149
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-license/src/Page/License/Action/LicenseActivation.php:141
-msgid "Plugin activated. "
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-license/src/ApiManager/class-wc-api-manager-menu.php:154
-msgid "Connection failed to the API Key server. Try again later."
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-license/src/ApiManager/class-wc-api-manager-menu.php:226
-msgid "The subscription could not be deactivated. Use the Subscription Deactivation tab to manually deactivate the subscription before activating a new subscription."
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-license/src/ApiManager/class-wc-api-manager-menu.php:247
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-license/src/Page/License/Action/LicenseDeactivation.php:31
-msgid "Plugin subscription deactivated. "
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-license/src/ApiManager/class-wc-api-manager.php:144
-msgid "Subscription Activation"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-license/src/ApiManager/class-wc-api-manager.php:145
-msgid "Subscription Deactivation"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-license/src/ApiManager/class-wc-api-manager.php:209
-msgid " <a target='_blank' href='%s'>Enter a valid subscription key for automatic updates.</a>"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-license/src/ApiManager/class-wc-api-manager.php:333
-msgid "The %s%s%s API Key has not been activated, so you won't be supported and your plugin won't be updated! %sClick here%s to activate the API key and the plugin."
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-license/src/ApiManager/class-wc-api-manager.php:350
-msgid "<b>Warning!</b> You're blocking external requests which means you won't be able to get %s updates. Please add %s to %s."
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-license/src/ApiManager/class-wc-plugin-update.php:333
-msgid "The API key for %s has expired. You can reactivate or purchase a API key from your account <a href=\"%s\" target=\"_blank\">dashboard</a>."
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-license/src/ApiManager/class-wc-plugin-update.php:344
-msgid "The subscription for %s is on-hold. You can reactivate the subscription from your account <a href=\"%s\" target=\"_blank\">dashboard</a>."
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-license/src/ApiManager/class-wc-plugin-update.php:355
-msgid "The subscription for %s has been cancelled. You can renew the subscription from your account <a href=\"%s\" target=\"_blank\">dashboard</a>. A new API key will be emailed to you after your order has been completed."
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-license/src/ApiManager/class-wc-plugin-update.php:366
-msgid "The subscription for %s has expired. You can reactivate the subscription from your account <a href=\"%s\" target=\"_blank\">dashboard</a>."
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-license/src/ApiManager/class-wc-plugin-update.php:377
-msgid "The subscription for %s has been suspended. You can reactivate the subscription from your account <a href=\"%s\" target=\"_blank\">dashboard</a>."
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-license/src/ApiManager/class-wc-plugin-update.php:388
-msgid "The subscription for %s is still pending. You can check on the status of the subscription from your account <a href=\"%s\" target=\"_blank\">dashboard</a>."
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-license/src/ApiManager/class-wc-plugin-update.php:399
-msgid "The subscription for %s has been placed in the trash and will be deleted soon. You can purchase a new subscription from your account <a href=\"%s\" target=\"_blank\">dashboard</a>."
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-license/src/ApiManager/class-wc-plugin-update.php:410
-msgid "A subscription for %s could not be found. You can purchase a subscription from your account <a href=\"%s\" target=\"_blank\">dashboard</a>."
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-license/src/ApiManager/class-wc-plugin-update.php:421
-msgid "A API key for %s could not be found. Maybe you forgot to enter a API key when setting up %s, or the key was deactivated in your account. You can reactivate or purchase a subscription key from your account <a href=\"%s\" target=\"_blank\">dashboard</a>."
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-license/src/ApiManager/class-wc-plugin-update.php:432
-msgid "Download permission for %s has been revoked possibly due to a API key or subscription expiring. You can reactivate or purchase a API key from your account <a href=\"%s\" target=\"_blank\">dashboard</a>."
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-license/src/ApiManager/class-wc-plugin-update.php:443
-msgid "%s has not been activated. Go to the settings page and enter the API key and subscription email to activate %s."
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-license/src/ApiManager/class-wc-plugin-update.php:454
-msgid "You changed the subscription for %s, so you will need to enter your new API Key in the settings page. The API Key should have arrived in your email inbox, if not you can get it by logging into your account <a href=\"%s\" target=\"_blank\">dashboard</a>."
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-license/src/Page/License/Action/LicenseActivation.php:132
-msgid "Connection failed to the Subscription Key API server. Try again later."
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-license/src/Page/License/views/class-wpdesk-helper-list-table.php:27
-msgid "No WP Desk plugins found."
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-license/src/Page/License/views/class-wpdesk-helper-list-table.php:39
-msgid "Plugin"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-license/src/Page/License/views/class-wpdesk-helper-list-table.php:39
-msgid "Subscription Status"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-license/src/Page/License/views/class-wpdesk-helper-list-table.php:39
-msgid "Subscription Data"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-license/src/Page/License/views/class-wpdesk-helper-list-table.php:56
-msgid "Deactivated"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-license/src/Page/License/views/class-wpdesk-helper-list-table.php:58
-msgid "Activated"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-license/src/Page/License/views/licenses.php:37
-msgid "Get your subscription keys <a href=\"%s\" target=\"_blank\">here</a>. You can activate/deactivate API keys <strong>unlimited times on different domains</strong> as long as you have an active subscription."
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-license/src/Page/LicensePage.php:41
-msgid "Subscriptions"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/views/tracker-connect.php:15
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/views/tracker-notice.php:19
-msgid "Hey %s,"
-msgstr ""
-
-#: /builds/wpdesk/flexible-checkout-fields-pro/vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/views/tracker-deactivate.php:11
-msgid "You are deactivating %s plugin."
+#: templates/notices/compatibility-error.php:19
+msgid "Learn more"
 msgstr ""

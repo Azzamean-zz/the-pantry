@@ -40,6 +40,7 @@ Smart_Manager.prototype.init = function() {
 	this.columnsVisibilityUsed = false; // flag for handling column visibility
 	this.totalRecords = 0;
 	this.displayTotalRecords = 0;
+	this.loadedTotalRecords = 0;
 	this.hotPlugin = {}; //object containing all Handsontable plugins
 	this.gettingData = 0;
 	this.searchType = sm_beta_params.search_type;
@@ -368,7 +369,7 @@ Smart_Manager.prototype.loadNavBar = function() {
 
 
 	let sm_top_bar = '<div id="sm_top_bar" style="font-weight:400 !important;width:100%;">'+
-						'<div id="sm_top_bar_left" class="sm_beta_left" style="width:calc('+ window.smart_manager.grid_width +'px - 2em);background-color: white;padding: 0.5em 1em 1em 1em;">'+
+						'<div id="sm_top_bar_left" class="sm_beta_left" style="width:'+ window.smart_manager.grid_width +'px;background-color: white;padding: 0.5em 0em 1em 0em;">'+
 							'<div class="sm_top_bar_action_btns">'+
 								'<div id="batch_update_sm_editor_grid" title="Bulk Edit">'+
 									'<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">'+
@@ -693,12 +694,38 @@ Smart_Manager.prototype.setDashboardModel = function (response) {
 
 		//Code for rendering the columns in grid
 		window.smart_manager.formatGridColumns();
+
+		if(window.smart_manager.hotPlugin.manualColumnResizePlugin){
+			window.smart_manager.hotPlugin.manualColumnResizePlugin.manualColumnWidths = []
+		}
+		
+
 		window.smart_manager.hot.updateSettings({
 			data: window.smart_manager.currentDashboardData,
 			columns: window.smart_manager.currentVisibleColumns,
 			colHeaders: window.smart_manager.column_names,
 			forceRender: window.smart_manager.firstLoad
 		})
+
+		//Code for handling sort state management
+		if( window.smart_manager.currentDashboardModel.hasOwnProperty('sort_params') ) {
+			if( window.smart_manager.currentDashboardModel.sort_params ) {
+				if( window.smart_manager.currentDashboardModel.sort_params.hasOwnProperty('default') ) {
+					window.smart_manager.hotPlugin.columnSortPlugin.sort();
+				} else {
+					if( window.smart_manager.currentVisibleColumns.length > 0 ) {
+						for( let index in window.smart_manager.currentVisibleColumns ) {
+							if( window.smart_manager.currentVisibleColumns[index].src == window.smart_manager.currentDashboardModel.sort_params.column ) {
+								let sort_params = Object.assign({}, window.smart_manager.currentDashboardModel.sort_params);
+								sort_params.column = parseInt(index);
+								window.smart_manager.hotPlugin.columnSortPlugin.setSortConfig([sort_params]);
+								break;
+							}
+						}
+					}
+				}
+			}
+		}
 
 		if(window.smart_manager.firstLoad){
 			window.smart_manager.firstLoad = false
@@ -813,6 +840,14 @@ Smart_Manager.prototype.set_data = function(response) {
 			window.smart_manager.totalRecords = parseInt(res.total_count);
 			window.smart_manager.displayTotalRecords = ( res.hasOwnProperty('display_total_count') ) ? res.display_total_count : res.total_count;
 
+			// re-initialize the loadedTotalRecords
+			if( window.smart_manager.page == 1 ) {
+				window.smart_manager.loadedTotalRecords = 0
+			}
+
+			let loadedecordCount = (res.hasOwnProperty('loaded_total_count')) ? parseInt(res.loaded_total_count) : res.items.length
+			window.smart_manager.loadedTotalRecords += loadedecordCount
+			
 			if( window.smart_manager.page > 1 ) {
 			
 				window.smart_manager.showLoader(false);
@@ -924,7 +959,7 @@ Smart_Manager.prototype.set_data = function(response) {
 
 //Function to refresh the bottom bar of grid
 Smart_Manager.prototype.refreshBottomBar = function() {
-	let msg = ( window.smart_manager.currentDashboardData.length > 0 ) ? window.smart_manager.displayTotalRecords +" "+ window.smart_manager.dashboardDisplayName : 'No '+ window.smart_manager.dashboardDisplayName +' Found';
+	let msg = ( window.smart_manager.currentDashboardData.length > 0 ) ? window.smart_manager.loadedTotalRecords +' of '+ window.smart_manager.displayTotalRecords +' '+ window.smart_manager.dashboardDisplayName +' loaded' : 'No '+ window.smart_manager.dashboardDisplayName +' Found';
 	jQuery('#sm_bottom_bar_right #sm_beta_display_records').html(msg);
 }
 
@@ -1089,9 +1124,10 @@ Smart_Manager.prototype.formatGridColumns = function () {
 
 			let newWidth = window.smart_manager.getTextWidth(header_text,font);
 
-			if( newWidth > colWidth ) {
+			if( newWidth > colWidth && !c.width ) {
 				c.width = ( newWidth < 250 ) ? newWidth : 250;
 			}
+			c.width = Math.round(parseInt(c.width))
 			window.smart_manager.currentVisibleColumns[i] = c
 		})
 	}
@@ -1318,26 +1354,7 @@ Smart_Manager.prototype.loadGrid = function() {
 																				});
 
 	window.smart_manager.hotPlugin.columnSortPlugin = window.smart_manager.hot.getPlugin('columnSorting');
-	
-	//Code for handling sort state management
-	if( window.smart_manager.currentDashboardModel.hasOwnProperty('sort_params') ) {
-		if( window.smart_manager.currentDashboardModel.sort_params ) {
-			if( window.smart_manager.currentDashboardModel.sort_params.hasOwnProperty('default') ) {
-				window.smart_manager.hotPlugin.columnSortPlugin.sort();
-			} else {
-				if( window.smart_manager.currentVisibleColumns.length > 0 ) {
-					for( let index in window.smart_manager.currentVisibleColumns ) {
-						if( window.smart_manager.currentVisibleColumns[index].src == window.smart_manager.currentDashboardModel.sort_params.column ) {
-							let sort_params = Object.assign({}, window.smart_manager.currentDashboardModel.sort_params);
-							sort_params.column = parseInt(index);
-							window.smart_manager.hotPlugin.columnSortPlugin.setSortConfig([sort_params]);
-							break;
-						}
-					}
-				}
-			}
-		}
-	}
+	window.smart_manager.hotPlugin.manualColumnResizePlugin = window.smart_manager.hot.getPlugin('manualColumnResize')
 
 	//Code to have title for each of the column headers
 	jQuery('table.htCore').find('.colHeader').each(function() {
@@ -1834,12 +1851,7 @@ Smart_Manager.prototype.loadGrid = function() {
 						current_value = new Array();
 
 					if( current_cell_value != '' && typeof(current_cell_value) != 'undefined' && current_cell_value !== null ) {
-						current_value = current_cell_value.split(', <br>');
-						var rex = /(<([^>]+)>)/ig;
-
-						for(var i in current_value) {
-							current_value[i] = current_value[i].replace(rex , "");
-						}
+						current_value = (typeof(current_cell_value) == 'string') ? current_cell_value.split(',') : new Array(String(current_cell_value));
 					}
 
 					for (var index in actual_value) {
@@ -1848,11 +1860,12 @@ Smart_Manager.prototype.loadGrid = function() {
 
 							if (multiselect_data[index] !== undefined) {
 								if ( multiselect_data[index].hasOwnProperty('child') !== false ) {
-									multiselect_data[index].term = actual_value[index].term;    
+									multiselect_data[index].term = actual_value[index].term;
+									multiselect_data[index].id = index
 								}
 								
 							} else {
-								multiselect_data[index] = {'term' : actual_value[index].term};    
+								multiselect_data[index] = {'id': index, 'term' : actual_value[index].term};    
 							}
 
 							
@@ -1894,11 +1907,11 @@ Smart_Manager.prototype.loadGrid = function() {
 
 						var checked = '';
 
-						if (current_value != '' && current_value.indexOf(multiselect_data[index].term) != -1) {
+						if (current_value != '' && current_value.indexOf(multiselect_data[index].id) != -1) {
 							checked = 'checked';                        
 						} 
 
-						multiselect_chkbox_list += '<li> <input type="checkbox" name="chk_multiselect" value="'+ index +'" '+ checked +'>  '+ multiselect_data[index].term +'</li>';
+						multiselect_chkbox_list += '<li> <input type="checkbox" name="chk_multiselect" value="'+ multiselect_data[index].id +'" '+ checked +'>  '+ multiselect_data[index].term +'</li>';
 						
 						if (multiselect_data[index].hasOwnProperty('child') === false) continue;
 
@@ -1914,7 +1927,7 @@ Smart_Manager.prototype.loadGrid = function() {
 						childValKeys.map(function(key) {
 							var child_checked = '';
 
-							if (current_value != '' && current_value.indexOf(child_val[key]) != -1) {
+							if (current_value != '' && current_value.indexOf(key) != -1) {
 								child_checked = 'checked';                        
 							} 
 
@@ -1949,18 +1962,25 @@ Smart_Manager.prototype.loadGrid = function() {
 						for (var index in selected_val) {
 							if( actual_value.hasOwnProperty(selected_val[index]) ) {
 								if (mutiselect_edited_text != '') {
-									mutiselect_edited_text += ', <br>';
+									mutiselect_edited_text += ',';
 								}
-								mutiselect_edited_text += actual_value[selected_val[index]]['term'];
+								mutiselect_edited_text += selected_val[index];
 							}
 						}
-
-						if( mutiselect_edited_text != '' ) {
-							window.smart_manager.hot.setDataAtCell(coords.row, coords.col, mutiselect_edited_text, 'sm.multilist_inline_update');
-						}
-
 					}
+
+					window.smart_manager.hot.setDataAtCell(coords.row, coords.col, mutiselect_edited_text, 'sm.multilist_inline_update');
 				});
+			}
+		},
+		// to handle updating the state on column resize
+		afterColumnResize: function (currentColumn, newSize, isDoubleClick) {
+			if(window.smart_manager.currentVisibleColumns[currentColumn]){
+				for(let index in window.smart_manager.currentColModel){
+					if(window.smart_manager.currentColModel[index].src == window.smart_manager.currentVisibleColumns[currentColumn].src){
+						window.smart_manager.currentColModel[index].width = newSize
+					}
+				}
 			}
 		}
 	});

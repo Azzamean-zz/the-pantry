@@ -5,9 +5,9 @@ Author URI: https://www.storeapps.org/shop/
 Plugin URI: https://www.storeapps.org/product/smart-manager/?utm_source=wprepo&utm_medium=web&utm_campaign=smwp_readme
 Tags: bulk edit, woocommerce bulk edit, stock management, products editor, woocommerce, woocommerce advanced bulk edit, woocommerce stock manager, woocommerce inventory management, woocommerce bulk price change, woocommerce manage stock, woocommerce bulk edit products, woocommerce, store manager, bulk update, inline edit, manage variations, bulk edit, coupons, shop manager, batch update, wp ecommerce, productivity, products, variations, orders, customers, manager, pro, manager pro, pro manager, extension, premium, free, woocommerce customer management, inventory management
 Requires at least: 4.8.0
-Tested up to: 5.6
-Requires PHP: 5.6+
-Stable tag: 5.3.0
+Tested up to: 5.6.2
+Requires PHP: 5.6
+Stable tag: 5.8.0
 License: GPLv3
 
 The #1 and a powerful tool to manage stock, inventory from a single place. Super quick and super easy.
@@ -203,6 +203,46 @@ It also gives the warm feeling of supporting further development of the plugin.
 4. Bulk edit / Batch update (only in Pro version)
 
 == Changelog ==
+
+= 5.8.0 (06.03.2021) =
+* Fix: Column width changes remaining persistent even on dashboard switch
+* Fix: Column width changes not getting maintained for all dashboards in some cases
+* Fix: Export CSV failing in case of large data (Pro)
+* Update: POT file
+* Fix: Some minor fixes
+
+= 5.7.0 (26.02.2021) =
+* New: WordPress v5.6.2 compatible
+* Fix: Variable Parent Products not getting displayed in some advanced search results
+* Fix: Default sort not getting applied in advanced search results in some cases
+* Fix: PHP warnings when using the Bulk Edit functionality in some cases (Pro)
+* Update: POT file
+* Fix: Some minor fixes
+
+= 5.6.0 (18.02.2021) =
+* New: WooCommerce v5.0.0 compatible
+* Update: Display number of records loaded in addition to the total number of records
+* Fix: Data not getting displayed as per the column sorting in the dashboard
+* Fix: Sorting not getting saved in custom views (Pro)
+* Update: POT file
+* Fix: Some minor fixes
+
+= 5.5.0 (05.02.2021) =
+* New: WordPress v5.6.1 compatible
+* Fix: Blank value in advanced search for numeric columns not returning 'null' values
+* Fix: 'Custom Views' functionality not working in some cases
+* Update: POT file
+* Fix: Some minor fixes
+
+= 5.4.0 (29.01.2021) =
+* New: WooCommerce 4.9.2 compatible
+* Fix: 'Product Category' inline edit not working
+* Fix: 'Product Category' not getting set to blank using inline edit
+* Fix: Unable to use 'Custom Views' functionality in some cases (Pro)
+* Fix: In-app plugin update notice not getting displayed in some cases
+* Fix: 'Sorting arrow indicator' not displayed on column header when loading Smart Manager
+* Update: POT file
+* Fix: Some minor fixes
 
 = 5.3.0 (15.01.2021) =
 * New: Improved UI for advanced search functionality
@@ -475,7 +515,7 @@ It also gives the warm feeling of supporting further development of the plugin.
 * Fix: Some minor fixes
 
 = 4.3 (13.11.2019) =
-* New: Compatibility with [WooCommerce Smart Coupons](https://woocommerce.com/products/smart-coupons/?aff=5475) (Pro)
+* New: Compatibility with [WooCommerce Smart Coupons](https://woocommerce.com/products/smart-coupons/) (Pro)
 * Update: Compatibility with WooCommerce Coupons
 * Update: Compatibility with latest versions of WordPress & WooCommerce(v3.8)
 * Fix: Sort for numeric fields not working
@@ -1632,6 +1672,21 @@ It also gives the warm feeling of supporting further development of the plugin.
 
 == Upgrade Notice ==
 
+= 5.8.0 =
+Fixes related to Column width changes remaining persistent even on dashboard switch, Column width changes not getting maintained for all dashboards in some cases, Export CSV failing in case of large data (Pro) and other important fixes and updates. Recommended upgrade.
+
+= 5.7.0 =
+WordPress v5.6.2 compatible, Fixes related to Variable Parent Products not getting displayed in some advanced search results, Default sort not getting applied in advanced search results in some cases, PHP warnings when using the Bulk Edit functionality in some cases (Pro) and other important fixes and updates. Recommended upgrade.
+
+= 5.6.0 =
+WooCommerce v5.0.0 compatible, Improvements related to Display number of records loaded in addition to the total number of records, Fixes related to Data not getting displayed as per the column sorting in the dashboard, Sorting not getting saved in custom views (Pro) and other important fixes and updates. Recommended upgrade.
+
+= 5.5.0 =
+WordPress 5.6.1 compatible, Fixes related to Blank value in advanced search for numeric columns not returning 'null' values, 'Custom Views' functionality not working in some cases and other important fixes and updates. Recommended upgrade.
+
+= 5.4.0 =
+WooCommerce 4.9.2 compatible, Fixes related to 'Product Category' inline edit not working, 'Product Category' not getting set to blank using inline edit, Unable to use 'Custom Views' functionality in some cases (Pro), 'Sorting arrow indicator' not displayed on column header when loading Smart Manager and other important fixes and updates. Recommended upgrade.
+
 = 5.3.0 =
 Introducing Improved UI for advanced search functionality, WooCommerce 4.9.0 compatible, Avoid clearing search when switching between simple & advanced search and fixes related to Advanced search functionality not working, Fix vulnerability code reported by Jetpack scan, Dashboard appears blank in some cases and other important fixes and updates. Recommended upgrade.
 
@@ -1732,7 +1787,7 @@ Fixed issues related to Batch delete getting stuck, Some columns showing as '#ba
 Tested with latest versions of WordPress & WooCommerce and fixed issues related to 'Product Featured' column showing '#bad-value#' in some cases in Products Dashboard, Inline edit for the 'checkbox' fields not working in some cases, Some of the 'postmeta' columns not getting detected in Smart Manager grid along with other important fixes and updates. Recommended upgrade.
 
 = 4.3 =
-Added compatibility support for [WooCommerce Smart Coupons](https://woocommerce.com/products/smart-coupons/?aff=5475), Compatibility with WooCommerce Coupons, fixed issues related to Sort for numeric fields not working along with other important fixes and updates. Recommended upgrade.
+Added compatibility support for [WooCommerce Smart Coupons](https://woocommerce.com/products/smart-coupons/), Compatibility with WooCommerce Coupons, fixed issues related to Sort for numeric fields not working along with other important fixes and updates. Recommended upgrade.
 
 = 4.2.26 =
 Fixed issues related to Infinite Scroll of the grid going into an infinite loop in some cases, column sort related fixes, advanced search related fixes along with other important fixes and updates. Recommended upgrade.

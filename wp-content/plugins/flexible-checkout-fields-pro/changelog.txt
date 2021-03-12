@@ -1,5 +1,47 @@
 *** Flexible Checkout Fields PRO for WooCommerce Changelog ***
 
+3.0.3 - 2021-03-11
+* Added support for WordPress 5.7
+* Added support for WooCommerce 5.1
+
+3.0.2 - 2021-03-03
+* Fixed support for default checkbox field type
+
+3.0.1 - 2021-03-02
+* Fixed retrieval of field list for conditional logic fields
+* Added escaping output for custom section settings
+
+3.0.0 - 2021-03-01
+* Major Update!
+* Dropped support for Flexible Checkout Fields version lower than 3.0
+* Added support for new admin page to manage FCF plugin settings
+
+2.4.3 - 2021-02-11
+* Added support for WooCommerce 5.0
+
+2.4.2 - 2021-01-27
+* Fixed saving data of metabox editor in Order edit
+
+2.4.1 - 2021-01-14
+* Fixed pricing options on Checkout
+
+2.4.0 - 2021-01-14
+* Added loading of plugin after action flexible_checkout_fields/init
+* Added admin notice in case of incompatibility
+* Added e-mail notification in case of incompatibility
+
+2.3.3 - 2020-12-16
+* Changed URLs for docs
+
+2.3.2 - 2020-12-09
+* Fixed downloading of attachments in Order for file field
+
+2.3.1 - 2020-12-01
+* Fixed adding prices with decimal values
+* Fixed saving file type field value for session
+* Added support for WooCommerce 4.8
+* Added support for WordPress 5.6
+
 2.3.0 - 2020-11-02
 * Added pricing options for fields
 

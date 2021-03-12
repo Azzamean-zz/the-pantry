@@ -28,6 +28,7 @@
  * @var int                                            $non_meta_count         [Global] Number of tickets without meta fields.
  * @var Tribe__Tickets__Tickets|string                 $provider               [Global] The tickets provider class instance or slug string.
  * @var string                                         $cart_url               [Global] Link to Cart (could be empty).
+ * @var Tribe__Tickets__Tickets_Handler                $handler                [Global] Tribe Tickets Handler object.
  */
 
 $cart_provider  = $this->get_cart_provider( $provider );
@@ -60,18 +61,22 @@ $et_template = tribe( 'tickets.editor.template' );
 			}
 
 			$currency_symbol = $currency->get_currency_symbol( $ticket['id'], true );
+			$has_shared_cap  = $handler->has_shared_capacity( $ticket );
 
 			$et_template->template(
 				'v2/tickets/item',
 				[
-					'ticket'          => $cart_provider->get_ticket( $post_id, $ticket['id'] ),
-					'key'             => $key,
-					'is_mini'         => true,
-					'currency'        => $currency,
-					'currency_symbol' => $currency_symbol,
-					'provider'        => $cart_provider,
-					'post_id'         => $post_id,
-					'must_login'      => false,
+					'ticket'              => $cart_provider->get_ticket( $post_id, $ticket['id'] ),
+					'data_available'      => 0 === $handler->get_ticket_max_purchase( $ticket['id'] ) ? 'false' : 'true',
+					'has_shared_cap'      => $has_shared_cap,
+					'data_has_shared_cap' => $has_shared_cap ? 'true' : 'false',
+					'key'                 => $key,
+					'is_mini'             => true,
+					'currency'            => $currency,
+					'currency_symbol'     => $currency_symbol,
+					'provider'            => $cart_provider,
+					'post_id'             => $post_id,
+					'must_login'          => false,
 				]
 			);
 		endforeach;

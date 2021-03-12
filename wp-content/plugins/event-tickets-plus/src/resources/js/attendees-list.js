@@ -31,5 +31,5 @@ var tribe_attendees_list = {};
 		return;
 	};
 
-	$( document ).ready( my.init );
+	$( my.init );
 } )( window, document, jQuery, tribe_attendees_list );

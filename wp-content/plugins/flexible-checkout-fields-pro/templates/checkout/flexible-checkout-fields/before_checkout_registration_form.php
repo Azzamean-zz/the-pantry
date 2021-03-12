@@ -9,12 +9,15 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
+$html_tag = $section_settings['section_title_type'];
 
 ?>
-<div class="flexible-checkout-fields-before_checkout_registration_form <?php echo $section_settings['section_css']; ?>">
+<div class="flexible-checkout-fields-before_checkout_registration_form <?php echo esc_attr( $section_settings['section_css'] ?? '' ); ?>">
 
 	<?php if ( isset( $section_settings['section_title'] ) && $section_settings['section_title'] != '' ) : ?>
-		<<?php echo $section_settings['section_title_type']; ?>><?php echo $section_settings['section_title']; ?></<?php echo $section_settings['section_title_type']; ?>>
+		<<?php echo esc_attr( $html_tag ); ?>>
+			<?php echo wp_kses( $section_settings['section_title'], '' ); ?>
+		</<?php echo esc_attr( $html_tag ); ?>>
 	<?php endif; ?>
 
 	<?php foreach ( $fields as $key => $field ) : ?>

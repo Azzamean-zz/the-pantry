@@ -116,6 +116,10 @@ class Flexible_Checkout_Fields_Order_Metabox implements \FCFProVendor\WPDesk\Plu
 	 */
 	public function metabox_content( WP_Post $post ) {
 		$order = wc_get_order( $post->ID );
+		if ( false === $order ) {
+			return;
+		}
+
 		wp_nonce_field( self::NONCE_ACTION, self::NONCE_NAME );
 		$flexible_checkout_fields_plugin = $this->flexible_checkout_fields_pro_plugin->get_flexible_checkout_fields_plugin();
 		$sections                        = $flexible_checkout_fields_plugin->sections;
@@ -256,7 +260,7 @@ class Flexible_Checkout_Fields_Order_Metabox implements \FCFProVendor\WPDesk\Plu
 			$order = wc_get_order( $post_id );
 
 			$flexible_checkout_fields_plugin = $this->flexible_checkout_fields_pro_plugin->get_flexible_checkout_fields_plugin();
-			$sections                        = $flexible_checkout_fields_plugin->sections;
+			$sections                        = apply_filters( 'flexible_checkout_fields_sections', $flexible_checkout_fields_plugin->sections );
 			$fields                          = $flexible_checkout_fields_plugin->getCheckoutFields( array() );
 			foreach ( $sections as $section => $section_data ) {
 				$fields_section = $section_data['section'];

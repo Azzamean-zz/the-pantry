@@ -3,8 +3,8 @@
 Contributors: theeventscalendar, brianjessee, camwynsp, paulkim, sc0ttkclark, aguseo, bordoni, borkweb, GeoffBel, geoffgraham, jentheo, leahkoerper, lucatume, neillmcshea, patriciahillebrandt, vicskf, zbtirrell, juanfra
 Tags: tickets, registration, The Events Calendar, RSVP, ticket sales, attendee management
 Requires at least: 4.9.14
-Tested up to: 5.6.1
-Stable tag: 5.1.0
+Tested up to: 5.7.0
+Stable tag: 5.1.1
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -175,6 +175,19 @@ We've got a [UserVoice](https://tribe.uservoice.com/forums/195723-feature-ideas)
 Check out our extensive [knowledgebase](https://evnt.is/18wm) for articles on using, tweaking, and troubleshooting our plugins.
 
 == Changelog ==
+
+= [5.1.1] 2021-03-04 =
+
+* Fix - Compatibility with WordPress 5.7 and jQuery 3.5.X [ET-992]
+* Fix - Attendees will no longer have a new user created (if they did not already exist), which was introduced in Event Tickets 5.1.0. To turn this on, you can simply add the filter `add_filter( 'tribe_tickets_attendee_create_user_from_email', '__return_true' );`
+* Fix - Prevent the Attendee Registration page from having the title coming from draft pages. [ETP-360]
+* Fix - Highlight the "Ticketed" and "Unticketed" filters in the WordPress when they're applied. [ET-1022]
+* Fix - Prevent duplicate tickets from showing in post loops. [ETP-639]
+* Fix - Ensure ticket object caches return normally in all circumstances, preventing potential "Sold Out" messaging from happening in certain hosting environments. [ET-1023]
+* Fix - Set the default `iac` argument value in the single ticket REST API endpoint to add tickets since it is an optional argument to be sent.
+* Tweak - Added new `Ticket Holder Name` and `Ticket Holder Email Address` columns to the Attendees Report export CSV file and update the previous `Customer` columns to label as `Purchaser`. [ETP-652]
+* Tweak - Tweaked SQL queries for MySQL 8+ compatibility. [ET-1021]
+* Language - 2 new strings added, 38 updated, 2 fuzzied, and 0 obsoleted
 
 = [5.1.0] 2021-02-16 =
 

@@ -6,7 +6,9 @@ require_once 'Conditional_Logic_Fields_On_Checkout.php';
 /**
  * Class Flexible_Checkout_Fields_Pro
  */
-class Flexible_Checkout_Fields_Pro {
+class Flexible_Checkout_Fields_Pro implements \FCFProVendor\WPDesk\PluginBuilder\Plugin\HookablePluginDependant {
+
+	use \FCFProVendor\WPDesk\PluginBuilder\Plugin\PluginAccess;
 
     const FIELD_TYPE_NAME = 'name';
 	const FIELD_TYPE_PLACEHOLDER_LABEL = 'placeholder_label';
@@ -38,51 +40,27 @@ class Flexible_Checkout_Fields_Pro {
 	 * @param Flexible_Checkout_Fields_Pro_Plugin $plugin Plugin.
 	 */
 	public function __construct( Flexible_Checkout_Fields_Pro_Plugin $plugin ) {
-
 		$this->plugin = $plugin;
+	}
 
+	/**
+	 * Fires hooks
+	 */
+	public function hooks() {
 		add_action( 'init', array( $this, 'init' ) );
-
 		add_action( 'flexible_checkout_fields_fields', array( $this, 'flexible_checkout_fields_fields' ) );
-
-		add_action( 'flexible_checkout_fields_settings_html', array( $this, 'flexible_checkout_fields_settings_html' ), 10, 3 );
-
-		add_action( 'flexible_checkout_fields_settings_js_html', array( $this, 'flexible_checkout_fields_settings_js_html' ) );
-
-		add_action( 'flexible_checkout_fields_settings_js_options', array( $this, 'flexible_checkout_fields_settings_js_options' ) );
-
-		add_action( 'flexible_checkout_fields_settings_js_change', array( $this, 'flexible_checkout_fields_settings_js_change' ) );
-
-		add_filter( 'flexible_checkout_fields_admin_labels', array( $this, 'flexible_checkout_fields_admin_labels' ), 10, 3 );
-
 		add_filter( 'flexible_checkout_fields_user_fields', array( $this, 'flexible_checkout_fields_user_fields' ), 10, 3 );
-
 		add_filter( 'flexible_checkout_fields_custom_attributes', array( $this, 'flexible_checkout_fields_custom_attributes' ), 10, 2 );
-
 		add_filter( 'flexible_checkout_fields_sections', array( $this, 'flexible_checkout_fields_sections' ), 10, 2 );
-
 		add_filter( 'flexible_checkout_fields_all_sections', array( $this, 'flexible_checkout_fields_all_sections' ), 10, 2 );
-
-		add_action( 'flexible_checkout_fields_settings', array( $this, 'flexible_checkout_fields_settings' ) );
-
-		add_action( 'flexible_checkout_fields_section_settings', array( $this, 'flexible_checkout_fields_section_settings' ), 10, 2 );
-
 		add_action( 'init', array( $this, 'init_sections' ) );
-
 		add_action( 'flexible_checkout_fields_checkout_update_order_meta', array( $this, 'flexible_checkout_fields_checkout_update_order_meta' ) );
-
 		add_action( 'woocommerce_admin_order_data_after_shipping_address', array( $this, 'woocommerce_admin_order_data_after_shipping_address' ), 9999999 );
-
 		add_filter( 'woocommerce_checkout_fields', array( $this, 'conditional_logic_fields_hide'), 99999999, 1 );
-
 		add_filter( 'woocommerce_checkout_fields', array( $this, 'conditional_logic_shipping_fields_hide'), 99999999, 1 );
-
 		add_action( 'wp_footer', array( $this, 'wp_footer' ) );
-
 		add_action( 'wp_footer', array( $this, 'fcf_shipping_fields_wp_footer' ) );
-
 		add_action( 'woocommerce_checkout_process', array( $this, 'set_unavailable_sections_for_checkout_process' ) );
-
 	}
 
 	/**
@@ -218,25 +196,6 @@ class Flexible_Checkout_Fields_Pro {
 		foreach ( $sections as $section => $section_data ) {
 			add_action( $section, array( $this, 'checkout_form_action' ), 100 );
 		}
-	}
-
-	public function flexible_checkout_fields_section_settings( $section, $settings ) {
-
-		$section_settings = $this->get_section_settings();
-
-		$sections = $this->flexible_checkout_fields_sections( array(), true );
-		foreach ( $sections as $section_data ) {
-			if ( $section_data['section'] == $section ) {
-				include( 'views/settings-settings-section-settings.php' );
-			}
-		}
-	}
-
-	public function flexible_checkout_fields_settings() {
-
-		$sections = $this->flexible_checkout_fields_sections( array(), true );
-		include( 'views/settings-settings.php' );
-
 	}
 
 	public function flexible_checkout_fields_all_sections( $sections, $get_disabled = true ) {
@@ -502,62 +461,6 @@ class Flexible_Checkout_Fields_Pro {
 		}
 
 		return $return;
-	}
-
-	public function flexible_checkout_fields_admin_labels( $new, $field, $field_name ) {
-
-		if ( isset( $field['type'] ) && $field['type'] == 'inspireradio' ) {
-			$new['type'] = "select";
-		}
-
-		if ( isset( $field['type'] ) && $field['type'] == 'inspirecheckbox' ) {
-			$new['type'] = "select";
-			$new['options'] = array(
-				__( 'Missing Value', 'flexible-checkout-fields-pro' ) =>  __( 'Missing Value', 'flexible-checkout-fields-pro' ),
-				$field['placeholder'] => $field['placeholder']
-			);
-		}
-
-		if ( isset( $field['type'] ) && ( $field['type'] == 'select' || $field['type'] == 'inspireradio' ) ) {
-			$array_options = explode("\n", $field['option']);
-			if ( !empty($array_options ) ) {
-				foreach ( $array_options as $option ) {
-					$tmp = explode( ':', $option );
-					$options[trim( $tmp[0] )] = trim( $tmp[1] );
-					unset( $tmp );
-				}
-				$new['options'] = $options;
-				unset( $options );
-			}
-		}
-
-		if ( $new['type'] == 'select' ) {
-			$new['class'] .= ' js_field-country select';
-		}
-
-		return $new;
-
-	}
-
-	public function flexible_checkout_fields_settings_js_change( ) {
-		include( 'views/settings-js-change.php' );
-	}
-
-	public function flexible_checkout_fields_settings_js_options( ) {
-		include( 'views/settings-js-options.php' );
-	}
-
-	public function flexible_checkout_fields_settings_js_html( ) {
-		include( 'views/settings-js-html.php' );
-	}
-
-	public function flexible_checkout_fields_settings_html( $key, $name, $settings ) {
-		if ( $settings[$key][$name]['type'] == 'file' ) {
-			include( 'views/settings-html-file.php' );
-		}
-		if ( $settings[$key][$name]['type'] == 'datepicker' ) {
-			include( 'views/settings-html-datepicker.php' );
-		}
 	}
 
 	public function flexible_checkout_fields_fields( $fields ) {

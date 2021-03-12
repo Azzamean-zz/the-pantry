@@ -1,10 +1,10 @@
 === Flexible Checkout Fields for WooCommerce ===
 
-Contributors: wpdesk,dyszczo,grola,piotrpo,marcinkolanko
+Contributors: wpdesk,dyszczo,grola,piotrpo,marcinkolanko,mateuszgbiorczyk,sebastianpisula
 Donate link: https://www.wpdesk.net/flexible-checkout-fields-woocommerce/
 Tags: woocommerce checkout fields, woocommerce custom fields, woocommerce checkout manager, woocommerce checkout editor, woocommerce fields manager, woocommerce fields editor, woocommerce custom checkout fields, woocommerce checkout options, woocommerce checkout pro, woocommerce custom sections, woocommerce file upload
-Requires at least: 4.5
-Tested up to: 5.5
+Requires at least: 4.9
+Tested up to: 5.7
 Stable tag: trunk
 Requires PHP: 7.0
 License: GPLv3 or later
@@ -186,6 +186,52 @@ Yes, but you will have to purchase [Flexible Checkout Fields PRO](https://www.wp
 If you are upgrading from the old WooCommerce Checkout Fields version (1.1, woocommerce-checkout-fields) make sure to completely delete the old version first. Your settings will be kept. If you install the new version without deleting the old one you may break your WordPress installation.
 
 == Changelog ==
+
+= 3.0.6 - 2021-03-12 =
+* Fixed displaying Country/Region field
+
+= 3.0.5 - 2021-03-11 =
+* Fixed displaying fields without specific field type
+* Added support for WordPress 5.7
+* Added support for WooCommerce 5.1
+
+= 3.0.4 - 2021-03-03 =
+* Fixed support for default checkbox field type
+
+= 3.0.3 - 2021-03-02 =
+* Fixed displaying address fields on Order editing screen
+* Fixed issue about footer in administration panel
+* Fixed retrieval of options for Select fields
+
+= 3.0.2 - 2021-03-01 =
+* Fixed editing of order in administration panel
+
+= 3.0.1 - 2021-03-01 =
+* Fixed adding of new field
+
+= 3.0.0 - 2021-03-01 =
+* Major Update!
+* Dropped support for Flexible Checkout Fields PRO version lower than 3.0
+* Added new admin page to manage plugin settings
+* Added validation for fields on settings page
+
+= 2.9.2 - 2021-02-11 =
+* Added support for WooCommerce 5.0
+
+= 2.9.1 - 2021-01-14 =
+* Updated hook for integration with FCF plugin
+
+= 2.9.0 - 2020-12-16 =
+* Changed hook for integration with FCF plugin
+* Changed URLs for docs
+* Added notice asking for plugin review
+
+= 2.8.0 - 2020-12-09 =
+* Added hook for integration with FCF plugin
+
+= 2.7.1 - 2020-12-01 =
+* Added support for WooCommerce 4.8
+* Added support for WordPress 5.6
 
 = 2.7.0 - 2020-11-02 =
 * Added support for pricing in FCF PRO

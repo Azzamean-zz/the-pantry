@@ -21,7 +21,7 @@ function ccfwoo_pro_scripts() {
 		'loop_refresh_cart'       => ccfwoo_get_option( 'loop_refresh_cart', 'ccfwoo_advanced_section', false ),
 		'ajax_support_enable'     => ccfwoo_get_option( 'ajax_support_enable', 'ccfwoo_advanced_section', false ),
 		'reset_add_to_cart'       => ccfwoo_get_option( 'reset_add_to_cart', 'ccfwoo_advanced_section', false ),
-		'should_reset'            => apply_filters( 'ccfwoo_pro_reset_interval', false ), // used when items added to cart.
+		'should_reset'            => ccfwoo_pro_should_reset_countdown(),
 		'cart_url'                => ! empty( wc_get_cart_url() ) ? wc_get_cart_url() : false,
 
 		// BASC.
@@ -35,13 +35,13 @@ function ccfwoo_pro_scripts() {
 	);
 
 	// Enqueue JS.
-	wp_enqueue_script( 'checkout-countdown-pro', plugin_dir_url( __FILE__ ) . '../js/checkout-countdown-pro.min.js', array( 'jquery' ), '3.1.1', true );
+	wp_enqueue_script( 'checkout-countdown-pro', plugin_dir_url( __FILE__ ) . '../js/checkout-countdown-pro.min.js', array( 'jquery' ), '3.1.3', true );
 	// Localize JS.
 	wp_localize_script( 'checkout-countdown-pro', 'ccfwooPro', $localized_data );
 
 	// Add the BASC JS, only if legacy features or BASC is enabled.
 	if ( ccfwoo_get_option( 'basc_enable', 'ccfwoo_deprecated_section', false ) === 'on' || ccfwoo_get_option( 'legacy_options', 'false', false ) === 'on' ) {
-		wp_enqueue_script( 'checkout-countdown-basc', plugin_dir_url( __FILE__ ) . '../js/checkout-countdown-basc.min.js', array( 'jquery' ), '3.1.1', true );
+		wp_enqueue_script( 'checkout-countdown-basc', plugin_dir_url( __FILE__ ) . '../js/checkout-countdown-basc.min.js', array( 'jquery' ), '3.1.3', true );
 		// Localize basc.
 		wp_localize_script( 'checkout-countdown-basc', 'ccfwooPro', $localized_data );
 	}
@@ -55,3 +55,24 @@ function ccfwoo_pro_expired_message_seconds( $seconds ) {
 	return $seconds;
 }
 add_filter( 'ccfwoo_expired_message_seconds', 'ccfwoo_pro_expired_message_seconds', 10, 1 );
+
+
+function ccfwoo_pro_should_reset_countdown() {
+
+	$should_reset = WC()->session->get( 'ccfwoo_should_reset_countdown', false );
+
+	if ( $should_reset === true ) {
+		WC()->session->set( 'ccfwoo_should_reset_countdown', false );
+		return true;
+	}
+	return false;
+}
+
+/**
+ * Sets 'ccfwoo_pro_reset_interval' inside enqueued js to true .
+ * used for restarting the countdown when a product is added to cart .
+ */
+function ccfwoo_add_to_cart() {
+	WC()->session->set( 'ccfwoo_should_reset_countdown', true );
+}
+add_action( 'woocommerce_add_to_cart', 'ccfwoo_add_to_cart' );

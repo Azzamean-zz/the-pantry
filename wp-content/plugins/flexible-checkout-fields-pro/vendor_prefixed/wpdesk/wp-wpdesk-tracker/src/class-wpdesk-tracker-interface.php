@@ -14,15 +14,6 @@ namespace FCFProVendor;
 if (!\defined('ABSPATH')) {
     exit;
 }
-/**
- * WP Desk Tracker
- *
- * @class        WPDESK_Tracker
- * @version        1.3.2
- * @package        WPDESK/Helper
- * @category    Class
- * @author        WP Desk
- */
 interface WPDesk_Tracker_Interface
 {
     /**

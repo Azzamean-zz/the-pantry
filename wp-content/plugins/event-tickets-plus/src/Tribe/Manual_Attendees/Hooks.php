@@ -254,4 +254,24 @@ class Hooks {
 
 		echo Modal::get_modal_button( $button_args );
 	}
+
+	/**
+	 * Remove Edit Column from showing up in CSV export.
+	 *
+	 * @since 5.2.1
+	 *
+	 * @param array $export_columns The columns to use for exporting.
+	 * @param array $items          Items to be exported.
+	 * @param int   $event_id       Event ID for the export data.
+	 *
+	 * @return array The columns to use for exporting.
+	 */
+	public function remove_edit_column_for_csv_export(  $export_columns, $items, $event_id ) {
+
+		if ( isset( $export_columns['edit_attendee'] ) ) {
+			unset( $export_columns['edit_attendee'] );
+		}
+
+		return $export_columns;
+	}
 }

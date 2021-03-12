@@ -29,12 +29,19 @@ if ( ! empty( $args['custom_attributes'] ) && is_array( $args['custom_attributes
     }
 }
 ?>
-<p class="form-row <?php echo implode( ' ', $args['class'] ); ?>" id="<?php echo $key; ?>_field" data-priotiry="<?php echo $args['priority']; ?>">
-    <label for="<?php echo $key; ?>"><input
-                type="checkbox"
-                class="input-checkbox input-inspirecheckbox"
-                name="<?php echo $key; ?>"
-                id="<?php echo $key; ?>" value="<?php echo $args['placeholder']; ?>" <?php echo $checked; ?>
-			    <?php echo empty( $custom_attributes ) ? '' : implode( ' ', $custom_attributes ); ?>
-        /> <?php echo wp_kses( $args['label'], '' ); ?> <?php echo $required; ?></label>
+<p class="form-row <?php echo esc_attr( implode( ' ', $args['class'] ) ); ?>"
+   id="<?php echo $key; ?>_field"
+   data-priotiry="<?php echo $args['priority']; ?>">
+    <label for="<?php echo $key; ?>">
+		<input
+			type="checkbox"
+			class="input-checkbox input-inspirecheckbox"
+			name="<?php echo $key; ?>"
+			id="<?php echo $key; ?>"
+			value="<?php echo esc_attr( $args['placeholder'] ); ?>"
+			<?php echo $checked; ?>
+			<?php echo empty( $custom_attributes ) ? '' : implode( ' ', $custom_attributes ); ?>
+		/>
+		<?php echo wp_kses( $args['label'], '' ); ?> <?php echo $required; ?>
+	</label>
 </p>

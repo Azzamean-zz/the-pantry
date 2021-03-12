@@ -17,6 +17,10 @@ if ( ! empty( $value ) ) {
 } else {
 	$field_values = array();
 }
+if ( ! $field_values ) {
+	$field_values = array();
+}
+
 $wrapper_class = isset( $field['class'] ) ? $field['class'] : '';
 if ( is_array( $wrapper_class ) ) {
 	$wrapper_class = implode( ' ', $wrapper_class );

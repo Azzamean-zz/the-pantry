@@ -76,7 +76,7 @@ class Flexible_Checkout_Fields_Field_Validation {
 			'phone' => __( 'Phone', 'flexible-checkout-fields' ),
 		);
 		if ( in_array( $section, array( 'billing', 'shipping' ), true ) ) {
-			$validation_options['postcode'] = __( 'Post code', 'flexible-checkout-fields' );
+			$validation_options['postcode'] = __( 'Postcode', 'flexible-checkout-fields' );
 		}
 		$custom_validations = $this->get_custom_validations( $section );
 		foreach ( $custom_validations as $custom_validation_key => $custom_validation ) {

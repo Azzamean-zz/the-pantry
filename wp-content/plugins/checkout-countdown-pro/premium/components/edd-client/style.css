@@ -2,6 +2,10 @@
 	width: 280px;
 }
 
+.ccfwoo_pro-edd-client-notice {
+	padding: 20px
+}
+
 .ccfwoo_pro-edd-client-button {
 	line-height: 20px !important;
 	margin: 0 10px 0 10px !important;
@@ -27,13 +31,12 @@ input.ccfwoo_pro-edd-client-license-key {
 
 .ccfwoo_pro-edd-client-row {
 	padding-left: 35px;
-	padding-top: 10px;
+	padding-top: 15px;
 	padding-bottom: 15px;
 }
 
-.ccfwoo_pro-edd-client-msg {
-	margin-top: 8px;
-	padding-top: 5px;
-	padding-bottom: 10px;
+.ccfwoo_pro-edd-client-message {
 	font-size: 14px;
+	margin: 10px 0px 20px 20px;
 }
+

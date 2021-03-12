@@ -27,11 +27,9 @@ class Flexible_Checkout_Fields_Pro_File_Field_Downloader
 				$attachment_id = $_GET['checkout_fields_get'];
 				$attachment    = get_attached_file( $attachment_id );
 				if ( $attachment ) {
-					$finfo     = new finfo();
-					$mime_type = $finfo->file( $attachment, FILEINFO_MIME );
-
 					$file_file_name = new Flexible_Checkout_Fields_Pro_File_File_Name( $attachment_id );
 					$file_name      = $file_file_name->get_file_name( basename( $attachment ) );
+					$mime_type      = mime_content_type( $attachment );
 
 
 					header( 'Content-type: ' . $mime_type, true, 200 );

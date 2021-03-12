@@ -22,7 +22,7 @@ if ( ! empty( $args['custom_attributes'] ) && is_array( $args['custom_attributes
 }
 ?>
 
-<div class="form-row form-row-wide form-inspireradio <?php echo implode( ' ', $args['class'] ); ?>" id="<?php echo $key; ?>_field">
+<div class="form-row form-row-wide form-inspireradio <?php echo esc_attr( implode( ' ', $args['class'] ) ); ?>" id="<?php echo $key; ?>_field">
     <fieldset><legend><?php echo wp_kses( $args['label'], '' ); ?> <?php echo $required; ?></legend><?php foreach ( $args['options'] as $okey => $option ) :
 	    $checked = "";
 	    if ( $okey == $value ) {
@@ -32,7 +32,7 @@ if ( ! empty( $args['custom_attributes'] ) && is_array( $args['custom_attributes
                     class="input-radio input-inspireradio"
                     name="<?php echo $key; ?>"
                     id="<?php echo $key; ?>_<?php echo $okey; ?>"
-                    value="<?php echo $okey; ?>" <?php echo $checked; ?>
+                    value="<?php echo esc_attr( $okey ); ?>" <?php echo $checked; ?>
 			        <?php echo empty( $custom_attributes ) ? '' : implode( ' ', $custom_attributes ); ?>
             /> <?php echo $option; ?></label>
 	    <?php unset($checked); ?>

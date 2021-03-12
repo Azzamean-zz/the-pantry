@@ -68,6 +68,7 @@ class Service_Provider extends tad_DI52_ServiceProvider {
 		add_filter( 'event_tickets_attendees_table_row_actions', $this->container->callback( 'tickets-plus.manual-attendees.hooks', 'add_edit_attendee_row_action' ), 10, 2 );
 		add_action( 'tribe_tickets_attendee_table_columns', $this->container->callback( 'tickets-plus.manual-attendees.hooks', 'add_attendee_edit_table_column_header' ), 10, 2 );
 		add_filter( 'tribe_events_tickets_attendees_table_column', $this->container->callback( 'tickets-plus.manual-attendees.hooks', 'render_column_edit_attendee' ), 10, 3 );
+		add_action( 'tribe_events_tickets_attendees_csv_export_columns', $this->container->callback( 'tickets-plus.manual-attendees.hooks', 'remove_edit_column_for_csv_export' ), 10, 3 );
 
 		// Handle button for Add Attendee.
 		add_filter( 'tribe_events_tickets_attendees_table_nav', $this->container->callback( 'tickets-plus.manual-attendees.hooks', 'add_nav_button' ), 10, 2 );

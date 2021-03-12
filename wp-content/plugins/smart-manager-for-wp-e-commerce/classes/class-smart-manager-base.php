@@ -40,15 +40,20 @@ if ( ! class_exists( 'Smart_Manager_Base' ) ) {
 
 			global $wpdb;
 
+			$sort_params = array();
+			if( $wp_query_obj ){
+				$sort_params = ( ! empty( $wp_query_obj->query_vars['sm_sort_params'] ) ) ? $wp_query_obj->query_vars['sm_sort_params'] : array();		
+			}
+
 			// Code for sorting of the terms columns
-			if ( !empty( $this->req_params['sort_params'] ) ) {
+			if ( !empty( $sort_params ) ) {
 
-				if( !empty( $this->req_params['sort_params']['column_nm'] ) && !empty( $this->req_params['sort_params']['sortOrder'] ) ) {
+				if( !empty( $sort_params['column_nm'] ) && !empty( $sort_params['sortOrder'] ) ) {
 
-					if( !empty( $this->req_params['sort_params']['table'] ) && $this->req_params['sort_params']['table'] == 'terms' ) {
+					if( !empty( $sort_params['table'] ) && $sort_params['table'] == 'terms' ) {
 
-						$join_condition = "AND ". $wpdb->prefix ."term_taxonomy.taxonomy = '". $this->req_params['sort_params']['column_nm'] ."'";
-						$join_condition = apply_filters('sm_terms_sort_join_condition', $join_condition);
+						$join_condition = "AND ". $wpdb->prefix ."term_taxonomy.taxonomy = '". $sort_params['column_nm'] ."'";
+						$join_condition = apply_filters('sm_terms_sort_join_condition', $join_condition, $wp_query_obj);
 
 						// Query to get the ordered term_taxonomy_ids of the taxonomy being sorted
 						$taxonomy_ids = $wpdb->get_col( $wpdb->prepare( "SELECT {$wpdb->prefix}term_taxonomy.term_taxonomy_id
@@ -157,33 +162,38 @@ if ( ! class_exists( 'Smart_Manager_Base' ) ) {
 
 			global $wpdb;
 
-			if( !empty( $this->req_params['sort_params'] ) && !empty( $this->req_params['sort_params']['column_nm'] ) ) {
-				$sort_order = ( !empty( $this->req_params['sort_params']['sortOrder'] ) ) ? $this->req_params['sort_params']['sortOrder'] : 'ASC';
+			$sort_params = array();
+			if( $wp_query_obj ){
+				$sort_params = ( ! empty( $wp_query_obj->query_vars['sm_sort_params'] ) ) ? $wp_query_obj->query_vars['sm_sort_params'] : array();		
+			}
 
-				if( !empty( $this->req_params['sort_params']['table'] ) ) {
-					if ( $this->req_params['sort_params']['table'] == 'posts' ) {
-						$order_by = $this->req_params['sort_params']['column_nm'] .' '. $sort_order;
-					} else if ( $this->req_params['sort_params']['table'] == 'terms' && $this->terms_sort_join === true ) {
+			if( !empty( $sort_params ) && !empty( $sort_params['column_nm'] ) ) {
+				$sort_order = ( !empty( $sort_params['sortOrder'] ) ) ? $sort_params['sortOrder'] : 'ASC';
+
+				if( !empty( $sort_params['table'] ) ) {
+					if ( $sort_params['table'] == 'posts' ) {
+						$order_by = $sort_params['column_nm'] .' '. $sort_order;
+					} else if ( $sort_params['table'] == 'terms' && $this->terms_sort_join === true ) {
 						$order_by = $wpdb->prefix. 'term_relationships.term_taxonomy_id '.$sort_order ;
 					}	
 				}
 			}
 
 			//Condition for sorting of postmeta_cols
-			if ( !empty( $this->req_params['sort_params'] ) &&  !empty( $this->req_params['sort_params']['sort_by_meta_key'] ) ) {
-				$sort_order = ( !empty( $this->req_params['sort_params']['sortOrder'] ) ) ? $this->req_params['sort_params']['sortOrder'] : 'ASC';
+			if ( !empty( $sort_params ) &&  !empty( $sort_params['sort_by_meta_key'] ) ) {
+				$sort_order = ( !empty( $sort_params['sortOrder'] ) ) ? $sort_params['sortOrder'] : 'ASC';
 
 				$post_type = ( ! empty( $this->post_type ) ) ? $this->post_type : $this->req_params['active_module'];
 				$post_type = ( ! is_array( $post_type ) ) ? array( $post_type ) : $post_type;
 
-				$meta_value = ( !empty( $this->req_params['sort_params']['column_nm'] ) && $this->req_params['sort_params']['column_nm'] == 'meta_value_num' ) ? 'pm.meta_value+0' : 'pm.meta_value';
+				$meta_value = ( !empty( $sort_params['column_nm'] ) && $sort_params['column_nm'] == 'meta_value_num' ) ? 'pm.meta_value+0' : 'pm.meta_value';
 
 				$post_ids = $wpdb->get_col( "SELECT pm.post_id 
 											FROM {$wpdb->prefix}postmeta AS pm
 												JOIN {$wpdb->prefix}posts AS p
 													ON (p.ID = pm.post_id
 														AND p.post_type IN ('". implode("','", $post_type) ."'))
-											WHERE pm.meta_key = '". $this->req_params['sort_params']['sort_by_meta_key'] ."' ORDER BY ". $meta_value ." ". $sort_order );
+											WHERE pm.meta_key = '". $sort_params['sort_by_meta_key'] ."' ORDER BY ". $meta_value ." ". $sort_order );
 
 				$option_name = 'sm_data_model_sorted_ids';
 				update_site_option( $option_name, implode( ',', $post_ids ) );
@@ -1424,7 +1434,7 @@ if ( ! class_exists( 'Smart_Manager_Base' ) ) {
 
                                 $postmeta_cond = apply_filters('sm_search_postmeta_cond', $postmeta_cond, $search_params);
 
-                                if( ( empty( $rule['value'] ) && 0 != $rule['value'] ) || $rule['value'] == "''" ) {
+                                if( ( empty( $rule['value'] ) && '0' !== $rule['value'] ) || $rule['value'] == "''" ) {
                                 	$empty_search_value = ( $search_operator == 'is' || $search_operator == '=' ) ? 'IS NULL' : 'IS NOT NULL';
 									$postmeta_cond = "( ". $postmeta_cond ." OR ( ". $rule['table_name'] .".meta_key LIKE '". $search_col . "' AND ". $rule['table_name'] .".meta_value " . $empty_search_value ." )
 													OR ( ". $rule['table_name'] .".post_id ". ( ( $search_operator == 'is' || $search_operator == '=' ) ? 'NOT IN' : 'IN' ) ." ( SELECT DISTINCT p.id 
@@ -1720,7 +1730,11 @@ if ( ! class_exists( 'Smart_Manager_Base' ) ) {
 			                        $result_postmeta_search = $wpdb->query ( $query_postmeta_search );
 			                    }
 
-			                    do_action('sm_search_postmeta_condition_complete',$result_postmeta_search,$search_params);
+			                    do_action('sm_search_postmeta_condition_complete',$result_postmeta_search,$search_params, array(
+									'select' => $postmeta_advanced_search_select,
+									'from' => $postmeta_advanced_search_from,
+									'where' => $postmeta_advanced_search_where
+								));
 
 			                    //Query to delete the unwanted post_ids
 		                    	$wpdb->query("DELETE FROM {$wpdb->base_prefix}sm_advanced_search_temp WHERE flag = 0");
@@ -1860,6 +1874,11 @@ if ( ! class_exists( 'Smart_Manager_Base' ) ) {
 				}
 			}
 
+			// code for assigning the sort params
+			if( ! empty( $column_model_transient ) && empty( $this->req_params['sort_params'] ) ){
+				$this->req_params['sort_params'] = ( ! empty( $column_model_transient['sort_params'] ) ) ? $column_model_transient['sort_params'] : array();
+			}
+			
 			$store_model_transient = get_transient( 'sa_sm_'.$this->dashboard_key );
 
 			if( empty( $store_model_transient ) ){
@@ -2091,8 +2110,9 @@ if ( ! class_exists( 'Smart_Manager_Base' ) ) {
 					            'meta_query' => array( $meta_query ),
 					            'tax_query' => array( $tax_query ),
 					            'orderby' => ( !empty( $this->req_params['sort_params']['column_nm'] ) ? $this->req_params['sort_params']['column_nm'] : '' ),
-					            'order' => ( !empty( $this->req_params['sort_params']['sortOrder'] ) ? $this->req_params['sort_params']['sortOrder'] : '' )
-				            );
+					            'order' => ( !empty( $this->req_params['sort_params']['sortOrder'] ) ? $this->req_params['sort_params']['sortOrder'] : '' ),
+								'sm_sort_params' => ( !empty( $this->req_params['sort_params'] ) ? $this->req_params['sort_params'] : array() )
+							);
 
 				$args = array_merge($args, $post_cond);
 
@@ -2184,28 +2204,46 @@ if ( ! class_exists( 'Smart_Manager_Base' ) ) {
 	        			}
 	        		}
 
+					$postmeta_data = array();
 					//TODO: Check Not working on client site
-					// if( count( $post_ids ) > 100 ) {
-					// 	$current_user_id = get_current_user_id();
-					// 	$temp_db_key = 'sm_export_post_ids_' . $current_user_id;
+					if( count( $post_ids ) > 100 ) {
+						// $current_user_id = get_current_user_id();
+						// $temp_db_key = 'sm_export_post_ids_' . $current_user_id;
 
-					// 	// Store order ids temporarily in table.
-					// 	update_option( $temp_db_key, implode( ',', $post_ids ) );
+						// // Store order ids temporarily in table.
+						// update_option( $temp_db_key, implode( ',', $post_ids ) );
 
-					// 	$postmeta_data = $wpdb->get_results( $wpdb->prepare( "SELECT post_id as post_id,
-					// 						                              meta_key AS meta_key,
-					// 						                              meta_value AS meta_value
-					// 						                    FROM {$wpdb->prefix}postmeta as prod_othermeta 
-					// 						                    WHERE FIND_IN_SET ( post_id, ( SELECT option_value 
-					// 																FROM {$wpdb->prefix}options 
-					// 																WHERE option_name = %s ) ) 
-					// 						                    	AND meta_key IN ('". implode("','", $postmeta_cols) ."')
-					// 						                    	AND 1=%d
-					// 											GROUP BY post_id, meta_key", $temp_db_key, 1 ), 'ARRAY_A' );
+						// $postmeta_data = $wpdb->get_results( $wpdb->prepare( "SELECT post_id as post_id,
+						// 					                              meta_key AS meta_key,
+						// 					                              meta_value AS meta_value
+						// 					                    FROM {$wpdb->prefix}postmeta as prod_othermeta 
+						// 					                    WHERE FIND_IN_SET ( post_id, ( SELECT option_value 
+						// 															FROM {$wpdb->prefix}options 
+						// 															WHERE option_name = %s ) ) 
+						// 					                    	AND meta_key IN ('". implode("','", $postmeta_cols) ."')
+						// 					                    	AND 1=%d
+						// 										GROUP BY post_id, meta_key", $temp_db_key, 1 ), 'ARRAY_A' );
 
-					// 	delete_option( $temp_db_key );
+						// delete_option( $temp_db_key );
+
+						$post_id_chunks = array_chunk( $post_ids, 100 );
+
+						foreach( $post_id_chunks as $id_chunk ){
+							$results = $wpdb->get_results( $wpdb->prepare( "SELECT post_id as post_id,
+											                              meta_key AS meta_key,
+											                              meta_value AS meta_value
+											                    FROM {$wpdb->prefix}postmeta as prod_othermeta 
+											                    WHERE post_id IN (". implode(",",$id_chunk) .")
+											                    	AND meta_key IN ('". implode("','", $postmeta_cols) ."')
+											                    	AND 1=%d
+																GROUP BY post_id, meta_key", 1 ), 'ARRAY_A' );
+							
+							if( ! empty( $results ) ) {
+								$postmeta_data = array_merge( $postmeta_data, $results );
+							}
+						}
 				
-					// } else {
+					} else {
 						$postmeta_data = $wpdb->get_results( $wpdb->prepare( "SELECT post_id as post_id,
 											                              meta_key AS meta_key,
 											                              meta_value AS meta_value
@@ -2214,7 +2252,7 @@ if ( ! class_exists( 'Smart_Manager_Base' ) ) {
 											                    	AND meta_key IN ('". implode("','", $postmeta_cols) ."')
 											                    	AND 1=%d
 																GROUP BY post_id, meta_key", 1 ), 'ARRAY_A' );
-					// }
+					}
 
 	        		if( !empty( $postmeta_data ) ) {
 
@@ -2324,10 +2362,16 @@ if ( ! class_exists( 'Smart_Manager_Base' ) ) {
 
 						//Code for handling multilist data
 	        			if ( is_array($data_cols_multilist) && array_search($taxonomy_nm, $data_cols_multilist) !== false && ( is_array( $postmeta_cols ) && array_search( $taxonomy_nm, $postmeta_cols ) === false )  ) { //added postmeta check condition for multilist columns
-	        				if (empty($terms_data[$term_obj->object_id][$taxonomy_nm])) {
-	        					$terms_data[$term_obj->object_id][$taxonomy_nm] = $term_obj->name;
+							$multilist_value = $term_obj->term_id;
+							$multilist_separator = ',';
+							if ( !empty( $this->req_params['cmd'] ) && ( $this->req_params['cmd'] == 'get_export_csv' || $this->req_params['cmd'] == 'get_print_invoice' ) ) {
+								$multilist_value = $term_obj->name;
+								$multilist_separator = ', <br>';
+							}
+							if (empty($terms_data[$term_obj->object_id][$taxonomy_nm])) {
+	        					$terms_data[$term_obj->object_id][$taxonomy_nm] = $multilist_value;
 	        				} else {
-	        					$terms_data[$term_obj->object_id][$taxonomy_nm] .= ", <br>" . $term_obj->name;
+	        					$terms_data[$term_obj->object_id][$taxonomy_nm] .= $multilist_separator . "" . $multilist_value;
 	        				}
 	        			} else if( is_array($data_cols_dropdown) && array_search($taxonomy_nm, $data_cols_dropdown) !== false ) {
 	        				$terms_data[$term_obj->object_id][$taxonomy_nm] = $term_obj->term_id;
@@ -2744,9 +2788,11 @@ if ( ! class_exists( 'Smart_Manager_Base' ) ) {
 	    					if (array_search($update_column, $data_cols_multiselect) !== false) {
 
 	    						$actual_val = (!empty($data_cols_multiselect_val[$update_column])) ? $data_cols_multiselect_val[$update_column] : array();
-	    						if(empty($value) || empty($actual_val)) continue;
-								$edited_values = explode(", <br>",$value);
-								if (empty($edited_values)) continue;
+	    						if(!empty($value) && !empty($actual_val)){
+									$term_ids = array_map('intval', explode(",",$value));
+								}
+
+								$result = wp_set_object_terms($id, $term_ids, $update_column);
 
 	    					} else if (array_search($update_column, $data_cols_list) !== false) {
 
@@ -2754,24 +2800,23 @@ if ( ! class_exists( 'Smart_Manager_Base' ) ) {
 	    						if(empty($value) || empty($actual_val)) continue;
 								$edited_values = explode(", ",$value);
 								if (empty($edited_values)) continue;
-	    					}
 
-	    					if (!empty($edited_values)) {
-	    						foreach ($edited_values as $edited_value) {
-									$term_id = array_search($edited_value, $actual_val);
-
-									if ( $term_id === false) {
-										if( !isset( $actual_val[$edited_value] ) ) {
-											continue;
+								if (!empty($edited_values)) {
+									foreach ($edited_values as $edited_value) {
+										$term_id = array_search($edited_value, $actual_val);
+	
+										if ( $term_id === false) {
+											if( !isset( $actual_val[$edited_value] ) ) {
+												continue;
+											}
+											$term_id = intval( $edited_value );
 										}
-										$term_id = intval( $edited_value );
-									}
-									$term_ids[] = $term_id;
-								}							
-	    					}
-
-	    					if (!empty($term_ids)) {
-	    						$result = wp_set_object_terms($id, $term_ids, $update_column);
+										$term_ids[] = $term_id;
+									}							
+								}
+								if (!empty($term_ids)) {
+									$result = wp_set_object_terms($id, $term_ids, $update_column);
+								}
 	    					}
 						}
 					}

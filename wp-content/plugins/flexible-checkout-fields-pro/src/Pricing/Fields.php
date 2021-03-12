@@ -39,11 +39,7 @@ class Fields implements Hookable {
 	 * @return void
 	 */
 	public function hooks() {
-		if ( is_admin() ) {
-			add_action( 'admin_init', [ $this, 'init_pricing_for_fields' ] );
-		} else {
-			add_action( 'after_setup_theme', [ $this, 'init_pricing_for_fields' ] );
-		}
+		add_action( 'init', [ $this, 'init_pricing_for_fields' ] );
 	}
 
 	/**
@@ -52,7 +48,15 @@ class Fields implements Hookable {
 	 * @internal
 	 */
 	public function init_pricing_for_fields() {
-		foreach ( ( new PluginSettings() )->get_settings_for_fields() as $fields ) {
+		$sections = ( new PluginSettings() )->get_settings_for_fields();
+		if ( ! $sections || ! is_array( $sections ) ) {
+			return;
+		}
+
+		foreach ( $sections as $fields ) {
+			if ( ! $fields ) {
+				continue;
+			}
 			foreach ( $fields as $field_key => $field ) {
 				if ( isset( $field['custom_field'] ) && $field['custom_field'] ) {
 					$this->init_pricing_for_field( $field );

@@ -513,8 +513,18 @@ class WC_Product_Addons_Cart {
 			}
 
 			$cart_item_data['data']->set_price( $price );
-			$cart_item_data['data']->set_regular_price( $regular_price );
-			$cart_item_data['data']->set_sale_price( $sale_price );
+
+			// Only update regular price if it was defined.
+			$has_regular_price = is_numeric( $cart_item_data['data']->get_regular_price( 'edit' ) );
+			if ( $has_regular_price ) {
+				$cart_item_data['data']->set_regular_price( $regular_price );
+			}
+
+			// Only update sale price if it was defined.
+			$has_sale_price = is_numeric( $cart_item_data['data']->get_sale_price( 'edit' ) );
+			if ( $has_sale_price ) {
+				$cart_item_data['data']->set_sale_price( $sale_price );
+			}
 		}
 
 		return $cart_item_data;

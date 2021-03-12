@@ -527,4 +527,24 @@ class Hooks {
 		$template->template( 'v2/iac/attendee-registration/unique-name-error' );
 		$template->template( 'v2/iac/attendee-registration/unique-email-error' );
 	}
+
+	/**
+	 * Filter the tickets block ticket data attributes.
+	 *
+	 * @since 5.2.1
+	 *
+	 * @param array                         $attributes The HTML data attributes.
+	 * @param Tribe__Tickets__Ticket_Object $ticket The ticket object.
+	 *
+	 * @return array The HTML data attributes.
+	 */
+	public function maybe_add_html_attribute_to_ticket( $attributes, $ticket ) {
+		if ( IAC::NONE_KEY === $ticket->iac ) {
+			return $attributes;
+		}
+
+		$attributes['data-ticket-iac'] = $ticket->iac;
+
+		return $attributes;
+	}
 }

@@ -87,7 +87,9 @@ class Smart_Manager_Pro_Background_Updater {
 						$class_name = 'Smart_Manager_Pro_'.ucfirst($params['args']['dashboard_key']);
 						$obj = $class_name::instance($params['args']['dashboard_key']);
 					}
-					call_user_func(array($params['callback']['func'][0],'actions'), $params['args']);
+					if( is_callable( array( $params['callback']['func'][0], 'actions' ) ) ) {
+						call_user_func(array($params['callback']['func'][0],'actions'), $params['args']);
+					}
 					call_user_func($params['callback']['func'],$params['args']);
 				}	
 			} catch ( Exception $e ) {

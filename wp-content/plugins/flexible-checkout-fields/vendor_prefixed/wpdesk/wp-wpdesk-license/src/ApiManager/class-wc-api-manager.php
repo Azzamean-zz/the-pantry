@@ -96,7 +96,7 @@ if (!\class_exists('FcfVendor\\WPDesk_API_Manager_With_Update_Flag')) {
          *
          * @since 1.2
          */
-        private function __wakeup()
+        public function __wakeup()
         {
         }
         public function __construct($upgrade_url, $version, $name, $product_id, $menu_title, $title, $plugin_file, $plugin_dir, $config_uri, $hook_to_updates = \true)

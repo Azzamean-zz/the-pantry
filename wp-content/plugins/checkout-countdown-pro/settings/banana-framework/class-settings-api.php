@@ -634,25 +634,25 @@ if ( ! class_exists( 'Checkout_Countdown_Settings_API' ) ) :
 		function script() {
 			?>
 		<script>
-			jQuery(document).ready(function($) {
+		document.addEventListener('DOMContentLoaded', function (e) {
 
 			  //make the subheading single row
-			  $('.banana-subheading').each(function (index, element) {
-				var $element = $(element);
+			  jQuery('.banana-subheading').each(function (index, element) {
+				var $element = jQuery(element);
 				var $element_parent = $element.parent('td');
 				$element_parent.attr('colspan', 2);
 				$element_parent.prev('th').remove();
 			  });
 
-			  $('tr.subheading').each(function() {
-					$(this).nextUntil('tr.subheading').andSelf().wrapAll('<div class="banana-subsection"></div>');
+			  jQuery('tr.subheading').each(function() {
+					jQuery(this).nextUntil('tr.subheading').addBack().wrapAll('<div class="banana-subsection"></div>');
 				});
 
 				 //Initiate Color Picker
-				$('.wp-color-picker-field').wpColorPicker();
+				jQuery('.wp-color-picker-field').wpColorPicker();
 
 				// Switches option sections
-				$('.group').hide();
+				jQuery('.group').hide();
 				var banana_activetab = '';
 				if (typeof(localStorage) != 'undefined' ) {
 					banana_activetab = localStorage.getItem("banana_activetab");
@@ -666,44 +666,44 @@ if ( ! class_exists( 'Checkout_Countdown_Settings_API' ) ) :
 					}
 				}
 
-				if (banana_activetab != '' && $(banana_activetab).length ) {
-					$(banana_activetab).fadeIn(100);
+				if (banana_activetab != '' && jQuery(banana_activetab).length ) {
+					jQuery(banana_activetab).fadeIn(100);
 				} else {
-					$('.group:first').fadeIn(100);
+					jQuery('.group:first').fadeIn(100);
 				}
-				$('.group .collapsed').each(function(){
-					$(this).find('input:checked').parent().parent().parent().nextAll().each(
+				jQuery('.group .collapsed').each(function(){
+					jQuery(this).find('input:checked').parent().parent().parent().nextAll().each(
 					function(){
-						if ($(this).hasClass('last')) {
-							$(this).removeClass('hidden');
+						if (jQuery(this).hasClass('last')) {
+							jQuery(this).removeClass('hidden');
 							return false;
 						}
-						$(this).filter('.hidden').removeClass('hidden');
+						jQuery(this).filter('.hidden').removeClass('hidden');
 					});
 				});
 
-				if (banana_activetab != '' && $(banana_activetab + '-tab').length ) {
-					$(banana_activetab + '-tab').addClass('nav-tab-active');
+				if (banana_activetab != '' && jQuery(banana_activetab + '-tab').length ) {
+					jQuery(banana_activetab + '-tab').addClass('nav-tab-active');
 				}
 				else {
-					$('.nav-tab-wrapper a:first').addClass('nav-tab-active');
+					jQuery('.nav-tab-wrapper a:first').addClass('nav-tab-active');
 				}
-				$('.nav-tab-wrapper a').click(function(evt) {
-					$('.nav-tab-wrapper a').removeClass('nav-tab-active');
-					$(this).addClass('nav-tab-active').blur();
-					var clicked_group = $(this).attr('href');
+				jQuery('.nav-tab-wrapper a').click(function(evt) {
+					jQuery('.nav-tab-wrapper a').removeClass('nav-tab-active');
+					jQuery(this).addClass('nav-tab-active').blur();
+					var clicked_group = jQuery(this).attr('href');
 					if (typeof(localStorage) != 'undefined' ) {
-						localStorage.setItem("banana_activetab", $(this).attr('href'));
+						localStorage.setItem("banana_activetab", jQuery(this).attr('href'));
 					}
-					$('.group').hide();
-					$(clicked_group).fadeIn(100);
+					jQuery('.group').hide();
+					jQuery(clicked_group).fadeIn(100);
 					evt.preventDefault();
 				});
 
-				$('.wpsa-browse').on('click', function (event) {
+				jQuery('.wpsa-browse').on('click', function (event) {
 					event.preventDefault();
 
-					var self = $(this);
+					var self = jQuery(this);
 
 					// Create the media frame.
 					var file_frame = wp.media.frames.file_frame = wp.media({

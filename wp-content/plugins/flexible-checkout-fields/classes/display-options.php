@@ -219,19 +219,21 @@ class Flexible_Checkout_Fields_Disaplay_Options {
 		if ( empty( $fields ) ) {
 			return $formats;
 		}
-		$default_format = $formats['default'];
-		if ( $this->is_edit_address_page()
-		     || $this->is_order_page()
-		     || $this->is_in_email()
-		     || $this->is_thankyou_page()
-		) {
-			$default_format = '';
-			foreach ( $fields as $field_key => $field ) {
-				$default_format = $this->append_field_to_address_format( $default_format, $field_key, $field );
+
+		foreach ( $formats as $format_key => $format ) {
+			if ( $this->is_edit_address_page()
+				 || $this->is_order_page()
+				 || $this->is_in_email()
+				 || $this->is_thankyou_page()
+			) {
+				$formats[ $format_key ] = '';
+				foreach ( $fields as $field_key => $field ) {
+					$formats[ $format_key ] = $this->append_field_to_address_format( $formats[ $format_key ], $field_key, $field );
+				}
 			}
 		}
 
-		return array( 'default' => $default_format );
+		return $formats;
 	}
 
 	private function is_field_displayable( $field ) {

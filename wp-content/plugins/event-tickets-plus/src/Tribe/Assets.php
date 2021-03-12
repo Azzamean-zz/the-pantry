@@ -62,6 +62,15 @@ class Tribe__Tickets_Plus__Assets {
 
 		if ( function_exists( 'tribe_tickets_new_views_is_enabled' ) && tribe_tickets_new_views_is_enabled() ) {
 
+			/**
+			 * Whether or not we should display the modal if no AR tickets in cart.
+			 *
+			 * @since 5.2.1
+			 *
+			 * @param boolean $show_modal (true) Whether or not to show the modal for this particular case.
+			 */
+			$show_modal_if_no_ar_in_cart = (bool) apply_filters( 'tribe_tickets_modal_show_if_no_ticket_with_ar_in_cart', true );
+
 			// Tickets modal scripts.
 			tribe_asset(
 				$plugin,
@@ -76,6 +85,12 @@ class Tribe__Tickets_Plus__Assets {
 					'groups' => [
 						'tribe-tickets-block-assets',
 						'tribe-tickets-modal',
+					],
+					'localize' => (object) [
+						'name' => 'TribeTicketsModal',
+						'data' => [
+							'ShowIfNoTicketWithArInCart' => $show_modal_if_no_ar_in_cart,
+						],
 					],
 				]
 			);

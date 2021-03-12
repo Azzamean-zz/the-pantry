@@ -90,7 +90,7 @@ class Flexible_Checkout_Fields_Pro_Plugin
 	 */
 	public function __construct( FCFProVendor\WPDesk_Plugin_Info $plugin_info ) {
 		parent::__construct( $plugin_info );
-		$this->plugin_pro = new PluginPro( $plugin_info );
+		$this->plugin_pro = new PluginPro( $plugin_info, $this );
 	}
 
 	/**
@@ -187,22 +187,26 @@ class Flexible_Checkout_Fields_Pro_Plugin
 	}
 
 	/**
-	 * Init plugin functionality.
+	 * Initializes plugin functionality.
 	 */
 	public function init() {
+		$this->plugin_pro->load_action_init();
+	}
+
+	/**
+	 * Initializes plugin functionality after "flexible_checkout_fields/init" action.
+	 */
+	public function load_after_action_init() {
 		$this->init_base_variables();
 
 		$this->init_renderer();
 
 		$checkout_fields_pro = new Flexible_Checkout_Fields_Pro( $this );
-
-		$this->add_hookable( new Flexible_Checkout_Fields_Conditional_Logic() );
+		$this->add_hookable( $checkout_fields_pro );
 
 		$this->add_hookable( new Flexible_Checkout_Fields_Conditional_Logic_Checkout( $this ) );
 
 		$this->add_hookable( new Flexible_Checkout_Fields_Conditional_Logic_Order( $this ) );
-
-		new Flexible_Checkout_Fields_Pro_Docs_Metabox( $this );
 
 		$this->select_field_type = new Flexible_Checkout_Fields_Pro_Select_Field_Type( $checkout_fields_pro, $this->renderer );
 		$this->add_hookable( $this->select_field_type );
@@ -222,6 +226,7 @@ class Flexible_Checkout_Fields_Pro_Plugin
 		$this->add_hookable( new Flexible_Checkout_Fields_Pro_File_Field_Order_Metabox( $checkout_fields_pro ) );
 
 		$this->pro_types = new Flexible_Checkout_Fields_Pro_Types( $this );
+		$this->add_hookable( $this->pro_types );
 
 		$this->add_hookable( new Flexible_Checkout_Fields_Order_Metabox( $checkout_fields_pro, $this ) );
 
@@ -231,7 +236,6 @@ class Flexible_Checkout_Fields_Pro_Plugin
 		parent::init();
 	}
 
-
 	/**
 	 * Links filter.
 	 *
@@ -239,15 +243,11 @@ class Flexible_Checkout_Fields_Pro_Plugin
 	 * @return array
 	 */
 	public function links_filter( $links ) {
-		$docs_link    = get_locale() === 'pl_PL' ? 'https://www.wpdesk.pl/docs/flexible-checkout-fields-docs/' : 'https://www.wpdesk.net/docs/flexible-checkout-fields-docs/';
-		$support_link = get_locale() === 'pl_PL' ? 'https://www.wpdesk.pl/support/' : 'https://www.wpdesk.net/support';
-		$plugin_links = array();
-
-		if ( defined( 'WC_VERSION' ) ) {
-			$plugin_links[] = '<a href="' . admin_url( 'admin.php?page=inspire_checkout_fields_settings' ) . '">' . __( 'Settings', 'flexible-checkout-fields-pro' ) . '</a>';
-		}
-		$plugin_links[] = '<a href="' . $docs_link . '">' . __( 'Docs', 'flexible-checkout-fields-pro' ) . '</a>';
-		$plugin_links[] = '<a href="' . $support_link . '">' . __( 'Support', 'flexible-checkout-fields-pro' ) . '</a>';
+		$plugin_links = array(
+			'<a href="' . admin_url( 'admin.php?page=inspire_checkout_fields_settings' ) . '">' . __( 'Settings', 'flexible-checkout-fields-pro' ) . '</a>',
+			'<a href="' . esc_url( apply_filters( 'flexible_checkout_fields/short_url', 'https://wpde.sk/fcf-settings-row-action-docs', 'fcf-settings-row-action-docs' ) ) . '" target="_blank">' . __( 'Docs', 'flexible-checkout-fields-pro' ) . '</a>',
+			'<a href="' . esc_url( apply_filters( 'flexible_checkout_fields/short_url', 'https://wpde.sk/fcf-settings-row-action-support-pro', 'fcf-settings-row-action-support-pro' ) ) . '" target="_blank">' . __( 'Support', 'flexible-checkout-fields-pro' ) . '</a>',
+		);
 
 		return array_merge( $plugin_links, $links );
 	}
@@ -282,7 +282,6 @@ class Flexible_Checkout_Fields_Pro_Plugin
 			&& ( in_array( $current_screen->id, array(
 				'shop_order',
 				'shop_subscription',
-				'woocommerce_page_inspire_checkout_fields_settings',
 			), true ) )
 		) {
 			return true;
@@ -327,24 +326,6 @@ class Flexible_Checkout_Fields_Pro_Plugin
 				trailingslashit( $this->get_plugin_assets_url() ) . 'js/admin' . $suffix . '.js',
 				array( 'jquery' ), $this->script_version, true
 			);
-			if ( $current_screen->id == 'woocommerce_page_inspire_checkout_fields_settings' ) {
-				wp_enqueue_script( 'fcf_shipping_conditional_logic',
-					trailingslashit( $this->get_plugin_assets_url() ) . 'js/shipping_conditional_logic' . $suffix . '.js',
-					array( 'jquery' ),
-					$this->get_script_version()
-				);
-
-				wp_localize_script( 'fcf_shipping_conditional_logic', 'fcf_shipping_conditional_logic', [
-					'shipping_zones'                      => json_encode( Shipping_Zones_Repository::get_shipping_zones_by_name() ),
-					'no_shipping_zones'                   => json_encode( Shipping_Zones_Repository::get_active_shipping_methods_with_no_zone(), JSON_PRETTY_PRINT ),
-					'ajax_url'                            => esc_url( admin_url( 'admin-ajax.php' ) ),
-					'no_shipping_zones_or_global_methods' => __( 'No Shipping Zones or Global Methods', 'flexible-checkout-fields-pro' ),
-					'select_shipping_zone'                => __( 'Select Shipping Zone', 'flexible-checkout-fields-pro' ),
-					'select_shipping_method'              => __( 'Select Shipping Method', 'flexible-checkout-fields-pro' ),
-					'methods'                             => __( 'Shipping Methods', 'flexible-checkout-fields-pro' ),
-					'zones'                               => __( 'Shipping Zones', 'flexible-checkout-fields-pro' )
-				] );
-			}
 		}
 	}
 
