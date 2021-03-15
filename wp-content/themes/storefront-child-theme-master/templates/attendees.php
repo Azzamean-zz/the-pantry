@@ -27,11 +27,11 @@ get_header(); ?>
 
 
 
-<!--
+
 	<pre>
-		<?php // print_r($attendee_list); ?> 
+		<?php print_r($attendee_list); ?> 
 	</pre>
--->	
+	
 
 
 
@@ -159,9 +159,9 @@ get_header(); ?>
 					$email = $attendee['purchaser_email'];
 					$emails[] = $attendee['purchaser_email'];
 				}
-				if(isset($attendee['attendee_meta']['please-select-your-wine']['value'])) {
-						$wine = $attendee['attendee_meta']['please-select-your-wine']['value'];
-					}
+				if(isset($attendee['attendee_meta']['bottle-of-wine']['value'])) {
+					$wine = $attendee['attendee_meta']['bottle-of-wine']['value'];
+				}
 				$purchaser = $attendee['purchaser_name'];
 								
 				echo '<tr>';
