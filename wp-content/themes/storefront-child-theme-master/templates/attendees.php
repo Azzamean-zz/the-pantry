@@ -28,9 +28,11 @@ get_header(); ?>
 
 
 
+<!--
 	<pre>
 		<?php print_r($attendee_list); ?> 
 	</pre>
+-->
 	
 
 
