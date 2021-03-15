@@ -51,20 +51,12 @@ get_header(); ?>
 // 			$metas[$i]['attendee'] = $attendee['attendee_meta'];
 			$metas[$i]['order_id'] = $attendee['order_id'];
 			
-			foreach($attendee_metas[$i] as $attendee_meta_key => $attendee_meta_value) {
+			//foreach($attendee_metas[$i] as $attendee_meta_key => $attendee_meta_value) {
 				
-				$metas[$i][$attendee_meta_key] = $attendee_meta_value['value'];
-				
-/*
-				echo '<pre>';
-
-				print_r($attendee_meta_key);
-				print_r($attendee_meta_value['value']);
-
-				echo '</pre>';
-*/
 				// $metas[$i][$attendee_meta_key] = $attendee_meta_value['value'];
-			}
+
+				// $metas[$i][$attendee_meta_key] = $attendee_meta_value['value'];
+			//}
 			
 			$i++;
 		}
@@ -73,6 +65,7 @@ get_header(); ?>
 		$classcounts = array_count_values($class);
 		?>
 		<?php
+/*
 		foreach($attendee_metas as $key => $value) {
 			
 			foreach($value as $value_key => $value_value) {
@@ -80,7 +73,8 @@ get_header(); ?>
 				$value = $value_value['value'];
 			}
 
-		}	
+		}
+*/	
 		
 /*
 		echo '<pre>';
@@ -164,6 +158,11 @@ get_header(); ?>
 				if(isset($attendee['attendee_meta']['bottle-of-wine']['value'])) {
 					$wine = $attendee['attendee_meta']['bottle-of-wine']['value'];
 				}
+				
+				if(isset($attendee['attendee_meta']['please-select-your-wine']['value'])) {
+					$wine = $attendee['attendee_meta']['please-select-your-wine']['value'];
+				}
+				
 				$purchaser = $attendee['purchaser_name'];
 								
 				echo '<tr>';
