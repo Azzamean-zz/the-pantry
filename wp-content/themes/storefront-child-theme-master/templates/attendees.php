@@ -26,11 +26,13 @@ get_header(); ?>
 
 
 
+
 <!--
 	<pre>
-		<?php print_r($attendee_list); ?> 
+		<?php // print_r($attendee_list); ?> 
 	</pre>	
 -->
+
 
 
 
@@ -139,9 +141,9 @@ get_header(); ?>
 					$names[] = $attendee['attendee_meta']['name']['value'];
 					
 					if(isset($attendee['attendee_meta']['do-you-need-a-vegetarian-option']['value'])){
-						$veg = "Yes";
+						$veg = $attendee['attendee_meta']['do-you-need-a-vegetarian-option']['value'];
 					} else {
-						$veg = " ";
+						$veg = $attendee['attendee_meta']['do-you-need-a-vegetarian-option']['value'];
 					}
 					if(isset($attendee['attendee_meta']['email']['value'])){
 				    	$email = $attendee['attendee_meta']['email']['value'];
