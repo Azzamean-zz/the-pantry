@@ -30,8 +30,8 @@ get_header(); ?>
 <!--
 	<pre>
 		<?php // print_r($attendee_list); ?> 
-	</pre>	
--->
+	</pre>
+-->	
 
 
 
@@ -143,7 +143,7 @@ get_header(); ?>
 					if(isset($attendee['attendee_meta']['do-you-need-a-vegetarian-option']['value'])){
 						$veg = $attendee['attendee_meta']['do-you-need-a-vegetarian-option']['value'];
 					} else {
-						$veg = $attendee['attendee_meta']['do-you-need-a-vegetarian-option']['value'];
+						$veg = " ";
 					}
 					if(isset($attendee['attendee_meta']['email']['value'])){
 				    	$email = $attendee['attendee_meta']['email']['value'];
