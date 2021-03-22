@@ -425,6 +425,22 @@ add_action('manage_shopping_lists_posts_custom_column', 'manage_shopping_lists_c
 remove_action( 'woocommerce_before_single_product', 'woocommerce_output_all_notices', 10 );
 add_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_all_notices', 10 );
 
+if( function_exists('acf_add_options_page')) {
+	acf_add_options_page(array(
+		'page_title' => 'Theme Options',
+		'menu_title' => 'Theme Options',
+		'menu_slug' => 'theme-options',
+		'capability' => 'edit_posts',
+		'redirect' => true
+	));
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Emails',
+		'menu_title'	=> 'Emails',
+		'parent_slug'	=> 'theme-options',
+	));
+}
+
+
 /**
  * Changes the redirect URL for the Return To Shop button in the cart.
  *
@@ -941,6 +957,7 @@ function send_reminder_email() {
 		    $class_name = get_the_title();
 		    $instructor = get_field('instructor');
 		    $zoom_info = get_field('zoom_info');
+		    $email_text = get_field('reminder', 'options');
 		    
 		    if(get_field('prep_instructions')) {
 			    $prep_instructions = get_field('prep_instructions');
@@ -970,6 +987,8 @@ function send_reminder_email() {
 			    if(isset($attendee['attendee_meta']['email']['value'])){
 			    	$attendee_name = $attendee['attendee_meta']['name']['value'];					
 			    	$email = $attendee['attendee_meta']['email']['value'];
+					// $email = 'hornerbrett@gmail.com';
+					
 					$mailer = WC()->mailer();
 				    $recipient = $email;
 
@@ -978,7 +997,7 @@ function send_reminder_email() {
 				    $class_name_friendly = preg_replace('/^([^,]*).*$/', '$1', $class_name_friendly);
 
 				    $subject = $class_date . ' ' . $class_time . ' ' . $class_name_friendly . ' ' . 'online class & ingredient kit reminder';
-				    $content = get_reminder_email($attendee_name, $class_name, $class_name_friendly, $instructor, $class_id, $class_date, $class_time, $list_link, $packet, $zoom_info, $prep_instructions, $mailer);
+				    $content = get_reminder_email($email_text, $attendee_name, $class_name, $class_name_friendly, $instructor, $class_id, $class_date, $class_time, $list_link, $packet, $zoom_info, $prep_instructions, $mailer);
 
 				    $headers = "Content-Type: text/html\r\n";
 				    $headers .= "Bcc: hornerbrett@gmail.com, shannon@deicreative.com, info@thepantryseattle.com" . "\r\n";
@@ -993,7 +1012,7 @@ function send_reminder_email() {
 	} wp_reset_postdata();
 }
 
-function get_reminder_email($attendee_name, $class_name, $class_name_friendly, $instructor, $class_id, $class_date, $class_time, $list_link, $packet, $zoom_info, $prep_instructions, $mailer) {
+function get_reminder_email($email_text, $attendee_name, $class_name, $class_name_friendly, $instructor, $class_id, $class_date, $class_time, $list_link, $packet, $zoom_info, $prep_instructions, $mailer) {
 	$template = 'emails/reminder.php';
 	return wc_get_template_html($template, array(
 		'attendee_name' => $attendee_name,
@@ -1008,6 +1027,7 @@ function get_reminder_email($attendee_name, $class_name, $class_name_friendly, $
 		'packet' => $packet,
 		'zoom_info' => $zoom_info,
 		'prep_instructions' => $prep_instructions,
+		'email_text' => $email_text,
 		'sent_to_admin' => false,
 		'plain_text' => false,
 		'email' => $mailer
@@ -1030,7 +1050,8 @@ function send_shopping_list_email() {
 	$end_day = new DateTime('tomorrow midnight', new DateTimeZone($tz));
 	$end_day->modify('+7 day');
 	$end_day = $end_day->format('Y-m-d H:i:s');
-
+	$email_text = get_field('shopping_list', 'options');
+    
     $args = array(
 	    'post_type' => 'ticket-page',
 	    'posts_per_page' => -1,
@@ -1089,7 +1110,8 @@ function send_shopping_list_email() {
 			    if(isset($attendee['attendee_meta']['email']['value'])){
 			    	$attendee_name = $attendee['attendee_meta']['name']['value'];					
 			    	$email = $attendee['attendee_meta']['email']['value'];
-
+					//$email = 'hornerbrett@gmail.com';
+					
 					$mailer = WC()->mailer();
 				    $recipient = $email;
 
@@ -1099,7 +1121,7 @@ function send_shopping_list_email() {
 
 				    $subject = $class_date . ' ' . $class_name_friendly . ' ' . 'class shopping list';
 
-				    $content = get_shopping_list_email($attendee_name, $class_name, $class_name_friendly, $instructor, $class_id, $class_date, $class_time, $list_link, $mailer);
+				    $content = get_shopping_list_email($email_text, $attendee_name, $class_name, $class_name_friendly, $instructor, $class_id, $class_date, $class_time, $list_link, $mailer);
 
 				    $headers = "Content-Type: text/html\r\n";
 				    $headers .= "Bcc: hornerbrett@gmail.com, shannon@deicreative.com, info@thepantryseattle.com" . "\r\n";
@@ -1115,7 +1137,7 @@ function send_shopping_list_email() {
 	} wp_reset_postdata();
 }
 
-function get_shopping_list_email($attendee_name, $class_name, $class_name_friendly, $instructor, $class_id, $class_date, $class_time, $list_link, $mailer) {
+function get_shopping_list_email($email_text, $attendee_name, $class_name, $class_name_friendly, $instructor, $class_id, $class_date, $class_time, $list_link, $mailer) {
 	$template = 'emails/shopping-list.php';
 	return wc_get_template_html($template, array(
 		'attendee_name' => $attendee_name,
@@ -1127,6 +1149,7 @@ function get_shopping_list_email($attendee_name, $class_name, $class_name_friend
 		'class_date' => $class_date,
 		'class_time' => $class_time,
 		'list_link' => $list_link,
+		'email_text' => $email_text,
 		'sent_to_admin' => false,
 		'plain_text' => false,
 		'email' => $mailer
@@ -1149,6 +1172,7 @@ function send_class_evaluation_email() {
 	$end_day = new DateTime('tomorrow midnight', new DateTimeZone($tz));
 	$end_day->modify('-1 day');
 	$end_day = $end_day->format('Y-m-d H:i:s');
+	$email_text = get_field('class_evaluation', 'options');
 
     $args = array(
 	    'post_type' => 'ticket-page',
@@ -1198,6 +1222,7 @@ function send_class_evaluation_email() {
 			    if(isset($attendee['attendee_meta']['email']['value'])){
 			    	$attendee_name = $attendee['attendee_meta']['name']['value'];					
 			    	$email = $attendee['attendee_meta']['email']['value'];
+					//$email = 'hornerbrett@gmail.com';
 
 					$mailer = WC()->mailer();
 				    $recipient = $email;
@@ -1208,14 +1233,15 @@ function send_class_evaluation_email() {
 				    
 					$subject = $class_date . ' ' . $class_name_friendly . ' ' . 'class evaluation';
 
-				    $content = get_class_evaluation_email($attendee_name, $class_name, $instructor, $class_id, $class_date, $class_time, $survey, $mailer);
+				    $content = get_class_evaluation_email($email_text, $attendee_name, $class_name, $instructor, $class_id, $class_date, $class_time, $survey, $mailer);
 
 				    $headers = "Content-Type: text/html\r\n";
-				    $headers .= "Bcc: hornerbrett@gmail.com, shannon@deicreative.com, info@thepantryseattle.com" . "\r\n";
+				    //$headers .= "Bcc: hornerbrett@gmail.com, shannon@deicreative.com, info@thepantryseattle.com" . "\r\n";
 				    $headers .= "List-Unsubscribe: <mailto:info@thepantryseattle.com?subject=unsubscribe>\r\n";
 				    $mailer->send($recipient, $subject, $content, $headers);
 
 					$emails[] = $attendee['attendee_meta']['email']['value'];
+
 				}
 
 			}
@@ -1224,7 +1250,7 @@ function send_class_evaluation_email() {
 	} wp_reset_postdata();
 }
 
-function get_class_evaluation_email($attendee_name, $class_name, $instructor, $class_id, $class_date, $class_time, $survey, $mailer) {
+function get_class_evaluation_email($email_text, $attendee_name, $class_name, $instructor, $class_id, $class_date, $class_time, $survey, $mailer) {
 	$template = 'emails/class-evaluation.php';
 	return wc_get_template_html($template, array(
 		'attendee_name' => $attendee_name,
@@ -1235,6 +1261,7 @@ function get_class_evaluation_email($attendee_name, $class_name, $instructor, $c
 		'class_date' => $class_date,
 		'class_time' => $class_time,
 		'survey' => $survey,
+		'email_text' => $email_text,
 		'sent_to_admin' => false,
 		'plain_text' => false,
 		'email' => $mailer
@@ -1255,6 +1282,7 @@ function send_to_go_reminder_email() {
 	
 	$end_day = new DateTime('tomorrow midnight', new DateTimeZone($tz));
 	$end_day = $end_day->format('Y-m-d H:i:s');
+	$email_text = get_field('to_go', 'options');
 
     $args = array(
 	    'post_type' => 'ticket-page',
@@ -1307,7 +1335,8 @@ function send_to_go_reminder_email() {
 			    if(isset($attendee['attendee_meta']['email']['value'])){
 			    	$attendee_name = $attendee['attendee_meta']['name']['value'];					
 			    	$email = $attendee['attendee_meta']['email']['value'];
-
+					//$email = 'hornerbrett@gmail.com';
+					
 					$mailer = WC()->mailer();
 				    $recipient = $email;
 
@@ -1317,10 +1346,10 @@ function send_to_go_reminder_email() {
 
 					$subject = $class_date . ' ' . $class_name_friendly . ' ' . 'pickup reminder + recipes!';
 
-				    $content = get_to_go_reminder_email($attendee_name, $class_name, $class_id, $class_date, $packet, $class_time, $mailer);
+				    $content = get_to_go_reminder_email($attendee_name, $class_name, $class_id, $class_date, $packet, $class_time, $mailer, $email_text);
 
 				    $headers = "Content-Type: text/html\r\n";
-				    $headers .= "Bcc: hornerbrett@gmail.com, shannon@deicreative.com, info@thepantryseattle.com" . "\r\n";
+				    // $headers .= "Bcc: hornerbrett@gmail.com, shannon@deicreative.com, info@thepantryseattle.com" . "\r\n";
 				    $headers .= "List-Unsubscribe: <mailto:info@thepantryseattle.com?subject=unsubscribe>\r\n";
 				    $mailer->send($recipient, $subject, $content, $headers);
 
@@ -1333,7 +1362,7 @@ function send_to_go_reminder_email() {
 	} wp_reset_postdata();
 }
 
-function get_to_go_reminder_email($attendee_name, $class_name, $class_id, $class_date, $packet, $class_time, $mailer) {
+function get_to_go_reminder_email($email_text, $attendee_name, $class_name, $class_id, $class_date, $packet, $class_time, $mailer) {
 	$template = 'emails/to-go-reminder.php';
 	return wc_get_template_html($template, array(
 		'attendee_name' => $attendee_name,
@@ -1342,6 +1371,7 @@ function get_to_go_reminder_email($attendee_name, $class_name, $class_id, $class
 		'class_id' => $class_id,
 		'class_date' => $class_date,
 		'class_time' => $class_time,
+		'email_text' => $email_text,
 		'packet' => $packet,
 		'sent_to_admin' => false,
 		'plain_text' => false,

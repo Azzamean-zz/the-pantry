@@ -63,7 +63,12 @@ if ( has_action( 'woocommerce_email_header' ) ) {
 		a {
 			font-weight: bold;
 		}
-
+		.im {
+			color: #252525 !important;
+		}
+		p {
+			color: #252525 !important;
+		}
 </style>
 <style type="text/css"><?php echo ( isset( $coupon_styles ) && ! empty( $coupon_styles ) ) ? $coupon_styles : ''; // phpcs:ignore ?></style>
 <style type="text/css">

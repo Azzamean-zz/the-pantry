@@ -28,12 +28,7 @@ do_action( 'woocommerce_email_header', $email_heading, $email ); ?>
 
 <p>If you have a few moments, would you mind filling out <a href="<?php echo $survey;?>">this survey?</a></p>
 
-<p>Quick note: If you would like a direct response to your feedback, please send us an email. We are currently unable to track contact info in our survey, but would love to help in whatever way we can!</p>
-
-<p>Thank you for hanging out with us!</p>
-
-<p>Kindly,<br>
-The Pantry Family</p>
+<?php echo $email_text;?>
 <?php
 
 echo '<hr style="margin-bottom: 20px;
