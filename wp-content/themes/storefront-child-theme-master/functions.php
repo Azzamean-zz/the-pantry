@@ -1000,7 +1000,7 @@ function send_reminder_email() {
 				    $content = get_reminder_email($email_text, $attendee_name, $class_name, $class_name_friendly, $instructor, $class_id, $class_date, $class_time, $list_link, $packet, $zoom_info, $prep_instructions, $mailer);
 
 				    $headers = "Content-Type: text/html\r\n";
-				    $headers .= "Bcc: hornerbrett@gmail.com, shannon@deicreative.com, info@thepantryseattle.com" . "\r\n";
+				    $headers .= "Bcc: hornerbrett@gmail.com, shannon@deicreative.com" . "\r\n";
 				    $headers .= "List-Unsubscribe: <mailto:info@thepantryseattle.com?subject=unsubscribe>\r\n";
 				    $mailer->send($recipient, $subject, $content, $headers);
 
