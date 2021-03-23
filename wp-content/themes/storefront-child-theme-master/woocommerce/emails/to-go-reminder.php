@@ -24,14 +24,13 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 do_action( 'woocommerce_email_header', $email_heading, $email ); ?>
 
-<p>This email is to remind you that your lovingly prepared <?= esc_html( $class_name ); ?> meal will be ready for pickup at The Pantry today between 4:30pm-6pm. We're now licensed to sell wine, so you can purchase a bottle of red, white, or rosé to go with your dinner when you pick up your meal!</p>
+<p>This email is to remind you that your lovingly prepared <?= esc_html( $class_name_friendly ); ?> meal will be ready for pickup at The Pantry today between 4:30pm-6pm.</p>
 
 <p>While tonight's meal is fully prepared, here is the <a href="<?php echo $packet; ?>">recipe packet</a> for your enjoyment. Happy cooking!</p>
 
 <?php echo $email_text;?>
 
 <?php
-
 echo '<hr style="margin-bottom: 20px;
     margin-top: 20px;
     border: none;

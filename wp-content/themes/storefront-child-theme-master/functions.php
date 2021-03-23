@@ -1005,6 +1005,7 @@ function send_reminder_email() {
 				    $mailer->send($recipient, $subject, $content, $headers);
 
 					$emails[] = $attendee['attendee_meta']['email']['value'];
+					break;
 				}
 			}
 									    
@@ -1129,6 +1130,7 @@ function send_shopping_list_email() {
 				    $mailer->send($recipient, $subject, $content, $headers);
 
 					$emails[] = $attendee['attendee_meta']['email']['value'];
+					break;
 				}
 
 			}
@@ -1241,7 +1243,7 @@ function send_class_evaluation_email() {
 				    $mailer->send($recipient, $subject, $content, $headers);
 
 					$emails[] = $attendee['attendee_meta']['email']['value'];
-
+					break;
 				}
 
 			}
@@ -1282,7 +1284,7 @@ function send_to_go_reminder_email() {
 	
 	$end_day = new DateTime('tomorrow midnight', new DateTimeZone($tz));
 	$end_day = $end_day->format('Y-m-d H:i:s');
-	$email_text = get_field('to_go', 'options');
+	$email_text = get_field('to-go', 'options');
 
     $args = array(
 	    'post_type' => 'ticket-page',
@@ -1346,7 +1348,7 @@ function send_to_go_reminder_email() {
 
 					$subject = $class_date . ' ' . $class_name_friendly . ' ' . 'pickup reminder + recipes!';
 
-				    $content = get_to_go_reminder_email($attendee_name, $class_name, $class_id, $class_date, $packet, $class_time, $mailer, $email_text);
+				    $content = get_to_go_reminder_email($email_text, $class_name_friendly, $class_name, $class_id, $class_date, $packet, $class_time, $mailer);
 
 				    $headers = "Content-Type: text/html\r\n";
 				    // $headers .= "Bcc: hornerbrett@gmail.com, shannon@deicreative.com, info@thepantryseattle.com" . "\r\n";
@@ -1354,6 +1356,7 @@ function send_to_go_reminder_email() {
 				    $mailer->send($recipient, $subject, $content, $headers);
 
 					$emails[] = $attendee['attendee_meta']['email']['value'];
+					break;
 				}
 
 			}
@@ -1362,12 +1365,12 @@ function send_to_go_reminder_email() {
 	} wp_reset_postdata();
 }
 
-function get_to_go_reminder_email($email_text, $attendee_name, $class_name, $class_id, $class_date, $packet, $class_time, $mailer) {
+function get_to_go_reminder_email($email_text, $class_name_friendly, $class_name, $class_id, $class_date, $packet, $class_time, $mailer) {
 	$template = 'emails/to-go-reminder.php';
 	return wc_get_template_html($template, array(
-		'attendee_name' => $attendee_name,
 		'email_heading' => 'Hello!',
 		'class_name' => $class_name,
+		'class_name_friendly' => $class_name_friendly,
 		'class_id' => $class_id,
 		'class_date' => $class_date,
 		'class_time' => $class_time,
