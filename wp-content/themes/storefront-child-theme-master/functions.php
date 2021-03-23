@@ -986,8 +986,8 @@ function send_reminder_email() {
 		    foreach($attendee_list as $attendee) {
 			    if(isset($attendee['attendee_meta']['email']['value'])){
 			    	$attendee_name = $attendee['attendee_meta']['name']['value'];					
-			    	// $email = $attendee['attendee_meta']['email']['value'];
-					$email = 'hornerbrett@gmail.com';
+			    	$email = $attendee['attendee_meta']['email']['value'];
+					// $email = 'hornerbrett@gmail.com';
 					
 					$mailer = WC()->mailer();
 				    $recipient = $email;
@@ -1000,12 +1000,11 @@ function send_reminder_email() {
 				    $content = get_reminder_email($email_text, $attendee_name, $class_name, $class_name_friendly, $instructor, $class_id, $class_date, $class_time, $list_link, $packet, $zoom_info, $prep_instructions, $mailer);
 
 				    $headers = "Content-Type: text/html\r\n";
-				    //$headers .= "Bcc: hornerbrett@gmail.com, shannon@deicreative.com, info@thepantryseattle.com" . "\r\n";
+				    $headers .= "Bcc: hornerbrett@gmail.com, shannon@deicreative.com, info@thepantryseattle.com" . "\r\n";
 				    $headers .= "List-Unsubscribe: <mailto:info@thepantryseattle.com?subject=unsubscribe>\r\n";
 				    $mailer->send($recipient, $subject, $content, $headers);
 
 					$emails[] = $attendee['attendee_meta']['email']['value'];
-					break;
 				}
 			}
 									    
@@ -1110,8 +1109,8 @@ function send_shopping_list_email() {
 		    foreach($attendee_list as $attendee) {
 			    if(isset($attendee['attendee_meta']['email']['value'])){
 			    	$attendee_name = $attendee['attendee_meta']['name']['value'];					
-			    	// $email = $attendee['attendee_meta']['email']['value'];
-					$email = 'hornerbrett@gmail.com';
+			    	$email = $attendee['attendee_meta']['email']['value'];
+					// $email = 'hornerbrett@gmail.com';
 					
 					$mailer = WC()->mailer();
 				    $recipient = $email;
@@ -1125,12 +1124,11 @@ function send_shopping_list_email() {
 				    $content = get_shopping_list_email($email_text, $attendee_name, $class_name, $class_name_friendly, $instructor, $class_id, $class_date, $class_time, $list_link, $mailer);
 
 				    $headers = "Content-Type: text/html\r\n";
-				    // $headers .= "Bcc: hornerbrett@gmail.com, shannon@deicreative.com, info@thepantryseattle.com" . "\r\n";
+				    $headers .= "Bcc: hornerbrett@gmail.com, shannon@deicreative.com, info@thepantryseattle.com" . "\r\n";
 				    $headers .= "List-Unsubscribe: <mailto:info@thepantryseattle.com?subject=unsubscribe>\r\n";
 				    $mailer->send($recipient, $subject, $content, $headers);
 
 					$emails[] = $attendee['attendee_meta']['email']['value'];
-					break;
 				}
 
 			}
@@ -1223,8 +1221,8 @@ function send_class_evaluation_email() {
 		    foreach($attendee_list as $attendee) {
 			    if(isset($attendee['attendee_meta']['email']['value'])){
 			    	$attendee_name = $attendee['attendee_meta']['name']['value'];					
-			    	// $email = $attendee['attendee_meta']['email']['value'];
-					$email = 'hornerbrett@gmail.com';
+			    	$email = $attendee['attendee_meta']['email']['value'];
+					// $email = 'hornerbrett@gmail.com';
 
 					$mailer = WC()->mailer();
 				    $recipient = $email;
@@ -1238,12 +1236,11 @@ function send_class_evaluation_email() {
 				    $content = get_class_evaluation_email($email_text, $attendee_name, $class_name, $instructor, $class_id, $class_date, $class_time, $survey, $mailer);
 
 				    $headers = "Content-Type: text/html\r\n";
-				    //$headers .= "Bcc: hornerbrett@gmail.com, shannon@deicreative.com, info@thepantryseattle.com" . "\r\n";
+				    $headers .= "Bcc: hornerbrett@gmail.com, shannon@deicreative.com, info@thepantryseattle.com" . "\r\n";
 				    $headers .= "List-Unsubscribe: <mailto:info@thepantryseattle.com?subject=unsubscribe>\r\n";
 				    $mailer->send($recipient, $subject, $content, $headers);
 
 					$emails[] = $attendee['attendee_meta']['email']['value'];
-					break;
 				}
 
 			}
@@ -1336,8 +1333,8 @@ function send_to_go_reminder_email() {
 		    foreach($attendee_list as $attendee) {
 			    if(isset($attendee['attendee_meta']['email']['value'])){
 			    	$attendee_name = $attendee['attendee_meta']['name']['value'];					
-			    	// $email = $attendee['attendee_meta']['email']['value'];
-					$email = 'hornerbrett@gmail.com';
+			    	$email = $attendee['attendee_meta']['email']['value'];
+					// $email = 'hornerbrett@gmail.com';
 					
 					$mailer = WC()->mailer();
 				    $recipient = $email;
@@ -1351,12 +1348,11 @@ function send_to_go_reminder_email() {
 				    $content = get_to_go_reminder_email($email_text, $class_name_friendly, $class_name, $class_id, $class_date, $packet, $class_time, $mailer);
 
 				    $headers = "Content-Type: text/html\r\n";
-				    // $headers .= "Bcc: hornerbrett@gmail.com, shannon@deicreative.com, info@thepantryseattle.com" . "\r\n";
+				    $headers .= "Bcc: hornerbrett@gmail.com, shannon@deicreative.com, info@thepantryseattle.com" . "\r\n";
 				    $headers .= "List-Unsubscribe: <mailto:info@thepantryseattle.com?subject=unsubscribe>\r\n";
 				    $mailer->send($recipient, $subject, $content, $headers);
 
 					$emails[] = $attendee['attendee_meta']['email']['value'];
-					break;
 				}
 
 			}
