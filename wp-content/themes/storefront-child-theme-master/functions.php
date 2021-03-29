@@ -996,7 +996,7 @@ function send_reminder_email() {
 					$class_name_friendly = substr($class_name_friendly, strpos($class_name_friendly, "-") + 1);
 				    $class_name_friendly = preg_replace('/^([^,]*).*$/', '$1', $class_name_friendly);
 
-				    $subject = $class_date . ' ' . $class_time . ' ' . $class_name_friendly . ' ' . 'online class & ingredient kit reminder';
+				    $subject = $class_date . ' ' . $class_time . ' ' . htmlentities($class_name_friendly) . ' ' . 'online class & ingredient kit reminder';
 				    $content = get_reminder_email($email_text, $attendee_name, $class_name, $class_name_friendly, $instructor, $class_id, $class_date, $class_time, $list_link, $packet, $zoom_info, $prep_instructions, $mailer);
 
 				    $headers = "Content-Type: text/html\r\n";
@@ -1119,7 +1119,7 @@ function send_shopping_list_email() {
 					$class_name_friendly = substr($class_name_friendly, strpos($class_name_friendly, "-") + 1);
 				    $class_name_friendly = preg_replace('/^([^,]*).*$/', '$1', $class_name_friendly);
 
-				    $subject = $class_date . ' ' . $class_name_friendly . ' ' . 'class shopping list';
+				    $subject = $class_date . ' ' . htmlentities($class_name_friendly) . ' ' . 'class shopping list';
 
 				    $content = get_shopping_list_email($email_text, $attendee_name, $class_name, $class_name_friendly, $instructor, $class_id, $class_date, $class_time, $list_link, $mailer);
 
@@ -1231,7 +1231,7 @@ function send_class_evaluation_email() {
 					$class_name_friendly = substr($class_name_friendly, strpos($class_name_friendly, "-") + 1);
 				    $class_name_friendly = preg_replace('/^([^,]*).*$/', '$1', $class_name_friendly);
 				    
-					$subject = $class_date . ' ' . $class_name_friendly . ' ' . 'class evaluation';
+					$subject = $class_date . ' ' . htmlentities($class_name_friendly) . ' ' . 'class evaluation';
 
 				    $content = get_class_evaluation_email($email_text, $attendee_name, $class_name, $instructor, $class_id, $class_date, $class_time, $survey, $mailer);
 
@@ -1343,7 +1343,7 @@ function send_to_go_reminder_email() {
 					$class_name_friendly = substr($class_name_friendly, strpos($class_name_friendly, "-") + 1);
 				    $class_name_friendly = preg_replace('/^([^,]*).*$/', '$1', $class_name_friendly);
 
-					$subject = $class_date . ' ' . $class_name_friendly . ' ' . 'pickup reminder + recipes!';
+					$subject = $class_date . ' ' . htmlentities($class_name_friendly) . ' ' . 'pickup reminder + recipes!';
 
 				    $content = get_to_go_reminder_email($email_text, $class_name_friendly, $class_name, $class_id, $class_date, $packet, $class_time, $mailer);
 

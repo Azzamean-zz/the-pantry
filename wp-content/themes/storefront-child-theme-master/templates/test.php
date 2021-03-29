@@ -129,7 +129,9 @@ get_header(); ?>
 								
 								echo $subject . ' ' . $email;
 								echo '<br>';
-			
+								echo $packet;
+								echo '<br>';
+								echo '<br>';
 								$emails[] = $attendee['attendee_meta']['email']['value'];
 							}
 			
