@@ -96,14 +96,13 @@
 			?>
 		</center>
 
-		<h1><?php esc_html_e( 'Important changes to your tickets', 'event-tickets' ); ?></h1>
+		<h1><?php esc_html_e( 'Heads Up!', 'event-tickets' ); ?></h1>
 
 		<p>
 			<?php
 			$message = _n(
-				'We wanted to let you know that a ticket you purchased for %2$s has been transferred to %3$s%4$s. Your ticket remains valid and no further action is needed on your part:',
-				'We wanted to let you know that the following %1$s tickets for %2$s have been transferred to %3$s%4$s. Your existing tickets remain valid and no further action is needed on your part:',
-				count( $affected_tickets ),
+					'Your %2$s ticket has been changed to %3$s%4$s. Let us know if you have any questions!',
+					'The following %1$s tickets for %2$s has been changed to %3$s%4$s. Let us know if you have any questions!',						count( $affected_tickets ),
 				'event-tickets'
 			);
 
