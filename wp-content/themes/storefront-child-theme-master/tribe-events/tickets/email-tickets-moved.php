@@ -101,8 +101,13 @@
 		<p>
 			<?php
 			$message = _n(
-					'Your %2$s ticket has been changed to %3$s%4$s. Let us know if you have any questions!',
-					'The following %1$s tickets for %2$s has been changed to %3$s%4$s. Let us know if you have any questions!',						count( $affected_tickets ),
+					'Your %2$s ticket has been changed to %3$s%4$s. Let us know if you have any questions!
+					Cheers, <br>
+					The Pantry',
+					'The following %1$s tickets for %2$s has been changed to %3$s%4$s. Let us know if you have any questions!
+					Cheers, <br>
+					The Pantry',					
+						count( $affected_tickets ),
 				'event-tickets'
 			);
 
