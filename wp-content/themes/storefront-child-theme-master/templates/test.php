@@ -380,6 +380,13 @@ get_header(); ?>
 						    }
 						    $class_id = get_the_ID();
 						    
+						    if(get_field('recipe_packet')) {
+							    $packet = get_field('recipe_packet');
+							    $packet = $packet['url'];
+						    } else {
+							    $packet = '';
+						    }
+						    
 						    $attendee_list = Tribe__Tickets__Tickets::get_event_attendees($class_id);
 						    $emails = [];
 						    foreach($attendee_list as $attendee) {
@@ -394,6 +401,9 @@ get_header(); ?>
 								    $subject = $class_date . ' ' . $class_time . ' ' . $class_name_friendly . ' ' . 'pickup reminder + recipes!';
 
 									echo $subject . ' ' . $email;
+									echo '<br>';
+									echo $packet;
+									echo '<br>';
 									echo '<br>';
 									$emails[] = $attendee['attendee_meta']['email']['value'];
 								}
