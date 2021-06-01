@@ -1,3 +1,5 @@
 wp-content/uploads
 /vendor/
 .idea
+node_modules
+.sass-cache
