@@ -54,7 +54,17 @@ switch ($_SERVER['SERVER_NAME']) {
           define('DB_CHARSET', 'utf8');
           define('DB_COLLATE', '');
           define('WP_DEBUG', true);  
-     break; 
+     break;
+	/** Development Patrick local */
+	case 'thepantry.local':
+		define('DB_NAME', 'local');
+		define('DB_USER', 'root');
+		define('DB_PASSWORD', 'root');
+		define('DB_HOST', 'localhost');
+		define('DB_CHARSET', 'utf8');
+		define('DB_COLLATE', '');
+		define('WP_DEBUG', true);
+		break;
 } 
 
 define( 'AS3CF_SETTINGS', serialize( array(
