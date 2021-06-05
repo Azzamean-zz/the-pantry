@@ -1299,12 +1299,19 @@ function send_to_go_reminder_email() {
 		    ),
 	    ),
 	    'tax_query' => array(
-            array(
-                'taxonomy' => 'ticket-page-categories',
-                'field' => 'slug',
-                'terms' => 'to-go'
-            ),
-        ),
+		    array(
+			    'taxonomy' => 'ticket-page-categories',
+			    'field' => 'slug',
+			    'terms' => 'to-go'
+		    ),
+		    array(
+			    'taxonomy' => 'ticket-page-categories',
+			    'field' => 'slug',
+			    'terms' => 'no-reminder',
+			    'operator' => 'NOT IN'
+		    ),
+		    'relation' => 'AND',
+	    ),
 	);
 
 	$query = new WP_Query($args);
