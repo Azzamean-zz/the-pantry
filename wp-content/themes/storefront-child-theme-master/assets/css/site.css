@@ -3364,8 +3364,8 @@ a.wc-block-grid__product-link {
   z-index: 999; }
 
 .fc-h-event {
-  border: 1px solid #999 !important;
-  background: rgba(255, 255, 255, 0.75) !important;
+  border: none !important;
+  background: rgba(255, 255, 255, 0.25) !important;
   border-radius: 0 !important; }
   .fc-h-event .fc-event-main {
     color: #000 !important; }
