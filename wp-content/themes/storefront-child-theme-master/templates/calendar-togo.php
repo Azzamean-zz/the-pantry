@@ -16,7 +16,7 @@ get_header(); ?>
 <link href='<?php echo site_url(); ?>/wp-content/themes/storefront-child-theme-master/lib/main.css' rel='stylesheet' />
 <script src='<?php echo site_url(); ?>/wp-content/themes/storefront-child-theme-master/lib/main.js'></script>
 
-<?php 
+<?php
 $first_day = new DateTime('first day of this month');
 $first_day = $first_day->format('Y-m-d');
 if(isset($_GET['month'])) {
@@ -54,14 +54,14 @@ if(isset($_GET['month'])) {
 	  },
       events: [
 	    <?php
-		$today = date('m/d/Y g:i a');
+		$today = date_i18n('Y-m-d H:i:s');
 	    $args = array(
 		    'post_type' => 'ticket-page',
 		    'posts_per_page' => -1,
 			'post_status'    => 'publish',
 			'meta_query' => array(
 			     array(
-			        'key'		=> 'start_date',
+			        'key'		=> 'end_date',
 			        'compare'	=> '>=',
 			        'value'		=> $today,
 			        'type'      => 'DATETIME',
@@ -75,7 +75,7 @@ if(isset($_GET['month'])) {
 	            ),
 	        ),
 		);
-		
+
 		$query = new WP_Query($args);
 	    if ( $query->have_posts() ) {
 		    while ( $query->have_posts() ) { $query->the_post();
@@ -83,14 +83,13 @@ if(isset($_GET['month'])) {
 				$sold = get_field('ticket_stock');
 
 					$id = get_the_ID();
-					
+
 /*
 					$tickets = find_tickets($id);
 					if($tickets[0]->stock <= 0) {
 						$sold = 'sold-out';
 					}
 */
-							
 					$start = DateTime::createFromFormat('m/d/Y g:i a', get_field('start_date', $id));
 					$end = DateTime::createFromFormat('m/d/Y g:i a', get_field('end_date', $id));
 					$title = str_replace("&#8211;", "-", get_the_title($id));
@@ -99,11 +98,12 @@ if(isset($_GET['month'])) {
 					$unixstart = strtotime(get_field('start_date', $id));
 					$unixtoday = strtotime('today UTC+8');
 					$imageurl = get_the_post_thumbnail_url( $id, 'medium');
-					
-					if($unixstart >= $unixtoday) {
+
 				?>
 				{
-				  id: <?php echo $id; ?>,
+                  curtime: '<?php echo $today  ?>',
+
+                  id: <?php echo $id; ?>,
 		          title: '<?php if($sold){ echo 'Sold Out - '; }?><?php echo html_entity_decode($title);?>',
 		          url: '<?php echo $link;?>',
 		          className: "<?php echo $sold;?>",
@@ -113,8 +113,7 @@ if(isset($_GET['month'])) {
 		          end: '<?php echo $end->format("Y-m-d" );?>T<?php echo $end->format("H:i:s")?>',
 		        },
 			    <?php
-				}
-	   		}
+		    }
 	    }
 		wp_reset_postdata();
 		?>
@@ -122,10 +121,12 @@ if(isset($_GET['month'])) {
 
     });
 
+    console.log(calendar);
+
     calendar.render();
-    
+
     windowSize();
-    
+
     function windowSize() {
 		widthOutput = window.innerWidth;
 		if(widthOutput < 990) {
@@ -134,12 +135,12 @@ if(isset($_GET['month'])) {
 			calendar.changeView('dayGridMonth');
 		}
 	}
-	
+
 	window.onresize = windowSize;
-    
+
   });
 
-</script>	
+</script>
 
 	<?php while ( have_posts() ) : the_post(); ?>
 <div id="content" class="site-content" tabindex="-1">
@@ -156,13 +157,13 @@ if(isset($_GET['month'])) {
 	           		<a href="<?php echo site_url();?>/to-go" class=""><span class="fa fa-th"></span> Grid View</a>
 	           		<a href="<?php echo site_url();?>/to-go/to-go-calendar" class="active"><span class="fa fa-calendar-alt"></span> Calendar</a>
 -->
-           		</div>	
+           		</div>
            		<div id="calendar"></div>
-	        </div>	
+	        </div>
         </div>
 	<?php endwhile; // End of the loop. ?>
     </main>
-    
+
 <script>
 /*
 	$(function(){
@@ -176,7 +177,7 @@ if(isset($_GET['month'])) {
 		}).triggerHandler('resize');
 	});
 */
-	
-</script>	
+
+</script>
 <?php
 get_footer();
