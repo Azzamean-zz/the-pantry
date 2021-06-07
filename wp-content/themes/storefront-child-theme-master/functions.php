@@ -1368,6 +1368,12 @@ function send_to_go_reminder_email() {
 	} wp_reset_postdata();
 }
 
+function send_email_test() {
+	$mailer = WC()->mailer();
+	$headers = "Content-Type: text/html\r\n";
+	$mailer->send('patrick@newtheory.is', 'test', 'test', $headers);
+}
+
 function get_to_go_reminder_email($email_text, $class_name_friendly, $class_name, $class_id, $class_date, $packet, $class_time, $mailer) {
 	$template = 'emails/to-go-reminder.php';
 	return wc_get_template_html($template, array(

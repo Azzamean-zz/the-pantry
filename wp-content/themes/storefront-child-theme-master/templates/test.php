@@ -120,7 +120,7 @@ get_header(); ?>
 						    if(isset($attendee['attendee_meta']['email']['value'])){
 						    	$attendee_name = $attendee['attendee_meta']['name']['value'];					
 						    	$email = $attendee['attendee_meta']['email']['value'];
-							    $recipient = 'brett@deicreative.com';
+							    $recipient = 'patrick@newtheory.is';
 			
 							    $class_name_friendly = str_replace("&#8211;", "-", $class_name);
 								$class_name_friendly = substr($class_name_friendly, strpos($class_name_friendly, "-") + 1);
@@ -214,7 +214,7 @@ get_header(); ?>
 							    	$attendee_name = $attendee['attendee_meta']['name']['value'];					
 							    	$email = $attendee['attendee_meta']['email']['value'];
 				
-								    $recipient = 'hornerbrett@gmail.com';
+								    $recipient = 'patrick@newtheory.is';
 								    $class_name_friendly = str_replace("&#8211;", "-", $class_name);
 									$class_name_friendly = substr($class_name_friendly, strpos($class_name_friendly, "-") + 1);
 								    
@@ -303,7 +303,7 @@ get_header(); ?>
 							    	$attendee_name = $attendee['attendee_meta']['name']['value'];					
 							    	$email = $attendee['attendee_meta']['email']['value'];
 				
-								    $recipient = 'hornerbrett@gmail.com';
+								    $recipient = 'patrick@newtheory.is';
 								    $class_name_friendly = str_replace("&#8211;", "-", $class_name);
 									$class_name_friendly = substr($class_name_friendly, strpos($class_name_friendly, "-") + 1);
 								    
@@ -394,7 +394,7 @@ get_header(); ?>
 							    	$attendee_name = $attendee['attendee_meta']['name']['value'];					
 							    	$email = $attendee['attendee_meta']['email']['value'];
 				
-								    $recipient = 'hornerbrett@gmail.com';
+								    $recipient = 'patrick@newtheory.is';
 								    $class_name_friendly = str_replace("&#8211;", "-", $class_name);
 									$class_name_friendly = substr($class_name_friendly, strpos($class_name_friendly, "-") + 1);
 								    
@@ -403,7 +403,6 @@ get_header(); ?>
 									echo $subject . ' ' . $email;
 									echo '<br>';
 									echo $packet;
-									echo '<br>';
 									echo '<br>';
 									$emails[] = $attendee['attendee_meta']['email']['value'];
 								}
@@ -417,6 +416,7 @@ get_header(); ?>
 					// send_shopping_list_email();
 					// send_class_evaluation_email();
 					// send_to_go_reminder_email();
+                    send_email_test();
 	            ?>
                 </div>
             </article>
